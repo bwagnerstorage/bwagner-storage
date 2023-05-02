@@ -1,0 +1,118 @@
+ #animationContainer {
+                border: 2px black solid;
+                background: lightskyblue;
+                width: 680px;
+                height: 535px;
+            }
+            #bufferContainer {
+                background: lightskyblue;
+                clear:both;
+                position: relative;
+                height: 415px;
+            }
+            #backgroundContainer {
+                background: lightskyblue;
+                clear:both;
+                position: relative;
+                height: 212px;
+            }
+            
+            #codeContainer {
+                background: darkblue;
+                clear:both;
+                position: relative;
+                height: 120px;
+                margin-top: 2px;
+            }
+            
+            #buffer {
+                border: 3px solid black;
+                width: 295px;
+                height: 200px;
+                background: blue;
+                left: 60px;
+                top: 2px;
+                position: absolute;
+            }
+            
+            #comment {
+                border: 3px solid black;
+                width: 280px;
+                height: 200px;
+                left: 380px;
+                top: 2px;
+                background: white;
+                position: absolute;
+                font-size: 1.3em;
+            }
+            
+            #background1 {
+                top: 210px;
+                left: 60px;
+                position: absolute;
+                
+            }
+            #background2 {
+                position: absolute;
+                top: 210px;
+                left: 60px;
+                visibility: hidden;
+            }
+            
+            #background3 {
+                position: absolute;
+                visibility: hidden;
+                top: 2px;
+                left: 60px;
+                
+            }
+                
+            #background4 {
+                position: absolute;
+                visibility: hidden;
+            }
+            
+            #background5 {
+                position: absolute;
+                visibility: hidden;
+                top: 210px;
+                left: 60px;
+            }
+            
+            #code1 {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                visibility: visible;
+            }
+            
+            #code2 {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                visibility: hidden;
+            }
+            
+            #code3 {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                visibility: hidden;
+            }
+            
+            #code4 {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                visibility: hidden;
+            }
+            
+            #buttonPanel {
+                position: absolute;
+                top: 25px;
+                right: 10px;
+            }
+            
+            .animateButton {
+                font-size: 1.2em;
+                margin-bottom:15px;

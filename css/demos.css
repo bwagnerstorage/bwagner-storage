@@ -1,0 +1,243 @@
+
+            #demomain.demo {
+                margin-left: auto;
+                margin-right: auto;
+	        width: 580px;
+                border-style: solid;
+                border-collapse: collapse;
+            }
+            #demoheader.demo {
+                padding: 10px;
+                background-color: #EEEEEE;
+                border-bottom: #999999;
+                border-bottom-style: solid;
+                
+            }
+			
+			#demobody.demo {
+                padding: 10px;
+                background-color: #EEEEEE;
+                border-top: #999999;
+                border-top-style: solid;
+            }
+			
+            #demofooter.demo {
+                padding: 10px;
+                background-color: #EEEEEE;
+                border-top: #999999;
+                border-top-style: solid;
+            }
+			
+            td.demo{
+                padding: 1px;
+				border-width: 0;
+            }
+			tr.demo
+			{
+			  border-width: 0;
+			}
+			
+            #var1, #var2, #condition, #var3, #condition1, #condition2 {
+                font-size: 22px;
+                font-family: "Consolas","Courier New";
+                visibility: hidden;
+            }
+            #box1{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 50px;
+                visibility: hidden;
+				padding-left: 3px;
+            }
+            #box2{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 50px;
+                visibility: hidden;
+				padding-left: 3px;
+            }
+            #box3{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 90px;
+                visibility: hidden;
+				padding-left: 3px;
+            }
+            #buttonPanel.demo {
+				position: relative;
+				top: 0px;
+				left: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 34%;
+            }
+            
+            pre.code {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+				background: white;
+				border-width: 0;
+                padding: 1px;
+            }
+			
+			span.code {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+				background: white;
+				border-width: 0;
+                padding: 1px;
+            }
+			
+            pre.var
+            {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-size: 22px;
+                font-family: "Consolas","Courier New";  
+				border-width: 0;
+                padding: 1px;
+            }
+			
+            button.demo
+            {
+                font-size: 22px;
+				padding: 3px;
+            }
+			
+			#CounterDemo {
+				background-color: black;
+				color: white;
+				font-size: 36px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 200px;
+			}
+			
+			#demomain.demoNested {
+                margin-left: auto;
+                margin-right: auto;
+	            width: 640px;
+                border-style: solid;
+                border-collapse: collapse;
+            }
+			
+			#nestedbox1{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 50px;
+                visibility: hidden;
+		        padding-left: 3px;
+            }
+            #nestedbox2{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 30px;
+                visibility: hidden;
+		        padding-left: 3px;
+            }
+            #nestedbox3{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 30px;
+                visibility: hidden;
+		        padding-left: 3px;
+            }
+            #nestedbox4{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 90px;
+                visibility: hidden;
+		        padding-left: 3px;
+            }
+            #nestedbox5{
+                font-size: 22px;
+                font-family: "Consolas","Courier New"; 
+                border-style: inset;
+                border-width: 0;
+                border-color: gray;
+                background: white;
+                display: block;
+                width: 90px;
+                visibility: hidden;
+		        padding-left: 3px;
+            }
+			
+			#colorBox
+            {
+                width: 400px;
+                height: 300px;
+                background-color: #808080;
+                border: darkgray solid 2px;
+                text-align: center;
+                font-size: 2.0em;
+            }
+            #sliderBox
+            {
+                width: 390px;
+                height: 100px;
+                background: white;
+                border-left: darkgray solid 2px;
+                border-right: darkgray solid 2px;
+                border-bottom: darkgray solid 2px;
+                padding: 5px;
+                padding-top: 7px;
+            }
+            .colorSlider
+            {
+                height: 30px;
+                vertical-align: middle;
+                float: left;
+                display: block;
+                clear: right;
+                background-color: white;
+                width: 320px;
+            }
+            div.colorLabel {
+                height: 30px;
+                vertical-align: middle;
+                font-family: "Consolas","Courier", sans-serif;
+                font-size: 1.5em;
+                float: left;
+                clear: left;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
