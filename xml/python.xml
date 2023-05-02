@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+    <unit>
+	    <unitName>Introduction to Python</unitName>
+		<category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>Intro</description><url>/python/intro/01_intro.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 1 Output</unitName>
+		<category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>1.1 Print</description><url>/python/unit01_output/01_print.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 2 Variables</unitName>
+		<category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>2.1 Variables</description><url>/python/unit02_variables/01_variables.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 3 Input</unitName>
+		<category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>3.1 Input</description><url>/python/unit03_input/01_input.html</url>
+
+		</category>
+	</unit>
+   <unit>
+	    <unitName>Unit 4 Type Conversion</unitName>
+		<category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>4.1 Data Type</description><url>/python/unit04_typeConversion/01_type.html</url>
+			<description>4.2 MyAge</description><url>/python/unit04_typeConversion/02_age.html</url>
+         <description>4.3 Semester Average</description><url>/python/unit04_typeConversion/03_semesterAvg.html</url>
+		</category>
+	</unit>
+   <unit>
+	   <unitName>Unit 5 Strings</unitName>
+       <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>5.1 Strings1</description><url>/python/unit05_strings/01_string1.html</url>
+		   <description>5.2 Slice</description><url>/python/unit05_strings/02_slice.html</url>
+        <description>5.3 Methods</description><url>/python/unit05_strings/03_methods.html</url>
+         <description>5.4 Format</description><url>/python/unit05_strings/04_format.html</url>
+		 </category>
+	</unit>
+
+   <unit>
+	    <unitName>Unit 6 Operators</unitName>
+        <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			 <description>6.1 Arithmetic Operators</description><url>/python/unit06_operators/01_operators1.html</url>
+			 <description>6.2 Assignment Operators</description><url>/python/unit06_operators/02_operators2.html</url>
+		 </category>
+	</unit>
+   <unit>
+	    <unitName>Unit 7 if Statement</unitName>
+        <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>7.1 Retire</description><url>/python/unit07_if/01_retire.html</url>
+         <description>7.2 AP Score</description><url>/python/unit07_if/02_apScore.html</url>
+		</category>
+	</unit>
+
+   <unit>
+	    <unitName>Unit 8 while Loop</unitName>
+        <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>8.1 Counter</description><url>/python/unit08_while/01_counter.html</url>
+         <description>8.2 Random</description><url>/python/unit08_while/02_random.html</url>
+         <description>8.3 Guessing Game</description><url>/python/unit08_while/03_guess.html</url>
+         <description>8.4 Multiplication Practice</description><url>/python/unit08_while/04_multiply.html</url>
+		</category>
+	</unit>
+
+   <unit>
+	    <unitName>Unit 9 Lists</unitName>
+        <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>9.1 List Practice1</description><url>/python/unit09_lists/01_list1.html</url>
+			<description>9.2 List Practice2</description><url>/python/unit09_lists/02_list2.html</url>
+         <description>9.3 List Practice3</description><url>/python/unit09_lists/03_list3.html</url>
+         <description>9.4 Places to Visit</description><url>/python/unit09_lists/04_visitPlaces.html</url>
+		</category>
+	</unit>
+
+   <unit>
+	    <unitName>Unit 10 for Loop</unitName>
+        <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>10.1 ForPractice1</description><url>/python/unit10_for/01_for1.html</url>
+			<description>10.2 MeanMedianMode</description><url>/python/unit10_for/02_for2.html</url>
+		</category>
+	</unit>
+      <unit>
+	    <unitName>Unit 11 Tuples</unitName>
+        <category> 
+		    <categoryName>Lab Exercise</categoryName>
+			<description>11.1 Tuples1</description><url>/python/unit11_tuples/01_tuples1.html</url>
+			<description>11.2 Tuples2</description><url>/python/unit11_tuples/02_tuples2.html</url>
+		</category>
+	</unit>
+   <unit>
+	    <unitName>Unit 12 Functions</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>12.1 Functions1 </description><url>/python/unit12_functions/01_functions1.html</url>
+			      <description>12.2 Functions2 </description><url>/python/unit12_functions/02_functions2.html</url>
+         <description>12.3 Functions3 </description><url>/python/unit12_functions/03_functions3.html</url>
+		</category>
+	</unit>
+   <unit>
+	    <unitName>Unit 13 Sets</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>13.1 Sets1 </description><url>/python/unit13_sets/01_set1.html</url>
+			      <description>13.2 Sets2 </description><url>/python/unit13_sets/02_set2.html</url>
+		</category>
+	</unit>
+   <unit>
+	    <unitName>Unit 14 File I/O</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>14.1 FileInput 1</description><url>/python/unit14_file/01_file1.html</url>
+			      <description>14.2 FileInput 2</description><url>/python/unit14_file/02_file2.html</url>
+               <description>14.3 FileOutput 1</description><url>/python/unit14_file/03_file3.html</url>
+               <description>14.4 FileOutput 2</description><url>/python/unit14_file/04_file4.html</url>
+		  </category>
+	</unit>
+   <unit>
+	    <unitName>Unit 15 Dictionary</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>15.1 Dictionary 1</description><url>/python/unit15_dict/01_dict1.html</url>
+			      <description>15.2 Dictionary 2</description><url>/python/unit15_dict/02_dict2.html</url>
+		</category>
+	</unit>
+   <unit>
+	    <unitName>Unit 16 Classes</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>16.1 Classes 1</description><url>/python/unit16_classes/01_class.html</url>
+			      <description>16.2 Classes 2</description><url>/python/unit16_classes/02_class.html</url>
+			      <description>16.3 Classes 3</description><url>/python/unit16_classes/03_class.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 17 Inheritance</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>17.1 Inheritance 1</description><url>/python/unit17_inherit/01_inherit1.html</url>
+	              <description>17.2 Inheritance 2</description><url>/python/unit17_inherit/02_inherit2.html</url>
+	              <description>17.3 Inheritance 3</description><url>/python/unit17_inherit/03_inherit3.html</url>
+		</category>
+	</unit>
+   <unit>
+	    <unitName>Unit 18 Exception Handling</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			      <description>18.1 Exception 1</description><url>/python/unit18_except/01_except1.html</url>
+	            <description>18.2 Exception 2</description><url>/python/unit18_except/02_except2.html</url>
+		  </category>
+	</unit>
+   <unit>
+	    <unitName>Unit 19 NumPy Module</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			    <description>19.1 NumPy 1</description><url>/python/unit19_numpy/01_numpy1.html</url>
+	            <description>19.2 NumPy 2</description><url>/python/unit19_numpy/02_numpy2.html</url>
+                <description>19.3 NumPy 3</description><url>/python/unit19_numpy/03_numpy3.html</url>
+				<description>19.4 NumPy 4</description><url>/python/unit19_numpy/04_numpy4.html</url>
+		  </category>
+	</unit>
+   <unit>
+	    <unitName>Unit 20 Tkinter GUI Library</unitName>
+        <category> 
+		      <categoryName>Lab Exercise</categoryName>
+			    <description>20.1 Tkinter 1</description><url>/python/unit20_tkinter/01_tkinter1.html</url>
+		  </category>
+	</unit>
+
+</course>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+	<unit>
+	    <unitName>Internal Assessment(IA)</unitName>
+		<category> 
+		    <categoryName>Stages</categoryName>
+			<description>Introduction</description><url>ibsl/IA/criterion/01_intro.html</url>
+			<description>A Planning</description><url>ibsl/IA/criterion/02_plan.html</url>
+			<description>B Solution Overview</description><url>ibsl/IA/criterion/03_solution.html</url>
+			<description>C Development</description><url>ibsl/IA/criterion/04_development.html</url>
+			<description>D Functionality</description><url>ibsl/IA/criterion/05_functionality.html</url>
+			<description>E Evaluation</description><url>ibsl/IA/criterion/06_evaluation.html</url>
+		</category>
+		<category> 
+		    <categoryName>Forms</categoryName>
+			<description>IA Forms</description><url>ibsl/IA/forms/Forms.zip</url>
+			<description>Cover Sheet</description><url>ibsl/IA/forms/Cover Sheet.pdf</url>
+			<description>Student Checklist</description><url>ibsl/IA/forms/checklistStudents.pdf</url>
+			<description>Teacher CheckList</description><url>ibsl/IA/forms/checklistTeachers.pdf</url>
+			<description>IA Declaration</description><url>ibsl/IA/forms/IA Declaration.pdf</url>
+			<description>Group 4 Project Form</description><url>ibsl/IA/forms/4ICCS_e.pdf</url>
+		</category>
+		<category> 
+		    <categoryName>Sample IAs</categoryName>
+			<description>Sample 1-Java</description><url>ibsl/IA/examples/Java IA WeightTraining/Forms/cover_page.htm</url>
+         <description>More Sample IAs (website)</description><url>ibsl/IA/examples/01_more_examples.html</url>
+			<description>Sample 2-Database</description><url>ibsl/IA/examples/IA1en/cover_page.htm</url>
+			<description>Sample 2(Marked)</description><url>ibsl/IA/examples/IA1en/Marked_cover_page.htm</url>
+			<description>Sample 3-Web</description><url>ibsl/IA/examples/IA2en/cover_page.htm</url>
+			<description>Sample 3(Marked)</description><url>ibsl/IA/examples/IA2en/Marked_cover_page.htm</url>
+			<description>Sample 4-Python</description><url>ibsl/IA/examples/IA3en/cover_page.htm</url>
+			<description>Sample 4(Marked)</description><url>ibsl/IA/examples/IA3en/Marked_cover_page.htm</url>
+			<description>Sample 5-Scratch</description><url>ibsl/IA/examples/IA4en/cover_page.htm</url>
+			<description>Sample 5(Marked)</description><url>ibsl/IA/examples/IA4en/Marked_cover_page.htm</url>
+			<description>Sample 6-Spreadsheet</description><url>ibsl/IA/examples/IA5en/cover_page.htm</url>
+			<description>Sample 6(Marked)</description><url>ibsl/IA/examples/IA5en/Marked_cover_page.htm</url>
+         
+
+		</category>
+		<category> 
+		    <categoryName>Resources</categoryName>
+			<description>Teacher Grading Form (pdf)</description><url>ibsl/IA/resources/IA Teacher Grading.pdf</url>
+			<description>Teacher Grading Form (docx)</description><url>ibsl/IA/resources/IA Teacher Grading.docx</url>
+		</category>
+	</unit>
+	<unit>
+	<unitName>Unit 1 Number Systems</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>1.1 Number Systems</description><url>csregular/unit01_binary/notes/01_binary.html</url>
+			<description>1.2 Number Conversions</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
+			<description>1.3 Binary Arithmetic</description><url>ap/unit00_binary/notes/binaryArithmetic.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Number Systems(pdf)</description><url>ap/unit00_binary/worksheets/Number Systems.pdf</url>
+			<description>Number Systems(docx)</description><url>ap/unit00_binary/worksheets/Number Systems.docx</url>
+			<description>Binary Arithmetic(pdf)</description><url>ap/unit00_binary/worksheets/Binary Arithmetic.pdf</url>
+			<description>Binary Arithmetic(docx)</description><url>ap/unit00_binary/worksheets/Binary Arithmetic.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>Number Systems Quiz(pdf)</description><url>csregular/unit01_binary/quizzes/Number Systems Quiz.pdf</url>
+			<description>Number Systems Quiz(docx)</description><url>csregular/unit01_binary/quizzes/Number Systems Quiz.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 2 System Fundamentals</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>2.0 What is a System</description><url>ibsl/unit01_systems/notes/01_systemBasics.html</url>
+			<description>2.1 System Planning</description><url>ibsl/unit01_systems/notes/02_planning.html</url>
+			<description>2.2 System Design</description><url>ibsl/unit01_systems/notes/03_design.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName>
+			<description>2.1 System Planning(pdf)</description><url>ibsl/unit01_systems/worksheets/System Planning.pdf</url>
+			<description>2.1 System Planning(doc)</description><url>ibsl/unit01_systems/worksheets/System Planning.docx</url>
+			<description>2.2 System Design(pdf)</description><url>ibsl/unit01_systems/worksheets/System Design.pdf</url>
+			<description>2.2 System Design(doc)</description><url>ibsl/unit01_systems/worksheets/System Design.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 3 PseudoCode/FlowCharts</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>3.1 Pseudocode</description><url>ibsl/unit02_pseudocode/notes/01_pseudocode.html</url>
+			<description>3.2 Flowchart</description><url>ibsl/unit02_pseudocode/notes/02_flowchart.html</url>
+		</category>
+
+     <category> 
+		    <categoryName>IB Reference Sheets</categoryName>
+			<description>Paper 1 Pseudocode Rules Sheet (not given at exam)</description><url>ibsl/unit02_pseudocode/reference/Pseudocode SL Ref Sheet.PDF</url>
+         <description>Approved Notation for Exam (given at exam)</description><url>ibsl/unit02_pseudocode/reference/Pseudocode Exam Ref Sheet.pdf</url>
+		</category>
+      <category>
+      	<categoryName>IB Pseudocode Simulator</categoryName>
+			<description>Simulator</description><url>ibsl/unit02_pseudocode/simulator/01_sim.html</url>
+      </category>
+
+		<category> 
+		    <categoryName>Worksheets</categoryName>
+			<description>3.1 Pseudocode(pdf)</description><url>ibsl/unit02_pseudocode/worksheets/Pseudocode.pdf</url>
+			<description>3.1 Pseudocode(doc)</description><url>ibsl/unit02_pseudocode/worksheets/Pseudocode.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 4 Tracing an Algorithm</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>4.1 Trace Tables</description><url>ibsl/unit14_tracing/notes/01_tracing.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName>
+			<description>4.1 Trace Tables(pdf)</description><url>ibsl/unit14_tracing/worksheets/Trace Tables.pdf</url>
+			<description>4.1 Trace Tables(docx)</description><url>ibsl/unit14_tracing/worksheets/Trace Tables.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 5 Boolean Logic</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>5.1 Truth Tables</description><url>ibsl/unit18_booleanLogic/notes/01_truthTables.html</url>
+			<description>5.2 Logic Diagrams</description><url>ibsl/unit18_booleanLogic/notes/02_logicDiagrams.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName>
+			<description>5.1 Boolean Logic(pdf)</description><url>ibsl/unit18_booleanLogic/worksheets/Boolean Logic.pdf</url>
+			<description>5.1 Boolean Logic(docx)</description><url>ibsl/unit18_booleanLogic/worksheets/Boolean Logic.docx</url>
+		</category>
+	</unit>
+
+	<unit>
+	    <unitName>APCS Lab - Magpie</unitName>
+		<category> 
+		    <categoryName>Magpie Workspace</categoryName>
+			   <description>JCreator Workspace</description><url>ap/AP_Lab_Magpie/magpieWorkspace/MagpieJC.zip</url>
+			   <description>NetBeans Workspace</description><url>ap/AP_Lab_Magpie/magpieWorkspace/MagpieNB.zip</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>Activity1</description><url>ap/AP_Lab_Magpie/labExercises/01_activity1.html</url>
+			<description>Activity2</description><url>ap/AP_Lab_Magpie/labExercises/02_activity2.html</url>
+			<description>Activity3</description><url>ap/AP_Lab_Magpie/labExercises/03_activity3.html</url>
+			<description>Activity4</description><url>ap/AP_Lab_Magpie/labExercises/04_activity4.html</url>
+			<description>Activity5</description><url>ap/AP_Lab_Magpie/labExercises/05_activity5.html</url>
+		</category>		
+		<category> 
+		    <categoryName>Docs</categoryName>
+			<description>MagPie2 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie2.htm</url>
+			<description>MagPie3 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie3.htm</url>
+			<description>MagPie4 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie4.htm</url>
+			<description>MagPie5 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie5.htm</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>Money</description><url>ap/AP_Lab_Magpie/apFreeResponse/01_money.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 6 Methods Review</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			   <description>6.1 Methods</description><url>ap/unit01_methodsReview/notes/01_methods.html</url>
+		       <description>6.2 Static Methods</description><url>ap/unit01_methodsReview/notes/02_staticMethods.html</url>
+               <description>6.3 Why Use Methods</description><url>ap/unit01_methodsReview/notes/03_whyMethods.html</url>
+               <description>6.4 Overloaded Methods</description><url>ap/unit01_methodsReview/notes/04_methodOverloading.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>6.1 MethodPractice1</description><url>ap/unit01_methodsReview/labExercises/01_methodPractice1.html</url>
+		    <description>6.2 MethodPractice2</description><url>ap/unit01_methodsReview/labExercises/02_methodPractice2.html</url>
+		    <description>6.3 GuessingGame</description><url>ap/unit01_methodsReview/labExercises/03_guessingGame.html</url>
+		    <description>6.4 Utility</description><url>ap/unit01_methodsReview/labExercises/04_utility.html</url>
+		    <description>6.5 UIL CompSci</description><url>ap/unit01_methodsReview/labExercises/05_uilCompSci.html</url>
+		</category>
+      <category> 
+		    <categoryName>AP Free Response</categoryName>
+         <description>6.1 AP FR APCalendar</description><url>ap/unit01_methodsReview/apFreeResponse/01_APCalendar.html</url>
+         <description>6.2 AP FR Frog Simulation</description><url>ap/unit01_methodsReview/apFreeResponse/02_FrogSimulation.html</url>
+		</category>
+	</unit>
+		<unit>
+	    <unitName>Unit 7 Classes Review</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			   <description>7.1 Class Decomposition</description><url>csregular/unit19_classDecomposition/notes/01_classDecomposition.html</url>
+			   <description>7.2 Anatomy of a Class</description><url>csregular/unit19_classDecomposition/notes/02_classAnatomy.html</url>
+			   <description>7.3 Constructors</description><url>csregular/unit20_classesSpecial/notes/01_constructors.html</url>
+			   <description>7.4 Accessor Methods</description><url>csregular/unit20_classesSpecial/notes/02_accessors.html</url>
+			   <description>7.5 Mutator Methods</description><url>csregular/unit20_classesSpecial/notes/03_mutators.html</url>
+		       <description>7.6 toString Method</description><url>csregular/unit20_classesSpecial/notes/04_toString.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>7.1 Box</description><url>ap/unit02_classesReview/labExercises/01_box.html</url>
+		    <description>7.2 Car</description><url>ap/unit02_classesReview/labExercises/02_car.html</url>
+			<description>7.3 School Dance</description><url>ap/unit02_classesReview/labExercises/03_dance.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>7.1 APLine</description><url>ap/unit02_classesReview/apFreeResponse/01_apLine.html</url>
+         <description>5.2.2 StepTracker</description><url>ap/unit02_classesReview/apFreeResponse/02_StepTracker.html</url>
+         <description>5.2.3 CodeWordChecker</description><url>ap/unit02_classesReview/apFreeResponse/03_CodeWordChecker.html</url>
+		</category>
+	</unit>
+	<unit>
+    <unitName>Unit 8 Arrays Review</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>8.1 Arrays</description><url>csregular/unit18_arrays/notes/01_arrays.html</url>
+			<description>8.2 Traversing Arrays</description><url>csregular/unit18_arrays/notes/02_traversingArray.html</url>
+			<description>8.3 Logical Size</description><url>csregular/unit18_arrays/notes/03_logicalSize.html</url>
+		    <description>8.4 Object Arrays</description><url>csregular/unit21_objectArrays/notes/01_objectArrays.html</url>
+			<description>8.5 Object Parameters</description><url>csregular/unit21_objectArrays/notes/02_objectParameters.html</url>
+			<description>8.6 Array Parameters</description><url>csregular/unit21_objectArrays/notes/03_arrayParameters.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>8.1 Numbers</description><url>ap/unit03_arraysReview/labExercises/01_numbers.html</url>
+			<description>8.2 Vowels</description><url>ap/unit03_arraysReview/labExercises/02_vowels.html</url>
+			<description>8.3 Tardies</description><url>ap/unit03_arraysReview/labExercises/03_tardies.html</url>
+			<description>8.4 MyArray</description><url>ap/unit03_arraysReview/labExercises/04_myArray.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>8.1 GroceryList</description><url>ap/unit03_arraysReview/apFreeResponse/01_groceryList.html</url>
+			<description>8.2 SelfDivisor</description><url>ap/unit03_arraysReview/apFreeResponse/02_selfDivisor.html</url>
+			<description>8.3 StudentRecord</description><url>ap/unit03_arraysReview/apFreeResponse/03_studentRecord.html</url>
+			<description>8.4 NumberCube</description><url>ap/unit03_arraysReview/apFreeResponse/04_numberCube.html</url>
+		</category>
+
+	</unit>
+	<unit>
+    <unitName>Unit 9 ArrayList</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>9.1 ArrayList</description><url>ap/unit05_arrayList/notes/01_arrayList.html</url>
+			<description>9.2 Wrapper Classes</description><url>ap/unit05_arrayList/notes/02_wrapper.html</url>
+			<description>9.3 Enhanced for Loop</description><url>ap/unit05_arrayList/notes/03_enhancedFor.html</url>
+			<description>9.4 remove Method</description><url>ap/unit05_arrayList/notes/04_remove.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>9.1 ArrayListPractice</description><url>ap/unit05_arrayList/labExercises/01_arrayListPractice.html</url>
+			<description>9.2 PhoneList</description><url>ap/unit05_arrayList/labExercises/02_phoneList.html</url>
+			<description>9.3 Diet</description><url>ap/unit05_arrayList/labExercises/03_diet.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>9.1 SchoolRoster</description><url>ap/unit05_arrayList/apFreeResponse/01_schoolRoster.html</url>
+			<description>9.2 WordList</description><url>ap/unit05_arrayList/apFreeResponse/02_wordList.html</url>
+			<description>9.3 Retirement</description><url>ap/unit05_arrayList/apFreeResponse/03_retirement.html</url>
+			<description>9.4 CookieOrder</description><url>ap/unit05_arrayList/apFreeResponse/04_cookieOrder.html</url>
+			<description>9.5 StudentAnswerSheet</description><url>ap/unit05_arrayList/apFreeResponse/05_studentAnswerSheet.html</url>
+			<description>9.6 Appointment</description><url>ap/unit05_arrayList/apFreeResponse/06_appointment.html</url>
+          <description>9.7 Delimiters</description><url>ap/unit05_arrayList/apFreeResponse/07_Delimiters.html</url>
+         <description>9.8 WordPair</description><url>ap/unit05_arrayList/apFreeResponse/08_WordPair.html</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>9.1 Array vs ArrayList Quiz(pdf)</description><url>ap/unit05_arrayList/quizzes/Array and ArrayList Quiz.pdf</url>
+			<description>9.1 Array vs ArrayList Quiz(docx)</description><url>ap/unit05_arrayList/quizzes/Array and ArrayList Quiz.docx</url>
+		</category>
+	</unit>
+	<unit>
+    <unitName>Unit 10 Inheritance</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>10.1 Inheritance</description><url>ap/unit06_inheritance/notes/01_inheritance.html</url>
+			<description>10.2 Polymorphism</description><url>ap/unit06_inheritance/notes/02_polymorphism.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>10.1 CombinationLock</description><url>ap/unit06_inheritance/labExercises/01_combinationLock.html</url>
+			<description>10.2 RaceHorse</description><url>ap/unit06_inheritance/labExercises/02_raceHorse.html</url>
+			<description>10.3 Scheduler</description><url>ap/unit06_inheritance/labExercises/03_scheduler.html</url>
+			<description>10.4 SportsTeam</description><url>ap/unit06_inheritance/labExercises/04_sportsTeam.html</url>
+			<description>10.5 Vacation</description><url>ap/unit06_inheritance/labExercises/05_vacation.html</url>
+			<description>10.6 Photographer</description><url>ap/unit06_inheritance/labExercises/06_photographer.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>10.1 DepartmentStore</description><url>ap/unit06_inheritance/apFreeResponse/01_departmentStore.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 11 Abstract Classes</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>11.1 Abstract Classes</description><url>ap/unit07_abstractClasses/notes/01_abstractClasses.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>11.1 Donation</description><url>ap/unit07_abstractClasses/labExercises/01_donation.html</url>
+			<description>11.2 Wages</description><url>ap/unit07_abstractClasses/labExercises/02_wages.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>11.1 Pet</description><url>ap/unit07_abstractClasses/apFreeResponse/01_pet.html</url>
+			<description>11.2 Ticket</description><url>ap/unit07_abstractClasses/apFreeResponse/02_ticket.html</url>
+			<description>11.3 Hotel</description><url>ap/unit07_abstractClasses/apFreeResponse/03_hotel.html</url>
+			<description>11.4 Warehouse</description><url>ap/unit07_abstractClasses/apFreeResponse/04_warehouse.html</url>
+		</category>
+	</unit>
+	
+	<unit>
+	    <unitName>Unit 12 Interfaces</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>12.1 Interfaces</description><url>ap/unit08_interfaces/notes/01_interfaces.html</url>
+			<description>12.2 Comparable Interface</description><url>ap/unit08_interfaces/notes/02_comparable.html</url>
+			<description>12.3 Polymorphism</description><url>ap/unit08_interfaces/notes/03_polymorphism.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>12.1 Area</description><url>ap/unit08_interfaces/labExercises/01_area.html</url>
+			<description>12.2 Quiz</description><url>ap/unit08_interfaces/labExercises/02_quiz.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>12.1 College</description><url>ap/unit08_interfaces/apFreeResponse/01_college.html</url>
+			<description>12.2 Employee</description><url>ap/unit08_interfaces/apFreeResponse/02_employee.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 13 UML Diagrams</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>13.1 OOP Review</description><url>ibhl2/unit12_reviewClasses/notes/01_oop.html</url>
+			<description>13.2 UML Diagrams</description><url>ibsl/unit17_umlDiagrams/notes/01_UML.html</url>
+		</category>
+		<category> 
+		    <categoryName>worksheets</categoryName> 
+			<description>13.1 OOP Review (docx)</description><url>ibhl2/unit12_reviewClasses/worksheets/OOP Review.docx</url>
+			<description>13.1 OOP Review (pdf)</description><url>ibhl2/unit12_reviewClasses/worksheets/OOP Review.pdf</url>
+			<description>13.2 UML Diagrams Wk (docx)</description><url>ap/unit17_umlDiagrams/worksheets/UML Assignment 1.docx</url>
+			<description>13.2 UML Diagrams Wk (pdf)</description><url>ap/unit17_umlDiagrams/worksheets/UML Assignment 1.pdf</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 14 Searching</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>14.1 Linear Search</description><url>ap/unit11_searching/notes/01_linearSearch.html</url>
+			<description>14.2 Binary Search</description><url>ap/unit11_searching/notes/02_binarySearch.html</url>
+			<description>14.3 Comparable Interface</description><url>ap/unit11_searching/notes/03_comparable.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>14.1 SpellCheck</description><url>ap/unit11_searching/labExercises/01_spellCheck.html</url>
+			<description>14.2 States</description><url>ap/unit11_searching/labExercises/02_states.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>14.1 Book</description><url>ap/unit11_searching/apFreeResponse/01_book.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>14.1 Searching Worksheet(pdf)</description><url>ap/unit11_searching/worksheets/Searching Worksheet.pdf</url>
+			<description>14.1 Searching Worksheet(docx)</description><url>ap/unit11_searching/worksheets/Searching Worksheet.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>14.1 Searching Quiz(pdf)</description><url>ap/unit11_searching/quizzes/Searching Quiz.pdf</url>
+			<description>14.1 Searching Quiz(docx)</description><url>ap/unit11_searching/quizzes/Searching Quiz.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 15 Sorting</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>15.1 Sorting</description><url>ibsl/unit16_sorting/notes/01_sorting.html</url>
+			<description>15.2 Bubble Sort</description><url>ibsl/unit16_sorting/notes/02_bubble.html</url>
+			<description>15.3 Selection Sort</description><url>ibsl/unit16_sorting/notes/03_selection.html</url>
+			<description>15.4 Insertion Sort(not IB)</description><url>ibsl/unit16_sorting/notes/04_insertion.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>	
+          <description>15.1 SortPractice</description><url>ibsl/unit16_sorting/labExercises/01_sortPractice.html</url>
+			<description>15.2 SortFriends</description><url>ibsl/unit16_sorting/labExercises/02_sortFriends.html</url>
+			<description>15.3 SortNames</description><url>ibsl/unit16_sorting/labExercises/03_sortNames.html</url>
+			<description>15.4 SortStates</description><url>ibsl/unit16_sorting/labExercises/04_sortStates.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 16 Computer Organization</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>16.1 Architecture</description><url>ibsl/unit12_computerOrganization/notes/01_architecture.html</url>
+			<description>16.2 Secondary Memory</description><url>ibsl/unit12_computerOrganization/notes/02_secondaryMemory.html</url>
+			<description>16.3 Operating System</description><url>ibsl/unit12_computerOrganization/notes/03_operatingSystem.html</url>
+			<description>16.4 Binary Representation</description><url>ibsl/unit12_computerOrganization/notes/04_binaryRepresentation.html</url>
+			<description>16.5 Logic Gates</description><url>ibsl/unit12_computerOrganization/notes/05_logicGates.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName>
+			<description>16.1 Computer Organization (pdf)</description><url>ibsl/unit12_computerOrganization/worksheets/ComputerOrganization.pdf</url>
+			<description>16.1 Computer Organization (docx)</description><url>ibsl/unit12_computerOrganization/worksheets/ComputerOrganization.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 17 Networks</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>17.1 Network Fundamentals</description><url>ibsl/unit13_network/notes/01_networkFundamentals.html</url>
+			<description>17.2 Data Transmission</description><url>ibsl/unit13_network/notes/02_dataTransmission.html</url>
+			<description>17.3 Wireless Networking</description><url>ibsl/unit13_network/notes/03_wirelessNetworking.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName>
+			<description>17.1 Networking (pdf)</description><url>ibsl/unit13_network/worksheets/Networking.pdf</url>
+			<description>17.1 Networking (docx)</description><url>ibsl/unit13_network/worksheets/Networking.docx</url>
+		</category>
+	</unit>
+</course>

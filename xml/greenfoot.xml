@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+    <unit>
+	    <unitName>Unit 1 Getting Started</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>1.1 Installing Greenfoot</description><url>greenfoot/unit01_gettingStarted/labExercises/01_install.html</url>
+			<description>1.2 Exploring Greenfoot</description><url>greenfoot/unit01_gettingStarted/labExercises/02_explore.html</url>
+			<description>1.3 World and Actor</description><url>greenfoot/unit01_gettingStarted/labExercises/03_worldAndActor.html</url>
+			<description>1.4 Moving Actors</description><url>greenfoot/unit01_gettingStarted/labExercises/04_movement.html</url>
+			<description>1.5 RandomNumbers</description><url>greenfoot/unit01_gettingStarted/labExercises/05_random.html</url>
+			<description>1.6 Bouncing Balls</description><url>greenfoot/unit01_gettingStarted/labExercises/06_bounce.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 2 Events</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>2.1 Draw</description><url>greenfoot/unit02_events/labExercises/01_drawWorld.html</url>
+			<description>2.2 Fish</description><url>greenfoot/unit02_events/labExercises/02_fish.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 3 Backgrounds</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>3.1 Gradient</description><url>greenfoot/unit03_backgrounds/labExercises/01_gradient.html</url>
+			<description>3.2 Circles</description><url>greenfoot/unit03_backgrounds/labExercises/02_circles.html</url>
+			<description>3.3 Scrolling Background</description><url>greenfoot/unit03_backgrounds/labExercises/03_scrolling.html</url>
+			<description>3.4 Santa's Sleigh</description><url>greenfoot/unit03_backgrounds/labExercises/04_santa.html</url>
+			<description>3.5 Stars</description><url>greenfoot/unit03_backgrounds/labExercises/05_stars.html</url>
+		</category>
+	</unit>
+    <unit>
+	    <unitName>Unit 4 Collision Detection</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>4.1 Hungry Lizard</description><url>greenfoot/unit04_collision/labExercises/01_lizard.html</url>
+			<description>4.2 Scary Snake</description><url>greenfoot/unit04_collision/labExercises/02_snake.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 5 Gravity</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>5.1 Gravity</description><url>greenfoot/unit05_gravity/labExercises/01_gravity.html</url>
+			<description>5.2 Platform1</description><url>greenfoot/unit05_gravity/labExercises/02_platform1.html</url>
+			<description>5.3 Platform2</description><url>greenfoot/unit05_gravity/labExercises/03_platform2.html</url>
+			<description>5.4 Platform3</description><url>greenfoot/unit05_gravity/labExercises/04_platform3.html</url>
+			<description>5.5 Platform4</description><url>greenfoot/unit05_gravity/labExercises/05_platform4.html</url>
+			<description>5.6 Platform5</description><url>greenfoot/unit05_gravity/labExercises/06_platform5.html</url>
+		</category>
+	</unit>
+    <unit>
+	    <unitName>Unit 6 FlappyBird</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>6.1 FlappyBird1</description><url>greenfoot/unit06_flappyBird/labExercises/01_flappy1.html</url>
+			<description>6.2 FlappyBird2</description><url>greenfoot/unit06_flappyBird/labExercises/02_flappy2.html</url>
+			<description>6.3 FlappyBird3</description><url>greenfoot/unit06_flappyBird/labExercises/03_flappy3.html</url>
+			<description>6.4 FlappyBird4</description><url>greenfoot/unit06_flappyBird/labExercises/04_flappy4.html</url>
+			<description>6.5 FlappyBird5</description><url>greenfoot/unit06_flappyBird/labExercises/05_flappy5.html</url>
+			<description>6.6 FlappyBird6</description><url>greenfoot/unit06_flappyBird/labExercises/06_flappy6.html</url>
+			<description>6.7 FlappyBird7</description><url>greenfoot/unit06_flappyBird/labExercises/07_flappy7.html</url>
+			<description>6.8 FlappyBird8</description><url>greenfoot/unit06_flappyBird/labExercises/08_flappy8.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 7 Shooting</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>7.1 KetchupCannon</description><url>greenfoot/unit07_shooting/labExercises/01_ketchupCannon.html</url>
+			<description>7.2 AlienAttack</description><url>greenfoot/unit07_shooting/labExercises/02_alienAttack.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 8 AnimatedActor</unitName>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>8.1 Explosion</description><url>greenfoot/unit08_animatedSprites/labExercises/01_explosion.html</url>
+			<description>8.2 AlienAttack2</description><url>greenfoot/unit08_animatedSprites/labExercises/02_alienAttack2.html</url>
+			<description>8.3 Mario Jump</description><url>greenfoot/unit08_animatedSprites/labExercises/03_marioJump.html</url>
+			<description>8.4 Mario Climb</description><url>greenfoot/unit08_animatedSprites/labExercises/04_marioClimb.html</url>
+			<description>8.5 Mario Danger</description><url>greenfoot/unit08_animatedSprites/labExercises/05_marioDanger.html</url>
+			<description>8.6 Mario Extend</description><url>greenfoot/unit08_animatedSprites/labExercises/06_marioExtend.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Greenfoot Review</unitName>
+		<category> 
+		<categoryName>Review</categoryName>
+		    <description>Review</description><url>greenfoot/greenfootReview/review.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Greenfoot Exam</unitName>
+		<category> 
+		<categoryName>Exam</categoryName>
+			<description>Exam</description><url>greenfoot/greenfootExam/exam.html</url>
+		</category>
+	</unit>
+</course>

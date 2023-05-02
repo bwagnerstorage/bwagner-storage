@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+	<unit>
+	    <unitName>Unit 1 Number Systems</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>1.1 Number Systems</description><url>csregular/unit01_binary/notes/01_binary.html</url>
+			<description>1.2 Number Conversions</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
+			<description>1.3 Data Representation</description><url>csregular/unit01_binary/notes/03_dataRepresentation.html</url>
+			<description>1.4 Numeric Representation</description><url>csregular/unit01_binary/notes/04_numericData.html</url>
+		    <description>1.5 Representing Text</description><url>csregular/unit01_binary/notes/05_textData.html</url>
+		    <description>1.6 Representing Audio Data</description><url>csregular/unit01_binary/notes/06_audioData.html</url>
+		    <description>1.7 Representing Images and Graphics</description><url>csregular/unit01_binary/notes/07_graphicData.html</url>
+		    <description>1.8 Representing Video</description><url>csregular/unit01_binary/notes/08_videoData.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Number Systems(pdf)</description><url>csregular/unit01_binary/worksheets/Number Systems.pdf</url>
+			<description>Number Systems(docx)</description><url>csregular/unit01_binary/worksheets/Number Systems.docx</url>
+			<description>Data Representation(pdf)</description><url>csregular/unit01_binary/worksheets/Data Representation.pdf</url>
+			<description>Data Representation(docx)</description><url>csregular/unit01_binary/worksheets/Data Representation.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>Number Systems Quiz(pdf)</description><url>csregular/unit01_binary/quizzes/Number Systems Quiz.pdf</url>
+			<description>Number Systems Quiz(docx)</description><url>csregular/unit01_binary/quizzes/Number Systems Quiz.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 2 Java Basics</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>2.1 Java Programming Language</description><url>csregular/unit02_javaBasics/notes/01_JVM.html</url>
+			<description>2.2 User Interface</description><url>csregular/unit02_javaBasics/notes/02_interface.html</url>
+			<description>2.3 First Java Program</description><url>csregular/unit02_javaBasics/notes/03_simpleProgram.html</url>
+			<description>2.4 Syntax</description><url>csregular/unit02_javaBasics/notes/04_syntax.html</url>
+			<description>2.5 Terminal Output</description><url>csregular/unit02_javaBasics/notes/05_terminalOutput.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>2.1 StudentInfo</description><url>csregular/unit02_javaBasics/labExercises/01_studentInfo.html</url>
+		</category>
+				<category> 
+		    <categoryName>GUI Example</categoryName> 
+			<description>Calculator</description><url>csregular/unit02_javaBasics/example/calculator.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Java Basics(pdf)</description><url>csregular/unit02_javaBasics/worksheets/Java Basics.pdf</url>
+			<description>Java Basics(docx)</description><url>csregular/unit02_javaBasics/worksheets/Java Basics.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 3 Variables and Data Types</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>3.1 Variables</description><url>csregular/unit03_variables/notes/01_variables.html</url>
+			<description>3.2 Assignment Operator</description><url>csregular/unit03_variables/notes/02_assignment.html</url>
+			<description>3.3 Data Types</description><url>csregular/unit03_variables/notes/03_dataTypes.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>3.1 Spacing</description><url>csregular/unit03_variables/labExercises/01_spacing.html</url>
+			<description>3.2 Fruit</description><url>csregular/unit03_variables/labExercises/02_fruit.html</url>
+			<description>3.3 Conversion</description><url>csregular/unit03_variables/labExercises/03_conversion.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Variables and Data Types(pdf)</description><url>csregular/unit03_variables/worksheets/Variables and Data Types.pdf</url>
+			<description>Variables and Data Types(docx)</description><url>csregular/unit03_variables/worksheets/Variables and Data Types.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 4 Operators</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>4.1 Arithmetic Operators</description><url>csregular/unit04_operators/notes/01_operators.html</url>
+			<description>4.2 Data Conversion</description><url>csregular/unit04_operators/notes/02_dataConversion.html</url>
+			<description>4.3 More Operators</description><url>csregular/unit04_operators/notes/03_moreOperators.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>4.1 Arithmetic</description><url>csregular/unit04_operators/labExercises/01_arithmetic.html</url>
+			<description>4.2 MysteryNumber</description><url>csregular/unit04_operators/labExercises/02_mysteryNumber.html</url>
+			<description>4.3 Grades</description><url>csregular/unit04_operators/labExercises/03_grades.html</url>
+			<description>4.4 Baseball</description><url>csregular/unit04_operators/labExercises/04_baseball.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Operators(pdf)</description><url>csregular/unit04_operators/worksheets/Operators.pdf</url>
+			<description>Operators(docx)</description><url>csregular/unit04_operators/worksheets/Operators.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 5 Jeroo Basics</unitName>
+		<category> 
+		    <categoryName>Jeroo Simulator</categoryName>
+			<description>Jeroo Simulator</description><url>csregular/unit05_jerooBasics/jerooProgram/Jeroo.zip</url>
+		</category>
+      <category> 
+		   <categoryName>Islands</categoryName>
+         <description>Islands</description><url>csregular/unit05_jerooBasics/jerooIslands/JerooIslands.zip</url>
+      </category>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>5.1 The Jeroos</description><url>csregular/unit05_jerooBasics/notes/01_jeroo.html</url>
+			<description>5.2 Essential Concepts</description><url>csregular/unit05_jerooBasics/notes/02_essentialConcepts.html</url>
+			<description>5.3 Simple Program</description><url>csregular/unit05_jerooBasics/notes/03_simpleProgram.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>5.1 Initials</description><url>csregular/unit05_jerooBasics/labExercises/01_initials.html</url>
+			<description>5.2 Lake Island</description><url>csregular/unit05_jerooBasics/labExercises/02_lakeIsland.html</url>
+			<description>5.3 Homeward Angel</description><url>csregular/unit05_jerooBasics/labExercises/03_homewardAngel.html</url>
+			<description>5.4 Give Away</description><url>csregular/unit05_jerooBasics/labExercises/04_giveAway.html</url>
+		</category>		
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>5.1-2 Jeroo Basics</description><url>csregular/unit05_jerooBasics/worksheets/JerooBasics.pdf</url>
+			<description>5.3 Simple Program</description><url>csregular/unit05_jerooBasics/worksheets/SimpleJerooPrograms.pdf</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>Jeroo Basics Quiz</description><url>csregular/unit05_jerooBasics/quizzes/JerooQuiz1.pdf</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 6 Scanner Class</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>6.1 Classes and Objects</description><url>csregular/unit06_scanner/notes/01_classes.html</url>
+			<description>6.2 Scanner Class</description><url>csregular/unit06_scanner/notes/02_scanner.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>6.1 Rectangle</description><url>csregular/unit06_scanner/labExercises/01_rectangle.html</url>
+			<description>6.2 Powers</description><url>csregular/unit06_scanner/labExercises/02_powers.html</url>
+			<description>6.3 Money</description><url>csregular/unit06_scanner/labExercises/03_money.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 7 Math Class</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>7.1 Math Class</description><url>csregular/unit07_math/notes/01_math.html</url>
+			<description>7.2 Programming Errors</description><url>csregular/unit07_math/notes/02_errors.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>7.1 Pythagorean Theorem</description><url>csregular/unit07_math/labExercises/01_phythagorean.html</url>
+			<description>7.2 MinMax</description><url>csregular/unit07_math/labExercises/02_minMax.html</url>
+			<description>7.3 QuickPick</description><url>csregular/unit07_math/labExercises/03_quickPick.html</url>
+			<description>7.4 RandomRanges</description><url>csregular/unit07_math/labExercises/04_randomRanges.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 8 String Class</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>8.1 String Class</description><url>csregular/unit08_string/notes/01_string.html</url>
+			<description>8.2 String Input</description><url>csregular/unit08_string/notes/02_stringInput.html</url>
+			<description>8.3 String Conversion</description><url>csregular/unit08_string/notes/03_stringConversion.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>8.1 FullName</description><url>csregular/unit08_string/labExercises/01_fullName.html</url>
+			<description>8.2 AddressLabel</description><url>csregular/unit08_string/labExercises/02_addressLabel.html</url>
+			<description>8.3 Acronym</description><url>csregular/unit08_string/labExercises/03_acronym.html</url>
+			<description>8.4 FlashLight</description><url>csregular/unit08_string/labExercises/04_flashLight.html</url>
+			<description>8.5 LastLetter</description><url>csregular/unit08_string/labExercises/05_lastLetter.html</url>
+			<description>8.6 Mixup</description><url>csregular/unit08_string/labExercises/06_mixUp.html</url>
+			<description>8.7 Replace</description><url>csregular/unit08_string/labExercises/07_replace.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Strings(pdf)</description><url>csregular/unit08_string/worksheets/Strings.pdf</url>
+			<description>Strings(docx)</description><url>csregular/unit08_string/worksheets/Strings.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 9 Jeroo Methods</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>9.1 Create Method</description><url>csregular/unit09_jerooMethods/notes/01_createMethod.html</url>
+			<description>9.2 Conditions</description><url>csregular/unit09_jerooMethods/notes/02_conditions.html</url>
+			<description>9.3 Example</description><url>csregular/unit09_jerooMethods/notes/03_example.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>9.1 Jeroo Methods</description><url>csregular/unit09_jerooMethods/labExercises/01_jerooMethods.html</url>
+			<description>9.2 Homeward Angel 2</description><url>csregular/unit09_jerooMethods/labExercises/02_homeWard2.html</url>
+			<description>9.3 Skinny Island</description><url>csregular/unit09_jerooMethods/labExercises/03_skinnyIsland.html</url>
+			<description>9.4 Not In A Row</description><url>csregular/unit09_jerooMethods/labExercises/04_notInARow.html</url>
+			<description>9.5 Relay Race</description><url>csregular/unit09_jerooMethods/labExercises/05_relayRace.html</url>
+			<description>9.6 Squares</description><url>csregular/unit09_jerooMethods/labExercises/06_squares.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Jeroo Methods(pdf)</description><url>csregular/unit09_jerooMethods/worksheets/JerooMethods.pdf</url>
+			<description>Jeroo Methods(docx)</description><url>csregular/unit09_jerooMethods/worksheets/JerooMethods.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>Jeroo Methods Quiz</description><url>csregular/unit09_jerooMethods/quizzes/JerooMethodsQuiz.pdf</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 10 Java Methods</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>10.1 Java Methods</description><url>csregular/unit10_javaMethods/notes/01_javaMethods.html</url>
+			<description>10.2 Variable Scope</description><url>csregular/unit10_javaMethods/notes/02_scope.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Java Methods(pdf)</description><url>csregular/unit10_javaMethods/worksheets/Java Methods.pdf</url>
+			<description>Java Methods(docx)</description><url>csregular/unit10_javaMethods/worksheets/Java Methods.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>10.1 Help</description><url>csregular/unit10_javaMethods/labExercises/01_help.html</url>
+			<description>10.2 GradeNeeded</description><url>csregular/unit10_javaMethods/labExercises/02_gradeNeeded.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 11 Jeroo Control Structures</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>11.1 Control Structures</description><url>csregular/unit11_jerooControlStructures/notes/01_controlStructures.html</url>
+			<description>11.2 Sensor Methods</description><url>csregular/unit11_jerooControlStructures/notes/02_sensorMethods.html</url>
+			<description>11.3 Repetition</description><url>csregular/unit11_jerooControlStructures/notes/03_repetition.html</url>
+			<description>11.4 Selection</description><url>csregular/unit11_jerooControlStructures/notes/04_selection.html</url>
+		    <description>11.5 Compound</description><url>csregular/unit11_jerooControlStructures/notes/05_compound.html</url>
+		</category>
+				<category> 
+		    <categoryName>Jeroo Reference Sheet</categoryName>
+			<description>Reference Sheet (pdf)</description><url>csregular/unit11_jerooControlStructures/ref/ref.pdf</url>
+		</category>
+		<category> 
+			<categoryName>Lab Exercises</categoryName> 
+			<description>11.1 StairSteps</description><url>csregular/unit11_jerooControlStructures/labExercises/01_stairsteps.html</url>
+			<description>11.2 Two Friends Meet</description><url>csregular/unit11_jerooControlStructures/labExercises/02_twoFriendsMeet.html</url>
+			<description>11.3 Circle Ring</description><url>csregular/unit11_jerooControlStructures/labExercises/03_circleRing.html</url>
+			<description>11.4 Minesweeper</description><url>csregular/unit11_jerooControlStructures/labExercises/04_minesweeper.html</url>
+			<description>11.5 Gardening</description><url>csregular/unit11_jerooControlStructures/labExercises/07_gardening.html</url>
+			<description>11.6 Hurdles</description><url>csregular/unit11_jerooControlStructures/labExercises/06_hurdles.html</url>
+			<description>11.7 FlowersInNet</description><url>csregular/unit11_jerooControlStructures/labExercises/05_flowersInNet.html</url>
+			<description>11.8 Rescue Princess</description><url>csregular/unit11_jerooControlStructures/labExercises/08_rescuePrincess.html</url>
+			<description>11.9 Trail</description><url>csregular/unit11_jerooControlStructures/labExercises/09_trail.html</url>
+			<description>11.10 Tunnels</description><url>csregular/unit11_jerooControlStructures/labExercises/10_tunnels.html</url>
+			<description>11.11 Maze </description><url>csregular/unit11_jerooControlStructures/labExercises/11_maze.html</url>
+			<description>11.12 Bridge </description><url>csregular/unit11_jerooControlStructures/labExercises/12_bridge.html</url>
+			<description>11.13 WalkLake </description><url>csregular/unit11_jerooControlStructures/labExercises/13_walkLake.html</url>
+			<description>11.14 Create Assignment</description><url>csregular/unit11_jerooControlStructures/labExercises/14_group.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Jeroo Control Structures</description><url>csregular/unit11_jerooControlStructures/worksheets/JerooControlStructures.pdf</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>Jeroo Control Structures Quiz</description><url>csregular/unit11_jerooControlStructures/quizzes/JerooControlQuiz.pdf</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 12 Selection</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>12.1 Making Decisions</description><url>csregular/unit12_selection/notes/01_makingDecisions.html</url>
+			<description>12.2 Relational Operators</description><url>csregular/unit12_selection/notes/02_relationalOperators.html</url>
+			<description>12.3 Nested if</description><url>csregular/unit12_selection/notes/03_nestedIf.html</url>
+			<description>12.4 Comparing Strings</description><url>csregular/unit12_selection/notes/04_comparingStrings.html</url>
+		    <description>12.5 Logical Operators</description><url>csregular/unit12_selection/notes/05_logicalOperators.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>12.1 Compare</description><url>csregular/unit12_selection/labExercises/01_compare.html</url>
+			<description>12.2 RichterScale</description><url>csregular/unit12_selection/labExercises/02_richter.html</url>
+			<description>12.3 Triangle</description><url>csregular/unit12_selection/labExercises/03_triangle.html</url>
+			<description>12.4 LetterGrade</description><url>csregular/unit12_selection/labExercises/04_letterGrade.html</url>
+			<description>12.5 Seasons</description><url>csregular/unit12_selection/labExercises/05_seasons.html</url>
+			<description>12.6 Fraction</description><url>csregular/unit12_selection/labExercises/06_fraction.html</url>
+			<description>12.7 GUI01</description><url>csregular/unit12_selection/labExercises/07_GUI01.html</url>
+			<description>12.8 GUI02</description><url>csregular/unit12_selection/labExercises/08_GUI02.html</url>
+			<description>12.9 GUI03</description><url>csregular/unit12_selection/labExercises/09_GUI03.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 13 Java Methods2</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>13.1 Method Types</description><url>csregular/unit13_javaMethods2/notes/01_nonVoid.html</url>
+			<description>13.2 Parameters</description><url>csregular/unit13_javaMethods2/notes/02_parameters.html</url>
+		</category>
+	    <category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>13.1 NonVoid1</description><url>csregular/unit13_javaMethods2/labExercises/01_nonVoid.html</url>
+			<description>13.2 NonVoid2</description><url>csregular/unit13_javaMethods2/labExercises/02_nonVoid2.html</url>
+			<description>13.3 StringMethods</description><url>csregular/unit13_javaMethods2/labExercises/03_stringMethods.html</url>
+			<description>13.4 Planets</description><url>csregular/unit13_javaMethods2/labExercises/04_planets.html</url>
+		    <description>13.5 GUI04</description><url>csregular/unit13_javaMethods2/labExercises/05_GUI04.html</url>
+		    <description>13.6 GUI05</description><url>csregular/unit13_javaMethods2/labExercises/06_GUI05.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 14 Iteration - while</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>14.1 while Loop</description><url>csregular/unit14_while/notes/01_whileLoop.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>14.1 whilePractice</description><url>csregular/unit14_while/labExercises/01_whilePractice.html</url>
+			<description>14.2 RepeatWords</description><url>csregular/unit14_while/labExercises/02_repeatWords.html</url>
+			<description>14.3 ExamScores</description><url>csregular/unit14_while/labExercises/03_examScores.html</url>
+		    <description>14.4 Averages</description><url>csregular/unit14_while/labExercises/04_averages.html</url>
+		    <description>14.5 GUI06 RandomLines</description><url>csregular/unit14_while/labExercises/05_GUI06.html</url>
+			<description>14.6 GUI07 JButton</description><url>csregular/unit14_while/labExercises/06_GUI07.html</url>
+			<description>14.7 GUI08 Listener</description><url>csregular/unit14_while/labExercises/07_GUI08.html</url>
+			<description>14.8 GUI09 Invisible</description><url>csregular/unit14_while/labExercises/08_GUI09.html</url>
+		</category>
+	</unit>
+		<unit>
+	    <unitName>Unit 15 Iteration - do while</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>15.1 do while Loop</description><url>csregular/unit15_doWhile/notes/01_dowhileLoop.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>15.1 dowhilePractice</description><url>csregular/unit15_doWhile/labExercises/01_dowhilePractice.html</url>
+			<description>15.2 Repeat Menu</description><url>csregular/unit15_doWhile/labExercises/02_repeatMenu.html</url>
+			<description>15.3 Table</description><url>csregular/unit15_doWhile/labExercises/03_table.html</url>
+		    <description>15.4 Largest</description><url>csregular/unit15_doWhile/labExercises/04_largest.html</url>
+		    <description>15.5 Digits</description><url>csregular/unit15_doWhile/labExercises/05_digits.html</url>
+			<description>15.6 GUI10 Starburst</description><url>csregular/unit15_doWhile/labExercises/06_GUI10.html</url>
+			<description>15.7 GUI11 TextField</description><url>csregular/unit15_doWhile/labExercises/07_GUI11.html</url>
+			<description>15.8 GUI12 Password</description><url>csregular/unit15_doWhile/labExercises/08_GUI12.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 16 Iteration - for</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>16.1 for Loop</description><url>csregular/unit16_for/notes/01_forLoop.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>16.1 forPractice</description><url>csregular/unit16_for/labExercises/01_forPractice.html</url>
+			<description>16.2 Vertical String</description><url>csregular/unit16_for/labExercises/02_verticalString.html</url>
+			<description>16.3 Square</description><url>csregular/unit16_for/labExercises/03_square.html</url>
+		    <description>16.4 GUI13 Gradient</description><url>csregular/unit16_for/labExercises/04_GUI13.html</url>
+		    <description>16.5 GUI14 Coordinate Plane</description><url>csregular/unit16_for/labExercises/05_GUI14.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 17 Nested Loops</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>17.1 nested</description><url>csregular/unit17_nested/notes/01_nested.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>17.1 Nested</description><url>csregular/unit17_nested/labExercises/01_nested.html</url>
+			<description>17.2 Patterns</description><url>csregular/unit17_nested/labExercises/02_patterns.html</url>
+			<description>17.3 Times Table</description><url>csregular/unit17_nested/labExercises/03_timesTable.html</url>
+		    <description>17.4 Christmas</description><url>csregular/unit17_nested/labExercises/04_christmas.html</url>
+		    <description>17.5 GUI15 Checkerboard</description><url>csregular/unit17_nested/labExercises/05_GUI15.html</url>
+		</category>
+	</unit>
+    <unit>
+	    <unitName>Unit 18 Arrays</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>18.1 Arrays</description><url>csregular/unit18_arrays/notes/01_arrays.html</url>
+			<description>18.2 Traversing Arrays</description><url>csregular/unit18_arrays/notes/02_traversingArray.html</url>
+			<description>18.3 Logical Size</description><url>csregular/unit18_arrays/notes/03_logicalSize.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>18.1 ArrayPractice</description><url>csregular/unit18_arrays/labExercises/01_arrayPractice.html</url>
+			<description>18.2 WordList</description><url>csregular/unit18_arrays/labExercises/02_wordList.html</url>
+			<description>18.3 Reverse</description><url>csregular/unit18_arrays/labExercises/03_reverse.html</url>
+		    <description>18.4 ChangeCase</description><url>csregular/unit18_arrays/labExercises/04_changeCase.html</url>
+		    <description>18.5 SportsEvent</description><url>csregular/unit18_arrays/labExercises/05_sportsEvent.html</url>
+			<description>18.6 HighLow</description><url>csregular/unit18_arrays/labExercises/06_highLow.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 19 Class Decomposition</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>19.1 Class Decomposition</description><url>csregular/unit19_classDecomposition/notes/01_classDecomposition.html</url>
+			<description>19.2 Anatomy of a Class</description><url>csregular/unit19_classDecomposition/notes/02_classAnatomy.html</url>
+			<description>19.3 Encapsulation</description><url>csregular/unit19_classDecomposition/notes/03_encapsulation.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>19.1 Piggy Bank</description><url>csregular/unit19_classDecomposition/labExercises/01_piggyBank.html</url>
+			<description>19.2 Compass</description><url>csregular/unit19_classDecomposition/labExercises/02_compass.html</url>
+			<description>19.3 SlotMachine</description><url>csregular/unit19_classDecomposition/labExercises/03_slotMachine.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 20 Class Special Methods</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>20.1 Constructors</description><url>csregular/unit20_classesSpecial/notes/01_constructors.html</url>
+			<description>20.2 Accessor Methods</description><url>csregular/unit20_classesSpecial/notes/02_accessors.html</url>
+			<description>20.3 Mutator Methods</description><url>csregular/unit20_classesSpecial/notes/03_mutators.html</url>
+		    <description>20.4 toString Method</description><url>csregular/unit20_classesSpecial/notes/04_toString.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>20.1 FarmAnimals</description><url>csregular/unit20_classesSpecial/labExercises/01_farmAnimals.html</url>
+			<description>20.2 States</description><url>csregular/unit20_classesSpecial/labExercises/02_states.html</url>
+			<description>20.3 Favorites</description><url>csregular/unit20_classesSpecial/labExercises/03_favorites.html</url>
+		    <description>20.4 Rectangle</description><url>csregular/unit20_classesSpecial/labExercises/04_rectangle.html</url>
+		    <description>20.5 Assignment</description><url>csregular/unit20_classesSpecial/labExercises/05_assignment.html</url>
+			<description>20.6 Television</description><url>csregular/unit20_classesSpecial/labExercises/06_television.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 21 Object Arrays</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>21.1 Object Arrays</description><url>csregular/unit21_objectArrays/notes/01_objectArrays.html</url>
+			<description>21.2 Object Parameters</description><url>csregular/unit21_objectArrays/notes/02_objectParameters.html</url>
+			<description>21.3 Array Parameters</description><url>csregular/unit21_objectArrays/notes/03_arrayParameters.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>21.1 Kennel</description><url>csregular/unit21_objectArrays/labExercises/01_kennel.html</url>
+			<description>21.2 Book Inventory</description><url>csregular/unit21_objectArrays/labExercises/02_inventory.html</url>
+			<description>21.3 Basketball</description><url>csregular/unit21_objectArrays/labExercises/03_basketball.html</url>
+            <description>21.4 BirthdayList</description><url>csregular/unit21_objectArrays/labExercises/04_birthday.html</url>
+		</category>
+	</unit>
+		<unit>
+	    <unitName>Unit 22 File I/O</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>22.1 File Input</description><url>csregular/unit22_fileIO/notes/01_fileInput.html</url>
+			<description>22.2 Input Example</description><url>csregular/unit22_fileIO/notes/02_inputExample.html</url>
+			<description>22.3 File Output</description><url>csregular/unit22_fileIO/notes/03_fileOutput.html</url>
+			<description>22.4 Output Example</description><url>csregular/unit22_fileIO/notes/04_outputExample.html</url>
+			<description>22.5 Serialize</description><url>csregular/unit22_fileIO/notes/05_serialize.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>22.1 ReadInts</description><url>csregular/unit22_fileIO/labExercises/01_readInts.html</url>
+			<description>22.2 Gettysburg</description><url>csregular/unit22_fileIO/labExercises/02_gettysburg.html</url>
+			<description>22.3 Random States</description><url>csregular/unit22_fileIO/labExercises/03_randomState.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 23 printf</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>23.1 printf</description><url>csregular/unit23_printf/notes/01_printf.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>23.1 printfPractice</description><url>csregular/unit23_printf/labExercises/01_printfPractice.html</url>
+			<description>23.2 Concession Stand</description><url>csregular/unit23_printf/labExercises/02_concessions.html</url>
+			<description>23.3 Semester Avg</description><url>csregular/unit23_printf/labExercises/03_semesterAvg.html</url>
+		    <description>23.4 GUI16 PersonalInfo</description><url>csregular/unit23_printf/labExercises/04_GUI16.html</url>
+		    <description>23.5 GUI17 Coin Flip</description><url>csregular/unit23_printf/labExercises/05_GUI17.html</url>
+			<description>23.6 GUI18 ASCII Chart</description><url>csregular/unit23_printf/labExercises/06_GUI18.html</url>
+		</category>
+	</unit>
+    <!--
+	<unit>
+	    <unitName>Final Exam</unitName>
+		<category> 
+		    <categoryName>Final Exam</categoryName>
+			<description>Final Exam</description><url>preap/Final Exam/finalExam.html</url>
+		</category>
+	</unit> 
+	-->
+</course>

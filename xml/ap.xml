@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+    <apUnit>
+    <apUnitName>Unit 1 Primitive Types</apUnitName>
+    <apUnitWeight>2.5-5%</apUnitWeight>
+    <unit>
+	    <unitName>Topic 1.1 Number Systems</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>1.1.1 Number Systems</description><url>csregular/unit01_binary/notes/01_binary.html</url>
+			<description>1.1.2 Number Conversions</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
+			<description>1.1.3 Binary Arithmetic</description><url>ap/unit00_binary/notes/binaryArithmetic.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>1.1.1 Number Systems(pdf)</description><url>ap/unit00_binary/worksheets/Number Systems.pdf</url>
+			<description>1.1.1 Number Systems(docx)</description><url>ap/unit00_binary/worksheets/Number Systems.docx</url>
+			<description>1.1.2 Binary Arithmetic(pdf)</description><url>ap/unit00_binary/worksheets/Binary Arithmetic.pdf</url>
+			<description>1.1.2 Binary Arithmetic(docx)</description><url>ap/unit00_binary/worksheets/Binary Arithmetic.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>1.1.1 Number Systems Quiz(pdf)</description><url>csregular/unit01_binary/quizzes/Number Systems Quiz.pdf</url>
+			<description>1.1.1 Number Systems Quiz(docx)</description><url>csregular/unit01_binary/quizzes/Number Systems Quiz.docx</url>
+		</category>
+	</unit>
+   <unit>
+      <unitName>Topic 1.2 Primitive Types </unitName>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 1 Progress Check MCQ A</description><url>https://apclassroom.collegeboard.org/</url>
+         <description>Unit 1 Progress Check MCQ B</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+    </unit>
+	</apUnit>
+
+	<apUnit>
+    <apUnitName>Unit 2 Using Objects</apUnitName>
+    <apUnitWeight>5-7.5%</apUnitWeight>
+	<unit>
+	    <unitName>Topic 2.1 Strings: APCS Lab - Magpie</unitName>
+		<category> 
+		    <categoryName>Magpie Workspace</categoryName>
+			   <description>NetBeans Workspace</description><url>ap/AP_Lab_Magpie/magpieWorkspace/MagpieNB.zip</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>Activity1</description><url>ap/AP_Lab_Magpie/labExercises/01_activity1.html</url>
+			<description>Activity2</description><url>ap/AP_Lab_Magpie/labExercises/02_activity2.html</url>
+			<description>Activity3</description><url>ap/AP_Lab_Magpie/labExercises/03_activity3.html</url>
+			<description>Activity4</description><url>ap/AP_Lab_Magpie/labExercises/04_activity4.html</url>
+			<description>Activity5</description><url>ap/AP_Lab_Magpie/labExercises/05_activity5.html</url>
+		</category>		
+		<category> 
+		    <categoryName>Docs</categoryName>
+			<description>MagPie2 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie2.htm</url>
+			<description>MagPie3 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie3.htm</url>
+			<description>MagPie4 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie4.htm</url>
+			<description>MagPie5 docs</description><url>ap/AP_Lab_Magpie/docs/Magpie5.htm</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>2.1.1 Money</description><url>ap/AP_Lab_Magpie/apFreeResponse/01_money.html</url>
+		</category>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 2 Progress Check MCQ A</description><url>https://apclassroom.collegeboard.org/</url>
+         <description>Unit 2 Progress Check MCQ B</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 2 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+   	<unit>
+	    <unitName>Topic 2.2 Using Objects</unitName>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 2 Progress Check MCQ A</description><url>https://apclassroom.collegeboard.org/</url>
+         <description>Unit 2 Progress Check MCQ B</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 2 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+	</apUnit>
+
+	<apUnit>
+    <apUnitName>Unit 3 Selection</apUnitName>
+	<apUnitWeight>15-17.5%</apUnitWeight>
+   <unit>
+      <unitName>Topic 3.1-3.7 Boolean Expressions and if Statements</unitName>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 3 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 3 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+    </unit>
+	</apUnit>
+
+	<apUnit>
+    <apUnitName>Unit 4 Iteration</apUnitName>
+    <apUnitWeight>17.5-22.5%</apUnitWeight>
+    <unit>
+      <unitName>Topic 4.1-4.5 Loops</unitName>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 4 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 4 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+    </unit>
+    </apUnit>
+
+	<apUnit>
+    <apUnitName>Unit 5 Writing Classes</apUnitName>
+    <apUnitWeight>5-7.5%</apUnitWeight>
+	<unit>
+	    <unitName>Topic 5.1 Methods</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			   <description>5.1.1 Methods</description><url>ap/unit01_methodsReview/notes/01_methods.html</url>
+		       <description>5.1.2 Static Methods</description><url>ap/unit01_methodsReview/notes/02_staticMethods.html</url>
+               <description>5.1.3 Why Use Methods</description><url>ap/unit01_methodsReview/notes/03_whyMethods.html</url>
+               <description>5.1.4 Overloaded Methods</description><url>ap/unit01_methodsReview/notes/04_methodOverloading.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>5.1.1 MethodPractice1</description><url>ap/unit01_methodsReview/labExercises/01_methodPractice1.html</url>
+		    <description>5.1.2 MethodPractice2</description><url>ap/unit01_methodsReview/labExercises/02_methodPractice2.html</url>
+		    <description>5.1.3 GuessingGame</description><url>ap/unit01_methodsReview/labExercises/03_guessingGame.html</url>
+		    <description>5.1.4 Utility</description><url>ap/unit01_methodsReview/labExercises/04_utility.html</url>
+		    <description>5.1.5 UIL CompSci</description><url>ap/unit01_methodsReview/labExercises/05_uilCompSci.html</url>
+		</category>
+      <category> 
+		    <categoryName>AP Free Response</categoryName>
+         <description>5.1.1 APCalendar</description><url>ap/unit01_methodsReview/apFreeResponse/01_APCalendar.html</url>
+         <description>5.1.2 Frog Simulation</description><url>ap/unit01_methodsReview/apFreeResponse/02_FrogSimulation.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Topic 5.2 Writing Classes</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			   <description>5.2.1 Class Decomposition</description><url>csregular/unit19_classDecomposition/notes/01_classDecomposition.html</url>
+			   <description>5.2.2 Anatomy of a Class</description><url>csregular/unit19_classDecomposition/notes/02_classAnatomy.html</url>
+			   <description>5.2.3 Constructors</description><url>csregular/unit20_classesSpecial/notes/01_constructors.html</url>
+			   <description>5.2.4 Accessor Methods</description><url>csregular/unit20_classesSpecial/notes/02_accessors.html</url>
+			   <description>5.2.5 Mutator Methods</description><url>csregular/unit20_classesSpecial/notes/03_mutators.html</url>
+		       <description>5.2.6 toString Method</description><url>csregular/unit20_classesSpecial/notes/04_toString.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>5.2.1 Box</description><url>ap/unit02_classesReview/labExercises/01_box.html</url>
+		    <description>5.2.2 Car</description><url>ap/unit02_classesReview/labExercises/02_car.html</url>
+			<description>5.2.3 School Dance</description><url>ap/unit02_classesReview/labExercises/03_dance.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>5.2.1 APLine</description><url>ap/unit02_classesReview/apFreeResponse/01_apLine.html</url>
+         <description>5.2.2 StepTracker</description><url>ap/unit02_classesReview/apFreeResponse/02_StepTracker.html</url>
+         <description>5.2.3 CodeWordChecker</description><url>ap/unit02_classesReview/apFreeResponse/03_CodeWordChecker.html</url>
+		</category>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 5 Progress Check MCQ Part A</description><url>https://apclassroom.collegeboard.org/</url>
+         <description>Unit 5 Progress Check MCQ Part B</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 5 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+	</apUnit>
+
+	<apUnit>
+    <apUnitName>Unit 6 Array</apUnitName>
+    <apUnitWeight>10-15%</apUnitWeight>
+	<unit>
+    <unitName>Topic 6.1 Arrays</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>6.1.1 Arrays</description><url>csregular/unit18_arrays/notes/01_arrays.html</url>
+			<description>6.1.2 Traversing Arrays</description><url>csregular/unit18_arrays/notes/02_traversingArray.html</url>
+			<description>6.1.3 Logical Size</description><url>csregular/unit18_arrays/notes/03_logicalSize.html</url>
+		    <description>6.1.4 Object Arrays</description><url>csregular/unit21_objectArrays/notes/01_objectArrays.html</url>
+			<description>6.1.5 Object Parameters</description><url>csregular/unit21_objectArrays/notes/02_objectParameters.html</url>
+			<description>6.1.6 Array Parameters</description><url>csregular/unit21_objectArrays/notes/03_arrayParameters.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>6.1.1 Numbers</description><url>ap/unit03_arraysReview/labExercises/01_numbers.html</url>
+			<description>6.1.2 Vowels</description><url>ap/unit03_arraysReview/labExercises/02_vowels.html</url>
+			<description>6.1.3 Tardies</description><url>ap/unit03_arraysReview/labExercises/03_tardies.html</url>
+			<description>6.1.4 MyArray</description><url>ap/unit03_arraysReview/labExercises/04_myArray.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>6.1.1 GroceryList</description><url>ap/unit03_arraysReview/apFreeResponse/01_groceryList.html</url>
+			<description>6.1.2 SelfDivisor</description><url>ap/unit03_arraysReview/apFreeResponse/02_selfDivisor.html</url>
+			<description>6.1.3 StudentRecord</description><url>ap/unit03_arraysReview/apFreeResponse/03_studentRecord.html</url>
+			<description>6.1.4 NumberCube</description><url>ap/unit03_arraysReview/apFreeResponse/04_numberCube.html</url>
+		</category>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 6 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 6 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+	
+<unit>
+	   <unitName>Topic 6.2 Searching an Array</unitName>
+		<category> 
+		     <categoryName>Notes</categoryName>
+			      <description>6.2.1 Linear Search</description><url>ap/unit11_searching/notes/01_linearSearch.html</url>
+			     <description>6.2.2 Binary Search</description><url>ap/unit11_searching/notes/02_binarySearch.html</url>
+			     <description>6.2.3 Comparable Interface</description><url>ap/unit11_searching/notes/03_comparable.html</url>
+		</category>
+      
+		<category>
+         <categoryName>Lab Exercises</categoryName>
+			<description>6.2.1 SpellCheck</description><url>ap/unit11_searching/labExercises/01_spellCheck.html</url>
+			<description>6.2.2 States</description><url>ap/unit11_searching/labExercises/02_states.html</url>
+		</category>
+
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>6.2.1 Searching Worksheet(pdf)</description><url>ap/unit11_searching/worksheets/Searching Worksheet.pdf</url>
+			<description>6.2.1 Searching Worksheet(docx)</description><url>ap/unit11_searching/worksheets/Searching Worksheet.docx</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>6.2.1 Searching Quiz(pdf)</description><url>ap/unit11_searching/quizzes/Searching Quiz.pdf</url>
+			<description>6.2.1 Searching Quiz(docx)</description><url>ap/unit11_searching/quizzes/Searching Quiz.docx</url>
+		</category>
+	</unit>
+
+
+
+
+	<unit>
+	    <unitName>Topic 6.3 Sorting an Array</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>6.3.1 Sorting</description><url>ap/unit12_sorting/notes/01_sorting.html</url>
+			<description>6.3.2 Selection Sort</description><url>ap/unit12_sorting/notes/02_selection.html</url>
+			<description>6.3.3 Insertion Sort</description><url>ap/unit12_sorting/notes/03_insertion.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>6.3.1 SortPractice</description><url>ap/unit12_sorting/labExercises/01_sortPractice.html</url>
+			<description>6.3.2 SortFriends</description><url>ap/unit12_sorting/labExercises/02_sortFriends.html</url>
+		</category>
+	</unit>
+	</apUnit>
+
+	<apUnit>
+    <apUnitName>Unit 7 ArrayList</apUnitName>
+    <apUnitWeight>2.5-7.5%</apUnitWeight>
+	<unit>
+    <unitName>Topic 7.1 ArrayList</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>7.1.1 ArrayList</description><url>ap/unit05_arrayList/notes/01_arrayList.html</url>
+			<description>7.1.2 Wrapper Classes</description><url>ap/unit05_arrayList/notes/02_wrapper.html</url>
+			<description>7.1.3 Enhanced for Loop</description><url>ap/unit05_arrayList/notes/03_enhancedFor.html</url>
+			<description>7.1.4 remove Method</description><url>ap/unit05_arrayList/notes/04_remove.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>7.1.1 ArrayListPractice</description><url>ap/unit05_arrayList/labExercises/01_arrayListPractice.html</url>
+			<description>7.1.2 PhoneList</description><url>ap/unit05_arrayList/labExercises/02_phoneList.html</url>
+			<description>7.1.3 Diet</description><url>ap/unit05_arrayList/labExercises/03_diet.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>7.1.1 SchoolRoster</description><url>ap/unit05_arrayList/apFreeResponse/01_schoolRoster.html</url>
+			<description>7.1.2 WordList</description><url>ap/unit05_arrayList/apFreeResponse/02_wordList.html</url>
+			<description>7.1.3 Retirement</description><url>ap/unit05_arrayList/apFreeResponse/03_retirement.html</url>
+			<description>7.1.4 CookieOrder</description><url>ap/unit05_arrayList/apFreeResponse/04_cookieOrder.html</url>
+			<description>7.1.5 StudentAnswerSheet</description><url>ap/unit05_arrayList/apFreeResponse/05_studentAnswerSheet.html</url>
+			<description>7.1.6 Appointment</description><url>ap/unit05_arrayList/apFreeResponse/06_appointment.html</url>
+         <description>7.1.7 Delimiters</description><url>ap/unit05_arrayList/apFreeResponse/07_Delimiters.html</url>
+         <description>7.1.8 WordPair</description><url>ap/unit05_arrayList/apFreeResponse/08_WordPair.html</url>
+		</category>
+		<category> 
+		    <categoryName>Quizzes</categoryName> 
+			<description>7.1.1 Array vs ArrayList Quiz(pdf)</description><url>ap/unit05_arrayList/quizzes/Array and ArrayList Quiz.pdf</url>
+			<description>7.1.1 Array vs ArrayList Quiz(docx)</description><url>ap/unit05_arrayList/quizzes/Array and ArrayList Quiz.docx</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Topic 7.2 Searching an ArrayList</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>7.2.1 Linear Search</description><url>ap/unit11_searching/notes/01_linearSearch.html</url>
+			<description>7.2.2 Binary Search</description><url>ap/unit11_searching/notes/02_binarySearch.html</url>
+			<description>7.2.3 Comparable Interface</description><url>ap/unit11_searching/notes/03_comparable.html</url>
+		</category>
+		<category>
+         <categoryName>Lab Exercises</categoryName>
+			<description>7.2.1 SpellCheck2</description><url>ap/unit11_searching/labExercises/01_spellCheck2.html</url>
+			<description>7.2.2 States2</description><url>ap/unit11_searching/labExercises/02_states2.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>7.2.1 Book</description><url>ap/unit11_searching/apFreeResponse/01_book.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Topic 7.3 Sorting an ArrayList</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>7.3.1 Sorting</description><url>ap/unit12_sorting/notes/01_sorting.html</url>
+			<description>7.3.2 Selection Sort</description><url>ap/unit12_sorting/notes/02_selection.html</url>
+			<description>7.3.3 Insertion Sort</description><url>ap/unit12_sorting/notes/03_insertion.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>7.3.1 SortNames</description><url>ap/unit12_sorting/labExercises/03_sortNames.html</url>
+			<description>7.3.2 SortStates</description><url>ap/unit12_sorting/labExercises/04_sortStates.html</url>
+		</category>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 7 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 7 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+	</apUnit>
+	<apUnit>
+    <apUnitName>Unit 8 2D Arrays</apUnitName>
+    <apUnitWeight>7.5-10%</apUnitWeight>
+    <unit>
+    <unitName>Topic 8.1 Two-Dimensional Arrays</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>8.1.1 2DArrays</description><url>ap/unit04_2DArrays/notes/01_2DArrays.html</url>
+			<description>8.1.2 Manipulating 2DArrays</description><url>ap/unit04_2DArrays/notes/02_manipulate.html</url>
+			<description>8.1.3 Enhanced for Loop</description><url>ap/unit04_2DArrays/notes/03_enhancedFor.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>8.1.1 LessThan100</description><url>ap/unit04_2DArrays/labExercises/01_lessThan100.html</url>
+			<description>8.1.2 Transpose</description><url>ap/unit04_2DArrays/labExercises/02_transpose.html</url>
+			<description>8.1.3 StoreLargest</description><url>ap/unit04_2DArrays/labExercises/03_storeLargest.html</url>
+			<description>8.1.4 SumMatrix</description><url>ap/unit04_2DArrays/labExercises/04_sumMatrix.html</url>
+			<description>8.1.5 SeatingChart</description><url>ap/unit04_2DArrays/labExercises/05_seatingChart.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>8.1.1 TreasureMap</description><url>ap/unit04_2DArrays/apFreeResponse/01_treasureMap.html</url>
+			<description>8.1.2 RouteCipher</description><url>ap/unit04_2DArrays/apFreeResponse/02_routeCipher.html</url>
+			<description>8.1.3 GrayScale</description><url>ap/unit04_2DArrays/apFreeResponse/03_grayScale.html</url>
+            <description>8.1.4 LightBoard</description><url>ap/unit04_2DArrays/apFreeResponse/04_LightBoard.html</url>
+            <description>8.1.5 ArrayTester</description><url>ap/unit04_2DArrays/apFreeResponse/05_ArrayTester.html</url>
+
+		</category>
+      <category> 
+		   <categoryName>AP Classroom</categoryName> 
+			<description>Unit 8 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 8 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+	</apUnit>
+	<apUnit>
+    <apUnitName>Unit 9 Inheritance</apUnitName>
+    <apUnitWeight>5-10%</apUnitWeight>
+	<unit>
+    <unitName>Topic 9.1 Inheritance</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>9.1.1 Inheritance</description><url>ap/unit06_inheritance/notes/01_inheritance.html</url>
+			<description>9.1.2 Polymorphism</description><url>ap/unit06_inheritance/notes/02_polymorphism.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>9.1.1 CombinationLock</description><url>ap/unit06_inheritance/labExercises/01_combinationLock.html</url>
+			<description>9.1.2 RaceHorse</description><url>ap/unit06_inheritance/labExercises/02_raceHorse.html</url>
+			<description>9.1.3 Scheduler</description><url>ap/unit06_inheritance/labExercises/03_scheduler.html</url>
+			<description>9.1.4 SportsTeam</description><url>ap/unit06_inheritance/labExercises/04_sportsTeam.html</url>
+			<description>9.1.5 Vacation</description><url>ap/unit06_inheritance/labExercises/05_vacation.html</url>
+			<description>9.1.6 Photographer</description><url>ap/unit06_inheritance/labExercises/06_photographer.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>9.1.1 DepartmentStore</description><url>ap/unit06_inheritance/apFreeResponse/01_departmentStore.html</url>
+		</category>
+
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 9 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 9 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+<!--	<unit>
+	    <unitName>Unit 8 Abstract Classes</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>8.1 Abstract Classes</description><url>ap/unit07_abstractClasses/notes/01_abstractClasses.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>8.1 Donation</description><url>ap/unit07_abstractClasses/labExercises/01_donation.html</url>
+			<description>8.2 Wages</description><url>ap/unit07_abstractClasses/labExercises/02_wages.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>8.1 Pet</description><url>ap/unit07_abstractClasses/apFreeResponse/01_pet.html</url>
+			<description>8.2 Ticket</description><url>ap/unit07_abstractClasses/apFreeResponse/02_ticket.html</url>
+			<description>8.3 Hotel</description><url>ap/unit07_abstractClasses/apFreeResponse/03_hotel.html</url>
+			<description>8.4 Warehouse</description><url>ap/unit07_abstractClasses/apFreeResponse/04_warehouse.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 9 Interfaces</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>9.1 Interfaces</description><url>ap/unit08_interfaces/notes/01_interfaces.html</url>
+			<description>9.2 Comparable Interface</description><url>ap/unit08_interfaces/notes/02_comparable.html</url>
+			<description>9.3 Polymorphism</description><url>ap/unit08_interfaces/notes/03_polymorphism.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>9.1 Area</description><url>ap/unit08_interfaces/labExercises/01_area.html</url>
+			<description>9.2 Quiz</description><url>ap/unit08_interfaces/labExercises/02_quiz.html</url>
+		</category>
+		<category> 
+		    <categoryName>AP Free Response</categoryName> 
+			<description>9.1 College</description><url>ap/unit08_interfaces/apFreeResponse/01_college.html</url>
+			<description>9.2 Employee</description><url>ap/unit08_interfaces/apFreeResponse/02_employee.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>APCS Lab - Picture</unitName>
+		<category> 
+		    <categoryName>Picture Workspace</categoryName>
+			   <description>JCreator Workspace</description><url>ap/AP_Lab_Picture/pictureWorkspace/PictureJC.zip</url>
+			   <description>NetBeans Workspace</description><url>ap/AP_Lab_Picture/pictureWorkspace/PictureNB.zip</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>Activity1</description><url>ap/AP_Lab_Picture/labExercises/01_activity1.html</url>
+			<description>Activity2</description><url>ap/AP_Lab_Picture/labExercises/02_activity2.html</url>
+			<description>Activity3</description><url>ap/AP_Lab_Picture/labExercises/03_activity3.html</url>
+			<description>Activity4</description><url>ap/AP_Lab_Picture/labExercises/04_activity4.html</url>
+			<description>Activity5</description><url>ap/AP_Lab_Picture/labExercises/05_activity5.html</url>
+			<description>Activity6</description><url>ap/AP_Lab_Picture/labExercises/06_activity6.html</url>
+			<description>Activity7</description><url>ap/AP_Lab_Picture/labExercises/07_activity7.html</url>
+			<description>Activity8</description><url>ap/AP_Lab_Picture/labExercises/08_activity8.html</url>
+			<description>Activity9</description><url>ap/AP_Lab_Picture/labExercises/09_activity9.html</url>
+		</category>		
+		<category> 
+		    <categoryName>Docs</categoryName>
+			<description>ColorChooser</description><url>ap/AP_Lab_Picture/docs/ColorChooser.htm</url>
+			<description>DigitalPicture</description><url>ap/AP_Lab_Picture/docs/DigitalPicture.htm</url>
+			<description>FileChooser</description><url>ap/AP_Lab_Picture/docs/FileChooser.htm</url>
+			<description>ImageDisplay</description><url>ap/AP_Lab_Picture/docs/ImageDisplay.htm</url>
+			<description>IntArrayWorker</description><url>ap/AP_Lab_Picture/docs/IntArrayWorker.htm</url>
+			<description>IntArrayWorkerTester</description><url>ap/AP_Lab_Picture/docs/IntArrayWorkerTester.htm</url>
+			<description>Picture</description><url>ap/AP_Lab_Picture/docs/Picture.htm</url>
+			<description>PictureExplorer</description><url>ap/AP_Lab_Picture/docs/PictureExplorer.htm</url>
+			<description>PictureFrame</description><url>ap/AP_Lab_Picture/docs/PictureFrame.htm</url>
+			<description>PictureTester</description><url>ap/AP_Lab_Picture/docs/PictureTester.htm</url>
+			<description>Pixel</description><url>ap/AP_Lab_Picture/docs/Pixel.htm</url>
+			<description>SimplePicture</description><url>ap/AP_Lab_Picture/docs/SimplePicture.htm</url>
+		</category>
+	</unit>
+	-->
+	</apUnit>
+	<apUnit>
+	<apUnitName>Unit 10 Recursion</apUnitName>
+    <apUnitWeight>5-7.5%</apUnitWeight>
+	<unit>
+	    <unitName>Topic 10.1 Recursion</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>10.1.1 Recursive Thinking</description><url>ap/unit10_recursion/notes/01_intro.html</url>
+			<description>10.2.1 Recursive Programming</description><url>ap/unit10_recursion/notes/02_recursion.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>10.1.1 CountDown</description><url>ap/unit10_recursion/labExercises/01_countDown.html</url>
+			<description>10.1.2 Song</description><url>ap/unit10_recursion/labExercises/02_song.html</url>
+			<description>10.1.3 Fibonacci</description><url>ap/unit10_recursion/labExercises/03_fibonnaci.html</url>
+			<description>10.1.4 ReverseString</description><url>ap/unit10_recursion/labExercises/04_reverseString.html</url>
+			<description>10.1.5 Palindrome</description><url>ap/unit10_recursion/labExercises/05_palindrome.html</url>
+		</category>
+		<category> 
+		    <categoryName>Worksheets</categoryName> 
+			<description>Recursion(pdf)</description><url>ap/unit10_recursion/worksheets/Recursion.pdf</url>
+			<description>Recursion(docx)</description><url>ap/unit10_recursion/worksheets/Recursion.docx</url>
+		</category>
+      <category> 
+		    <categoryName>AP Classroom</categoryName> 
+			<description>Unit 10 Progress Check MCQ</description><url>https://apclassroom.collegeboard.org/</url>
+			<description>Unit 10 Progress Check FRQ</description><url>https://apclassroom.collegeboard.org/</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Topic 10.2 Recursive Searching</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>10.2.1 Linear Search</description><url>ap/unit11_searching/notes/01_linearSearch.html</url>
+			<description>10.2.2 Binary Search</description><url>ap/unit11_searching/notes/02_binarySearch.html</url>
+			<description>10.2.3 Comparable Interface</description><url>ap/unit11_searching/notes/03_comparable.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>10.2.1 RecursiveSearch</description><url>ap/unit11_searching/labExercises/03_recursiveSearch.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Topic 10.3 Recursive Sorting</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>10.3.1 Merge Sort</description><url>ap/unit12_sorting/notes/04_merge.html</url>
+			<description>10.3.2 Quick Sort (Not AP)(</description><url>ap/unit12_sorting/notes/05_quick.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>10.3.1 SortNames</description><url>ap/unit12_sorting/labExercises/05_sortNames2.html</url>
+			<description>10.3.2 SortStates</description><url>ap/unit12_sorting/labExercises/06_sortStates2.html</url>
+		</category>
+	</unit>
+	</apUnit>
+	
+	<!--
+	<unit>
+	    <unitName>APCS Lab - Elevens</unitName>
+		<category> 
+		    <categoryName>Elevens Workspace</categoryName>
+			    <description>NetBeans Workspace</description><url>ap/AP_Lab_Elevens/elevensWorkspace/ElevensNB.zip</url>
+			   <description>JCreator Workspace</description><url>ap/AP_Lab_Elevens/elevensWorkspace/Elevens.zip</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName>
+			<description>Activity1</description><url>ap/AP_Lab_Elevens/labExercises/01_activity1.html</url>
+			<description>Activity2</description><url>ap/AP_Lab_Elevens/labExercises/02_activity2.html</url>
+			<description>Activity3</description><url>ap/AP_Lab_Elevens/labExercises/03_activity3.html</url>
+			<description>Activity4</description><url>ap/AP_Lab_Elevens/labExercises/04_activity4.html</url>
+			<description>Activity6</description><url>ap/AP_Lab_Elevens/labExercises/06_activity6.html</url>
+			<description>Activity7</description><url>ap/AP_Lab_Elevens/labExercises/07_activity7.html</url>
+			<description>Activity8</description><url>ap/AP_Lab_Elevens/labExercises/08_activity8.html</url>
+			<description>Activity9</description><url>ap/AP_Lab_Elevens/labExercises/09_activity9.html</url>
+			<description>Activity10</description><url>ap/AP_Lab_Elevens/labExercises/10_activity10.html</url>
+			<description>Activity11</description><url>ap/AP_Lab_Elevens/labExercises/11_activity11.html</url>
+		</category>		
+		<category> 
+		    <categoryName>Docs</categoryName>
+			<description>Board</description><url>ap/AP_Lab_Elevens/docs/Board.htm</url>
+			<description>Card</description><url>ap/AP_Lab_Elevens/docs/Card.htm</url>
+			<description>Deck</description><url>ap/AP_Lab_Elevens/docs/Deck.htm</url>
+			<description>ElevensBoard</description><url>ap/AP_Lab_Elevens/docs/ElevensBoard.htm</url>
+			<description>ElevensGUIRunner</description><url>ap/AP_Lab_Elevens/docs/ElevensGUIRunner.htm</url>
+			<description>ThirteensBoard</description><url>ap/AP_Lab_Elevens/docs/ThirteensBoard.htm</url>
+			<description>ThirteensGUIRunner</description><url>ap/AP_Lab_Elevens/docs/ThirteensGUIRunner.htm</url>
+		</category>
+	</unit>
+	
+	
+	<unit>
+	    <unitName>Unit 13 Exceptions</unitName>
+		<category> 
+		    <categoryName>Notes</categoryName>
+			<description>13.1 Intro to Exceptions</description><url>ap/unit13_exceptions/notes/01_intro.html</url>
+			<description>13.2 Throw/Catch</description><url>ap/unit13_exceptions/notes/02_throwCatch.html</url>
+			<description>13.3 Classifications</description><url>ap/unit13_exceptions/notes/03_classify.html</url>
+			<description>13.4 Finally</description><url>ap/unit13_exceptions/notes/04_finally.html</url>
+		</category>
+		<category> 
+		    <categoryName>Lab Exercises</categoryName> 
+			<description>13.1 IntegerCalc</description><url>ap/unit13_exceptions/labExercises/01_integerCalc.html</url>
+		</category>
+	</unit>
+	-->
+	<!--
+	<unit>
+	    <unitName>Final Exam</unitName>
+		<category> 
+		    <categoryName>Final Exam</categoryName> 
+			<description>1 HorseBarn</description><url>ap/Final Exam/1_HorseBarn.html</url>
+			<description>2 Climbing Club</description><url>ap/Final Exam/2_ClimbingClub.html</url>
+		</category>
+	</unit>
+	-->
+</course>

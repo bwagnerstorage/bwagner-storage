@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+	<unit>
+	    <unitName>Unit 1 JavaFX</unitName>
+		<category> 
+		    <categoryName>LabExercises</categoryName>
+			<description>1.1 JavaFX Basics</description><url>JavaFX/unit01_gettingStarted/labExercises/01_basics.html</url>
+            <description>1.2 Event Handling</description><url>JavaFX/unit01_gettingStarted/labExercises/02_events.html</url>
+		</category>
+	</unit>
+    <unit>
+	    <unitName>Unit 2 FXML</unitName>
+		<category> 
+		    <categoryName>LabExercises</categoryName>
+			<description>2.1 FXML</description><url>JavaFX/unit02_fxml/labExercises/01_intro.html</url>
+            <description>2.2 MVC</description><url>JavaFX/unit02_fxml/labExercises/02_mvc.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 3 Scene Builder</unitName>
+		<category> 
+		    <categoryName>LabExercises</categoryName>
+			<description>3.1 Scene Builder 1</description><url>JavaFX/unit03_sceneBuilder/labExercises/01_sceneBuilder1.html</url>
+            <description>3.2 Scene Builder 2</description><url>JavaFX/unit03_sceneBuilder/labExercises/02_sceneBuilder2.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 4 Containers</unitName>
+		<category> 
+		    <categoryName>LabExercises</categoryName>
+			<description>4.1 GridPane</description><url>JavaFX/unit04_panes/labExercises/01_pane1.html</url>
+            <description>4.2 BorderPane</description><url>JavaFX/unit04_panes/labExercises/02_pane2.html</url>
+		</category>
+	</unit>
+	<unit>
+	    <unitName>Unit 5 IA Example</unitName>
+		<category> 
+		    <categoryName>LabExercises</categoryName>
+			<description>5.1 WeightTraining GUI</description><url>JavaFX/unit05_ia/labExercises/01_ia.html</url>
+		</category>
+	</unit>
+</course>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<course>
+	<unit>
+	    <unitName>HTML</unitName>
+		<category> 
+		    <categoryName>Unit 1 HTML Editors</categoryName> 
+			<description>1.1 HTML Editors</description><url>cs2/html/unit01/labExercises/01_editors.html</url>
+		</category>
+   </unit>
+   <!-->
+   <unit>
+     <unitName>CSS</unitName>
+		<category> 
+		    <categoryName>Unit 1 CSS How To</categoryName> 
+			<description>1.1 CSS How To</description><url>cs2/css/unit01/labExercises/01_howto.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 2 CSS Background</categoryName> 
+			<description>2.1 CSS Background</description><url>cs2/css/unit02/labExercises/01_background.html</url>
+			<description>2.2 CSS Background</description><url>cs2/css/unit02/labExercises/02_background.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 3 CSS Font</categoryName> 
+			<description>3.1 CSS Font</description><url>cs2/css/unit03/labExercises/01_font.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 4 CSS Links</categoryName> 
+			<description>4.1 CSS Links</description><url>cs2/css/unit04/labExercises/01_link.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 5 CSS Lists</categoryName> 
+			<description>5.1 CSS Lists</description><url>cs2/css/unit05/labExercises/01_list.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 6 CSS Tables</categoryName> 
+			<description>6.1 CSS Tables</description><url>cs2/css/unit06/labExercises/01_table.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 7 CSS Borders</categoryName> 
+			<description>7.1 CSS Borders</description><url>cs2/css/unit07/labExercises/01_border.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 8 CSS Margin</categoryName> 
+			<description>8.1 CSS Margin</description><url>cs2/css/unit08/labExercises/01_margin.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 9 CSS Padding</categoryName> 
+			<description>9.1 CSS Padding</description><url>cs2/css/unit09/labExercises/01_padding.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 10 CSS Dimensions</categoryName> 
+			<description>10.1 CSS Dimensions</description><url>cs2/css/unit10/labExercises/01_dimensions.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 11 CSS Display</categoryName> 
+			<description>11.1 CSS Display</description><url>cs2/css/unit11/labExercises/01_display.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 12 CSS Float</categoryName> 
+			<description>12.1 CSS Float</description><url>cs2/css/unit12/labExercises/01_float.html</url>
+			<description>12.2 CSS Float</description><url>cs2/css/unit12/labExercises/02_float.html</url>
+			<description>12.3 CSS Float</description><url>cs2/css/unit12/labExercises/03_float.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 13 CSS Inline-Block</categoryName> 
+			<description>13.1 CSS Inline-Block</description><url>cs2/css/unit13/labExercises/01_inlineBlock.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 14 CSS Align</categoryName> 
+			<description>14.1 CSS Align</description><url>cs2/css/unit14/labExercises/01_align.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 15 CSS Opacity</categoryName> 
+			<description>15.1 CSS Opacity</description><url>cs2/css/unit15/labExercises/01_opacity.html</url>
+			<description>15.2 CSS Opacity</description><url>cs2/css/unit15/labExercises/02_opacity.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 16 CSS3 Border Images</categoryName> 
+			<description>16.1 CSS Border Images</description><url>cs2/css/unit16/labExercises/01_corners.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 17 CSS3 Background</categoryName> 
+			<description>17.1 CSS3 Background</description><url>cs2/css/unit17/labExercises/01_backgrounds.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 18 CSS3 Gradient</categoryName> 
+			<description>18.1 CSS3 Gradient</description><url>cs2/css/unit18/labExercises/01_gradient.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 19 CSS3 Shadows</categoryName> 
+			<description>19.1 CSS3 Shadows</description><url>cs2/css/unit19/labExercises/01_shadows.html</url>
+		</category>
+		 <category> 
+		    <categoryName>Unit 20 CSS3 Transitions</categoryName> 
+			<description>20.1 CSS3 Transitions</description><url>cs2/css/unit20/labExercises/01_transitions.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 21 CSS3 Animations</categoryName> 
+			<description>21.1 CSS3 Animations</description><url>cs2/css/unit21/labExercises/01_animations.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 22 CSS3 Multiple Columns</categoryName> 
+			<description>22.1 CSS3 Multiple Columns</description><url>cs2/css/unit22/labExercises/01_columns.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 23 CSS3 Box Sizing</categoryName>
+			<description>23.1 CSS3 Box Sizing</description><url>cs2/css/unit23/labExercises/01_boxSizing.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 24 CSS3 Flexbox</categoryName>
+			<description>24.1 CSS3 Flexbox</description><url>cs2/css/unit24/labExercises/01_flexbox.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 25 CSS3 Modal Dialog</categoryName>
+			<description>25.1 CSS3 Modal Dialog</description><url>cs2/css/unit25/labExercises/01_modal.html</url>
+		</category>
+  </unit>
+  
+  <unit>
+     <unitName>Javascript</unitName>
+		<category> 
+		    <categoryName>Unit 1 JS Output</categoryName> 
+			<description>1.1 Output</description><url>cs2/javascript/unit01/labExercises/01_output.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 2 JS Variables</categoryName> 
+			<description>2.1 Variables</description><url>cs2/javascript/unit02/labExercises/01_variables.html</url>
+			<description>2.2 Operators</description><url>cs2/javascript/unit02/labExercises/02_operators.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 3 JS Assignment</categoryName> 
+			<description>3.1 Assignment</description><url>cs2/javascript/unit03/labExercises/01_assignment.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 4 JS Functions</categoryName> 
+			<description>4.1 Functions</description><url>cs2/javascript/unit04/labExercises/01_functions.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 5 JS Objects</categoryName> 
+			<description>5.1 Objects</description><url>cs2/javascript/unit05/labExercises/01_objects.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 6 JS Events</categoryName> 
+			<description>6.1 Events</description><url>cs2/javascript/unit06/labExercises/01_events.html</url>
+			<description>6.2 Events</description><url>cs2/javascript/unit06/labExercises/02_events.html</url>
+			<description>6.3 Events</description><url>cs2/javascript/unit06/labExercises/03_events.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 7 JS Strings</categoryName> 
+			<description>7.1 Strings</description><url>cs2/javascript/unit07/labExercises/01_strings.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 8 JS Numbers</categoryName> 
+			<description>8.1 Numbers</description><url>cs2/javascript/unit08/labExercises/01_numbers.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 9 JS Random</categoryName> 
+			<description>9.1 Random</description><url>cs2/javascript/unit09/labExercises/01_random.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 10 JS Date</categoryName> 
+			<description>10.1 CountDown</description><url>cs2/javascript/unit10/labExercises/01_countDown.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 11 JS Arrays</categoryName> 
+			<description>11.1 Arrays</description><url>cs2/javascript/unit11/labExercises/01_arrays.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 12 JS Conditions</categoryName> 
+			<description>12.1 Game100</description><url>cs2/javascript/unit12/labExercises/01_game100.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 13 JS Loops</categoryName> 
+			<description>13.1 Swatch</description><url>cs2/javascript/unit13/labExercises/01_swatch.html</url>
+		</category>
+		
+		<category> 
+		    <categoryName>Unit 14 JS Classes</categoryName> 
+			<description>14.1 Date Class</description><url>cs2/javascript/unit14/labExercises/01_class.html</url>
+			<description>14.2 Address Class</description><url>cs2/javascript/unit14/labExercises/02_class.html</url>
+			<description>14.3 Browser Input</description><url>cs2/javascript/unit14/labExercises/03_class.html</url>
+			<description>14.4 People Class</description><url>cs2/javascript/unit14/labExercises/04_class.html</url>
+		</category>
+		
+		<category> 
+		    <categoryName>Unit 15 JS Animation</categoryName> 
+			<description>15.1 Animation1</description><url>cs2/javascript/unit15/labExercises/01_anim1.html</url>
+			<description>15.2 Animation2</description><url>cs2/javascript/unit15/labExercises/02_anim2.html</url>
+			<description>15.3 Animation3</description><url>cs2/javascript/unit15/labExercises/03_anim3.html</url>
+		</category>
+		<category> 
+		    <categoryName>Unit 16 JS EventHandler</categoryName> 
+			<description>16.1 Event1</description><url>cs2/javascript/unit16/labExercises/01_event1.html</url>
+		    <description>16.2 Event2</description><url>cs2/javascript/unit16/labExercises/02_event2.html</url>
+			<description>16.3 Event3</description><url>cs2/javascript/unit16/labExercises/03_event3.html</url>
+		</category>
+ </unit>
+
+  <unit>
+     <unitName>Network</unitName>
+		<category> 
+		    <categoryName>Unit 1 Network</categoryName> 
+			<description>1.1 Network 4_2</description><url>cs2/network/unit01/labExercises/Network 4_2 Instructions.pdf</url>
+		</category>
+  </unit>
+  -->
+</course>
