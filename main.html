@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CompSci</title>
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/compsci.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.treeview.css" />
+    <link rel="stylesheet" type="text/css" href="css/bjqs.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <link rel="stylesheet" type="text/css" href="css/demos.css">
+    <link rel="stylesheet" type="text/css" href="css/roadanimation.css">
+
+    <script src="js/buildtree.js"></script>
+    <script src="js/packed.js"></script>
+    <script src="js/script.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+    <script type="text/javascript" src="js/bjqs-1.3.min.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+
+    <script type="text/javascript" src="js/demos.js"></script>
+    <script type="text/javascript" src="js/roadanimation.js"></script>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">Computer Science</div>
+        <div id="menubar">
+            <span style="float: left; margin-left: 10px; margin-top: 4px">
+             <button id="collapseButton" onclick="collapseLeftSide()">collapse</button>
+     </span>
+            <ul id="jsddm">
+
+
+                <li><a href="index.html">Home</a></li>
+
+
+                <li><a href="">Assignments</a>
+                    <ul>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/cs1.html', 'content')">CompSci 
+            1</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/preap.html', 'content')">Honors</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/cs2.html', 'content')">CompSci 
+            2</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/ap.html', 'content')">AP</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/apacc.html', 'content')">AP 
+            Accelerated</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/ibsl.html', 'content')">IBSL</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/ibhl1.html', 'content')">IBHl 
+            1</a></li>
+                        <li><a href="javascript:void()" onclick="sendRequest('menu/assignments/ibhl2.html', 'content')">IBHL 
+            2</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="#">AP</a>
+                    <ul>
+                        <li><a href="apFreeResponse/Quick Reference 2014.pdf" target="_blank">Quick 
+            Reference</a></li>
+                        <li><a href="menu/ap/index.html" target="_blank">AP Practice Exams</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">IB</a>
+                    <ul>
+                        <li><a href="menu/ib/IB CompSci Guide.pdf" target="_blank">IB CompSci Guide</a></li>
+                        <li><a href="menu/ib/IB Jets.pdf" target="_blank">IB Jets</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="menu/uil/show_login.html">UIL</a></li>
+
+
+                <li><a href="">Downloads</a>
+                    <ul>
+                        <li><a href="menu/downloads/Jeroo.zip">Jeroo</a></li>
+                        <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java 
+            JDK</a></li>
+                        <li><a href="menu/downloads/jcrea500_setup.exe" target="_blank">JCreator 
+            5.0</a></li>
+                        <li><a href="https://netbeans.org/downloads/" target="_blank">NetBeans</a></li>
+                        <li><a href="http://www.eclipse.org/downloads/" target="_blank">Eclipse</a></li>
+                        <li><a href="menu/downloads/PowerPoints.zip" target="_blank">PowerPoints</a></li>
+                        <!--    <li><a href="menu/downloads/AP Free Response.zip" target="_blank">AP 
+            Free Response</a></li> -->
+                        <li><a href="menu/downloads/jdk1.8.0_20.zip" target="_blank">Java JDK</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="leftside">
+            <!--
+	<ul class="acc" id="cs1">
+	    <li>
+		<h3 id="cs1" class="acc">CompSci 1</h3>
+		<div class="acc-section">
+			<div class="acc-content">
+			    <ul id="CompSci1" class="filetree">
+					<script language="JavaScript">
+						buildTree("xml/regular.xml");
+					</script>
+			    </ul>							
+		    </div>
+	   </div>
+	   </li>
+	   -->
+            <ul class="acc" id="acc">
+                <li>
+                    <h3 id="cs1">CompSci 1</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="CompSci1" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/regular.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <h3 id="preap" class="acc">PreAP/IB</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="PreAP" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/preap.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="cs2" class="acc">CompSci 2</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="CompSci2" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/cs2.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            
+                <li>
+                    <h3 id="apa" class="acc">AP A</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="AP" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/ap.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="apax" class="acc">AP Accelerated</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="APAcc" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/apAcc.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="ibsl" class="acc">IB SL</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="IBSL" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/ibsl.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="ibhl1" class="acc">IB HL 1</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="IBHL1" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/ibhly1.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="ibhl2" class="acc">IB HL 2</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="IBHL2" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/ibhly2.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="greenfoot" class="acc">Greenfoot</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="Greenfoot" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/greenfoot.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="javafx" class="acc">JavaFX</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="JavaFX" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/javaFX.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h3 id="python" class="acc">Python</h3>
+                    <div class="acc-section">
+                        <div class="acc-content">
+                            <ul id="Python" class="filetree">
+                                <script language="JavaScript">
+                                    buildTree("xml/python.xml");
+                                </script>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <div id="content">
+            <br>
+            <!--
+	   	  <div id ="csNews">1st Day</div>
+       <table width="495" height="25" id="csTableNews">
+          <tr> 
+            <td width="50%" style="background-color:#FFFFCE"> 
+              <div align="center"><a href="http://www.code.org/" target="_blank" style="color:#00F">code.org</a></div></td>
+            <td style="background-color:#FFFFCE"> 
+              <div align="center"><a href="http://money.usnews.com/careers/best-jobs/rankings" target="_blank" style="color:#00F">Tech Jobs Outlook</a></div></td>
+          </tr>
+        </table>
+	 -->
+
+            <!--
+	  <div id ="csNews">IB Internal Assessment(IA) Due Dates</div>
+        <table width="495" height="25" id="csTableNews">
+          <tr bgcolor="#003300"> 
+            <th width="47%">Criterion</th>
+            <th width="53%">Due Date</th>
+          </tr>
+          <tr> 
+            <td> <p>Choose Topic</p></td>
+            <td> <p align="center">Friday 09-25-2015</p></td>
+          </tr>
+		  <tr> 
+            <td> <p>Criterion A: Planning</p></td>
+            <td> <p align="center">Friday 10-22-2015</p></td>
+          </tr>
+		  <tr> 
+            <td> <p>Criterion B: Solution Overview</p></td>
+            <td> <p align="center">Friday 11-13-2015</p></td>
+          </tr>
+		  <tr> 
+            <td> <p>Criterion C: Development</p></td>
+            <td> <p align="center">Friday 02-19-2016</p></td>
+          </tr>
+		  <tr> 
+            <td> <p>Criterion D: Functionality</p></td>
+            <td> <p align="center">Friday 02-26-2016</p></td>
+          </tr>
+		  <tr> 
+            <td> <p>Criterion E: Evaluation</p></td>
+            <td> <p align="center">Friday 02-26-2016</p></td>
+          </tr>
+		  <tr> 
+            <td> <p><div style="font-weight:700">Final Solution</div></p></td>
+            <td> <p><div align="center" style="font-weight:700">Friday 02-26-2016</div></p></td>
+          </tr>
+        </table>
+		
+            <div id="csNews">IB Exam</div>
+
+            <table width="560" height="25" id="csTableNews">
+                <tr>
+                    <td width="35%">
+                        <div align="center"> Monday May 18, 2020</div>
+                    </td>
+                    <td>
+                        <div align="center">Afternoon (12:00pm - 4:00pm)</div>
+                    </td>
+                    <td>
+                        <div align="center">Location<br></div>
+                    </td>
+                    <td>
+                        <div align="center">SL Paper 1<br>1hr 30min</div>
+                    </td>
+                    <td>
+                        <div align="center">HL Paper 1<br>2hr 10min</div>
+                    </td>
+                    <td>
+                        <div align="center"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="35%">
+                        <div align="center">Tuesday May 19, 2020</div>
+                    </td>
+                    <td>
+                        <div align="center">Morning (8:00am - 12:00pm)</div>
+                    </td>
+                    <td>
+                        <div align="center">Location<br></div>
+                    </td>
+                    <td>
+                        <div align="center">SL Paper 2<br>1hr</div>
+                    </td>
+                    <td>
+                        <div align="center">HL Paper 2<br>1hr 20min</div>
+                    </td>
+                    <td>
+                        <div align="center">HL Paper 3<br>1hr</div>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="csNews">AP Practice Exam</div>
+            <table width="495" height="25" id="csTableNews">
+                <tr>
+                    <td width="50%">
+                        <div align="center"></div>
+                    </td>
+                    <td>
+                        <div align="center">DHS Lab 203 5:00-9:00</div>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="csNews">AP Exam</div>
+            <table width="495" height="25" id="csTableNews">
+                <tr>
+                    <td width="50%">
+                        <div align="center">Friday May 8, 2020</div>
+                    </td>
+                    <td>
+                        <div align="center">Afternoon (12:00 - 3:00)</div>
+                    </td>
+                </tr>
+            </table>
+
+            <p>&nbsp;</p>
+            <div id="csNews">UIL Meets</div>
+            <table width="495" height="25" id="csTableNews">
+                <tr style="background:#003300">
+                    <th width="47%">Event</th>
+                    <th width="53%">Date</th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Practice Meet (Argyle HS)</p>
+                    </td>
+                    <td>
+                        <p align="center"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Invitational A (Flower Mound HS)</p>
+                    </td>
+                    <td>
+                        <p align="center"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Invitational B (Ryan HS)</p>
+                    </td>
+                    <td>
+                        <p align="center"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>District (Ryan HS)</p>
+                    </td>
+                    <td>
+                        <p align="center"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> Regional (Lubbock)</p>
+                    </td>
+                    <td>
+                        <p align="center"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> State (Austin) </p>
+                    </td>
+                    <td>
+                        <p align="center"></p>
+                    </td>
+                </tr>
+            </table>
+-->
+
+        </div>
+
+
+        <div id="footer">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            $("#CompSci1").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#PreAP").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#CompSci2").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#AP").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#APAcc").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#IBSL").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#IBHL1").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#IBHL2").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#Greenfoot").treeview({
+                collapsed: true
+            });
+        });
+
+        $(function() {
+            $("#JavaFX").treeview({
+                collapsed: true
+            });
+        });
+        $(function() {
+            $("#Python").treeview({
+                collapsed: true
+            });
+        });
+    </script>
+
+    <script language="JavaScript">
+        /* accordion  */
+
+        var accordion = new TINY.accordion.slider("accordion");
+        accordion.init('acc', 'h3', true);
+
+        jQuery.event.add(window, "load", resizeFrame);
+        jQuery.event.add(window, "resize", resizeFrame);
+
+        function resizeFrame() {
+            var h = $(window).height();
+            var w = $(window).width();
+            $("#leftside").css('height', (h - 115));
+            $("#content").css('height', (h - 131));
+        }
+    </script>
+
+    <script type="text/javascript">
+        /* menu bar */
+
+        var timeout = 500;
+        var closetimer = 0;
+        var ddmenuitem = 0;
+
+        function jsddm_open() {
+            jsddm_canceltimer();
+            jsddm_close();
+            ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');
+        }
+
+        function jsddm_close() {
+            if (ddmenuitem) ddmenuitem.css('visibility', 'hidden');
+        }
+
+        function jsddm_timer() {
+            closetimer = window.setTimeout(jsddm_close, timeout);
+        }
+
+        function jsddm_canceltimer() {
+            if (closetimer) {
+                window.clearTimeout(closetimer);
+                closetimer = null;
+            }
+        }
+
+        $(document).ready(function() {
+            $('#jsddm > li').bind('mouseover', jsddm_open);
+            $('#jsddm > li').bind('mouseout', jsddm_timer);
+        });
+
+        document.onclick = jsddm_close;
+
+        var elem = document.getElementById('cs1');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/cs1.html', 'content')
+        });
+        elem = document.getElementById('preap');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/preap.html', 'content')
+        });
+        elem = document.getElementById('cs2');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/cs2.html', 'content')
+        });
+        elem = document.getElementById('apa');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/ap.html', 'content')
+        });
+        elem = document.getElementById('apax');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/apacc.html', 'content')
+        });
+        elem = document.getElementById('ibsl');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/ibsl.html', 'content')
+        });
+        elem = document.getElementById('ibhl1');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/ibhl1.html', 'content')
+        });
+        elem = document.getElementById('ibhl2');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/ibhl2.html', 'content')
+        });
+
+        function displayAssignment(url, elem) {
+            sendRequest(url, elem);
+        }
+    </script>
+
+</body>
+
+</html>
