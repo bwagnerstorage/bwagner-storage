@@ -1,0 +1,159 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">FileInput 1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_file_handling.asp" target="_blank" style="color:blue">Python File Handling</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_file_open.asp" target="_blank" style="color:blue">Python Reading Files</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_file_write.asp" target="_blank" style="color:blue">Python Writing Files</a></p></li>
+ 
+   </ul>
+<h1>Python File Handling</h1>
+<p>Computer programs often need to store information on a secondary storage device so the data will be available every time the program is executed. The files that these programs create fall into two main catagories or formats: binary and text. Binary files store data in a way that makes them unreadable to humans when opened in a text editor like NotePad, VSCode, Sublime, or Atom. On the other hand, text files are just that, text, stored in a file using ASCII or Unicode characters which can easily be read by using your favorite text editor. In the next few lessons we will be looking at how you read and write data to and from a text file.</p>
+<p>Python provides a class named <strong>File</strong> that provides methods for both reading and writing character data to and from a text file. The most common way to read a text file is line by line. One line of text can contain a single piece of information or it can contain multiple data items such as a record. Below are several functions that demonstrate the different techniques that can be used to read data from a file line by line. One thing all of these functions have in come is that they utilize a built-in Python function named <strong>open</strong> to access files on a local disk or a disk on a server. The open function takes two parameters. The first parameter is the name of the file in your working directory or the file path to a location that is not in your local working directory. The second parameter contains the mode. There are four modes that can be used when opening a file. Read "r", Write "w", Append "a", and Create "x". In addition, you can specify if the file should be handled as a Binary "b" file or Text "t" file. If the open function is successful in opening a file it returns a File object that can be used to read, write, or modify the file that it references. If the open function cannot find the file being referenced it will cause an error to occur.</p>
+
+<h3>Sample 1</h3>
+
+<div id="csCode" style="width:675px"><pre>def readFile1():
+   file = open("capitals.txt", "r")    # open text file for reading
+   
+   while True:                 # continue reading file
+     line = file.readline();   # read and return a line of data as a string
+     if line == "":            # readline returns an empty string "" if nothing read
+       break                   # if nothing read end while loop
+     print(line, end="")       # display string
+     print(line.split(","))    # split the string apart at the comma and display
+   file.close()                # close File object</pre></div> 
+
+   <p>The function readFile1 utilizes a while loop and the File class's <strong>readline</strong> method to read all of the data in the file one line at a time. When the end of the file is reached the readline method returns an empty string which signifies that the code has reached the end of the file. The close method is then called to close the text file. When you read a text file line by line the data is enclosed in a string. It is often necessary to extract the data from within the string. As an example, the file "capitals.txt" separates its data by placing a comma between each piece of data. The use of a comma as the delimiter is referred to as a CSV (Comma-Separated Values) file. This is a very common text file format. Spreadsheets, like Excel, have an option where you can save a spreadsheet file as a CSV file. CSV files typically have the file extension .csv, but this is not a requirement. I typically save my files with the file extension .txt. The advantage of the .txt extension is that you can easily open the file in any text editor like NotePad, NotePad++, Visual Studio Code, Sublime, or Atom; just to name a few. Since the data is separated by a comma, I used the String class's split method to extract the data. Recall that the split method returns a list of strings where each string in the list is one piece of data.</p>
+
+   <h3>Sample 2</h3>
+
+<div id="csCode"><pre>def readFile2():  
+   file = open("capitals.txt", "r")    # open text file for reading
+   
+   while True:                    # continue reading file
+     line = file.readline();      # read and return a line of data as a string
+     if not line:                 # if line does not contain a string object
+       break                      # then end while loop
+     print(line)                  # display string
+   file.close()                   # close File object</pre></div>  
+
+<p>The function readFile2 is identical to the first function except for the if statement. Instead of testing for an empty string this technique tests to see if the line variable contains a string object. Oh, I also removed the split method.</p>
+
+<h3>Sample 3</h3>
+
+<div id="csCode"><pre>def readFile3():
+   file = open("capitals.txt", "r")  # open text file for reading
+   
+   flag = True                       # set boolean flag to True
+   while flag:                       # continue reading file
+     line = file.readline();         # read and return a line of data as a string
+     if not line:                    # if line does not contain a string object
+       flag = False                  # then set flag to False which will end loop
+     print(line)                     # display string
+   file.close()                      # close File object</pre></div>
+
+<p>The function readFile3 is similar to the first two versions, but instead calling the break statement it uses a boolean variable to control the while loop. The variable flag is initially set to True which makes the while loops condition true. When the variable line does not contain a string object the if statement is executed and the boolean variable is set to False which ends the while loop.</p>
+
+<h3>Sample 4</h3>
+
+<div id="csCode"><pre>def readFile4():  
+   file = open("capitals.txt", "r")  # open text file for reading
+   for line in file:                 # reads one line of text at a time
+     print(line)                     # display string
+   file.close()                      # close File object</pre></div>
+
+<p>Function readFile4 takes a completely different approach, instead a while loop this function utilizes a for loop. The for-in loop automatically reads the text file line by line storing each line of data into the variable line where it is printed.</p>
+
+<h3>Sample 5</h3>
+
+<div id="csCode"><pre>def readFile5():      
+   with open("capitals.txt", "r") as file:  # open text file for reading
+      for line in file:                     # read file from beginning to end
+         print(line)</pre></div>
+
+<p>Function readFile5 is similar to readFile4 in that they both use a for loop to traverse the text file. The difference is that I used the with-as statement to open the file. The
+with-as statement includes code designed to handle errors that might occur during the opening process, such as, a file being misspelled or corrupted. It includes the added benefit of taking care of closing the File object so you don't have to explicitly call the close method in your code.</p>
+
+<h3>Sample 6</h3>
+
+<div id="csCode"><pre>def readFile6():
+   with open("capitals.txt", "r") as file:  # open text file using with statement
+      print(file.readlines())  # read entire file line by line and store
+                               # in a list of strings where each string
+                               # is one line in the file; display list</pre></div> 
+<p>This function opens the data file using the <strong>with</strong> statement. The with   
+   statement is often used when working with files. It is designed to streamline code dealing with the errors that occur when working with files, such as the file
+   not existing or being corrupted. One benefit of using the with statement is that
+   it closes the file object so you don't have to explicity close it in your code.</p>
+<p>This function uses another File method called <strong>readlines</strong>. This
+   method reads the entire file placing each line into a list of strings. This is the shortest technique used to read a text file, but you will have to extract your data from a list.</p>
+
+<h1>Lab Exercise</h1>
+<p>Click on the following link to download the data file: <a href="python/unit14_file/capitals.txt" style="color:#00F">capitals.txt</a></p>
+<p>Create a new replit named FileInput1.</p>
+<p>Click on the ellipse (three vertical dots) icon in the File section. Select the menu option: <strong>Upload File</strong>.</p>
+<p><img src="python/unit14_file/upload.png"></p>
+<p>In the Dialog box, navigate to the location of the "capitals.txt" file. If you did not move it, it should be in your Downloads folder. Select the file. This should add the "capitals.txt" file to your replit.</p>
+
+<p>Write a program that uses one of the techniques shown in the Sample Code above to read the "capitals.txt" data file and store the information in your program. Then display all 50 states one state per line. A line consists of the name of the state, followed by a space, and then the name of its capital. Look at the Sample Run below.</p>
+
+<div id="csSampleRun"><pre>
+Alabama Montgomery
+Alaska Juneau
+Arizona Phoenix
+Arkansas Little Rock
+California Sacramento
+Colorado Denver
+Connecticut Hartford
+Delaware Dover
+Florida Tallahassee
+Georgia Atlanta
+Hawaii Honolulu
+Idaho Boise
+Illinois Springfield
+Indiana Indianapolis
+Iowa Des Moines
+Kansas Topeka
+Kentucky Frankfort
+Louisiana Baton Rouge
+Maine Augusta
+Maryland Annapolis
+Massachusetts Boston
+Michigan Lansing
+Minnesota Saint Paul
+Mississippi Jackson
+Missouri Jefferson City
+Montana Helena
+Nebraska Lincoln
+Nevada Carson City
+New Hampshire Concord
+New Jersey Trenton
+New Mexico Santa Fe
+New York Albany
+North Carolina Raleigh
+North Dakota Bismarck
+Ohio Columbus
+Oklahoma Oklahoma City
+Oregon Salem
+Pennsylvania Harrisburg
+Rhode Island Providence
+South Carolina Columbia
+South Dakota Pierre
+Tennessee Nashville
+Texas Austin
+Utah Salt Lake City
+Vermont Montpelier
+Virginia Richmond
+Washington Olympia
+West Virginia Charleston
+Wisconsin Madison
+Wyoming Cheyenne
+</pre></div>
+<br>
+</div>
+
+

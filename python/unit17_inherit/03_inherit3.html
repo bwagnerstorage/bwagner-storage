@@ -1,0 +1,93 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Inheritance 3</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_inheritance.asp" 
+    target="_blank" style="color:blue">Python Inheritance</a></p></li>
+   </ul>
+
+<h1>Lab Exercise</h1>
+<p>Write a test generator program that includes the following features:</p>
+<ul id="csList">
+  <li><p>It can create a test consisting of both multiple choice and
+      true/false questions.</p></li>
+  <li><p>A test can have any number of questions.</p></li>
+  <li><p>It utilizes the three classes: <strong>Question</strong>, <strong>MultipleChoice</strong>, and <strong>TrueFalse</strong> 
+      from the previous assignment.</p></li>
+  <li><p>It includes a class named <strong>Test</strong> that stores a list of questions.</p></li>  
+  <li><p>A Test object stores a test's name, subject (Ex. History),
+      topic (what the test covers), list of questions, and
+      the number of test questions.
+  </p></li>
+  <li><p>A test can be both saved and opened from a file. It should be 
+    able to save more than one test so the program needs to provide the
+    ability to select a test that the user would like to open.
+  </p></li>
+  <li><p>A test can be displayed with all of its metadata clearly labeled, including
+     the test's name, subject, and topic. A test's questions should also be displayed
+     along with their metadata: type, subject, topic, and correct answer.</p></li>
+  <li><p>A test can be displayed in a "test format" which includes the name of the test,
+    each question numbered and displayed in either multiple choice or true false format.</p></li>
+</ul>
+<p>Lastly, the program needs to include one of the following features:</p>
+<ol id="csList">
+  <li><p>The ability to edit a test, including its questions, and the 
+    ability to delete a test.
+  </p></li>
+  <li><p>The ability to administer a test where a user can enter answers
+     and the test is graded and the user is given a percentage score.
+  </p></li>
+</ol>
+
+<p>For convenience the Question, MultipleChoice, and TrueFalse classes are included
+  below, feel free to use your own versions.
+</p>
+<div id="csCode"><pre>class Question:
+  def __init__(self, type, subject, topic):
+      self.type = type
+      self.subject = subject
+      self.topic = topic
+
+  def info(self):
+    str = "Question Type: " + self.type
+    if self.subject != None:
+      str += "\nQuestion Subject: " + self.subject 
+    if self.topic != None:
+      str += "\nQuestion Topic:" + self.topic
+    return str;
+
+
+class MultipleChoice(Question):
+  def __init__(self,
+               type,
+               question,
+               A,
+               B,
+               C,
+               D,
+               answer,
+               subject=None,
+               topic=None):
+      super().__init__(type, subject, topic)
+      self.question = question
+      self.A = A
+      self.B = B
+      self.C = C
+      self.D = D
+      self.answer = answer
+
+  def display(self):
+      return self.question + "\n   A. " + self.A + "\n   B. " + self.B + "\n   C. " + self.C + "\n   D. " + self.D
+
+class TrueFalse(Question):
+  def __init__(self, type, question, answer, subject=None, topic=None):
+      super().__init__(type, subject, topic)
+      self.question = question
+      self.answer = answer
+
+  def display(self):
+    return self.question + "[T/F]: "
+</pre></div>

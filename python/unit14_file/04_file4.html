@@ -1,0 +1,374 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">FileOutput 2</div>
+
+<div id="csContent">
+   <h1>Python Resources</h1>
+   <ul id="csList">
+      <li>
+         <p><a href="https://www.w3schools.com/python/python_file_handling.asp" target="_blank"
+               style="color:blue">Python File Handling</a></p>
+      </li>
+      <li>
+         <p><a href="https://www.w3schools.com/python/python_file_open.asp" target="_blank" style="color:blue">Python
+               Reading Files</a></p>
+      </li>
+      <li>
+         <p><a href="https://www.w3schools.com/python/python_file_write.asp" target="_blank" style="color:blue">Python
+               Writing Files</a></p>
+      </li>
+      <li>
+         <p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p>
+      </li>
+   </ul>
+
+   <h1>Lab Exercise</h1>
+   <p>You are going to complete the program started below that allows a user to keep track of their friends birthdays.
+      The first time the program runs it should create a data file named "birthdays.txt". When the program exits it
+      should save the birthday list to a data file with each line of the file consisting of a person's name, a comma, and the
+      person's date of birth. When the program is executed again it should read the data file one line at a time creating a record (list) for each line.
+      These records should then be added to the birthday list; creating a list of lists, also known as a list of records.</p>
+      <p>The program should be able to create new records from keyboard input and add them to the birthday list. The program should also
+         be able to view, edit, and remove records from the birthday list.
+      </p>
+   <ol id="csList">
+      <li>
+         <p>Create a new replit named FileOutput2.</p>
+      </li>
+      <li>
+         <p>Add the following starter code to your replit (project).</p>
+         <div id="csCode">
+            <pre>birthday = []    # list of names and birthdates
+
+def readFile():
+   try:
+      file = open("birthday.txt", "r") # try to open file for reading
+      print("Verified File: birthday.txt")
+      # Now read the data file line by line
+
+   except:
+      file = open("birthday.txt", "w")  # if not successful, then create the file
+      print("Created File: birthday.txt")    
+      
+def writeFile():
+   print("Saving File: birthday.txt") 
+      
+def menu():
+   ans = "0"
+   while ans != "6":
+      print()
+      print("    Menu")
+      print("-------------")
+      print("1. Add Record")
+      print("2. View Record")
+      print("3. Edit Record")
+      print("4. Remove Record")
+      print("5. View Birthday List")
+      print("6. Save and Exit")
+      print()
+      ans = input("Make Selection: ")
+      
+      if ans == "1":
+         addRecord()
+      if ans == "2":
+         viewRecord()
+      if ans == "3":
+         editRecord()
+      if ans == "4":
+         removeRecord()
+      if ans == "5":
+         viewList()
+          
+def addRecord():
+   print()
+   print(" Add Record ")
+   print("------------")
+      
+def editRecord():
+   print()
+   print(" Edit Record ")
+   print("-------------") 
+      
+def viewRecord():
+   print()
+   print(" View Record ")
+   print("-------------")
+      
+def removeRecord():
+   print()
+   print(" Remove Record ")
+   print("---------------")
+          
+def viewList():
+   print()
+   print(" View List ")
+   print("-----------")
+      
+     
+def main():
+   readFile()
+   menu()
+   writeFile()
+      
+main()
+</pre>
+         </div>
+      </li>
+      <li>
+         <p>Notice the main function at the bottom of the code. It calls the readFile function first, followed by the
+            menu function, and finally the writeFile function.</p>
+      </li>
+
+      <li>
+         <p>Complete the function <strong>readFile</strong>. This function opens the "birthday.txt" file. If the file
+            does not exist the code creates the file. It accomplishes this through the use of a try_except statement shown below:</p>
+         <div id="csCode">
+            <pre>
+   try:
+      file = open("birthday.txt", "r") # try to open file for reading
+   except:
+      file = open("birthday.txt", "w")  # if not successful, then create file "birthday.txt"  
+   </pre>
+         </div>
+         <p>The open function causes a runtime error to occur when the file it is trying to open does not exist. By
+            placing the code in a <strong>try</strong> block it prevents the program from crashing, instead the program
+            transfers execution to the except block where the open function is called again but instead of being in
+            reading mode "r" it is now in writing mode "w". This is important because when the open function is in
+            writing mode, if the file does not exist, it will create the file for you. Incidentally, errors that occur
+            in computer programs are often referred to as exceptions. That is why it is a try_except statement.</p>
+      </li>
+      <li><p>If the file is open for reading then the function should read the entire file line by line. Each line should contain a string
+             consisting of a friend's name and their birthday separated by a comma. Split the string apart storing the person's name 
+             in the first cell of a list and the person's birthdate in the second cell of the list, there by creating 
+             a record. Add each record to the birthday list.
+      </p></li>
+      <li>
+         <p>Complete the function <strong>writeFile</strong>. This function writes the contents of the birthday list to
+            the data file "birthday.txt" with each line of the file consisting of a person's name, followed by a comma, and
+            their birth date.</p>
+      </li>
+      <li>
+         <p>Complete the function <strong>addRecord</strong>. This function allows a user to add a new record to the
+            birthday list. A record consists of the person's name and their birthdate. </p>
+      </li>
+      <li>
+         <p>Complete the function <strong>viewRecord</strong>. This function allows a user to view a record by typing in
+            a person's name and the function displays the person's name and birth date in the format shown in the sample
+            run below.</p>
+      </li>
+      <li>
+         <p>Complete the function <strong>editRecord</strong>. This function allows a user to edit a record by typing in
+            a person's name and the function searches for that record. If it finds the record the function then asks the
+            user if they wish to edit the person's name. If the user responds positively then the function prompts the
+            user for the new name and replaces it with the old name. This is repeated for the birth date as well.</p>
+      </li>
+      <li>
+         <p>Complete the function <strong>removeRecord</strong>. This function allows a user to remove a record by
+            typing in a person's name and the function searches for that record. If it finds the record the function
+            then asks the user if they really want to remove this record. If the user responds positively then the
+            function removes that record from the birthday list, otherwise it just returns to the main menu.</p>
+      </li>
+      <li>
+         <p>Complete the function <strong>viewList</strong>. This function displays the birthday list with each row
+            consisting of the person's name, a space, and the person's birthdate.</p>
+      </li>
+   </ol>
+   <div id="csSampleRun">
+      <pre>
+   Verified File: birthday.txt
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 1
+
+Add Record 
+------------
+Enter Name -->John Wayne
+Enter birthday (mm/dd/yyyy) -->03/17/2000
+
+Add another[y/n]? y
+
+Add Record 
+------------
+Enter Name -->Jimmy Stewart
+Enter birthday (mm/dd/yyyy) -->06/10/2001
+
+Add another[y/n]? y
+
+Add Record 
+------------
+Enter Name -->Viven Lee
+Enter birthday (mm/dd/yyyy) -->01/10/2004
+
+Add another[y/n]? y
+
+Add Record 
+------------
+Enter Name -->Kevin Costner
+Enter birthday (mm/dd/yyyy) -->8/12/2003
+
+Add another[y/n]? n
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 2
+
+View Record 
+-------------
+Enter Name -->Jimmy Stewart
+
+Name: Jimmy Stewart
+Birthday: 06/10/2001
+
+View another[y/n]? n
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 3
+
+Edit Record 
+-------------
+Enter Name -->Viven Lee
+
+Name: Viven Lee
+Birthday: 01/10/2004
+
+Edit name[y/n]? n
+Edit birthday [y/n]? y
+Enter birthday (mm/dd/yyyy) -->01/10/2005
+
+Edit another[y/n]? 5
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 5
+
+View List 
+-----------
+
+John Wayne 03/17/2000
+Jimmy Stewart 06/10/2001
+Viven Lee 01/10/2005
+Kevin Costner 8/12/2003
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 4
+
+Remove Record 
+---------------
+Enter Name -->John Wayne
+
+Are you sure you want to delete record John Wayne 03/17/2000 [y/n]? y
+
+Remove another[y/n]? n
+
+   Menu
+Loading File...
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 5
+
+View List 
+-----------
+
+Jimmy Stewart 06/10/2001
+Viven Lee 01/10/2005
+Kevin Costner 8/12/2003
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 1
+
+Add Record 
+------------
+Enter Name -->Carol Burnet
+Enter birthday (mm/dd/yyyy) -->5/28/2002
+
+Add another[y/n]?  y
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 5
+
+View List 
+-----------
+
+Jimmy Stewart 06/10/2001
+Viven Lee 01/10/2005
+Kevin Costner 8/12/2003
+Carol Burnet 5/28/2002
+
+   Menu
+-------------
+1. Add Record
+2. View Record
+3. Edit Record
+4. Remove Record
+5. View Birthday List
+6. Save and Exit
+
+Make Selection: 6
+Saving File: birthday.txt
+</pre>
+   </div>
+
+   <br>
+</div>

@@ -1,0 +1,63 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ListPractice1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_for_loops.asp" target="_blank" style="color:blue">Python For Loop</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/ref_string_format.asp" target="_blank" style="color:blue">String Format Method</a></p></li>
+</ul>
+
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Write a for loop that displays the numbers from 1 to 3.</p></li>
+<li><p>Write a for loop that displays the numbers from 0 to 20.</p></li>
+<li><p>Write a for loop that displays the strings in the following list:</p>
+<p style = "font-family:Consolas; font-size: 14px;">farmAnimals = ["dog", "cat", "pig", "hog", "cow"]</p>
+</li>
+<li><p>Write a for loop that only displays the words in the following list that are of 
+       length 5:</p>
+<p style = "font-family:Consolas; font-size: 14px;">colors = ["red", "green", "blue", "yellow", "white", "purple", "black", "grey, "orange", "brown"]</p></li>
+<li><p>Write a for loop that displays the numbers in the following list until it encounters a number less than 0, at which point it exits the loop:</p>
+<p style = "font-family:Consolas; font-size: 14px;">nums = [9, 50, 36, 18, 3, 88, -1, 12, 45, 94, 67, 0]</p></li>
+<li><p>Write two nested for loops that use the the following two lists to display the multiplication table shown below:</p>
+   <p style = "font-family:Consolas; font-size: 14px;">row = [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+   <p style = "font-family:Consolas; font-size: 14px;">col = [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+   <p>Use this code to align the numbers into right-justified columns:</p>
+   <div id="csCode" style="width:400px"><pre>
+temp = "{:>3}"
+print(temp.format(x), end="")
+</pre></div>
+<p>
+The ":>3" formatting type is telling the print statement to display each number so they occupy three columns right-justified.<br> (">" means right-justified, "<" means left-justified, "^" means centered)</p>   
+</li>
+</ol>
+
+<div id="csSampleRun"><pre>
+1 2 3
+
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+dog cat pig hog cow
+
+green white black brown
+
+9 50 36 18 3 88
+
+1  2  3  4  5  6  7  8  9 
+2  4  6  8 10 12 14 16 18 
+3  6  9 12 15 18 21 24 27 
+4  8 12 16 20 24 28 32 36 
+5 10 15 20 25 30 35 40 45 
+6 12 18 24 30 36 42 48 54 
+7 14 21 28 35 42 49 56 63 
+8 16 24 32 40 48 56 64 72 
+9 18 27 36 45 54 63 72 81
+</pre></div>
+
+<br>
+</div>
+
+

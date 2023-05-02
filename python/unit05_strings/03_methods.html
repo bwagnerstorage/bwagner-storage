@@ -1,0 +1,90 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">String Methods</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_strings_modify.asp" target="_blank" style="color:blue">Modifying Strings</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_strings_concatenate.asp" target="_blank" style="color:blue">String Concatenation</a></p></li> 
+   </ul>
+
+<h1>Python Objects and Methods</h1>
+<p>We have used several of Python's built-in <strong>functions</strong> in our programs thus far, including print, input, str, int, float, and len. In this lesson, we are introduced to a similar feature in Python know as <strong>methods</strong>. Methods are similiar to functions, in that when you call them, they perform a specific task, but they are different from functions in that they can only perform these tasks on variables that contain an object of the class to which the method belongs. </p>
+<p>Python is a pure object-oriented language, therefore everything stored in memory by Python is an object. When you create a variable in Python you are also creating an object that is stored in that variable.  For example, the code</p>
+
+<div id="csCode" width="250px"><pre>word = "friend"</pre></div>
+
+<p>instantiates a String object, "friend", and stores its reference in the variable word. A <strong>reference</strong> is the location in memory where an object resides. </p>
+
+<h1>Classes</h1>
+<p>An <strong>object</strong> consists of two main parts: attributes and methods. <strong>Attributes</strong> are the things that an object can store, such as the unicode characters that that make up a string. <strong>Methods</strong> are the things that an object can do. For example, a String object can call a method named <strong>upper</strong> that converts all of the characters of a string to uppercase letters. It is <strong>classes</strong> that determine the attributes and methods of an object. In other words, classes are the blueprints used to construct objects.</p>
+<p>You will learn more object classes in future unit.</p>
+
+<h1>Calling a Method</h1>
+<p>Look at the following example.
+ <div id="csCode" width="250px"><pre>word = "friend"
+print(word.upper())</pre></div>
+<p>Here is the code's output.</p>
+<div id="csSampleRun"><pre>
+FRIEND
+</pre></div>
+<p>The code above starts by creating a String object, "friend", and then stores the string's reference in a variable named <strong>word</strong>. With this String object reference, the varible word has the ability to call any of Python's <a style="color:blue" href="https://www.w3schools.com/python/python_strings_methods.asp" target="_blank" style="color:blue">String class methods</a> using "dot notation" syntax. In this example, word calls the String class's <strong>upper</strong> method. This method returns a copy of the original string, but with all its letters capitalized. The code ends by having the print function display the new string on the console. String objects are immutable, therefore String methods cannot alter string objects. They can however, make a copy of the original string, with all of the calling method's modifications applied.</p> 
+
+
+
+<h1>Lab Exercise</h1>
+<p>Write a Python program that sums the following list of money amounts <a href="https://www.w3schools.com/python/ref_func_round.asp" target="_blank" style="color:blue">rounded</a> to two decimal places.</p>
+<div id="csCode"><pre>money = "$32.95, $95.06, $44.78, $56.25, $21.84"</pre></div>
+
+
+<p><strong>Step 1</strong>: Remove the dollar sign in front of each amount.</p>
+<ul id="csList">
+<li><p>Use the String class's <strong>replace</strong> method to replace all of dollar signs with empty strings. An empty string is formed by a pair of double quotes with nothing between them. Here is an example of an empty string: "".</p>
+<li><p>Display money before and after removing the dollar signs.</p></li>
+<div id="csSampleRun"><pre>$32.95, $95.06, $44.78, $56.25, $21.84
+32.95, 95.06, 44.78, 56.25, 21.84</pre></div>
+</li>
+
+</ul>
+<p><strong>Step 2</strong>: Turn a copy of the original string into 6 strings. One string for each money amount.</p>
+<ul id="csList">
+<li><p>Use the String class's <strong>split</strong> method to place each money amount into a separate cell of an array named <strong>amounts</strong>. To accomplish this, the split function should split the string by the comma's separating the amounts.</p></li>
+<li><p>Print the amounts array.</p>
+<div id="csSampleRun"><pre>['32.95', ' 95.06', ' 44.78', ' 56.25', ' 21.84']</pre></div>
+</li>
+</ul>
+<p><strong>Step 3</strong>: Convert each value in the array to a float. </p>
+<ul id="csList">
+<li><p>Initialize a variable named <strong>sum</strong> with the value 0.0.
+<li><p>Use the <a href="https://www.w3schools.com/python/python_strings.asp" target="_blank" style="color:blue">for</a> statement and the <strong>in</strong> operator to traverse the array; adding each value in the array to the variable sum. You will need to cast the string values in the array to floats before adding them to sum.</p></li>
+<li><p>Display the floating-point amounts from the array vertically on the console.</p>
+<div id="csSampleRun"><pre>32.95
+95.06
+44.78
+56.25
+21.84</pre></div>
+</li></ul>
+<p><strong>Step 4</strong>: Display the sum rounded to two decimal places.</p> 
+<ul id="csList">
+<li><p>Use Python's built-in <a href="https://www.w3schools.com/python/ref_func_round.asp" target="_blank" style="color:blue">round</a> function to round the sum to two decimal places.</p>
+<div id="csSampleRun"><pre>250.88</pre></div>
+</li>
+</ul>
+<p></p>
+<h1>Sample Run</h1>
+<div id="csSampleRun"><pre>
+$32.95, $95.06, $44.78, $56.25, $21.84
+32.95, 95.06, 44.78, 56.25, 21.84
+
+['32.95', ' 95.06', ' 44.78', ' 56.25', ' 21.84']
+
+32.95
+95.06
+44.78
+56.25
+21.84
+
+250.88
+</pre></div>
+</div>

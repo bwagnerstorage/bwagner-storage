@@ -1,0 +1,80 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ListPractice2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_add.asp" target="_blank" style="color:blue">Add List Items</a></p></li>   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_remove.asp" target="_blank" style="color:blue">Remove List Items</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_loop.asp" target="_blank" style="color:blue">Loop Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_sort.asp" target="_blank" style="color:blue">Sort Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_copy.asp" target="_blank" style="color:blue">Copy Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_join.asp" target="_blank" style="color:blue">Join Lists</a></p></li>
+</ul>
+
+<h1>List Characteristics</h1>
+<p>A list is a data structure that's built into Python and holds a collection of items. Lists have a number of important characteristics:</p>
+<ul id="csList">
+   <li><p>List items are enclosed in square brackets, like this
+       <span ><pre style="width:155px;">[item1, item2, item3]</pre></span></p></li> 
+   <li><p>Lists are <strong>ordered</strong> – i.e. the items in the list appear in a specific order. This enables us to use an index to get access to any item.</p></li> 
+   <li><p>Lists are <strong>mutable</strong>, which means you can add or remove items after a list's creation.</p></li> 
+   <li><p>List elements <strong>do not need to be unique</strong>. Item duplication is possible, as each element has its own distinct place and can be accessed separately through the index.</p></li> 
+   <li><p>Elements can be of <strong>different data types</strong>: you can combine strings, integers, and objects in the same list.</p></li> 
+   <br>
+</ul> 
+<p>Lists are very easily created in Python:
+<div id="csCode" style="width:350px"><pre>list = [3, 6, 9, 12]
+print(list)
+print(type(list))
+[3, 6, 9, 12]
+<class 'list'></pre></div>
+<p>Python lists are used just about everywhere, as they are a great tool for saving a sequence of items and iterating over it.</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Use square brackets[] to create a list named <strong>myList1</strong> that contains the following numbers: 100, 200, 300, 400, 500.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Use the List class's append method to add the number 600 to end of the list.</p></li>
+<li><p>Use the append method to add the number 700 to end of the list.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Use the insert method to add the number 250 between the numbers 200 and 300.</p></li>
+<li><p>Use the insert method to add the number 50 to the beginning of the list.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Use the extend method to add a list containing the numbers 800, 900, 1000 to myList1.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Use the remove method to remove the number 200 from the list.</p></li>
+<li><p>Use the pop method to remove the number 1000 from the list.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Use the reverse method to reverse the order of the list.</p></li>
+<li><p>Display a blank line.</p></li>
+<li><p>Use square brackets[] to create a list named <strong>myList2</strong> that contains the following farm animals: "pig", "cat", "horse", "donkey", "cow", "goat", "sheep", "chicken", "dog".</p></li>
+<li><p>Use the sort method to sort myList2 in ascending order.</p></li>
+<li><p>Display myList2.</p></li>
+<li><p>Use the sort method to sort myList2 in descending order.</p></li>
+<li><p>Display myList2.</p></li>
+<li><p>Use the copy method to make a copy of myList2 and store the new list in a variable named <strong>myList3</strong>.</p></li>
+<li><p>Display myList3.</p></li>
+<li><p>Use the concatenation operator to join myList1 and MyList2 together and store the new list in a variable named <strong>myList4</strong>.</p></li>
+<li><p>Display myList4.</p></li>
+</ol>
+
+<div id="csSampleRun" style="width: 675px"><pre>
+[100, 200, 300, 400, 500]
+[100, 200, 300, 400, 500, 600, 700]
+[50, 100, 200, 250, 300, 400, 500, 600, 700]
+[50, 100, 200, 250, 300, 400, 500, 600, 700, 800, 900, 1000]
+[50, 100, 250, 300, 400, 500, 600, 700, 800, 900]
+[900, 800, 700, 600, 500, 400, 300, 250, 100, 50]
+      
+['cat', 'chicken', 'cow', 'dog', 'donkey', 'goat', 'horse', 'pig', 'sheep']
+['sheep', 'pig', 'horse', 'goat', 'donkey', 'dog', 'cow', 'chicken', 'cat']
+['sheep', 'pig', 'horse', 'goat', 'donkey', 'dog', 'cow', 'chicken', 'cat']
+[900, 800, 700, 600, 500, 400, 300, 250, 100, 50, 'sheep', 'pig', 'horse', 'goat', 'donkey', 'dog', 'cow', 'chicken', 'cat']
+</pre></div>
+<br>
+
+</div>
+
+

@@ -1,0 +1,75 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Classes 2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_classes.asp" target="_blank" style="color:blue">Python Classes/Objects</a></p></li>
+   </ul>
+<h1>Python Classes</h1>
+<p>In this exercise you are going to make a class named <strong>Rectangle</strong> that can store a rectangle's length and width and calculate it's perimeter and area. You are also going to create a function named <strong>main</strong> that prompts the user to enter the length and width of a rectangle. It then uses these values to calculate the rectangle's perimeter and area, displaying them on the screen. The main function should allow the user to continue to enter new rectangle information until they choose to stop.</p>
+
+<h1>Lab Exercise</h1>
+<p>Copy the starter code below and paste it in your main.py file.</p>
+<div id="csCode"><pre>
+class Rectangle:
+
+
+def main():
+ 
+
+
+main()
+
+</pre></div>
+<h3>Rectangle Class</h3>
+<p>Complete the class Rectangle. The class needs to include the following:</p>
+<ol id="csList">
+<li><p>A two parameter <strong>constructor</strong> that initializes a rectangle's length  and width variables.</p></li>
+<li><p>A method named <strong>perimeter</strong> that uses a rectangle's length and width to calculate and return it's perimeter. The formula for the perimeter of a rectangle is<br><br>
+perimeter = 2 * length + 2 * width<br>
+</p></li>
+<li><p>A method named <strong>area</strong> that uses a rectangle's length and width to calculate and return it's area. The formula for the area of a rectangle is<br><br>
+area = length * width<br></p></li>
+</ol> 
+<h3>Function main</h3>
+<p>Complete the function main. The function needs to include the following:</p>
+ <ol id="csList">
+<li><p>Prompt the user to enter the length and width of a rectangle.</p></li>
+<li><p>Create a Rectangle object using the length and width provided by the user.</p></li>
+<li><p>Use the Rectangle object to calculate the perimeter and area of the rectangle and display them on the console window.</p></li>
+<li><p>Include a while loop that repeats the previous steps until the user decides to stop.</p></li>
+</ol>
+<h1>Sample Runs</h1> 
+<div id="csSampleRun"><pre>
+Enter length -->10
+Enter width -->20
+
+Perimeter = 60
+Area = 200
+
+Would you like to enter another rectangle[y/n]? y
+
+
+Enter length -->5
+Enter width -->8
+
+Perimeter = 26
+Area = 40
+
+Would you like to enter another rectangle[y/n]? y
+
+
+Enter length -->200
+Enter width -->500
+
+Perimeter = 1400
+Area = 100000
+
+Would you like to enter another rectangle[y/n]? n
+
+</pre></div>
+
+<br>
+</div>

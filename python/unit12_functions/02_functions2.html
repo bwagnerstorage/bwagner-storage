@@ -1,0 +1,121 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Functions 2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_functions.asp" target="_blank" style="color:blue">Python Functions</a></p></li>
+   <li><p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p></li>
+</ul>
+
+<h1>Functions</h1>
+<p>In this lab, you will be writing four functions that include one or more parameters, but do not have a return value.</p>
+
+
+<h1>Lab Exercise</h1>
+<h3>blankLines Function</h3>
+<p>Write the function <strong>blankLines</strong> that includes an integer parameter. The function should      
+   display one or more blankLines in the terminal window depending upon the value of the         
+   parameter. For example, look at the call made to blankLines below:</p>
+<div id="csCode" style="width:400px"><pre>
+print("start")
+blankLines(4)
+print("stop")</pre></div>
+<P>The output would look like the following:</P>
+<div id="csSampleRun" style="width:400px"><pre>start
+
+
+
+stop</pre></div>
+   <p>There are four blank lines between "start" and "stop".</p>
+<h3>welcome Function</h3>
+<p>Write the function <strong>welcome</strong> that includes two parameters. 
+   The first parameter is the name of the person you are welcoming. 
+   The second parameter is an integer value that determines how many times the
+    welcome message "Welcome &lt;Name&gt;, have a nice day" appears on the screen. 
+    For example, look at the following call made to welcome:  <span  style="font-family:Courier New">welcome("John", 2) </span> would produce the following output.</p>
+
+<div id="csSampleRun"><pre>
+Welcome John, have a nice day!
+</pre></div>
+
+<h3>randomNums Function</h3>
+<p>Write the function <strong>randomNums</strong> that includes three parameters. The first 
+   parameter is an integer value that marks the bottom range of a series of random numbers. 
+   The second parameter marks the upper range of the numbers. 
+   The third parameter is an integer value that represents how many random numbers are generated. Use Python's random <strong>module</strong>. It has a method named randint: <span style="fontfamily:Courier New; font-size:14px">num = random.randint(a, b)</span>.</p>
+For example, look at the following call made to randomNums:  <span style="font-family:Courier New; font-size:14px">randomNums(5,10,8)</span></br> would produce output like the following:</p>
+<div id="csSampleRun"><pre>
+6 8 8 10 5 7 6 9
+</pre></div>
+<p>Eight random numbers in the range of 5 to 10 inclusive.</p>
+
+<h3>banner Function</h3>
+<p>Write a new and improved banner function that takes one parameter, a string value, that 
+   represents the message that is displayed within the banner. This message should be 
+   centered horizontally within the banner. Include the following two lines of code in
+   your function to help with the centering.</p>
+<div id="csCode"><pre>dashLine = "---------------------------"
+dashLen  = len(dashLine)</pre></div>
+
+<br>
+
+<h1>Sample Run</h1>
+<p>The following function calls produced the output below.</p>
+<div id="csCode"><pre>
+print("Start")
+blankLines(5)
+print("Finish")
+
+welcome("John", 5)
+
+randomNums(1,4,10)
+randomNums(10,20,5)
+
+banner("Happy Days")
+banner("Merry Christmas")
+banner("Happy NeW Year")
+</pre></div>
+
+</p>
+<div id="csSampleRun"><pre>
+Start
+      
+      
+      
+      
+      
+Finish
+      
+Welcome John, have a nice day!
+Welcome John, have a nice day!
+Welcome John, have a nice day!
+Welcome John, have a nice day!
+Welcome John, have a nice day!
+      
+      
+3 3 4 4 3 3 1 4 4 3 
+      
+20 17 15 19 13 
+      
+---------------------------
+       Happy Days
+---------------------------
+      
+      
+---------------------------
+      Merry Christmas
+---------------------------
+      
+      
+---------------------------
+      Happy NeW Year
+---------------------------
+      
+</pre></div>
+
+<br>
+</div>
+
+

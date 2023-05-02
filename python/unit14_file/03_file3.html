@@ -1,0 +1,78 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">FileOutput 1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_file_handling.asp" target="_blank" style="color:blue">Python File Handling</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_file_open.asp" target="_blank" style="color:blue">Python Reading Files</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_file_write.asp" target="_blank" style="color:blue">Python Writing Files</a></p></li>
+   <li><p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p></li>
+   </ul>
+<h1>File Output</h1>
+<p>In this lab, we take a look at file output, that is, writing data to a file.The open function is used to open a file for writing. We will look at four samples that have code that will write data to a text file one line at a time.</p>
+<h3>Sample 1</h3>
+<div id="csCode"><pre>def sample1():
+   print("Writing...")
+   file = open("months.txt","w")
+   i = 0
+   while i < len(months):
+      file.write(months[i]+"\n")
+      i+=1
+   file.close()</pre></div>
+<p>This first sample code uses the open function to a prepare the data file "months.txt"
+   to receive data from the program. To inform the open function which mode (read, write, create, or append) to use the second parameter in the open function is set to "w". The rest of the code is similar to the code used to read from a file except that this function uses the File class's <strong>write</strong> method. Notice that a end-of-line marker ("\n") is add to the end of line. If the data file does not exist, the write method will create it automatically for you. The file object provided by the open function needs to be closed when writing to the file is complete.</p>
+<h3>Sample 2</h3>
+<div id="csCode"><pre>def sample2():
+   print("Writing...")
+   file = open("months.txt", "w")
+   for month in months:
+     file.write(month+"\n")
+   file.close()</pre></div>
+<p>The only difference between this sample and previous one is that a for loop is used instead of a while loop.</p>
+<h3>Sample 3</h3>
+<div id="csCode"><pre>def sample3():
+   print("Writing...")
+   with open("months.txt", "w") as file:
+     for month in months:
+        file.write(month+"\n")</pre></div>
+<p>This sample uses a with-as statement with the open function. This eliminates the need for you to explicitly close the file object.</p>
+<h3>Sample 4</h3>
+<div id="csCode"><pre>def sample4():
+   print("Writing sample4...")
+   with open("months.txt", "w") as file:
+      file.writelines(months)</pre></div>
+<p>This sample code uses the File class's method writelines. This method will write all of data in the months list without the need for a loop, however this method gives you no control over how the data will be written to the file.</p>
+
+<h1>Lab Exercise</h1>
+<p>Write a program that saves the months list to a text file named "months.txt".</p>
+<ol id="csList">
+   <li><p>Create a new replit named FileOutput1.</p></li>
+   <li><p>Add the following code to your file:</p>
+   <div id="csCode"><pre>months = ["January", "February",
+      "March", "April", "May", "June", "July","August","September", "October", "November", "December", "Maddie"]</pre></div>
+   </li>
+   <li><p>Select the technique you are going to use to write to the file. Remember, you do not have to create the data file, because the open function, when in write mode, will automatically create the data file if it does not exist.</p></li>
+</ol>
+
+<h1>Data File after Program Execution</h1>
+<div id="csSampleRun"><pre>
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+</pre></div>
+
+<br>
+</div>
+
+

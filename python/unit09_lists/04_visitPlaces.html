@@ -1,0 +1,148 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Places I Would Like to Visit</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_add.asp" target="_blank" style="color:blue">Add List Items</a></p></li>   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_remove.asp" target="_blank" style="color:blue">Remove List Items</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_loop.asp" target="_blank" style="color:blue">Loop Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_methods.asp" target="_blank" style="color:blue">List Methods</a></p></li>
+</ul>
+
+<h1>Lab Exercise</h1>
+<p>Write a program that allows a person to maintain two lists. The first list stores the names of places they would like to visit and the second list stores the names of places they have already visited. Here is a sample screen of the two lists.</p>
+<div id="csSampleRun" style="width: 675px"><pre>
+Places I Would Like to Visit
+----------------------------
+Rome
+London
+Nashville
+Glacier National Park
+Ireland
+      
+      
+Places I Have Visited
+-----------------------
+Yellowstone
+Alaska
+</pre></div>
+
+<ol id="csList">
+<li><p>Create two empty lists named <strong>places</strong> and <strong>visited</strong>. The <strong>places</strong> list stores the names of the places the person would like to visit. The <strong>visited</strong> list stores the names of the places the person has already visited.</p></li>
+<li><p>Create a menu system that allows a user to select a menu option from a list of choices. The menu needs to be in a loop until the user selects the E)xit option.
+
+Here is what the menu system should look like</p>
+<div id="csCode" style="width: 400px"><pre>Menu: A)dd D)isplay E)xit M)ove R)emove:</pre></div>
+<p>The menu is on an input line so the user has the option of choosing an "A","D","E","M" or "R". The user should be able to type the letters in either lowercase or uppercase. If the user inadvertently types the wrong letter display the message "Invalid Entry: try again!" then display the menu again.</p>
+</li>
+<li><p>If the user chooses "A", the program should allow the user to enter a name to be added to the <strong>places</strong> list. Use the List class's append method in your implementation. If the name was successfully added to the list, then display the message "&lt;NAME&gt; has been added" where &lt;NAME&gt; represents the name entered by the user.</p></li>
+<li><p>If the user chooses "D", the program should display both the <strong>places</strong> list and the <strong>visited</strong> list like the sample output shown above.</p></li>
+<li><p>If the user chooses "E", the program should exit the loop and end the program.</p></li>
+<li><p>If the user chooses "M", the program should allow the user to enter a name from the  <strong>places</strong> list and move it into the <strong>visited</strong> list. If successful, the program should display the message "&lt;NAME&gt; has been moved" where &lt;NAME&gt; represent a name in the <strong>places</strong> list. If, however, the name was not in the <strong>places</strong> list, for example, because the user misspelled the name, the program should display the message "&lt;NAME&gt; was not moved" where &lt;NAME&gt; represents the name entered by the user. This should be implemented using the <span style="font-family: Consolas; font-size:14px">if</span> statement and the <span style="font-family: Consolas; font-size:14px">in</span> operator. Like this </p>
+<div id="csCode" style="width: 400px"><pre>if x in places:</pre></div>
+<p>or this</p>
+<div id="csCode" style="width: 400px"><pre>if x not in places:</pre></div>
+</li>
+
+<li><p>If the user chooses "R", the program should allow the user to enter a name from the <strong>places</strong> list and remove it from the list. If successful, the program should display the message "&lt;NAME&gt; has been removed" where &lt;NAME&gt; represent a name in the <strong>places</strong> list. If, however, the name was not found in the <strong>places</strong> list the program should display the message "&lt;NAME&gt; was not found" where &lt;NAME&gt; represents the name entered by the user. Again use the <span style="font-family: Consolas; font-size:14px">if</span> statement and the <span style="font-family: Consolas; font-size:14px">in</span> operator in your implementation.</p></li>
+
+<div id="csSampleRun" style="width: 675px"><pre>
+Menu: A)dd D)isplay E)xit M)ove R)emove: a
+Enter name of place-->Alaska
+Alaska has been added.
+   
+Menu: A)dd D)isplay E)xit M)ove R)emove: a
+Enter name of place-->Yellowstone
+Yellowstone has been added.
+   
+Menu: A)dd D)isplay E)xit M)ove R)emove: Washington DC
+Invalid Entry: try again!
+   
+Menu: A)dd D)isplay E)xit M)ove R)emove: a
+Enter name of place-->Rome
+Rome has been added.
+   
+Menu: A)dd D)isplay E)xit M)ove R)emove: a
+Enter name of place-->Ireland
+Ireland has been added.
+   
+Menu: A)dd D)isplay E)xit M)ove R)emove: d
+   
+Places I Would Like to Visit
+----------------------------
+Alaska
+Yellowstone
+Rome
+Ireland
+   
+   
+Places I Have Visited
+-----------------------
+
+
+Menu: A)dd D)isplay E)xit M)ove R)emove: m
+Enter name of place-->Yellowstone
+Yellowstone has been moved.
+
+Menu: A)dd D)isplay E)xit M)ove R)emove: d
+
+Places I Would Like to Visit
+----------------------------
+Alaska
+Rome
+Ireland
+   
+   
+Places I Have Visited
+-----------------------
+Yellowstone
+
+
+Menu: A)dd D)isplay E)xit M)ove R)emove: r
+Enter name of place-->Ireland
+Ireland has been removed.
+Menu: A)dd D)isplay E)xit M)ove R)emove: m
+Enter name of place-->Glacier
+Glacier was not moved.
+Menu: A)dd D)isplay E)xit M)ove R)emove: r
+Enter name of place-->Texas
+Texas was not found.
+Menu: A)dd D)isplay E)xit M)ove R)emove: D
+   
+Places I Would Like to Visit
+----------------------------
+Alaska
+Rome
+   
+   
+Places I Have Visited
+-----------------------
+Yellowstone
+
+
+Menu: A)dd D)isplay E)xit M)ove R)emove: m
+Enter name of place-->Alaska
+Alaska has been moved.
+Menu: A)dd D)isplay E)xit M)ove R)emove: d
+   
+Places I Would Like to Visit
+----------------------------
+Rome
+   
+   
+Places I Have Visited
+-----------------------
+Yellowstone
+Alaska
+
+
+Menu: A)dd D)isplay E)xit M)ove R)emove:E
+
+</pre></div>
+<br>
+
+</div>
+
+

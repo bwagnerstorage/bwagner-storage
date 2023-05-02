@@ -1,0 +1,306 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">FileInput 2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_file_handling.asp" target="_blank" style="color:blue">Python File Handling</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_file_open.asp" target="_blank" style="color:blue">Python Reading Files</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_file_write.asp" target="_blank" style="color:blue">Python Writing Files</a></p></li>
+   <li><p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p></li>
+   </ul>
+<h1>File Input</h1>
+<p>This program reads a data file consisting of all the countries of the world and their surface areas. Each line of the file consists of a country's name and its area separated by a comma. The goal of this program is to read the file, extract each country name and area from the data set, so that the data can be sorted by their areas from largest to smallest. The data is displayed in two columns with the areas in the first column and the countries names in the second column.</p>
+<p>Follow the steps below to complete the assignment.</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+   <li><p>Create a new replit named FileInput2.</p></li>
+   <li><p>Click on the following link to download the csv file: <a href="python/unit14_file/countries.csv" style="color:#00F">countries.csv</a></p></li>
+   <li><p>Click on the ellipse (three vertical dots) icon in the File section. Select the menu option: <strong>Upload File</strong>.</p>
+      <p><img src="python/unit14_file/upload.png"></p>
+      <p>In the Dialog box, navigate to the location of the "countries.csv" file. If you did not move it, it should be in your Downloads folder. Select the file. This should add the "countries.csv" file to your replit.</p></li>
+   <li><p>Double-click on the file "countries.csv" to view it. This file is a list of all the countries in the world and their surface area in square miles. Notice that one line of the file consists of the country's name and it's area separated by a comma, hence a csv file.</p></li>
+   <li><p>Open the "countries.csv" file for reading using the following code:</p>
+   <div id="csCode"><pre>with open("countries.csv", "r") as file:</pre></div>
+   </li>
+   <li><p>Inside the with statement create a list  named <strong>countriesList</strong> with this code:</p>
+   <div id="csCode"><pre>countriesList = []</pre></div>
+   </li>
+   <li><p>The code below uses a for-in loop to read each line of the file. It then uses the String class's split method to remove the comma separating the country and its capital. The split method will also place the country and the area in a list of size 2. The code then appends the new list to the countriesList creating a list of lists data structure: </p>
+   <div id="csCode"><pre>for line in file:
+   pairList = line.split(",")
+   print(pairList)    # view each list created
+   countriesList.append(pairList)</pre></div>
+   </li>
+   <li><p>Add this print statement outside the scope of the for loop. This will allow you to see the data in a list of lists format.
+   <div id="csCode"><pre>print(countriesList)</pre></div>
+   </p></li>
+   <li><p>Now that the data has been read and stored in a list the next step is to sort the list by each country's area.</p>
+   <div id="csCode"><pre>countriesList2 = sorted(countriesList, key=lambda x:float(x[1]), reverse=True)</pre></div>
+   <p>This sorting code is fairly complex. There are two takeaways I want you to get from this code. First, the sorted function returns a copy of the countriesList sorted in descending order. Second, because each country's name and its area is stored in a list they are indexed, so it is easy to access them. The code x[1] refers to area of the country.</p>
+   </li>
+   <li><p>The last step in the program is display the data in a columnar format. Start by adding this code to give each column a title.</p>
+   <div id="csCode"><pre>print("   Area          Country") 
+print("----------------------------") </pre></div></li>
+   <li><p>Look at an element from the countriesList:</p>
+      <div id="apCode"><pre>['Afghanistan', '652090\n']</pre></div>
+      <p>Notice that the area value contains a new line character "\n". This needs to be removed or it will affect the way the data is displayed.</p>
+      <p>The following code uses the String class's strip method to remove the new line marker "\n" from the area. It also utilizes the f-String statement to format the data into two columns with the first column left justified using 14 spaces to display the areas in a comma-based format.</p>
+      <div id="csCode"><pre>for line in countriesList2:
+   area = float(line[1].strip("\n"))
+   country = line[0]
+   output = f'{area:<14,.0f}{country}'
+      print(output)</pre></div>
+   </li>
+   <li><p>Run the program again.</p></li>
+</ol>
+
+<div id="csSampleRun"><pre>
+   Area          Country
+----------------------------
+17,075,400    Russian Federation
+13,120,000    Antarctica
+9,970,610     Canada
+9,572,900     China
+9,363,520     United States
+8,547,403     Brazil
+7,741,220     Australia
+3,287,263     India
+2,780,400     Argentina
+2,724,900     Kazakstan
+2,505,813     Sudan
+2,381,741     Algeria
+2,344,858     The Democratic Republic of the Congo
+2,166,090     Greenland
+2,149,690     Saudi Arabia
+1,958,201     Mexico
+1,904,569     Indonesia
+1,759,540     Libyan Arab Jamahiriya
+1,648,195     Iran
+1,566,500     Mongolia
+1,285,216     Peru
+1,284,000     Chad
+1,267,000     Niger
+1,246,700     Angola
+1,240,192     Mali
+1,221,037     South Africa
+1,138,914     Colombia
+1,104,300     Ethiopia
+1,098,581     Bolivia
+1,025,520     Mauritania
+1,001,449     Egypt
+923,768       Nigeria
+912,050       Venezuela
+883,749       Tanzania
+824,292       Namibia
+801,590       Mozambique
+796,095       Pakistan
+774,815       Turkey
+756,626       Chile
+752,618       Zambia
+676,578       Myanmar
+652,090       Afghanistan
+637,657       Somalia
+622,984       Central African Republic
+603,700       Ukraine
+587,041       Madagascar
+581,730       Botswana
+580,367       Kenya
+551,500       France
+527,968       Yemen
+513,115       Thailand
+505,992       Spain
+488,100       Turkmenistan
+475,442       Cameroon
+462,840       Papua New Guinea
+449,964       Sweden
+447,400       Uzbekistan
+446,550       Morocco
+438,317       Iraq
+406,752       Paraguay
+390,757       Zimbabwe
+377,829       Japan
+357,022       Germany
+342,000       Congo
+338,145       Finland
+331,689       Vietnam
+329,758       Malaysia
+323,877       Norway
+323,250       Poland
+322,463       Côte d’Ivoire
+309,500       Oman
+301,316       Italy
+300,000       Philippines
+283,561       Ecuador
+274,000       Burkina Faso
+270,534       New Zealand
+267,668       Gabon
+266,000       Western Sahara
+245,857       Guinea
+242,900       United Kingdom
+241,038       Uganda
+238,533       Ghana
+238,391       Romania
+236,800       Laos
+214,969       Guyana
+207,600       Belarus
+199,900       Kyrgyzstan
+196,722       Senegal
+185,180       Syria
+181,035       Cambodia
+175,016       Uruguay
+163,610       Tunisia
+163,265       Suriname
+147,181       Nepal
+143,998       Bangladesh
+143,100       Tajikistan
+131,626       Greece
+130,000       Nicaragua
+120,538       North Korea
+118,484       Malawi
+117,600       Eritrea
+112,622       Benin
+112,088       Honduras
+111,369       Liberia
+110,994       Bulgaria110,861       Cuba
+108,889       Guatemala
+103,000       Iceland
+102,173       Yugoslavia
+99,434        South Korea
+93,030        Hungary
+91,982        Portugal
+90,000        French Guiana
+88,946        Jordan
+86,600        Azerbaijan
+83,859        Austria
+83,600        United Arab Emirates
+78,866        Czech Republic
+75,517        Panama
+71,740        Sierra Leone
+70,273        Ireland
+69,700        Georgia
+65,610        Sri Lanka
+65,301        Lithuania
+64,589        Latvia
+62,422        Svalbard and Jan Mayen
+56,785        Togo
+56,538        Croatia
+51,197        Bosnia and Herzegovina
+51,100        Costa Rica
+49,012        Slovakia
+48,511        Dominican Republic
+47,000        Bhutan
+45,227        Estonia
+43,094        Denmark
+41,526        Netherlands
+41,284        Switzerland
+36,188        Taiwan
+36,125        Guinea-Bissau
+33,851        Moldova
+30,518        Belgium
+30,355        Lesotho
+29,800        Armenia
+28,896        Solomon Islands
+28,748        Albania
+28,051        Equatorial Guinea
+27,834        Burundi
+27,750        Haiti
+26,338        Rwanda
+25,713        Macedonia
+23,200        Djibouti
+22,696        Belize
+21,056        Israel
+21,041        El Salvador
+20,256        Slovenia
+18,575        New Caledonia
+18,274        Fiji Islands
+17,818        Kuwait
+17,364        Swaziland
+14,874        East Timor
+13,878        Bahamas
+12,189        Vanuatu
+12,173        Falkland Islands
+11,295        Gambia
+11,000        Qatar
+10,990        Jamaica
+10,400        Lebanon
+9,251         Cyprus
+8,875         Puerto Rico
+7,780         French Southern territories
+6,257         Palestine
+5,765         Brunei
+5,130         Trinidad and Tobago
+4,033         Cape Verde
+4,000         French Polynesia
+3,903         South Georgia and the South Sandwich Islands
+2,831         Samoa
+2,586         Luxembourg
+2,510         Réunion
+2,040         Mauritius
+1,862         Comoros
+1,705         Guadeloupe
+1,399         Faroe Islands
+1,102         Martinique
+1,075         Hong Kong
+964           Sao Tome and Principe
+800           Netherlands Antilles
+751           Dominica
+726           Kiribati
+702           Federated States of Micronesia
+694           Bahrain
+650           Tonga
+622           Saint Lucia
+618           Singapore
+549           Guam
+468           Andorra
+464           Northern Mariana Islands
+459           Palau
+455           Seychelles
+442           Antigua and Barbuda
+430           Barbados
+430           Turks and Caicos Islands
+388           Saint Vincent and the Grenadines
+373           Mayotte
+359           Heard Island and McDonald Islands
+347           Virgin Islands U.S.
+344           Grenada
+316           Malta
+314           Saint Helena
+298           Maldives
+264           Cayman Islands
+261           Saint Kitts and Nevis
+260           Niue
+242           Saint Pierre and Miquelon
+236           Cook Islands
+200           Wallis and Futuna
+199           American Samoa
+193           Aruba
+181           Marshall Islands
+160           Liechtenstein
+151           Virgin Islands British
+135           Christmas Island
+102           Montserrat
+96            Anguilla
+78            British Indian Ocean Territory
+61            San Marino
+59            Bouvet Island
+53            Bermuda
+49            Pitcairn
+36            Norfolk Island
+26            Tuvalu
+21            Nauru
+18            Macao
+16            United States Minor Outlying Islands
+14            Cocos (Keeling) Islands
+12            Tokelau
+6             Gibraltar
+2             Monaco
+0             Holy See (Vatican City State)
+</pre></div>
+
+<br>
+</div>
+
+

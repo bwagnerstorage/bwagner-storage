@@ -1,0 +1,301 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Classes 3</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_classes.asp" target="_blank" style="color:blue">Python Classes/Objects</a></p></li>
+   </ul>
+<h1>Python Classes</h1>
+<p>In this lab you going to complete a class named Fraction. This class should be able to 
+   add, subtract, multiply, and divide two fractions. The Fraction class can handle fractions
+   that are single or multi-digit and positive or negative. When inputting a fraction problem it
+   should be in the following format:  <strong>a/b + c/d</strong>.
+</p>
+
+<h1>Lab Exercise</h1>
+<p>Copy the starter code below and paste it in your main.py file.</p>
+<div id="csCode"><pre>
+import re
+from fraction import fraction
+
+def find(str, pos):
+  while pos < len(str):
+    ch = str[pos:pos+1]
+    if ch == "/" or ch == "+" or ch == "*":
+      return pos
+    # check for not negative sign
+    if ch == "-" and pos-1 >= 0:
+       pos2 = pos-1
+       # backup until non space found
+       while pos2 > 0 and str[pos2:pos2+1] == " ":
+         pos2 -= 1
+       if str[pos2].isdigit():
+        return pos
+    pos+=1
+  return pos
+
+
+def extract(problem, values):
+  start = 0
+  index = 0;
+  valid = True
+  if re.search("\s*-?\s*\d+\s*/\s*\d+\s*(\+|-|\*|\/)\s*-?\s*\d+\s*/\s*\d+\s*", problem):
+
+    i = 0;
+    while i < 5 and index >= 0:
+      index = find(problem, index) 
+      if index > 0:
+        values.append(problem[start:index].strip())
+        if i == 1:
+           values.append(problem[index:index+1])
+        start = index + 1
+        index+=1
+        i+=1
+  else:
+    print("--- Not a valid problem.\n")
+    valid = False
+
+  return valid
+
+  
+def main():
+  sel = "y"
+  while sel == "Y" or sel == "y":
+    values = [];
+    print()
+    problem = input("Enter fraction problem\n[ex. 1/2 + 3/4] -->")
+    valid = extract(problem, values)
+    if valid == True:
+      frac1 = fraction(values[0], values[1])
+      frac2 = fraction(values[3], values[4])
+ 
+    if values[2] == "+":
+      frac3 = frac1.add(frac2)
+    if values[2] == "-":
+      frac3 = frac1.subtract(frac2)
+    if values[2] == "*":
+      frac3 = frac1.multiply(frac2)
+    if values[2] == "/":
+      frac3 = frac1.divide(frac2)
+ 
+   print()
+   print(str(frac1.num) + "/" + str(frac1.denom),end="")
+   print(" " + values[2] + " " + str(frac2.num) + "/" + str(frac2.denom), end="")
+   print(" = " + str(frac3.get()))
+   print()
+ 
+   sel = input("Would like to enter another problem[y/n]? ")
+ 
+
+ main()
+</pre></div>
+<h3>Class fraction</h3>
+<p>Copy the starter code below and paste it in your fraction.py file.</p>
+<div id="csCode"><pre>
+class fraction:
+  def __init__(self, num, denom):
+ 
+ 
+ 
+  def compute_lcm(self, a, b):
+ 
+
+ 
+  # self is the 1st fraction object in the addition problem 
+  # other is the 2nd fraction object in the addition problem 
+  def add(self, other): 
+
+ 
+
+  # self is the 1st fraction object in the subtraction problem 
+  # other is the 2nd fraction object in the subtraction problem 
+  def subtract(self, other):
+
+ 
+  # self is the 1st fraction object in the multiplication problem 
+  # other is the 2nd fraction object in the multiplication problem 
+  def multiply(self, other):
+
+ 
+  # self is the 1st fraction object in the division problem 
+  # other is the 2nd fraction object in the division problem 
+  def divide(self, other):
+
+ 
+ 
+  def get(self):
+     
+ 
+ 
+  # ------------------------------------------------#
+  # Methods used to reduce a fraction into its  
+  # lowest terms
+  # ------------------------------------------------#
+  def reduce(self, frac):
+    GCF = self.gcf(frac.num, frac.denom)  
+    numReduced = int(frac.num / GCF)
+    denomReduced = int(frac.denom / GCF)
+ 
+  return fraction(numReduced, denomReduced)
+ 
+     
+  def getFactors(self, n):
+    factorsList = []
+    i = 1
+    count = 0;
+    while i <= abs(n):
+      j = abs(n) / i
+      if abs(n) % i == 0:
+        if i <= j:
+          f = (i, int(j))  #tuple
+          factorsList.append(f)
+          count+=1
+          i+=1
+  return factorsList 
+ 
+   
+  def gcf(self, num, denom):
+    numFactors = self.getFactors(num)
+    denomFactors = self.getFactors(denom)
+    numFactorsSet=set()
+    denomFactorsSet=set()
+    for numTuple in numFactors:
+      for n in numTuple:
+        numFactorsSet.add(n)
+    for denomTuple in denomFactors:
+      for d in denomTuple:
+        denomFactorsSet.add(d)
+ 
+    commonFactors = numFactorsSet.intersection(denomFactorsSet)
+    factorsList = sorted(commonFactors, reverse=True)
+    if len(factorsList) == 0:
+      gcf = denom
+    else:
+      gcf = factorsList[0]
+  return gcf 
+</pre></div>
+<P>The Fraction class includes a method named <strong>reduce</strong> and several other helper methods.
+   The reduce method, given a Fraction object, will return a new fraction that is the input
+   fraction reduced to it's lowest terms.
+</P>
+<h3>Fraction Constructor</h3>
+
+<p>Complete the Fraction class's constructor so that it initializes two variables named self.num and self.denom to
+   the values of the two variables <strong>num</strong> and <strong>denom</strong> given in the constructor's 
+   parameter list. The instance variables self.num and self.denom
+   represent the numerator and denominator of a fraction object.
+</p>
+
+<h3>Method compute_lcm</h3>
+<p>The LCM or Least Common Multiple is the smallest number that is a multiple of both the fraction objects.
+   The LCM is used in fraction addition and subtraction to determine the LCD or 
+   Least Common Denominator of two fractions. To determine the LCM of the two
+   fractions follow the steps below.
+</p>
+<p>To write the method compute_lcm follow these steps.</p>
+<ol id="csList">
+<li><p>Given the two fraction's denominators <strong>d1</strong> and <strong>d2</strong> in compute_lcm's parameter list, use an if statement to determine which one of the denominators
+       has the greater value, and store this value in a variable named <strong>greater</strong>.
+</p></li>
+<li><p>If the variable <strong>greater</strong> is divible by both d1 and d2, then the value of greater is the LCM of the two fractions and should be returned by the method.<br>
+ However, if the value of greater is not divisible by both d1 and d2, then greater's value should be incremented by one.
+ This process should be repeated until the lcm is found. The method should
+ return the lcm.</p></li>
+
+ <div id="csCode"><pre>  def compute_lcm(self, a, b):
+
+  # choose the greater number
+  if a > b:
+      greater = a
+  else:
+      greater = b
+
+  # loop until greater is divisible 
+  # by both a and b
+  found = False
+  while(not found):
+      if greater % a == 0 and greater % b == 0:
+         lcm = greater
+         found = True  # exit loop
+      else:
+         greater += 1
+  return lcm</pre>
+
+ </div>
+</ol> 
+<h3>Method add</h3>
+<p>Write the method add. Given a fraction <strong>self</strong> and a second fraction <strong>other</strong>,
+   add the two fractions using their LCM (LCD) . Call the method <strong>reduce</strong>, that is provided in the fraction class, to reduce the answer of the addition problem to its lowest terms. Return the answer returned by reduce as a fraction object. In the addition process you will need to adjust the values of the numerators to reflect the changes made to the two fractions denominator.</p>
+<p>The add method is invoked with the following code:</p>
+<div id="csCode"><pre>ans = frac1.add(fract2)</pre></div>
+
+<h3>Method subtract</h3>
+<p>Write the method subtract. Given a fraction self and a second fraction other,
+   subtract the two fractions using their LCM (LCD) . Call the method reduce, that is provided in the fraction class, to reduce the answer of the subtraction problem to its lowest terms. Return the answer returned by reduce as a fraction object. In the subtraction process you will need to adjust the values of the numerators to reflect the changes made to the two fractions denominator.</p>
+<p>The subtract method is invoked with the following code:</p>
+<div id="csCode"><pre>ans = frac1.subtract(fract2)</pre></div>
+
+<h3>Method multiply</h3>
+<p>Write the method multiply. Given a fraction self and a second fraction other,
+   multiply the two fraction and call the reduce method to reduce the answer to its lowest terms, then return the answer as a fraction object.</p>
+<p>The multiply method is invoked with the following code:</p> 
+<div id="csCode"><pre>ans = frac1.multiply(fract2)</pre></div>
+
+<h3>Method divide</h3>
+<p>Write the method divide. Given a fraction self and a second fraction other,
+   divide the two fraction and call the reduce method to reduce the answer to its lowest terms, then return the answer as a fraction object.</p>
+<p>The multiply method is invoked with the following code:</p>
+<div id="csCode"><pre>ans = frac1.divide(fract2)</pre></div>
+
+<h3>Method get</h3>
+<p>Write the method get. This method should return the fraction object self in a printable format: num/denom (example: 7/8).</p>
+ 
+<h1>Sample Runs</h1> 
+<div id="csSampleRun"><pre>
+Enter fraction problem
+[ex. 1/2 + 3/4] -->1/2 + 3/4
+
+1/2 + 3/4 = 5/4
+
+Would like to enter another problem[y/n]? y
+
+Enter fraction problem
+[ex. 1/2 + 3/4] -->5/12 + 7/18
+
+5/12 + 7/18 = 29/36
+
+Would like to enter another problem[y/n]? y
+
+Enter fraction problem
+[ex. 1/2 + 3/4] -->3/4 - 1/2
+
+3/4 - 1/2 = 1/4
+
+Would like to enter another problem[y/n]? y
+
+Enter fraction problem
+[ex. 1/2 + 3/4] -->4/5 * 6/10
+
+4/5 * 6/10 = 12/25
+
+Would like to enter another problem[y/n]? y
+
+Enter fraction problem
+[ex. 1/2 + 3/4] -->1/3 / 5/6
+
+1/3 / 5/6 = 2/5
+
+Would like to enter another problem[y/n]? y
+
+Enter fraction problem
+[ex. 1/2 + 3/4] -->-1/2 + 3/4
+
+-1/2 + 3/4 = 1/4
+
+Would like to enter another problem[y/n]? n
+</pre></div>
+
+<br>
+</div>

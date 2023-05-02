@@ -1,0 +1,64 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP Score</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_conditions.asp" target="_blank" style="color:blue">Python Elif Statement</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_operators.asp" target="_blank" style="color:blue">Python Operators</a></p></li>
+   <li><p><a href="https://www.tutorialspoint.com/python/python_decision_making.htm" target="_blank" style="color:blue">Decision Making</a></p></li>
+   </ul>
+
+<h1>Lab Exercise</h1>
+<p>On the 2009 Computer Science AP Exam the range of composite scores was between 0 and 80. The College Board uses a 5 point system to gauge a student's master of the curriculum for the subject being tested. The table below shows how the exam scores for the computer science exam were translated into the 5 point system.
+
+<table id="csTable">
+   <tr>
+       <th>Composite Score</th>
+       <th>AP Score</th>
+   </tr>
+   <tr>
+       <td>62 to 80</td>
+       <td>5</td>
+   </tr>
+   <tr>
+       <td>47 to 61</td>
+       <td>4</td>
+   </tr>
+   <tr>
+       <td>37 to 46</td>
+       <td>3</td>
+   </tr>
+   <tr>
+       <td>29 to 36</td>
+       <td>2</td>
+   </tr>
+   <tr>
+       <td>0 to 28</td>
+       <td>1</td>
+   </tr>
+</table>
+
+<p>Write a Python program that allows a user to enter in their AP composite score, from the keyboard, and then uses this composite score to determine the student's AP score. The program's output should resemble the sample runs below. Use the <strong>elif</strong> statement in your implementation.</p>
+
+<p>If a student's AP score is a 5 display the recommendation "Recommendation: Extremely well qualified" after the score. If their AP score is a 4 display the recommendation "Recommendation: Very well qualified". If their AP score is a 3 display the recommendation "Recommendation: Qualified". If their AP score is a 2 display the recommendation "Recommendation: Possibly qualified". If their AP score is a 1 display the recommendation "Recommendation: No recommendation"</p>
+
+<div id="csSampleRun"><pre>
+2009 AP Computer Science Exam Score
+-----------------------------------
+Enter your composite score--> 47
+
+Your AP Score is a 4. Recommendation: Very well qualified
+</pre></div>
+<br>
+<div id="csSampleRun"><pre>
+2009 AP Computer Science Exam Score
+-----------------------------------
+Enter your composite score--> 35
+
+Your AP Score is a 2. Recommendation: Possibly qualified
+</pre></div>
+
+</div>
+

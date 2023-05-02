@@ -1,0 +1,168 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python NumPy Module</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/numpy/default.asp" 
+    target="_blank" style="color:blue">NumPy Module</a></p></li>
+   <li><p><a href="https://numpy.org/doc/stable/" 
+    target="_blank" style="color:blue">NumPy Website</a></p></li>
+   </ul>
+
+<h1>What is NumPy</h1>
+<p>NumPy is short for <strong>Numerical Python</strong>. It is a library of classes, functions, constants, and variables that specialize in advance numerical computation. We are mainly interested in its ability to create multi-dimensional arrays. Our scope of study is limited to two-dimensional arrays or 2D arrays for short.</p>
+<p>A 2D array is akin to a table made of rows and columns where each row and column is assigned an index number indicating its location within an array.
+For example, row 0 is the first row in the array and row 1 is the second row in the array, whereas column 0 is the first column in the array and column 2 is the second column in the array. These rows and columns form a grid system where a cell in the array is formed by the intersection of a row and column . For example cell (0,0) is the intersection of row 0 and column 0.</p>
+
+
+<h1>Installing NumPy</h1>
+<p>The NumPy module is not part of Python's standard installation, Therefore we have to install this library within our programming environment ourselves, and then import it into our individual projects(repls).</p>
+<h3>Follow these steps to install NumPy within your Replit environment.</h3>
+<ol id="csList">
+<li><p>Login to replit and create a new Python repl named <strong>NumPy1</strong></p></li>
+<li><p>When your repl window opens click on the packages icon in the panel to the far left. It looks like a transparent cube.</p>
+<img src="python/unit19_numpy/Unit19_01.png">
+</li>
+<li><p>Type <strong>"numpy"</strong> in the textbox that says "search to install packages".</p>
+<img src="python/unit19_numpy/Unit19_02.png"
+</li>
+<li><p>Click on the plus sign "+" to install the NumPy package into your virtual environment.</p></li>
+<li><p>A green window will appear when NumPy is finished installing. You can click on the "x" to close the green window.</p></li>
+<li><p>To verify the installation, copy and paste the code below into your Main.py window and click Run.</p>
+<div id="csCode"><pre>import numpy
+
+arr = numpy.array([1, 2, 3, 4, 5])
+
+print(arr)</pre></div>
+<p>If installed correctly you should see the following output: [1,2,3,4,5].</p>
+</li>
+<li><p>By convention, Python programmers use the "import as" statement to create an alias of the NumPy module so that they don't have to type as much. Add "as np" to the end of the import statement and then change the reference to NumPy on the next line to "np.array". </p>
+<p>In this sample code NumPy creates a one-dimensional array. Although NumPy can create multi-dimensional arrays, we will limit our area of study to using one and two-dimensional arrays.
+</p>
+</li></ol>
+<p></p>
+
+<h1>Numpy's zeros Method</h1>
+<p>The NumPy module includes a considerable number of functions and classes for doing array computations  useful for fields of study in the areas of Mathematics, Science, and Computing. NumPy arrays are up to 66% faster than Python's built-in data structures, depending upon the operation being performed. We will only be scratching the service of NumPy's enormous capabilities.</p>
+<p>Most of the on-line tutorials that I explored demostrated how to create a NumPy array by first creating a Python array, list, or tuple and then passing these data structures to NumPy so that they could be transformed into a NumPy array. I wanted to find away to create a two-dimensional array simply by supplying the NumPy array with the number of rows and columns I wanted the array to have, and then populate the array with data. It took a while but I finally discovered one of NumPy's sub-modules named <a style="color:blue; font-size:12px; font-weight:800" href="https://numpy.org/doc/stable/reference/routines.matlib.html?highlight=matlib#module-numpy.matlib" target="_blank">matlib</a>.
+This sub-module works specifically with matrices, which is the Math world's version of a 2D array. Matlib has a function named <a style="color:blue; font-size:12px; font-weight:800" href="https://numpy.org/doc/stable/reference/routines.matlib.html" target="_blank">zeros</a>, which enabled me to accomplish my goal .</p>
+<p>Below I am using the matlib's matrix library function <a style="color:blue; font-size:12px; font-weight:800" href="https://numpy.org/doc/stable/reference/routines.matlib.html" target="_blank">zeros</a> to create a two-dimensional array where the number of rows and columns are assigned values input from the keyboard. The row and col values are passed to the zeros function as a tuple in the form (row, col). The zeros function initially assigns each element a value of zero, therfore the program uses nested for loops to assign each element in the array a value input from the keyboard. It uses another pair of nested for loops to display the array in a tabular format like Sample Runs 1 and 2 shown below.</p>
+<div id="csCode"><pre>
+import numpy as np   # np is alias of numpy
+
+# a 2D array is an array of arrays
+# input the number of rows and cols for 2D array
+rows = int(input("Enter number of rows-->"))
+cols = int(input("Enter number of columns-->"))
+print()
+
+# create 2D array with dimensions (rows, cols)
+# with each cell assigned a value of zero
+a = np.zeros((rows, cols), dtype=int)
+
+# enter data into numpy array using nested for loops
+for r in range(len(a)): 
+  for c in range(len(a[r])):
+     num = input(f'Enter element ({r},{c}) -->')
+     a[r][c] = num
+  print()
+
+# display contents of array using nested for loops 
+for r in range(len(a)):
+  for c in range(len(a[r])): 
+     print(f'{a[r][c]:3}, end=" ")
+  print()
+print()
+</pre></div>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+   <li><p>Create a new repl named Numpy1-1.</p></li>
+   <li><p>Write a program that creates a NumPy 2D array of a size specified by values entered from the keyboard. Populate the array with integer values entered from the keyboard. Use a pair of nested for loops to calculate the sum of each row in the array and display the sums at the end of each line. Refer to Sample Run 3.</p></li>
+</ol>
+<h1>Sample Runs 1</h1> 
+<div id="csSampleRun"><pre>
+Enter number of rows-->3
+Enter number of columns-->3
+
+Enter element (0,0) -->10
+Enter element (0,1) -->20
+Enter element (0,2) -->30
+
+Enter element (1,0) -->40
+Enter element (1,1) -->50
+Enter element (1,2) -->60
+
+Enter element (2,0) -->70
+Enter element (2,1) -->80
+Enter element (2,2) -->90
+
+10 20 30 
+40 50 60 
+70 80 90 
+
+</pre></div>
+
+<h1>Sample Run 2</h1> 
+<div id="csSampleRun"><pre>
+Enter number of rows-->3
+Enter number of columns-->5
+
+Enter element (0,0) -->1
+Enter element (0,1) -->2
+Enter element (0,2) -->3
+Enter element (0,3) -->4
+Enter element (0,4) -->5
+
+Enter element (1,0) -->6
+Enter element (1,1) -->7
+Enter element (1,2) -->8
+Enter element (1,3) -->9
+Enter element (1,4) -->9
+
+Enter element (2,0) -->2
+Enter element (2,1) -->3
+Enter element (2,2) -->4
+Enter element (2,3) -->5
+
+1 2 3 4 5 
+6 7 8 9 9 
+2 3 4 5 6 
+
+</pre></div>
+
+<h1>Sample Run 3</h1> 
+<div id="csSampleRun"><pre>
+Enter number of rows-->4
+Enter number of columns-->3
+
+Enter element (0,0) -->4
+Enter element (0,1) -->6
+Enter element (0,2) -->3
+
+Enter element (1,0) -->7
+Enter element (1,1) -->9
+Enter element (1,2) -->6
+
+Enter element (2,0) -->5
+Enter element (2,1) -->8
+Enter element (2,2) -->8
+
+Enter element (3,0) -->3
+Enter element (3,1) -->1
+Enter element (3,2) -->7
+
+      Row Sums
+---------------------
+  4   6   3    13
+  7   9   6    22
+  5   8   8    21
+  3   1   7    11
+
+</pre></div>
+<br>
+</div>
+
+

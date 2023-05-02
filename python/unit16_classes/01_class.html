@@ -1,0 +1,84 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Classes 1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_classes.asp" target="_blank" style="color:blue">Python Classes/Objects</a></p></li>
+   </ul>
+<h1>Python Classes</h1>
+<p>In this exercise you are going to create two Python classes named <strong>Point</strong> and <strong>Line</strong>. The Point class represents a point on a coordinate plane. It stores the x and y values of a single point on the plane. The Line class represents a line on a coordinate plane. It stores two points on the plane that represent the starting point and ending point of a line. The Line class also includes a method to calculate the slope of a line.</p>
+
+<h1>Lab Exercise</h1>
+
+<p>Copy the starter code below and paste it in your main.py file.</p>
+<div id="csCode"><pre>
+class Point:
+
+
+class Line:
+  
+
+
+def main():
+  print();
+  print("Calculate Slope of a Line")
+  print("-------------------------")
+  x1 = input("Enter x value for 1st Point -->")
+  y1 = input("Enter y value for 1st Point -->")
+  x2 = input("Enter x value for 2nd Point -->")
+  y2 = input("Enter y value for 2nd Point -->")
+
+  p1 = Point(int(x1), int(y1))
+  p2 = Point(int(x2), int(y2))
+
+  line = Line(p1,p2)
+  slope = line.slope()
+
+  print()
+  print("The slope of the line is " + str(slope))
+
+main()
+</pre></div>
+<h3>Point Class</h3>
+<p>Complete the class Point under its class heading at the top of the starter code. The class needs to include the following:</p>
+<ol id="csList">
+<li><p>A two parameter <strong>constructor</strong> that initializes a point's x and y variables.</p></li>
+</ol> 
+
+<h3>Line Class</h3>
+<p>Complete the class Line under its class heading at the top of the starter code. The class needs to include the following:</p>
+<ol id="csList">
+<li><p>A two parameter <strong>constructor</strong> that initializes a lines's starting point and ending point.</p></li>
+<li><p>A method named <strong>slope</strong> that calculates and returns the slope of a line using the slope formula:<br><br> m = (y2 - y1)/(x2 - x1)</p></li>
+</ol> 
+ 
+<h1>Sample Runs</h1> 
+<div id="csSampleRun"><pre>
+Calculate Slope of a Line
+-------------------------
+Enter x value for 1st Point -->1
+Enter y value for 1st Point -->2
+Enter x value for 2nd Point -->3
+Enter y value for 2nd Point -->4
+
+The slope of the line is 1.0
+
+</pre></div>
+
+<div id="csSampleRun"><pre>
+Calculate Slope of a Line
+-------------------------
+Enter x value for 1st Point -->0
+Enter y value for 1st Point -->4
+Enter x value for 2nd Point -->2
+Enter y value for 2nd Point -->1
+
+The slope of the line is -1.5
+
+</pre></div>
+<br>
+</div>
+
+

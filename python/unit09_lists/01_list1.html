@@ -1,0 +1,89 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ListPractice1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_lists.asp" target="_blank" style="color:blue">Python Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_access.asp" target="_blank" style="color:blue">Access List Items</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_change.asp" target="_blank" style="color:blue">Change List Items</a></p></li>   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_add.asp" target="_blank" style="color:blue">Add List Items</a></p></li>   
+
+</ul>
+
+<h3>Data Structures</h3>
+<p> Data structures, often referred to as collections, are “containers” that organize and group data according to type. 
+   The basic data structures in Python include list, set, tuples, and dictionary.
+   Each of these data structures is unique in its own way. Python disguises between them 
+   based on their mutability and order. 
+   
+   <h3>Mutability</h3>
+   <p>The Mutability of a data structure 
+   refers to whether or not the data stored in the data structure can be changed or modified.
+   If a data structure is mutable it means its data can be modified and immutable means the data cannot be modified.
+   For example, Python's String class is immutable, therefore once a string is created its 
+   characters cannot be changed.</p>
+
+   <h3>Order</h3>
+   <p>When we say that a data structure is ordered, it means that its data has a defined order.
+   For example, strings are ordered, because their characters are assigned an index. The first character is index zero [0], the 
+   second character is index one [1], and so on.</p>
+   
+   <h1>List</h1>
+   <p> Lists are mutable and ordered. A list, as its name implies, is a list of data (integers, floats, strings, Booleans, 
+   or even other lists or more complicated data types). Like characters in strings, elements of a list are indexed starting
+   at 0 using [ ] syntax.
+   </p>
+
+   <h3>Creating a List</h3>
+   <p>A List is created using square brackets.</p>
+   
+   <div id="csCode" style = "width:500px"><pre>numbers = [10, 20, 30, 40, 50]
+colors  = ["red", "white", "blue"]
+temps   = [98.6, 99.5, 101.8]
+emptyList = []
+   </pre></div>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Use square brackets[ ] to create a list named <strong>myList1</strong> that contains the following numbers: 10, 20, 30, 40, 50.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Display the numbers at index 1 and index 3.</p></li> 
+<li><p>Use the index operator[] to change the value 30 to 3000.</p></li>
+<li><p>Use the len function to display the length of myList1.</p></li>
+<li><p>Display myList1.</p></li>
+<li><p>Use square brackets[] to create a list named <strong>myList2</strong> that contains the following strings: "North", "NorthEast", "East", "SouthEast", "South",
+                       "SouthWest", "West", "NorthWest".
+</p></li>
+<li><p>Display blank line.</p></li>
+<li><p>Display myList2.</p></li>
+<li><p>Use range syntax [start:end-1] to display the strings "East", "SouthEast", "South",
+   "SouthWest", "West".</p></li>
+<li><p>Use range syntax [start:end-1] to display the strings "North", "NorthEast", "East".</p></li>
+<li><p>Use range syntax [start:end-1] to display the strings "East", "SouthEast", "South".</p></li></p></li>
+<li><p>Use range notation [start:end-1] to change "North" to "NORTH".</p></li>
+<li><p>Use range notation [start:end-1] to change "SouthEast","South","SouthWest" to "SE", "S", "SW" respectively.</p></li>
+<li><p>Display myList2</p></li>
+</ol>
+
+<div id="csSampleRun"><pre>
+myList1
+-------
+[10, 20, 30, 40, 50]
+20 40
+5
+[10, 20, 3000, 40, 50]
+   
+myList2
+-------
+['North', 'NorthEast', 'East', 'SouthEast', 'South', 'SouthWest', 'West', 'NorthWest']
+['South', 'SouthWest', 'West', 'NorthWest']
+['North', 'NorthEast', 'East']
+['East', 'SouthEast', 'South']
+['NORTH', 'NorthEast', 'East', 'SE', 'S', 'SW', 'West', 'NorthWest']
+</pre></div>
+<br>
+</div>
+
+

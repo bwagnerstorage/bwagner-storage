@@ -1,0 +1,417 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">StringMethods</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment you are going to write some methods dealing with strings. In writing
+these methods you will want to utilize the following String methods.
+
+<div id="csList">
+<ul>
+<li>String substring(int begin, int end + 1)</li>
+<li>String substring(int begin)</li>
+<li>int length()</li>
+<li>boolean equals(String str)</li>
+</ul>
+</div>
+<p>You will also need to use the concatenation operator (+) which can be used to merge two strings together.</p>
+  
+ <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+public class StringMethods
+{
+    /** Prints the parameter name followed by the phrase
+     *  " have a nice day!"
+     *  @param name the name to be displayed
+     */
+    public void greeting(String name)
+    {
+       
+    }
+
+    /** @return the first letter from parameter str
+     *  @param str string used to extract first letter from
+     */
+    public String firstLetter(String str)
+    {
+       
+    }
+
+    /** @return the last letter from parameter str
+     *  @param str string used to extract last letter from
+     */
+    public String lastLetter(String str)
+    {
+        
+    }
+
+    /** @return a substring of str that has first letter removed
+     *  @param str string used to extract first letter from
+     */
+    public String removeFirst(String str)
+    {
+       
+    }
+
+    /** @return a substring of str that has last letter removed
+     *  @param str string used to extract last letter from
+     */
+    public String removeLast(String str)
+    {
+       
+    }
+
+    /** @return a string with str1, str2, and str3 merged together
+     *  @param str1 first string to be merged
+     *  @param str2 second string to be merged
+     *  @param str3 third string to be merged
+     */
+    public String merge(String str1, String str2, String str3)
+    {
+        
+    }
+
+    /** @return a string that is the first letter of parameter
+     *   str repeated three times.
+     *  @param str string used to extract first letter from
+     */
+    public String repeatFirst(String str)
+    {
+
+    }
+
+    /** @return a string that is the last letter of parameter
+     *   str repeated three times.
+     *  @param str string used to extract last letter from
+     */
+    public String repeatLast(String str)
+    {
+
+    }
+
+    /** @return compares the first and last letter of parameter str; if
+     *   they are the same letter it returns true; otherwise returns false
+     *  @param str1 first string to determine length of
+     */
+    public boolean firstLast(String str)
+    {
+
+    }
+
+    /** @return compares the lengths of str1 and str2 and returns
+     *   true if they are the same length; otherwise returns false
+     *  @param str1 first string to determine length of
+     *  @param str2 second string to determine length of
+     */
+    public boolean sameLength(String str1, String str2)
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        StringMethods app = new StringMethods();
+
+        System.out.println("Test greeting method");
+        System.out.println("====================");
+        app.greeting("John");
+        app.greeting("Sarah");
+
+        System.out.println();
+        System.out.println("Test firstLetter method");
+        System.out.println("=======================");
+        System.out.println("The first letter of honor is " + app.firstLetter("honor"));
+        System.out.println("The first letter of courage is " + app.firstLetter("courage"));
+
+        System.out.println();
+        System.out.println("Test lastLetter method");
+        System.out.println("=======================");
+        System.out.println("The last letter of honor is " + app.lastLetter("honor"));
+        System.out.println("The last letter of courage is " + app.lastLetter("courage"));
+
+        System.out.println();
+        System.out.println("Test removeFirst method");
+        System.out.println("=======================");
+        System.out.println("With first letter of respect removed is " + app.removeFirst("respect"));
+        System.out.println("With first letter of integrity removed is " + app.removeFirst("integrity"));
+
+        System.out.println();
+        System.out.println("Test removeLast method");
+        System.out.println("======================");
+        System.out.println("With last letter of respect removed is " + app.removeLast("respect"));
+        System.out.println("With last letter of integrity removed is " + app.removeLast("integrity"));
+
+        System.out.println();
+        System.out.println("Test merge method");
+        System.out.println("=================");
+        System.out.println("The merge of faith, hope, love is " + app.merge("faith", "hope", "love"));
+        System.out.println("The merge of forgiveness, compassion, mercy is  " + app.merge("forgiveness", "compassion", "mercy"));
+
+        System.out.println();
+        System.out.println("Test repeatFirst method");
+        System.out.println("=======================");
+        System.out.println("Repeat first letter of sacrifice is " + app.repeatFirst("sacrifice"));
+        System.out.println("Repeat first letter of commitment is " + app.repeatFirst("commitment"));
+
+        System.out.println();
+        System.out.println("Test repeatLast method");
+        System.out.println("======================");
+        System.out.println("Repeat last letter of sacrifice is " + app.repeatLast("sacrifice"));
+        System.out.println("Repeat last letter of commitment is " + app.repeatLast("commitment"));
+
+        System.out.println();
+        System.out.println("Test firstLast method");
+        System.out.println("=====================");
+        System.out.println("The first and last of dependable are same - " + app.firstLast("dependable"));
+        System.out.println("The first and last of steadfastness are same - " + app.firstLast("steadfastness"));
+
+        System.out.println();
+        System.out.println("Test sameLength method");
+        System.out.println("======================");
+        System.out.println("Charity and selfless are same length - " + app.sameLength("charity", "selfless"));
+        System.out.println("Liberty and freedom are same length - " + app.sameLength("liberty", "freedom"));
+
+
+    }
+}
+</pre>
+</div>
+<p>You are going to complete the implementation of ten methods described below. Do not
+   make an modifications to the main method.</p>
+<h3>Method greeting</h3>
+<p>Complete the method <strong>greeting</strong> shown below. This void method displays the parameter
+   name followed by <br>the phrase " have a nice day!". For example, if name equals "John" then the
+   method would print <br>the string "John have a nice day!"</p>
+<div id="csCode">
+<pre>
+/** Prints the parameter name followed by the phrase
+ *  " have a nice day!"
+ *  @param name the name to be displayed
+ */
+ public void greeting(String name)
+ {
+       
+ }
+</pre>
+</div>
+
+<h3>Method firstLetter</h3>
+<p>Complete the method <strong>firstLetter</strong> shown below. This method returns the first
+   letter of parameter str. For example, if str equals "dog" the method
+   would return "d".</p>
+<div id="csCode">
+<pre>
+/** @return the first letter from parameter str
+ *  @param str string used to extract first letter from
+ */
+public String firstLetter(String str)
+{
+       
+}
+</pre>
+</div>
+
+<h3>Method lastLetter</h3>
+<p>Complete the method <strong>lastLetter</strong> shown below. This method returns the last
+   letter of parameter str. For example, if str equals "dog" the method
+   would return "g".</p>
+<div id="csCode">
+<pre>
+/** @return the last letter from parameter str
+ *  @param str string used to extract last letter from
+ */
+public String lastLetter(String str)
+{
+        
+}
+</pre>
+</div>
+
+<h3>Method removeFirst</h3>
+<p>Complete the method <strong>removeFirst</strong> shown below. This method returns a substring
+   of parameter str with the first letter removed. For example, if str equals "dog" the method
+   would return "og".</p>
+<div id="csCode">
+<pre>
+/** @return a substring of str that has first letter removed
+ *  @param str string used to extract first letter from
+ */
+public String removeFirst(String str)
+{
+       
+}
+</pre>
+</div>
+
+<h3>Method removeLast</h3>
+<p>Complete the method <strong>removeLast</strong> shown below. This method returns a substring
+   of parameter str with the last letter removed. For example, if str equals "dog" the method
+   would return "do".</p>
+<div id="csCode">
+<pre>
+/** @return a substring of str that has last letter removed
+*  @param str string used to extract last letter from
+*/
+public String removeLast(String str)
+{
+
+}   
+</pre>
+</div>
+
+<h3>Method merge</h3>
+<p>Complete the method <strong>merge</strong> shown below. This method uses the concatenation operator (+)
+   to merge the three parameters togethers. It returns the merged string. For example, if str1, str2, and str3 equal 
+   "red", "green", and "blue" respectively the method would return "redgreenblue".</p>
+<div id="csCode">
+<pre>
+/** @return a string with str1, str2, and str3 merged together
+ *  @param str1 first string to be merged
+ *  @param str2 second string to be merged
+ *  @param str3 third string to be merged
+ */
+public String merge(String str1, String str2, String str3)
+{
+        
+}
+</pre>
+</div>
+
+<h3>Method repeatFirst</h3>
+<p>Complete the method <strong>repeatFirst</strong> shown below. This method returns a string consisting
+   of the first letter of parameter str repeated three times. For example, if str equals "dog" the method
+   would return "ddd".</p>
+<p>Use methods <strong>firstLetter</strong> and <strong>merge</strong> in your implementation.</p>
+<div id="csCode">
+<pre>
+/** @return a string that is the first letter of parameter
+ *   str repeated three times.
+ *  @param str string used to extract first letter from
+ */
+public String repeatFirst(String str)
+{
+
+}
+</pre>
+</div>
+
+<h3>Method repeatLast</h3>
+<p>Complete the method <strong>repeatLast</strong> shown below. This method returns a string consisting
+   of the last letter of parameter str repeated three times. For example, if str equals "dog" the method
+   would return "ggg".</p>
+<p>Use methods <strong>lastLetter</strong> and <strong>merge</strong> in your implementation.</p>
+<div id="csCode">
+<pre>
+/** @return a string that is the last letter of parameter
+ *   str repeated three times.
+ *  @param str string used to extract last letter from
+ */
+public String repeatLast(String str)
+{
+
+}
+</pre>
+</div>
+
+<h3>Method firstLast</h3>
+<p>Complete the method <strong>firstLast</strong> shown below. This method compares the first and last
+   letters of parameter str. If they are equal it returns true; otherwise it returns false. For example, if
+   str equals "noon" the method would return true.</p>
+<p>Use methods <strong>firstLetter</strong> and <strong>lastLetter</strong> in your implementation.</p>
+<p>When comparing strings remember to use the String class's <strong>equals</strong> methods not ==.</p>
+<div id="csCode">
+<pre>
+/** @return compares the first and last letter of parameter str; if
+ *   they are the same letter it returns true; otherwise returns false
+ *  @param str1 first string to determine length of
+ */
+public boolean firstLast(String str)
+{
+
+}
+</pre>
+</div>
+
+<h3>Method sameLength</h3>
+<p>Complete the method <strong>sameLength</strong> shown below. This method compares the lengths of the two
+   parameters str1 and str2. If they are the same length it returns true; otherwise it returns false.
+   For example, if str1 equals "dog" and str2 equals "cat" the method would return true since both strings
+   have a length of 3.</p>
+<p>Use the String class's <strong>length</strong> method in your implementation.</p>
+<div id="csCode">
+<pre>
+/** @return compares the lengths of str1 and str2 and returns
+ *   true if they are the same length; otherwise returns false
+ *  @param str1 first string to determine length of
+ *  @param str2 second string to determine length of
+ */
+public boolean sameLength(String str1, String str2)
+{
+
+}
+</pre>
+</div>
+
+
+
+
+<h1>Source File</h1>
+<p>StringMethods.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test greeting method
+====================
+John have a nice day!
+Sarah have a nice day!
+
+Test firstLetter method
+=======================
+The first letter of honor is h
+The first letter of courage is c
+
+Test lastLetter method
+=======================
+The last letter of honor is r
+The last letter of courage is e
+
+Test removeFirst method
+=======================
+With first letter of respect removed is espect
+With first letter of integrity removed is ntegrity
+
+Test removeLast method
+======================
+With last letter of respect removed is respec
+With last letter of integrity removed is integrit
+
+Test merge method
+=================
+The merge of faith, hope, love is faithhopelove
+The merge of forgiveness, compassion, mercy is forgivenesscompassionmercy
+
+Test repeatFirst method
+=======================
+Repeat first letter of sacrifice is sss
+Repeat first letter of commitment is ccc
+
+Test repeatLast method
+======================
+Repeat last letter of sacrifice is eee
+Repeat last letter of commitment is ttt
+
+Test firstLast method
+=====================
+The first and last of dependable are same - false
+The first and last of steadfastness are same - true
+
+Test sameLength method
+======================
+Charity and selfless are same length - false
+Liberty and freedom are same length - true
+</pre>
+</div>
+	<br>
+</div>

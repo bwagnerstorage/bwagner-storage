@@ -1,0 +1,133 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Strings1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_strings.asp" target="_blank" style="color:blue">Python Strings</a></p></li>
+   </ul>
+  <h1>What is a String?</h1>
+<p>As noted previously, strings are one or more <a href="https://techterms.com/definition/unicode" target="_blank" style="color:blue">unicode</a> characters grouped or "strung" together. Strings in python are surrounded by either single quotation marks, or double quotation marks. Here are a few examples:</p>
+<div id="csCode"><pre>
+"M" or 'M'
+"School" or 'School'
+"Have a nice day!" or 'Have a nice day!'
+"582" or '582'
+"455-3903-2180" or '455-3903-2180'</pre></div>
+
+<h1>A String is an Array</h1>
+<p> Each character in a string is assigned a number called an <strong>index</strong>.
+    The first character is assigned the index 0, the second character index 1, the 
+    third character index 2, and so on. Every character is assigned an index, including spaces.</p>
+<p>A string is an array, therefore we can use the square bracket operators [ ] to 
+   access individual characters within a string by placing a character's index number
+   within the square brackets, like [0], [2], or [35].</p>
+   <div id="csCode"><pre>
+   #    0123456789
+   s = "I love you"
+
+   print("s[0] = " + s[0])    # displays "I"
+   print("s[1] = " + s[1])    # displays " "
+   print("s[2] = " + s[2])    # displays "l"
+   print("s[5] = " + s[5])    # displays "e"
+   print("s[9] = " + s[9])    # displays "u"</pre></div>
+   <p>Executing or running the sample code above produces the following output.</p>
+<div id="csSampleRun">
+   <pre>s[0] = I
+s[1] =  
+s[2] = l
+s[5] = e
+s[9] = u</pre></div>
+
+<h1>Looping Through a String</h1>
+<p>Since strings are arrays, we can iterate through all the characters in a string, with a for loop and the in operator.</p>
+<p>The word <strong>iterate</strong> means to visit every character in a string from its first index 0 to its last index.</p>
+
+
+<div id="csCode"><pre>
+#        0123456789
+words = "I love you"
+
+for x in words:
+   print(x)
+</pre></div>
+<p>Executing or running the sample code above produces the following output.</p>
+<div id="csSampleRun">
+   <pre>I
+
+l
+o
+v
+e
+
+y
+o
+u</pre></div>
+<p>The <strong>for</strong> command is responsible for iterating through a string, copying each character, one at a time, into the variable x. For example, after the first iteration or loop through the string words, x contains the character "I", the second iteration x contains the character " ", the third iteration x contains the character "l", and so on.</p>
+<p>The <strong>in</strong> operator's job is to stop the for from iterating once it reaches the last character in word. It accomplishes this task by verifying the character currently in x is in fact a character in the string. Typically, when the for loop reaches the end of the string it is iterating, the next character iterated is a space or end-of-line marker. If the in operator sees one of these characters it knows the iteration should be terminated, because these characters are not "in" the string word.</p>
+
+<p>We will explore for loops in more detail in a later unit.</p>
+
+<h1>String Length</h1>
+<p>Use Python's built-in function <strong>len</strong> to get the length of a string. The length
+of a string is equal to the number of characters in the string, including spaces.
+Here are so examples of calls to the len() function.</p>
+<div id="csCode"><pre>
+a = "apple"
+b = "bananas"
+c = "cantaloupe"
+d = "Grown on the Farm"
+
+print("Length of 'apple' is " + str(len(a)))
+print("Length of 'bananas' is " + str(len(b)))
+print("Length of 'cantaloupe' is " + str(len(c)))
+print("Length of 'Grown on the Farm' is " + str(len(d)))
+</pre> </div>
+
+<p>Executing or running the sample code above produces the following output.</p>
+<div id="csSampleRun"><pre>Length of 'apple' is 5
+Length of 'bananas' is 7
+Length of 'cantaloupe' is 10
+Length of 'Grown on the Farm' is 17
+</pre></div>
+
+<p> The length of a string can also be calculated by adding 1 to last index number in a string. For example, an "e" is the last letter in the string "apple". The "e" is at index 4, so the length of the string "apple" is 4 + 1 = 5. *Remember that the indexes of a string start with the index 0, not 1.</p>
+
+
+<h1>Lab Exercise</h1>
+<p>Write a Python program that does the following:</p>
+<ol id="csList">
+<li><p>Prompts the user to enter a sentence and stores their response in a variable
+       named <strong>sentence</strong>.</p></li>
+<li><p>Displays the length of the sentence with an appropriate label.</p></li>
+<li><p>Initializes a variable named <strong>index</strong> equal to zero.</p></li>
+
+<li><p>Uses the <strong>for</strong> statement and the <strong>in</strong> operator to iterate through all of the characters within sentence and displays them vertically down the screen. Use the index variable to display the index value for each letter in the sentence. The first letter should be displayed with an index value of 0, the second letter should be displayed with an index value of 1, the third letter should be displayed with index value of 2, and so on. Each index value should be displayed on the same line as its corresponding letter with a space separating them.</p></li>
+<li><p>In the body of the for statement, after the print function, it increments the index variable by one using the following code:</p></li>
+<div id="csCode"><pre>index = index + 1</pre></div></li>
+<li><p>The program's output should look like the following Sample Run.</p></li>
+</ol>
+<h1>Sample Run</h1>
+<div id="csSampleRun"><pre>
+Enter a sentence-->Have a nice day!
+
+Sentence length = 16
+
+H 0
+a 1
+v 2
+e 3
+  4
+a 5
+  6
+n 7
+i 8
+c 9
+e 10
+  11
+d 12
+a 13
+y 14
+! 15
+</pre></div>

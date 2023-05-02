@@ -1,0 +1,109 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Sets 2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_sets.asp" target="_blank" style="color:blue">Python Sets</a></p></li>
+   <li><p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p></li>
+ 
+   </ul>
+<h1>Reducing a Fraction</h1>
+<p>To reduce a fraction to its lowest terms you need to do the following steps:
+   <ol id="csList">
+      <li><p>Given the numerator and denominator of a fraction, determine their GCF by identifying the largest factor that is common between the two.</p></li>
+      <li><p>Divide the numerator and denominator by the (GCF) greatest common factor.</p></li>
+   </ol>
+</p>
+
+
+
+<h1>Lab Exercise</h1>
+<p>In this lab, you are going to define three functions: <strong>getFactors</strong>, <strong>gcf</strong>, and <strong>reduce</strong>. </p>
+<h3>getFactors Function</h3>
+   <p>Write the function <strong>getFactors</strong> that takes one integer parameter. The
+      function should calculate and return a list of all of the factors of the parameter.
+      For example, if getFactors was called by the following line of code:
+      <div id="csCode"><pre>getFactors(24)</pre></div>
+      <p>it would return the following list of factors:<br>
+         1,24<br>
+         2,12<br>
+         3,8<br>
+         4,6<br>
+      </p>
+      <p>The return value of getFactors needs to be a list of tuples where each tuple stores a pair of factors, for example 3,8. You can use this code to test the function.
+      </p>
+   <div id="csCode"><pre>print()
+print("All the factors of 100")
+factors = getFactors(100)
+for f in factors:
+print(str(f[0]) + "," + str(f[1]))
+print()
+      
+print()
+print("All the factors of 23")
+factors = getFactors(23)
+for f in factors:
+   print(str(f[0]) + "," + str(f[1]))
+print()</pre></div>
+<p></p>
+
+<h3>gcf Function</h3>
+<p>Write the function gcf</p> that takes two parameters. The first parameter is an integer value representing the numerator of a fraction. The second parameter is an integer value representing the fraction's denominator.
+
+<p>Follow these steps to complete the GCF function:</p>
+<ol id="csList">
+   <li><p>Use the getFactor function to get a list of the numerators factors. Store the list in a variable named <strong>numFactors</strong>.</p></li>
+   <li><p>Use the getFactor function to get a list of the denominators factors. Store the list in a variable named <strong>denomFactors</strong>.</p></li>
+   <li><p>Define an empty set named <strong>numFactorsSet</strong>.</p></li>
+   <li><p>Define an empty set named <strong></strong>denomFactorsSet.</p></li>
+   <li><p>Recall that the getFactors function returns a list of tuples that contain factor pairs like 1,12 2,6 3,4. You need to split all the pairs apart so that each individual factor can be added to one of the sets. To do this, you will need to traverse the numFactors list using nested for loops. The outer loop should access each tuple in the list and then the inner loop should access each factor in the tuple. The factors should be added to the numFactorsSet.</p></li>
+   <li><p>Repeat the steps above for the denomFactors list. You should now have two sets named numFactorsSet and denomFactorsSet. numFactorsSet contains all of the factors of the numerator and denomFactorsSet contains all of the factors of the denominator.</p></li>
+   <li><p>The next step is to combine these two sets into one set that contains all of the factors that are in both sets giving you a set of common factors. To do this you are going to use the Set class's <strong>intersection</strong> method. The call to the intersection method is shown below.</p>
+   <div id="csCode" style="width:400px"><pre>commonFactors = numFactorsSet.intersection(denomFactorsSet)</pre></div>
+   </li>
+   <li><p>The next step is to sort the common factors into either ascending or descending order. The code below uses the built-in function <strong>sorted</strong>. The function sorted by making a copy of commonFactors, converts the copy into a list, and then sorts the list in descending order. The default behavior of the sorted function is to sort the list in ascending order, so the parameter "reverse=True" was included so that it would instead sort in descending order.</p>
+      <div id="csCode" style="width:400px"><pre>factorsList = sorted(commonFactors, reverse=True)</pre></div>
+   </li>
+   <li><p>Now that factorsList is sorted in descending order the greatest common factor is located at index 0. This code returns the gcf.</p>
+      <div id="csCode" style="width:400px"><pre>return factorsList[0]</pre></div>
+   </li>
+</ol>
+<h3>reduce Function</h3>
+<p>The reduce function is responsible for doing the final step in the fraction reduction process. It divides the numerator by the GCF and divides the denominator by the GCF.</p>
+<p>Complete the following steps to implement reduce:</p>
+<ol id ="csList">
+   <li><p>Call the gcf function passing it the numerator and denominator from the parameter list and store the return value in a variable named GCF.</p></li>
+   <li><p>Divide the numerator by the GCF and store the result in a variable named <strong>numReduced</strong>.</p></li>
+   <li><p>Divide the denominator by the GCF and store the result in a variable named <strong>denomReduced</strong>.</p></li>
+   <li><p>Display the original fraction with a '/' between the numerator and denominator followed by the string " reduces to " then the reduced fraction with its numerator and denominator separated by a '/'. For example: 4/8 reduces to 1/2</p></li>
+</ol>
+<p>Use the following code to test the reduce function.</p>
+<div id="csCode"><pre>reduce(50, 100)
+reduce(120, 38)
+reduce(12, 24)
+reduce(48, 64)
+reduce(13,17)</pre></div>
+
+<div id="csSampleRun"><pre>
+All the factors of 100
+1,100
+2,50
+4,25
+5,20
+10,10
+
+50/100 reduces to 1/2
+120/38 reduces to 60/19
+12/24 reduces to 1/2
+48/64 reduces to 3/4
+13/17 reduces to 13/17
+</pre></div>
+
+ 
+
+<br>
+</div>
+
+

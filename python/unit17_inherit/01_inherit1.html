@@ -1,0 +1,137 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Inheritance 1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_inheritance.asp" 
+    target="_blank" style="color:blue">Python Inheritance</a></p></li>
+   </ul>
+<h1>Python Inheritance</h1>
+<p></p>
+
+<h1>Lab Exercise</h1>
+<p>This program contains a class named <strong>FarmAnimal</strong>. This class represents
+   an animal that lives on a farm. The class defines three attributes or characteristics 
+   for the animal. The animal's type (Ex. cow), the animal's names (Ex. Mable), and the 
+   sound the animal makes (Ex. moo).</p>
+<p>The program also contains two classes named <strong>FoodAnimal</strong> and
+   <strong>ServiceAnimal</strong> that enhances the FarmAnimal class by inheriting it's
+    attributes and methods, and then adding other attributes and methods.</p>
+<p>Copy the starter code below and paste it in your main.py file.</p>
+<div id="csCode"><pre>class FarmAnimal:
+  def __init__(self, type, name, sound):
+     self.type = type
+     self.name = name
+     self.sound = sound
+  
+  def getType(self):
+    return self.type
+
+  def getName(self):
+    return self.name
+
+  def getSound(self):
+    return self.sound
+
+  def print(self):
+    print("My name is " + self.name + " and I am a " + self.type + ". I like to " + self.sound + ".")
+  
+
+
+class FoodAnimal(FarmAnimal):
+  def __init__(self, type, name, sound, food):
+    
+  
+  def getFood(self):
+    
+
+  def print (self):
+ 
+
+
+class ServiceAnimal(FarmAnimal):
+  def __init__(self, type, name, sound, service):
+
+
+  def getService(self):
+    
+  
+  def print(self):
+ 
+
+  
+chicken = FoodAnimal("chicken", "Mable", "cluck", "I provide eggs for the farm.")
+
+cow = FoodAnimal("cow", "Mary Belle", "moo", "I provide milk for the farm.")
+
+dog = ServiceAnimal("dog","Rex", "bark", "I am the farmer's best friend.")
+
+cat = ServiceAnimal("cat", "Boo Boo Kity", "meow", "I catch mice in the barn.")
+
+horse = ServiceAnimal("horse", "Jumper", "neigh", "I take people for rides.")
+
+print()
+chicken.print()
+cow.print()
+dog.print()
+cat.print()
+horse.print()
+print()
+
+</pre></div>
+<h3>FoodAnimal Class</h3>
+<p>Complete the class FoodAnimal. The class needs to include the following:</p>
+<ol id="csList">
+<li><p>Complete the FoodAnimal <strong>constructor</strong>. Use super(). to initialize
+       the three inherited variables. Also initialize the new variable <strong>food</strong>
+       that describes the type of food the animal provides. (Have you heard how someone 
+       once compared the 
+       difference between involvement and commitment as being like the difference between ham and eggs. 
+       "The chicken is involved; the pig is committed.")</p></li>
+       <li><p>Complete the method <strong>getFood</strong> that returns the value
+       of the variable food.</p></li>
+       <li><p>Override the inherited method <strong>print</strong> so that it includes the food 
+        that the animal provides for the farm. Use super().print() to include the FarmAnimal's
+        print method in the output. Refer to Sample Run for an example of the print methods output 
+        structure.
+       </p></li>
+</ol>
+<h3>ServiceAnimal Class</h3>
+<p>Complete the class ServiceAnimal. The class needs to include the following:</p>
+<ol id="csList">
+<li><p>Complete the ServiceAnimal <strong>constructor</strong>. Initialize
+       the three inherited variables. Also initialize the new variable <strong>service</strong>
+       that describes the type of service the animal provides to a farm.</p></li>
+       <li><p>Complete the method <strong>getService</strong> that returns the value
+       of the variable service.</p></li>
+       <li><p>Override the inherited method <strong>print</strong> so that it includes the service 
+        that the animal provides for the farm.
+       </p></li>
+</ol>
+
+
+ 
+<h1>Sample Run</h1> 
+<div id="csSampleRun"><pre>
+  My name is Mable and I am a chicken. I like to cluck.
+  I provide eggs for the farm.
+  
+  My name is Mary Belle and I am a cow. I like to moo.
+  I provide milk for the farm.
+  
+  My name is Rex and I am a dog. I like to bark.
+  I am the farmer's best friend.
+  
+  My name is Boo Boo Kity and I am a cat. I like to meow.
+  I catch mice in the barn.
+  
+  My name is Jumper and I am a horse. I like to neigh.
+  I take people for rides.
+</pre></div>
+
+<br>
+</div>
+
+

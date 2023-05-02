@@ -1,0 +1,44 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Guessing Game</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_while_loops.asp" target="_blank" style="color:blue">Python While Loops</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_numbers.asp" target="_blank" style="color:blue">Python Numbers</a></p></li>
+
+<h1>Lab Exercise</h1>
+Write a program that plays a guessing game using the following rules:
+
+<ul id="csList"><li><p>The program generates a random number between 1 and 100.</p></li>
+<li><p>The player attempts to guess the number selected by the computer.</p></li>
+<li><p>If the player's guess is less than the number, the message "Too Low, Try Again." is displayed and the user is prompted to guess again. </p></li>
+<li><p>If the player's guess is greater than the number, the message "Too High, Try Again." is displayed and the user is prompted to guess again.</p></li>
+<li><p>If the player guesses the number correctly, the message "You found it in ___ tries." is displayed with the number of times the player had to guess before the number was found.</p></li>
+<li><p>Play continues until the user guesses the computer's number.<br><br> <strong>Hint:</strong> Declare a boolean variable and assign it a value of False. When the player guesses the random number correctly set the variable to True. For example,</p>
+<div id="csCode" style="width:400px"><pre>winner = False</pre></div>
+</li>
+</ul>
+
+<div id="csSampleRun"><pre>
+Make Guess->50
+Too High, Try Again!
+Make Guess->25
+Too Low, Try Again!
+Make Guess->37
+Too Low, Try Again!
+Make Guess->44
+Too High, Try Again! 
+Make Guess->39
+Too Low, Try Again!
+Make Guess->41
+
+**** You found it in 6 tries.
+
+
+</pre></div>
+<br>
+</div>
+
+

@@ -1,0 +1,78 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Functions 3</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_functions.asp" target="_blank" style="color:blue">Python Functions</a></p></li>
+   <li><p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p></li>
+</ul>
+
+<h1>Functions</h1>
+<p>In this lab, you will be writing functions that have both parameters and return values.</p>
+
+<h1>Lab Exercise</h1>
+<h3>average Function</h3>
+<p>Write the function <strong>average</strong> that includes two parameters that represent two
+   numbers that you would like to average. The return value for the function is the average of the 
+   two parameters. Call the function average using the following code:</p>
+<div id="csCode"><pre>print()
+print("Average = " + str(average(90, 100)))</pre></div>
+<h3>average Function 2</h3>
+<p>Write another <strong>average</strong> function that has one parameter which represents a list 
+   of numbers that are to be averaged. The return value for the function is the average of the
+   numbers in the list. Call the function average with the following code:</p>
+   <div id="csCode"><pre>avg = average([10, 20, 30, 40, 50])
+print()
+print("Average = " + str(avg))</pre></div>
+
+   <h3>area Function</h3>
+   <p>Write the function <strong>area</strong> that has two parameters representing the
+      length and width of a rectangle. The return value for this function is the area of
+      a rectangle with the given length and width. Call the function
+      using the following code:</p>
+   <div id="csCode"><pre>print()
+print("Area = " + str(area(5, 10)))
+print("Area = " + str(area(20, 20)))</pre></div>
+   
+   <h3>isPrime Function</h3>
+   <p>A prime number is a number greater than 1 with only two factors – themselves and 1. 
+      A prime number cannot be divided by any other numbers without leaving a remainder. 
+      An example of a prime number is 13. It can only be divided by 1 and 13. You need to 
+      use the mod operator(%) in your implementation.</p>
+
+   <p>Write the function <strong>isPrime</strong> that includes one integer parameter that represents a number that is to 
+      be tested to determine if it is prime. The return value for this function is
+      one of two boolean values: True or False. The function returns True if the number is a
+      prime number, otherwise it returns False. Call the function
+      using the following code:</p>
+   <div id="csCode"><pre>print();
+if isPrime(13):
+   print("13 is a prime")
+else:
+   print("13 is not a prime")
+if isPrime(49):
+   print("49 is a prime")
+else:
+   print("49 is not a prime")</pre></div>
+
+   
+      
+<div id="csSampleRun"><pre>
+Average = 95.0
+
+Average = 30.0
+   
+Area = 50
+Area = 400
+   
+13 is a prime
+49 is not a prime
+
+</pre></div>
+
+<br>
+</div>
+
+

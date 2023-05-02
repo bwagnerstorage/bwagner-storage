@@ -1,0 +1,148 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ListPractice3</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_add.asp" target="_blank" style="color:blue">Add List Items</a></p></li>   
+   <li><p><a href="https://www.w3schools.com/python/python_lists_remove.asp" target="_blank" style="color:blue">Remove List Items</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_loop.asp" target="_blank" style="color:blue">Loop Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_sort.asp" target="_blank" style="color:blue">Sort Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_copy.asp" target="_blank" style="color:blue">Copy Lists</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_lists_join.asp" target="_blank" style="color:blue">Join Lists</a></p></li>
+</ul>
+
+<H1>Static vs Dynamic</H1>
+<p>We have seen how lists can be created in a static context where the items stored in the    list are assigned values within the code itself. For example,
+</p>
+<div id="csCode"><pre>names = ["John", "Maria", "Amy", "Joe", "Juan"]</pre></div>
+<p>assigns five names to the list when it is created. This static approach can be good for situations were there is a small set of data. However, lists can also store large amounts of data where it would not be practical to enter the data manually. In this case, programmers use a more dynamic approach that involves assigning values to a list while a program is running. This input can be from an input device such as a keyboard or data stored in a file on a secondary storage device. This dynamic approach involves using List methods like <strong>append</strong>, <strong>insert</strong>, and <strong>remove</strong>. The sample code below, demonstrates how to populate a list where the data comes from user input.
+</p>
+<div id="csCode"><pre>
+cities = []   #empty list
+i = 0;  # loop control variable
+size = int(input("How many cities would like to enter-->"))
+while i < size:
+   name = input(str(i+1) + ". Enter a city name -->")
+   cities.append(name)
+   i+=1
+      
+print()
+print(cities)
+</pre></div>
+<P>Here is a sample run.</P>
+<div id="csSampleRun" style="width: 675px"><pre>
+How many cities would like to enter-->3
+1. Enter a city name -->London
+2. Enter a city name -->Paris
+3. Enter a city name -->Rome
+      
+['London', 'Paris', 'Rome']
+</pre></div>
+
+<h1>Lab Exercise</h1>
+<P>Your friend Joe has decided to get his life in order, so he has decided to start by creating a ToDo List each day so that he does not waste time doing things that don't really accomplish anything. He wants his list to be prioritized so that the tasks that are the most important are at the top of the list. He knows that you have been learning Python so he has asked you to write a program that can create a TODO List.
+</P>
+<ol id="csList">
+<li><p>Create an empty List named <strong>taskList</strong></p></li>
+<li><p>Create a sentinel-controlled while loop that continues looping until
+   the it encounters the sentinel values "N" or "n". The user should be able to
+   type their response in upper or lower case letters.
+</p></li>
+<li><p>Prompt the user to enter a task that needs to be done.</p></li>
+<li><p>Prompt the user for a priority level by typing H for high level and L for low level. The user should be able to type their response in upper or lower case letters.</p></li>
+<li><p>If the priority level is High, then use the List class's insert method to add
+   the new task to the front of taskList. IF the priority level is low, then use the List class's append method to add the new task to end of taskList.
+</p></li>
+<li><p>Use a while loop to display the taskList. The tasks in the taskList should be numbered from 1 to the taskList - 1. Include an appropriate banner on top of the list.
+This TODO list should be displayed each time a new task is added to the list.
+</p></li>
+<li><p>Prompt the user to see if they wish to enter another task. The user's response should be one of the sentinel values: "Y" or "y" and "N" or "n".</p></li>
+<li><p></p>If the sentinel values "Y" or "Y" were entered the while loop should continue, otherwise the program should exit.</li>
+</ol>
+
+<div id="csSampleRun" style="width: 675px"><pre>
+
+1. Enter a task -->Go for a run
+Priority Level: H)igh or L)ow -->h
+   
+   
+    TODO List
+--------------------
+1. Go for a run
+   
+Enter another task[Y/N]: y
+   
+2. Enter a task -->mow yard
+Priority Level: H)igh or L)ow -->l
+   
+   
+     TODO List
+--------------------
+1. Go for a run
+2. mow yard
+   
+Enter another task[Y/N]: y
+   
+3. Enter a task -->clean room
+Priority Level: H)igh or L)ow -->h
+   
+   
+     TODO List
+--------------------
+1. clean room
+2. Go for a run
+3. mow yard
+   
+Enter another task[Y/N]: y
+   
+4. Enter a task -->wash car
+Priority Level: H)igh or L)ow -->l
+   
+   
+     TODO List
+--------------------
+1. clean room
+2. Go for a run
+3. mow yard
+4. wash car
+   
+Enter another task[Y/N]: y
+   
+5. Enter a task -->take trash out
+Priority Level: H)igh or L)ow -->h
+   
+   
+     TODO List
+--------------------
+1. take trash out
+2. clean room
+3. Go for a run
+4. mow yard
+5. wash car
+   
+Enter another task[Y/N]: y
+   
+6. Enter a task -->make bed
+Priority Level: H)igh or L)ow -->l
+   
+   
+     TODO List
+--------------------
+1. take trash out
+2. clean room
+3. Go for a run
+4. mow yard
+5. wash car
+6. make bed
+   
+Enter another task[Y/N]: n
+
+
+</pre></div>
+<br>
+
+</div>
+
+

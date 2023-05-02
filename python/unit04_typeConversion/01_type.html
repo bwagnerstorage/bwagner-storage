@@ -1,0 +1,116 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Type Conversion</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_datatypes.asp" target="_blank" style="color:blue">Python Data Types</a></p></li>
+   </ul>
+  <h1>What is a Data Type?</h1>
+<p>A <strong>data type</strong> is an attribute associated with a piece of data that tells a computer system how to interpret its value.
+    Python has several built-in data types, but we will only be using the following seven types in this course.</p>
+<table id="csTable">
+   <tr>
+      <th>Type Catagory</th>
+      <th>Data Type</th>
+   </tr>
+  <tr>
+     <td>Text Type</td>
+     <td>str</td>
+  </tr>
+  <tr>
+     <td>Numeric Types</td>	
+     <td>int, float</td>
+  </tr>
+  <tr>
+     <td>Boolean Type</td>
+     <td>bool</td>
+  </tr>
+  <tr>
+     <td>Sequence Types</td>
+     <td>list, tuple, range</td>
+  </tr>
+</table>
+
+<p>Python has a built-in function named <strong>type</strong> that returns a variable's type.</p>
+<div id="csCode"><pre>
+str = "Maddie"
+num1 = 99
+num2 = 3.14
+ans = True
+
+print(type(str))
+print(type(num1))
+print(type(num2))
+print(type(ans))
+<pre></div>
+<p>This sample code uses the <strong>type</strong> function to produce the following output:</p>
+<div id="csSampleRun">
+<pre>
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;
+</pre>
+</div>
+<p>The output shows that "Maddie" is of type str (string), 99 is of type int (integer), 3.14 is of type float (floating-point), and True is of type bool (boolean).</p>
+
+<h1>What is Casting?</h1>
+<p>Casting means changing the data type of a piece of data from one type to another. 
+   There are two types of casting in Python: <strong>implicit casting</strong> and <strong>explicit casting</strong>.
+   Implicit casting is performed automatically by Python, so we will not be discussing it here. However, explicit
+   casting does require programmer intervention through the use of one of Python's built-in functions like str(), int(), and float(). 
+</p>
+<h3>Input Function</h3>
+<p>We learned previously that the value returned by the input function is of type <strong>string</strong>. 
+   Look at the following example.</p>
+<div id="csCode"><pre>weight = input("Enter your weight-->")
+print(type(weight))
+</pre></div>
+<p>This sample code produces the following output:</p>
+<div id="csSampleRun">
+<pre>
+Enter your weight -->135
+&lt;class 'str'&gt;
+</pre>
+</div>
+<P>Since a person's weight is typically viewed as a number, you might assume that the value 135 
+   would be a number. Instead the output from the code shows that
+   the weight value is of type 'str'(string).</p>
+<p>The input function's default behavior becomes problematic when the return value is used 
+   in an arithmetic expression. An arithmetic expression requires that all the values in the calculation be numbers either int or float. 
+   This is an example of a programming problem that would benefit from explicit casting.</p>
+<h1>Lab Exercise</h1>
+<ul id="csList">
+  <li><p>Login to <a href="https://replit.com" target="_blank" style="color:blue">replit.com</a> and create a new Python repl named Data Type, then do the following tasks.</p></li>
+  <li><p>Add a line of code to the program that uses the input function to allow a user to respond to the prompt 
+     "Enter a number between 1 and 10 -->". The value entered by the user should be stored in a variable named <strong>num1</strong>.</p></li>
+   <li><p>Add a line of code that uses the input function to allow a user to respond to the prompt 
+      "Enter a second number between 1 and 10 -->". The second value entered by the user should be stored in a variable named <strong>num2</strong>.</p></li>
+  <li><p>Add the following line of code below the two input statements:</br>
+<div id="csCode" style="width:250px"><pre>
+sum = int(num1) + int(num2)
+</pre></div>
+<p>This code uses Python's built-in function <strong>int()</strong> to cast the values of the variables num1 and num2 to type from str (string) to int (integer).</p>
+</p></li>
+  <li><p>Add a line of code, below the previous line, that displays the sum of num1 and num2 on the console window with the format shown in the Sample Run below. </p>
+   <p><u>Important:</u> Casting does not change the type of a variable. It actually changes the type of a copy of the variable's value. Look at the following example.</p>
+   <div id="csCode" style="width: 250px"><pre>
+a1 = "10"
+a2 = int(a1)
+print(type(a1))
+print(type(a2))
+</pre></div>
+<p>This code produces the following output.</p>
+<div id="csSampleRun">
+   <pre>
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;
+</pre>
+</div>
+<p>You can see from this example, that even though the variable a1 was
+ cast to an int (integer) on the second line, when a1's type is displayed on the third
+ line it is still a str (string). However, the type of the variable s2 is an int because 
+ it received the copy of a1's value which was cast to an int.</p>
+ <p>Since the values of num1 and num2 in the lab exercise were not actually changed by the cast to an int there is no need to cast them back to string in the output statement of the program.</p></li>

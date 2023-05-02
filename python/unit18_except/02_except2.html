@@ -1,0 +1,43 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Exception Handling 2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_try_except.asp" 
+    target="_blank" style="color:blue">Try-Except</a></p></li>
+   <li><p><a href="https://www.tutorialspoint.com/python/python_exceptions.htm" 
+    target="_blank" style="color:blue">Python Exception Handling</a></p></li>
+   </ul>
+
+<h1>Lab Exercise</h1>
+<p>Write a Python function named <strong>input_int(prompt)</strong> that incorporates the functionality of the program in the previous assignment. The function should prompt the user to enter an integer value. The function should prevent the user from entering any value type other than an integer. The function should return the valid number entered by the user.</p>
+<p>Write a program that prompts a user to enter two integer values from the keyboard. The prompt is provided in the function's parameter list. Both of these values need to be verified by the input_int function. Once the two valid integer values have been entered, the two values should be subtract from each other in following<br> format: <strong>quotient = num1 / num2</strong>. To insure that the program does not crash with a division by zero error, write a try-except-else block that handles a <strong>ZeroDivisionError</strong> exception error. If an error does occur the program
+should display the following message: "Division by zero error. Try Again." and then allow the user to re-enter the two numbers until the division problem does not cause an error.
+When the division problem does not cause an error display the answer in the following format:  <strong>num1 / num2 = quotient</strong>.</p>
+
+ 
+<h1>Sample Run</h1> 
+<div id="csSampleRun"><pre>
+Enter num 1 -->100x
+- Invalid input. Try again.
+
+Enter num 1 -->100
+Enter num 2 -->me
+- Invalid input. Try again.
+
+Enter num 2 -->0
+
+Division by zero error. Enter division problem again.
+Enter num 1 -->100
+Enter num 2 -->4
+
+100 / 4 = 25.0
+
+</pre></div>
+
+<br>
+</div>
+
+

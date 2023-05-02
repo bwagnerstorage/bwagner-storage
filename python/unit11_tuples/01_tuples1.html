@@ -1,0 +1,122 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Tuples as Records</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_tuples.asp" target="_blank" style="color:blue">Python Tuples</a></p></li>
+
+</ul>
+
+<h1>Tuples vs Lists</h1>
+<p>Tuples and lists are very similar. The chart below compares their similarities and differences.</p>
+<table id="csTable">
+   <tr><th>Features</th><th>Tuples</th><th>Lists</th></tr>
+   <tr><td>Can store multiple items</td><td>yes</td><td>yes</td></tr>
+   <tr><td>Can store data of different types</td><td>yes</td><td>yes</td></tr>
+   <tr><td>Can store duplicates</td><td>yes</td><td>yes</td></tr>
+   <tr><td>Ordered</td><td>yes</td><td>yes</td></tr>
+   <tr><td>Items are Indexed[]</td><td>yes</td><td>yes</td></tr>
+   <tr><td>Changeable</td><td>no</td><td>yes</td></tr>
+   <tr><td>Bracket Type</td><td>round brackets()</td><td>square brackets[]</td></tr>
+   <tr><td>Size</td><td>fixed</td><td>variable</td></tr>
+   <tr><td>Contains append, insert, and remove methods</td><td>no</td><td>yes</td></tr>
+</table>
+
+To summarize, there are two main differences between tuples and lists. First, once a tuple is created it cannot be modified. Second, when creating a tuple use round brackets () instead of square brackets [].
+
+<h1>Why use Tuples?</h1>
+<ul id="csList">
+<Li><p>Since lists and tuples are similar, it begs the question "Why do we need tuples? Well, it has
+   to do with the way the two data structures use memory. Since tuples cannot be
+   modified, they can be optimized by the computer so that they require less memory than a list with the same data. Being immutable also gives tuples a slight advantage in access speeds compared to lists.</p></li>
+   <li><p>Tuples are useful for representing what other languages often refer to as <strong>records</strong>. A record is data structure used to store related information, like your student record. A tuple allows you to group related items together and then use the data as a single entity.</p></li>
+</ul>
+
+<h1>Lab Exercise</h1>
+<p>In this lab you are going to use both lists and tuples. The tuples will be used as <strong>records</strong> to store information about pets including the pet's name, type of pet, and gender. For example, here is one of the tuples:</p>
+<div id="csCode" style="width:400px"><pre>pet1 = ("Maddie", "dog", "female")</pre></div>
+<p>The lists are going to contain the tuples. In other words, a list of tuples.</p>
+<h3>Instructions</h3>
+<ol id="csList">
+<li><p>Create 5 tuples named pet1, pet2, pet3, pet4, and pet5. Each tuple should include the following information for one pet.</p>
+<table id="apTable">
+<tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Gender</th>
+</tr>
+<tr>
+   <td>Maddie</td>
+   <td>dog</td>
+   <td>female</td>
+</tr>
+<tr>
+   <td>Booboo Kitty</td>
+   <td>cat</td>
+   <td>male</td>
+</tr>
+<tr>
+   <td>Sam</td>
+   <td>dog</td>
+   <td>female</td>
+</tr>
+<tr>
+   <td>Cubby</td>
+   <td>cat</td>
+   <td>female</td>
+</tr>
+<tr>
+   <td>Wolf</td>
+   <td>dog</td>
+   <td>male</td>
+</tr>
+</table>
+</li>
+<li><p>Create an empty list named <strong>pets</strong>.</p></li>
+<li><p>Use the append method to add all five tuples to <strong>pets</strong>.</p></li>
+<li><p>Use a for loop to display all 5 pets in the following format:</p>
+<p>Name   : Maddie<br>
+Type   : dog<br>
+Gender : female<br>
+   </p></li>
+<li><p>Create an empty list named <strong>dogs</strong>.</p></li>
+<li><p>Create an empty list named <strong>cats</strong>.</p></li>
+<li><p>Use a for loop to iterate through <strong>pets</strong>. As the program advances through pets
+   it should identify all of the records that are of type "dog". If a record is of type "dog" it should be added to the <strong>dogs</strong> list, otherwise it should be added to the <strong>cats</strong> list.
+</p></li>
+<li><p>Display the list of <strong>dogs</strong>.</p></li>
+<li><p>Display the list of <strong>cats</strong>.</p></li>
+</ol>
+
+<div id="csSampleRun"><pre>
+Name   : Maddie
+Type   : dog
+Gender : female
+      
+Name   : Booboo Kitty
+Type   : cat
+Gender : male
+      
+Name   : Sam
+Type   : dog
+Gender : female
+      
+Name   : Cubby
+Type   : cat
+Gender : female
+      
+Name   : Wolf
+Type   : dog
+Gender : male
+      
+[('Maddie', 'dog', 'female'), ('Sam', 'dog', 'female'), ('Wolf', 'dog', 'male')]
+      
+[('Booboo Kitty', 'cat', 'male'), ('Cubby', 'cat', 'female')]
+</pre></div>
+
+<br>
+</div>
+
+

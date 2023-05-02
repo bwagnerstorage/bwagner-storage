@@ -1,0 +1,154 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Python Inheritance 2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_inheritance.asp" 
+    target="_blank" style="color:blue">Python Inheritance</a></p></li>
+   </ul>
+
+<h1>Lab Exercise</h1>
+<p>This lab contains classes used to develop tests and/or quizzes
+  that contain both Multiple Choice and True/False questions. The program
+  uses inheritance to create the two types of questions.
+</p>
+<p>Your assignment is to create two classes named <strong>MultipleChoice</strong>
+   and <strong>TrueFalse</strong> that inherit the functionality of a base or parent class named <strong>Question</strong>.
+   These two classes contain information needed to create multiple choice and true/false questions.
+</p>
+<h3>File main.py</h3>
+<ol id="csList">
+<li><p>Create a new replit named <strong>inherit2</strong>.</p></li>
+<li><p>Copy the code below into the file main.py.</p></li>
+<div id="csCode"><pre>from question import MultipleChoice
+from question import TrueFalse
+  
+q1 = MultipleChoice("MC", "What is the capital of Texas?", "Houston", "Austin","Dallas", "San Antonio", "Austin", "Geography", "Capitals")
+  
+q2 = MultipleChoice("MC", "Which of the following is not a state that borders Texas?", "Louisiana", "Arkansas", "Arizona", "Oklahoma", "Arizona")
+  
+q3 = TrueFalse("TF","The longest river in the world is the Mississippi River.", False, "Geography", "Rivers")
+  
+q4 = TrueFalse("TF", "The Amazon River is the widest river in the world.", True)
+  
+print(q1.info())
+print("1. " + q1.display())
+print()
+  
+print(q2.info())
+print("2. " + q2.display())
+print()
+  
+print(q3.info())
+print("3. " + q3.display())
+print()
+ 
+print(q4.info())
+print("4. " + q4.display())
+print()
+</pre></div>
+</ol>
+<h3>Question class</h3>
+<ol id="csList">
+<li><p>Create another file in the inherit2 replit named <strong>question.py</strong>.</p></li>
+<li><p>Copy the following code into this file.</p>
+<div id="csCode"><pre>class Question:
+  def __init__(self, type, subject, topic):
+      self.type = type
+      self.subject = subject
+      self.topic = topic
+
+  def info(self):
+    str = "Question Type: " + self.type
+    if self.subject != None:
+      str += "\nQuestion Subject: " + self.subject 
+    if self.topic != None:
+      str += "\nQuestion Topic:" + self.topic
+    return str;
+
+
+class MultipleChoice(Question):
+
+
+
+class TrueFalse(Question):
+  
+    
+
+</pre></div>
+</li>
+<li><p>The Question class declares three variables: type, subject, and topic.
+  The type variable contains one of two values: "MC" or "TF" which are used to 
+  describe the type of question as either a multiple choice or true/false.
+  The subject refers to the subject matter of the question (Ex. Geography). The topic refers to the questions topic (Ex. capitals).</p>
+  <p>The Question class also contains a constructor and method named info. The info method is used for displaying the type, subject, and topic variables.
+  </p>
+</li>
+</ol>
+
+<h3>MultipleChoice Class</h3>
+<p>The MultipleChoice class is a subclass of the Question class. It contains
+   information needed to create a multiple choice question. This includes the question, 
+   four possible answer choices, and the correct answer.</p>
+<p>The class defines a constructor that initializes the Question class's variables, as well as the variables needed to create a multiple choice question.</p>
+<p>Look at the following constructor header for the Multiple Choice class:
+<div id="csCode"><pre>def __init__(self, type, question, A, B, C, D, answer, subject=None, topic=None):</pre></div>
+</p>
+<p>Notice the subject and topic parameters are assigned a value of <strong>"None"</strong>. This syntax is used to make these variables optional. This means when you are creating a Multiple Choice question you have the option of assigning or not assigning a value to these variables making them optional.
+Any variable you want to declare as optional must be listed at the end of the constructor's parameter list.</p>
+<p>Look at the info method declared in the Question class. Because the subject and topic variables are declared as optional in the Multiple Choice and True/False constructors it is necessary to include if statements in the info method that test 
+to see if the variables subject and topic are assigned a value of None. This will prevent a null pointer exception error from occurring when displaying question info.</p>
+<p>The class also needs to include a new method named <strong>display</strong> that returns a string that formats a
+   multiple choice question in the following form:<br><br>
+   Question<br>
+   A. Choice A<br>
+   B. Choice B<br>
+   C. Choice C<br>
+   D. Choice D<br>
+   <br>
+</p>
+
+<h3>TrueFalse Class</h3>
+<p>The TrueFalse class is a subclass of the Question class. It contains
+  information needed to create a True/False question. This includes the question and the
+  correct answer which can be either True or False.</p> 
+<p>The class defines a constructor that initializes the Question class's variables,
+    as well as variables necessary to create a True/False question.</p>
+<p>The class also needs to include a new method named <strong>display</strong> that returns a string that formats a
+      true/false question in the following form:<br><br>
+Question [T/F]<br>
+</p>
+
+<h1>Sample Run</h1> 
+<div id="csSampleRun"><pre>
+  Question Type: MC
+  Question Subject: Geography
+  Question Topic:Capitals
+  1. What is the capital of Texas?
+     A. Houston
+     B. Austin
+     C. Dallas
+     D. San Antonio
+  
+  Question Type: MC
+  2. Which of the following is not a state that borders Texas?
+     A. Louisiana
+     B. Arkansas
+     C. Arizona
+     D. Oklahoma
+  
+  Question Type: TF
+  Question Subject: Geography
+  Question Topic:Rivers
+  3. The longest river in the world is the Mississippi River.[T/F]: 
+  
+  Question Type: TF
+  4. The Amazon River is the widest river in the world.[T/F]:
+</pre></div>
+
+<br>
+</div>
+
+

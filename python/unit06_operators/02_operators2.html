@@ -1,0 +1,126 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Operators2</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_operators.asp" target="_blank" style="color:blue">Python Operators</a></p></li>
+   </ul>
+
+<h1>Assignment Operators</h1>
+
+<p>In this lab, you are going to practice using Python's assignment operators.</P>
+
+<h1>Lab Exercise</h1>
+<p>While on vacation, James decides to play the card game Black Jack at the Casino in his hotel. Before playing the game, he reviewed the following Black Jack rules. </p> 
+
+<div id="csNote" style="width:600px;">
+<h3>Black Jack Rules</h3>
+<p>The object of the game is to bet against the dealer for hands as close, as possible, to 21 without going over.</p>
+<p>Cards between 2 and 10 are worth their face value. Face cards, jack, queen, and king, are worth 10. Aces are worth 11 or 1 depending upon which is more advantageous to the hand.</p>
+<p>Players make their bet on the round, then the dealer passes out one card face up to each player in the game, including themselves. Cards are passed out in a clockwise fashion starting with the first player to the left of the dealer. </p>
+<p>Next the dealer passes out one more card to each of the players, face up, and one card, face down, for their own hand.</p>
+<p>If you are dealt a 21, this is called a <strong>Black Jack</strong>. If the dealer does not also have a Black Jack, you win an amount equal to one and half times your initial bet, and you are out of the round.</p>
+<p>Once the rest of the players have taken their turn, then the dealer reveals their hand.<p>
+<p>Before a player begins official play, they may opt to do one of three things. Buy insurance, surrender, or do neither. A player may buy insurance if the dealer's face up card is an ace.  Player's buy insurance to cover the possiblility that the dealer may also have a Black Jack. The cost of insurance is equal to the amount of the initial bet. If the dealer does end up with a Black Jack, then the insurance amount and the initial bet a re given back to the player. Additionally a player may choose to <strong>surrender</strong> their hand if they are confidient they will lose the round. Surrendering gives the player back half of their bet and the other half is given to the dealer.</p>
+<p>After each player has had the opportunity to buy insurance or surrender, the dealer checks their hand to see if they have a Black Jack or 21. If they do, they immediately reveal it, and the round ends. Otherwise, starting with the player to the dealer's left, and continuing clockwise, each player tries to attain a hand that is less than or equal to 21, without going over, and that is also greater than the dealer's hand.</p>
+<p>This is done by <strong>hitting</strong>, <strong>standing</strong>, <strong>splitting</strong>, and <strong>doubling down</strong>.  
+
+You may choose to <strong>hit</strong>, which is how you request an additional card from the deck. Hitting can be signalled by saying "hit" or tapping the table. If your hand becomes greater than 21 after a hit this is called a <strong>bust</strong>. This means you lose your bet, regardless if the dealer also has a bust. You may hit as many times as you would like as long as you haven't busted.</p>
+
+<p>You can also choose to <strong>stand</strong>, which ends your turn and allows you to keep your cards currently dealt. Standing can be signaled by waving your flat hand, palm down, over the top of your cards. You can stand before or after hitting.</p>
+
+<p>You may decide to do a <strong>split</strong>. You can only split your cards if the two original cards dealt to you are a pair. Splitting turns the pair into two individual hands, each with a bet equal to the player's first bet. The dealer then deals you two additional cards to complete each hand, and the player again has the option to hit, stand, split, or double down.</p>
+
+<p>You may decide to <strong>double down</strong> by doubling your initial bet. After the bet is made the dealer gives you one more card, after which you must stand.</p>
+
+<p>Once a player has busted or stood, the next player to the left takes their turn. Once all of the players have gone, the dealer reveals their face down card. At this point, the dealer may hit and/or stand, usually revolving around specific rules that are governed by the dealer's hand. Once the dealer has finished, each player compares their hand against the dealer's hand. If the dealer's hand is closer to 21 than yours, you lose your entire bet. If your hand is closer to 21 than the dealer's, or your hand is equal to 21, you win an amount equal to your bet. If the dealer busts, each player who did not bust, wins an amount equal to their bet. A tie goes to the dealer, except when both you and the dealer have a Black Jack or a 21 you neither win or lose. This is called a <strong>push</strong>, and no exchange of bets is made. </p>
+
+<p>After each round, all the cards in play are discarded, but not shuffled back into the deck. Only when all the cards in the deck have been used is the deck shuffled.</p>
+<P> By the way, Black Jack and 21 are the same game. When a player gets a Black Jack it simply means that their cards add up to 21. A Black Jack does not mean that the player has to have a card with one of the two black jacks on it from the deck of cards.
+</div>
+
+<p>The table below summarizes the ways that a player can win or lose money while playing Black Jack.</p> 
+
+<table id="csTable">
+<tr>
+   <th>Result of Round</th><th>Bet</th>
+</tr>
+<tr>
+   <td>Player wins round</td><td>Wins 1 and 1/2 or 1.5 times the amount of bet</td>
+</tr>
+<tr>
+   <td>Player loses round</td><td>Loses amount of bet</td>
+</tr>
+<tr>
+   <td>Player wins a double down</td><td>Wins 1 and 1/2 or 1.5 times amount of bet times 2</td>
+</tr>
+<tr>
+   <td>Player loses a double down</td><td>Loses amount of bet times 2</td>
+</tr>
+<tr>
+   <td>Player wins both hands of a split</td><td>Wins 1 and 1/2 or 1.5 times amount of bet times 2</td>
+</tr>
+<tr>
+   <td>Player wins one hand of a split</td><td>Wins 1 and 1/2 or 1.5 times amount of bet minus bet amount.</td>
+</tr>
+<tr>
+   <td>Player loses both hands of a split</td><td>Loses amount of bet times 2</td>
+</tr>
+<tr>
+   <td>Player surrenders round</td><td>Loses amount of bet divided by 2</td>
+</tr>
+<tr>
+   <td>Player buys insurance and dealer has 21.</td><td>Wins amount of bet plus insurance amount</td>
+</tr>
+<tr>
+   <td>Player buys insurance but dealer does not have a 21</td><td>Loses amount of bet + amount of insurance</td>
+</tr>
+</table>
+
+<p>James wrote down how he did in each round, along with how much money he bet. Below is a chronological list of all the rounds he played. Write a program that calculates how much money James had when he finished playing the game.</p>
+<p>James starts game with $50 worth of chip.</p>
+<ol id="csList">
+<li><p>Won Hand - bet $1</p></li>
+<li><p>Lost Hand - bet $1</p></li>
+<li><p>Lost Hand - bet $2</p></li>
+<li><p>Won Hand - bet $2</p></li>
+<li><p>Lost Hand - bet $5</p></li>
+<li><p>Split Hand and Won both Hands - bet $5</p></li>
+<li><p>Surrendered Hand - bet $4</p></li>
+<li><p>Won Hand - bet $5</p></li>
+<li><p>Won Hand - bet $10</p></li>
+<li><p>Double Downed and Won Hand - bet $10</p></li>
+<li><p>Lost Hand - bet $5</p></li>
+<li><p>Split Hand but Lost both Hands - bet $2</p></li>
+<li><p>Double Downed but Lost Hand - bet $10</p></li>
+<li><p>Surrendered Hand - bet $10</p></li>
+<li><p>Double Downed and Won Hand - bet $20</p></li>
+<li><p>Lost Hand - bet $25</p></li>
+<li><p>Double Downed and Won Hand - bet $20</p></li>
+<li><p>Split Hand but Lost one Hand - bet $20</p></li>
+<li><p>Won Hand - bet $50</p></li>
+<li><p>Won Hand - bet $100</p></li>
+<li><p>Lost Hand - bet $8</p></li>
+</ul>
+
+<h1>Starter Code</h1>
+<div id="csCode" style="width:400px;"><pre>#Variables
+chips = 50
+bet = 0
+
+bet = 1   # Round 1 - James Won 
+chips += 1.5 * bet;
+bet = 1   # Round 2 - James Lost
+chips -= bet;
+
+print("Money = " + str(chips))
+</pre></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun"><pre>
+Money = &lt;your answer&gt;
+</pre></div>
+</div>
+

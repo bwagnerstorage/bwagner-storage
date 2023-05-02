@@ -1,0 +1,66 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Random</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_while_loops.asp" target="_blank" style="color:blue">Python While Loops</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_numbers.asp" target="_blank" style="color:blue">Python Numbers</a></p></li>
+   <li><p><a href="https://www.w3schools.com/python/python_modules.asp" target="_blank" style="color:blue">Python Modules</a></p></li>
+   </ul>
+
+<h1>Python Modules</h1>
+<p>In Python, programmers utilize libraries, packages, and modules to organize their code. A library is a collection of related packages, a package is a collection of related modules, and a module is a collection of functions, classes, and variables that can be used in your programs. Each of the three organizational tools is located in a separate file with the extension "py". </p>
+
+   <p>For this lab, we are only concerned with modules. An example of a Python module is the <strong>random</strong> module. To use variables, functions, or classes within the random module it must first be imported into your program. The random module contains an object variable named random that provides you with the ability to generate pseudo-random integer values. The Random class, and therefore the object variable random, provide two methods for creating random integers within a specific range: <strong>randrange</strong> and <strong>randint</strong>. 
+   Below is the signature for the randint method.</p>
+
+   <div id="APcode"><pre>int randint(a, b)</pre></div>
+   <p>This method returns a random integer N such that a <= N <= b</p>
+   <p>Look at the following example:</p>
+   <div id="csCode"><pre>import random
+
+num = random.randint(1,10)
+print(num)</pre></div>
+<p>This code generates a random integer value between 1 and 10 inclusive.</p>
+  
+
+<h1>Lab Exercise</h1>
+
+<p>Write a program that does the following.</p>
+<ol id="csList">
+   <li><p>Prompts the user to input an integer value and store the value in a
+   variable named <strong>maxRange</strong>. </p></li>
+   <li><p>Prompts the user to input an integer value and store the value in a variable named <strong>size</strong>.</p></li>
+
+   <li><p>Use a while loop and the <strong>randInt</strong> method to generate random numbers in the range of 1 to maxRange.</p></li>
+   <li><p>Use the variables maxRange and size to display random numbers in the range of 1 to maxRange. Display the random numbers in the form of a list with each random number preceded by a list number and a period. The list of numbers should be the numbers between 1 and size.</p></li>
+</ol>
+
+<div id="csSampleRun"><pre>
+Enter the maximum range-->200
+Enter the list size--> 15
+
+1. 197
+2. 2
+3. 78
+4. 101
+5. 22
+6. 153
+7. 188
+8. 59
+9. 1
+10. 47
+11. 99
+12. 8
+13. 121
+14. 76
+15. 12
+
+
+</pre></div>
+<br>
+</div>
+
+

@@ -1,0 +1,297 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">NumPy Module 4</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/numpy/default.asp" 
+    target="_blank" style="color:blue">NumPy Module</a></p></li>
+   <li><p><a href="https://numpy.org/doc/stable/" 
+    target="_blank" style="color:blue">NumPy Website</a></p></li>
+   </ul>
+
+<h1>Lab Exercise</h1>
+<p>Write a program that allows to people to play <strong>Tic-Tac-Toe</strong>. Your 
+   program does not have to have the same look and feel as the one in the
+   Sample Run below, as long as it allows two people or one person and the computer
+   to play the game. You will need to write the program using either functional
+   programming or object-oriented programming, but I will leave that decision up
+   to you.
+</p>
+<p>Programming Note: To create a 2D of Strings using NumPy you
+   need to use code like the following:
+<div id="csCode"><pre>self.board = np.zeros((3,3), dtype="object")</pre></div>
+</p>
+
+<h1>Sample Runs</h1> 
+<div id="csSampleRun"><pre>
+   1 | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   Player X: Enter your name -->James
+   Player O: Enter Your name -->Tami
+   
+   Tami 'O' goes first.
+   
+   1 | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 5
+   1 | 2 | 3
+   ---------
+   4 | O | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   1 | 2 | 3
+   ---------
+   4 | O | 6
+   ---------
+   7 | 8 | 9
+   
+   James 'X', it is your turn.
+   Select(1-9): 1
+   X | 2 | 3
+   ---------
+   4 | O | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   X | 2 | 3
+   ---------
+   4 | O | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 4
+   X | 2 | 3
+   ---------
+   O | O | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   X | 2 | 3
+   ---------
+   O | O | 6
+   ---------
+   7 | 8 | 9
+   
+   James 'X', it is your turn.
+   Select(1-9): 2
+   X | X | 3
+   ---------
+   O | O | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   X | X | 3
+   ---------
+   O | O | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 6
+   X | X | 3
+   ---------
+   O | O | O
+   ---------
+   7 | 8 | 9
+   
+   
+   Tami, you are the winner!
+   
+   Play Again (y/n)?y
+   1 | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   1 | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 3
+   1 | 2 | O
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   1 | 2 | O
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   James 'X', it is your turn.
+   Select(1-9): 1
+   X | 2 | O
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   X | 2 | O
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 6
+   X | 2 | O
+   ---------
+   4 | 5 | O
+   ---------
+   7 | 8 | 9
+   
+   
+   X | 2 | O
+   ---------
+   4 | 5 | O
+   ---------
+   7 | 8 | 9
+   
+   James 'X', it is your turn.
+   Select(1-9): 5
+   X | 2 | O
+   ---------
+   4 | X | O
+   ---------
+   7 | 8 | 9
+   
+   
+   X | 2 | O
+   ---------
+   4 | X | O
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 9
+   X | 2 | O
+   ---------
+   4 | X | O
+   ---------
+   7 | 8 | O
+   
+   
+   Tami, you are the winner!
+   
+   Play Again (y/n)?y
+   1 | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   1 | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 1
+   O | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   O | 2 | 3
+   ---------
+   4 | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   James 'X', it is your turn.
+   Select(1-9): 4
+   O | 2 | 3
+   ---------
+   X | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   O | 2 | 3
+   ---------
+   X | 5 | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 5
+   O | 2 | 3
+   ---------
+   X | O | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   O | 2 | 3
+   ---------
+   X | O | 6
+   ---------
+   7 | 8 | 9
+   
+   James 'X', it is your turn.
+   Select(1-9): 2
+   O | X | 3
+   ---------
+   X | O | 6
+   ---------
+   7 | 8 | 9
+   
+   
+   O | X | 3
+   ---------
+   X | O | 6
+   ---------
+   7 | 8 | 9
+   
+   Tami 'O', it is your turn.
+   Select(1-9): 9
+   O | X | 3
+   ---------
+   X | O | 6
+   ---------
+   7 | 8 | O
+   
+   
+   Tami, you are the winner!
+   
+   Play Again (y/n)?
+
+
+</pre></div>
+
+
+<br>
+</div>
+
+

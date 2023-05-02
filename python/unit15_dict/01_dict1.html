@@ -1,0 +1,223 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Dictionary 1</div>
+
+<div id="csContent"> 
+   <h1>Python Resources</h1>
+   <ul id="csList">
+   <li><p><a href="https://www.w3schools.com/python/python_dictionaries.asp" target="_blank" style="color:blue">Python Dictionaries</a></p></li>
+   <li><p><a href="https://datagy.io/python-f-strings/" target="_blank" style="color:blue">Python F-String</a></p></li>
+ 
+   </ul>
+<h1>Python Dictionary</h1>
+<p></p>
+
+<h1>Lab Exercise</h1>
+<p>Copy the starter code below and paste it in your main.py file. Run the program.</p>
+<div id="csCode"><pre>import random
+
+capitals = dict()
+   
+def loadStates():
+   print("loadStates...")
+def printList():
+   print("printList")
+def review():
+   print("review")  
+def checkSpelling(state, capital, ans):
+   print("checkSpelling")
+   
+def menu():
+   ans = 0
+   print("State Capitals Review")
+   print("=====================")
+
+   while ans != 4:
+      print()
+      print()
+      print("         Menu")
+      print("-----------------------")
+      print("1. Load States")
+      print("2. Print List of States")
+      print("3. Start Review")
+      print("4. Exit")
+      try:
+         ans = int(input("Make Selection: "))
+      except:
+         print("Invalid Selection. Try Again.")
+         ans = 0 
+      print()
+      if ans == 1:
+         loadStates()
+      if ans == 2:
+         printList()
+      if ans == 3:
+         review()
+      if ans >= 5:
+         print("Invalid Selection. Try Again.")
+         ans = 0 
+   
+menu() 
+     </pre></div>
+
+<p>Click on the following link to download the csv file: <a href="python/unit15_dict/capitals.csv" style="color:#00F">capitals.csv</a></p></li>
+<p>This program allows users to review the state capitals. 
+   The program uses a Python dictionary to store state names and capitals where the state's name is the key and the state's capital is the value.<p/>
+ <p> Your task is to implement the functions <strong>loadStates</strong>, <strong>printList</strong>, <strong>review</strong>, and <strong>spellcheck</strong>.</p> 
+
+ <h3>loadStates Function</h3>
+ <p>Complete function <strong>loadStates</strong>. This function reads the names of all 50 states along with their capitals from the data file "capitals.csv". As each line of data is read extract the state's name and its capital and add them to the capitals dictionary where the state's name is the key and the capital is its value.</p>
+ <h3>printList Function</h3>
+ <p>Complete function <strong>printList</strong>. This function should get a list of keys 
+    from the capitals dictionary and then use a for loop to traverse all of the keys 
+    (state names) to retrieve their value (state capitals) and display them on the 
+    terminal window. Use f-string to display the state names and capitals in column format
+    left justified.</p>
+ <h3>review Function</h3>
+ <p>Complete function <strong>review</strong>. This function should randomly display a state's name from the capitals dictionary. Use the following line of code to randomly select a state and it's capital:</p>
+ <div id="csCode"><pre>state, capital = random.choice(list(capitals.items()))</pre></div>
+ <p>Once you have the state, then prompt the user to enter the capital of that state. If the user inputs the correct capital the function should display the message "Correct! You are ________" where the blank is where you display how many questions they currently got right over how many questions have currently been asked. For example, 2/3. If the user answers incorrectly the function should make a call to the <strong>spellcheck</strong> function. (You will implement the spellcheck function below.) The spellcheck function requires three arguments or parameters: The current question's state name, it's capital, and the answer input by the user. The review questions should continue to be displayed until the user types the sentinel value "exit". When the user exits the review the function should display the percentage of questions the user got correct. Refer to the Sample Run below.</p>
+ <h3>spellcheck Function</h3>
+<p>Complete function <strong>spellcheck</strong>. This function has three parameters: a state's name, it's capital, and the user's response to the question. Design an algorithm that examines the user's answer to determine if it is spelled correctly. If it is not spelled correct the function should determine if the answer is spelled "close" enough to be correct and give the user credit. Display the message "Correct, however it is spelled &lt;correct spelling of capital&gt;. If your algorithm determines there was not sufficient evidence to declare the answer correct, then display this message "Incorrect. The capital of " + &lt;state&gt; + " is " + &lt;capital&gt;). Your algorithm can be written however you choose as long as it has some way to determine that an answer, although spelled incorrectly, is close enough to correct to determine that it is right. For example, I used Python sets so that I could determine how many letters the user's answer and the correct spelling had in common using the Set class's intersection method. I then decided if the answer had at least 60% of the letters in the correct spelling it was close enough to be correct.</p>
+<p>Make sure you save this lab. You are going to modify it in a future lesson.</p>
+
+<div id="csSampleRun"><pre>
+State Capitals Review
+=====================
+   
+         Menu
+-----------------------
+1. Load State
+2. Print List of States
+3. Start Review
+4. Exit
+Make Selection: 1
+
+loadStates...
+
+         Menu
+-----------------------
+1. Load State
+2. Print List of States
+3. Start Review
+4. Exit
+Make Selection: 2
+
+ State                  Capital
+-------                ---------
+Alabama                Montgomery
+Alaska                 Juneau
+Arizona                Phoenix
+Arkansas               Little Rock
+California             Sacramento
+Colorado               Denver
+Connecticut            Hartford
+Delaware               Dover
+Florida                Tallahassee
+Georgia                Atlanta
+Hawaii                 Honolulu
+Idaho                  Boise
+Illinois               Springfield
+Indiana                Indianapolis
+Iowa                   Des Moines
+Kansas                 Topeka
+Kentucky               Frankfort
+Louisiana              Baton Rouge
+Maine                  Augusta
+Maryland               Annapolis
+Massachusetts          Boston
+Michigan               Lansing
+Minnesota              Saint Paul
+Mississippi            Jackson
+Missouri               Jefferson City
+Montana                Helena
+Nebraska               Lincoln
+Nevada                 Carson City
+New Hampshire          Concord
+New Jersey             Trenton
+New Mexico             Santa Fe
+New York               Albany
+North Carolina         Raleigh
+North Dakota           Bismarck
+Ohio                   Columbus
+Oklahoma               Oklahoma City
+Oregon                 Salem
+Pennsylvania           Harrisburg
+Rhode Island           Providence
+South Carolina         Columbia
+South Dakota           Pierre
+Tennessee              Nashville
+Texas                  Austin
+Utah                   Salt Lake City
+Vermont                Montpelier
+Virginia               Richmond
+Washington             Olympia
+West Virginia          Charleston
+Wisconsin              Madison
+Wyoming                Cheyenne
+
+
+         Menu
+-----------------------
+1. Load State
+2. Print List of States
+3. Start Review
+4. Exit
+Make Selection: 3
+   
+The capital of Nebraska is Lincoln
+Correct! You are 1/1
+   
+The capital of Georgia is Atlanta
+Correct! You are 2/2
+   
+The capital of Delaware is Dovor
+Correct, however it is spelled Dover
+   
+The capital of New York is Alban
+Correct, however it is spelled Albany
+   
+The capital of Nebraska is Linclon
+Correct, however it is spelled Lincoln
+   
+The capital of Texas is 
+Incorrect. The capital of Texas is Austin
+   
+The capital of New York is New York
+Incorrect. The capital of New York is Albany
+   
+The capital of New York is Albony
+Correct, however it is spelled Albany
+   
+The capital of Delaware is Dover
+Correct! You are 3/9
+   
+The capital of New York is Albany
+Correct! You are 4/10
+   
+The capital of Delaware is over
+Correct, however it is spelled Dover
+   
+The capital of Nebraska is exit
+   
+--------------------
+   Your score = 36%
+--------------------
+     
+   
+         Menu
+-----------------------
+1. Add a state
+2. Print list of states
+3. Start Review
+4. Exit
+Make Selection: 4
+
+</pre></div>
+
+ 
+
+<br>
+</div>
+
+
