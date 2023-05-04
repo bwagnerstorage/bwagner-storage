@@ -1,0 +1,118 @@
+body {
+   margin: 0;
+   height: 100%;
+   background-color:#4aa5ff;
+   background-image: url(/img/background.png);
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4aa5ff), to(#d9ecff));
+   background-image: -webkit-linear-gradient(top, #4aa5ff, #d9ecff); 
+   background-image:    -moz-linear-gradient(top, #4aa5ff, #d9ecff);
+   background-image:     -ms-linear-gradient(top, #4aa5ff, #d9ecff);
+   background-image:      -o-linear-gradient(top, #4aa5ff, #d9ecff);
+}
+
+table.main {
+	 table-align: center;
+}
+
+tr.main {
+     color: #FFFFFF;
+	 background: #0000CC;
+	 text-align: center;
+	 cell-padding: 10px;
+	 white-space:nowrap;
+	 border: 2px solid;
+	 border-color: #C5C5C5;
+}
+
+td.main {
+	 valign: top;
+	 line-height: 20px;
+     background: #FFFFFF;
+}
+
+table.head {
+	 table-align: center; 
+}
+
+tr.head {
+     color: #000000;
+	 /*background: #F0F8FF;*/
+	 text-align: center;
+	 cell-padding: 10px;
+	 white-space:nowrap;
+	 border: 2px solid;
+	 border-color: #C5C5C5;
+}
+
+td.head {
+	 valign: top;
+	 line-height: 20px;
+     background: #F0F8FF;
+}
+
+
+#scrollbar{
+	 height: 400px;
+	 overflow-y: scroll;
+	 border: 2px solid;
+	 border-color: #C5C5C5;
+}
+#header{
+    align: center;
+	font-weight : bold;
+	text-align: center;
+	color: #FFFFFF;
+	background: #0000CC;
+}
+
+table.chart {
+     width: 440px;
+	 border: 1px solid;
+	 border-color: #C5C5C5;
+	 border-collapse:collapse;
+}
+
+tr.chart {
+    align: center;
+}
+td.chart {
+     align: center;
+	 border: 1px solid;
+	 border-color: #C5C5C5;
+	 border-collapse:collapse;
+}
+
+td.available {
+     color: #005900;
+     align: center;
+	 border: 1px solid;
+	 border-color: #C5C5C5;
+	 border-collapse:collapse;
+}
+
+td.complete {
+     color: #FF0000;
+     align: center;
+	 border: 1px solid;
+	 border-color: #C5C5C5;
+	 border-collapse:collapse;
+}
+
+td.incomplete {
+     color: #FD9800;
+     align: center;
+	 border: 1px solid;
+	 border-color: #C5C5C5;
+	 border-collapse:collapse;
+}
+
+a
+{
+    display:block;
+    width:160px;
+}
+a:link {text-decoration: none;} 
+a:visited {text-decoration: none;} 
+a:hover {text-decoration: none; background-color:#FFFF99;}
+
+

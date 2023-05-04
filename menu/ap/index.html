@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<html>
+<head>
+<title>Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<BASE href="http://bwagner.org/menu/ap/">
+<script language="JavaScript">
+top.window.moveTo(0,0);
+if (document.all) {
+   top.window.resizeTo(screen.availWidth,screen.availHeight);
+}
+else if (document.layers||document.getElementById) 
+{
+   if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+       top.window.outerHeight = screen.availHeight;
+       top.window.outerWidth = screen.availWidth;
+}
+}
+//-->
+</script>
+</head>
+<body>
+<table align="center">
+   <tr>
+      <td height="120"></td>
+   </tr>
+   <tr> 
+       <td align="center" valign="middle" bgcolor="#FFF5D7"> 
+	        <table border="1" bgcolor="#FFF8C6">
+      <tr>  
+			   <td style="width:500px; margin-left:auto; margin-right:auto; text-align:center">
+					<H1>AP Login</H1>
+					<form method="POST" action="do_authuser.php">
+					<p><strong>Username:</strong>
+					<input type="text" name="username" size="25" maxlength="25"></p>
+					<p><strong>Password:&nbsp;</strong>
+					<input type="password" name="password" size="25" maxlength="25"></p>
+					<p>
+					<input type="submit" name="submit" value="     login    ">
+					</p>
+					
+					</form>
+</table>
+</body>
+</html>
