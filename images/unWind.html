@@ -1,0 +1,20 @@
+	
+<h1>Unwinding Stack</h1>
+<p>A <strong>stack</strong> is data structure (memory location) that stores information relating to each method call that is made in a program.</p>
+
+<p>Suppose you have two methods: methodA and methodB. If methodA calls methodB, processing stops in methodA and begins on the first line
+   of methodB. When methodB returns, processing resumes in methodA on the first line below the call to methodB.</p>
+
+<p>How does this work? How does methodA know where to resume when methodB ends? It turns out that when methodA calls
+   methodB, the address of the next instruction for methodA is placed on the stack. This is followed by the parameters
+   for methodB, and then any local variables within methodB. All of this is called the "stack frame" for methodB. 
+   When methodB returns, the stack frame is destroyed (all the parameters and variables are popped off the stack),
+    and then the return address is popped off the stack.</p>
+
+<p>When an unhandled exception causes the stack to <strong>unwind</strong>, the stack frame is destroyed, the return address is
+   popped off the stack and you are back in the calling method. If that calling method does not have a catch block
+   for the exception, the stack is unwound further, until a catch block is found or until you pop out of the main
+   method, in which case the default exception handler will terminate the program.</p>
+
+<br>
+</div>
