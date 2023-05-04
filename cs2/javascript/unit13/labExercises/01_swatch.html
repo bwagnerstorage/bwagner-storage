@@ -1,0 +1,233 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">13-1 Javascript Loops</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_loop_for.asp" target="_blank" style="color:blue">For Loop</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_loop_while.asp" target="_blank" style="color:blue">While Loop</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>File Name: 13_1_swatch.html</p></li>
+<li>An <strong>event handler</strong> is a method that is called to respond to an event such as a key press, mouse movement, or
+    button click.<p>
+<p>So far you have declared event handlers with code like the following:</p>
+<div id="csOutput" style="width:550px"><pre>
+&lt;button type="button" onClick="split()"&gt;Split&lt;/button&gt;        
+</pre></div>
+    <p>The event handler in this code is the function <strong>split()</strong>. This function is called in response
+        to the designated button being clicked.</p>
+</li>
+<li><a>Another way to declare an event handler is to use Javascript to dynamically assign a function as an event
+       handler to a particular event. Look at the following example:</a>
+<div id="csOutput" style="width: 630px"><pre>
+div.onmouseover = function(event)
+{
+    document.getElementById("output").style.backgroundColor = "blue";
+};   
+</pre></div>
+    <p>The Javascript above assigns an <strong>anonymous</strong> function as an event handler
+       for a div's <strong>onmouseover</strong> event. An anonymous function is a function defined without
+       a name. Since the function is being assigned as the event handler for the onmouseover event as it is being created a name
+       is not necessary. Any code placed inside this function will be executed anytime the mouse hovers
+       over the top of the designated div. The parameter <strong>event</strong> is an object variable that
+       contains information about the event that occurred. For example, the statement: <strong>event.target</strong>
+       gives the event handler access to the object that was effected by the mouseover event.
+</li>
+<li><p>Another cool feature of Javascript is that it can add new elements to a document's html. Look at
+       the following example:</p>
+    <div id="csOutput" style="width: 630px"><pre>
+var newDiv = document.createElement("div");
+newDiv.setAttribute("class", "div1");              
+newDiv.setAttribute("style", "background-color:rgb(0,144,192)");
+var text = document.createTextNode("Happy Days");         
+document.getElementById("output").appendChild(newDiv);    
+document.getElementById("output").appendChild(text);
+    </pre></div>
+    <p>The "output" div before the code above was executed:</p>
+    <div id="csOutput" style="width: 630px"><pre>&lt;div id="output"&gt;&lt;/div&gt;</pre></div>
+    <p>The "output" div after the code above was executed:</p>
+    <div id="csOutput" style="width: 630px"><pre>&lt;div id="output"&gt;&lt;div class="div1" style="background-color:rgb(0,144,192)"&gt;Happy Days&lt;/div&gt;&lt;/div&gt;</pre></div>
+<li><p>Copy the following code:</p>
+<div id="csOutput" style="width: 630px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;13_1_swatch&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            #swatch {
+                width: 448px;
+                height: 112px;
+                margin: auto;
+                margin-top: 25px;
+                border: 2px black solid;
+            }
+            
+            #container {
+               width: 760px;
+               height: 400px;
+               margin: auto;
+               margin-top: 10px;
+               border: 2px black solid;
+               box-shadow: 8px 8px 10px;
+               box-sizing: border-box;
+            }
+            
+            #textContainer {
+               width: 760px;
+               height: 100px;
+               margin: auto;
+               margin-top: 5px;
+               box-sizing: border-box;
+            }
+            
+            #preview {
+                width: 50%;
+                height: 100%;
+                padding: 0;
+                float: left;
+                border-right: 2px black solid;
+                box-sizing: border-box;
+            }
+            
+            #selected {
+                width: 50%;
+                height: 100%;
+                padding: 0;
+                float: left;
+                box-sizing: border-box;
+            }
+            
+            #previewValue {
+                float:left;
+                width: 300px;
+                height: 40px;
+                margin-top: 0px;
+                text-align: center;
+                font-family: "consolas";
+                font-size: 1.6em;
+                visibility: hidden;
+                box-sizing: border-box;
+            }
+            
+            #selectedValue {
+                float: left;
+                clear: right;
+                width: 300px;
+                height: 40px;
+                margin-top: 0px;
+                text-align: center;
+                font-family: "consolas";
+                font-size: 1.6em;
+                visibility: hidden;
+                box-sizing: border-box;
+            }
+            
+            .box {
+                float: left;
+                width: 12px;
+                height: 12px;
+                border: 1px black solid;
+            }          
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="swatch"&gt;&lt;/div&gt;
+        &lt;div id="textContainer"&gt;
+            &lt;div style="float:left; margin:0; margin-left: 40px"&gt;&lt;h2 style="text-align:center"&gt;Preview&lt;/h2&gt;&lt;div id="previewValue"&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;div style="float:left; margin:0; margin-left: 70px"&gt;&lt;h2 style="text-align:center"&gt;Selected&lt;/h2&gt;&lt;div id="selectedValue"&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="container"&gt;
+            &lt;div id="preview"&gt;&lt;/div&gt;
+            &lt;div id="selected"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+            var red = 0;
+            var green = 0;
+            var blue = 0;
+            
+            // your code goes below this line
+            
+            
+
+
+
+
+
+            
+            
+            // returns a string representing a background color that has been changed by increasing
+            // its color value by an increment of 48
+            function makeBkColor()
+            {    
+                if(blue &gt; 256)
+                {
+                    blue = 0;
+                    green += 48;
+                }
+                else if(green &gt; 256)
+                {
+                    green = 0;
+                    red += 48;
+                }
+                else if(red &gt; 256)
+                {
+                    red = 0;
+                }
+
+                blue += 48;
+                
+                return "background-color:rgb(" + red + "," + green + "," + blue + ")";
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+    </pre></div>
+<li><p>Add Javascript to the code above to create a color palette consisting of 256 squares.
+        To help make the palette the function <strong>makeBkColor</strong> is provided.
+        This function uses the three global variables red, green, and blue. Each time the function
+        is called it returns a string representation of a unique 
+        background color attribute.</p></li>
+<li><p>The palette should include the following features:</p>
+    <ul id="csList">
+        <li><p>consists of 256 colored squares placed inside the "swatch" div</p></li>
+        <li><p>each square is a div element dynamically created by Javascript</p></li>
+        <li><p>each div's class attribute is set to "box"</p></li>
+        <li><p>each div's background attribute is set to a color provided by the function makeBkColor()</p></li>
+        <li><p>each div is appended to the "swatch" div's innerHTML attribute</p></li>
+    </ul>
+</li>
+<li><p>For each div in the palette create an anonymous function and assign it to the div's
+        <strong>onmouseover</strong> event as an event handler. The event handler should do the following:</p>
+    <ul id="csList">
+        <li><p>retrieve the effected div's background color and store it in a local variable. To retrieve
+               the color use code like the following:</p>
+            <div id="csOutput" style="width: 400px"><pre>event.target.style.backgroundColor</pre></div>
+        </li>
+        <li><p>change the "previewValue" div's visibility style attribute to visible</p></li>
+        <li><p>assign the "previewValue" div's innerHTML attribute to the color retrieved from
+               the effected div.</p></li>
+        <li><p>assign the "preview" div's backgroundColor style attribute to the color retrieved
+               from the effected div.</p></li>
+    </ul>
+</li>
+<li><p>For each div in the palette create an anonymous function and assign it to the div's
+        <strong>onclick</strong> event as an event handler. The event handler should do the following:</p>
+    <ul id="csList">
+        <li><p>retrieve the effected div's background color and store it in a local variable.</p></li>
+        <li><p>change the "selectedValue" div's visibility style attribute to visible</p></li>
+        <li><p>assign the "selectedValue" div's innerHTML attribute to the color retrieved from
+               the effected div.</p></li>
+        <li><p>assign the "selected" div's backgroundColor style attribute to the color retrieved
+               from the effected div.</p></li>
+    </ul>
+</li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_swatch1.png" style="width:90%; height:90%"><br>
+<br>
+</div>	

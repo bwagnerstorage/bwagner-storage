@@ -1,0 +1,77 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI07 JButton</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>The second graphical component we will add to our GUI programs is the button. The Java
+     class that creates buttons is called <strong>JButton</strong>. The process used to add a
+	 button to a window is the same as the one used to add a label.</p>
+<div id="csNote" style="margin:0; width:650px">
+<strong>Step 1 :</strong> create a JButton variable<br>
+<strong>Step 2 :</strong> create a JButton object and store its reference in the JButton variable<br>
+<strong>Step 3 :</strong> set the attributes for the button (location, size, color, etc.)<br>
+<strong>Step 4 :</strong> add the JButton to the content pane of the frame<br>
+</div>
+<p>Create a java file named GUI07 and copy the code below into the file.</p>
+<div id="csCode">
+    <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI07 extends JFrame
+{
+    <font color="#FF0000">// Step 1 : create JButton variable</font>
+    private JButton button;
+    
+    public GUI07()
+    {       
+        <font color="#FF0000">// Step 2 : create a JButton object and store its reference in the JButton variable</font>
+        button = new JButton("Button");
+        
+        <font color="#FF0000">// Step 3 : set the attributes for the button (location, size, color, etc.)</font>
+        button.setLocation(50,50);
+        button.setSize(100, 50);
+        
+        <font color="#FF0000">// Step 4: add the JButton to the content pane of the frame</font>
+        getContentPane().add(button);
+        
+        
+        // set frame attributes
+        setLayout(null);
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.white);     
+        setVisible(true);                                
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI07 app = new GUI07();  // run program
+    }
+}
+</pre>
+</div>
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<li>Modify the program so that has two buttons. The first button should display the word "OK" and  the second button should display the word "Cancel".
+</li>
+<li>The OK button should be located at coordinate (100, 400) with a size of 80 x 30.</li>
+<li>The Cancel button should be located at coordinate (300, 400) with a size of 80 x 30.</li>
+</ol>
+</div>
+<p>As you probably know, buttons are designed so that when users click on them they respond
+  by performing some type of action. We will see how to do that in the next lesson.</p>
+
+
+<h1>Source File</h1>
+<p>GUI07.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI07.png">
+	<br>
+</div>
+

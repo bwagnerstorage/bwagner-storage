@@ -1,0 +1,67 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center"></div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Implement the recursive method <strong>reverseString</strong> so that it returns a given string with the characters in reverse order.
+   For example, the string "Texas" would be displayed as "saxeT".</p>
+<p><strong>Hint:</strong> return an empty string "" when the base case is reached. </p>
+   
+<p>To extract the individual characters from
+   the string use the String class's <strong>substring</strong> method.</p> 
+<p><strong>Example:</strong></p>
+<div id="csCode" style="width:400px">
+  <pre>
+String s = "Texas";
+String ch = s.substring(2, 3);
+</pre></div>
+ <p>The code above would extract the letter "x" from the string and place it in the variable ch .
+   The 2 represents the starting index of the substring and the 3 represents one position beyond the desired substring.</p>
+
+<p>Copy the following code into a file named <strong>ReverseStringApp.java</strong>.</p>
+
+<div id="csCode">
+  <pre>
+import java.util.*;
+
+public class ReverseStringApp
+{
+    public static void main(String[] args)
+    {
+        ReverseStringTester cd = new ReverseStringTester();
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.print("Enter a string --> ");
+        String s = keyboard.nextLine();
+        
+        System.out.println(cd.reverseString(s, s.length()-1));
+    }
+}
+
+class ReverseStringTester
+{
+   /**
+    * @param s the string to be reversed
+    * @param index is equal to s.length() - 1
+    * @return String s in reverse order
+    */
+    public String reverseString(String s, int index)
+    {
+ 
+    }
+}
+</pre></div>
+ 
+<h1>Source File</h1>
+<p>ReverseStringApp.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter a string --> Mississippi
+ippississiM
+</pre>
+</div>
+	<br>
+</div>	
+

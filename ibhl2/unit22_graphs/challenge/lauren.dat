@@ -1,0 +1,37 @@
+3
+3
+SanFrancisco
+NewYork
+LosAngeles
+3
+SanFrancisco LosAngeles 383
+SanFrancisco NewYork 2905
+LosAngeles NewYork 2789
+5
+Austin
+Istanbul
+Calcutta
+NewYork
+London
+10
+Austin Istanbul 6500
+Austin Calcutta 8773
+Austin NewYork 1513
+Austin London 4921
+Istanbul Calcutta 3652
+Istanbul NewYork 5020
+Istanbul London 1556
+Calcutta NewYork 7929
+Calcutta London 4853
+NewYork London 3465
+4
+Reykjavik
+Aarhus
+Geneva
+Budapest
+5
+Reykjavik Aarhus 1515
+Reykjavik Geneva 2379
+Reykjavik Budapest 2443
+Aarhus Budapest 933
+Geneva Budapest 787

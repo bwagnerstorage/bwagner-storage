@@ -1,0 +1,99 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Recursive Search</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/RecursiveSearchNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >RecursiveSearch</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/RecursiveSearch.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >RecursiveSearch</a></h1>
+
+<p>Below are recursive algorithms for both the linear search and binary search.</p>
+<h3>Linear Search</h3>
+<div id="csOutput">
+<pre>
+LINEAR_SEARCH(LIST, LENGTH, KEY)
+   if LENGTH &lt; 0 then
+      return false
+   end if
+   if LIST[LENGTH] = KEY then
+      return true
+   else
+      return LINEAR_SEARCH(LIST, LENGTH - 1, KEY)
+   end if
+end method
+</pre>
+</div>
+
+<h3>Binary Search</h3>
+<div id="csOutput">
+<pre>
+LEFT = 0
+RIGHT = LIST.LENGTH - 1
+BINARY_SEARCH(LIST, LEFT, RIGHT, KEY)
+   MIDPOINT = (LEFT+RIGHT) / 2
+   if LEFT &gt; RIGHT then
+      return false
+   end if
+   if LIST[MIDPOINT] = KEY then
+      return true
+   end if
+   if LIST[MIDPOINT] &lt; KEY then
+      return BINARY_SEARCH(LIST, MIDPOINT + 1, RIGHT, KEY)
+   else
+      return BINARY_SEARCH(LIST, LEFT, MIDPOINT - 1, KEY)
+   end if
+end method
+</pre>
+</div>
+
+<h1>Directions</h1>
+<p>Implement both of these algorithms using the code provided.</p>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+======================
+  Linear Search Test
+======================
+
+75 43 23 9 81 12 61 55 89 2 37 14 
+
+Enter a key --> 55
+55 found!
+
+Another[Y/N]? y
+
+Enter a key --> 22
+22 not found!
+
+Another[Y/N]? n
+
+=====================
+  Binary Search Test
+=====================
+
+2 9 12 14 23 37 43 55 61 75 81 89 
+
+Enter a key --> 2
+2 found!
+
+Another[Y/N]? y
+
+Enter a key --> 89
+89 found!
+
+Another[Y/N]? y
+
+Enter a key --> 37
+37 found!
+
+Another[Y/N]? y
+
+Enter a key --> 22
+22 not found!
+
+Another[Y/N]?
+</pre>
+</div>
+	<br>
+</div>	
+

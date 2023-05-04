@@ -1,0 +1,126 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Encapsulation</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is encapsulation with information hiding</li>
+						<li>What are the benefits of encapsulation</li>
+						<li>What is the purpose of the private visibility modifier</li>
+						<li>What is the purpose of the public visibility modifier</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Encapsulation</h1>
+  <p>In the last lesson we learned that encapsulation is the process of combining variables and
+     methods in a single package called a class. Another aspect of encapsulation is the principle of <strong>information
+	 hiding</strong>. With information hiding objects hide their
+	 data (instance variables) from other classes by allowing access to the data only through the methods defined
+	 within the class. Encapsulation therefore guarantees the integrity of the data contained in the object by
+	 controlling how the data is accessed and modified.</p>
+  <h3>Television Example</h3>
+  <div align="center"><img src="images/tv1.jpg" width="40%"></div>
+  <p>To help illustrate this point let's look at a real world example - a television. How do you interact with 
+     a TV? You either use a remote or the buttons provided on the front of the console. The manufacturer
+	 has provided you with an interface(remote and buttons) to make using the TV easier. Any interaction
+	 with the TV occurs through this interface.
+  <p>Do you need to know how a TV works inorder to use it? No, all you need to know is how to turn it on, change the 
+	 channel, or increase or decrease the volume. In fact, the manufacturer has hidden the details of
+	 how the TV works from you by enclosing it in a case. It would not be advisable for you to remove
+	 the case and mess with the TV's internal circuitry. </p>
+   <p>Just like a TV manufacturer, a programmer, when designing a class, provides an interface. The
+      interface consists of the public methods defined within the class. Interaction with the
+	  class can only take place through these provided methods. The instance variables are the
+	  internal circuitry of the class. Just as it is not wise to mess with a TV's internal circuitry, 
+	  it is not advisable for programmers to have direct access to the data within a class. This packaging or encapsulating
+	  the data and methods of an object together provides protection from external tampering by users. Many 
+	  possible errors can be avoided by adhering to this programming principle.</p>
+  <h3>Benefits of Encapsulation</h3>
+  <div id="csList">
+  <ul>
+    <li>It simplifies the interaction between objects.</li>
+	<li>Allows a class to hide the internal details of how an object does something. </li>
+	<li>A class can change its internal implementation without hurting the overall functionality of the system.</li>	
+	<li>Prevents code (data) from accidental corruption due to programming errors. </li>
+</li>
+  </ul>
+  </div>
+<h1>Visibility Modifiers</h1>
+<p>In Java, we create object encapsulation using visibility modifiers. They control whether other classes
+can "see" what's "inside" an object. The reserved words <strong>public</strong> and <strong>private</strong> are
+visibility modifiers that can be applied to the variables and methods of a class. If a member of a
+class has public visibility, it can be "seen" (read and perhaps changed) from outside the object. 
+If a member of a class has private visibility, it can be used anywhere inside but not outside the
+class definition. Below I have highlighted the visibility modifiers used in the Die class.</p>
+
+<div id="csCode">
+<pre>
+public class Die
+{
+    // variable declarations (instance variables)
+    <div id="csHighlight"><pre>private</pre></div> int faceValue;
+    
+    // method declarations
+    <div id="csHighlight"><pre>public</pre></div> void roll()
+    {
+        faceValue = (int)(Math.random() * 6) + 1;
+    }
+    
+    <div id="csHighlight"><pre>public</pre></div> int getFaceValue()
+    {
+        return faceValue;
+    }
+}</pre>
+</div>
+<p>Public variables let code outside the class reach in and read or change the value of the data.
+   This violates the encapsulation principle. Therefore instance data should be defined with <strong>private</strong> visibility.</p>
+<div id="csCode">
+<pre>
+<div id="csHighlight"><pre>private</pre></div> int faceValue;
+</pre>
+</div>
+<p>Data that is declared as private can be read or changed only by the methods of the class,
+   which makes the objects created from that class self-governing. Whether a method has public
+   or private visibility depends on the purpose of that method. Methods that provide services to
+   other classes must have public visibility.</p>
+<div id="csCode">
+<pre>
+<div id="csHighlight"><pre>public</pre></div> void roll()
+{
+   faceValue = (int)(Math.random() * 6) + 1;
+}
+    
+<div id="csHighlight"><pre>public</pre></div> int getFaceValue()
+{
+   return faceValue;
+}
+</pre>
+</div>
+<p>These methods are sometimes called<strong> service</strong> methods. A private method cannot be
+   invoked from outside the class. The only purpose of a private method is to help the other methods
+   of the class do their job. Therefore they are sometimes called <strong>support</strong> methods.
+</p>
+
+<h3>Constants</h3>
+<p>
+Giving constants public visibility is generally considered acceptable because, although their values can be accessed directly, they cannot be changed. 
+That is because constants are declared using the final modifier.</p>
+<div id="csCode">
+<pre>
+public <div id="csHighlight"><pre>final</pre></div> double TAXRATE = 0.825;
+</pre>
+</div>
+ 
+
+
+</p>
+<br>
+</div>	
+

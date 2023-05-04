@@ -1,0 +1,147 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Seasons</div>
+
+<div id="csContent"> 
+<p>In Java strings are <strong>objects</strong>, not primitive data, therefore they cannot be compared for equality using the "==" operator.
+   Instead to compare two strings to see if they are the same you must use either the <strong>equals</strong> method or the <strong>equalsIgnoreCase</strong> method. Look at the
+   following code segment.</p>
+   <div id="csCode">
+   <pre>
+   String s1 = "ball";
+   String s2 = "Ball";
+   System.out.println("Test 1 = " + s1.<div id="csHighlight"><pre>equals</pre></div>(s2));
+   System.out.println("Test 2 = " + s1.<div id="csHighlight"><pre>equalsIgnoreCase</pre></div>(s2));</pre>
+   </div>
+   <p>Look at the output for this code:</p>
+   <div id="csOutput"><pre>Test 1 = false
+Test 2 = true</pre></div>
+   <p>The first println statement uses the <strong>equals</strong> method to compare the string s1 with the string s2. Even though both
+      variables contain the string "ball" the equals method returns a value of false because the variable s2 
+	  contains a string that begins with a capital letter. The equals method returns true only if the two strings represent the same sequence of characters.</p>
+	<p>The second println statement uses the <strong>equalsIgnoreCase</strong> method. Like its name implies the equalsIgnoreCase
+	  method compares the string s1 to the string s2, ignoring case considerations. Two strings are considered equal ignoring case if they are of the same length and 
+	  corresponding characters in the two strings are equal ignoring case.</p>
+<h1>Directions</h1>
+  <p>Given a season, output when that season begins and ends Meteorologically and Astronomically.</p>
+  <p>The two tables below show the beginning and ending dates for the Metorological and Astronomical seasons for the 
+     year 2017.</p>
+  <table id="csTable">
+    <caption><h3>Northern Hemisphere Seasons Meteorological, 2017</h3></caption>
+      <tr>
+	     <th>Season</th>
+		 <th>Start</th>
+		 <th>End</th>
+	  </tr>
+	  <tr>
+	     <td>Spring</td>
+		 <td>March 20</td>
+		 <td>June 21</td>
+	  </tr>
+	  <tr>
+	     <td>Summer</td>
+		 <td>June 21</td>
+		 <td>September 22</td>
+	  </tr>
+	  <tr>
+	     <td>Fall</td>
+		 <td>September 22</td>
+		 <td>December 21</td>
+	  </tr>
+	  <tr>
+	     <td>Winter</td>
+		 <td>December 21</td>
+		 <td>March 20</td>
+	  </tr>
+  </table>
+  
+    <table id="csTable">
+    <caption><h3>Northern Hemisphere Seasons Astronomical, 2017</h3></caption>
+      <tr>
+	     <th>Season</th>
+		 <th>Start</th>
+		 <th>End</th>
+	  </tr>
+	  <tr>
+	     <td>Spring</td>
+		 <td>Vernal Equinox</td>
+		 <td>Summer Solstice</td>
+	  </tr>
+	  <tr>
+	     <td>Summer</td>
+		 <td>Summer Solstice</td>
+		 <td>Autumnal Equinox</td>
+	  </tr>
+	  <tr>
+	     <td>Fall</td>
+		 <td>Autumnal Equinox</td>
+		 <td>Winter Solstice</td>
+	  </tr>
+	  <tr>
+	     <td>Winter</td>
+		 <td>Winter Solstice</td>
+		 <td>Vernal Equinox</td>
+	  </tr>
+  </table>
+
+<h2>Sample Data</h2>
+<div id="csOutput"><pre>Winter
+Spring
+Summer
+Fall
+wINTer
+SPRing
+</pre></div>
+*Your program should be able to ignore the cases of the characters within the input string.
+
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter a Season --> Winter
+
+Season: Winter
+  Meteorological:
+    December 20 - March 20
+  Astronomical:
+    Winter Solstice - Vernal Equinox
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter a Season --> Spring
+
+Season: Spring
+  Meteorological:
+    March 20 - June 21
+  Astronomical:
+    Vernal Equinox - Summer Solstice
+</pre>
+</div>
+<h1>Sample Run 3</h1>
+  <div id="csSampleRun"> 
+    <pre>
+Enter a Season --> summer
+
+Season: Summer
+  Meteorological:
+    June 21 - September 22
+  Astronomical:
+    Summer Solstice - Autumnal  Equinox
+</pre>
+  </div>
+<h1>Sample Run 4</h1>
+  <div id="csSampleRun"> 
+    <pre>
+Enter a Season --> faLL
+
+Season: Fall
+  Meteorological:
+    September 22 - November 30
+  Astronomical:
+    Autumnal Equinox - Winter Solstice 
+
+</pre>
+  </div>
+	<br>
+</div>

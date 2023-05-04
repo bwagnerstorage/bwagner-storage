@@ -1,0 +1,135 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Object Parameters</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is pass-by-value</li>
+					    <li>What is pass-by-reference</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Parameters of Primitive Types</h1>
+  <p>When passing variables of primitive types Java uses a technique called <strong>pass-by-value</strong>.</p>
+  <p>The following illustration demonstrates pass-by-value.</p>
+	 
+	 <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/ObjectParameters1/Slide1.PNG"></li>
+          <li><img src="images/ObjectParameters1/Slide2.PNG"></li>
+          <li><img src="images/ObjectParameters1/Slide3.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide4.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide5.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide6.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide7.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide8.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide9.PNG"></li>
+		  <li><img src="images/ObjectParameters1/Slide10.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Object Parameters</h1>
+ <p>When passing variables of object types Java uses a technique called <strong>pass-by-reference</strong>.</p>
+  <p>The following illustration demonstrates pass-by-reference.</p>
+	
+	<div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/ObjectParameters2/Slide1.PNG"></li>
+          <li><img src="images/ObjectParameters2/Slide2.PNG"></li>
+          <li><img src="images/ObjectParameters2/Slide3.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide4.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide5.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide6.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide7.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide8.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide9.PNG"></li>
+		  <li><img src="images/ObjectParameters2/Slide10.PNG"></li>
+        </ul>
+    </div>
+
+<p>When using pass-by-reference a variable that is passed as a parameter to a method cannot be 
+   assigned a reference to a different object.</p>
+   
+<p>Look at the following example.</p>
+<div id="csCode">
+<pre>
+public class Test
+{
+   private int num;
+
+   public void setNum(int n)
+   {
+      num = n;
+   }
+
+   public int getNum()
+   {
+      return num;
+   }
+}
+
+public class Demo
+{
+    public void method1()
+    {
+       Test obj1 = new Test();
+
+       method2(obj1);
+       System.out.println(obj1.getNum());
+    }
+
+    public void method2(Test obj2)
+    {
+       Test obj3 = new Test();
+       obj3.setNum(75);
+
+       obj2 = obj3;
+
+       System.out.println(obj2.getNum());
+    }
+
+    public static void main(String[] args)
+    {
+        Demo app = new Demo();
+        app.method1();
+    }
+}
+</pre>
+</div>
+<div id="csOutput">
+<pre>
+75
+0
+</pre>
+</div>
+<p>In method2 a second Test object is instantiated and its reference is assigned to the
+   variable obj3. Using a mutator method the instance variable num of the Test object is 
+   assigned a value of 75. On the next line obj2's reference is changed to point to the object assigned
+   to obj3. On the next line the num variable of the object referenced by obj2 is displayed.
+   Notice from the output that 75 is displayed. This demonstrates that the formal parameter
+   obj2 can be changed to reference a different object.</p>
+<p>In method1, after execution returns back from method2, the num variable of the object referenced
+   by obj1 is displayed. Notice from the output that 0 is displayed. This demonstrates that
+   the reference change made to obj2 in method2 had no affect on obj1. obj1 still references
+   the same object.</p>
+   
+<h3>Summary</h3>
+<div id="csList">
+<ol>
+<li>The instance variables of an object passed as a parameter <strong>can</strong> be modified in a calling
+    method.</li>
+<li>The object that an actual parameter references <strong>cannot</strong> be changed in a calling method.</li>
+</ol></div>
+<br>
+</div>	
+

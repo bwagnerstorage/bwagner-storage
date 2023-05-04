@@ -1,0 +1,83 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Reverse</div>
+
+<div id="csContent"> 
+<h1>Description</h1>
+  <p>Write a program that reads 20 integers from the keyboard and stores them in an array.
+    Then print the array in its orginal order and in reverse order. When entering the data,
+    print a counter on each input line so that the user can keep track of how many numbers 
+  	have been entered. Refer to the sample run below.</p>
+
+<h1>Directions</h1>
+<ol id="csList">
+<li>Create a new Java file named Reverse and add the usual starter code.<br>
+<div id="csCode" style="width:600px"><pre>import java.util.*;
+
+public class Reverse
+{
+  public static void main(String[] args)
+  {
+    Scanner keyboard = new Scanner(System.in);
+    
+  }
+}</pre></div>
+</li>
+<li>In the main method, create an array named <strong>nums</strong> that can store 20 integers.</li><br>
+<li>The following code uses a for loop to read 20 numbers from the keyboard. It also displays a
+    number in the prompt that tracks how many numbers have been entered.<br>
+<div id="csCode" style="width:600px"><pre>
+for(int i = 0; i &lt; 20; i++)
+{
+  System.out.print("Num " + (i + 1) + " --> ");
+  nums[<span id="csHighlight"><pre>i</pre></span>] = keyboard.nextInt();
+}
+System.out.println();
+<pre></div>
+</li>
+<li>Write a for loop that will display the numbers stored in the array.</li><br>
+<li>Write a for loop that will display the numbers stored in the array in reverse order.<br>
+Hint: The for loop should start at 19 and count down to 0.
+</li>
+
+<h1>Source File</h1>
+<p>Reverse.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter 20 integers.
+		  
+Num 1 --> 10
+Num 2 --> 20
+Num 3 --> 30
+Num 4 --> 40
+Num 5 --> 50
+Num 6 --> 60
+Num 7 --> 70
+Num 8 --> 80
+Num 9 --> 90
+Num 10 --> 100
+Num 11 --> 110 
+Num 12 --> 120
+Num 13 --> 130
+Num 14 --> 140
+Num 15 --> 150
+Num 16 --> 160
+Num 17 --> 170
+Num 18 --> 180
+Num 19 --> 190
+Num 20 --> 200
+
+10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200
+
+200 190 180 170 160 150 140 130 120 110 100 90 80 70 60 50 40 30 20 10
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit18_arrays/solutions/03_reverseSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>
+

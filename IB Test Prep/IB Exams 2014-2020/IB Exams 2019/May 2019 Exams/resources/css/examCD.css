@@ -1,0 +1,142 @@
+body {
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+p.first {
+    padding-top: 60px;
+}
+
+p.compact {
+    line-height: 1.0;
+}
+
+/* navbar */
+.navbar {
+    background-color: #252b56;
+    border-color: #252b56;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #252b56;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+    }
+}
+
+
+
+        
+.brand-image {
+   float: left;
+}
+
+
+th { 
+    color: #888888;
+    background-color: #ececec;
+    border-bottom: 1px solid #888888;
+}
+
+th + th {
+  text-align: center;
+}
+
+td + td {
+  text-align: center;
+}
+
+
+h3 {
+ padding-top: 0.5 em;
+ margin-top: 0.5em;
+}
+
+h3.navbar-brand { 
+  padding-top: 0 em;
+  margin-top: 0 em;
+  padding-left: 2em;
+}
+        
+
+
+.squashed  {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em; 
+}
+
+.index td, .index th { 
+  padding: 1em;
+}
+
+.copyright-text {
+  float: right;
+}
+
+.key td {
+  width: 20%;
+}
+
+
+
+             
+
+
+         

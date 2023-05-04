@@ -1,0 +1,169 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Shortest Path Algorithm 1</div>
+
+<div id="csContent"> 
+
+<h1>Explanation</h1>
+<p>Path finding is one of the most important operations performed on a graph. Both DFS and BFS
+   are path finding algorithms. Finding the shortest path through a graph from one node to another
+   is a common operation that has many applications. In networking, for instance, finding the shortest route a
+   packet should take to get from one computer to another. In google maps, finding the shortest
+   route you can take to go from one city to another.
+</p>
+<p>One of the most popular shortest path algorithms used today was developed by a man named Edsger Dijkstra. He
+   designed this algorithm in about 20 minutes without the aid of pen or paper. The algorithm is basically a modified
+   version of BFS but with the ability to search through a weighted graph.
+</p>
+
+<h2>Demonstration of Dijkstra's Shortest Path Algorithm</h2>
+<p>Watch the demonstration to learn how the algorithm works, then do the assignment below.</p>
+<div class = "slider" id="slider1">
+    <ul class="bjqs">
+      <li><img src="images/Dijkstra's Algorithm 1/Slide1.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide2.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide3.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide4.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide5.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide6.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide7.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide8.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide9.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide10.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide11.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide12.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide13.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide14.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide15.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide16.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide17.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide18.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide19.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide20.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide21.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide22.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide23.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide24.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide25.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide26.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide27.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide28.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide29.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide30.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide31.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide32.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide33.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide34.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide35.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide36.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide37.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide38.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide39.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide40.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide41.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide42.PNG"></li>
+      <li><img src="images/Dijkstra's Algorithm 1/Slide43.PNG"></li>
+     </ul>
+ </div>		
+
+     	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Directions</h1>
+<div style="display: flex; justify-content: center;">
+    <img src="images/Graph/graph17.png" style="width:60%; height:60%">
+</div>
+<p>Using the above weighted graph, create a program that uses Dijkstra's Shortest Path Algorithm and a 
+   <strong>adjacencyMatrix</strong> to find the
+        shortest path from the source vertex A to all other vertices in the
+        graph. The program should display the list of vertices with their cost from vertex A,
+        like the sample screen shown below.
+</p>
+<h3>Starter Code</h3>
+<div id="csCode" style="width:700px"><pre>import java.util.*;
+
+public class ShortestPath1 
+{
+    // This array is used to convert vertex numbers into letters
+    final public static String[] vertices = {"A","B","C","D","E","F"};
+    final public static int V = 6;  // number of vertices in graph
+    
+    /*
+      This method uses Dijkstra's Shortest Path Algorithm and an adjacency matrix to find
+      the shortest path from the source vertex A to all other vertices in the
+      graph. The method returns an array containing the cost for each node in the graph.
+    */
+    public static int[] shortestPath(int[][]adjacentMatrix)
+    {
+        boolean[] spt = new boolean[V];  // spt - shortest path tree
+        int[] cost = new int[V];         // stores the cost of each vertex from node A
+
+
+
+
+
+    }
+    
+    /* 
+        This method tests to see if all nodes in the graph have been visited.
+    */
+    public static boolean isComplete(boolean[] spt)
+    {
+
+        
+    }
+    
+    /*
+        This method returns the child node that has not been visited yet and
+        has the least cost. The method returns the child nodes index value.
+    */
+    public static int getMinimumAdjacentNode(int[] cost, boolean[] spt)
+    {
+
+    }
+    
+    /* 
+        This method returns a list of all child nodes of the parameter parent. 
+    */
+    public static LinkedList&lt;Integer&lt; getAdjacentNodes(int[][] matrix, int parent)
+    {
+
+    }
+                
+    public static void main(String[] args) 
+    {
+        // Build graph
+        int[][] adjacentMatrix = {{0, 3, 0, 0, 5, 0},
+                                  {3, 0, 2, 0, 1, 0},
+                                  {0, 1, 0, 2, 4, 3},
+                                  {0, 0, 2, 0, 3, 1},
+                                  {5, 1, 4, 3, 0, 0},
+                                  {0, 0, 3, 1, 0, 0}};
+        
+        int[] costs = shortestPath(adjacentMatrix);
+        
+        // print vertices letter value and its cost to the source vertex
+        for(int i = 0; i &lt; V; i++)
+        {
+            System.out.println(vertices[i] + "       " + costs[i]);
+        }
+    
+    }
+}</pre></div>
+
+ 
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+vertex   cost
+  A        0
+  B        3
+  C        5
+  D        7
+  E        4
+  F        8
+</pre>
+</div>
+	<br>
+</div>	
+

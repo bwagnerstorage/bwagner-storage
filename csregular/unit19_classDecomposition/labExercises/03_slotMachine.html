@@ -1,0 +1,258 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SlotMachine</div>
+<img src="images/slotmachine1.jpg" width="175px">
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment we are going to write a class that simulates the operation of a slot
+     machine. There are many different kinds of slot machines today. One of the more traditional
+     slot machines has three rollers that contain pictures of fruit. A user pulls a lever which
+	 causes the rollers to spin. After spinning for a few seconds each roller stops on one of
+	 the fruit pictures. If all three rollers display the same fruit, then the user wins. When
+	 there is a winner the slot machine pays off at different amounts. There is a 60% chance that
+	 it will pay off between 1 and 10 dollars, a 30% chance that it will pay off between 11 and
+	 100 dollars, and a 10% chance the winner will get the jackpot of 10,000 dollars.</p>
+  <p>Using class decomposition we are going to decompose this problem into two classes. The first class will be named <strong>SlotMachine</strong>. It's
+   job will be to store the jackpot and provide methods to allow a user to play the game. The second class will be named
+   <strong>PlaySlots</strong>. It's job will be to manage the program by creating a SlotMachine object
+   that it can send messages to allow the user to play the game. This class will contain the main
+   method for the program.</p>
+      <h2>SlotMachine class</h2>
+   <p>Using method decomposition the SlotMachine class can be decomposed into the following methods.</p>
+   <div align="center"><img src="images/slotmachine2.png"></div>
+   <p>Create a file named <strong>SlotMachine.java</strong> and add the following code.</p>
+   <div id="csCode">
+   <pre>
+public class SlotMachine
+{
+    // constants 
+	
+	
+    // instance variables
+ 
+    
+    // methods
+        
+} </pre>
+</div>
+<p>Recall that a class is defined by two things: what it stores (variables) and what it does (methods).
+   What a slot machine stores is the current value of each roller. To simulate the
+   storing of the roller values add the following variables to the SlotMachine class under
+   the instance variables section.</p>
+      <div id="csCode">
+   <pre>private int roller1;  
+private int roller2;   
+private int roller3;   
+private int cash = 50;     // $50 is the amount of money you start with
+</pre>
+</div>
+<p>In this class we are adding a new section called constants. A <strong>constant</strong> is a special kind of variable
+declared with the keyword <strong>final</strong>. The difference between a 
+constant and a variable is that a constant cannot be changed once it has been assigned a value.
+Since constants cannot be changed it is not necessary to declare them with the private visibility
+modifier instead it is customary to declare them public.</p>
+<p>Add the following code to the constants section of the class.</p>
+<div id="csCode">
+   <pre>public final int CHERRIES = 0;
+public final int APPLE = 1;
+public final int ORANGE = 2;
+public final int LEMON = 3;
+public final int BANANA = 4;</pre></div> 
+<p>A common programming practice is to use constants to assign names to numbers. In the SlotMachine
+  class 5 constants are defined: CHERRIES, APPLE, ORANGE, LEMON, and BANANA. A value of zero represents 
+  cherries, 1 represents apples, 2 represents orange, and so on. Therefore, anytime the class needs to refer cherries
+  the constant CHERRIES can be used instead of the number zero. This makes the program easier to read.</p>
+
+<div id="csNote"><strong>Note:</strong> It is a common practice to declare constants in all uppercase letters.</div> 
+
+<p>The SlotMachine class provides methods that allow a user to play the game. Add the following
+   methods to the class.</p>
+      <div id="csCode">
+   <pre>
+/* This method randomly selects a fruit for each of the three rollers.
+ */
+public void pullLever()
+{
+
+}
+
+/* This method displays the type of fruit contained in each roller.
+ */
+public void displayRollers()
+{
+
+}
+/* This method determines the amount of pay off when there is a winner
+ * @ return the amount of payoff
+ */
+private int getPayOff()
+{
+
+}
+
+/* This method displays the results of pulling the lever.
+ */
+public void displayResults()
+{
+
+}
+
+// returns the amount of cash you current have
+public int getCash()
+{
+    return cash;
+}
+</pre>
+</div>
+
+<p><strong>Implement SlotMachine Methods</strong></p>
+<ol id="csList">
+<li>Implement the method <strong>pullLever</strong>. This method randomly selects
+    a fruit for each of the three rollers by generating 3 random numbers in the range
+    of 0 to 4 and assigning one of the random numbers to each of the three rollers.</li><br>
+<li>Implement the method <strong>displayRollers</strong>. This method displays the type of
+    fruit contained in each roller. For example, if roller1 has a value of 0 the word
+	Cherries would be displayed, if it has a value of 1 the word Apple would be displayed,
+    and so forth.<br><br>
+	Here is a sample output.
+	<div id="csOutput"><pre>Orange Banana Cherries</pre></div></li><br>
+<li>Implement the method <strong>getPayOff</strong>. This method determines the amount of pay off
+    when there is a winner. There is a 60% chance it will pay out bewteen 1 and 10 dollars, a
+	30% chance it will pay out between 11 and 100 dollars, and a 10% chance the winner will win
+	the jackpot of 10,000 dollars.<br><br>
+	Here is the pseudocode for the method.<br>
+	<div id="csOutput" style="width:600px"><pre>
+generate random number between 0 and 9 inclusive
+
+if random number is greater than or equal to 0 and less than 6 
+    return a random number between 1 and 10 inclusive
+else if random number is greater than or equal to 6 and less than 9 
+    return a random number between 11 and 100 inclusive
+else
+    return 10000</pre></div></li><br>
+	
+<li>Implement the method <strong>displayResults</strong>.This method displays
+    the results of pulling the lever. Before the player can pull the lever they must
+	insert a dollar into the slotMachine. This can be simulated by decreasing the 
+	<strong>cash</strong> variable by 1. If the rollers do not all match then there
+	is not a winner and the method should display the following message.<br><br>
+	<div id="csOutput"><pre>
+No winner. Please try again.
+cash = $ (new balance)
+	</pre></div>
+	If there is a winner the method should call the helper method <strong>getPayOff</strong> to 
+	determine the amount of the pay off. The player's cash balance need to increase by the
+	amount of the pay off. A message showing the amount of the payOff and the new cash balance should
+	be displayed when there is a winner. The message should be similar to one shown below.<br><br>
+		<div id="csOutput"><pre>
+************************
+         Winner
+************************
+
+You won $(amount of pay off)
+cash = $ (new balance)
+
+	</pre></div>
+	</li><br>
+</ol>
+
+<h2>PlaySlots class</h2>
+<p>The job of the PlaySlots class is to manage the program by interacting with a SlotMachine
+   object so that a user can play the game.</p>
+<p><strong>Implement the main method</strong></p>
+<ol id="csList">
+<li>Instaniate a SlotMachine object. </li>
+<li>Instaniate a Scanner object. </li>
+<li>Display the following message:<br><br>
+		<div id="csOutput"><pre>
+1. Pull Lever 2. Quit -->
+	</pre></div>
+As long as the player responds with a one they should be allowed play slots game by
+<ul id="csList">
+<li>pulling the lever</li>
+<li>display the rollers</li>
+<li>display the results of the lever pull</li>
+</ul>
+However, iff the player's cash balance reaches 0 stop letting them play the game and
+display a message similar to the following: "Go home you are broke!"
+	</li>
+</li>
+</ol>
+<br>
+<h1>Source File</h1>
+<p>SlotMachine.java</p>
+<p>PlaySlots.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+1. Pull Lever 2. Quit -->1
+Banana Cherries Cherries
+No winner. Please try again.
+cash = $49
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Apple Cherries Lemon
+No winner. Please try again.
+cash = $48
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Apple Orange Apple
+No winner. Please try again.
+cash = $47
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Banana Banana Apple
+No winner. Please try again.
+cash = $46
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Cherries Lemon Cherries
+No winner. Please try again.
+cash = $45
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Cherries Banana Orange
+No winner. Please try again.
+cash = $44
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Orange Banana Apple
+No winner. Please try again.
+cash = $43
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->1
+Banana Banana Banana
+**********************
+        Winner
+**********************
+
+You won $5
+cash = $47
+
+---------------------------------------
+
+1. Pull Lever 2. Quit -->2
+
+</pre>
+</div>
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit19_classDecomposition/solutions/03_slotMachineSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+	<br>
+</div>

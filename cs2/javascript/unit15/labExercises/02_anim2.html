@@ -1,0 +1,159 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">15-2 Javascript Animation 2</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="_blank" style="color:blue">Drawing on a Canvas</a></p></li>
+</ul>
+
+<h1>Faulty Animation Loop</h1>
+  <p>In the last lesson we looked at an animation loop that uses the Javascript function <strong>setInterval</strong> to
+     execute code at recurring intervals. However, there are several problems with this approach. 
+     Without going into much detail, the majority of these problems exist because the setInterval
+     function lacks the ability to communicate with the browser, therefore it has no way of knowing what
+     other events or operations are occurring in the browser at the same time. This lack of 
+     knowledge can effect browser, therefore animation, performance. 
+  </p>
+  <h1>New and Improved Animation Loop</h1>
+  <p>All of the shortcomings of the previous animation loop were eliminated with the introduction of a new Javascript function named <strong>requestAnimationFrame</strong>.
+    The main benefit of the requestAnimationFrame function is that it has the ability to communicate with the browser thereby
+    eliminating the performance issues caused by the setInterval method; resulting in much smoother animations.
+  </p>
+
+  <p>Below is a new and improved animation loop.</p>
+  <div id="csOutput"><pre>var animate = new Animation();
+
+// animation loop
+function start() 
+{
+    requestAnimationFrame(start);
+    animate.run();
+}
+start();   // invoke or call start function
+</pre></div>
+
+<p>You may have noticed that this animation loop does not specify a frame rate (fps).
+   The requestAnimationFrame function is designed to run at 60 fps which is the optimum rate for rendering
+   a browser window because the majority of computer monitors today have a refresh rate of 60Hz. The smoothest 
+   animations occur when the frame rate (fps) and the refresh rate (Hz) are in sync. Incidentally, there are currently monitors
+   that have frame rates of 165Hz, 180Hz, 200Hz, 240Hz. These are typically used with gaming units that have the memory
+   and cpu/gpu power to handle higher frame rates than 60 fps.</p>
+<p>Although requestAnimationFrame tries to render the browser window at 60 fps, if the browser
+   cannot handle that speed for some reason, requestAnimationFrame can slow the frame rate down to accommodate the
+   browser. Can you think of a reason why a browser may not be able to work efficiently with a frame
+   rate of 60 fps?
+</p>
+<p>For a complete explanation of <strong>requestAnimationFrame</strong> read 
+   the following article by Matt West
+   <a href="http://blog.teamtreehouse.com/efficient-animations-with-requestanimationframe" target="_blank">
+    Efficient Animations with requestAnimationFrame</a>.
+</p>
+
+<h1>Create Project</h1>
+<ol id="csList">
+    <li><p>Open Visual Studio. Click the <strong>File</strong> menu and select <strong>Open Folder...</strong>.
+    <li><p>Navigate to the Animation folder you created in the previous lab
+    and click the <strong>Select Folder</strong> button.</p></li>
+    <li><p>In the EXPLORER tree click on the <strong>New Folder</strong> button. Create a new 
+            folder named <strong>Animation2</strong>.</p></li>
+    <li><p>Highlight the Animation2 folder and select the <strong>New Folder</strong> button and create a new folder 
+            named <strong>js</strong>.</p>
+    <li><p>Highlight the js folder and select the <strong>New File</strong> button and create a new file 
+        named <strong>Animation2.js</strong> then add the following code.</p>
+<div id="csCode" style="width:600px"><pre>class Animation
+{
+    constructor()
+    {
+        this.x = 0;       // x coordinate (horizontal)
+        this.y = 320;     // y coordinate (vertical)
+        this.vx = 1;      // horizontal velocity
+
+        this.initialize();
+    }
+
+    // method initialize gets a reference to the canvas element 
+    // and retrieves its context so that the program can draw
+    // on the the canvas
+    initialize()
+    {
+        this.context = document.getElementById("animationCanvas").getContext("2d");
+    }
+
+    // method update is called in the animation loop to continually update the animation
+    // or game logic. In this method the location of the square that is being drawn
+    // is being monitored so that when the square reaches an edge of the canvas
+    // the square's horizontal direction is reversed.
+    update() 
+    {
+        if(this.x > 640) 
+            this.vx *= -1;       // flip direction: neg * pos is neg
+        else if(this.x &lt; 0)
+            this.vx *= -1;       // flip direction: neg * neg is pos
+
+        this.x = this.x + this.vx;   // update horizontal location
+    }
+
+    // method draw is called in the animation loop to continually redraw the canvas so
+    // that the location of the objects being animated in the canvas are updated.
+    draw() 
+    {
+        this.context.strokeStyle = "#0000FF";   // choice drawing color
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.context.fillRect(this.x, this.y, 50, 50);   // then redraw square
+    }
+
+    // method run is called continually
+    run() 
+    {
+        this.draw();
+        this.update();  
+    }
+}
+</pre></div></li>
+<li><p>Add a new file named <strong>index.html</strong> to the Animation2 folder then 
+       add the following code.</p>
+<div id="csCode"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Animation2&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;script src="js/Animation.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+        #animationCanvas {
+            border: 3px black solid;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+            var animate = new Animation();
+
+            // animation loop
+            function start() 
+            {
+                requestAnimationFrame(start);
+                animate.run();
+            }
+            start();   // invoke or call the start function
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div></li>
+</ol>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>Open the <strong>index.html</strong> file in a browser. Can you tell a difference between the two animation loops?</p></li>  
+    <li><p>Add the following code to the Animation class's constructor.</p>
+    <div id="csOutput"><pre>this.vy = 1;      // vertical velocity</pre></div>    
+    </li>
+    <li><p>Modify the Animation class's <strong>update</strong> method so that the square can move both horizontally and
+           vertically.</p></li>
+    <li><p>Add two additional if statements to the <strong>update</strong> method so that the square will also bounce off the top and bottom edges of the
+        canvas while it is moving.</p></li>
+</div>	

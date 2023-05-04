@@ -1,0 +1,131 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-4 Javascript Yahtzee3</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank" style="color:blue">Create Javascript Objects</a></p></li>
+    <li><p><a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" style="color:blue">setInterval</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Timing Events</a></p></li>
+</ul>
+
+
+<h1>Discussion</h1>
+<p>Download the following NetBeans project: <a href="apFreeResponse/Yahtzee3.zip" style="color:blue">Yahtzee3</a>. Unzip it and place it in your working directory.</p></li>
+<h3>Player Interface</h3>
+<p>The yahtzee game's player interface has been updated to include a scoreboard.</p>
+<img src="images/javascript_yahtzee3-1.png" style="width:80%; height:80%"><br>
+<p>Once a player has completed rolling the dice he must select a section to place the score. On the scoreboard
+   under the game heading are 13 buttons named click. When a player clicks on one of these buttons the
+   button will disappear and be replaced by the score achieved as a result of applying the calculation rules for
+   that section of the board. If the dice values do not meet the requirements for a section the button will 
+   be replaced with a score of 0.</p>
+   
+<h3>makeSelection method</h3>
+<p>When the player clicks on one of the click buttons a call is made to the method <strong>makeSelection</strong>.
+   The purpose of makeSelection is to calculate the score for the current turn. To do this the method 
+   is passed a number parameter that represents the ID of the button that was pressed. This ID allows the method
+   to determine which rule to follow when calculating the score. 
+    </p>
+<div id="csOutput" style="width:650px"><pre>
+yahtzee.prototype.makeSelection = function(selection)
+{
+    var total = 0; 
+    
+    // upper section (1-6)
+    for(var a = 1; a &lt;= 6; a++)
+    {
+        if(selection === a)
+        {    
+            for(var i = 0; i &lt; 5; i++)
+            {
+                if(this.dice[i].value === a)
+                {
+                    total += a;
+                }
+            }
+        }      
+    }
+
+  // 3 of a kind and four of a kind
+  if(selection === 7 || selection === 8)
+  {
+      if(this.ofAKindTest(4))  // four of a kind test
+      {
+            for(var i = 0; i &lt; 5; i++)
+            {
+                total += this.dice[i].value;
+            }
+      }
+      else if(this.ofAKindTest(3))  // three of a kind test
+      {
+            for(var i = 0; i &lt; 5; i++)
+            {
+                total += this.dice[i].value;
+            }
+      }
+  }
+  
+  // full house
+  if(selection === 9)
+  {
+      if(this.fullHouseTest())
+          total = 25; 
+  }
+  
+  // small straight
+  if(selection === 10)
+  {
+      if(this.smallStraightTest())
+          total = 30;
+  }
+  
+  // large straight
+  if(selection === 11)
+  {
+      if(this.largeStraightTest())
+          total = 40;
+  }
+  
+  // yahtzee
+  if(selection === 12)
+  {
+      if(this.yahtzeeTest(this))
+      {
+          total = 50;
+      }
+  }
+  
+  // chance
+  if(selection === 13)
+  {
+      for(var i = 0; i &lt; 5; i++)
+      {
+          total += this.dice[i].value;
+      }
+  }
+  
+  // remove click button and replace it with total
+  var elem = document.getElementById("p" + selection);
+  elem.removeChild(elem.getElementsByTagName('button')[0]);
+  elem.innerHTML = total;     
+};
+</pre></div> 
+    
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>Implement the method <strong>ofAKindTest</strong>. Method ofAKindTest tests the dice to 
+      determine if they meet the requirements for either 3 of a kind or 4 of a kind. If the parameter 
+      key has a value of 3 the method tests for 3 of a kind and if key is a 4 it tests for 4 of a kind.
+      The method returns true if the dice pass the test; otherwise it returns false.</p></li>
+    <li><p>Implement the method <strong>fullHouseTest</strong>. Method fullHouseTest tests the dice to determine
+      if they meet the requirements for a full House (3 of one kind and 2 of another kind).
+      The method returns true if the dice pass the test; otherwise it returns false.</p></li>
+    <li><p>Implement the method <strong>yahtzeeTest</strong>. Method yahtzeeTest tests the dice to determine
+      if they meet the requirements for a yahtzee (5 of one kind).
+      The method returns true if the dice pass the test; otherwise it returns false.</p></li>
+</ol>
+
+<br>
+</div>	

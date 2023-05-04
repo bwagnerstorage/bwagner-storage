@@ -1,0 +1,152 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-3 Browser Input</div>
+
+<div id="csContent"> 
+
+<h1>Lab Exercise</h1>
+<p>Create a html file named 03_class.html and add the following code.</p>
+<div id="csOutput" style="width:680px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Browser Input&lt;/title&gt;
+&lt;script src="Address.js"&gt;&lt;/script&gt;
+&lt;script src="Person.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+    * {
+        box-sizing: border-box;
+    }
+    #container {
+        display: flex;
+        justify-content: space-around;
+    }
+    #leftside {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border: 2px solid blue;
+        padding: 10px;
+        margin: 15px;
+        width: 600px;
+    }
+    #rightside {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border: 2px solid blue;
+        padding: 10px;
+        margin: 15px;
+        width: 600px;
+    }
+    #heading {
+        font-size: 2.4em;
+        font-weight: bold;
+        margin-left: 100px;
+    }
+    .label {
+        font-size: 1.8em;
+        width: 200px;
+
+    }
+    .textbox {
+        font-size: 1.7em;
+        padding: 8px;
+        color:crimson;
+    }
+    .row {
+        display: flex;
+        padding: 5px;
+        margin-left: 15px;
+    }
+    #buttonContainer {
+        display: flex;
+        justify-content: space-around;
+        margin: 25px;
+    }
+    button {
+        font-size: 1.8em;
+        font-weight: 600;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #output {
+        font-size: 1.8em;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="container"&gt;
+        &lt;div id="leftside"&gt;
+            &lt;h1 id="heading"&gt;Personal Information&lt;/h1&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;First Name&lt;/span&gt;
+                &lt;input id = "text1" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;Last Name&lt;/span&gt;
+                &lt;input id = "text2" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;Street Address&lt;/span&gt;
+                &lt;input id = "text3" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;City&lt;/span&gt;
+                &lt;input id = "text4" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;State&lt;/span&gt;
+                &lt;input id = "text5" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;Zip&lt;/span&gt;
+                &lt;input id = "text6" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div id="buttonContainer"&gt;
+                &lt;button class="submit" onclick="submitInfo()"&gt;Submit&lt;/button&gt;
+                &lt;button id="clear" onclick="clearInfo()"&gt;Clear&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="rightside"&gt;
+            &lt;div id="output"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;script&gt;
+        function submitInfo()
+        {
+            
+        }
+
+        function clearInfo()
+        {
+            
+        }
+    &lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;    
+</pre></div>
+<p>Using the <strong>Person</strong> and <strong>Address</strong> classes developed in the previous exercise,
+   complete the functions submitInfo and clearInfo declared at the bottom
+   of the html file. (You will need to include the Person and Address classes in your folder/project)
+</p>
+<ol id="csList">
+<li><p>Complete the function <strong>submitInfo</strong>. This function retrieves the data typed by
+   the user in the six text fields and stores this information in a Person
+   object. When the <strong>Submit</strong> button is pressed the function displays the Person
+   object's data in the <strong>output</strong> div using the Person class's method <strong>getMailingAddress</strong>.
+</p>
+<p>This will require the use of the <strong>document.getElementById</strong> method and the <strong>value</strong> attribute.</p></li>
+<li><p>Complete the function <strong>clearInfo</strong>. This function should clear
+   the six text fields and the output div when the <strong>Clear</strong> button is pressed.
+</p></li>
+</ol>
+<br>
+<h1>Sample Output</h1>
+<img src="images/js_03_class.png">
+<br>

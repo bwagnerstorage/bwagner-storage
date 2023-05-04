@@ -1,0 +1,35 @@
+2
+9
+black_lab: A dog_breed@ that has black@ fur.
+Jack_Russell: A hyper dog_breed@ that is often used to assist when hunting.
+black: A color.
+dog_breed: A phenotype of a dog@.
+cat: A small mammal@ that the internet loves.
+dog: A larger mammal@ that is a common household pet.
+mammal: An animal@ with fur and births its young.
+animal: A living organism that eats organic matter.
+carrot: A yummy orange plant.
+6
+black_lab  Jack_Russell
+cat  dog
+black_lab  cat
+black_lab  dog_breed
+Jack_Russell  animal
+carrot cat
+10
+a: b@
+b: c@
+c: d@
+d: e@
+e: f@
+f: g@
+g: h@
+h: i@
+i: j@
+j: nothing
+5
+a b
+a c
+a d
+a j
+i j

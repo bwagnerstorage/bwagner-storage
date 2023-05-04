@@ -1,0 +1,312 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI11 TextField</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>The next GUI component we will look at is the textfield. A textfield is small window that allows 
+     a user to enter simple text. <strong>JTextField</strong> is the Java class that is used to create
+	 textfields. Look at the sample code below that allows a user to type the name of color into a 
+	 textfield then changes the background color of the frame to that color.</p>
+  <p>Copy the code into your source file.</p>
+<div id="csCode">
+<pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI11 extends JFrame implements ActionListener
+{
+    // instance variables
+    private JButton button;
+    <div id="csHighlight"><pre>private JTextField textField;</pre></div> // Step 1: declare JTextfield variable
+    
+    // constructor
+    public GUI11()
+    {       
+        // create button
+        button = new JButton("Submit");
+        
+        // set button attributes
+        button.setLocation(50, 50);
+        button.setSize(100, 25);
+        
+        // add button to frame
+        getContentPane().add(button);
+        
+        // register listener with button
+        button.addActionListener(this);
+        
+        // Step 2 : instantiate JTextField object
+        <div id="csHighlight"><pre>textField = new JTextField();</pre></div>
+        
+        // Step 3 : set textfield attributes
+        <div id="csHighlight"><pre>textField.setLocation(175, 50);
+        textField.setSize(150, 25);</pre></div>     
+        
+        // Step 4 : add textfield to frame's content pane
+        <div id="csHighlight"><pre>getContentPane().add(textField);</pre></div>
+        
+        
+        // set frame attributes
+        setLayout(null);
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);                                
+    }
+    
+    public void actionPerformed(ActionEvent event)
+    {
+        if(event.getSource() == button)         // identify source
+        { 
+           // Step 5 : retrieve text from textfield
+           <div id="csHighlight"><pre>String str = textField.getText();</pre></div>  
+           <div id="csHighlight"><pre>textField.setText("");</pre></div>           // clear textfield
+
+           if(str.equals("red"))
+           {
+              getContentPane().setBackground(Color.red);
+           }
+           if(str.equals("green"))
+           {
+              getContentPane().setBackground(Color.green);
+           }
+           if(str.equals("blue"))
+           {
+              getContentPane().setBackground(Color.blue);
+           }
+           if(str.equals("white"))
+           {
+              getContentPane().setBackground(Color.white);
+           }
+           if(str.equals("black"))
+           {
+              getContentPane().setBackground(Color.black);
+           }
+           if(str.equals("orange"))
+           {
+              getContentPane().setBackground(Color.orange);
+           }
+           if(str.equals("yellow"))
+           {
+              getContentPane().setBackground(Color.yellow);
+           }
+        }
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI11 app = new GUI11();  // run program
+    }
+}
+</pre>
+</div>
+
+<p>The same process used to add a label or button to a frame is also used with a textfield.</p>
+
+<p><strong>Step 1 :</strong> create a JTextField variable</p>
+<div id="csCode">
+<pre>
+private JTextField textField;
+</pre>
+</div>
+
+<p><strong>Step 2 :</strong> create a JTextField object and store its reference in the JTextField variable</p>
+<div id="csCode">
+<pre>
+textField = new JTextField();
+</pre>
+</div>
+
+<p><strong>Step 3 :</strong> set the attributes for the textfield (location, size, color, etc.)</p>
+<div id="csCode">
+<pre>
+textField.setLocation(175, 50);
+textField.setSize(150, 25);</pre>
+</div>
+
+<p><strong>Step 4 :</strong> add the JTextField to the content pane of the frame</p>
+<div id="csCode">
+<pre>
+getContentPane().add(textField);</pre>
+</div>
+
+<p><strong>Step 5 :</strong> retrieving text from JTextField</p>
+<p>To retrieve the text typed into a textfield use the JTextField method getText. If you would like
+   to clear the textfield after retrieving the input text use the JTextField method setText. Both of
+   these methods are demonstrated in the actionPerformed method in the code above.</p>
+<div id="csCode">
+<pre>
+String str = textField.getText();   // retrieve text from textfield      
+textField.setText("");              // clear textfield</pre>
+</div>
+
+<h1>Exercise</h1>
+<p>Modify the program so that it displays three textfields that will allow a user to enter the 
+    red, green, and blue values of a color. When the submit button is pressed the background color
+    is change to the color created by the values entered into the three textfields. The values of
+    the RGB colors must be in the range of 0 - 255.</p>
+<div id="csList">
+    <ol>
+      <li>Compile and execute the program.</li>
+      <li>Remove the code highlighted in red.</li>
+      <div id="csCode"> 
+        <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI11 extends JFrame implements ActionListener
+{
+    // instance variables
+    private JButton button;
+    <div id="csHighlight"><pre>private JTextField textField;</pre></div>// Step 1: declare JTextField variable
+    
+    // constructor
+    public GUI11()
+    {       
+        // create button
+        button = new JButton("Submit");
+        
+        // set button attributes
+        button.setLocation(50, 50);
+        button.setSize(100, 25);
+        
+        // add button to frame
+        getContentPane().add(button);
+        
+        // register listener with button
+        button.addActionListener(this);
+        
+        // Step 2 : instantiate JTextField object
+        <div id="csHighlight"><pre>textField = new JTextField();</pre></div>// Step 3 : set textfield attributes
+        <div id="csHighlight"><pre>textField.setLocation(175, 50);
+        textField.setSize(150, 25);</pre></div>// Step 4 : add textfield to frame's content pane
+        <div id="csHighlight"><pre>getContentPane().add(textField);</pre></div>// set frame attributes
+        setLayout(null);
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);                                
+    }
+    
+    public void actionPerformed(ActionEvent event)
+    {
+        if(event.getSource() == button)         // identify source
+        { 
+           // Step 5 : retrieve text from textfield
+           <div id="csHighlight"><pre>String str = textField.getText(); 
+           textField.setText("");           
+
+           if(str.equals("red"))
+           {
+              getContentPane().setBackground(Color.red);
+           }
+           if(str.equals("green"))
+           {
+              getContentPane().setBackground(Color.green);
+           }
+           if(str.equals("blue"))
+           {
+              getContentPane().setBackground(Color.blue);
+           }
+           if(str.equals("white"))
+           {
+              getContentPane().setBackground(Color.white);
+           }
+           if(str.equals("black"))
+           {
+              getContentPane().setBackground(Color.black);
+           }
+           if(str.equals("orange"))
+           {
+              getContentPane().setBackground(Color.orange);
+           }
+           if(str.equals("yellow"))
+           {
+              getContentPane().setBackground(Color.yellow);
+           }
+		   </pre></div>}
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI11 app = new GUI11();  // run program
+    }
+}
+</pre>
+      </div>
+      <li>Create a textfield named <strong>redTextField</strong> located at (100, 
+        50) with a size of 50 x 25.</li>
+      <li>Add <strong>redTextField</strong> to contentPane.</li>
+      <li>Create a textfield named <strong>greenTextField</strong> located at 
+        (100, 100) with a size of 50 x 25.</li>
+      <li>Add <strong>greenTextField</strong> to contentPane.</li>
+      <li>Create a textfield named <strong>blueTextField</strong> located at (100, 
+        150) with a size of 50 x 25.</li>
+      <li>Add <strong>blueTextField</strong> to contentPane.</li>
+      <br>
+      <li>Create a label named <strong>redLabel</strong> located at (50, 50) with 
+        a size of 50 x 25.</li>
+      <li>Add <strong>redLabel</strong> to contentPane.</li>
+      <li>Create a label named <strong>greenLabel</strong> located at (50, 100) 
+        with a size of 50 x 25.</li>
+      <li>Add <strong>greenLabel</strong> to contentPane.</li>
+      <li>Create a label named <strong>blueLabel</strong> located at (50, 150) 
+        with a size of 50 x 25.</li>
+      <li>Add <strong>blueLabel</strong> to contentPane.</li>
+      <br>
+      <li>Position the <strong>submit</strong> button at location (50, 200).</li>
+      <br>
+      <li>Modify the <strong>actionPerformed</strong> method so that when the 
+        submit button is pressed the frame's background color changes to the color 
+        specified by the three values in the textfields. <br>
+        <br>
+        <strong>Step 1 :</strong> Retrieve text from textfields<br>
+        <div id="csCode" style="width:640px"> 
+          <pre>
+String red = redTextField.getText();  // retrieve text from textfield
+String green = greenTextField.getText();  // retrieve text from textfield
+String blue = blueTextField.getText();  // retrieve text from textfield
+</pre>
+        </div>
+        <br>
+        <strong>Step 2 :</strong> Convert text to integers<br>
+        <br>
+        The <strong>getText</strong> method used to retrieve the text in a textfield 
+        always returns a string.<br>
+        Inorder to create a color using the numbers typed into the three textfields 
+        they must <br>
+        be first converted from their string form into an integer.<br>
+        <div id="csCode" style="width:640px"> 
+          <pre>
+int r = Integer.parseInt(red);      // convert text to an integer
+int g = Integer.parseInt(green);    // convert text to an integer
+int b = Integer.parseInt(blue);     // convert text to an integer
+</pre>
+        </div>
+        The parseInt method converts a number in string form to integer form - 
+        Example: "25" becomes 25. <br>
+        <br>
+        <strong>Step 3 :</strong>Change background color<br>
+        <div id="csCode" style="width:640px"> 
+          <pre>
+getContentPane().setBackground(new Color(r, g, b));
+</pre>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+
+
+<h1>Source File</h1>
+<p>GUI11.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI11.png">
+	<br>
+</div>
+

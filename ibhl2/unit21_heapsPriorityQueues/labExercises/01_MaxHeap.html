@@ -1,0 +1,186 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MaxHeap</div>
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/MaxHeap.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >MaxHeap</a></h1>
+
+<div id="csContent"> 
+      <h2>Directions</h2>
+      <p>Below is the definition of a class named <em>MaxHeap</em> that implements 
+        an integer heap using the maxheap property. The method <em>insert</em> 
+        is responsible for adding new items to the heap. The method <em>removeMax</em> 
+        removes the largest item from the heap.</p>
+      <div id="csCode"><pre>public class MaxHeap
+{
+    public final int CAPACITY = 50;
+    private int[] heap;
+    private int size;
+    
+    public MaxHeap()
+    {
+        heap = new int[CAPACITY];
+        size = 0;
+    }
+    
+<font color="#009900">    // adds an item to the heap
+    // it first adds the item to the end of the heap then
+    // calls the method reheapUpward to place the new item
+    // at its correct position in the heap
+    // maintaining the maxheap property</font>
+    public void insert(int item)<br>    {<br>       heap[size] = item;<br>       reheapUpward();<br>       size++; <br>    }
+    
+<font color="#009900">    // part (a)
+    // moves the newly added item to its correct location in the heap
+    // it advances the new item up the tree by swapping it with its
+    // parent until an acceptable location has be found</font>
+    private void reheapUpward()
+    {
+        <font color="#009900">/* implemented in part(a) */</font>
+    }
+    
+<font color="#009900">    // removes the largest item from the heap then
+    // transfers the last item to the newly vacated
+    // root position and calls the method reheapDownward
+    // to re-establish the maxheap property</font>
+    public int removeMax()
+    {
+        int max = heap[0];
+        heap[0] = heap[size-1];
+        reheapDownward();
+        size--;    
+             
+        return max;
+    }
+    
+<font color="#009900">    // part (b)
+    // moves the new root to its correct location in the heap
+    // it advances the new root down the tree by swapping it with its
+    // largest child until an acceptable location has be found</font>
+    private void reheapDownward()
+    {
+       <font color="#009900">/* implemented in part(b)  */</font>
+    }
+    
+    public int size()
+    {
+        return size;
+    }
+    
+    public String toString()
+    {
+        String str="";
+        
+        for(int i=0; i < size; i++)
+          str += heap[i] + " ";
+          
+        return str;
+    }
+}</pre></div>
+      <p>In this assignment you are going to implement two methods of the <em>MaxHeap</em> 
+        class: <strong>reheapUpward</strong> and <strong>reheapDownward</strong>. 
+      </p>
+      <br>
+      <p><strong>Part (a)</strong> Implement the method <em>reheapUpward</em>. 
+      </p>
+      <p>The <em>insert</em> method adds new items to the end of the heap and 
+        increases the size of the heap by one.<em> reheapUpward</em> is used by 
+        the <em>insert</em> method to place the newly added item in its proper 
+        location within the heap. It accomplishes this by advancing the new item 
+        <strong>up</strong> the tree by continually swapping it with its parent 
+        until an acceptable location has been found. </p><br>
+      <p><strong>Part (b)</strong> Implement the method <em>reheapDownward</em>.</p>
+      <p>After removing the largest item from the heap the <em>removeMax</em> 
+        method transfers the last item in the heap to the vacated root position 
+        and decreases the size of the heap by one.<em> reheapDownward</em> is 
+        used by the <em>removeMax</em> method to place the new root in its proper 
+        location within the heap. It accomplishes this by advancing the new root 
+        <strong>down</strong> the tree by continually swapping it with its largest 
+        child until an acceptable location has been found.</p><br>
+      <h3>Heap Rules</h3>
+      <p>In your implementation of the two methods you will need to use the following 
+        rules used for determining the location of a node's relatives within an 
+        array-based heap. <em>i</em> represents a node's current location within 
+        the array.</p>
+      <table id="apTable">
+        <tr> 
+          <td><strong>ITEM</strong></td>
+          <td><strong>LOCATION</strong></td>
+        </tr>
+        <tr> 
+          <td>Parent</td>
+          <td>(i -1) / 2</div></td>
+        </tr>
+        <tr> 
+          <td>Left sibling, if there is one</td>
+          <td>i -1</div></td>
+        </tr>
+        <tr> 
+          <td>Right sibling, if there is one</td>
+          <td>i + 1</div></td>
+        </tr>
+        <tr> 
+          <td>Left child, if there is one</td>
+          <td>i * 2 + 1</td>
+        </tr>
+        <tr> 
+          <td>Right child, if there is one</td>
+          <td>i * 2 + 2</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h3 style="text-align:center">HeapSort</h3>
+
+      <div id="csNote">Notice 
+            that when the <em>removeMax</em> method is called it always removes 
+            the largest item in the heap. If the number of calls made to the <em>removeMax</em> 
+            method equals the size of the heap the resulting output would be a 
+            list of numbers in descending order. This is the process used by the 
+            sorting algorithm called the <strong>HeapSort</strong> which has a 
+            fast execution time of O(n log n).
+        </div>
+
+      <h2>&nbsp;</h2>
+      <p></p>
+      <h2>Sample Run</h2>
+      <div id="csSampleRun">
+<pre>Heap = 95 49 77 38 9 25 50 13
+Size = 8
+Max = 95
+
+
+Heap = 77 49 50 38 9 25 13
+Size = 7
+Max = 77
+
+
+Heap = 50 49 25 38 9 13
+Size = 6
+Max = 50
+
+
+Heap = 49 38 25 13 9
+Size = 5
+Max = 49
+
+
+Heap = 38 13 25 9
+Size = 4
+Max = 38
+
+
+Heap = 25 13 9
+Size = 3
+Max = 25
+
+
+Heap = 13 9
+Size = 2
+Max = 13
+
+
+Heap = 9
+Size = 1
+Max = 9
+</pre>
+</div>
+<br>

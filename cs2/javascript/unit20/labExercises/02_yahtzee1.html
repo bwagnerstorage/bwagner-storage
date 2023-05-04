@@ -1,0 +1,228 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-2 Javascript Yahtzee1</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank" style="color:blue">Create Javascript Objects</a></p></li>
+    <li><p><a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" style="color:blue">setInterval</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Timing Events</a></p></li>
+</ul>
+
+<h1>Yahtzee</h1>
+<p>Yahtzee is a dice game introduced by Milton Bradley in the 1940's. The goal of Yahtzee is to get as many points as 
+   possible by rolling combinations of five dice. You can roll up to three times, possibly choosing to
+   just roll some of the dice each time. After you roll, you choose which slot to use based on the
+   combination rolled. Different combinations of dice earn points differently. If you don't meet the 
+   requirements for the combination you choose, you will get zero points for that slot. The game ends
+   when you have filled in all the slots in the game.</p>
+
+<p>We are going to make an electronic version of this game using html, css, and javascript.</p>
+
+<p>In the previous lesson we used an <strong>animation loop</strong> to animate black squares
+   by continually moving them up and down a canvas window. An animation loop is designed to 
+   execute the entire time a program is running. However, sometimes you only want an animation
+   to last for a fixed amount of time. For example, in our Yahtzee game
+   we would like to simulate a player rolling dice. This can be accomplished by continually flipping the 
+   images that represent the six sides of a die for a fixed amount of time, say two seconds.</p>
+
+   <p>Download the following NetBeans project: <a href="apFreeResponse/Yahtzee1.zip" style="color:blue">Yahtzee1</a>. Unzip it and place it in your working directory.</p></li>
+
+<h1>Discussion</h1>
+<h3>Yahtzee Object</h3>
+<p>Look at the following code:</p>
+<div id="csOutput" style="width:650px"><pre>
+function yahtzee() 
+{
+    this.context = null;  // reference to canvas context
+    this.dice = [];       // array representing 5 dice
+    this.images = [];     // array to store 6 die images
+    this.loadCount = 0;   // count of number of images loaded
+    this.rolled = false;  // flag to test if a dice roll is in progress
+};
+</pre></div>
+<p>This code defines a <strong>yahtzee object</strong>. Notice there are two arrays. The first array is responsible for storing
+   5 die objects and the other stores 6 die images representing a 6 sided die. As a reminder anytime you
+   wish to refer to a variable or method that belongs to an object you must 
+   preference them with the keyword <strong>this</strong>.</p>
+<h3>Preload Images</h3>
+<p>When making a game it is often beneficial to preload the game's images prior to
+    beginning the game. Look at the following <strong>loadImages</strong> method.</p>
+<div id="csOutput" style="width:650px"><pre>
+yahtzee.prototype.loadImages = function() {
+    for(var i=0; i < 6; i++)
+    {
+        var img = new Image();         // create image object
+        (function(that, image, j) {
+        image.onload = function()      // called when an image is loaded
+        {
+            that.images[j] = image;
+            that.loadCount++;
+            if(that.loadCount === 6)   // all images have been loaded
+                that.buildDice();      // start game
+        };
+    })(this, img, i);  // closure
+    var filename = "images/d"+ (i+1) + ".png";  // build filenames
+    img.src = filename;                // assign filename to image object
+    }   
+};
+</pre></div>
+<p>Javascript loads images asynchronously. This means that the program does not stop or block
+   until the images are loaded, instead it continues to execute the rest of the program's code. 
+   It does, however, notify a program when an image is finished loading by calling the image 
+   object's <strong>onload</strong> method.</p>
+<p>This asynchronous behavior promotes a problem. We do not want to start our game until all of
+    the images have been loaded. To prevent the game code from executing to early I have included a variable
+    named <strong>loadCount</strong> that tracks how many images have been loaded. 
+    When loadCount equals 6 I know that all the images
+    have been loaded so I can start the game by calling the method <strong>buildDice</strong>.
+</p>
+<h3>Rolling the Dice</h3>
+<p>The rolling dice is the center-piece of our game. To make the
+    game more dynamic we would like the dice to be animated. The following method, <strong>rollDice</strong>, is responsible
+   for implementing this behavior.</p>
+<div id="csOutput" style="width:650px"><pre>
+yahtzee.prototype.rollDice = function()
+{   
+    if(!this.rolled) 
+    {
+        var that = this;  // store current this object
+        var current = new Date();  // current time in millis
+        var rollTime = current.getTime() + 2000;  // current time + 2 seconds
+        
+        that.rolled = true;  // started roll sequence
+
+        // spin dice images every 1/10 of a second for 2 seconds
+        var timer = setInterval(function(){ spinDice(); }, 100); 
+
+        // inner function
+        function spinDice() 
+        {
+            for(var i = 0; i &lt; 5; i++)
+            {
+                if(that.dice[i].hold === false)
+                {
+                    var index = Math.floor(Math.random() * 6);
+                    that.dice[i].value = index;
+                }
+            }
+
+            that.draw();  // draw dice
+
+            if(new Date().getTime() &gt; rollTime)  // ?Is time up?
+            {
+                that.rolled = false;   // prevents 2 rolls from occurring at same time
+                clearInterval(timer);  // stop animation
+            }
+        }
+    }
+    
+};
+</pre></div>
+<p>This code creates a fixed time animation that lasts a total of 2 seconds. To accomplish this
+   the code starts by creating a new Date object which stores the current time in milliseconds.</p>
+<div id="csOutput" style="width: 650px"><pre>
+var current = new Date();  // current time in milliseconds    
+</pre></div>
+<p>Then a variable is created named rollTime that stores the current time plus 2 seconds. This variable marks the end of the animation time interval.</p>
+<div id="csOutput" style="width: 650px"><pre>
+var rollTime = current.getTime() + 2000;  // current time + 2 seconds  (2000 millis = 2 seconds) 
+</pre></div>
+<p>An if statement within the method continually checks to see if the current time is
+   greater than rollTime. When the if statement becomes true the 2 second interval is up and the
+   animation is stopped by calling the <strong>clearInterval</strong> method.</p>
+<div id="csOutput" style="width: 650px"><pre>
+if(new Date().getTime() &gt; rollTime)  // Is time up?
+{
+    that.rolled = false;   // prevents 2 rolls from occurring at same time
+    clearInterval(timer);  // stop animation
+}  
+</pre></div>
+<p>The <strong>spinDice</strong> method is responsible for animating the dice by continually
+    flipping the die images. It is called
+    by the <strong>setInterval</strong> method every 1/10 of a second. The spinDice method
+   is what is called an inner function. An inner function is a function that is defined within another
+   function. The benefit of an inner function is that it has access to all the variables created in
+   its parent function. Inner functions can be named, like spinDice, or they can be created as an anonymous function.</p>
+<div id="csOutput" style="width: 650px"><pre>
+// spin dice images every 1/10 of a second for 2 seconds
+var timer = setInterval(function(){ spinDice(); }, 100); 
+
+// inner function
+function spinDice() 
+{
+    for(var i = 0; i &lt; 5; i++)
+    {
+        if(that.dice[i].hold === false)
+        {
+            var index = Math.floor(Math.random() * 6);
+            that.dice[i].value = index;
+        }
+    }
+
+    that.draw();  // draw dice
+
+    if(new Date().getTime() > rollTime)  // can't roll while rolling
+    {
+        that.rolled = false;
+        clearInterval(timer);  // stop spinning after 2 seconds
+    }
+}
+</pre></div>
+<p>The spinDice method assigns a random image to each of the 5 dice, draws the dice on the 
+    canvas, and repeats this process every 1/10 second until the 2 second time interval is up.
+    The function <strong>clearInterval</strong> is responsible for stopping the animation by
+    stopping the time interval created by <strong>setInterval</strong>.</p>
+
+<h1>Lab Exercise</h1>
+<h3>Die Object</h3>
+<p>A die object stores information about a die. The buildDice method creates 5 die objects and adds them to the dice array.</p>
+<div id="csOutput" style="width:650px"><pre>
+yahtzee.prototype.buildDice = function() {
+    for(var i = 0; i &lt; 5; i++)
+    {
+        var random = Math.floor(Math.random() * 6);
+        this.dice[i] = {value : i, hold : false};    // create die object
+    }
+};</pre></div>
+<p>A die object consists of two fields: <strong>value</strong> and <strong>hold</strong>. The value field stores the face value(1-6) of a
+   die. The hold field stores a boolean value that determines whether the die's value field is 
+   locked. When a die object's hold field is set to true it is locked which means it's value field cannot
+   be changed.</p>
+<ol id="csList">
+    <li><p>In the index.html file the following HTML creates 5 button elements.</p>
+        <div id='csOutput'><pre>
+&lt;div id="holdPanel"&gt;
+&lt;button id="hold0" onclick="yahtzee.holdDice(0)"&gt;Hold&lt;/button&gt;
+&lt;button id="hold1" onclick="yahtzee.holdDice(1)"&gt;Hold&lt;/button&gt;
+&lt;button id="hold2" onclick="yahtzee.holdDice(2)"&gt;Hold&lt;/button&gt;
+&lt;button id="hold3" onclick="yahtzee.holdDice(3)"&gt;Hold&lt;/button&gt;
+&lt;button id="hold4" onclick="yahtzee.holdDice(4)"&gt;Hold&lt;/button&gt;
+&lt;/div&gt;
+</pre></div>
+    <p>There is one button for each of the five die objects in the dice array.
+       The purpose of the hold buttons are to allow a player to hold or lock one or more die so that
+       they are not changed during the next roll. When a hold button is clicked the yahtzee method
+       holdDice is called with a number parameter that represents the die object that it
+       represents. For example, "yahtzee.holdDice(0)" has a parameter of 0 therefore it refers to 
+       the first die object in the <strong>dice</strong> array.
+    </p>
+    <p>Implement the method <strong>holdDice</strong>. The holdDice method toggles a die objects
+       current hold status by setting its hold field to either true or false. If the hold field is
+       true it is changed to false and if it is false it is changed it to true. When a die object's hold
+       field is set to true its value field is locked and cannot be changed.</p>
+    <p>The holdDice method also toggles the background color of the hold button that's id corresponds
+        to the number given by the parameter <strong>dieNumber</strong>. If die object's hold field is set to true then
+       its corresponding hold button's background color is set to "gold". If the die object's hold field
+       is set to false then its corresponding hold button's background color is set to "lightgoldenrodyellow".</p>
+	   <br>
+    </li>
+    <li><p>Modify the rollDice method's inner function <strong>spinDice</strong> so that if a die object's
+        hold field is set to false its value field remains unchanged.</p></li>
+</ol>
+
+<br><hr><br>
+<img src="images/javascript_yahtzee1.png" style="width:100%; height:100%"><br>
+<br>
+</div>	

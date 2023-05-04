@@ -1,0 +1,91 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Logical Size of an Array</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>how to loop through an array that is not full</li>
+						<li>logical size vs physical size</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Logical Size vs Physical Size</h1>
+  <p>When creating (instantiating) an array you are required to give it a size. This size value represents the
+     physical size of the array. The <strong>physical size</strong> is the total number of elements(cells) in the array.</p>
+	 
+	 <div id="csNote"><strong>Note:</strong> Once an array is instantiated, its physical size cannot be changed.</div>
+	 
+  <p>Sometimes when you use an array in a program you don't know exactly how big the array needs to be. Since you are
+     required to give an array a size, you simply make it big enough so that it will always have enough room to 
+	 meet the needs of the program. For example, if you needed an array to store the names of students who showed
+	 up for after school tutorials you might declare an array like the following</p>
+<div id="csCode">
+<pre>
+String[] tutorials = new String[100];   // 100 is the physical size of the array
+</pre>
+</div>
+<p>Since you don't know how many students will actually attend the tutorials you make the array size 100 knowing that
+   this many students will never attend. The array's size is bigger than the maximum number of students who
+   are projected to attend tutorials, therefore the array will always have enough room to meet the needs of the program. </p>
+   
+<p>In our example, since you are not going to use all 100 elements of the array you need to be
+   able to keep track of how many names are actually added to the array.  This can be done by creating a counter variable.
+   Look at example again. It has been modified to included a counter variable.</p>
+<div id="csCode">
+<pre>
+String[] tutorials = new String[100];   // 100 is the physical size of the array
+int numStudents = 0;                    // counter - logical size of the array
+</pre>
+</div>
+<p>The counter variable numStudents job is to keep track of how many students are added to the array. This counter variable represents 
+the logical size of the array. The <strong>logical size</strong> of an array is the current number of elements in the array that are occupied.
+For example, if twelve students showed up for tutorials the numStudents variable would contain the value 12. The logical size
+of the array is 12. The physical size of the array is 100.</p>
+<p>The following illustration demonstrates the use of a counter variable to represent the logical size of an array.</p>
+
+ <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Array2/Slide1.PNG"></li>
+          <li><img src="images/Array2/Slide2.PNG"></li>
+          <li><img src="images/Array2/Slide3.PNG"></li>
+		  <li><img src="images/Array2/Slide4.PNG"></li>
+		  <li><img src="images/Array2/Slide5.PNG"></li>
+		  <li><img src="images/Array2/Slide6.PNG"></li>
+		  <li><img src="images/Array2/Slide7.PNG"></li>
+		  <li><img src="images/Array2/Slide8.PNG"></li>
+		  <li><img src="images/Array2/Slide9.PNG"></li>
+		  <li><img src="images/Array2/Slide10.PNG"></li>
+		  <li><img src="images/Array2/Slide11.PNG"></li>
+		  <li><img src="images/Array2/Slide12.PNG"></li>
+		  <li><img src="images/Array2/Slide13.PNG"></li>
+		  <li><img src="images/Array2/Slide14.PNG"></li>
+		  <li><img src="images/Array2/Slide15.PNG"></li>
+		  <li><img src="images/Array2/Slide16.PNG"></li>
+		  <li><img src="images/Array2/Slide17.PNG"></li>
+		  <li><img src="images/Array2/Slide18.PNG"></li>
+		  <li><img src="images/Array2/Slide19.PNG"></li>
+		  <li><img src="images/Array2/Slide20.PNG"></li>
+		  <li><img src="images/Array2/Slide21.PNG"></li>
+		  <li><img src="images/Array2/Slide22.PNG"></li>
+		  <li><img src="images/Array2/Slide23.PNG"></li>
+		  <li><img src="images/Array2/Slide24.PNG"></li>
+		  <li><img src="images/Array2/Slide25.PNG"></li>
+	      <li><img src="images/Array2/Slide26.PNG"></li>
+		  <li><img src="images/Array2/Slide27.PNG"></li>
+		  <li><img src="images/Array2/Slide28.PNG"></li>
+        </ul>
+    </div>
+	
+		<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<br>
+</div>	
+

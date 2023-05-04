@@ -1,0 +1,601 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">16-3 Javascript EventHandler 3</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="https://www.w3schools.com/js/js_htmldom_events.asp" target="_blank" style="color:blue">Events</a></p></li>
+    <li><p><a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" style="color:blue">Event Listener</a></p></li>
+    <li><p><a href="https://www.w3schools.com/jsref/obj_keyboardevent.asp" target="_blank" style="color:blue">KeyboardEvent</a></p></li>
+    <li><p><a href="https://www.w3schools.com/jsref/obj_mouseevent.asp" target="_blank" style="color:blue">MouseEvent</a></p></li>
+
+</ul>
+
+<h1>Game Engine</h1>
+<p> You have probably heard the term "Game Engine", but what exactly is a Game Engine? A Game Engine is simply a library of functions or classes that
+    make it easier to create a video game. They do this by abstracting or hiding the difficult, often time-consuming, coding that is required to make a game,
+    so that game designers can concentrate on coding the game itself.</p>
+    <p>There are many game engines to choose from in just about every programming language available today. They range from professional game engines that can cost 
+       tens of thousands of dollars to purchase to freeware game engines like Unity, JMonkey, or React. Some specialize in 2D games while others
+       specialize in 3D.</p>
+<p>We are going to attempt to make our own Javascript game engine. We have already learned about the animation or game loop that is fundamental to
+   all game engines. In this lesson we are going to create an "EventHandler Engine" that abstracts the details of user input. We will do this
+   by creating a Javascript class named <strong>EventHandler</strong> that will handle all of the event processing for a game. The class will provide users
+   with methods used to monitor keyboard and mouse input.
+</p>
+
+<ol id="csList">
+    <li><p>Create a new folder named <strong>EventHandlerClass</strong>. Inside this folder create another folder
+    named <strong>js</strong>.</p></li>
+<li><P>In the EventHandlerClass folder create a new html file named <strong>03_event.html</strong> and then add the following code.</P>
+<div id="csOutput" style="width:630px"><pre>&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Event Handler Class&lt;/title&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;script src="js/Game.js"&gt;&lt;/script&gt;
+            &lt;script src="js/EventHandler.js"&gt;&lt;/script&gt;
+            &lt;script src="js/Square.js"&gt;&lt;/script&gt;
+            &lt;style&gt;
+            #animationCanvas { 
+                border: 3px black solid;
+            }
+            &lt;/style&gt;
+        &lt;/head&gt;
+    
+        &lt;body&gt;
+            &lt;canvas id="GameCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+            &lt;script&gt;
+    
+               // create Game object
+               var game = new Game();
+    
+               // create EventHandler object
+               var canvas = document.getElementById("GameCanvas");
+               var eventHandler = new EventHandler(canvas);
+    
+                // game loop
+                function start() 
+                {
+                    requestAnimationFrame(start);
+                    game.run();
+                }
+                start();
+    
+            &lt;/script&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+</pre></div>
+</li>
+
+<li><p>Create a file named <strong>Game.js</strong> in the js folder and add the following code.</p>
+<div id="csOutput" style="width:630px"><pre>
+class Game
+{
+    constructor()
+    {
+        this.square = new Square(295, 215, 80);
+        this.initialize();
+    }
+
+    initialize()
+    {
+        this.context = document.getElementById("GameCanvas").getContext("2d"); 
+        this.square.initialize(this.context);
+    }
+
+    update()
+    {
+        this.square.update();
+    }
+
+    draw()
+    {
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.square.draw();
+    }
+
+    run()
+    {
+        this.draw();
+        this.update();  
+    }
+}
+</pre></div>
+</li>
+<li><p>Create a file named <strong>Square.js</strong> in the js folder and add the following code.</p>
+<div id="csOutput" style="width:630px"><pre>
+class Square
+{
+    constructor(x, y, w)
+    {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.fillColor = "#000000";
+    }
+
+    initialize(context)
+    {
+        this.context = context;
+        this.canvasWidth = this.context.canvas.clientWidth;
+        this.canvasHeight = this.context.canvas.clientHeight;
+    }
+
+    update()
+    {
+        this.test1();
+        this.test2();
+        this.test3();
+        this.test4();
+        this.test5();
+    }
+
+    // This method tests the functionality of the EventHandler class's isMousePressed
+    // and isMousedReleased methods.
+    test1()
+    {
+        if(eventHandler.isMousePressed())
+        {
+                this.fillColor = "#FF0000";   // red
+        }
+
+        if(eventHandler.isMouseReleased())
+        {
+                this.fillColor = "#000000";   // black
+        }
+    }
+
+    // This method tests the functionality of the EventHandler class's 
+    // isMouseClicked method
+    test2()
+    {
+
+    }
+
+    // This method tests the functionality of the EventHandler class's
+    // isMouseDragging method
+    test3()
+    {
+
+    }
+
+    // this method tests the functionality of the EventHandler class's
+    // isKeyDown method
+    test4()
+    {
+
+    }
+
+    // This method tests the functionality of the EventHandler class's
+    // isKeyPressed method
+    test5()
+    {
+
+    }
+
+    // generates a random color in hexadecimal notation: "#FFFFFF"
+    getRandomColor() 
+    {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++)
+        {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    
+    // draws on the canvas
+    draw() 
+    {
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.context.beginPath();              // start drawing path
+        this.context.fillStyle = this.fillColor;     // set fill color
+        this.context.rect(this.x, this.y, this.w, this.w);   // draw square 
+        this.context.fill();     // fill square
+    }
+}
+</pre></div>
+<li><p>Create a file named <strong>EventHandler.js</strong> in the js folder and add the following code.</p>
+<div id="csOutput" style="width:630px"><pre>
+// short list of keyboard codes
+var enterKey = 13;
+var spaceKey = 32;
+var shiftKey = 16;
+var ctrlKey = 17;
+var escKey = 27;
+var leftArrow = 37;
+var upArrow = 38;
+var rightArrow = 39;
+var downArrow = 40;
+var wKey = 87;
+var aKey = 65;
+var sKey = 83;
+var zKey = 90;
+var fKey = 70;
+
+class EventHandler
+{
+    constructor(canvas)
+    {
+        this.canvas = canvas;       
+        this.keydown = [];          // array to track keydown events
+        this.keyup = [];            // array to track keyup events
+        this.mousedown = false;     // variable to track mousedown events
+        this.mouseup = false;       // variable to track mouseup events
+        this.mouseX = 0;            // mouses current x location within the canvas
+        this.mouseY = 0;            // mouses current y location within the canvas
+        this.mouseDrag = false;     // variable that tracks mouse drag events
+        this.date = null;           // variable to store a Javascript Date object
+        this.startClick = 0;        // variable used to track the beginning of a mouse click event
+        this.stopClick = 0;         // variable used to track the end of a mouse click event
+        this.startDrag = 0;         // variable used to track the start of mouse drag event
+        this.stopDrag = 0;          // variable used to track the end of a mouse drag event
+        this.clickTime = 0;         // variable used to track the amount of time needed to start a mouse click
+        this.dragTime = 0;          // variable used to track the amount of time needed to start a mouse drag
+        this.drag = false;          // variable used to track when a drag event is occurring
+        this.selected = false;      // variable used to track when a mouse select event is occurring
+
+        this.initialize();    // called to do class initialization. This method is executed before the game loop starts.
+    }
+
+    // This method is called just before the game loop starts. 
+    // Any code placed inside this method will be executed one time.
+    initialize()
+    {
+        // creates an event listener on the document object so that the 
+        // callback function is executed when a keydown event is detected.
+        document.addEventListener("keydown", function(event) 
+        {
+            if(event !== undefined)
+            {
+                event.preventDefault();
+                this.keydown[event.keyCode] = true;
+                this.keyup[event.keyCode] = false;
+            }
+        }.bind(this), false);
+
+        // creates an event listener on the document object so that the 
+        // callback function is executed when a keyup event is detected.
+        document.addEventListener("keyup", function(event) 
+        {
+            if(event !== undefined)
+            {
+                event.preventDefault();
+                this.keydown[event.keyCode] = false;
+                this.keyup[event.keyCode] = true;
+            }
+        }.bind(this), false);
+
+
+        // prevents right mouse click from activating context menu
+        this.canvas.addEventListener("contextmenu", function(event)
+        {
+            e.preventDefault();
+        }.bind(this), false);
+
+        // creates an event listener on the canvas object so that the 
+        // callback function is executed when a mousedown event is detected.
+        this.canvas.addEventListener("mousedown", function(event)
+        {
+            this.startClick = 0;
+            this.startDrag = 0;
+
+            if(event !== undefined)
+            {
+                event.preventDefault();
+                this.mousedown = true;
+                this.mouseup = false;
+                this.startClick = Date.now();
+                this.startDrag = Date.now();
+            }
+        }.bind(this), false);
+
+        // creates an event listener on the canvas object so that the 
+        // callback function is executed when a mouseup event is detected.
+        this.canvas.addEventListener("mouseup", function(event) 
+        {
+            if(event !== undefined)
+            {
+                event.preventDefault();
+                this.mousedown = false;
+                this.mouseup = true;
+                this.stopClick = Date.now();
+                this.clickTime = 0;
+                this.selected = false;
+            }
+            
+        }.bind(this), false);
+                
+        // creates an event listener on the canvas object so that the 
+        // callback function is executed when a mousemove event is detected.
+        this.canvas.addEventListener("mousemove", function(event)
+            {
+            if(event !== undefined)
+            {
+                this.mouseX = event.clientX;
+                this.mouseY = event.clientY;
+                this.stopDrag = Date.now();
+            }
+        }.bind(this), false);
+    }
+
+    /*****************************************************************************************/
+    /*                               Interface Methods                                       */
+    /*****************************************************************************************/
+
+    /* Returns true if the key specified by the parameter code has been pressed, 
+     * otherwise it returns false.
+     */
+    isKeyDown(code)
+    {
+        if(this.keydown !== undefined && this.keydown[code] === true)
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    /* Returns true if the key specified by the parameter code has been released, 
+     * otherwise it returns false.
+     */
+    isKeyUp(code)
+    {
+        if(this.keydown !== undefined && this.keyup[code] === true)
+        {
+                return true;
+        }
+        return false;
+    } 
+
+    /* Returns true if the key specified by the parameter code has been pressed
+     * and released, otherwise it returns false.
+     */
+    isKeyPressed(code)
+    {
+        if(this.keydown !== undefined && this.keydown[code] === false && this.keyup[code] === true)
+        {
+            this.keydown[code] = false;
+            this.keyup[code] = false;
+            return true;
+        }
+        return false;
+    }
+
+    /* Returns the mouse's current location as an object in the following form: {x,y} */
+    getMouseLoc()
+    {
+        return {x : this.mouseX, y : this.mouseY};
+    }
+
+    /* Returns true if the mouse button has been pressed 
+     * for more than 1000 milliseconds (1 second), 
+     * otherwise it returns false.
+     */
+    isMousePressed()
+    {
+        if(this.mousedown === true)
+        {
+            this.dragTime = this.stopDrag - this.startDrag;
+            if(this.dragTime > 1000)
+            {
+                this.drag = true;
+            }
+            return true;
+        } 
+        return false;
+    }
+    
+    /* Returns true if the mouse button has been released,
+     * otherwise it returns false.
+     */
+    isMouseReleased()
+    {
+        if(this.mouseup === true)
+        {
+            if(this.mouseDrag === false)
+                this.mouseup = false;
+            return true;
+        }
+        this.clickTime = 1;
+        return false;
+    } 
+
+    /* Returns true if the mouse button has been pressed
+     * in the area within the canvas bounded by the
+     * rectangle {x, y, w, h} and the mouse button is released within
+     * 300 milliseconds, otherwise it returns false.
+     */
+    isMouseClicked(x, y, w, h)
+    {
+        if(this.clickTime === 0 && this.isMouseOver(x, y, w, h))
+        {
+            this.clickTime = this.stopClick - this.startClick;
+        
+            if(this.selected === false && this.clickTime > 0 && this.clickTime < 300)
+            {
+                this.selected = true;
+                return true;
+            }
+            else
+            {
+                this.selected = false;
+                return false;
+            }
+        } 
+    } 
+
+    /* Returns true if the mouse is being dragged within the 
+     * bounding rectangle {x,y,w,h}, otherwise it returns false.
+     */
+    isMouseDragging(x, y, w, h)
+    {
+        if(this.drag === true && this.isMouseOver(x, y, w, h) && this.mouseDrag === false)
+        {
+            this.mousedown = false;
+            this.mouseup = false;
+            this.mouseDrag = true; 
+            this.drag = false;
+        }
+        
+        if(this.isMouseReleased() && this.mouseDrag === true)
+        {
+            this.mousedown = false;
+            this.mouseup = false;
+            this.mouseDrag = false;
+        }
+        return this.mouseDrag;
+    }
+
+    /* Returns true if the mouse cursor is positioned over the bounding
+     * rectangle {x, y, w, h}, otherwise it returns false.
+     */
+    isMouseOver(x, y, w, h)
+    {  
+        return this.mouseX >= x && this.mouseX <= x + w && this.mouseY >= y && this.mouseY <= y + h;
+    }
+}
+</pre></div>
+
+<h1>EventHandler class</h1>
+<p>The event listeners that were previously implemented in the Square class have been removed and placed
+   inside a new class named <strong>EventHandler</strong>. Along with these listeners several other listeners have also been added to provide
+   both keyboard and mouse support. By encapsulating all of the event listeners into one class a game will be able to monitor all the events that occur
+   during the playing of the game without having to duplicate code. This encapsulation also has the benefit of being more efficient since only one set
+   of variables is needed to track events.</p>
+<p>All of the event listeners have been implemented in the EventHandler's initialize method, however they are abstracted or hidden from clients. 
+   I use the term <strong>client</strong> to refer to any class that uses the functionality of another class in its implementation. In
+   this program the Square class is a client of the EventHandler class.</p>
+<p>Instead of using the event listeners directly, the EventHandler class provides a set of "interface" methods that simplify the response to user input by returning
+    either true or false depending upon whether a particular event has occurred. These method headers are shown below.</p>
+<div id="csOutput" style="width: 630px"><pre>
+/* Returns true if the key specified by the parameter
+ * code has been pressed, otherwise it returns false.
+ */
+<strong>isKeyDown(code)</strong>
+
+/* Returns true if the key specified by the 
+ * parameter code has been released, 
+ * otherwise it returns false.
+ */
+<strong>isKeyUp(code)</strong>
+
+
+/* Returns true if the key specified by the
+ * parameter code has been pressed, 
+ * otherwise it returns false.
+ */
+<strong>isKeyPressed(code)</strong>
+
+
+/* Returns the mouse's current location as an
+ * object in the following form: {x,y} 
+ */
+<strong>getMouseLoc()</strong>
+
+
+/* Returns true if the mouse button has been
+ * pressed for more than 1000 milliseconds
+ * (1 second), otherwise it returns false.
+ */
+<strong>isMousePressed()</strong>
+
+
+/* Returns true if the mouse button has been 
+ * released, otherwise it returns false.
+ */
+<strong>isMouseReleased()</strong>
+
+
+/* Returns true if the mouse button has been 
+ * pressed in the area within the canvas bounded 
+ * by the rectangle {x, y, w, h} and the mouse 
+ * button is released within 300 milliseconds, 
+ * otherwise it returns false.
+ */
+<strong>isMouseClicked(x, y, w, h)</strong>
+
+
+/* Returns true if the mouse is being dragged
+ * within the specified bounding rectangle {x,y,w,h},
+ * otherwise it returns false.
+ */
+<strong>isMouseDragging(x, y, w, h)</strong>
+
+/* Returns true if the mouse cursor is positioned
+ * over the bounding rectangle {x. y, w, h},
+ * otherwise it returns false.
+ */
+<strong>isMouseOver(x, y, w, h)</strong>
+</pre></div>
+<p>Lets look at an example of these methods being used in a client class. First assume that
+   an EventHandler object has already been created using the following code.</p>
+<div id="csCode" style="width:600px"><pre>EventHandler eventHandler = new EventHandler();</pre></div>
+<br>
+<div id="csCode" style="width:600px"><pre>if(eventHandler.isMousePressed())
+{
+    this.fillColor = "#FF0000";
+}
+
+if(eventHandler.isMouseReleased())
+{
+    this.fillColor = "#000000";
+}</pre></div>
+
+<p>Both the <strong>isMousePressed</strong> and <strong>isMouseReleased</strong> methods
+    have been placed in the condition section of if statements because they return a boolean value of either
+    true or false. If a "mousedown" event is detected by the EventHandler object,
+    then the isMousePressed method returns true and fillColor variable is set
+    to the color red. If a "mouseup" event is detected then the isMousedReleased 
+    method returns a value of true and the fillColor variable is set to the color black.</p>
+   
+<h1>Lab Exercise</h1>
+<p>In this assignment you are going to test the functionality of the interface methods
+   provided by the EventHandler class. All of the test code will be in the Square class.</p>
+<ol id="csList">
+    <li><p>Complete the method <strong>test2</strong> that tests the functionality of
+    the <strong>isMouseClicked</strong> method. The isMouseClicked method returns true if the mouse is
+    pressed and released within 300 milliseconds and the mouse cursor is within the
+    boundaries of the square.</p>
+<p>Write an if statement that changes the fillColor to a value of "#0000FF" (blue) if the
+    isMouseClicked method returns a value of true. If isMouseClicked returns a value of
+    false the if statement should set the fillColor to "#000000" (black).</p>
+<p>The isMousedClicked method needs to be passed the dimensions of the square: this.x, this.y, this.w, this.w</p>
+</li>
+<li><p>Complete the method <strong>test3</strong> that tests the functionality of
+    the methods <strong>isMouseDragging</strong> and <strong>getMouseLoc</strong>. The isMouseDragging method
+    returns true if the mouse button is pressed for at least 1 second and the mouse cursor
+    is within the boundaries of the square. <p>The isMouseDragging method needs to be passed the dimensions of 
+    the square: this.x, this.y, this.w, this.w</p>
+<p>Write an if statement that allows the square to be dragged around the screen while
+   the isMouseDragging method is true. Use the following code within the body of
+   the if statement.</p>
+<div id="csCode" style="width:600px"><pre>this.x = eventHandler.getMouseLoc().x - 48;    // update square's x position
+this.y = eventHandler.getMouseLoc().y - 48     // update square's y position;</pre></div>
+<p>Subtracting 48 in these two line of code adjusts the position of the square so that the mouse cursor is centered within the square.</p>
+</li>
+<li><p>Complete the method <strong>test4</strong> that tests the functionality of
+    the method <strong>isKeyDown</strong>. The isKeyDown method returns true if the key specified in
+    the parameter list has been pressed down.</p>
+<p>Write four if statements that return true if one of the arrow keys has been pressed.
+   At the top of the EventHandler class you will find the following variable declarations.</p>
+<div id="csCode" style="width:600px"><pre>var leftArrow = 37;
+var upArrow = 38;
+var rightArrow = 39;
+var downArrow = 40;
+</pre></div>
+<p>Use these variables in your code instead of the numbers assigned to the arrow keys.</p></li>
+<li><p>Complete the method <strong>test5</strong> that tests the functionality of
+    the method <strong>isKeyPressed</strong>. The method isKeyPressed returns true if the specified key in
+   the parameter list has been pressed and released.</p>
+<p>Write an if statement that will change the fillColor to a random color when the
+   space bar is pressed and released. Use the <strong>getRandomColor</strong> method provided in the 
+   Square class.
+</p></li>
+</ol>
+
+<br>
+</div>

@@ -1,0 +1,73 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Heap Sort</div>
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/HeapSort.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >HeapSort</a></h1>
+
+<div id="csContent"> 
+      <h2>Description</h2>
+      <p>The <strong>heap sort</strong> is one of the best general-purpose sorting 
+        algorithms. Although somewhat slower in practice than a good implementation 
+        of quicksort, it has the advantage of a worst-case O(n log n) runtime. 
+        As a comparison, the quicksort has a worst-case runtime of O(n<sup>2</sup>). 
+        The primary advantage of the heap sort is its efficiency. The execution 
+        time efficiency of the heap sort is O(n log n). The memory efficiency 
+        of the heap sort, unlike the other O(n log n) sorts, is constant, O(1), 
+        because the heap sort algorithm is not recursive and sorts the data in 
+        place(does not need extra memory to perform sort). As a comparison, the 
+        mergesort requires O(n) extra space to perform a sort.</p>
+      <p>The algorithm works in two stages. In the first stage, the data is made 
+        into a heap. In the second stage, items are removed from the heap one 
+        at a time and <strong>moved to the end of the array</strong>, where the 
+        sorted data is accumulated.</p>
+      <h2>Directions</h2>
+      <p>In this assignment your are going to create a class named <em>HeapSort</em> 
+        that implements the heap sort algorithm.</p>
+      <p><strong>Part (a)</strong></p>
+      <p>Implement a <em>static</em> method named <strong>sort</strong> that accepts 
+        an integer array as a parameter. The <em>sort</em> method should sort 
+        the array in ascending order using the heap sort algorithm. </p>
+      <p><strong>Example</strong></p>
+          <div id="csCode"><pre>int[] a = {50, 15, 83, 27, 65, 44};
+HeapSort.sort(a);</pre></div>
+
+      <p>In writing the <em>HeapSort</em> class you will need to include other 
+        methods that will assist the <em>sort</em> method in performing the sort. 
+        These helper methods will also need to be declared <em>static</em>.</p>
+        *Use the methods from the <em>MaxHeap</em> assignment.</p>
+      <h2>Source Code</h2>
+      <div id="csCode"><pre>public class HeapSort
+{
+   private static int size=0;
+	
+   public static void sort(int[] heap)
+   {
+
+
+   }
+   
+   <font color="#009900">// other helper methods not shown</font>
+
+}</pre></div>
+
+      <h2>&nbsp;</h2>
+      <p></p>
+      <h2>Sample Run</h2>
+      <div id="csSampleRun">
+      
+<pre>Heap Sort
+
+
+Before sort
+-----------
+40 95 34 20 5 64 22 81 19 75
+
+
+After sort
+----------
+5 19 20 22 34 40 64 75 81 95
+
+
+</pre>
+</div>
+<br>

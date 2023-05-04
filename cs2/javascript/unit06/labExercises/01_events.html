@@ -1,0 +1,50 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">6-1 Javascript Events</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_scope.asp" target="_blank" style="color:blue">Javascript Scope</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_events.asp" target="_blank" style="color:blue">Javascript Events</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>File Name: <strong>6_1_events.html</strong></p></li>
+    <li><p>Copy the following code:</p>
+        <div id="csOutput" style="width: 600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;6_1_events&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        
+        &lt;script&gt;
+            function changeBackgroundColor()
+            {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                
+                var color = "rgb("+ r +","+ g +","+ b +")";
+                
+                document.body.style.backgroundColor = color;
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;            
+</pre></div>
+    </li>
+    <li>
+      <p>The function <strong>changeBackgroundColor</strong> defined above creates 
+        a random color then sets that color as the body element's background color.</p>
+      <p>Add a button labeled &quot;Change Color&quot; to the page that calls 
+        <strong>changeBackgroundColor</strong> when it is clicked. </li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_events1.png">
+	<br>
+</div>	

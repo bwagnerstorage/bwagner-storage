@@ -1,0 +1,308 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">15-1 Javascript Animation 1</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" style="color:blue">setInterval</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Timing Events</a></p></li>
+    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="_blank" style="color:blue">Drawing on a Canvas</a></p></li>
+</ul>
+
+<h1>Animation Loop</h1>
+  <p>An animation is a series of images that are displayed one after another at 
+    a constant time interval. In the movie industry the traditional time interval 
+    for films is set at 24 frames per second(fps), but 48 fps and 60 fps are becoming 
+    more common. In the video game industry video games are typically designed 
+    to run at 60 fps.</p>
+<p>A computer program that wishes to display an animation needs to include an <strong>animation loop</strong> or <strong>game loop</strong>. 
+    An animation loop is code that is designed to execute at a constant time interval. Any code placed inside this loop
+   will be executed continually at the specified time interval. For example, an animation loop that runs at 60 fps would
+   display a new frame approx. every 16 milliseconds. (One second equals 1000 milliseconds, therefore 
+   1000 / 60 = 16.67 milliseconds per frame).</p>
+<p>In Javascript there are several ways to create an animation or game loop. In this lesson we will take a
+   look at a fairly simple loop and in the next lesson we will explore a more advanced loop that contains some
+   optimization to improve its consistence.
+<p>This first animation loop utilizes a Javascript function called <strong>setInterval</strong>. Here is the basic
+    structure of this loop:</p>
+<div id="csOutput" style="width:650px"><pre>
+function run()
+{
+    update();   // logic code
+    draw();     // rendering code
+}
+setInterval(run, 1000 / 60);    // 60 fps = 16.67 milliseconds per frame
+</pre></div>
+<p>The <strong>setInterval</strong> function will execute the run function approx. every 16.67 milliseconds. The run 
+    function makes calls to two functions named update and draw. The <strong>update</strong> function is where logic code
+    for the program is placed. For example, code that updates the animation's position on the screen. The <strong>draw</strong> function
+   contains the code that actually renders the current image or frame.</p>
+<h1>Create Project</h1>
+<ol id="csList">
+    <li><p>Open Windows Explorer and create a new folder in your working directory named <strong>Animation</strong>.</p></li>
+    <li><p>Inside the Animation folder create another folder named <strong>Animation1</strong>.</p></li>
+    <li><p>Inside the Animation1 folder create another folder named <strong>js</strong>.</p></li>
+    <li><p>In Visual Studio Code under the File menu select <strong>Open Folder..</strong> and 
+        then navigate to the Animation1 folder and
+        click the <strong>Select Folder</strong> button.</p></li>
+    <li><p>In the EXPLORER tree use the mouse to open the <strong>js</strong>folder located inside the Animation1 folder
+        and then click on the <strong>New File</strong> button.</p></li>
+    <li>
+      <p>Add a new file to the js folder named <strong>Animation1.js</strong> and 
+         then add the following code:</p>
+<div id="csCode" style="width:600px"><pre>
+class Animation
+{
+    constructor()
+    {
+        this.fps = 60;    // frames per second
+        this.x = 0;       // x coordinate (horizontal)
+        this.y = 320;     // y coordinate (vertical)
+        this.vx = 1;      // horizontal velocity
+
+        this.initialize();
+    }
+    
+    // method initialize gets a reference to the canvas element 
+    // and retrieves its context so that the program can draw
+    // on the the canvas
+    initialize() 
+    {
+        this.context = document.getElementById("animationCanvas").getContext("2d");
+    }
+
+    // method update is called in the animation loop to continually
+    // update the animation game logic. In this method the location 
+    // of the square that is being drawn is being monitored so that 
+    // when the square reaches an edge of the canvas the square's 
+    // horizontal direction is reversed.
+    update() 
+    {
+        if(this.x &gt; 640) 
+            this.vx *= -1;       // flip direction: neg * pos is neg
+        else if(this.x &lt; 0)
+            this.vx *= -1;       // flip direction: neg * neg is pos
+
+        this.x = this.x + this.vx;
+    }
+
+    // method draw is called in the animation loop to continually 
+    // refresh the canvas so that the location of the objects 
+    // being animated are updated.
+    draw() 
+    {
+        this.context.strokeStyle = "#0000FF";   // choice drawing color
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.context.fillRect(this.x, this.y, 50, 50);   // then redraw square
+    }
+
+    // method run is called continually at the set frame rate (fps)
+    run() 
+    {
+        this.draw();
+        this.update();  
+    }
+}
+</pre></div></li>
+<li><p>Add a new file named <strong>index.html</strong> to the Animation1 folder and then 
+       add the following code.</p>
+<div id="csCode" style="width:600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Animation1&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;script src="Animation.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+        #animationCanvas {
+            border: 3px black solid;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+            var animate = new Animation();
+            
+            // The built in javascript function setInterval  is used to
+            // invoke or call the animation class's run method at the
+            // specified speed (1000 / 30) = a frame is displayed every
+            // 33.33 milliseconds using a frame rate of 30.
+            setInterval(animate.run.bind(animate), 1000 / animate.fps);   
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div></li>
+</ol>
+
+<h1>Discussion</h1>
+<h2>Index.html</h2>
+<p>The Javascript code for this program has been placed in a file named <strong>Animation1.js</strong>. 
+   The file is accessed in the index.html file using the following script tag.
+<div id="csOutput" style="width:600px"><pre>&lt;script src="Animation1.js"&gt;&lt;/script&gt;</pre></div>
+<br><p>This program includes many new features let's take a look at some of them.</p>
+<h2>HTML Canvas</h2>
+  <p>The HTML &lt;canvas&gt; element provides a drawing surface for web pages. 
+    The &lt;canvas&gt; tag does not have any draw abilities of its own it is simply 
+    a container for graphics. To draw on a canvas you must use a scripting language 
+    like Javascript.</p>
+<p>Below is the code that creates a canvas element in the index.html file.</p>
+<div id="csOutput" style="width:600px"><pre>&lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;</pre></div>
+<p>Notice that you are able to specify a size for the canvas.</p>
+
+<h2>Animation class</h2>
+<p>The majority of the Javascript code for this program has been encapsulated in the class <strong>Animation</strong> located
+    in the file Animation1.js. This class contains all of the variables (fields) and methods necessary
+    to create a simple animation.</p>
+<h3>Animation Constructor</h3>
+<p>Below is the code for the Animation class's constructor.</p>
+<div id="csOutput" style="width:600px"><pre>constructor()
+{
+    this.fps = 60;    // frames per second
+    this.x = 0;       // x coordinate (horizontal)
+    this.y = 320;     // y coordinate (vertical)
+    this.vx = 1;      // horizontal velocity
+}
+</pre></div>
+<p>The constructor defines four fields used to animate a square horizontally across the canvas window.
+   The variables <strong>x</strong> and <strong>y</strong> track the current location of the square's upper left hand corner. The 
+   variable <strong>vx</strong> is used to update the square's horizontal position one pixel every animation cycle. 
+   The variable <strong>fps</strong> sets the frame rate for the animation.</p>
+<h3>Methods</h3>
+<p>The Animation class also includes methods used to implement the animation loop needed
+     to animate the square.
+   Since the Javascript code was encapsulated inside a class the animation loop had to be modified 
+   slightly to accommodate this change.</p>
+   <p>There are still a few lines of Javascript remaining in the index.html file.</p>
+<div id="csOutput" style="width:600px"><pre>&lt;script&gt;
+    var animate = new Animation();    // create Animation object
+    
+    setInterval(animate.run.bind(animate), 1000 / animate.fps);   
+&lt;/script&gt;
+</pre></div>
+<p>The <strong>setInterval</strong> function still creates the animation loop by calling the run() method at
+   recurring intervals, but because the run() method is now a member of the Animation class the
+   call to the run() method must be prefaced by an Animation object. In this case, the object
+   <strong>animate</strong>.
+<p>Notice the addition of a call to a function named <strong>bind</strong> inside the setInterval 
+   function's parameter list.
+   This code is required to make the animation loop work correctly but its purpose is beyond 
+   the scope of our discussion.</p>
+<p>The rest of the animation loop is now contained within the Animation class's run() method.</p>
+<div id="csOutput" style="width:650px"><pre>// method run is called continually at the specified frame rate (fps)
+run() 
+{
+    this.draw();
+    this.update();  
+}
+</pre></div>
+<h1>Context</h1>
+<p>As stated earlier, the html &lt;canvas&gt; tag is a surface for drawing on a web page, 
+    however the canvas does not provide any drawing methods. To draw on a canvas you must
+    request a <strong>context</strong> object from the canvas. The context object does provide
+    methods for drawing, changing colors, and displaying images.  Here is the code in the Animation class
+    that requests a reference to the context object of the canvas tag defined in the index.html file.</p>
+<div id="csOutput" style="width:650px"><pre>initialize() 
+{
+    this.context = document.getElementById("animationCanvas").getContext("2d");
+}</pre></div>
+<p>Notice that a "2d" context is being requested. You can also request a "3d" context for
+    making 3D models.</p>
+<p>Once you have a reference to a canvas's context then you can draw on the canvas using context
+   methods.</p>
+
+<div id="csOutput" style="width:600px"><pre>draw() 
+{
+    this.context.strokeStyle = "#0000FF";   // choice drawing color
+    this.context.clearRect(0,0,640,480);   // erase canvas first
+    this.context.fillRect(this.x, this.y, 50, 50);   // draw square
+}</pre></div>
+
+<p>This link has a complete list of <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="_blank" style="color:blue">context methods</a>.</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <p>The Animation class declares a variable in its constructor named <strong>fps</strong>. 
+    This variable stores the frame rate for the animation loop. It's value is initially set to 60. (60 frames per second) </p>
+    <li><p>Change the value of the fps variable to 48, 30, and 20. Re-run the program in the browser
+        for each value. Which frame rate seems to make
+        the square move the smoothest. What might this tell you about the computer you are using?
+    </p></li>
+    <li><p>Scan the list of <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="_blank" style="color:blue">drawing methods</a>
+         and locate a method named <strong>ellipse</strong>.
+    Click on its name to display the ellipse method documentation. Look at the parameters required
+    to create an ellipse. These same ones are also used to draw an arc.</p>
+    <p>Now replace the code in the Animation class's <strong>draw</strong> method with the following code
+       to change the square into a circle.</p>
+    <div id="csOutput" style="width:600px"><pre>draw() 
+{
+    this.context.beginPath();               // start drawing path
+    this.context.strokeStyle = "#0000FF";   // choice drawing color
+    this.context.lineWidth = 5;             // set line width
+    this.context.fillStyle = "#FF0000";    // choice fill color
+    this.context.clearRect(0,0,640,480);   // erase canvas first
+    this.context.ellipse(this.x, this.y, 50, 50, 0, 0, 2 * Math.PI);
+    this.context.stroke();   // draw circle outline
+    this.context.fill();     // draw inside circle
+}</pre></div>
+    
+</li>
+</ol>
+<p><p>As you can see there is a lot more to drawing a circle than drawing a square. Let's look at this code line by line. It will help you to better understand how to use
+   the context drawing methods.</p>
+<h3>Line 1</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.beginPath();  // start drawing path</pre></div>
+<p>A <strong>path</strong> is a collection of sub-paths. Sub-paths are created by many of the context drawing 
+ methods like moveTo(), lineTo(), arc(), rect(), and ellipse().</p> When a sub-path is part of a path
+ its ending location is the starting location of the next sub-path in the sequence. To begin a new path you
+ call the method <strong>beginPath()</strong> again.</p>
+
+ <h3>Line 2</h3>
+ <div id="csOutput" style="width:600px"><pre>this.context.strokeStyle = "#0000FF";   // choice drawing color</pre></div>
+ <p>Stroke refers to a line or the outline of a shape such as a rectangle or circle. This line of code sets the stroke
+    color for the context drawing methods. Here are three ways that you set a stroke color. </p>
+    <div id="csOutput" style="width:600px"><pre>this.context.strokeStyle = "blue";  // predefined colors</pre></div>
+    <div id="csOutput" style="width:600px"><pre>this.context.strokeStyle = "#0000FF";  // RGB Hex values</pre></div>
+    <div id="csOutput" style="width:600px"><pre>this.context.strokeStyle = "rgb(0,0,255)";  // RGB Decimal values</pre></div>
+
+<h3>Line 3</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.lineWidth = 5;    // set line width</pre></div>
+<p>The lineWidth() method sets the size of the context's drawing pen.</p>
+
+<h3>Line 4</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.fillStyle = "#FF0000";    // choice fill color</pre></div>
+<p><strong>Stroke</strong> is the outline of a shape, whereas <strong>fill</strong> is the inside of a shape. The method
+   fillStyle() sets the fill color for the context drawing methods. Just like strokeStyle there
+   are three different ways to set the fill color.</p>
+   <div id="csOutput" style="width:600px"><pre>this.context.fillStyle = "green";  // predefined colors</pre></div>
+   <div id="csOutput" style="width:600px"><pre>this.context.fillStyle = "#00FF00";  // RGB Hex values</pre></div>
+   <div id="csOutput" style="width:600px"><pre>this.context.fillStyle = "rgb(0,255,0)";  // RGB Decimal values</pre></div>
+
+<h3>Line 5</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.clearRect(0,0,640,480);   // erase canvas first</pre></div>
+<p>Method clearRect() sets all pixels within the canvas to transparent black, erasing any previously drawn content.</p>
+
+<h3>Line 6</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.ellipse(this.x, this.y, 50, 50, 0, 0, 2 * Math.PI);</pre></div>
+<p>Method ellipse draws an ellipse onto an off screen buffer. The ellipse is not drawn on the canvas 
+   at this point.</p>
+<p>Why did I use <strong>2 * Math.PI</strong> as the value of the ellipse's ending angle? Because the values provided
+   to the ellipse function must be in radians, not degrees. One degree is equal to PI/180 radians, therefore
+   360 degrees is equal to 360 * PI/180 which reduces to 2 * PI.
+</p>
+
+<h3>Line 7</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.stroke();   // draw circle outline</pre></div>
+<p>The stroke() method draws all of the sub-paths stroke parts, within the current path, to the canvas. 
+   Method stroke() draws all the stroke parts from an off-screen buffer to the screen.
+</p>
+
+<h3>Line 8</h3>
+<div id="csOutput" style="width:600px"><pre>this.context.fill();   // draw circle insides</pre></div>
+<p>The fill() method draws all of the sub-paths fill parts, within the current path, to the canvas. 
+   Method fill() draws all the fill parts from an off-screen buffer to the screen.
+</p>
+</div>	

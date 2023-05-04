@@ -1,0 +1,207 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Network Fundamentals</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>3.1.1 Identify different types of networks.</li>
+						<li>3.1.2 Outline the importance of standards in the construction of networks.</li>
+						<li>3.1.3 Describe how communication over networks is broken down into different layers.</li>
+						<li>3.1.4 Identify the technologies required to provide a VPN.</li>
+						<li>3.1.5 Evaluate the use of a VPN.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Network Fundamentals</h1>
+
+<p>A <strong>computer network</strong> is a collection of computing devices that are connected in various ways to communicate and share resources.
+   Usually, the connections between computers in a network are made using physical wires and cables. However, some connections 
+   are wireless, using radio waves or infrared signals to transmit data. </p>
+
+<div id="ib">3.1.1 Identify different types of networks.</div>
+
+<p>Computer networks can be classified in various ways.</p>
+<div id="csList"><ul>
+<li><p><strong>LAN (Local-Area Network)</strong> - a network connecting a relatively small number of computers in a close geographic area. 
+   LANs are usually confined to a single room or building. They may sometimes span a few close buildings.</p></li>
+   
+<li><p><strong>WAN (Wide-Area Network)</strong> - a network that connects two or more local-area networks over a potentially large geographic distance. 
+   WANs use telephone lines, satellite dishes, or radio waves to span larger geographical areas than can be covered by a LAN. The Internet is
+   an example of a WAN. The <strong>Internet</strong> is a vast collection of smaller networks that have agreed to communicate using the same protocols and to
+   pass along messages so that they can reach their final destination.</p></li>
+
+<li><p><strong>VLAN (Virtual LAN)</strong> - a network of computers that behave as if they are connected to the same wire even though they may actually be
+   physically located on different segments of a LAN. VLANs are configured through software rather than hardware, which make them extremely flexible.
+   One of the biggest advantages of VLANs is that when a computer is physically moved to another location, it can stay on the same VLAN without any 
+   hardware reconfiguration.</p>
+
+   <p>A VLAN can map workstations on some other basis than geographic location (for example, by department, type of user, or primary application).</p></li> 
+
+<li><p><strong>SAN (Storage Area Network)</strong> - a network of storage devices that can be accessed by multiple computers. Each computer on the network can 
+   access hard drives in the SAN as if they were local disks connected directly to the computer. This allows individual hard drives to be used
+   by multiple computers, making it easy to share information between different machines.</p>
+   <p>While a single server can provide a shared hard drive to multiple machines, large networks may require more storage than a single server can offer.
+   For example, a large business may have several terabytes of data that needs to be accessible by multiple machines on a local area network (LAN).
+   In this situation, a SAN could be setup instead of adding additional servers. Since only hard drives need to be added instead of complete computer
+   systems, SANs are an efficient way to increase network storage.</p></li>
+
+
+<li><p><strong>VPN (Virtual Private Network) </strong>- a network that uses a public telecommunication infrastructure, such as the Internet, to provide 
+   remote offices or individual users with secure access to their organization's network. A virtual private network can be contrasted with an expensive
+   system of owned or leased lines that can only be used by one organization. The goal of a VPN is to provide the organization with the same capabilities,
+   but at a much lower cost.</p></li>
+
+<li><p><strong>PAN (Personal Area Network)</strong> - the interconnection of information technology devices within the range of an individual person,
+   typically within a range of 10 meters. For example, a person traveling with a laptop, a personal digital assistant (PDA), and a portable
+   printer could interconnect them without having to plug anything in, using some form of wireless technology. Typically, this kind of personal
+   area network could also be interconnected without wires to the Internet or other networks.</p></li>
+
+<li><p><strong>P2P (Peer-To-Peer)</strong> - In a P2P network, the "peers" are computer systems which are connected to each other via the Internet. 
+   Files can be shared directly between systems on the network without the need of a central server. In other words, each computer on a P2P 
+   network becomes a file server as well as a client.</p>
+   <p>The only requirements for a computer to join a peer-to-peer network are an Internet connection and P2P software. Common P2P software programs
+   include Kazaa, Limewire, BearShare, Morpheus, and Acquisition. These programs connect to a P2P network, such as "Gnutella," which allows the
+   computer to access thousands of other systems on the network.</p>
+   <p>Once connected to the network, P2P software allows you to search for files on other people's computers. Meanwhile, other users on the network
+   can search for files on your computer, but typically only within a single folder that you have designated to share. While P2P networking makes
+   file sharing easy and convenient, is also has led to a lot of software piracy and illegal music downloads. Therefore, it is best to be on the
+   safe side and only download software and music from legitimate websites.</p></li>
+
+</ul></div>
+
+<div id="ib">3.1.2 Outline the importance of standards in the construction of networks.</div>
+
+<p>A <strong>network protocol</strong> is a standard set of rules and procedures for computers to use when communicating with one another. </p>
+<p>A protocol is a reference ensuring that all programs are written
+   following the same format. It would be pointless to write a communications
+   program in which the programmer invents his own series of codes and messages. Such a program would be unable to interact with any other. 
+   The program receiving the output of this original program would be unable to decipher the messages. For this reason all programs must follow common standards.</p>
+<p>Networking is a field that particularly requires common protocols. These protocols or standards enable <strong>compatibility</strong> through
+   a common language. Software and hardware producers need to ensure their products are 
+   compatible with each other. Open standards encourage diversity of production, which drives competition, lowers prices and generates 
+   innovation.</p>
+<p>An example of a standard networking protocol is TCP/IP. This communication protocol enabled the proliferation of the Internet possible.</p>
+
+
+<div id="ib">3.1.3 Describe how communication over networks is broken down into different layers.</div>
+<p>Perhaps no other standard has affected networking more than the <strong>OSI model</strong>. Virtually all networks in use today are based
+ in some fashion on the Open Systems Interconnection (OSI) standard. OSI was developed in 1984 
+by the International Organization for Standardization (ISO), a global federation of national standards organizations representing 
+approximately 130 countries.</p>
+ 
+<p>Early in the development of computer networks, commercial vendors came out with a variety of technologies that they hoped businesses would adopt.
+   The trouble was that the proprietary systems were developed with their own particular nuances and did not permit communication between networks of
+   different types. As network technologies grew, the need for interoperability became clear; we needed a way for computing systems
+   made by different vendors to communicate. The OSI model provided a standard way for this communication to take place.</p>
+   
+<div id="csNote">Interoperability - The ability of software and hardware on multiple machines and from multiple 
+   commercial vendors to communicate.</div>
+
+<p>Every machine that can be connected to a network goes through similar process in transferring that data out on the wire. An application
+ that we are running on that device generates some data that it wants to send to some other device on the network. The information must be
+  placed in a format suitable for the application that will receive it on the other side. Once this is done, the machine goes through 
+  the process of encoding the data into a network-ready format. This is done by breaking the data up into small units called <strong>packets</strong>. 
+  The packet not only contains raw data (just a few bytes in each packet), but it contains other important information such as where the
+   data will go.</p>  
+
+<p>The OSI Model uses seven layers to define the different stages that data must go through
+ to travel from one device to another over a network. Each layer deals with a particular aspect of network communication. 
+ Think of the seven layers as the assembly line in the computer. 
+ At each layer, certain things happen to the data that prepare it for the next layer. The table below lists the seven layers
+ along with a description of their purpose in the network communication process.</p> 
+<table id="csTable">
+<tr>
+  <th style="width:160px">Layer</th>
+  <th>Purpose</th>
+</tr>
+<tr>
+  <td><strong>Layer 7: Application</strong></td>
+  <td>This is the layer that actually interacts with the operating system or application whenever the user chooses to transfer files, read messages or perform other network-related activities.</td>
+</tr>
+<tr>
+  <td><strong>Layer 6: Presentation</strong></td>
+  <td>This layer takes the data provided by the Application layer and converts it into a standard format that the other layers can understand.
+</td>
+</tr>
+<tr>
+<td><strong>Layer 5: Session</strong></td>
+<td>This layer establishes, maintains and ends communication with the receiving device.</td>
+</tr>
+<tr>
+<td><strong>Layer 4: Transport</strong></td>
+<td>This layer maintains flow control of data and provides for error checking and recovery of data between the devices. Flow control means that the Transport layer looks to see if data is coming from more than one application and integrates each application's data into a single stream for the physical network.</td>
+</tr>
+<tr>
+<td><strong>Layer 3: Network</strong></td>
+<td>The way that the data will be sent to the recipient device is determined in this layer. Logical protocols, routing and addressing are handled here.</td>
+</tr>
+<tr>
+   <td><strong>Layer 2: Data</strong></td>
+   <td>In this layer, the appropriate physical protocol is assigned to the data. Also, the type of network and the packet sequencing is defined.
+</td>
+</tr>
+<tr>
+  <td><strong>Layer 1: Physical</strong></td>
+  <td>This is the level of the actual hardware. It defines the physical characteristics of the network such as connections, voltage levels and timing.
+</td>
+</tr>
+</table>
+<p>The illustration below shows the flow of data from one computer to another through a network that uses the ISO standard.</p>
+<div align="center"><img src="images/OSIModel.png"></div>
+<div id="csNote"><strong>Note: </strong>The IB curriculum states, "Awareness of the OSI seven layer model is required, but an understanding of the functioning of
+each layer is not."</div>
+<div id="ib">3.1.4 Identify the technologies required to provide a VPN.</div>
+<p>A <strong>virtual private network (VPN)</strong> is a technology that provides a secure and reliable private connection between computer networks 
+   over an existing public network, typically the <strong>Internet</strong>. </p>
+
+<p>There are two components required to provide a VPN.</p> 
+<div id="csList"><ol>
+<li><p>The first is a <strong>network access server</strong> (NAS, usually pronounced "nazz" conversationally). A NAS might be a dedicated server,
+   or it might be one of multiple software applications running on a shared server. It's a NAS that a user connects to from the Internet
+   in order to use a VPN. The NAS requires that user to provide valid credentials to sign in to the VPN. To authenticate the user's 
+   credentials, the NAS uses either its own authentication process or a separate authentication server running on the network.</p></li>
+
+<li><p>The other required component of remote-access VPNs is <strong>client software</strong>. In other words, employees who want to use the VPN
+   from their computers require software on those computers that can establish and maintain a connection to the VPN. Most operating systems
+   today have built-in software that can connect to remote-access VPNs, though some VPNs might require users to install a specific
+   application instead. The client software sets up the tunneled connection to a NAS, which the user indicates by its Internet address.
+   The software also manages the encryption required to keep the connection secure.</p></li>
+</ol></div>
+<p>Large corporations or businesses with knowledgeable IT staff typically purchase, deploy and maintain their own remote-access VPNs.
+   Businesses can also choose to outsource their remote-access VPN services through an enterprise service provider (ESP). The ESP sets up
+   a NAS for the business and keeps that NAS running smoothly.</p>
+
+<p>The above information came from the howstuffworks website. It is a good article. <strong>You need to read it.</strong></p>
+<a href="http://computer.howstuffworks.com/vpn2.htm" style="color:#0000FF; font-size:1.2em" target="_blank">http://computer.howstuffworks.com/vpn2.htm</a>
+
+<div id="ib">3.1.5 Evaluate the use of a VPN.</div>
+
+<p>A VPN is a way for companies to allow their employees to access company resources outside the office. The use of a VPN has led
+   to changes in working patterns. Many companies are allowing their employees to work from home (telecommuting). While
+   employees are traveling they can access company resources (files, application software, databases, printers).</p>
+   
+<p>Businesses are not the only ones that use VPNs. Many people subscribe to VPN services at home to protect their online privacy. 
+   They are very good at protecting people's information when they are using a wifi at a
+   hotel or coffee shop because the VPN client software encrypts the data before sending it out over the Internet.</p>
+
+
+<br>
+<hr>
+<p>References</p>
+<p>Computer Science Illuminated, Nell B. Dale, John Lewis, 4th Edition</p>
+<a href="http://www.ehow.com/facts_7351195_network-protocols-important_.html" style="color:#0000FF" target="_blank">http://www.ehow.com/facts_7351195_network-protocols-important_.html</a><br>
+<a href="http://www.netguru.net/ntc/NTCC6.htm" style="color:#0000FF" target="_blank">http://www.netguru.net/ntc/NTCC6.htm</a><br>
+<a href="http://www.webopedia.com/quick_ref/OSI_Layers.asp" style="color:#0000FF" target="_blank">http://www.webopedia.com/quick_ref/OSI_Layers.asp</a><br>
+<a href="http://computer.howstuffworks.com/osi.htm" style="color:#0000FF" target="_blank">http://computer.howstuffworks.com/osi.htm</a><br>
+<a href="http://computer.howstuffworks.com/vpn2.htm" style="color:#0000FF" target="_blank">http://computer.howstuffworks.com/vpn2.htm</a><br>
+<br>
+
+<br>
+</div>	
+

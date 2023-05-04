@@ -1,0 +1,75 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Repeat Words</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that will allow a user to enter words from the keyboard until the word "stop"
+     or "exit" is encountered. The program should also display a count of the number of words that were 
+	 entered by the user, <strong>not</strong> including the sentinel value. (The word sentinel means to watch,
+	 or guard. In Computer Science sentinel refers to the value your program is watching for inorder to
+	 exit a loop. In this program "stop" and "exit" are sentinel values.)</p>
+
+
+<h3>Comparing Strings </h3>
+<p>Recall that when you want to compare two strings to see if they are equal you do not use the
+ = = operator or the != operator. To compare strings use the <strong>equals</strong> method in the String class.</p>
+<p>To check for not equal use code like the following:</p>
+<div id="csCode">
+<pre>
+!word.equals("stop") && !word.equals("exit") 
+</pre>
+</div>
+<p>Notice the ! in front of each expression. It changes the equals into a not equals.</p>
+<h3>Reading Strings </h3>
+<p>Remember when reading strings from the keyboard use the next or nextLine methods.</p>
+<div id="csCode">
+<pre>
+word = keyboard.nextLine();
+</pre>
+</div>
+
+</p>
+<h1>Source File</h1>
+<p>RepeatWords.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter words, type (stop or exit) to stop: 
+
+Pooh
+Eeyore
+Rabbit
+Gopher
+Tigger
+exit
+
+You entered 5 words.
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter words, type (stop or exit) to stop: 
+
+football
+basketball
+soccer
+tennis
+volleyball
+hockey
+track
+baseball
+softball
+Stop
+
+You entered 9 words.
+</pre>
+</div>
+
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit14_while/solutions/02_repeatWordsSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>

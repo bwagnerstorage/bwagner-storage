@@ -1,0 +1,91 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI15 Checkerboard</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a GUI program that draws a checkerboard like the one shown in the sample run below.</p>
+  <p>Copy the following code into your source file.</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI15 extends JFrame
+{
+    // constructor
+    public GUI15()
+    {
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(400, 400);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);          
+        getContentPane().setBackground(Color.white);     
+        setVisible(true);                                
+    }
+    
+    public void paint(Graphics page)
+    {
+        super.paint(page);  // erase background
+        Color color = Color.white;
+		
+		
+        
+
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI15 app = new GUI15();  // run program
+    }
+}</pre>
+  </div>
+<h3>Programming Notes</h3>
+<div id="csList">
+<ul>
+<li>There should be 10 x 10 squares.</li>
+<li>Each square should have the dimensions 40 x 40 pixels. </li>
+<li>Use nested for loops.</li>
+<li>
+Graphic's class setColor method<br>
+<div id="csCode">
+<pre>
+page.setColor(color);
+</pre>
+</div>
+</li>
+<li>Graphic's class fillRect method<br>
+<div id="csCode">
+<pre>
+page.fillRect(x, y, 40, 40);
+</pre>
+</div>
+</li>
+</li>
+<li>
+You can use the following code to alternate between the colors black and white.<br>
+Assume a Color variable named color has been declared.<br>
+<div id="csCode">
+<pre>
+if(color == Color.white)  
+   color = Color.black;
+else
+   color = Color.white;
+</pre>
+</div>
+
+
+</li> 
+</ul>
+</div>   
+
+
+<h1>Source File</h1>
+<p>GUI19.java</p>
+<h1>Sample Run</h1>
+<img src="images/checkerboard.gif">
+	<br>
+</div>

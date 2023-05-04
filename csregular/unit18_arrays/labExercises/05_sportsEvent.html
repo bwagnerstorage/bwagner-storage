@@ -1,0 +1,256 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SportsEvent</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In many sports events, judges rate contestants with an average score being determined by 
+     discarding the lowest and highest scores and averaging the remaining scores.</p>
+  <p>Write a program which allows eight scores to be entered, discards the lowest and
+      highest scores, then computes an average score for the contestant. Your program should
+	 display the eight entered scores, the average score, and the two discarded scores.</p>
+<h3>Structure Chart</h3>	
+<p>The problem has been decomposed using the following structure chart.</p>
+<div align="center"><img src="images/sportsEvent.png"></div>	
+
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class SportsEvent
+{
+    // instance variables
+    private double[] scores = new double[8];
+    private Scanner keyboard = new Scanner(System.in);
+
+    /* This method prompts the user to enter in 8 scores and stores
+     * them in the array scores.
+     */
+    public void readScores()
+    {
+
+    }
+	
+    /* Determines which score in scores is the lowest
+     * @return the lowest score in scores
+     */
+    public double lowest()
+    {
+        
+    }
+	
+	 /* Determines which score in scores is the highest
+     * @return the highest score in scores
+     */
+    public double highest()
+    {
+        
+    }
+	
+    /* Calculates the average of scores with the lowest and highest scores
+     * thrown out.
+     * @return the average
+     */
+    public double average()
+    {
+        
+    }
+
+   /* This method prints the values stored in the array scores horizontally
+    *   across screen with a space between each one.
+    */
+    public void printScores()
+    {
+
+    }
+
+    /* This method prints a summary report which includes the original list of
+     * scores, the average of the scores, the lowest score, and the highest
+     * score.
+     */
+    public void printSummary()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        SportsEvent app = new SportsEvent();
+        app.readScores();
+        app.printSummary();
+    }
+}
+</pre>
+</div>
+<p>You are going to complete 2 void methods and 3 non-void methods. Do not
+   make any modifications to the main method.</p>
+<h3>Method readScores</h3>
+<p>Complete the method <strong>readScores</strong> shown below. This method 
+   prompts the user to enter in 8 scores and stores them in the array scores.</p>
+ <div id="csOutput">
+<pre>
+Enter Eight Contestant Scores:
+Judge 1 --> 9.2
+Judge 2 --> 9.5
+Judge 3 --> 9.5
+Judge 4 --> 9.1
+Judge 5 --> 9.7
+Judge 6 --> 9.6
+Judge 7 --> 9.7
+Judge 8 --> 9.6
+</pre>
+</div>
+<div id="csCode">
+<pre>
+/* This method prompts the user to enter in 8 scores and stores
+ * them in the array scores.
+ */
+public void readScores()
+{
+
+}
+</pre>
+</div>
+
+<h3>Method lowest</h3>
+<p>Complete the method <strong>lowest</strong> shown below. This method 
+   returns the lowest score in scores.</p> 
+<div id="csCode">
+<pre>
+/* Determines which score in scores is the lowest
+ * @return the lowest score in scores
+ */
+public double lowest()
+{
+        
+}
+</pre>
+</div>
+<p>Java's Double class provides a useful constant that can be used when implementing the lowest method.
+   The constant MAX_VALUE contains the largest value that can be represented in a double variable.
+   In your implementation of the lowest method you will need to declare a local variable that stores the current lowest
+   value in the array. The starting value for this variable needs to be larger than every value in the array.
+   You can guarantee that this value is the largest by setting it to MAX_VALUE. Here is
+   sample code that demonstrates the use of MAX_VALUE.</p>
+   
+<div id="csCode">
+<pre>
+double lowest = Double.MAX_VALUE;
+</pre>
+</div>
+<p>MAX_VALUE is declared <strong>static</strong> in the Integer class therefore it is accessed using dot notation and the class name.</p> 
+<h3>Method highest</h3>
+<p>Complete the method <strong>highest</strong> shown below. This method 
+   returns the highest score in scores.</p>
+<p>You can use the Double class's MIN_VALUE constant in your implementation.</p>
+<div id="csCode">
+<pre>
+/* Determines which score in scores is the lowest
+ * @return the highest score in scores
+ */
+public double highest()
+{
+        
+}
+</pre>
+</div>
+
+<h3>Method average</h3>
+<p>Complete the method <strong>average</strong> shown below. This method 
+   calculates the average of scores with the lowest and highest scores
+   thrown out. This method needs to make calls to the methods <strong>lowest</strong>
+   and <strong>highest</strong>.</p>
+<div id="csCode">
+<pre>
+/* Calculates the average of scores with the lowest and highest scores
+ * thrown out.
+ * @return the average
+ */
+public double average()
+{
+        
+}
+</pre>
+</div>
+
+<h3>Method printScores</h3>
+<p>Complete the method <strong>printScores</strong> shown below. This method 
+   prints each value stored in the array scores on the console window 
+   horizontally with a space between each value. It also includes the heading
+   "Scores = ".
+ <div id="csOutput">
+<pre>
+Scores = 9.2 9.5 9.5 9.1 9.7 9.6 9.7 9.6
+</pre></div>
+<div id="csCode">
+<pre>
+/* This method prints the values stored in the array scores horizontally
+ *   across screen with a space between each one.
+ */
+ public void printScores()
+ {
+
+ }
+</pre>
+</div>
+
+<h3>Method printSummary</h3>
+<p>Complete the method <strong>printSummary</strong> shown below. This method 
+   prints a summary report which includes the original list of scores, the lowest score,
+   the highest score, the average of the scores. This method needs to make calls to the
+   methods <strong>lowest</strong>, <strong>highest</strong>, and <strong>average</strong>.</p>
+ <div id="csOutput">
+<pre>
+                Summary Report
+-------------------------------------------------
+Scores = 9.2 9.5 9.5 9.1 9.7 9.6 9.7 9.6
+Lowest Score  = 9.1
+Highest Score = 9.7
+Average Score = 9.5
+</pre>
+</div>
+<div id="csCode">
+<pre>
+/* This method prints a summary report which includes the original list of
+ * scores, the average of the scores, the lowest score, and the highest
+ * score.
+ */
+public void printSummary()
+{
+
+}
+</pre>
+</div>
+
+<h1>Source File</h1>
+<p>SportsEvent.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter Eight Contestant Scores:
+Judge 1 --> 9.2
+Judge 2 --> 9.5
+Judge 3 --> 9.5
+Judge 4 --> 9.1
+Judge 5 --> 9.7
+Judge 6 --> 9.6
+Judge 7 --> 9.7
+Judge 8 --> 9.6
+
+                      Summary
+-------------------------------------------------
+Scores = 9.2 9.5 9.5 9.1 9.7 9.6 9.7 9.6
+Lowest Score  = 9.1
+Highest Score = 9.7
+Average Score = 9.5
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit18_arrays/solutions/05_sportsEventSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>
+

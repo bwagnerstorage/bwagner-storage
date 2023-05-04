@@ -1,0 +1,116 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Comparable Interface</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use compareTo method with a binary search</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>compareTo Method</h1>
+<p>When using binary search with an array of objects, we must compare two objects. But objects
+  do not understand the < and > operators, and we have seen that = = is not a wise choice for
+  comparing two objects for equality. However, classes that implement the <strong>Comparable interface</strong>
+   include the method <strong>compareTo</strong>, which performs the three different comparisons (= = , < , >). 
+   Here again is the signature of compareTo:</p>
+<div id="csCode" style="width:400px"><pre>
+public int compareTo(Object other)
+</pre></div>  
+
+<p>The behavior of compareTo is summarized in the table below.</p>
+
+<table width="500" id="csTable">
+        <tr> 
+          <th width="184">Example</th>
+          <th width="300">Value Returned</th>
+        </tr>
+        <tr> 
+          <td>obj1.<strong>compareTo</strong>(obj2)</td>
+          <td><p>returns<strong> 0, </strong> if obj1 is equal to obj2, using 
+              equals</p></td>
+        </tr>
+        <tr> 
+          <td>obj1.<strong>compareTo</strong>(obj2)</td>
+          <td><p>returns a <strong>negative</strong> integer, if obj1 is less 
+              than obj2</p></td>
+        </tr>
+        <tr> 
+          <td>obj1.<strong>compareTo</strong>(obj2)</td>
+          <td><p>returns a <strong>positive</strong> integer, if obj1 is greater 
+              than obj2</p></td>
+        </tr>
+      </table>
+ 
+
+<p>For example, the String class implements the Comparable interface; thus, the second output
+    of the following code segment is 0:</p>
+<div id="csCode" style="width:500px"><pre>
+String str = "Mary";
+System.out.println(str.compareTo("Suzanne"));  // Outputs -6
+System.out.println(str.compareTo("Mary"));     // Outputs 0
+System.out.println(str.compareTo("Bob"));      // Outputs 11
+</pre></div>  
+
+<p>The other integers are system dependent, but the first should be negative,
+   whereas the third should be positive (in the example given, they are -6 and 11, respectively).</p>
+   
+<h1>Implementing compareTo Method</h1>
+<p>As mentioned earlier, objects that are ordered by the relations less than,
+   greater than, or equal to must understand the compareTo message. Their class must
+   implement the Comparable interface and include the method compareTo. For example, 
+   suppose we had a Student class that we wanted to support comparison of student's names.
+   The following code implements a compareTo method for the Student class (variables and other
+   methods are not shown):</p>
+<div id="csCode"><pre>
+public class Student implements Comparable
+{
+   public int compareTo(Object other)
+   {
+      // obtain the student's name after casting other to a Student
+      <div id="csHighlight"><pre>String otherName = ((Student)other.getName();</pre></div>
+   
+      // return the result of comparing the two students' names using 
+      // String's compareTo method
+      <div id="csHighlight"><pre>return name.compareTo(otherName);</pre></div>
+   }
+}
+</pre></div>
+   
+<h3>Binary Search</h3>
+<p>The following binary
+   search algorithm can be used to search an array of Students. Notice a comparison is made
+   using the compareTo method implemented in the Student class:</p>
+
+<div id="csCode"><pre>
+public int BinarySearch(Student[] a, Student key)
+{
+   int left = 0;                          
+   int right = a.length - 1;               
+        
+   while(left <= right)                    
+   {
+       int midpoint = (left + right) / 2;  
+       int result = a[midpoint].<div id="csHighlight"><pre>compareTo</pre></div>(key);
+       if(result == 0)             // if equal    
+          return midpoint;
+       else if(result < 0)         // if less than
+          left = midpoint + 1;
+       else                        // if greater than      
+          right = midpoint - 1;
+   }
+   return -1;                             
+}
+</pre></div>
+
+
+  
+<br>
+</div>	
+

@@ -1,0 +1,256 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-1 Javascript Animation</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank" style="color:blue">Create Javascript Objects</a></p></li>
+    <li><p><a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" style="color:blue">setInterval</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Timing Events</a></p></li>
+</ul>
+
+<h1>Animation Loop</h1>
+  <p>An animation is a series of images that are displayed one after another at 
+    a constant time interval. In the movie industry the traditional time interval 
+    for films is set at 24 frames per second(fps), but 48 fps and 60 fps are becoming 
+    more common. In the video game industry video games are typically designed 
+    to run at 60 fps.</p>
+<p>A computer program that wishes to display an animation needs to include an <strong>animation loop</strong> or <strong>game loop</strong>. 
+    An animation loop is 
+   code that is designed to execute at a constant time interval. Any code placed inside this loop
+   will be executed continually at the specified time interval. For example, an animation loop that runs at 60 fps would
+   display a new frame approx. every 16 milliseconds. (One second equals 1000 milliseconds, therefore 
+   1000 / 60 = 16.67 milliseconds per frame).</p>
+<p>In Javascript there are several ways to create an animation or game loop. In this lesson we will take a
+   look at a fairly simple loop and in a future lesson we will explore a more advanced loop that contains some
+   optimization to improve its consistence.
+<p>This first animation loop utilizes a Javascript function called <strong>setInterval</strong>. Here is the basic
+    structure of this loop:</p>
+<div id="csOutput" style="width:650px"><pre>
+function run()
+{
+    update();   // logic code
+    draw();     // rendering code
+}
+setInterval(run, 1000 / 60);    // 60 fps = 16.67 millseconds per frame
+</pre></div>
+<p>The <strong>setInterval</strong> function will execute the run function approx. every 16.67 milliseconds. The run 
+    function makes calls to two functions named update and draw. The <strong>update</strong> function is where logic code
+    is placed. For example, code that updates the animation's position on the screen. The <strong>draw</strong> function
+   contains the code that actually renders the current image or frame.</p>
+<h1>Create Project</h1>
+<ol id="csList">
+    <li><p>In NetBeans create a new HTML project named <strong>Javascript Animation1</strong>.</p></li>
+    <li><p>Right-click on the Site Root folder and select New --> Folder. Name the folder <strong>js</strong>.</p></li>
+    <li>
+      <p>Add a new file in the js folder named <strong>animation.js</strong> and 
+        add the following code:</p>
+        <div id="csOutput" style="width:600px"><pre>
+function animation() {
+    this.square = new square();
+}
+
+animation.prototype.initialize = function() {
+    this.context = document.getElementById("animationCanvas").getContext("2d");
+    this.square.initialize(this.context);  
+};
+
+animation.prototype.update = function() {
+    this.square.update();
+};
+
+animation.prototype.draw = function() {
+    this.context.clearRect(0,0,640,480);   // erase canvas first
+    this.square.draw();
+};
+
+animation.prototype.run = function() {
+    this.draw();
+    this.update();  
+};
+</pre></div></li>
+<li><p>Add another new file in the js folder named <strong>square.js</strong> and add the following code:</p>
+<div id="csOutput" style="width:600px"><pre>
+function square()        // constructor
+{
+    this.context = null;  // reference to canvas context
+    this.x = 320;         // x location
+    this.y = 0;           // y location
+    this.v = 1;           // velocity
+}
+
+square.prototype.initialize = function (context) 
+{
+    this.context = context;  // store reference to canvas context 
+};
+
+square.prototype.update = function () 
+{
+    if(this.y < 0 || this.y > 480 - 50)  // if on vertical borders
+    {
+        this.v = this.v * -1;  // flip direction
+    }
+    this.y = this.y + this.v;   // change y location by v (velocity)
+};
+
+square.prototype.draw = function ()
+{
+    this.context.fillRect(this.x, this.y, 50, 50);   // draw square size 50 x 50
+};
+</pre></div></li>
+<li><p>Replace the code in the <strong>index.html</strong> file with the following:</p>
+<div id="csOutput" style="width:600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Animation1&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;script src="js/animation.js"&gt;&lt;/script&gt;
+        &lt;script src="js/square.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+        #animationCanvas {
+            border: 3px black solid;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+            var animate = new animation();    // create animation object
+            animate.initialize();     
+            setInterval(animate.run.bind(animate), 1000 / 60);   // 60 = fps (frames per second)
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+    </pre></div></li>
+</ol>
+<h1>Discussion</h1>
+<p>The Javascript code in this program has been distributed over three files: <strong>index.html</strong>, 
+    <strong>animation.js</strong>, and <strong>square.js</strong>. The external js files are imported
+into the HTML file with the following code:</p>
+<div id="csOutput" style="width:600px"><pre>&lt;script src="js/animation.js"&gt;&lt;/script&gt;
+&lt;script src="js/square.js"&gt;&lt;/script&gt;</pre></div>
+<p>This program includes many new features let's take a look at some of them.</p>
+<h2>HTML Canvas</h2>
+  <p>The HTML &lt;canvas&gt; element provides a drawing surface for web pages. 
+    The &lt;canvas&gt; tag does not have any draw abilities of its own it is simply 
+    a container for graphics. To draw on a canvas you must use a scripting language 
+    like Javascript.</p>
+<p>Here is the code that creates a canvas element in the HTML file above: </p>
+<div id="csOutput" style="width:600px"><pre>&lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;</pre></div>
+<p>Notice that you are able to specify a size for the canvas.</p>
+<h2>Javascript Objects</h2>
+<p>Just about everything in Javscript is an object. However, unlike many other 
+   programming languages Javascript has no concept of a class, therefore objects 
+   have to be created in other ways.</p>
+<p>One way to create an object in Javascript is to use an object literal. With an
+   object literal you both define and create an object in one statement using 
+   name:value pairs(properties) inside curly braces {}. The following example creates
+   a new JavaScript object with three properties or fields:</p>
+<div id="csOutput" style="width:650px"><pre>
+var dog = {name : "Maddie", breed : "yellow lab", owner : "John Wayne"};    
+</pre></div>
+<p>Another way to create an object in Javascript is to use a special function called a <strong>constructor</strong>.
+   In the file "square.js" a constructor is used to create a square object.</p>
+<div id="csOutput" style="width:600px"><pre>function square() 
+{
+    this.context = null;  // reference to canvas context
+    this.x = 320;         // x location
+    this.y = 0;           // y location
+    this.v = 1;           // velocity
+}
+</pre></div>
+  <p>The constructor above creates a square object containing four fields: a reference to a canvas's
+     context object(context), the (x,y) location of the aquares upper left hand corner, and its velocity(v). 
+    Notice the use of the keyword "this". We will be discussing its purpose shortly.</p>
+<p>To create an object using a constructor use the keyword <strong>new</strong>.</p>
+<div id="csOutput" style="width:600px"><pre>function animation() {
+    this.square = new square();    // create square object
+}</pre></div>
+  <p>This code creates a square object and assigns its reference to a variable 
+    named square.</p>
+  <h2>Object Methods</h2>
+  <p>A <strong>method</strong> is a function that is bound to an object. A method 
+    that belongs to an object has access to the object's variables and other methods. One way to 
+    define a method is to use the keyword <strong>prototype</strong>:</p>
+<div id="csOutput" style="width:650px"><pre>square.prototype.draw = function ()
+{
+    this.context.fillRect(this.x, this.y, 50, 50);   // draw square size 50 x 50
+};</pre></div>
+  <p>To access an object's variables, the method must preface the variable names 
+    with the keyword "<strong>this</strong>". This method draws a square on the canvas using its (x, y) coordinate.
+  <h2>Function bind</h2>
+<p>The <strong>"this"</strong> keyword can be a little tricky to use in Javascript. "this"
+    is a variable that each object, including functions, contains that stores a reference to the object
+    to which it belongs. 
+    The object that "this" is bound to is dependent upon the context it is used.
+    Look at the following code from the HTML file above:</p>
+<div id="csOutput" style="width:600px"><pre>setInterval(animate.run, 1000 / 60);</pre></div>
+<p>This code does not work as intended. The setInterval function is suppose to call the animate object's run function every
+   16.67 milliseconds. Unfortunately this does not occur because the "this" variable
+   associated with the run function is not assigned a reference to the animate object, like you might expected, but instead it is 
+   assigned, by default, a reference to the global window object. Therefore the "this" variable used
+   in the run function below</p>
+   <div id="csOutput"><pre>animation.prototype.run = function() {
+    this.draw();
+    this.update();  
+};</pre></div>
+
+<p>does not refer to the animate object but instead to the global window object which does not
+   have a draw or update method.</p>
+<p>To fix this problem you have to use the <strong>bind</strong> function that is automatically associated 
+   with each object created in Javascript.</p>
+<div id="csOutput" style="width:600px"><pre>setInterval(animate.run.bind(animate), 1000 / 60);</pre></div>
+<p>The bind function assigns the "this" variable the object referenced in the parameter list.
+   In this case it is the animate object. Now the "this" variable used in the run function refers
+   to the animate object as intended.</p>
+
+<h1>Lab Exercise</h1>
+<p>Modify the program so that it animates a
+
+        <strong>100</strong> squares instead of just one. The squares should be placed randomly 
+        within the canvas with half of the squares starting with a velocity of 
+        1 and the other half with a velocity of -1.</p>
+  <p>The program consists of three files: index.html, animate.js, and square.js. You will only be making changes to the <strong>square.js</strong> file.</p>
+   <p>Display the HTML file in a browser, study the code until you become familiar with it, then 
+           make the following modifications.</p>
+<ol id="csList">
+    <li><p>Modify the square constructor by removing the variables x, y, and v and replace them with an array named <strong>squares</strong>.
+	       When you are done it should look like the following:</p>
+<div id="csOutput"><pre>function square() 
+{
+    this.context = null;
+    this.squares = [];      // array of squares
+}</pre></div>
+</li>
+<li>
+      <p>Modify the <strong>initialize</strong> method. Use a for loop to create 
+        a 100 square objects and add them to the squares array. To complete this 
+        task do the following inside the for loop:</p>
+	   <ul id="csList2">
+	      <li><p>Recreate the x, y, and v variables that you removed from the square constructor.</p></li>
+		  <li><p>Use the following code to assign a random number to the x variable in the range of 0 to 589: </p>
+		          <div id="csOutput"><pre>Math.floor(Math.random() * 590)</pre></div>
+		  <li><p>Use the following code to assign a random number to the y variable in the range of 0 to 429: </p>
+		          <div id="csOutput"><pre>Math.floor(Math.random() * 430)</pre></div>
+		  <li><p>Use the loop control variable from the for loop and the remainder operator(%) to assign either a 1 or -1 to the v variable.
+		         If the loop control variable is even assign v a value of 1 otherwise assign it a value of -1. This will allow half the
+				 squares to initially move up when the animation starts and the other half to initially move down.</p></li>
+		  <li><p>Write code that creates an object that contains four fields: <strong>x</strong>, <strong>y</strong>, <strong>velocity</strong>, and <strong>sides</strong>. Use the variables created above to assign initial values
+		         to three of the fields. Assign the fourth field, sides, a value of 50. Your code should look like the following (assuming
+				 i is the name of your loop control variable) :</p>
+				 <div id="csOutput" style="width:580px"><pre>this.squares[i] = {x : x, y : y, velocity : v, sides : 50};</pre></div>
+				 </li>
+	   </ul>
+</li>
+<li><p>Modify the <strong>update</strong> method so that each of the 100 squares position is updated.</p></li>
+<li><p>Modify the <strong>draw</strong> method so that each of the 100 squares are drawn on the canvas.</p></li> 
+</ol>
+
+<br><hr><br>
+<img src="images/javascript_animation1.png" style="width:100%; height:100%"><br>
+<br>
+</div>	

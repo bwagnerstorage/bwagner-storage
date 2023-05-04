@@ -1,0 +1,133 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Recursion in Programming</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>5.1.3 Trace a recursive algorithm to express a solution to a problem.</li>
+						<li>D.4.3 Construct algorithms that use recursion.</li>
+						<li>D.4.4 Trace recursive algorithms.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Recursion in Programming</h1>
+<div id="ib">D.4.3 Construct algorithms that use recursion.</div>
+<p>In the context of programming, recursion can be defined as a method that calls itself.</p>
+<p>What kinds of problems are well solved with recursion? In general, problems that are defined in terms of themselves are good candidates for recursive techniques. 
+  The standard example used by many computer science textbooks is the factorial function.
+  The factorial function, often denoted as n! , describes the operation of multiplying a number by all the positive integers smaller than it. For example, 5! = 5*4*3*2*1 . And 9! = 9*8*7*6*5*4*3*2*1 .</p>
+
+<p>View the following illustration that demonstates how recursion can be used to solve factorial problems.</p>
+
+    <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Factorial/Slide1.PNG"></li>
+          <li><img src="images/Factorial/Slide2.PNG"></li>
+          <li><img src="images/Factorial/Slide3.PNG"></li>
+		  <li><img src="images/Factorial/Slide4.PNG"></li>
+		  <li><img src="images/Factorial/Slide5.PNG"></li>
+		  <li><img src="images/Factorial/Slide6.PNG"></li>
+		  <li><img src="images/Factorial/Slide7.PNG"></li>
+		  <li><img src="images/Factorial/Slide8.PNG"></li>
+		  <li><img src="images/Factorial/Slide9.PNG"></li>
+		  <li><img src="images/Factorial/Slide10.PNG"></li>
+		  <li><img src="images/Factorial/Slide11.PNG"></li>
+		  <li><img src="images/Factorial/Slide12.PNG"></li>
+		  <li><img src="images/Factorial/Slide13.PNG"></li>
+		  <li><img src="images/Factorial/Slide14.PNG"></li>
+		  <li><img src="images/Factorial/Slide15.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+<div id="ib">D.4.4 Trace recursive algorithms.</div>
+<p>One way to help you better understand how recursion works in a computer program is to trace a recursive method.
+   However, before you trace a method, you need to know how a computer program that implements a recursive method utilizes computer memory.</p>
+<h3>Stack Memory</h3>
+<p>In terms of computer memory, the <strong>stack</strong> is an area of random-access memory (RAM) allocated to hold all of the parameters and local variables
+   associated with any method used by a currently running program. The stack is also responsible for remembering the order in which methods are called so they
+   can be returned correctly. Whenever a method is called, the parameters and local variables associated with it are added to the stack. When the method returns, 
+   the parameters and the variables are removed ("popped") from the stack. A stack is a LIFO (Last-In-First-Out) data structure. This means that the last method data
+   that was added to the stack is the first method data that is removed ("popped") from the stack and the method data that was added first to the stack is the last data removed.
+   A program's stack size changes continuously while the program is running.</p>
+   
+<p>View the following illustration that demonstates how to trace a recursive method be using the Factorial method implemented above.</p>
+	
+	    <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/FactorialTrace/Slide1.PNG"></li>
+          <li><img src="images/FactorialTrace/Slide2.PNG"></li>
+          <li><img src="images/FactorialTrace/Slide3.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide4.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide5.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide6.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide7.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide8.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide9.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide10.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide11.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide12.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide13.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide14.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide15.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide16.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide17.PNG"></li>
+		  <li><img src="images/FactorialTrace/Slide18.PNG"></li>
+        </ul>
+    </div>
+<p>Here again is the factorial method's implementation.</p>
+<div id="csCode">
+<pre>
+// precondition: n >=1
+public int factorial(int n)
+{
+  if(n == 1)                    // base case
+    return 1;
+  else                          // recursive case
+    return n * factorial(n - 1);
+}
+</pre>
+</div>
+<h1>Guidelines for Writing Recursive Methods</h1>
+<h3>1. Must Have Base Case</h3>
+<p>Just as we must guard against writing infinite loops, so too we must avoid recursions that never come to an end. 
+First, a recursive method must have a well-defined termination or stopping state. Also refer to as a base case. For the factorial method, this was expressed in the lines</p>
+<div id="csCode"><pre>
+if(n == 1)             // base case
+    return 1;
+</pre></div>
+<h3>2. Recursive Case Must Approach Base Case</h3>
+<p>Second, the recursive step, in which the method calls itself, must eventually lead to a base case. For the factorial method, the recursive step was expressed in the lines</p>
+<div id="csCode"><pre>
+else                   // recursive case
+   return n * factorial(<div id="csHighlight">n - 1</div>);
+</pre></div>
+<p>Because each invocation of the factorial method is passed a smaller value, eventually the stopping state must be reached. 
+  If a method failed to reach the stopping state the Java interpreter would run out of memory, at which point the program would terminate with a <strong>stack overflow error</strong>.</p>
+
+<div id="csNote">
+A recursive method has two kinds of cases: <br>
+<div id="csList">
+<ol>
+<li>One or more stopping or base cases that solve the problem without any recursive calls</li>
+<li>One of more cases that include a recursive call (involving a simpler problem)</li>
+</ol></div></div>
+
+<h1>When to Use Recursion</h1>
+<p>Recursion can always be used in place of iteration, and vice versa. Ignoring the fact that arbitrarily substituting one for the other is
+   pointless and sometimes difficult, the question of which is better to use remains. Recursion involves a method repeatedly calling itself. 
+   Executing a method call the corresponding return statement usually takes longer than incrementing and testing a loop control variable. 
+   In addition, a method call ties up some memory that is not freed until the method completes its task. Naive programmers often state these
+    facts as an argument against ever using recursion. However, there are many situtations in which recursion provides the <strong>clearest</strong>, <strong>shortest</strong>,
+ and <strong>most elegant</strong> solution to a programming task. As a beginning programmer, you should not be overly concerned about squeezing the last drop 
+ of efficiency out of a computer. Instead, you need to master useful programming techniques, and recursion ranks among the best.</p>
+<br>
+</div>

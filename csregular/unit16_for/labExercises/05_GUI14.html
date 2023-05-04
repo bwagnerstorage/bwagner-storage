@@ -1,0 +1,63 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI14 CoordinatePlane</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Create a GUI program that draws a coordinate plane with dimensions 400 x 
+    400. Each grid line should be 10 pixels apart. Color the x and y axes red.
+<p>Use two for loops in your implementation.</p>
+  <p>You will need to use the following Graphics class methods:<br>
+    - <strong>setColor</strong>(Color c)<br>
+    - <strong>drawLine</strong>(int x1, int y1, int x2, int y2)<br>
+</p>
+<p>To increase the line thickness insert the following code into the paint method before you draw the axes.</p>
+<div id="csCode">
+<pre>
+Graphics2D g2d = (Graphics2D)page;    // page is the Graphics object
+int width = 5;
+g2d.setStroke(new BasicStroke(width));
+</pre>
+</div>
+<p>Copy the following code into your source file.</p>
+<div id="csCode">
+<pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI14 extends JFrame
+{
+    // constructor
+    public GUI14()
+    {
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(500, 500);                              
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.white);     
+        setVisible(true);                                
+    }
+    
+    public void paint(Graphics page)
+    {
+        super.paint(page);  // erase background
+        
+
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI14 app = new GUI14();  // run program
+    }
+}
+</pre>
+</div>
+<h1>Source File</h1>
+<p>GUI14.java</p>
+<h1>Sample Run</h1>
+<img src="images/Coordinate1.jpg">
+	<br>
+</div>

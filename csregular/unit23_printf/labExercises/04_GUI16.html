@@ -1,0 +1,164 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI16 Personal Info</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>The next graphical component we will look at is the textarea. A textarea is a multi-line text
+     entry field similar to a textfield. It can be used for both entering text and displaying text.
+	 In our programs we will use it to display text. In Java, a textarea is created using the class
+	 <strong>JTextArea</strong>. Look at the following program that displays text in a textarea
+	 when a button is pressed.</p>
+  <p>Copy the following code to your source file. Compile and execute program.</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI16 extends JFrame implements ActionListener
+{
+    // instance variables
+    private JButton button;
+    private <div id="csHighlight"><pre>JTextArea textArea</pre></div>;
+    
+    // constructor
+    public GUI16()
+    {       
+        // create button
+        button = new JButton("run");
+        
+        // set button attributes
+        button.setLocation(220,20);
+        button.setSize(80, 25);
+        
+        // add button to frame
+        getContentPane().add(button);
+        
+        // register listener with button
+        button.addActionListener(this);
+        
+        // create textarea
+        <div id="csHighlight"><pre>textArea = new JTextArea();</pre></div>
+        
+        // set textarea attributes
+        textArea.setLocation(50,50);
+        textArea.setSize(400, 400);
+        textArea.setFont(new Font("Arial", Font.PLAIN, 16));
+        <div id="csHighlight"><pre>textArea.setBorder(BorderFactory.createLineBorder (Color.blue, 2));</pre></div>
+        <div id="csHighlight"><pre>textArea.setEditable(false); </pre></div>    // cannot type text into textArea
+        
+        // add textarea to frame
+        <div id="csHighlight"><pre>getContentPane().add(textArea);</pre></div>
+        
+        // set frame attributes
+        setLayout(null);
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        setVisible(true);                                
+    }
+    
+    public void actionPerformed(ActionEvent event)
+    {
+        if(event.getSource() == button)             // identify source
+        {
+           String text = "";
+           for(int i = 0; i < 20; i++)
+           {
+              text += "Programming GUI is fun!!! <div id="csHighlight"><pre>\n</pre></div>";
+           }
+           
+           <div id="csHighlight"><pre>textArea.setText("");</pre></div>     // clear text area
+           <div id="csHighlight"><pre>textArea.append(text);</pre></div>    // append text to text area
+        }
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI16 app = new GUI16();  // run program
+    }
+}</pre>
+  </div>
+  
+<p>Once again, a <strong>JTextArea</strong> is added to a frame using the same process we used to
+   add the other graphical components. I am only going to highlight the code that is different.</p>
+<div id="csCode">
+<pre>
+textArea.setBorder(BorderFactory.createLineBorder (Color.blue, 2));
+textArea.setEditable(false);     // cannot type text into textArea
+</pre>
+</div>
+
+<p>The first line of code above places a blue border around the textarea with a line thickness
+   of 2. The <strong>BorderFactory</strong> class has other methods for making different kinds of borders. I am
+   using the method createLineBorder to create a simply line border.</p>
+
+<p>The second line of code is used to lock the textarea so that the user cannot type text into
+    textarea window. Since we are only using the textarea to display text it is a good idea to
+    lock the textarea for editing.</p>
+<div id="csCode">
+<pre>
+for(int i = 0; i < 20; i++)
+{
+    text += "Programming GUI is fun!!! \n";
+}
+</pre>
+</div> 
+<p>The code above builds a string that includes 20 lines that say "Programming GUI is fun!!!". 
+   Each "Programming GUI is fun!!!" is on a separate line. To accomplish this I added a \n to
+  the end of the line. \n is called the new line escape sequence and it will cause an eoln
+ (end-of-line) marker to be place at that location in the string. When the textarea encounters
+  the eoln marker it will go to the beginning of the next line. This has the same effect as 
+  using a System.out.println command in console programming.</p>
+
+<p>An escape sequence can be embedded any where within a string. Look at the following example:</p>
+<div id="csCode">
+<pre>
+String s = "\n\nMy dog's name is Maddie.\nMy cat's name is Cubbie.\n");
+</pre>
+</div> 
+
+<p>It can also be append to the end of a string. Look at the following example:</p>
+<div id="csCode">
+<pre>
+String s1 = "My dog's name is Maddie.";
+String s2 = s1 + "\n";
+ </pre>
+</div>
+
+<p>The two lines below are used to add text to the textarea. The method setText will replace
+   the text in the textarea with the text inside the quotes. I am using setText to clear the
+   textarea window.</p>
+
+</p>The method append appends the text in the quotes to any text that is already in the textarea.</p> 
+<div id="csCode">
+<pre>
+textArea.setText("");     // clear text area
+textArea.append(text);    // append text to text area
+</pre>
+</div> 
+
+<p><strong>setText</strong> - replaces the current text in the textarea with the text in the parentheses.<br>
+<strong>append</strong> - adds the text in the parentheses to the end of the text that is currently in the textarea.</p>
+
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<li>Modify the <strong>actionPerformed</strong> method so that when the button is clicked it will display your
+    first name, last name, address, city, state, and zip code on separate lines within the
+    textarea window.</li>
+<li>Include a <strong>for loop</strong> so that your information will be displayed three times with a blank line
+    between each section.</li>
+
+</ol>
+</div>
+  
+<h1>Source File</h1>
+<p>GUI16.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI16.png">
+	<br>
+</div>
+

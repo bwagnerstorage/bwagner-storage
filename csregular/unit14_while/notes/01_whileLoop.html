@@ -1,0 +1,226 @@
+<img src="images/empty.gif" onload="doScrollTop(); reset(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">The while Statement</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to create and use a Java while statement</li>
+						<li>What is a counter-controlled loop</li>
+						<li>What is a sentinel-controlled loop</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Jeroo Review</h1>
+  <p>In Jeroo, when you wanted to repeat a process you used a while statement like the example below.</p>
+<div id="csCode">
+<pre>
+while(!bob.isWater(AHEAD))
+{
+   bob.hop();
+}</pre>
+</div><p>A Jeroo while statement had the following structure.</p>
+<div id="csCode">
+    <pre>
+while(<div id="csHighlight"><pre>condition</pre></div>)
+{
+   <div id="csHighlight"><pre>one or more statements</pre></div>
+}</pre>
+</div>
+<p>Recall that a <strong>condition</strong> is a statement that evaluates to either true or false. A while loop repeats as long as
+   its condition is true. One of the limitations of Jeroo is that the condition had to be formed using
+   the Jeroo sensor methods(isJeroo, isWater, isNet, etc.)</p>
+
+<h1>Java while Statement</h1>
+<p>Java also has a while statement that follows the same structure as the Jeroo while loop. However,
+   the condition of the Java while loop is not restricted to using only sensor methods which makes
+   it much more versatile.</p>
+<p>Java while loops can be classified into two categories: <strong>counter-controlled</strong> loops and <strong>sentinel-controlled</strong>
+   loops.</p>
+<h3>Counter-Controlled Loop</h3>
+<p>A counter-controlled loop is a loop that repeats a predetermined number of times.
+   The condition of this type of loop is controlled by a <strong>counter variable</strong>. A counter
+   is a variable that keeps count of the number of times a loop is executed. Look at the following
+   illustration which demonstrates a counter-controlled loop.</p>
+   
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/While1/Slide1.PNG"></li>
+          <li><img src="images/While1/Slide2.PNG"></li>
+          <li><img src="images/While1/Slide3.PNG"></li>
+		  <li><img src="images/While1/Slide4.PNG"></li>
+		  <li><img src="images/While1/Slide5.PNG"></li>
+		  <li><img src="images/While1/Slide6.PNG"></li>
+		  <li><img src="images/While1/Slide7.PNG"></li>
+		  <li><img src="images/While1/Slide8.PNG"></li>
+		  <li><img src="images/While1/Slide9.PNG"></li>
+		  <li><img src="images/While1/Slide10.PNG"></li>
+		  <li><img src="images/While1/Slide11.PNG"></li>
+		  <li><img src="images/While1/Slide12.PNG"></li>
+		  <li><img src="images/While1/Slide13.PNG"></li>
+		  <li><img src="images/While1/Slide14.PNG"></li>
+		  <li><img src="images/While1/Slide15.PNG"></li>
+		  <li><img src="images/While1/Slide16.PNG"></li>
+		  <li><img src="images/While1/Slide17.PNG"></li>
+		  <li><img src="images/While1/Slide18.PNG"></li>
+		  <li><img src="images/While1/Slide19.PNG"></li>
+		  <li><img src="images/While1/Slide20.PNG"></li>
+		  <li><img src="images/While1/Slide21.PNG"></li>
+		  <li><img src="images/While1/Slide22.PNG"></li>
+		  <li><img src="images/While1/Slide23.PNG"></li>
+		  <li><img src="images/While1/Slide24.PNG"></li>
+		  <li><img src="images/While1/Slide25.PNG"></li>
+        </ul>
+    </div>	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h3>Sentinel-Controlled Loop</h3>
+<p>A sentinel-controlled loop is a loop that executes an undetermined number
+   of times. To stop the loop, a user enters a value, called a <strong>sentinel</strong>, which causes
+   the loop's condition to become false. Look at the following illustration which demonstrates a
+   sentinel-controlled loop.</p> 
+   
+     <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/While2/Slide1.PNG"></li>
+          <li><img src="images/While2/Slide2.PNG"></li>
+          <li><img src="images/While2/Slide3.PNG"></li>
+		  <li><img src="images/While2/Slide4.PNG"></li>
+		  <li><img src="images/While2/Slide5.PNG"></li>
+		  <li><img src="images/While2/Slide6.PNG"></li>
+		  <li><img src="images/While2/Slide7.PNG"></li>
+		  <li><img src="images/While2/Slide8.PNG"></li>
+		  <li><img src="images/While2/Slide9.PNG"></li>
+		  <li><img src="images/While2/Slide10.PNG"></li>
+		  <li><img src="images/While2/Slide11.PNG"></li>
+		  <li><img src="images/While2/Slide12.PNG"></li>
+		  <li><img src="images/While2/Slide13.PNG"></li>
+		  <li><img src="images/While2/Slide14.PNG"></li>
+        </ul>
+    </div>   
+  
+  <h1>Infinite Loop</h1>
+  <p>A common mistake that beginner programmers make with counter-controlled loops is they forget to 
+     increment the counter variable within the body of the while loop. Look at the following example.</p>
+<div id="csCode">
+<pre>
+int cntr = 0;
+while(cntr < 100)
+{
+   System.out.println("Hello");
+}
+</pre>
+</div>
+<p>This code creates what is called an <strong>infinite loop</strong>. In the loop above the condition will always be true since variable cntr
+   never reaches 100, therefore the string "Hello" will print indefinitely.</p>
+<p>Here is the code again with the increment of the counter variable included.</p>
+<div id="csCode">
+    <pre>
+int cntr = 0;
+while(cntr < 100)
+{
+   System.out.println("Hello");
+   <div id="csHighlight"><pre>cntr++;</pre></div>
+}
+</pre>
+</div>
+<h1>More Examples</h1>
+<h3>Example 1</h3>
+  <p>The program below demonstrates how to use a while statement to sum the following 
+    squence of numbers:</p>
+<p><strong>1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10</strong></p>
+  <p>Press the <strong>Step</strong> button to advance the program one line. Press 
+    the <strong>Reset</strong> button to start the program over again. The program 
+    traces the variables in the program so you can see their values at each stage 
+    of the program's execution.</p>
+
+  
+        <div id="demomain" class="demo">
+            <div id="demoheader" class="demo">
+                <table class="demo">
+                    <tr class ="demo">
+                        <td class ="demo"><pre class = "var" id="var1">count</pre></td>
+                        <td class = "var" id="box1">1</td>
+                        <td class ="demo"><pre class = "var" id="var2">sum</pre></td>
+                        <td class = "var" id="box2">0</td>
+                        <td class ="demo"><pre class = "var" id="condition">  count &lt;= 10</pre></td>
+                        <td class = "var" id="box3">&nbsp;</td>
+                    </tr>
+                </table>       
+            </div>
+            <div id="demobody">
+              <table class ="demo">
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c1">int count = 1;</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c2">int sum = 0;</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c3">while (count &lt;= 10)</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code">{</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c4">   sum += count;</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class="demo"><pre class="code" id="c5">   count++;</pre></td>
+                </tr>
+                
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code">}</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c6">System.out.println(sum);</pre></td>
+                </tr>
+              </table>
+            </div>
+            <div id="demofooter" class="demo">
+                <div id="buttonPanel" class="demo">
+                    <button  class="demo" onclick="advanceWhile()" >Step</button>&nbsp;&nbsp;
+                    <button  class="demo" onclick="reset()">Reset</button>
+                </div>
+            </div>   
+      </div>
+
+
+
+
+<h3>Example 2</h3>
+<p>A counter variable can be incremented by something other than one.
+  In the following example the counter is incremented by 10.</p>
+  <div id="csCode">
+    <pre>
+int cntr = 0;
+while(cntr < 100)
+{
+   System.out.print(cntr + " ");
+   cntr += 10;
+}
+</pre>
+</div>
+<h3>Example 3</h3>
+<p>A while loop's condition can be a compound statement. In the following example the 
+   condition is a compound or(||) statement.</p>
+  <div id="csCode">
+    <pre>
+int grade = -1;
+while(grade < 0 || grade > 100)
+{
+   System.out.print("Enter grade --> ");
+   grade = keyboard.nextInt();
+}
+</pre>
+</div>
+	<br>
+</div>	
+

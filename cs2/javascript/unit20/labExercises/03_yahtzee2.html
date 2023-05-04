@@ -1,0 +1,88 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-3 Javascript Yahtzee2</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank" style="color:blue">Create Javascript Objects</a></p></li>
+    <li><p><a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" style="color:blue">setInterval</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Timing Events</a></p></li>
+</ul>
+
+
+<h1>Discussion</h1>
+<p>Download the following NetBeans project: <a href="apFreeResponse/Yahtzee2.zip" style="color:blue">Yahtzee2</a>. Unzip it and place it in your working directory.</p></li>
+<h3>Player Interface</h3>
+<p>Our yahtzee game's player interface has been updated with the addition of two more components.
+   A second button has been added named "Reset Turn" and a div has been placed between the two buttons
+   to display the number of dice rolls a player has left.</p>
+<img src="images/javascript_yahtzee2-1.png" style="width:70%; height:70%"><br>
+<p>In yahtzee a player has a maximum of three dice rolls per turn. After the third roll a player must 
+   must choose a category on the scorecard to place his score.</p>
+<p>Look at the yahtzee object introduced in the previous lesson. A new field has been added named 
+    <strong>numRolls</strong>. This variable will be used to track the number of dice rolls a player
+    has left in the current turn. numRolls starts with a value of 3 and is decreased each dice roll
+    until it has a value of zero.</p>
+<div id="csOutput" style="width:650px"><pre>
+function yahtzee() 
+{
+    this.context = null;  // reference to canvas context
+    this.dice = [];       // array representing 5 dice
+    this.images = [];     // array to store 6 die images
+    this.loadCount = 0;   // count of number of images loaded
+    this.rolled = false;  // flag to test if a dice roll is in progress
+    this.numRolls = 3;    // track dice rolls left
+};
+</pre></div> 
+    
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>Modify the <strong>rollDice</strong> method so that it incorporates the following behavior:</p>
+        <ul id="csList2">
+            <li><p>The variable numRolls is decreased by one each dice roll.</p></li>
+            <li><p>The value of numRolls is displayed in the div with id "rolls".</p></li>
+            <li><p>The dice can only be rolled if the value of numRolls is greater than 0.</p></li>
+        </ul>
+        <p><strong>Programming Note:</strong> When referring to the field numRolls in the rollDice method 
+            preference the variable and method
+            names with the word <strong>that</strong> instead of this. (For example: that.numRolls--;).
+           The that variable is assigned the object referenced by the this variable at the top of the 
+           rollDice method. This was done to get around some of the problems associated with using the
+           this variable.</p>
+    </li>
+    <li><p>Implement the method <strong>endTurn</strong>. Method endTurn should do the following
+           only if the value of numRolls is equal to 0.</p>
+        <ul id="csList2">
+            <li><p>Change each die objects hold field to true.
+            <li><p>Change the background color of all 5 of the hold buttons to "gold".</p></li>
+            <li><p>Disable all 5 of the hold buttons and the "Roll Dice" button. A method named 
+                    <strong>disableButtons</strong> has been provided for this purpose.</p></li>
+        </ul>
+        <p><strong>Programming Note:</strong> The endTurn method is passed a reference to the
+            yahtzee object stored in the parameter <strong>obj</strong>. When referencing any of the yahtzee
+            fields or methods use this variable. (For example: obj.numRolls).</p>
+        
+        <p><strong>Programming Note:</strong> A call to the endTurn method has already been added to the rollDice
+            method. It is called after the completion of each dice roll.
+    </li>
+    <li><p>Implement the method <strong>resetTurn</strong>. The resetTurn method is called when the
+           button "Rest Turn" has been selected. Method resetTurn should do the following:</p>
+        <ul id="csList2">
+            <li><p>Reset the numRolls variable back to 3.</p></li>
+            <li><p>Change each die objects hold field to false.
+            <li><p>Change the background color of all 5 of the hold buttons to "lightgoldenrodyellow".</p></li>
+            <li><p>Enable all 5 of the hold buttons and the "Roll Dice" button. A method named 
+                    <strong>enableButtons</strong> has been provided for this purpose.</p></li>
+            <li><p>Make a call to the method <strong>hideDice</strong>. This method clears the dice
+                   images from the dice panel.</p></li>
+
+        </ul>
+    
+    </li>
+</ol>
+
+<br><hr><br>
+<img src="images/javascript_yahtzee2-2.png" style="width:100%; height:100%"><br>
+<br>
+</div>	

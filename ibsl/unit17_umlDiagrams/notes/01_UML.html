@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CompSci</title>
+
+    <link rel="stylesheet" type="text/css" href="css/compsci.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.treeview.css" />
+    <link rel="stylesheet" type="text/css" href="css/bjqs.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <link rel="stylesheet" type="text/css" href="css/demos.css">
+    <link rel="stylesheet" type="text/css" href="css/roadanimation.css">
+
+    <script src="js/buildtree.js"></script>
+    <script src="js/packed.js"></script>
+    <script src="js/script.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+    <script type="text/javascript" src="js/bjqs-1.3.min.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+
+    <script type="text/javascript" src="js/demos.js"></script>
+    <script type="text/javascript" src="js/roadanimation.js"></script>
+
+
+
+</head>
+
+<body style="overflow:scroll; margin-left: 10px">
+
+
+
+
+
+
+
+    <div id="csHeader">UML Class Diagrams</div>
+    <div id="obj">
+        <table>
+            <tr>
+                <th>What You Will Learn</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>What is a UML Class Diagram</li>
+                        <li>What are the 3 sections of a UML Class Diagram</li>
+                        <li>What are the 4 relationships between classes</li>
+                        <li>How to construct a UML Class Diagram</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="csContent">
+        <h1>Learn UML at Visual Paradigm.com</h1>
+        <p><a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/" target="_blank"><span style="color:blue">Visual Paradigm.com</span></a></p>
+        <h1>UML Diagrams Video</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UI6lqHOVHic?rel=0" frameborder="0" allowfullscreen></iframe>
+        <h1>UML Class Diagram Basics</h1>
+        <p>A <strong>UML Class Diagram</strong> is an illustration of the relationships among classes in a object-oriented program (OOP) using the Unified Modeling Language (UML). A UML class diagram resembles a flowchart in which classes are portrayed as
+            boxes, each box having three rectangles inside. The top rectangle contains the name of the class; the middle rectangle contains the attributes of the class; the lower rectangle contains the methods, also called operations, of the class. </p>
+
+        <img src="images/UML/uml1.png" width="50%" height="50%">
+        <p>*Attributes are also called properties, fields, or instance variables.<br> *Methods are also called operations or functions.</p>
+
+        <h3>Example</h3>
+        <p>Jessica and her older sister Jasmine have decided to buy a Food Truck. They are going to use a computer to track their daily food sales. Below is a UML class diagram for a class named <strong>Item</strong> used to represent items they will offer
+            on their Food Truck menu.</p>
+
+        <img src="images/UML/uml2.png" width="528" height="283" style="margin-left: 5opx">
+
+
+        <p>The <i>Item</i> class defines 3 attributes: <strong>name</strong>, <strong>cost</strong>, and <strong>calories</strong>. Below is an example of an instance of the Item class.</p>
+
+        <img src="images/UML/uml3.png" width="60%" height="60%" style="margin-left: 5opx">
+
+        <h2 style="margin-top: 20px;">Visibility</h2>
+        <p>In an UML diagram the visibility of an attribute or method is specified by a symbol in front of its name.</p>
+        <img src="images/UML/uml4.png" width="100%" height="100%" style="margin-left: 5opx">
+
+        <table id="apTable">
+            <tr>
+                <th>Symbol</th>
+                <th>Visibility</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td> - </td>
+                <td>private</td>
+                <td>only available to members of the same class</td>
+            </tr>
+            <tr>
+                <td> + </td>
+                <td>public</td>
+                <td>available to any class</td>
+            </tr>
+            <tr>
+                <td> # </td>
+                <td>protected</td>
+                <td>available to all subclasses (inheritance)</td>
+            </tr>
+            <tr>
+                <td> ~ </td>
+                <td>default or package</td>
+                <td>available to any class in same package<br> (this is selected if no visibility declared)</td>
+            </tr>
+
+        </table>
+
+        <h1>Class Relationships</h1>
+        <p>There are several different kinds of relationships that exist among classes in an object-oriented program. They are inheritance, association, aggregation, and composition. Aggregation and composition are sub-types of the association relationship.</p>
+        <ul id="csList">
+            <li>Inheritance</li>
+            <li>Association<br>
+                <ul>
+                    <li style="margin-left: 15px">Aggregation</li>
+                    <li style="margin-left: 15px">Composition</li>
+                </ul>
+            </li>
+        </ul>
+        <div style="display: -webkit-flex; display: flex; align-items: baseline;">
+            <h1>Inheritance Relationship</h1><img src="images/UML/uml6.png" width="70px" height="17px">
+        </div>
+        <p>An inheritance relationship between two classes is a relationship in which one class inherits or aquires the attributes and methods of another class. A class derived from another class is called a subclass or child class, whereas the class from
+            which a subclass is derived is called a superclass or parent class. The inheritance relationship is an <strong>"is a"</strong> relationship. A dog is a pet. A mustang is a horse. Red is a color.</p>
+
+        <p>Continuing with the Food Truck example below two new classes has been added to the UML Diagram named <strong>Food</strong> and <strong>Drink</strong> that are subclasses of the Item class. A <strong>white arrow</strong> is used to show an inheritance
+            relationship in a UML diagram. The arrow points from a subclass to its inherited superclass.</p>
+        <img src="images/UML/uml5.png " width="100% " height="100% " style="margin-left: 5opx ">
+
+        <p></p>
+        <div style="display: -webkit-flex; display: flex; align-items: baseline;">
+            <h1>Association Relationship</h1><img src="images/UML/uml7.png" width="70px" height="17px">
+        </div>
+        <p>The association relationship is a way of describing that a class knows about another class or there exists some type of dependency between the two classes. An example of an association relationship is when one class contains a method that has
+            a <strong>parameter</strong> of another class.
+
+            <div id="apCode"><pre>public method printBattingAverage(BaseballPlayer player)
+{
+    double avg = player.getHits() / player.getAtBats();
+}
+</pre></div>
+
+            <p>In an UML diagram the associative relationship is denoted by an arrow. The arrow is unidirectional showing which class knows about which class or which class uses which class.</p>
+
+            <img src="images/UML/uml8.png " width="100% " height="100% " style="margin-left: 5opx ">
+            <p>The association relationship can be divided into two categories: aggregration and composition.</p>
+            <p></p>
+            <div style="display: -webkit-flex; display: flex; align-items: baseline;">
+                <h1>Aggregration Relationship</h1><img src="images/UML/uml9.png" width="70px" height="17px">
+            </div>
+            <p>Aggregation is a special form of association in which there is a stronger relationship between two classes. </p>
+            When an object ‘has-a’ another object, then you have got an aggregation between them. Aggregation is also called a <strong>“has-a”</strong> relationship. An example of an aggregrative relationship is when one class is an <strong>instance variable</strong>            (field or property) of another class.
+
+            <p>In an UML diagram the aggregation relationship is denoted by an arrow with an open diamond on the end. The direction of arrow specifies which object contains which object.</p>
+
+            <img src="images/UML/uml10.png " width="100% " height="100%" style="margin-left: 5opx ">
+
+            <div style="display: -webkit-flex; display: flex; align-items: baseline;">
+                <h1>Composition Relationship</h1><img src="images/UML/uml11.png" width="70px" height="17px">
+            </div>
+
+            <p>A Composition relationship between two classes is a more restrictive form of an aggregative relationship. When an object contains the other object, if the contained object cannot exist without the existence of container object, then it is
+                called composition. Example: A class contains students. A student cannot exist without a class, therefore there exists a composition relationship between class and students. The difference between aggregation and composition is that composition
+                is more restrictive. When there is a composition between two objects, the composed object cannot exist without the other object. This restriction is not there in aggregation. In both aggregation and composition, direction is a must. The
+                direction specifies, which object contains which object. </p>
+            <img src="images/UML/uml12.png " width="100% " height="100% " style="margin-left: 5opx ">
+
+            <p>In this example, a brain cannot exist without a human body. If the body dies so does the brain. The brain is dependent upon the body.</p>
+
+            <h3>Aggregation vs Composition</h3>
+            <p>Programmers are often confused as to whether a relationship is aggregation or composition. Composition is when one object owns another object while aggregation is when one object uses another object.</p>
+            <p>Two phrases which come in handy when trying to determine whether an association between two classes is composition or aggregation are "part-of" and "has". If one object is-part-of another object e.g. Engine is part of Car, then the association
+                or relationship between them is composition. On the other hand, if one object just has another object e.g. Car has the driver then it's aggregation.</p>
+
+            <p>In Java, a composition association can be created by placing the keyword <strong>final</strong> in front of the composed object's variable declaration. Final makes an object reference unchangeable, however the object the variable points to
+                can still be modified or changed. An object variable declared final can never refer to another object, but the object it refers to may change state.</p>
+            <h1>Multiplicity</h1>
+            <p>An association relationship between two classes may involve multiply objects, therefore the relationship between the two classes can take on many forms. Some examples include a one-to-one relationship, a zero-to-many relationship, a one-to-many
+                relationship, and a many-to-many relationship. For example a class can have many students. A hotel can have many rooms. Many states can have many cities.</p>
+
+            <p>In a UML diagram multiplicity between classes is denoted by placing numbers above the arrow that describes the relationship between two classes.</p>
+
+            <h3>Example 1</h3>
+            <img src="images/UML/uml13.png " width="100% " height="100% " style="margin-left: 5opx ">
+            <p>This example shows that there is a one-to-one relationship between a human body and a brain. The human body can have one and only one brain.</p>
+
+            <h3>Example 2</h3>
+            <img src="images/UML/uml14.png " width="100% " height="100% " style="margin-left: 5opx ">
+            <p>This example uses the notation <strong>0..*</strong> to denote a zero to many relationship. A baseball team can have zero or more players on the team. This type of relationship is often implemented using an array or ArrayList data structure.</p>
+
+
+
+            <br>
+            <br>
+
+
+
+
+</body>
+
+</html>

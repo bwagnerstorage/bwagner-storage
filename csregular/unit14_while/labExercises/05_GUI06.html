@@ -1,0 +1,81 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI06 RandomLines</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a GUI program that draws 500 lines in the frame window. Each line should be drawn from
+   one random point to another in a random color.</p>
+  <p>1. Open your GUI workspace.<br>
+2. Create a java file named GUI06 and copy the code below into the file.</p>
+
+<div id="csCode">
+<pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI06 extends JFrame
+{
+    // constructor
+    public GUI06()
+    {
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.black);     
+        setVisible(true);                                
+    }
+    
+    public void paint(Graphics page)
+    {
+        super.paint(page);  // erase background
+        
+
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI06 app = new GUI06();  // run program
+    }
+}
+</pre>
+</div>
+<h3>paint Method</h3>
+<p>Recall that the paint method is called anytime the frame window needs to be drawn. All
+of the code for this assignment will need to be within this method after the line that
+erases the background.</p>
+<h3>Random Color</h3>
+<p>The following code can be used to generate a random color.</p>
+<div id="csCode">
+<pre>
+int r = (int)(Math.random() * 256);  // random red
+int g = (int)(Math.random() * 256);  // random green
+int b = (int)(Math.random() * 256);  // random blue
+
+Color myColor = new Color(r, g, b);   // create color
+page.setColor(myColor);               // set graphics object to new color
+</pre>
+</div>
+<h3>Random Line</h3>
+<p>The following code can be used to generate a random line.</p>
+<div id="csCode">
+<pre>
+int x1 = (int)(Math.random() * 500);  
+int y1 = (int)(Math.random() * 500);  
+int x2 = (int)(Math.random() * 500); 
+int y2 = (int)(Math.random() * 500);  
+
+page.drawLine(x1, y1, x2, y2);  // draw line from point (x1, y1) to (x2, y2)
+</pre>
+</div>
+<h1>Source File</h1>
+<p>GUI06.java</p>
+<h1>Sample Run</h1>
+<img align="center" src="images/GUI06.gif"
+	<br>
+</div>
+

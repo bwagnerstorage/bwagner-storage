@@ -1,0 +1,245 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Throwing and Catching</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is throwing an exception</li>
+						<li>What is catching an exception</li>
+						<li>What is a try/catch block</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Throwing and Catching</h1>
+<p>When your program runs into a problem that it cannot handle, it <strong>throws an exception</strong>. That exception is either caught
+  (handled) or it goes unhandled. Unhandled exceptions cause the program to terminate.</p>
+
+<p>To demonstrate how exceptions work, lets look at a program that prompts a user to enter in two integers and then calculates the
+   quotient by dividing the two numbers. The program has a loop so that you can run the program with different sets of numbers.</p>
+
+<p><strong>Directions</strong></p>
+<div id="csList">
+<ol>
+<li>Create a java source file named <strong>DivideNoExceptions.java</strong>.</li>
+<li>Copy the code below into the program and then compile the program.</li>
+<li>Execute the program with the following pairs of numbers:<br>
+<div id="csOutput"><pre>
+dividend = 24
+divisor = 8
+
+dividend = 12
+divisor = 0
+</pre></div></li>
+</ol>
+</div>
+
+<div id="csCode"><pre>
+import java.util.*;
+
+public class DivideNoExceptions
+{
+    public static void main(String[] args)
+    {
+       DivideTester test = new DivideTester();
+       Scanner keyboard = new Scanner(System.in);
+       String ans;
+       
+       do
+       {
+          test.getNumbers();    // get two numbers
+          test.divide();        // calculate the quotient
+          test.printResults();  // print the results
+          
+          System.out.print("Continue[Y/N]?");
+          ans = keyboard.nextLine();
+          System.out.println();
+       } while(ans.equalsIgnoreCase("y"));
+    }
+}
+
+class DivideTester
+{
+    private int dividend;
+    private int divisor;
+    private int quotient;
+    
+    public void getNumbers()
+    {
+       Scanner keyboard = new Scanner(System.in);
+       System.out.print("Enter the Dividend-->");
+       dividend = keyboard.nextInt();
+       System.out.print("Enter the Divisor-->");
+       divisor = keyboard.nextInt();
+       System.out.println();
+    }
+    
+    public void divide()
+    {
+       quotient = dividend / divisor;   
+    }
+    
+    public void printResults()
+    {
+       System.out.println(dividend + " / " + divisor + " = " +  quotient);
+       System.out.println();
+    }
+}
+</pre></div>
+<p>When you executed the program you should have gotten the following results</p>
+<div id="csSampleRun"><pre>
+Enter the Dividend-->24
+Enter the Divisor-->8
+
+24 / 8 = 3
+
+Continue[Y/N]?y
+
+Enter the Dividend-->12
+Enter the Divisor-->0
+
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at DivideTester.Divide(DivideNoExceptions.java:42)
+        at DivideNoExceptions.main(DivideNoExceptions.java:14)
+</pre></div>
+
+<p>When you entered the first two numbers the program printed the results of the integer division. 
+  However, when you entered a value of 0 for the divisor with the second pair of numbers, you were asking
+  the program to divide by 0. This raised an exception. Since the program did not handle the exception, 
+  the <strong>program terminated</strong> with a somewhat helpful message that told you where you made your mistake. This
+  approach is not considered an appropriate way to handle the exception.</p>
+
+ 
+<h1>When an Exception is Thrown</h1>
+
+<p>It is important to realize that the exception was thrown in the divide method at the point that the dividend was divided by the divisor:</p>
+<div id="csCode"><pre>
+public void Divide()
+{
+   quotient = dividend / divisor;    <div id="csHighlight"><pre>// exception thrown</pre></div>
+}
+</pre></div>
+<p>Notice that the printResults method does not execute if an exception is thrown. Once the exception is thrown,
+   processing stops and the Java Virtual Machine (JVM) looks for a catch block to handle the exception.</p>
+
+<p>The first place the JVM looks is within the method where the exception was thrown. In the above example,
+   none is found, so the JVM unwinds the stack and looks for a catch statement in the calling method, main. 
+   None is found there either, so the stack continues to unwind. If no catch statement is found the program
+   terminates with the default handler, which displays a stack trace as shown below:</p>
+
+<p>Exception in thread "main" java.lang.ArithmeticException: / by zero at DivideTester.Divide(DivideNoExceptions.java:42)
+   at DivideNoExceptions.main(DivideNoExceptions.java:14) The exception message indentifies the type of exception as an ArithmeticException. 
+   Notice that you can see the unwinding of the stack in the error message: the exception was raised in the divide method, which was called
+   by the main method. The line number at the end of each line helps to identify where the exception occurred and can aid in locating the source of the error.</p>
+
+<a href="images/unWind.html" target="_blank" style="color:#0000FF">Click Here - To Learn More About "Unwinding the Stack"</a>
+
+ 
+<h1>Catching Exceptions</h1>
+
+<p>The general approach to handling code that might throw exceptions is to create a <strong>try/catch block</strong> using the try
+   keyword and catch keyword. In the try block, you try to execute something that might throw an exception.</p>
+<div id="csCode"><pre>
+public void divide()
+{
+   try
+   {
+      quotient = dividend / divisor;
+   }     
+}
+</pre></div>
+<p>In the catch block, you catch any exceptions that were thrown. The try/catch block sequence says to the compiler, in essence,
+ "Try to run this code, which has the potential to throw an exception. If an exception is thrown, catch it and deal with it." 
+ Since you know that the Divide method might throw an ArithmeticException, you can catch that kind of exception and handle it.
+  (You will see later in this unit how to catch exceptions regardless of their type.)</p>
+
+<div id="csCode"><pre>
+public void divide()
+{
+   <div id="csHighlight"><pre>try</pre></div>
+   {
+      quotient = dividend / divisor;
+   }    
+   <div id="csHighlight"><pre>catch</pre></div>(ArithmeticException e)
+   {
+      System.out.println("***Division by 0 error");
+   } 
+}
+</pre></div>
+<p>If you modify the divide method with this try/catch block the program will no longer crash when you enter 0 
+  for the divisor. Instead, the program displays the error message "***Division by 0 error".</p>
+
+<h1>Throwing Exceptions</h1>
+
+<p>It turns out that divide by 0 exceptions are thrown only for integer division. If you modify our program to use
+ double, rather that int, no exception will be thrown when you divide by 0. The screen shot below shows the result of 
+ dividing a double by 0.</p>
+ 
+<div id="csSampleRun"><pre>
+Enter the Dividend-->15
+Enter the Divisor-->0
+
+15.0 / 0.0 = Infinity
+
+Continue[Y/N]?n
+</pre></div>
+
+<p>While this is convenient, you might choose not to allow division by 0, even with doubles. In that case,
+  you can use the throw keyword to throw an ArithmeticException yourself if presented with divide by 0.</p>
+<div id="csCode"><pre>
+if(divisor == 0)
+{
+   <div id="csHighlight"><pre>throw</pre></div> new ArithmeticException();
+}
+</pre></div>
+<p>This code will cause your program to throw an exception when dividing a double by 0 just
+ as it automatically did when dividing an int by 0.</p>
+
+<p>You actually create an instance of an ArithmeticException object as the following code demonstrates:</p>
+<div id="csCode"><pre>
+if(divisor == 0)
+{
+   ArithmeticException myException = new ArithmeticException();
+   <div id="csHighlight"><pre>throw myException;</pre></div>
+}
+</pre></div>
+
+<p>The constructor for each exception is overloaded to take a string. This allows you to provide information
+  about the exception that can be displayed later.</p>
+<div id="csCode"><pre>
+if(divisor == 0)
+{
+   <div id="csHighlight"><pre>throw</pre></div> new ArithmeticException(
+        "Tried to divide " + dividend + " by zero!");
+}
+</pre></div>
+
+<p>You can display this message by calling the method getMessage on the exception object when you catch it. 
+For example, you might modify the message dialog to show the string you passed to the exception constructor:</p>
+<div id="csCode"><pre>
+public void divide()
+{
+   <div id="csHighlight"><pre>try</pre></div>
+   {
+       if(divisor == 0)
+       {
+         <div id="csHighlight"><pre>throw</pre></div> new ArithmeticException(
+                "Tried to divide " + dividend + " by zero!");
+       }
+       quotient = dividend / divisor;
+   }    
+   <div id="csHighlight"><pre>catch</pre></div>(ArithmeticException e)
+   {
+      System.out.println(e.getMessage());
+   } 
+}
+</pre></div>
+<p>You can now see why it is called throwing and catching an exception.</p>
+<br>
+</div>	
+

@@ -1,0 +1,188 @@
+<img src="images/empty.gif" onload="doScrollTop(); reset(); this.parentNode.removeChild(this);" />  <!-- reset - initialize for demo variables -->
+
+<div id="csHeader">for Statement</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to create and use a for statement</li>
+						<li>for loop vs while loop</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>for Statement</h1>
+  <p><strong>Counter-controlled</strong> loops are used so frequently that many programming languages (including Java) include a special statement to make them easy to write.
+     It is called the <strong>for statement</strong>, and it combines counter intialization, condition test, and counter update into a single expression. 
+	 The for loop uses the following form:</p>
+<div id="csCode">
+<pre>
+for (initialize counter; test counter; update counter)
+{
+   statement;
+   statement;
+}  
+</pre>
+</div>
+<p>or</p>
+<div id="csCode">
+<pre>
+ for (initialize counter; test counter; update counter)
+   statement; 
+</pre>
+</div>
+ 
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/For1/Slide1.PNG"></li>
+          <li><img src="images/For1/Slide2.PNG"></li>
+          <li><img src="images/For1/Slide3.PNG"></li>
+		  <li><img src="images/For1/Slide4.PNG"></li>
+		  <li><img src="images/For1/Slide5.PNG"></li>
+		  <li><img src="images/For1/Slide6.PNG"></li>
+		  <li><img src="images/For1/Slide7.PNG"></li>
+		  <li><img src="images/For1/Slide8.PNG"></li>
+		  <li><img src="images/For1/Slide9.PNG"></li>
+		  <li><img src="images/For1/Slide10.PNG"></li>
+		  <li><img src="images/For1/Slide11.PNG"></li>
+		  <li><img src="images/For1/Slide12.PNG"></li>
+		  <li><img src="images/For1/Slide13.PNG"></li>
+		  <li><img src="images/For1/Slide14.PNG"></li>
+		  <li><img src="images/For1/Slide15.PNG"></li>
+		  <li><img src="images/For1/Slide16.PNG"></li>
+		  <li><img src="images/For1/Slide17.PNG"></li>
+		  <li><img src="images/For1/Slide18.PNG"></li>
+		  <li><img src="images/For1/Slide19.PNG"></li>
+		  <li><img src="images/For1/Slide20.PNG"></li>
+		  <li><img src="images/For1/Slide21.PNG"></li>
+		  <li><img src="images/For1/Slide22.PNG"></li>
+		  <li><img src="images/For1/Slide23.PNG"></li>
+		  <li><img src="images/For1/Slide24.PNG"></li>
+		  <li><img src="images/For1/Slide25.PNG"></li>
+		  <li><img src="images/For1/Slide26.PNG"></li>
+		  <li><img src="images/For1/Slide27.PNG"></li>
+		  <li><img src="images/For1/Slide28.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	<div id="csNote"><strong>Programming Tip:</strong> if you need a counter-controlled loop use a for loop. If you need
+	a sentinel-controlled loop use a while or do-while loop.</div>
+<h1>More Examples</h1>
+<h3>Example 1</h3>
+<p>This for statement counts from 0 to 9. Notice that the loop control variable's name is <strong>i</strong>.
+   By convention, many programmers name the loop control variable of a for loop i or j. i is short
+   for increment.</p>
+  <div id="csCode">
+    <pre>
+for(int i = 0; i < 10; i ++)
+{
+   System.out.print(i + " ");
+}
+</pre></div>
+<p>In this example the counter variable is declared as part of the for loop, therefore its <strong>scope</strong> is the for loop.
+   It is a local variable of the for block and only exists within that block. Attempting to use the variable outside the
+   for loop would cause a compiling error.</p>
+<h3>Example 2</h3>
+  <p>The program below demonstrates how to use a for statement to sum the following 
+    squence of numbers:</p>
+<p><strong>1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10</strong></p>
+  <p>Press the <strong>Step</strong> button to advance the program one line. Press 
+    the <strong>Reset</strong> button to start the program over again. The program 
+    traces the variables in the program so you can see their values at each stage 
+    of the program's execution.</p>
+
+
+        <div id="demomain" class="demo">
+            <div id="demoheader" class="demo">
+                <table>
+                    <tr class ="demo">
+                        <td class ="demo"><pre class = "var" id="var1">sum</pre></td>
+                        <td class = "var" id="box1">0</td>
+                        <td class ="demo"><pre class = "var" id="var2">i</pre></td>
+                        <td class = "var" id="box2">1</td>
+                        <td class ="demo"><pre class = "var" id="condition">  i &lt;= 10</pre></td>
+                        <td class = "var" id="box3">&nbsp;</td>
+                    </tr>
+                </table>       
+            </div>
+            <div id="demobody">
+              <table>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c1">int sum = 0;</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><span class="code">for (</span>
+                        <span class="code" id="c2">int i = 1</span>
+                        <span class="code">;</span>
+                        <span class="code" id="c3">i &lt;= 10</span>
+                        <span class="code">;</span>
+                        <span class="code" id="c5">i++</span>
+                        <span class="code">)</span></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code">{</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c4">   sum += i;</pre></td>
+                </tr>             
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code">}</pre></td>
+                </tr>
+                <tr class ="demo">
+                    <td class ="demo"><pre class="code" id="c6">System.out.println(sum);</pre></td>
+                </tr>
+              </table>
+            </div>
+            <div id="demofooter" class="demo">
+                <div id="buttonPanel" class="demo">
+                    <button  class="demo" onclick="advanceFor()">Step</button>&nbsp;&nbsp;
+                    <button  class="demo" onclick="reset()">Reset</button>
+                </div>
+            </div>   
+      </div>
+
+
+
+  
+<h3>Example 3</h3>
+<p>The loop control variable (counter) does not have to be declared inside the for loop.
+   This example declares the counter variable before the for loop.</p>
+  <div id="csCode">
+    <pre>
+int i = 0;
+for(i = 10; i >= 0; i --)
+{
+   System.out.print(i + " ");
+}
+</pre>
+</div>
+	
+<h3>Example 4</h3>
+<p>A counter variable can be incremented by something other than one.
+  In the following example the counter is incremented by 10.</p>
+  <div id="csCode">
+    <pre>
+for(int i = 0; i < 100; i += 10)
+{
+   System.out.print(i + " ");
+}
+</pre>
+</div>
+<p>or</p>
+  <div id="csCode">
+    <pre>
+for(int i = 0; i < 100; i = i + 10)
+{
+   System.out.print(i + " ");
+}
+</pre>
+</div>
+	<br>
+</div>

@@ -1,0 +1,386 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Method Types</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>void methods vs non-void methods</li>
+						<li>How to define and call a non-void method</li>
+						<li>How to use methods with return type boolean</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Method Types</h1>
+  <p>Recall that a <strong>method</strong> is simply a block of code that is given a name. In
+     Java, there are two types of methods that you can write. These methods are identified by
+	 the type of task they perform.</p>
+  <p>What do the following tasks have in common?</p>
+  <div id="csList">
+  <ul>
+    <li>Buying a hamburger</li>
+	<li>Baking a cake</li>
+	<li>Adding two numbers together</li>
+	<li>Writing a paper</li>
+	<li>Taking a picture</li>
+	<li>Withdrawing money from bank</li>
+  </ul>
+  </div>
+  <p>One answer is they are all tasks, that when completed, give you something back. They have
+     an answer, a product, or a result. When you buy a hamburger the restaurant gives you a
+	 hamburger, when you bake a cake the result is a nice slice of heaven (I love cake), when 
+	 you add two numbers together you get a sum, when you withdraw money from the bank you get
+	 cash in hand, and so forth.</p>
+   <p>In Java, methods that give you something back are called <strong>non-void methods</strong>.</p>
+   
+  <p>All of the Jeroo sensor methods where non-void methods. Their answers were 
+    either true or false.</p>
+      <div id="csOutput">
+    <pre>
+<font color="#0000FF">Jeroo Sensor Methods
+----------------------------</font>
+isClear()
+isFacing()
+isFlower()
+isJeroo()
+isNet()
+isWater()
+hasFlower()
+</pre>
+</div>
+    <p>What do the these tasks have in common?</p>
+  <div id="csList">
+  <ul>
+    <li>Cleaning your room</li>
+	<li>Making your bed</li>
+	<li>Turning off a light</li>
+	<li>Mowing the lawn</li>
+	<li>Taking a letter to the mailbox</li>
+	<li>Filling car with gas</li>
+  </ul>
+  </div>
+  <p>One answer is they are all tasks, that when completed, do not give you anything back. Now there
+     might be a result but the result is not really something you get back. When you clean your room
+	 the result is a clean room but that is not something you can take with you. When the task is 
+	 done it is just done.</p>
+  <p>In Java, methods that do not give you something back are called <strong>void methods</strong>.</p>
+  
+     <p>All of the Jeroo Action methods where void methods. They just performed a task.
+<div id="csOutput">  <pre>
+<font color="#0000FF">Jeroo Action Methods
+----------------------------</font>
+hop()
+give()
+pick()
+plant()
+toss()
+turn()
+</pre>
+</div>
+  <p>In this lesson, we examine these two types of methods. We will start our discussion with
+     the void method which you are already familiar.</p>
+  
+  <h1>void Methods</h1>
+  <p>Look at the definition of the void method printName. Assume two String variables, lastName and
+     firstName, have been defined as instance variables.</p>
+  <div id="csCode">
+    <pre>
+public <div id="csHighlight"><pre>void</pre></div> printName()
+{
+   System.out.println("Lastname = " + lastName);
+   System.out.println("Firstname = " + firstName);
+}</pre>
+  </div>
+  <p>The <strong>return type</strong> for this method is highlighted in red. The method's return type is declared
+     void therefore it is a <strong>void</strong> method.  This method performs a task but it does
+	 not give anything back. It is said to be void of a return value.</p>
+  <h3>Calling void Methods</h3>
+  <p>To execute or call a void method you write the method name along with open and close
+     parentheses. The following example shows the void method being called from
+	 the main method.</p>	 
+    <div id="csCode">
+    <pre>
+public static void main(String[] args)
+{
+   MyClass app = new MyClass();
+   app.<div id="csHighlight"><pre>printName</pre></div>();
+}</pre>  </div>
+  <p>Notice that a void method is called as a single statement on a line by itself.</p>
+<h3>Methods Called by Other Methods</h3>
+<p>Methods can be called by other methods. Look at the following example.</p>
+  <div id="csCode">
+    <pre>
+public void printName()
+{
+    <div id="csHighlight"><pre>printLastName</pre></div>();
+    <div id="csHighlight"><pre>printFirstName</pre></div>();
+}
+
+public void printLastName()
+{
+   System.out.println("Lastname = " + lastName);
+}
+
+public void printFirstName()
+{
+   System.out.println("Firstname = " + firstName);
+}</pre>
+  </div>
+<p>When method printName is executed it makes a call to method printLastName. When method
+   printLastName completes execution then control is returned to printName where it then makes a call
+   to method printFirstName.</p>
+<p>You may have noticed that when a method is called from within the main method dot notation is used.</p>
+    <div id="csCode">
+    <pre>
+public static void main(String[] args)
+{
+   MyClass app = new MyClass();
+   <div id="csHighlight"><pre>app.</pre></div>printName();
+}</pre></div>
+<p>However, when a method is called by another method, that is not the main method, dot notation is not
+used.</p>
+  <div id="csCode">
+    <pre>
+public void printName()
+{
+    printLastName();
+    printFirstName();
+}
+</pre></div>
+<p>The reason for this difference has to do with the fact that the main method is declared <strong>static</strong>.</p>
+    <div id="csCode">
+    <pre>
+public <div id="csHighlight"><pre>static</pre></div> void main(String[] args)
+</pre>
+  </div>
+<p>Static methods are covered in another unit. For now just know that if you call a method
+   from within the main method you must use dot notation. If the call is not made from within the main
+   method you do not.</p>
+<p>Incidentally there is another situation that requires the use of dot notation and that is when you make a call to a method that belongs to another
+   class. For example, in your class if you make a call to a Scanner method you would use code like the following.</p>
+  <div id="csCode">
+    <pre>
+int num = <div id="csHighlight"><pre>keyboard</pre></div>.nextInt();
+</pre></div>
+<h1>Non-void Methods</h1>
+<p>All of the Java standard library methods you have used in
+   your programs so far were actually <strong>non-void</strong> methods. Here is a list of some of them.</p>
+<div id="csOutput">  <pre>
+<font color="#0000FF">Java - Math Class
+----------------------------</font>
+sqrt()
+min()
+max()
+round()
+
+<font color="#0000FF">Java - Scanner Class
+----------------------------</font>
+nextInt()
+nextDouble()
+nextLine()
+next()
+
+<font color="#0000FF">Java - String Class
+----------------------------</font>
+equals()
+length()
+substring()
+
+<font color="#0000FF">Java - Integer Class
+----------------------------</font>
+parseInt()
+</pre>
+  </div>
+<p>Non-void methods differ from void methods in that they give something back. What they "give back" 
+   is dependent upon their return type. Let's look at an example. Assume that the variables, num1 
+   and num2, have been declared as instance variables of type int.</p>
+  <div id="csCode">
+    <pre>
+public <div id="csHighlight"><pre>int</pre></div> sum()
+{
+   return num1 + num2;
+}
+</pre>
+  </div>
+<p>The return type for method sum is highlighted in red. The return type declares what the method
+   is going to "give back" or return. The keyword <strong>return</strong> is required in all non-void 
+   methods. Since the method sum has a return type of int the return line is required to return a
+   value of this type.</p>
+   
+   
+<p>A non-void method's return line can be just about anything as long the code after the return
+   matches the return type. Here are some examples.</p>
+   <p>A method can return a <strong>literal value</strong>.</p>
+    <div id="csCode">
+    <pre>
+return 500;
+return 98.6;
+return "John Wayne";
+return true;</pre>
+  </div>
+  <p>A method can return the contents of a <strong>variable</strong>.</p>
+    <div id="csCode">
+    <pre>
+return average;
+return name;</pre>
+  </div>
+  <p>A method can return the result of a <strong>mathematical expression</strong>.</p>
+    <div id="csCode">
+    <pre>
+return 15 * 7 + 20;
+return (num1 + num2) / 2;</pre>
+  </div> 
+  <p>A method can return the result of a <strong>boolean expression</strong>.</p>
+    <div id="csCode">
+    <pre>
+return num > num2;
+return num != 0 && num < 1000;
+return lastName.equals(name);</pre>
+  </div> 
+   
+<h3>Calling non-void Methods</h3>
+
+<p>The way that a non-void method is called differs from the way that a void method
+   is called in that the call is made from within other Java statements. Since a non-void
+   method always returns a value, this value has to be stored in a variable, printed, or 
+   returned to a Java control structure or another method. Here are some examples.</p>
+   
+ <p>The method call can be in an <strong>assignment statement</strong>.</p>
+    <div id="csCode">
+    <pre>
+int num = sum();
+double avg = calculateAverage();
+String name = getName();</pre>
+  </div>
+<p>The method call can be in a <strong>print</strong> or <strong>println statement</strong>.</p>
+    <div id="csCode">
+    <pre>
+System.out.println("The sum is " + sum());
+System.out.println("Avg = " + calculateAverage());
+System.out.println(getName() + " is my name");</pre>
+  </div>
+ <p>The method call can be inside a Java structure such as an <strong>if statement</strong> or <strong>looping
+    structure</strong> (you will learn about loops in the next unit).</p>
+    <div id="csCode">
+    <pre>
+if(sum() > 500)
+if(calculateAverage() == 100)
+if(getName().equals("John Wayne"))
+while(!getName().equals("stop")</pre>
+  </div>
+  
+ <p>The method call can be on the return line of another method.</p>
+    <div id="csCode">
+    <pre>
+return sum() / numItems;
+return calculateAverage() > 70;</pre>
+  </div>
+ 
+<p>The demonstration below shows the order of execution for a non-void method.</p>  
+   
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/NonVoid1/Slide1.PNG"></li>
+          <li><img src="images/NonVoid1/Slide2.PNG"></li>
+          <li><img src="images/NonVoid1/Slide3.PNG"></li>
+		  <li><img src="images/NonVoid1/Slide4.PNG"></li>
+		  <li><img src="images/NonVoid1/Slide5.PNG"></li>
+		  <li><img src="images/NonVoid1/Slide6.PNG"></li>
+		  <li><img src="images/NonVoid1/Slide7.PNG"></li>
+		  <li><img src="images/NonVoid1/Slide8.PNG"></li>
+		  <li><img src="images/NonVoid1/Slide9.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+  
+  <h1>Boolean Non-Void Methods</h1>
+  <p>A common type of non-void method is a method that has a return type of <strong>boolean</strong>.
+     Recall that a boolean value can only be either <strong>true</strong> or <strong>false</strong>.</p>
+  <div id="csNote">
+<strong>Programming Note</strong>: all of the Jeroo sensor methods have a return type of boolean.
+  </div>
+   <p>Let's look at an example. Assume that the variables, num1 and num2, have been declared as
+      instance variables of type int.</p>
+   
+   <div id="csCode">
+    <pre>
+public boolean isBigger()
+{
+   if(num1 > num2)
+      return true;
+   else
+      return false;
+}
+</pre>
+  </div>
+<p>Method isBigger returns a value of <strong>true</strong> if num1 is greater than num2; otherwise it returns
+   a value of <strong>false</strong>.</p>
+<p>This method could also have been written like the following.</p>
+   <div id="csCode">
+    <pre>
+public boolean isBigger()
+{
+    return (num1 > num2);
+}
+</pre>
+  </div>
+<p>The boolean expression (num1 &gt; num2) evaluates to either true or false which is then returned
+   by the method.</p>
+     <div id="csNote">
+<strong>Programming Note</strong>: methods that return a boolean value often have the word "is"
+   placed in front of the method name. (Ex. isWater, isJeroo, isBigger)
+  </div>
+ <h3>Calling Boolean Non-Void Methods</h3>
+ <p>Boolean non-void methods are called in the same way as other non-void methods. Their return value needs
+    to be stored in a variable, printed, or returned to a Java control structure or another method.</p>
+ <p>Here are two examples.</p>
+    <div id="csCode">
+    <pre>
+boolean result = isBigger();   <div id="csComment"><pre>// return value stored in boolean variable</pre></div>
+
+if(isBigger())                 <div id="csComment"><pre>// returned within an if statement</pre></div>
+{
+    <div id="csComment"><pre>// do something</pre></div>
+}
+
+</pre>
+  </div>
+<h1>Non-Void Methods with Multiple Return Lines</h1>
+<p>A non-void method can have more than one return line. Look at the example.</p>
+
+ <div id="csCode">
+    <pre>
+public String getSeason(int month)
+{
+   if(month == 1 || month == 2 || month == 12)
+      return "winter";
+   if(month == 3 || month == 4 || month == 5)
+      return "spring";
+   if(month == 6 || month == 7 || month == 8)
+      return "summer";
+
+   return "fall";</pre>
+  </div>
+<p>Given a month of the year, method getSeason returns one of four string values. Once a return
+   line is executed the method is complete and control is returned back to where the method was
+   called. All code below the return line that was executed is ignored. The use of multiple
+   return statements makes the use of if-else statements unnecessary.</p>
+<p>Notice that the "fall" return line is not in an if statement.</p>
+ <div id="csCode">
+    <pre>
+return "fall";</pre>
+  </div>
+<p>This is required. When you place return statements inside if statements you must have at
+   least one return that is not in an if statement; otherwise you will get a "<strong>missing return statement</strong>"
+   compiling error.</p>
+<br>
+</div>	
+

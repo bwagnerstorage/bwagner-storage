@@ -1,0 +1,351 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Compass</div>
+<img src="images/compass1.gif" width="180px">
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment, we are going to write a class that simulates the operation 
+    of a compass. Your compass will change directions by turning to the left or 
+    right one degree at a time or a specified number of degrees. A positive number 
+    will turn the compass needle to the right and a negative number will turn 
+    it to the left.</p>
+  <p>Using class decomposition we are going to decompose this problem into two classes. The first class will be named <strong>Compass</strong>. Its
+   job will be to store the compass's current heading (direction). The second class will be named
+   <strong>CompassManager</strong>. Its job will be to manage the program by creating a Compass object
+   that it can send messages to asking it to update the compass heading. This class will contain the main
+   method for the program.</p>
+   <h3>Compass class</h3>
+   <p>Using method decomposition the Compass class can be decomposed into the following methods.</p>
+   <div align="center"><img src="images/compass2.png"></div>
+   <p>Create a file named <strong>Compass.java</strong> and add the following code.</p>
+      <div id="csCode">
+   <pre>
+public class Compass
+{
+    // instance variables
+    
+    
+    // methods
+        
+} </pre>
+</div>
+<p>Recall that a class is defined by two things: what it stores (variables) and what it does (methods).
+   What a compass stores is a direction in degrees. To simulate the storing of a direction add the
+   following variable to the Compass class under the instance variables section.</p>
+      <div id="csCode">
+   <pre>
+private int heading;      // current direction
+</pre>
+</div>
+<p>A real compass moves its needle in response to a person changing the direction they are facing. 
+   To provide this capability for our compass add the follow method declarations under the methods section.</p>
+      <div id="csCode">
+   <pre>
+/* This method updates heading by turning one degree to the right. 
+ * After completing the turn, if heading is equal to 360 its value
+ * is changed to 0.
+ */
+public void turnRight()
+{
+
+}
+
+/* This method updates heading by turning one degree to the left. 
+ * After completing the turn, if heading is equal to -1 its value
+ * is changed to 359.
+ */
+public void turnLeft()
+{
+
+}
+
+/* This method updates heading by turning the number of degrees specified by 
+ * the value of the parameter deg. If deg is greater than or equal to 0 the 
+ * method turns to the right deg degrees, otherwise it turns to the left 
+ * deg degrees.
+ */
+public void turnDegrees(int deg)
+{
+
+}
+
+/* This method returns the value of heading
+ * @ return the current heading
+ */
+public int getHeading()
+{
+
+}
+
+/* This method translates heading into one of the eight directional values: 
+ * North, NorthEast, East, SouthEast, South, SouthWest, West, and NorthWest.
+ * @ return a string representing the compass's current direction
+ */
+public String getDirection()
+{
+
+}
+</pre>
+</div>
+<p><strong>Implement Compass Methods</strong></p>
+<ol id="csList">
+<li>Implement the method <strong>turnRight</strong>. This method updates the instance variable 
+    heading by turning one degree to the right. After completing the turn, if heading is equal
+    to 360 its value is changed to 0.</li><br>
+<li>Implement the method <strong>turnLeft</strong>. This method updates heading by turning one
+    degree to the left. After completing the turn, if heading is equal to -1 its value
+    is changed to 359.</li><br>
+<li>Implement the method <strong>turnDegrees</strong>. This method updates heading by turning 
+    the number of degrees specified by the value of the parameter deg. If deg is greater than
+    or equal to 0 the method turns to the right deg degrees, otherwise it turns to the left
+    deg degrees.
+	<ul id = "csList">
+	<li>Use methods turnRight and turnLeft in your implementation.</li>
+    <li>Use for loops in your implementation to control how many times turnRight and turnLeft
+	    are executed.</li>
+    <li>Use the Math class's abs (absolute value) method to convert a negative deg value into a positive value.<br>
+	    <strong>Example:</strong> Math.abs(deg) - the value returned by abs is always positive.<br><br>
+		Here is the pseudocode for the method turnDegrees:
+	<div id="csOutput"><pre>
+if deg >= 0 then
+   loop I from 0 to deg
+      turnRight()
+   end loop
+else
+   loop I from 0 to Math.abs(deg)
+      turnLeft()
+   end loop
+end if
+</pre></div>
+<p>Note: You will need to translate pseudocode into Java.</p>	
+	</li>
+	</ul>
+	</li><br>
+	<li>Implement the method <strong>getHeading</strong>. This method returns the value of
+	    heading.</li><br>
+	<li>Implement the method <strong>getDirection</strong>. This method translates heading into
+	    one of the eight directional values: North, NorthEast, East, SouthEast, South, SouthWest,
+	    West, and NorthWest.<br><br>
+		Use the following table to determine the directional value according to the value of heading.<br>
+		<table id="csTable" width="58%">
+            <tr> 
+              <th>Degrees</th>
+              <th>Direction</th>
+            </tr>
+            <tr> 
+              <td>(0 - 22) or (337 to 360) inclusive</td>
+              <td>North</td>
+            </tr>
+            <tr> 
+              <td>(22 - 67) exclusive</td>
+              <td>NorthEast</td>
+            </tr>
+            <tr> 
+              <td>(67 - 112) inclusive</td>
+              <td>East</td>
+            </tr>
+            <tr> 
+              <td>(112 - 157) exclusive</td>
+              <td>SouthEast</td>
+            </tr>
+            <tr> 
+              <td>(157 - 202) inclusive</td>
+              <td>South</td>
+            </tr>
+            <tr> 
+              <td>(202 - 247) exclusive</td>
+              <td>SouthWest</td>
+            </tr>
+            <tr> 
+              <td>(247 - 293) inclusive</td>
+              <td>West</td>
+            </tr>
+            <tr> 
+              <td>(293 - 337) exclusive</td>
+              <td>NorthWest</td>
+            </tr>
+          </table></li>
+		  <p align="center">Note: (inclusive means <= and >= ; exclusive means < and > )</p><br>
+		  
+<p><strong>Programming Tip</strong>: Depending upon how you implement the method you may get the following compiling error: "missing return statement". 
+   You can fix this error by making the NorthWest direction the default for the method by removing its if statement.
+   For example:</p>
+   <div id="csCode" style="width:500px"><pre>
+if(heading > 293 && heading < 337)     <div id="csHighlight"><pre>// remove this line</pre></div>
+   return "NorthWest";
+</pre></div>
+</li>
+</ol>
+<br>
+<h3>CompassManager class</h3>
+<p>The job of the CompassManager class is to manage the program by interacting with a Compass 
+   object. This class has been completed for you. You do not need to make any modifications
+   to this class. However, make sure you examine the code to see how the CompassManager interacts 
+   with the Compass object.</p>
+<p>Create a file named <strong>CompassManager.java</strong> and add the following code.</p>
+   <div id="csCode">
+   <pre>
+   import java.util.*;
+
+public class CompassManager
+{
+    public static void main(String [] args)
+    {
+        <div id="csHighlight"><pre>Compass compass = new Compass();</pre></div>
+		
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("**********************");
+        System.out.println("*    Compass Test     *");
+        System.out.println("**********************");
+        System.out.println();
+
+        int sel = 0;
+        
+        do
+        {
+          System.out.println("================================");
+          System.out.println(" Current Heading   = " + <div id="csHighlight"><pre>compass.getHeading()</pre></div>);
+          System.out.println(" Current Direction = " + <div id="csHighlight"><pre>compass.getDirection()</pre></div>);
+          System.out.println("================================");
+          System.out.println();
+          System.out.println("1. Turn Right One Degree");
+          System.out.println("2. Turn Left One Degree");
+          System.out.println("3. Turn (degrees)");
+          System.out.println("4. Quit" );
+          System.out.println();
+          System.out.print("Make selection -->");
+          sel = keyboard.nextInt();
+          
+          if(sel == 1)
+          {
+             <div id="csHighlight"><pre>compass.turnRight();</pre></div>
+          } 
+          if(sel == 2)
+          {
+             <div id="csHighlight"><pre>compass.turnLeft();</pre></div>
+          }
+          if(sel == 3)
+          {
+             System.out.println();
+             System.out.print("Enter degrees (- turns left, + turns right) -->");
+             int degrees = keyboard.nextInt();
+             <div id="csHighlight"><pre>compass.turnDegrees(degrees);</div>
+          }
+        }
+        while(sel < 4);
+    }
+}
+ </pre>
+</div>
+<p>Compile and run the program.</p>
+<h1>Source File</h1>
+<p>Compass.java</p>
+<p>CompassManager.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+**********************
+*    Compass Test    *
+**********************
+
+================================
+ Current Heading   = 0
+ Current Direction = North
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->1
+================================
+ Current Heading   = 1
+ Current Direction = North
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->1
+================================
+ Current Heading   = 2
+ Current Direction = North
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->1
+================================
+ Current Heading   = 3
+ Current Direction = North
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->3
+
+Enter degrees (- turns left, + turns right) -->90
+================================
+ Current Heading   = 93
+ Current Direction = East
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->2
+================================
+ Current Heading   = 92
+ Current Direction = East
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->2
+================================
+ Current Heading   = 91
+ Current Direction = East
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+
+Make selection -->3
+
+Enter degrees (- turns left, + turns right) -->-135
+================================
+ Current Heading   = 316
+ Current Direction = NorthWest
+================================
+
+1. Turn Right One Degree
+2. Turn Left One Degree
+3. Turn (degrees)
+4. Quit
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit19_classDecomposition/solutions/02_compassSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+	<br>
+</div>

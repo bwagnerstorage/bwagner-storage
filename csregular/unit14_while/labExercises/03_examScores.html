@@ -1,0 +1,185 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ExamScores</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that allows a user to enter exam scores in the range of 0 to 100.
+     The user should be allowed to enter scores until he/she types the sentinel value -1. The
+	 program should then tally the total number of scores entered and the number of As, Bs,
+	 Cs, Ds, and Fs according to the following scale.</p>
+<table id="csTable" style="margin: 0; margin-left: 20px">
+<tr>
+<th>Range</th>
+<th>Grade</th>
+</tr>
+<tr>
+<td>90 to 100</td>
+<td align="center">A</td>
+</tr>
+<tr>
+<td>80 to 89</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td>70 to 79</td>
+<td align="center">C</td>
+</tr>
+<tr>
+<td>60 to 69</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td>0 to 59</td>
+<td align="center">F</td>
+</tr>
+</table>
+<p>The sentinel value is used only to end the loop, so do not use it in the calculations.</p>
+
+<h3>Structure Chart</h3>	
+<p>The problem has been decomposed using the following structure chart.</p>
+<div align="center"><img src="images/examScores1.png"></div>	
+
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+    <pre>
+import java.util.*;
+
+public class ExamScores
+{
+   // instance variables
+   private int score = 0;    // used to store the current score entered by user
+   private int a = 0;        // count of the number of a's
+   private int b = 0;        // count of the number of b's 
+   private int c = 0;        // count of the number of c's 
+   private int d = 0;        // count of the number of d's 
+   private int f = 0;        // count of the number of f's
+   private Scanner keyboard = new Scanner(System.in);
+   
+   
+   /* This method allows a user to enter scores until the sentinel value -1
+      is encountered. As scores are being entered it tallies the 
+      number of As, Bs, Cs, Ds, and Fs and stores the values in the instance 
+      variables a, b, c, d, f.
+    */
+   public void inputAndTally()
+   {
+   
+   }
+
+   /* This method calculates the total number of scores input by the user 
+   /*   by summing the tally variables a,b,c,d,f.
+   /* @return total number of scores entered
+    */
+   public int getTotalScores()
+   {
+   
+   }
+   
+   /* Prints a summary report including the total number of scores
+      entered and the tallies of the As, Bs, Cs, Ds, and Fs.
+    */
+   public void printSummary()
+   {
+   
+   }
+   
+   public static void main(String[] args)
+   {
+      ExamScores app = new ExamScores();
+      app.inputAndTally();
+      app.printSummary();
+   }
+}
+</pre>
+</div>
+<p>You are going to complete 2 void methods and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+ <h3>Method inputAndTally</h3>
+ <p>Complete the method <strong>inputAndTally</strong> shown below. This method allows 
+    a user to enter exam scores until the sentinel value -1 is encounterd. As the
+	the scores are being entered, it tallies the number of As, Bs, Cs, Ds, and Fs.</p>
+<div id="csCode">
+<pre>
+/* This method allows user to enter scores until the sentinel value -1
+   is encountered. As scores are being entered it tallies the 
+   number of As, Bs, Cs, Ds, and Fs.
+ */
+public void inputAndTally()
+{
+   
+}
+</pre>
+</div>
+ <h3>Method getTotalScores</h3>
+ <p>Complete the method <strong>getTotalScores</strong> shown below. This non-void
+    method returns the total number of scores entered by the user.</p>
+<div id="csCode">
+<pre>
+/* @return total number of scores entered
+ */
+public int getTotalScores()
+{
+   
+}
+</pre>
+</div>
+
+ <h3>Method printSummary</h3>
+ <p>Complete the method <strong>printSummary</strong> shown below. This method prints
+    a summary report including the total number of scores entered and the tallies
+	of the number of As, Bs, Cs, Ds, and Fs. You will need to use method 
+	<strong>getTotalScores</strong> in your implementation.</p>
+<div id="csCode">
+<pre>
+/* Prints a summary report including the total number of scores
+   entered and the tallies of the As, Bs, Cs, Ds, and Fs.
+ */
+public void printSummary()
+{
+   
+}
+</pre>
+</div>
+<h1>Source File</h1>
+<p>examScores.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter scores. Type -1 to stop.
+98
+87
+86
+85
+85
+78
+73
+72
+72
+72
+70
+66
+63
+50
+-1
+
+============================
+       Summary Report
+============================
+Total number of grades = 14
+Number of A's = 1
+Number of B's = 4
+Number of C's = 6
+Number of D's = 2
+Number of F's = 1
+</pre>
+</div>
+
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit14_while/solutions/03_examScoresSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+
+	<br>
+</div>

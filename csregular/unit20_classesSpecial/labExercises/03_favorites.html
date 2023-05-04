@@ -1,0 +1,175 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Favorites</div>
+
+<div id="csContent">  
+ <p>In this assignment you are going to implement two classes: a <strong>Favorites</strong> class and a 
+ <strong>FavoritesManager</strong> class. The FavoritesManager class will be a client
+	of the Favorites class. It will also contain the main method for the program.</p>
+   <div id="csNote"><strong style="color:red">Replit Users:</strong> If you are using Replit you will need to rename the FavoritesManager class to <strong>Main</strong>. Replit requires that your program have a Main class.</div>
+<h1>Directions</h1>
+<h3>Favorites class</h3>
+<p>The Favorites class is going to keep track of a person's favorite things. This class could
+   contain any number of fields but we are going limit ours to just five. They are favorite food,
+   favorite color, favorite music, favorite automobile, and favorite sport.</p>
+
+<p>Create a file named <strong>Favorites.java</strong> and add the following code.</p>
+<div id="csCode">
+<pre>
+public class Favorites
+{
+   // instance variables
+   
+   // constructors
+   
+   // toString method
+   
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<p>We will need a variable to store the person's
+   name and his/her favorite food, favorite color, favorite music, favorite automobile, and favorite sport. 
+   Add the following code to the instance variables section.</p>
+<div id="csCode">
+<pre>
+private String name;	   // The peron's name
+private String food;       // Favorite food
+private String color;      // Favorite color
+private String music;      // Favorite music
+private String automobile; // Favorite automobile
+private String sport;      // Favorite sport
+</pre>
+</div>
+
+<h3>Constructors</h3>
+<div id="csList">
+<ol>
+<li>Create <strong>one constructor</strong> for the Favorites class that will allow a client to 
+    assign specific values to each of the 6 instance variables.</li>
+</ol></div>
+
+<h3>toString Method</h3>
+<div id="csList">
+<ol start="2">
+<li>Create a toString method for the Favorites class that will display each instance variable
+   with labels to identify them.</li>
+   </ol></div>
+<br><br>
+<h3>Client Program - FavoritesManager class</h3>
+<p>The purpose of the FavoritesManager class is to test the functionality of the Favorites class. To do this it
+   instantiates a Favorites object, allows the user to fill the object with values entered from the keyboard, 
+   and then displays the information about each object.</p>
+<p>Create a file named <strong>FavoritesManager.java</strong> and add the following code.</p>
+
+<div id="csNote"><strong style="color:red">Replit Users:</strong> If you are using Replit you will need to rename the FavoritesManager.java file to <strong>Main.java</strong>. Replit requires that your program have a file named Main.java.</div>
+
+<div id="csCode">
+<pre>
+import java.util.*;
+
+public class FavoritesManager
+{  
+   //instance variables
+   
+   // methods
+   public void inputFavorites()
+   {
+   
+   }
+   
+   public void printFavorites()
+   {
+   
+   }
+   
+   public static void main(String[] args)
+   {
+       FavoritesManager app = new FavoritesManager();
+       app.inputFavorites();
+       app.printFavorites(); 
+   }	
+}</pre>
+</div>
+<h3>Instance Variables</h3>
+<p>Add the following line of code under the instance variables section.</p>
+<div id="csCode">
+<pre>
+private Favorites myFavorites;
+</pre>
+</div>
+<p>Since the Favorites object used in this class is accessed both in the inputFavorites
+   method and the printFavorites method it has to be declared as an instance variable.
+   Notice that the Favorites object is only declared. An object has not been instantiated 
+   and assigned to it yet. This will take place in the inputFavorites method after the 
+   information for the object has been input from the keyboard.</p>
+   
+<h3>inputFavorites Method</h3>
+<p>The purpose of the inputFavorites method is to allow a user to enter his/her favorite things
+   from the keyboard and then store this information in a Favorites object. Add the following code
+   to the inputFavorites method.</p>
+ <div id="csCode">
+<pre>
+Scanner keyboard = new Scanner(System.in);
+
+System.out.print("Enter person's name -->");
+String name = keyboard.nextLine();
+System.out.print("Enter favorite food -->");
+String food = keyboard.nextLine();
+System.out.print("Enter favorite color -->");
+String color = keyboard.nextLine();
+System.out.print("Enter favorite music -->");
+String music = keyboard.nextLine();
+System.out.print("Enter favorite automobile -->");
+String auto = keyboard.nextLine();
+System.out.print("Enter favorite sport -->");
+String sport = keyboard.nextLine();</pre>
+</div>
+  <p>The favorite values are stored in 6 local variables. The next step is store 
+    this information in a Favorites object so that it can be grouped together. 
+    To do this you instantiate a Favorites object and pass the favorite values 
+    to the object through the constructor's parameter list. Add the following 
+    code to the inputFavorites method.</p>
+<div id="csCode">
+<pre>
+myFavorites = new Favorites(name, food, color, music, auto, sport);
+</pre>
+</div>
+<h3>printFavorites Method</h3>
+<div id="csList">
+<ol start="3">
+<li>Implement the printFavorites method so that it will display the contents of the 
+myFavorites object.</li>
+</ol></div>
+<br>
+<h1>Source File</h1>
+<p>Favorites.java</p>
+<p>FavoritesManager.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter person's name --> John Wayne
+Enter favorite food --> Chinese
+Enter favorite color --> Purple
+Enter favorite music --> Classical
+Enter favorite automobile --> Ford Truck
+Enter favorite sport --> Football
+
+
+         My Favorites
+----------------------------
+Name       : John Wayne
+Food       : Chinese
+Color      : Purple
+Music      : Classical
+Automobile : Ford Truck
+Sport      : Football
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit20_classesSpecial/solutions/03_favoritesSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>

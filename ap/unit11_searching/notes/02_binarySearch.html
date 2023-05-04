@@ -1,0 +1,100 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Binary Search</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Binary Search</li>
+						<li>What is the best case efficiency of a Binary Search</li>
+						<li>What is the average case efficiency of a Binary Search</li>
+						<li>What is the worst case efficiency of a Binary Search</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Binary Search</h1>
+<p>A linear search works well for arrays that are fairly small(a few hundred elements). As the array
+  gets very large (thousands or millions of elements), however, the efficiency of the search degrades.
+  When we have an array of elements that are in ascending order, such as a list of numbers or names,
+  there is a much better way to proceed. For example, in ordinary life, we do not use a linear search
+  to find a name in a phone book. If we are looking for "Morrison," we open the book at our estimate
+  of the middle page. If we're not the "Mo" page, we look before or after, depending on whether we 
+  have opened the book at the "N" page or the "L" page. For computation, we can formalize this kind
+  of search technique in an algorithm known as <strong>binary search</strong>. This method is much faster than linear
+  search for very large arrays.</p>
+
+<p>The basic idea of binary search is to examine the element at the array's midpoint on each pass
+   through the search loop. If the current element matches the target, we return its position. 
+   If the current element is less than the target, then we search the part of the array to the right
+   of the midpoint (containing the positions of the greater items). Otherwise, we search the part of
+   the array to the left of the midpoint (containing the positions of the lesser items). On each pass
+   through the loop, the current leftmost position or the current rightmost position is adjusted to
+   track the position of the array being searched.</p> 
+
+<div id="csNote">To perform a binary search the data must be sorted in either ascending
+   or descending order.</div>
+
+<p>The applet below demonstrates the process used by a binary search to find a value in an
+   array of integers.</p>
+   
+   <center> <applet
+           code	= "BinaryApplet.class"
+		   archive = "BinaryApplet.jar"
+		   codebase = "applets"
+           width	= "500"
+           height	= "250">
+     </applet></center>
+
+ <h1>Binary Search Algorithm</h1>
+ <div id="csCode"><pre>
+public int binarySearch(int[] a, int key)
+{
+   int left = 0;                           // Establish the initial
+   int right = a.length - 1;               // endpoints of the array
+        
+   while(left <= right)                    // Loop until endpoints cross
+   {
+       int midpoint = (left + right) / 2;  // Compute the current midpoint
+       if(a[midpoint] == key)              // Target found; return its index
+          return midpoint;
+       else if(a[midpoint] < key)          // Target to right of midpoint
+          left = midpoint + 1;
+       else                                // Target to left of midpoint
+          right = midpoint - 1;
+   }
+   return -1;                              // Target not found
+}
+</pre></div>  
+
+<h1>Algorithm Analysis / Time Efficiency</h1>
+<p>Assume <strong>n</strong> represents the size of a list to be searched.</p>
+
+<p>The <strong>Binary Search</strong> has the following time efficiency:</p>
+<div id="csList">
+<ul>
+
+<li><p><strong>Best Case</strong>: the key is found on the first try.</p></li>  
+<li><p><strong>Worst Case</strong>: the key is not in the list or is at either end of
+   a sublist. Here the n elements must be divided by 2 until there is just one element,
+   and then the last element must be tested. This equals 1 + log<sub>2</sub>n comparisons. Thus, in 
+   the worst case, the algorithm is <strong>log<sub>2</sub>n</strong>. 
+   For example, if the size of the list is 8, then the number of comparisons needed is
+   3 since log<sub>2</sub>8 = 3.</p>
+   
+   
+   <p>For list sizes that are not powers of 2 you can round <strong>n</strong> up to the next power of 2 and 
+      take the exponent. For example, if the size of an array is 9. Since 9 is not a power of 2
+    round 9 up to 16 (the next power of 2), which equals 2<sup>4</sup>. Therefore you would
+    need four comparisons to find it. </p></li> 
+   
+<li><p><strong>Average Case</strong>: you would need about half the comparisons of the worst case. 
+
+
+<br>
+</div>	
+

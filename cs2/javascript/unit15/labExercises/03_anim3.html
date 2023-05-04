@@ -1,0 +1,166 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">15-3 Javascript Animation 3</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="_blank" style="color:blue">Drawing on a Canvas</a></p></li>
+</ul>
+
+<h1>Multiple Squares</h1>
+  <p>To put our new animation loop to the test we are going to modify the previous program so that it animates
+      100 squares. To do this we are going to use an array to store the squares. Since this code is going to be more complex than just
+      animating a single square we are going to add an additional class to the program named <strong>Squares</strong> 
+      that will have the responsibility of updating and rendering the array of squares on the canvas.
+  </p>
+
+
+<h1>Create Project</h1>
+<ol id="csList">
+    <li><p>Open Visual Studio. Click the <strong>File</strong> menu and select <strong>Open Folder...</strong>.
+    <li><p>Navigate to the Animation folder you created in the previous lab
+    and click the <strong>Select Folder</strong> button.</p></li>
+    <li><p>In the EXPLORER tree click on the <strong>New Folder</strong> button. Create a new 
+         folder named <strong>Animation3</strong>.</p></li>
+    <li><p>Highlight the Animation3 folder and select the <strong>New Folder</strong> button and create a new folder 
+        named <strong>js</strong>.</p>
+    <li><p>Highlight the js folder and select the <strong>New File</strong> button and create a new file 
+        named <strong>Animation.js</strong> then add the following code.</p>
+<div id="csCode" style="width:600px"><pre>class Animation
+{
+    constructor()
+    {
+        this.squares = new Squares();
+        this.context;
+
+        this.initialize();
+    }
+
+    initialize()
+    {
+        this.context = document.getElementById("animationCanvas").getContext("2d");
+        this.squares.initialize(this.context);  
+    }
+
+    update() 
+    {
+        this.squares.update();
+    }
+
+    draw()
+    {
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.squares.draw();
+    }
+
+    run()
+    {
+        this.draw();
+        this.update();  
+    }
+}
+</pre></div></li>
+<li><p>Add a new file named <strong>Squares.js</strong> to the js folder then 
+    add the following code.</p>
+<div id="csCode"><pre>class Squares
+{
+    constructor()
+    {
+        this.array = [];         // array of squares
+        this.width = 50;         // width of a square
+        this.context = null;
+    }
+
+    initialize(context) 
+    {
+        this.context = context;
+        for (var i = 0; i < 100; i++) 
+        {
+            // create random location (x, y) within canvas boundaries
+            var x = Math.floor(Math.random() * (640 - this.width));
+            var y = Math.floor(Math.random() * (480 - this.width));
+            var vx;    // horizontal velocity
+
+            // Half of the squares move left, other half move right
+            if (i % 2 === 0)
+                vx = -1;          // move left
+            else
+                vx = 1;           // move right
+
+            // create an object literal that represents a square and store its reference in the variable square
+            var square = { x: x, y: y, w: this.width, h: this.width, vx: vx };
+
+            // add the square object to the array
+            this.array[i] = square;
+        }
+    }
+
+    update()
+    {
+        for (var i = 0; i < 100; i++)  
+        {
+            if (this.array[i].x === (640 - 50) || this.array[i].x === 0)  // if at edge of world
+            {
+                this.array[i].vx = this.array[i].vx * -1;     // flip direction
+            }
+            this.array[i].x = this.array[i].x + this.array[i].vx;   // update the location of each square
+        }
+    }
+    
+    draw() 
+    {
+        for (var i = 0; i < 100; i++)    // draw squares
+        {
+            this.context.fillRect(this.array[i].x, this.array[i].y, this.array[i].w, this.array[i].h);
+        }
+    }
+}
+</pre></div>
+
+
+</li>
+<li><p>Add a new file named <strong>index.html</strong> to the Animation3 folder then 
+       add the following code.</p>
+<div id="csCode"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Animation3&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;script src="js/Animation.js"&gt;&lt;/script&gt;
+        &lt;script src="js/Squares.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+        #animationCanvas {
+            border: 3px black solid;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+            var animate = new Animation();
+
+            // animation loop
+            function start() 
+            {
+                requestAnimationFrame(start);
+                animate.run();
+            }
+            start();   // invoke or call the start function
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div></li>
+</ol>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>Execute the program.</p></li>
+    <li><p>Modify the <strong>update</strong> method so that instead of bouncing off the horizontal and vertical edges of the canvas the 
+           squares wraparound the canvas window. For example, When a square goes off the screen on the left edge of the canvas it should
+           reappear on the right edge of the screen continuing its movement in the same direction. If a square travels off the screen
+           on the right edge of the canvas it should reappear on the left edge continuing its movement in the same direction.
+   </p></li>
+</div>	

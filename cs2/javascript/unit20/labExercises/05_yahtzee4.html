@@ -1,0 +1,67 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-5 Javascript Yahtzee4</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank" style="color:blue">Create Javascript Objects</a></p></li>
+    <li><p><a href="http://www.w3schools.com/jsref/met_win_setinterval.asp" target="_blank" style="color:blue">setInterval</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Timing Events</a></p></li>
+</ul>
+
+
+<h1>Discussion</h1>
+<p>Download the following NetBeans project: <a href="apFreeResponse/Yahtzee4.zip" style="color:blue">Yahtzee4</a>. Unzip it and place it in your working directory.</p></li>
+<h3>Game Totals</h3>
+<p>The purpose of this lesson is to calculate the total scores for the game. To help with these calculates four new fields
+   have been added to the yahtzee object: gameCount, upperCount, yahtzeeCount, and yahtzeeBonus.</p>
+
+<div id="csOutput" style="width:650px"><pre>
+function yahtzee() {
+    this.context = null;
+    this.dice = [];
+    this.images = [];
+    this.loadCount = 0;
+    this.rolled = false;
+    this.numRolls = 3;
+    this.gameCount = 0;
+    this.upperCount = 0;
+    this.yahtzeeCount = -1;
+    this.yahtzeeBonus = 0;
+};
+</pre></div> 
+<p><strong>gameCount</strong> - a yahtzee game consists of 13 rounds or turns. This variable tracks how
+   many rounds have occurred. When gameCount reaches 13 the game is over and the totals are calculated and displayed.</p>
+<p><strong>upperCount</strong> - the upper section of the scoreboard has 6 sections. When the player has selected
+   all 6 sections the total score for the upper section, including the bonus section, can be calculated and
+   displayed in the designated divs. This variable tracks how many sections of the upper section have been
+   selected. When upperCount reaches 6 the upper section is complete so the totals are calculated and displayed.</p>
+<p><strong>yahtzeeCount</strong> - this variable tracks how many yahtzees the player has rolled. A player is awarded a 100 
+   bonus points for each extra yahtzee. The variable is assigned a value of -1 because a player is not
+   awarded a bonus till the second yahtzee rolled.</p>
+<p><strong>yahtzeeBonus</strong> - stores the total bonus points awarded for multiple yahtzees.</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>Implement the method <strong>calculateUpperTotals</strong>. Method calculateUpperTotals calculates
+           the total scores for the upper section of the scoreboard, including the bonus section if
+           applicable, and displays them in the following divs:
+           upperScore, upperBonus, upperTotal, and upperTotal2. upperTotal2 is the upper sections total
+           score displayed again in the lower section.</p></li>
+    <li><p>Implement the method <strong>calculateLowerTotals</strong>. Method calculateLowerTotals calculates
+           the total score for the lower section of the scoreboard and the games final score which
+           is the sum of the upper section and the lower section. The calculation for the lower section includes
+           yahtzee bonus points earned for any extra yahtzees. The totals are displayed in the following divs:
+           lowerTotal and grandTotal.</p></li>
+    <li><p>Modify the game so that the variables <strong>gameCount</strong> and <strong>upperCount</strong> are utilized as described above.</p></li>
+    <li><p>Modify the game so that the variables <strong>yahtzeeCount</strong> and 
+            <strong>yahtzeeBonus</strong> are utilized as described above.</p></li>
+    <li><p>In the index html file remove the code that displays the "Reset Turn" button. Then modify the
+           game so that when a player clicks on one of the "click" buttons the <strong>resetTurn</strong> method
+           is called.</p></li>
+</ol>
+
+<br><hr><br>
+<br>
+</div>	

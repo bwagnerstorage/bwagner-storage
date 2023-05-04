@@ -1,0 +1,162 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Largest</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that inputs a series of 10 numbers from the keyboard, then determines
+     and prints the largest of the numbers. You must use a do-while loop in your implementation.</p>
+  
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class Largest
+{
+    private int largest = 0;   // stores current largest number
+    private Scanner keyboard = new Scanner(System.in);
+	
+    /* This method compares parameter num1 to parameter num2. If num1 is
+     * greater than num2 the method returns num1; otherwise it returns
+     * num2.
+     * @ return the larger of num1 and num2
+     * @ param num1 first number in comparison
+     * @ param num2 second number in comparison
+     */
+    public int compare(int num1, int num2)
+    {
+        
+    }
+	
+    /* This method prompts the user to enter 10 numbers. As each number 
+     * is read the method makes a call to compare method so the new input
+     * number can be compared to the current largest number. The number
+     * returned by the compare method is stored in the instance variable
+     * largest.
+     */
+    public void findLargest()
+    {
+        
+    }
+
+    /* This method displays the instance variable largest.
+     */
+    public void printLargest()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Largest app = new Largest();
+        app.findLargest();
+        app.printLargest();
+    }
+}
+</pre>
+</div>
+<p>You are going to complete 2 void methods and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+<h3>Method compare</h3>
+<p>Complete the method <strong>compare</strong> shown below. This method compares the two
+   parameters num1 and num2. If num1 is greater than num2 the method returns num1. If num2 is
+   greater than num1 the method returns num2.</p>
+<div id="csCode">
+<pre>
+/* This method compares parameter num1 to parameter num2. If num1 is
+ * greater than num2 the method returns num1; otherwise it returns
+ * num2.
+ * @ return the larger of num1 and num2
+ * @ param num1 first number in comparison
+ * @ param num2 second number in comparison
+ */
+public int compare(int num1, int num2)
+{
+        
+}
+</pre>
+</div>
+<h3>Method findLargest</h3>
+<p>Complete the method <strong>findLargest</strong> shown below. This method prompts
+   the user to enter 10 numbers. As each number is read from the keyboard the method
+   makes a call to the <strong>compare</strong> method. The compare method takes as its two parameters
+   the new input number and the instance variable largest . The number returned by the 
+   compare method is assigned to the instance variable largest. The method needs to
+   utilize a do-while loop.</p>
+<div id="csCode">
+<pre>
+/* This method prompts the user to enter 10 numbers. As each number 
+ * is read the method makes a call to compare method so the new input
+ * number can be compared to the current largest number. The number
+ * returned by the compare method is stored in the instance variable
+ * largest.
+ */
+public void findLargest()
+{
+        
+}
+</pre>
+</div>
+<h3>Method printLargest</h3>
+<p>Complete the method <strong>printLargest</strong> shown below. This method displays 
+   the instance variable largest using the following format:</p>
+   <div id="csOutput">
+   <pre>
+The Largest number is 230</pre>
+   </div>
+<div id="csCode">
+<pre>
+/* This method displays the instance variable largest.
+ */
+public void printLargest()
+{
+
+}
+</pre>
+</div>
+<h1>Source File</h1>
+<p>Largest.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter 10 numbers 
+4 
+2 
+10 
+230 
+87 
+1 
+120 
+54 
+20 
+43
+
+The Largest number is 230
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter 10 numbers
+5
+17 
+98 
+530 
+22 
+71 
+999 
+12 
+37 
+52
+
+The Largest number is 999
+</pre>
+</div>
+<br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit15_doWhile/solutions/04_largestSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>
+

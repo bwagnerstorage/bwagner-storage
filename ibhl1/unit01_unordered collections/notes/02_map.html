@@ -1,0 +1,191 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Maps</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>How to utilize a HashMap.</li>
+						<li>How to utilize a TreeMap.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>UUnordered Collection: Map</h1>
+      <p><strong>Interfaces: </strong>Map</p>
+      <p><strong>Implementing Classes: </strong>HashMap, TreeMap</p>
+      <hr>
+      <h2>Map</h2>
+      <p>A map is a collection of key-to-value mappings, where both key and value 
+        are objects. A map cannot contain duplicate keys, which means that each 
+        key maps to exactly one value. Different keys, however, can map to the 
+        same value. If a duplicate key is put into map the previous value for 
+        that key will be replaced with new value. Two examples of maps are a dictionary 
+        (<strong>key</strong> - word, <strong>value</strong> - definition) and 
+        a phone book (<strong>key</strong> - name, <strong>value</strong> - phone 
+        number).</p>
+      <p>The JCF provides an interface with the following methods</p>
+      <h2>interface java.util.Map&lt;K,V&gt;</h2>
+      <table id="csTable" align="left" style="margin-top: 0px">
+        <tr> 
+          <td>int <strong>size</strong>()</td>
+          <td>returns the number of key/value mappings in the map</td>
+        </tr>
+        <tr> 
+          <td>boolean <strong>containsKey</strong>(Object key)</td>
+          <td><p>returns true if the map contains a mapping for key, false otherwise</font></p></td>
+        </tr>
+        <tr> 
+          <td><strong>put</strong>(K key, V value)</td>
+          <td>Associates key with value<br>
+              returns the value formerly associated with key</td>
+        </tr>
+        <tr> 
+          <td>V <strong>get</strong>(Object key)</td>
+          <td>returns the value associated with key or null if there is no associated value</td>
+        </tr>
+        <tr> 
+          <td>V <strong>remove</strong>(Object key)</td>
+          <td>removes and returns the value associated with key</td>
+        </tr>
+        <tr> 
+          <td>Set&lt;K&gt; <strong>keySet</strong>()</td>
+          <td>returns the set of keys contained in the map</td>
+        </tr>
+      </table>
+      <h2>Implementing Classes</h2>
+      <p>The two <em>Map</em> implementations in the AP subset are <strong>HashMap</strong> 
+        and <strong>TreeMap</strong>. Once again their names are derived from 
+        the technique used to store and retrieve the elements in a map.</p>
+		
+      <h2>HashMap (class java.util.HashMap&lt;K,V&gt; implements java.util.Map&lt;K,V&gt;)</h2>
+	  
+      <p>The <em>HashMap</em> class implements the <em>Map</em> interface with 
+        a hash table which means there is no particular ordering of elements. 
+        <em>HashMap</em> provides O(1) run times for the <em>get</em> and <em>put</em> 
+        operations.</p>
+      <p>The methods of <em>HashMap</em> in the AP Java subset are the same methods 
+        as those given for the <em>Map</em> interface: <strong>put</strong>, <strong>get</strong>, 
+        <strong>remove</strong>, <strong>containsKey</strong>, <strong>size</strong>, 
+        and <strong>keySet</strong>.</p>
+      <p><strong>Iterating over Maps</strong></p>
+      <p>To iterate through a map use the <strong>keySet</strong> method. The <em>keySet</em> method of the <em>Map</em> interface returns 
+        the set of keys for the map. You can use code like the following to iterator 
+        over the set of keys:</p>
+      <div id="csCode"><pre>Iterator iter = m.keySet().iterator;  // get set of keys
+while(iter.hasNext())
+{
+   System.out.println(iter.next());
+}</pre></div>
+
+      <h3><strong>HashSet Examples</strong></h3>
+      <div id="csCode"><pre>import java.util.*;
+
+public class MapDemo
+{
+    public static void main(String[] args)
+    {
+       <font color="#009900">// constructor</font>
+       HashMap&lt;Integer, String&gt; map = new HashMap&lt;Integer, String&gt;();
+       
+       <font color="#009900">// put method</font>
+       map.put(1, "dog");
+       map.put(2, "cat");
+       map.put(3, "bird");
+       
+       <font color="#009900">// get method</font>
+       String ans1 = map.get(1);
+       String ans2 = map.get(2);
+       String ans3 = map.get(3);
+       
+       System.out.println(ans1);
+       System.out.println(ans2);
+       System.out.println(ans3);
+       
+       <font color="#009900">// remove method</font>
+       String ans4 = map.remove(2);
+       System.out.println(ans4 + " has been removed");
+       
+       <font color="#009900">// size method</font>
+       System.out.println("Size = " + map.size());
+       
+       <font color="#009900">// containsKey method</font>
+       if(map.containsKey(1))
+       {
+          System.out.println("key is in map");
+       }
+       
+       <font color="#009900">// Iterate over map using set of keys</font>
+       Iterator iterator = map.keySet().iterator();
+       while(iterator.hasNext())
+       {
+          System.out.println(map.get(iterator.next()));
+       }
+       
+    }
+}</pre></div>
+      <br>
+      <h2>TreeMap (class java.util.TreeMap&lt;K,V&gt; implements java.util.Map&lt;K,V&gt;)</h2>
+	  
+      <p>The <em>TreeMap</em> class implements the <em>SortedMap</em> interface 
+        using a balanced binary search tree. The class guarantees ascending key 
+        order based on the ordering of the key class. <em>TreeMap</em> guarantees 
+        O(log n) performance for the <em>containsKey</em>, <em>get</em>, and <em>put</em> 
+        operations.</p>
+      <p>The operations for the <em>TreeMap</em> are also those described for 
+        the <em>Map</em> interface: <strong>put</strong>, <strong>get</strong>, 
+        <strong>remove</strong>, <strong>containsKey</strong>, <strong>size</strong>, 
+        and <strong>keySet</strong>.</p>
+      <h3>TreeMap Example</h3>
+      <div id="csCode"><pre>import java.util.*;
+
+public class MapDemo
+{
+    public static void main(String[] args)
+    {
+       <font color="#009900">// constructor</font>
+       TreeMap&lt;Integer, String&gt; map = new TreeMap&lt;Integer, String&gt;();
+       
+       <font color="#009900">// put method</font>
+       map.put(1, "dog");
+       map.put(2, "cat");
+       map.put(3, "bird");
+       
+       <font color="#009900">// get method</font>
+       String ans1 = map.get(1);
+       String ans2 = map.get(2);
+       String ans3 = map.get(3);
+       
+       System.out.println(ans1);
+       System.out.println(ans2);
+       System.out.println(ans3);
+       
+       <font color="#009900">// remove method</font>
+       String ans4 = map.remove(2);
+       System.out.println(ans4 + " has been removed");
+       
+       <font color="#009900">// size method</font>
+       System.out.println("Size = " + map.size());
+       
+       <font color="#009900">// containsKey method</font>
+       if(map.containsKey(1))
+       {
+          System.out.println("key is in map");
+       }
+       
+       <font color="#009900">// Iterate over map using set of keys</font>
+       Iterator iterator = map.keySet().iterator();
+       while(iterator.hasNext())
+       {
+          System.out.println(iterator.next());
+       }
+       
+    }
+}</pre></div>
+
+<br>
+</div>

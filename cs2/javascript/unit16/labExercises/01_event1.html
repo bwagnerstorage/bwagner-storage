@@ -1,0 +1,230 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">16-1 Javascript EventHandler 1</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="https://www.w3schools.com/js/js_htmldom_events.asp" target="_blank" style="color:blue">Events</a></p></li>
+    <li><p><a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" style="color:blue">Event Listener</a></p></li>
+    <li><p><a href="https://www.w3schools.com/jsref/obj_keyboardevent.asp" target="_blank" style="color:blue">KeyboardEvent</a></p></li>
+    <li><p><a href="https://www.w3schools.com/jsref/obj_mouseevent.asp" target="_blank" style="color:blue">MouseEvent</a></p></li>
+
+</ul>
+
+<h1>Event</h1>
+  <p>An <strong>event</strong> is "something" that occurs within a browser and more specifically a webpage. Clicking the mouse
+     on an html element, typing in a textbox, dragging the mouse across a canvas are all examples of an event. In Javascript, an 
+     <strong>event target</strong> is an object that has the ability to receive events and can notify other objects when these events occur.
+     In order for another object to receive event notifications from a target the object must first register a "listener" with the target.
+    The window object, document object, and most of the html elements you can place on a webpage are all event target objects and therefore
+    they can "listen" for events to occur.</p>
+<h1>Event Listener</h1>
+<p>Objects register listeners with target objects by calling the method <strong>addEventListener</strong>.
+    This method takes two parameters. The first parameter is the name of the event being registered. Some examples of events include
+    "click", "mouseover", "mousemove", "keyup", "keydown", and "load". The second parameter of 
+    the addEventListener method is what is call a <strong>callback function</strong>. A callback function is a function that is passed
+    as a parameter to another function. (I come from a C++/Java background. The concept of a function being passed as a parameter
+    was foreign to me and it took me a while to get use to this idea. It was not until I discovered that functions in Javascript
+    are actually objects that I fully understood.) When the addEventListener method is executed by the event
+    target a "listener" is established for the specified event. When the event is detected by the target it notifies the requesting
+    object by calling the provided callback function.</p>
+    
+<img src="images/js_01_event1.PNG" width="70%">
+
+<p> The callback function used in the sample code above uses what is called an 
+    <strong>anonymous</strong> function. An anonymous function is a function without a name. 
+    It is another one of those weird Javascript syntaxes that turns out to be quiet useful. 
+    With an anonymous function you actually implement the function in the parameter list of a method.
+ </p>  
+
+<p>Lets look at an example.</p>
+
+<div id="csCode"><pre>canvas.addEventListener("mousemove", function(event) 
+{
+    var mouseX = event.clientX;  // get mouse's current x position
+    var mouseY = event.clientY;  // get mouse's current y position
+
+    // if mouse cursor is inside dimensions of square
+    if(mouseX >= this.x && mouseX <= this.x + this.w &&
+       mouseY >= this.y && mouseY <= this.y + this.w)
+    {
+        this.fillColor = "#00FF00";  // color green
+    }
+    else
+    {
+        this.fillColor = "#000000";  // color black
+    }
+}.bind(this));
+</pre></div>
+<p>In this example, the event target is the <strong>canvas</strong> object, therefore it makes the call to the addEventListener
+method. The event being registered is the <strong>"movemouse"</strong> event, and the callback function is anonymous. The code inside the callback function
+responds to the "mousemove" event by first retrieving the location of the mouse's cursor when the event occurred. It then checks to see
+if the mouse's location lies within the boundary of square object. If it does then the square's fill color is changed to green, otherwise
+it remains black.</p>
+
+<p>Notice that the callback function has a parameter named<strong>event</strong>.
+   When the target detects an event and then calls the callback function for that event it fills the event parameter with information
+   about the event that occurred. In our example, the event parameter contains the location
+   of the mouse when the mousemove event was detected. The callback function retrieves this information from the event parameter with the following
+   two lines of code.</p>
+
+<div id="csCode"><pre>var mouseX = event.clientX;  // get mouse's current x position
+var mouseY = event.clientY;  // get mouse's current y position
+</pre></div>
+
+<h2>The bind function</h2>
+<p>Look at the callback function in are example again. Notice after the closing curly brace "}" a call is made to a function called
+   <strong>bind</strong>. Here is an <a href="https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/" style="color:blue" target="_blank">article</a> that explains why the bind function call is necessary. If you are not really
+   interested in knowing why, then just know that you will need to call the bind function every time you use the addEventListener function 
+   along with a callback function that is anonymous.
+</p>
+
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>Create a new folder named <strong>EventHandler1</strong>. Inside this folder create another folder
+    named <strong>js</strong>.</p></li>
+<li><P>In the EventHandler1 folder create a new html file named <strong>01_event.html</strong> and then add the following code.<br>
+<div id="csOutput" style="width:630px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Event Handling 1&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;script src="js/Animation.js"&gt;&lt;/script&gt;
+        &lt;script src="js/Square.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+        #animationCanvas { 
+            border: 3px black solid;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+
+            // create Animation object
+            var animate = new Animation();
+
+            // animation loop
+            function start() 
+            {
+                requestAnimationFrame(start);
+                animate.run();
+            }
+            start();
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</p></li>
+<li><p>Create a file named <strong>Animation.js</strong> in the js folder and add the following code.</p>
+<div id="csOutput" style="width:630px"><pre>class Animation
+{
+    constructor()
+    {
+        this.square = new Square(295, 215, 80);   // create square
+        this.context = null;
+        this.initialize();
+    }
+
+    initialize()
+    {
+        var canvas = document.getElementById("animationCanvas"); 
+        this.context = canvas.getContext("2d");
+        this.square.initialize(canvas, this.context);
+    }
+
+    update()
+    {
+        this.square.update();
+    }
+
+    draw()
+    {
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.square.draw();
+    }
+
+    run()
+    {
+        this.draw();
+        this.update();  
+    }
+}
+</pre></div>
+</li>
+<li><p>Create a file named <strong>Square.js</strong> in the js folder and add the following 
+    code.</p>
+<div id="csOutput" style="width:630px"><pre>
+class Square
+{
+    constructor(x, y, w)
+    {
+        this.x = x;    // square's x coordinate
+        this.y = y;    // square's y coordinate
+        this.w = w;    // square's width
+        this.fillColor = "#000000";  // square's color
+        this.context = null;
+    }
+
+    initialize(canvas, context)
+    {
+        this.context = context;
+
+        canvas.addEventListener("mousemove", function(event) 
+        {
+            var mouseX = event.clientX;  // get mouse's current x position
+            var mouseY = event.clientY;  // get mouse's current y position
+
+            // if mouse cursor inside dimensions of square
+            if(mouseX >= this.x && mouseX <= this.x + this.w && 
+                mouseY >= this.y && mouseY <= this.y + this.w)
+            {
+                this.fillColor = "#00FF00";  // color green
+            }
+            else
+            {
+                this.fillColor = "#000000";  // color black
+            }
+        }.bind(this));
+    }
+
+   // add EventListeners below this line
+
+
+
+
+
+
+    update()
+    {
+        // no code needed
+    }
+
+    draw() 
+    {
+        this.context.beginPath();              // start drawing path
+        this.context.fillStyle = this.fillColor;     // fill color
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.context.rect(this.x, this.y, this.w, this.w);
+        this.context.fill();     // draw square
+    }
+}
+</pre></div>
+</li>
+<li><p>Execute the program and test the mousemove event handler. When the mouse cursor
+ is inside the square the square's color should turn green.</p></li>
+<li><p>Add another event handler to the Square class that will "listen" for a 
+       <strong>mousedown</strong> event. When this event is detected the callback function
+       should change the fill color of the square to red(#FF0000).</p></li>
+<li><p>Add another event handler to the Square class that will "listen" for a 
+    <strong>mouseup</strong> event. When this event is detected the callback function
+    should change the fill color of the square to blue(#0000FF).</p></li>
+</ol>
+
+  <br>
+  </div>

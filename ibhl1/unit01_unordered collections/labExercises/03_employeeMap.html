@@ -1,0 +1,346 @@
+
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Employee Map</div>
+
+<div id="csContent"> 
+
+      <p>A <strong>map</strong> is a collection that encapsulates an association 
+        between objects. Maps use <strong>key/value</strong> pairs to associate 
+        an object (the value) with a key; the map can be sorted or unsorted. Use 
+        a <em>TreeMap</em> if you wish the map to be sorted, use a <em>HashMap</em> 
+        if sorting is not a priority. </p>
+      <p>* Note that in a <em>TreeMap</em>, the ordering applies only to the <strong>keys</strong>, 
+        not the values themselves.</p>
+      <p>Write a program that allows a user to enter employee information into 
+        a map and then is able to search the map for an employee using the employee's 
+        social security number as the key. The program should also be able to 
+        display a list of employees currently in the map. The ordering of the 
+        list of employees need not be in any particular order.</p>
+      <h1>Directions</h1>
+      <p>1. Copy the following class into a java file named <strong>Employee.java</strong>.</p>
+      <div id="csCode"><pre>public class <font color="#FF0000">Employee</font>
+{
+    <font color="#006633">// Instance Variables</font>
+    private String name;
+    private String address;
+    private String SSN;
+    
+    <font color="#006600">// Constructors</font>
+    public Employee()
+    {
+        name = "";
+        address = "";
+        SSN = "";
+    }
+    
+    public Employee(String n, String a, String ssn)
+    {
+        name = n;
+        address = a;
+        SSN = ssn;
+    }
+
+    <font color="#006600">// Accessor Methods</font>
+    public String getName()
+    {
+        return name;
+    }
+    
+    public String getAddress()
+    {
+        return address;
+    }
+    
+    public String getSSN()
+    {
+        return SSN;
+    }
+
+    <font color="#006600">// Mutator Methods</font>
+    public void setName(String n)
+    {
+        name = n;
+    }
+    
+    public void setAddress(String a)
+    {
+        address = a;
+    }
+    
+    public void setSSN(String s)
+    {
+        SSN = s;
+    }
+    
+   <font color="#006600">// toString method</font>
+    public String toString()
+    {
+        String str;
+        str = "Name    = " + name + "\n" +
+              "Address = " + address + "\n" +
+              "SSN     = " + SSN;
+        return str;
+    }
+    
+}</pre></div>
+
+      <p>The chart below summarizes the <strong>key/value</strong> relationship 
+        that will be established in your program using the <em>Employee</em> class.</p>
+      <div id="csCode"><pre>Employee employee;
+employee = new Employee(&quot;George Washington&quot;, &quot;100 Main Street&quot;, &quot;000-00-0001);</pre></div>
+      <table id="csTable" width="59%">
+        <tr> 
+          <th width="42%"> <div align="center"><font color="#FFFFFF"><strong>key</strong></font></div></td>
+          <th width="58%"> <div align="center"><font color="#FFFFFF"><strong>value</strong></font></div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>Social Security Number</strong></div></td>
+          <td><div align="center"><strong>Employee object</strong></div></td>
+        </tr>
+        <tr> 
+          <td> <div align="center">000-00-0001</div></td>
+          <td> <div align="center">employee</div></td>
+        </tr>
+      </table>
+      <p>2. Copy the following code into a java file named <strong>EmployeeMap.java</strong>.</p>
+      <div id="csCode"><pre>import java.util.*;
+
+public class EmployeeMap
+{
+    <font color="#006600">// Instance Variables</font>
+    private Map &lt;String, Employee&gt; map;                  <font color="#006600">// the map</font>
+    private Scanner keyboard;
+
+    <font color="#006600">// Constructor</font>
+    public EmployeeMap()
+    {
+        map = new HashMap &lt;String, Employee&gt;();          <font color="#006600">// instantiate a HashMap</font>
+    }
+    
+    <font color="#006600">// Main Menu method</font>
+    public void menu()
+    {
+        int ans = 0;
+        
+        while(ans != 4)
+        {
+            System.out.println("========================");
+            System.out.println("       Main Menu        ");
+            System.out.println("========================");
+            System.out.println("1. Add Employee");
+            System.out.println("2. Get Employee");
+            System.out.println("3. Print Employee List");
+            System.out.println("4. Exit");
+            System.out.print("Selection--> ");
+            ans = keyboard.nextInt();
+            
+            if(ans == 1)
+            {
+                System.out.println("========================");
+                System.out.println("      Add Employee      ");
+                System.out.println("========================");
+                addEmployee();
+            }
+            if(ans == 2)
+            {
+                System.out.println("========================");
+                System.out.println("  Get Employee Record   ");
+                System.out.println("========================");
+                getEmployee();
+            }
+            if(ans == 3)
+            {
+                System.out.println("========================");
+                System.out.println("   Print Employee List  ");
+                System.out.println("========================");
+                printList();
+            }
+            
+            System.out.println();
+        }
+    }
+    
+<font color="#006600">    // PostCondition: gets an employees info from the keyboard and adds the 
+    //                Employee to the map.</font>
+    public void addEmployee()
+    {
+        
+    }
+    
+<font color="#006600">    // PostCondition: searchs the map for an employee using SSN#. If the employee
+    //                is found the employee's record is printed including his name,
+    //                address, and SSN. If the employee is not found, the message
+    //                "Employee not found" is printed.</font>
+    public void getEmployee()
+    {
+
+    }
+    
+<font color="#006600">    // PostCondition: prints a list of all employees including their names, addresses,
+    //                and SSNs.</font> <font color="#006600">List need not be in sorted order.</font>
+    public void printList()
+    {
+
+    }
+    
+    public static void main(String[] args)
+    {
+        EmployeeMap app = new EmployeeMap();
+        app.menu();
+    }
+}
+</pre></div>
+
+      <p>3. Implement the methods <strong>addEmployee</strong>, <strong>getEmployee</strong>, 
+        and <strong>printList</strong> as prescribed in their postconditions.</p>
+      <p><strong>printList Method</strong></p>
+	  <br>
+      <h3>How do you print the values contained in a map? </h3>
+      <p>1. Get a list (set) of the keys from the map.<br>
+        2. Use this list (set) of keys to retrieve the values from the map.</p>
+      <p>The <em>Map</em> method <strong>keySet</strong> returns the list of keys 
+        in a map as a set. If the map that calls the method is a <em>HashMap</em> 
+        the set will be returned as a <em>HashSet</em> and unsorted and if the 
+        map is a <em>TreeMap</em> the set will be returned as a <em>TreeSet</em> 
+        and sorted (by key).</p>
+      <div id="csCode"><pre>Iterator iterator = map.keySet().iterator;</pre></div>
+      <p>Note: You can't get an iterator on a map, but you can get an iterator 
+        on a set.</p>
+  <h1>Source File</h1>
+  <p>Employee.java</p>
+  <p>EmployeeMap.java</p>
+  <h1>Sample Run</h1>
+  <div id="csSampleRun"><pre>
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 1
+========================
+      Add Employee
+========================
+Enter name -->George Washington
+Enter address -->100 Main Street
+Enter SSN# -->000-00-0001
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 1
+========================
+      Add Employee
+========================
+Enter name -->Abraham Lincoln
+Enter address -->200 Elm Street
+Enter SSN# -->555-55-5555
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 1
+========================
+      Add Employee
+========================
+Enter name -->Teddy Roosevelt
+Enter address -->1212 Oak Street
+Enter SSN# -->123-456-7890
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 1
+========================
+      Add Employee
+========================
+Enter name -->Ronald Reagan
+Enter address -->5050 Rodeo Drive
+Enter SSN# -->222-22-2222
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 2
+========================
+  Get Employee Record
+========================
+Enter SSN# -->000-00-0001
+
+Name    = George Washington
+Address = 100 Main Street
+SSN     = 000-00-0001
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 2
+========================
+  Get Employee Record
+========================
+Enter SSN# -->111-11-1111
+
+Employee not found.
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection--> 3
+========================
+   Print Employee List
+========================
+Name    = George Washington
+Address = 100 Main Street
+SSN     = 000-00-0001
+
+Name    = Teddy Roosevelt
+Address = 1212 Oak Street
+SSN     = 123-456-7890
+
+Name    = Ronald Reagan
+Address = 5050 Rodeo Drive
+SSN     = 222-22-2222
+
+Name    = Abraham Lincoln
+Address = 200 Elm Street
+SSN     = 555-55-5555
+
+
+========================
+       Main Menu
+========================
+1. Add Employee
+2. Get Employee
+3. Print Employee List
+4. Exit
+Selection-->4
+</pre></div>
+
+<br>
+</div>

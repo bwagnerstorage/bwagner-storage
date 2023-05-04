@@ -1,0 +1,99 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center"></div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>The recursive methods we have looked at so far have all been non-void methods with a return value:</p>
+
+<div id="csList">
+   public <strong>int </strong>factorial(int n)<br>
+   public <strong>int</strong> countDown(int n)
+</div>
+<p>However, this is not a requirement when implementing a recursive method. A recursive method can be a void. Look at the code segment below.</p>
+
+<div id="csCode"><pre>
+public void song(int b)
+{
+   if( // base case has been reached )
+      return;
+   else
+      song(b-1);   // recursive case
+}
+</pre></div>
+<p>One approach used to exit a void method is to use a <strong>return</strong> statement with nothing after it.
+      Notice that the call to recursive case is made on a line that does not contain a return.</p>
+
+<p>When I was growing up, if we were on a long trip somewhere we would occasionally sing the
+    song "Bottles of Beer on the Wall". This old song is a perfect example of a recursive process. 
+	In this assignment you are going to implement a recursive method that writes out the words to 
+	this song. Since you are all under the drinking age, we will modify the song a little bit by 
+	making the bottles "root beer" instead of "beer". If you don't know the song refer to the Sample Run below.</p>
+
+<p>Copy the following code into a file named SongApp.java</p>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class SongApp
+{
+    public static void main(String[] args)
+    {
+        SongTester s = new SongTester();
+        Scanner keyboard = new Scanner(System.in);
+            
+        System.out.print("Enter number of bottles -->");
+        int b = keyboard.nextInt();
+        s.song(b);    // call to void method
+        System.out.println();
+        System.out.println();
+    }
+}
+
+class SongTester
+{
+    public void song(int b)
+    {
+
+    }
+}
+</pre></div>
+
+<p>Implement the song method declared above using recursion.</p>
+
+ 
+<h1>Source File</h1>
+<p>SongApp.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter number of bottles -->5
+
+5 bottles of root beer on the wall.
+5 bottles of root beer.
+Take one down, pass it around
+4 bottles of root beer on the wall.
+
+4 bottles of root beer on the wall.
+4 bottles of root beer.
+Take one down, pass it around
+3 bottles of root beer on the wall.
+
+3 bottles of root beer on the wall.
+3 bottles of root beer.
+Take one down, pass it around
+2 bottles of root beer on the wall.
+
+2 bottles of root beer on the wall.
+2 bottles of root beer.
+Take one down, pass it around
+1 bottles of root beer on the wall.
+
+1 bottles of root beer on the wall.
+1 bottles of root beer.
+Take one down, pass it around
+0 bottles of root beer on the wall.
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,97 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">9-1 Javascript Math (Random Numbers) </div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_math.asp" target="_blank" style="color:blue">Javascript Math</a></p></li>
+    </ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>File Name: 9_1_random.html</p></li>
+<li><p>Copy the following code:</p>
+    <div id="csOutput" style="width: 600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;09_1_random&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;   
+            }
+            #ranges {
+                font-size: 1.4em;
+                font-weight: bold;
+                width: 100px;
+                margin-right: 10px;
+            }
+            .numLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+          &lt;span class="numLabel"&gt;range 1..&lt;/span&gt; 
+          &lt;select id="ranges"&gt;
+            &lt;option value="10"&gt;10&lt;/option&gt;
+            &lt;option value="50"&gt;50&lt;/option&gt;
+            &lt;option value="100"&gt;100&lt;/option&gt;
+            &lt;option value="1000"&gt;1000&lt;/option&gt;
+            &lt;option value="10000"&gt;10000&lt;/option&gt;
+            &lt;option value="1000000"&gt;1000000&lt;/option&gt;
+          &lt;/select&gt;
+          &lt;button type="button" onClick="doRandom()"&gt;generate number&lt;/button&gt;
+         
+        &lt;br&gt;&lt;br&gt;
+      &lt;div id="output"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;        
+        function doRandom()
+        {
+            
+            
+        }
+    &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<li><p>Display the html file in a browser and click on the drop-down list.
+    <img src="images/javascript_random1.png"></p></li>
+<li><p>The drop down list displays a series of numbers from 10 to a million.
+        When the user presses the <strong>generate number</strong> button the web page displays a random
+       number between 1 and the number selected from the drop-down list. For example, if
+       the user selects 100 from the drop-down list then the page would display a random number
+       between 1 and 100 inclusive.</p></li>
+<li><p>Complete the function <strong>doRandom</strong>. This function retrieves the selected number
+       from the drop-down list, generates a random number from 1 up to that number, then displays
+       it in the "output" div.</p>
+       <p>To complete the function follow these steps:</p>
+       <ul id="csList">
+        <li><p>Use <strong>document.getElementById</strong> to get a reference to the drop-down list with id "ranges"
+               and store the reference in a variable named <strong>range</strong>.</p></li>
+        <li><p>Retrieve the number selected by the user in the drop-down list and store it in 
+                a variable named <strong>selection.</strong> One way to get the selected number is 
+                to use the drop-down list's <strong>value</strong> attribute.<br> Example: range.value</p></li>
+        <li><p>Use the math function <strong>parseInt</strong> to convert the value in the variable
+                selection from a string to an integer and store the value in a variable named <strong>num</strong>.</p></li>
+        <li><p>Use the math function <strong>random</strong> to create a random number in the range of
+                1 to num and store the value in a variable named <strong>random</strong>.</p></li>
+        <li><p>Display the random number in the "output" div. Use the math function <strong>round</strong> 
+               to display the random number rounded to an integer.</p></li>
+    </ul>
+</li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_random2.png">
+<br>
+</div>	

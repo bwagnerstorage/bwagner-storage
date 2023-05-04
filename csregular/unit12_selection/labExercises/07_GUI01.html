@@ -1,0 +1,259 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI01</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>To this point, you have written programs that take input from the keyboard, do some processing,
+    and then display the results on a console screen. Most modern programs, however, don't work this
+    way. This lesson will introduce you to another type of program called <strong>graphical user interface</strong>
+	or <strong>GUI</strong>. In a GUI program you start with a window called a frame and you add graphical components
+    like labels, buttons, textfield, combo boxes, menus, and others. A GUI program is called an 
+	event-driven program because it responds to events initiated by the user like pressing a button,
+    typing in a text field, or selecting a menu option.</p>
+   <p>The code below creates a Java GUI application program and displays its frame window. This code
+      will be the template we will use to create all of our GUI programs.</p>
+   <div id="csCode">
+    <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI01 extends JFrame
+{
+    <font color="#FF00FF">// constructor</font>
+    public GUI01()
+    {
+        <font color="#FF00FF">// set frame attributes</font>
+        setLayout(null);                                 <font color="#FF00FF">// no layout will be used</font>
+        setSize(500, 500);                               <font color="#FF00FF">// sets size of frame window</font>
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  <font color="#FF00FF">// activate close icon</font>
+        getContentPane().setBackground(Color.white);     <font color="#FF00FF">// set background color</font>
+        setVisible(true);                                <font color="#FF00FF">// show frame</font>
+    }
+    
+    <font color="#FF00FF">// main method</font>
+    public static void main(String[] args)
+    {
+        GUI01 app = new GUI01();    <font color="#FF00FF">// run program</font>
+    }
+}</pre>
+   </div>
+   <p>Since we will be using this code in all of our GUI programs lets break it apart and learn what each part does.</p>
+<h3>import Statement</h3>
+<p>Let's start with the import command. The import command allows your program access to classes that
+   are not in your project. Java developers have written hundreds of classes to inable you to create
+   GUI programs. Most of the classes fall under what Java developers call the Swing classes and they
+   can be accessed by including the following imports at the top of your program.</p>
+      <div id="csCode">
+    <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;</pre>
+   </div>
+   <h3>Inheritance</h3>
+   <p>The next line of code is the program's class declaration with the keyword <strong>extends</strong> and the
+     class name JFrame appended to the end. The JFrame class is one of the swing classes and its
+	 purpose is to create a GUI program's frame window. By adding the code <strong>extends JFrame</strong> to the
+	 end of the class declaration we are utilizing a powerful programming mechanism called
+	 <strong>inheritance</strong>. (Inheritance is a topic we will cover in much greater detail in later unit.) </p>
+      <div id="csCode">
+    <pre>
+public class GUI01 <font color="#FF0000">extends</font> JFrame</pre>
+   </div>
+   <p>The idea of inheritance is simple but powerful: When you want to create a new class and there is
+      already a class that includes some of the code that you want, you can derive your new class from 
+	  the existing class. In doing this, you can use the methods of the existing class without having to
+	  write them yourself. </p>
+   <p>Writing the code for your own frame window would be a very complex process. However, through
+      inheritance, it becomes fairly trivial. All you have to do is extend or inherit the JFrame class
+	  and your program automatically has the ability to create a frame window and you also have access
+	  to a whole list of methods that can be used to manipulate the attributes of the window. 
+	  In essence, your class becomes a JFrame class.</p>
+<h3>Constructor</h3>
+<p>A <strong>constructor</strong> is a special method that has the same name as the class it is defined in. Below is 
+   the declaration for our constructor. Notice the class is named GUI01 and the name of the
+   constructor is also GUI01.</p>
+   <div id="csCode">
+    <pre>
+public class <font color="#FF0000">GUI01</font> extends JFrame
+{
+    // constructor
+    public <font color="#FF0000">GUI01</font>()
+    {
+	
+</pre>
+   </div>
+   <p>Every GUI program we write will include a constructor. The constructor is important because it
+      will contain the majority of the code we write for our GUI programs.</p>
+ <h3>JFrame Methods</h3>
+ <p>All of the lines of code contained within the constructor reference methods of the JFrame class 
+    that became accessible through inheritance.</p>
+ <p>The first JFrame method is called <strong>setLayout</strong>. Layouts are used to automatically
+   position components within a frame. We will not be using layouts so the line of code below is 
+   setting the layout of the frame to null.</p>
+      <div id="csCode">
+    <pre>setLayout(null);</pre>
+   </div>
+ <p>The second JFrame method called within the constructor is <strong>setSize</strong>. This method 
+    sets the initial size of frame when it is displayed on the screen. The line of code below sets
+    the dimension of the frame to 500 pixels across by 500 pixels down. The default size of a frame
+    is (0,0) so you need to use this method to give your frame an initial size.</p>
+	<div id="csCode">
+    <pre>setSize(500, 500);</pre>
+   </div>
+   <p>The next JFrame method is <strong>setDefaultCloseOperation</strong>. This method is used to 
+      determine what happens to the program when a user presses the "x" icon in the upper right hand
+	  corner of your frame window. The line of code below causes the program to terminate when the "x" is
+	  pressed.</p>
+	  	<div id="csCode">
+    <pre>setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</pre>
+   </div>
+   <p>The next JFrame method is <strong>setBackground</strong>. This method sets the background color
+      for your frame window. The default frame color is gray. Java has preset colors that can be 
+	  accessed using the Color class.</p>
+	 <div id="csCode">
+    <pre>getContentPane().setBackground(Color.white);</pre>
+   </div>
+   <p>Notice the reference to the method <strong>getContentPane</strong> in the code above. The frame window within
+      a Java application is actually made up of several layers or panes. 
+  <p>In our GUI programs we are only concerned with the content pane layer. To gain access to this
+     pane you use the method getContentPane, which returns a reference to the current frame's content 
+	 pane object. The line of code</p>
+	 	 <div id="csCode">
+    <pre><font color="#FF0000">getContentPane</font>().setBackground(Color.white);</pre>
+   </div>
+   <p>is actually changing the background color of the content pane not the frame itself. Later on
+     when we want to add components like buttons or textfields to a frame we will actually be adding 
+	 them to content pane.</p>
+	 <p>The last JFrame method called within the constructor is setVisible. This method determines
+	    whether the frame window is visible when the program is executed.. By default a frame is
+	    invisible so you will need to call this method with an argument of true.</p>
+   <div id="csCode">
+    <pre>setVisible(true);</pre>
+   </div>
+   <h3>main Method</h3>
+   <p>Java Application programs must contain a main method. The code below is the main method for our template class.</p>
+	     <div id="csCode">
+    <pre>// main method
+public static void main(String[] args)
+{
+    GUI01 app = new <font color="#FF0000">GUI01()</font>;  // run program
+}
+</pre>
+   </div>
+   <p>The code highlighted in red is a call made to the constructor method discussed above. When the
+      program is executed the constructor is called which builds the frame window and sets all of its
+	  attributes like size, color, etc.</p>
+   <p>Every GUI program will have a main method similar to this one with the appropriate name.</p>
+   <h1>Exercise</h1>
+   <p>There are two sets of instructions depending upon whether you are using Replit or Netbeans as your IDE (editor).
+   <h3>Replit</h3>
+   <div id="csList">
+   <ol>
+<li><p>Logon to replit.<p/></li>
+
+<li><p>Create a new Java repl named "GUI01".</p></li>
+
+<li><p>In the File section of the replit window, click the Add File icon.</p></li>
+<li><p>Name the newly created file: GUI01.java. You should now have two java files: Main and GUI01.</p></li>
+<li><p>Copy the code located at the top of the GUI01 assignment page on my website and paste it in the file GUI01.java.</p></li>
+<li><p>Select the Main.java file. Delete all of the code currently in this file.</p></li>
+<li><p>Copy the following code and paste it in Main.java file:</p>
+<div id="csCode"><pre>class Main
+{
+    public static void main(String[] args)
+    {
+        GUI01 app = new GUI01();    // run program
+    }
+}
+</pre></div>
+</li>
+<li><p>Run the program.</p></li>
+</ol>
+
+   <h3>NetBeans</h3>
+   <div id="csList">
+<ol>
+<li><p>Open your NetBeans workspace.</p></li>
+
+<li><p>Add a new empty Java file named <strong>GUI01</strong> to your project.</p></li>
+
+<li><p>Copy the code located at the top of the GUI01 assignment page into this new file.</p></li>
+<li><p>Run the program.</p></li>
+
+</ol>
+  </div> 
+  <h1>Modifications</h1>
+  <p>Make the following modifications to the GUI01 class.</p>
+  <div id="csList">
+  <ol>
+  <li>Change the size of the frame to 400 x 300.</li>
+  <li>Change the color of the frame's background to one of the preset colors.</li>
+  
+  <p>Here is the list of the preset colors.</p>
+  
+  <table id="csTable" style="margin: 15px">
+        <tr> 
+          <th>Color</th>
+          <th>Command</th>
+        </tr>
+        <tr> 
+          <td>black</td>
+          <td>Color.black</td>
+        </tr>
+        <tr> 
+          <td>blue</td>
+          <td>Color.blue</td>
+        </tr>
+        <tr> 
+          <td>cyan</td>
+          <td>Color.cyan</td>
+        </tr>
+        <tr> 
+          <td>gray</td>
+          <td>Color.gray</td>
+        </tr>
+        <tr> 
+          <td>green</td>
+          <td>Color.green</td>
+        </tr>
+        <tr> 
+          <td>magenta</td>
+          <td>Color.magenta</td>
+        </tr>
+        <tr> 
+          <td>orange</td>
+          <td>Color.orange</td>
+        </tr>
+        <tr> 
+          <td>white</td>
+          <td>Color.white</td>
+        </tr>
+        <tr> 
+          <td>yellow</td>
+          <td>Color.yellow</td>
+        </tr>
+      </table>
+	 <li>Change the color of the frame's background to a custom color of your choosing.</li>
+	 
+	 <p>To create a custom color use the following code:</p>
+
+
+<div id="csCode" style="width:500px">
+    <pre>getContentPane().setBackground(new Color(50, 120, 200));</pre>
+   </div> 
+
+<p>The three numbers represent the RGB value of the color. They must be between 0 and 255 inclusive.</p>
+
+  </ol>
+  </div> 
+ 
+<h1>Source File</h1>
+<p>GUI01.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI01.png">
+	<br>
+</div>

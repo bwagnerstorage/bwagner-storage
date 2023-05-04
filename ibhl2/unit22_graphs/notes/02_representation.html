@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+  <div id="csHeader">Graph Representation</div>
+  <div id="csContent">
+  <p>Every graph has two components, <strong>nodes</strong> and <strong>edges</strong>. For the rest of
+     our discussion I will be using the word "Node" instead of "Vertex". 
+     Let’s see how these two components can be implemented in Java.</p> 
+
+  <h1>Nodes</h1>
+  <p>A node is an end point in a graph. Depending upon the problem, nodes can be implemented as a single value like an integer or 
+     string or by more complex data such as an object. 
+     As an example, a node can be represented as an object of a class like the one shown below.</p>
+
+<div id="csCode"><pre>class Node
+{
+  String value;   
+  int nodeId;
+  Node parent;          
+  int distanceFromSource;
+  
+  public Node(String v, int id, Node p)
+  {
+    value = v;
+    nodeId = id;
+    parent = p;
+  }
+}
+</pre></div>
+<p>Note: Since most of the graph problems my students see are during programming competitions, I have
+   temporarily abandoned some OOP design principles in favor of simplicity and speed.</p>
+   <br>
+<h1>Edges</h1>
+<p>Edges represent the connection between nodes. There are two ways to represent edges.</p>
+
+<h2>Adjacency Matrix</h2>  
+An Adjacency matrix is a two dimensional array that can be used to represent the relationship between
+nodes in a graph or the edges. 
+<h3>Sample 1 - 2D Array representation of an undirected unweighted graph.</h3>
+<div style="display:flex; flex-direction: row;">
+    <img src="images/Graph/graph5.png" style="display:block; margin-left:auto; margin-right:auto; width:35%; height:35%">
+    <img src="images/Graph/graph6.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+</div>
+<p style="padding-left: 30px">"T" means true, "F" means false</p>
+<p>Each "T" in the matrix represents an edge that exists between two nodes. To interpret the matrix, start by looking at the
+   first row of the matrix labelled "A". This "A" represents node A in the graph. All "T"s   
+   signify that an edge exists between the A node and a node specified by the corresponding column.
+   For example, on the A row there is a "T" at column B and at column C. This implies that node A
+   has the following set of edges: {AB, AC}.
+</p>
+<div style="display:flex; flex-direction: row;">
+    <img src="images/Graph/graph7.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+    <img src="images/Graph/graph8.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+</div>
+<p>Since this matrix is representative of a undirected graph then the edge relationship between two
+   nodes is bi-directional. This means that not only is there a path from A to B but there also exists a path
+   from B to A. If you were to cut the matrix in half by drawing a line diagonally across the grid 
+   from the top left corner to the bottom right corner you would see that the two halves are mirror
+   images of each other. Therefore, if you look at first column of the matrix which also represents node A
+   you will notice that there is a "T" at row B and at row C.
+</p>
+<img src="images/Graph/graph9.png" style="display:block; width:9%; height:9% padding-left:30px">
+<p>Since the graph in this example was not weighted I chose boolean values to represent the edges.
+   Other programmers may use 0 and 1 to represent this relationship, especially if they have a C language background.
+</p>
+<br>
+<h3>Sample 2 - 2D array representation of a directed weighted graph.</h3>
+<div style="display:flex; flex-direction: row;">
+    <img src="images/Graph/graph11.png" style="display:block; margin-left:auto; margin-right:auto; width:35%; height:35%">
+    <img src="images/Graph/graph10.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+</div>
+<br>
+<p>In a directed graph arrows show which direction the path or paths flow
+   from node to node. To interpret this relationship in a 2D array you only need to look at the rows.
+   The matrix shows that node A has two edges AB and AC. Since the flow is in one direction the
+   reverse relationship does not exist. The numbers between the nodes are the weights or cost of going
+   from one node to another.
+</p>
+<br>
+<h2>Adjacency List</h2>  
+<p>The second method used to represent a graph is an <strong>Adjacency List</strong>.
+   An adjacency list is traditionally implemented as an array of linked lists. The array size is
+   equal to the number of nodes or vertices in the graph. The linked list is used to store the
+   edges.</p>
+  <div style="display:flex; flex-direction: row;">
+    <img src="images/Graph/graph12.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+    <img src="images/Graph/graph6.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+  </div>
+  <br><br>
+  <div style="display:flex; flex-direction: row;">
+      <img src="images/Graph/graph13.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+      <img src="images/Graph/graph10.png" style="display:block; margin-left:auto; margin-right:auto; width:50%; height:50%">
+  </div>
+  <br><br>
+  <h2>Libraries and Collection Classes</h2>
+  <p>If the nodes of the graph problem have simple data like numbers or strings
+     then the examples shown above will do fine, but what if a node contains more complex data? For example,
+     some problems require you to keep track of information like the node value, the parent of a node,
+     the distance from the source node to the current node, etc. This is where the <strong>Node</strong>
+     class discussed above comes in handy. Instead of creating an adjacency matrix that contains integers or
+     strings make a 2D Array of Nodes, for example<br>
+     <div id="csCode"><pre>Node[][] adjacencyMatrix = new Node[numVertices][numVertices];</pre></div>
+     <p>or for an adjacency list do the following</p>
+     <div id="csCode"><pre>LinkedList&lt;Node&gt;[] adjacencyList = new LinkedList[numVertices];</pre></div>
+     <p>The Node class can be customized to fit the needs of the problem.</p>
+     <p>Most high-level languages today contain libraries of ready made data structures or collections
+        called ADTs (Abstract Data Types). Your adjacency list does not have to be an array of linked lists.
+        Here are two examples of adjacency list's made by Java's <strong>TreeMap</strong> and <strong>HashMap</strong> classes. For example,<br>
+        <div id="csCode"><pre>Map&lt;Integer, LinkedList&lt;Node&gt;&gt;adjacencyList = new HashMap<&gt;();</pre></div>
+        <p>or</p>
+        <div id="csCode"><pre>Map&lt;Node, LinkedList&lt;Node&gt;&gt;adjacencyList = new TreeMap<&gt;();</pre></div>
+     </p>
+     <p>I must point out that using a Node class is not the only way to keep track of the data used in a particular
+        problem. Another way, is to create parallel arrays, where each array stores a piece of the data needed to
+        solve the problem. For example,
+        it is very common to see a boolean array called <strong>visited</strong> used in graph algorithms. This array keeps track of the
+        nodes that have already been visited as you traverse a graph so that you don't keep revisiting the same nodes. As you can
+        probably guess, that would be bad. 
+     </p>
+  
+  <h2>Adjacency Matrix vs Adjacency List</h2>
+  <p>So which technique is best? Generally speaking it is easier to program an adjacency matrix than it is an 
+     adjacency list, so if a graph problem is simple with a simple data set then an adjacency matrix
+     is a good chose, on the other hand, if the problem is more difficult with a complex data set I tend to
+     use an adjacency list. One thing to consider when choosing between the two is that the 
+     adjacency matrix tends to use more memory than the adjacencyList. In reality, both techniques can be used to solve
+     graph problems, so it often boils down to personal preference. You should use the technique that you feel most 
+     comfortable.
+  </p>

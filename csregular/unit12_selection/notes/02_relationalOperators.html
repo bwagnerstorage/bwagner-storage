@@ -1,0 +1,194 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Relational Operatorss</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Java's Relational Operators</li>
+					    <li>The == Operator vs the = Operator</li>
+					    <li>Operator Precedence of Java Operators</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Relational Operators</h1>
+  <p>A <strong>relational operator</strong> tests the relationship between two values. Java has six relational operators:</p>
+<table id="csTable">
+   <tr>
+      <th>Java Operator</th>
+	  <th>Math Notation</th>
+	  <th>Description</th>
+   </tr>
+   <tr>
+      <td><div align="center">&gt;</div></td>
+	  <td><div align="center">&gt;</div></td>
+	  <td>greater than</td>
+   </tr>
+   <tr>
+      <td><div align="center">&gt;=</div></td>
+	  <td><div align="center">&ge;</div></td>
+	  <td>greater than or equal</td>
+   </tr>
+   <tr>
+      <td><div align="center">&lt;</div></td>
+	  <td><div align="center">&lt;</div></td>
+	  <td>less than</td>
+   </tr>
+   <tr>
+      <td><div align="center">&lt;=</div></td>
+	  <td><div align="center">&le;</div></td>
+	  <td>less than or equal</td>
+   </tr>
+   <tr>
+      <td><div align="center">==</div></td>
+	  <td><div align="center">=</div></td>
+	  <td>equal to</td>
+   </tr>
+   <tr>
+      <td><div align="center">!=</div></td>
+	  <td><div align="center">&ne;</div></td>
+	  <td>not equal to</td>
+   </tr>   
+</table>
+<p>As you can see, only two relational operators (&gt; and &lt;) look as 
+   you would expect from the mathematical notation. Computer keyboards do 
+   not have keys for &ge;, &le;, or &ne;, but the >=, <=, and != operators 
+   are easy to remember because they look similar.</p>
+
+<h1>Equality Operator (==)</h1>
+<p>The == operator is initially confusing to most newcomers to Java. In Java, the symbol =
+   already has a meaning, namely assignment. The == operator denotes <strong>equality</strong> testing. Look 
+   at the example below.
+</p>
+<div id="csCode">
+    <pre>
+if(age == 65)         <div id="csComment"><pre>// if age is equal to 65</pre></div>
+{
+   System.out.println("I can retire");
+}
+</pre>
+</div>
+<p>In the example, the age variable is compared to 65 to see if they are equal.</p>
+<p>You will have to remember to use == for equality testing, and to use = for assignment.</p>
+<h1>Operator Precedence</h1>
+<p>Below is the entire list of operators available in Java and their precedence levels. 
+   The precedence level determines the order in which the operators will be evaluated.
+   Operators at low precedence levels are evaluated before operators at higher levels. 
+   Operators in the same precedence level are evaluated according to the association, 
+   either right to left (R to L) or left to right (L to R). Operators in the same precedence
+   level are not listed in any particular order.
+</p>
+<table id="csTable">
+<tr>
+   <th>Precedence Level</th>
+   <th>Operator</th>
+   <th>Operation</th>
+   <th>Associates</th>
+</tr>
+<tr> 
+          <td><div align="center">1</div></td>
+          <td><div align="center"> 
+              <p>[]</p>
+              <p>&#8226;</p>
+              <p>(parameters)</p>
+              <p>++</p>
+              <p>--</p>
+            </div></td>
+          <td><p>array indexing</p>
+            <p>object member reference</p>
+            <p>parameter evaluation and method invocation</p>
+            <p>postfix increment</p>
+            <p>postfix decrement</p></td>
+          <td><div align="center">L to R</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">2</div></td>
+          <td><p align="center">++</p>
+            <p align="center">--</p>
+            <p align="center">+</p>
+            <p align="center">-</p>
+            <p align="center">!</p></td>
+          <td><p>prefix increment</p>
+            <p>prefix decrement</p>
+            <p>unary plus</p>
+            <p>unary minus</p>
+            <p>logical NOT</p></td>
+          <td><div align="center">R to L</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">3</div></td>
+          <td><p align="center">new</p>
+            <p align="center">(type)</p></td>
+          <td><p>object instantiation</p>
+            <p>cast</p></td>
+          <td><div align="center">R to L</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">4</div></td>
+          <td><p align="center">*</p>
+            <p align="center">/</p>
+            <p align="center">%</p></td>
+          <td><p>multiplication</p>
+            <p>division</p>
+            <p>remainder</p></td>
+          <td><div align="center">L to R</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">5</div></td>
+          <td><p align="center">+</p>
+            <p align="center">+</p>
+            <p align="center">-</p></td>
+          <td><p>addition</p>
+            <p>string concatentation</p>
+            <p>subtraction</p></td>
+          <td><div align="center">L to R</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><font color="#FF0000">6</font></div></td>
+          <td><p align="center"><font color="#FF0000">&lt;</font></p>
+            <p align="center"><font color="#FF0000">&lt;=</font></p>
+            <p align="center"><font color="#FF0000">&gt;</font></p>
+            <p align="center"><font color="#FF0000">&gt;=</font></p></td>
+          <td><p><font color="#FF0000">less than</font></p>
+            <p><font color="#FF0000">less than or equal </font></p>
+            <p><font color="#FF0000">greater than</font></p>
+            <p><font color="#FF0000">greater than or equal</font></p></td>
+          <td><div align="center"><font color="#FF0000">L to R</font></div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><font color="#FF0000">7</font></div></td>
+          <td><p align="center"><font color="#FF0000">==</font></p>
+            <p align="center"><font color="#FF0000">!=</font></p></td>
+          <td><p><font color="#FF0000">equal</font></p>
+            <p><font color="#FF0000">not equal</font></p></td>
+          <td><div align="center"><font color="#FF0000">L to R</font></div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">8</div></td>
+          <td><p align="center">=</p>
+            <p align="center">+=</p>
+            <p align="center">+=</p>
+            <p align="center">-=</p>
+            <p align="center">*=</p>
+            <p align="center">/=</p>
+            <p align="center">%=</p></td>
+          <td><p>assigment</p>
+            <p>addition, then assignment</p>
+            <p>string concatenation, then assignment</p>
+            <p>subtraction, then assignment</p>
+            <p>multiplication, then assignment</p>
+            <p>division, then assignment</p>
+            <p>remainder, then assignment</p></td>
+          <td><div align="center">R to L</div></td>
+        </tr>
+</table>
+
+<br>
+</div>	
+

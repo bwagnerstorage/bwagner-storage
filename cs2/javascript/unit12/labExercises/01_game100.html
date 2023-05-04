@@ -1,0 +1,178 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">12-1 Javascript Conditions</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_booleans.asp" target="_blank" style="color:blue">Booleans</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_comparisons.asp" target="_blank" style="color:blue">Comparisons and Logical Operators</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_if_else.asp" target="_blank" style="color:blue">Conditions</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>File Name: 12_1_game100.html</p></li>
+<li><p>Game100 is a two player numbers game. The game is played by starting a number at 0. Each player 
+        takes a turn adding a value between 1 and 10 to the number. The object of the game is to be the
+       player that makes the number equal 100.</p></li>
+<li><p>The Game100 has the following rules:</p>
+    <ul id="csList">
+        <li><p>The game's number starts with a value of 0.</p></li>
+        <li><p>Player 1 starts the game.</p></li>
+        <li><p>During a player's turn he/she selects a number between 1 and 10 inclusive
+               which increases the game number by that value.</p></li>
+        <li><p>Players alternate turns.</p></li>
+        <li><p>The player who selects a number that when added to the game number equals 100
+               is declared the winner.</p></li>
+    </ul>
+</li>
+<li><p>Copy the following code:</p>
+<div id="csOutput" style="width:550px"><pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;12_1_game100&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            #number {
+                font-size: 7.0em;
+                color: crimson;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            #turn {
+                font-size: 3.0em;
+                font-weight:bold;
+                color: green;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            
+            table tr td {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            
+            button {
+                font-size: 2.5em;
+                width: 60px;
+                height: 50px;
+            }
+            
+            button:hover {
+                background-color: lightcyan;
+            }
+            
+            button:active {
+                background-color: crimson;
+            }
+            
+            #buttons {
+                width: 600px;
+                margin: auto;
+            }
+            
+            button.reset {
+                position: absolute;
+                margin: auto;
+                left:0;
+                right:0;
+                width: 150px;
+                font-size: 1.4em;
+                visibility: hidden;
+            }
+            
+            button.reset:hover {
+                background-color: lightyellow;
+            }
+            
+            button.reset:active {
+                background-color: lightseagreen;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div id="number"&gt;0&lt;/div&gt;
+      &lt;div id="buttons"&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;button id="b1" onclick="selectNumber(1)"&gt;1&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b2" onclick="selectNumber(2)"&gt;2&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b3" onclick="selectNumber(3)"&gt;3&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b4" onclick="selectNumber(4)"&gt;4&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b5" onclick="selectNumber(5)"&gt;5&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b6" onclick="selectNumber(6)"&gt;6&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b7" onclick="selectNumber(7)"&gt;7&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b8" onclick="selectNumber(8)"&gt;8&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b9" onclick="selectNumber(9)"&gt;9&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button id="b10" onclick="selectNumber(10)"&gt;10&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div id="turn"&gt;Player 1's turn&lt;/div&gt;
+          &lt;button class="reset" id="reset" onclick="initialize()"&gt;Play Again&lt;/button&gt;
+        
+    &lt;script&gt;        
+        var total = 0;  // the number that is moving toward 100
+        var turn = 0;   // tracks players turn, 0 = player1 : 1 = player2
+        
+        function initialize()
+        {
+            total = 0;
+            turn = 0;
+            document.getElementById("number").innerHTML = total;
+            document.getElementById("turn").style.color = "green";
+            document.getElementById("turn").innerHTML = "Player 1's turn";
+            document.getElementById("reset").style.visibility = "hidden";
+            enableButtons();
+        }
+        
+        // @param selection : the value of the button that was pressed.
+        //    For example, if button 5 was pressed the value of selection would equal 5
+        function selectNumber(selection)
+        {
+            
+            
+        }
+        
+        function disableButtons()
+        {
+            for(var i = 1; i &lt;= 10; i++)
+            {
+                var id = "b"+i;
+                document.getElementById(id).disabled = true;
+            }
+        }
+        
+        function enableButtons()
+        {
+            for(var i = 1; i &lt;= 10; i++)
+            {
+                var id = "b"+i;
+                document.getElementById(id).disabled = false;
+            }
+        }
+        
+    &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div></li>
+<li><p>Complete the method <strong>selectNumber</strong> that implements the rules of the
+       game listed above. The method selectNumber has one parameter
+       named <strong>selection</strong> that contains the value of the button selected by the
+       current player. For example, if the player selects button 5 then the value of selection 
+       would be 5.</p>
+    <p>When the game number equals 100 declare which player won the game, disable all of the number buttons,
+        and display the <strong>Play Again</strong> button so the players can play the game again.</p>
+</li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_game100_1.png"><br>
+<img src="images/javascript_game100_2.png"><br>
+<img src="images/javascript_game100_3.png"><br>
+<br>
+</div>	

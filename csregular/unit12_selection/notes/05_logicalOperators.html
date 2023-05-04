@@ -1,0 +1,178 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Logical Operators</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use logical operators (!, &&, ||)</li>
+					    <li>What is short-circuit evaluation</li>
+					    <li>What is a truth table</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent">	
+  <h1>Logical Operators</h1>
+  <p>The <strong>logical operators</strong> introduced in Jeroo are also used in Java. The table below describes
+     the three logical operators.</p>
+<table id="csTable">
+        <tr> 
+          <th>Operator</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Result</th>
+        </tr>
+        <tr> 
+          <td><div align="center">!</div></td>
+          <td><div align="center">NOT</div></td>
+          <td><div align="center">!a</div></td>
+          <td>true if a is false and false if a is true</td>
+        </tr>
+        <tr> 
+          <td><div align="center">&amp;&amp;</div></td>
+          <td><div align="center">AND</div></td>
+          <td><div align="center">a &amp;&amp; b</div></td>
+          <td>true if a and b are both true and false otherwise</td>
+        </tr>
+		<tr> 
+          <td><div align="center">||<br></div></td>
+          <td><div align="center">OR</div></td>
+          <td><div align="center">a || b</div></td>
+          <td>true if either a or b are true and false otherwise</td>
+        </tr>
+</table>
+<h1>NOT(!) Operator</h1>
+<p>The ! operator is used to perform the logical NOT operation, which is also called the logical
+   complement. The logical complement of a boolean value gives its opposite value. That is, if a 
+   boolean variable called found has the value false, then !found is true. Likewise, if found is
+   true, then !found is false. The logical NOT operation does not change the value stored in found.</p>
+<p>The example</p>
+<div id="csCode">
+<pre>
+if(!str.equals("exit"))
+{
+   System.out.println("We will continue.");
+}
+</pre>
+</div>
+<p>will execute the println statement if str <strong>does not equal</strong> "exit".</p><br>
+<h1>AND(&&) Operator</h1>
+<p>The && operator performs a logical AND operation. The result is true if both operands are true,
+   but false otherwise. </p>
+   <p>The example</p>
+<div id="csCode">
+<pre>
+if(num1 > 0 && num2 > 0)
+{
+   System.out.println("Both numbers are greater than zero");
+}
+</pre>
+</div>
+<p>will execute the println statement only if both num1 and num2 are greater than 0.</p><br>
+<h1>OR(||) Operator</h1>
+<p>The || operator performs a logical OR operation. The result is true if one or the other or both
+   operands are true, but false otherwise.</p>
+   <p>The example</p>
+<div id="csCode">
+<pre>
+String firstLetter = str.substring(0,1);
+
+if(firstLetter.equals("a") || firstLetter.equals("A"))
+{
+   System.out.println("The first letter is an a or A.");
+}</pre>
+</div>
+<p>will execute the println statement if firstLetter is an "a" or "A".</p>
+<br>
+<h1>Compound Logical Conditions</h1>
+<p>A condition can be formed using more than one logical operator. The example</p>
+<div id="csCode">
+<pre>
+if(month == 3 || month == 4 || month == 5)
+{
+   System.out.println("It is spring");
+}
+</pre>
+</div>
+<p>will execute the println statement if month equals 3 or 4 or 5.</p>
+<h1>Truth Tables</h1>
+<p>A logical operation can be described by a <strong>truth table</strong> that lists all the combinations
+   of values for the variables involved in an expression. Because the logical NOT operator is unary,
+   there are only two possible values for its one operand, true or false.</p>
+   <h3>Truth Table for Logical NOT (!)</h3>
+      <table id="csTable" style="margin-left:1px">
+        <tr> 
+          <th>a</th>
+          <th>!a</th>
+        </tr>
+        <tr> 
+          <td><div align="center">false</div></td>
+          <td><div align="center">true</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">true</div></td>
+          <td><div align="center">false</div></td>
+        </tr>
+      </table>
+	  <p>Line 1 says when a is false !a is true.</p>
+	     <h3>Truth Table for Logical AND(&&) and Logical(| |) </h3>
+      <table id="csTable" style="margin-left:1px">
+        <tr> 
+          <th>a</th>
+          <th>b</th>
+		  <th>a && b</th>
+		  <th>a || b</th>
+        </tr>
+        <tr> 
+          <td><div align="center">false</div></td>
+          <td><div align="center">false</div></td>
+		  <td><div align="center">false</div></td>
+		  <td><div align="center">false</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">false</div></td>
+          <td><div align="center">true</div></td>
+		  <td><div align="center">false</div></td>
+		  <td><div align="center">true</div></td>
+        </tr>
+		<tr> 
+          <td><div align="center">true</div></td>
+          <td><div align="center">false</div></td>
+		  <td><div align="center">false</div></td>
+		  <td><div align="center">true</div></td>
+        </tr>
+		<tr> 
+          <td><div align="center">true</div></td>
+          <td><div align="center">true</div></td>
+		  <td><div align="center">true</div></td>
+		  <td><div align="center">true</div></td>
+        </tr>
+      </table>
+	  <p>Line 1 says when a and b are false (a && b) and (a || b) both evaluate to false.</p>
+	  <h1>Short-Circuit Evaluation</h1>
+	  <p>An important characteristic of the && and | | operators is that they are "short-circuited." 
+	     That is, if their left operand is enough to decide the boolean result of the operation, the
+	     right operand is not evaluated. This situation can occur with both operators but for 
+		 different reasons. If the left operand of the && operator is false, then the result of the
+		 operation will be false no matter what the value of the right operand is. Likewise, if the 
+		 left operand of the | | is true, then the result of the operation is true no matter what the
+		 value of the right operand is.</p>
+	  <p>This can be very useful. For example, the condition in the following if statement will not
+	     try to divide by zero if the left operand is false. If count has the value zero, the left
+		 side of the && operation is false; so the whole expression is false and the right side is
+		 not evaluated.</p>
+	<div id="csCode">
+<pre>
+if(count != 0 && total / count > MAX)
+{
+   System.out.println("Testing.");
+}
+</pre>
+</div>
+ <br>
+</div>	
+

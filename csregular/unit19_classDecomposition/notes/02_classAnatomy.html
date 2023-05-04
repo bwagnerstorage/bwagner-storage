@@ -1,0 +1,179 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Anatomy of a Class</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What are the two parts of a class</li>
+						<li>What is encapsulation</li>
+						<li>How do classes communicate with each other</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+  <p>Now that we have seen the importance of classes in program design the next step is to learn how to make a program that
+     uses multiple classes to solve a problem. Before we can do that, however, we must first look at the anatomy of a class.</p>		
+  <h1>Anatomy of a Class</h1>
+   <p>A class describes two characteristics of an object. First it describes what data an object stores, known as an
+	  object's <strong>attributes</strong>. In Java, these attributes are defined through one or more instance variables. Secondly, it
+	  describes what an object does, known as an object's <strong>behavior</strong>.
+      In Java, this behavior is defined through one or more methods.  The process of combining data
+	  and behavior into a single class is called <strong>encapsulation</strong>.</p>
+	  
+	  <div align="center"><img src="images/classDecomposition5.png"> </div> 
+	  
+	  <div id="csNote"><strong>Encapsulation</strong> is
+	  one of fundamental principles of OOP (Object-Oriented Programming).</div>
+	  
+<h1>Example - Rolling the Dice</h1>
+<p>Suppose you wanted to write a program that simulated the rolling of dice. This can best be
+   accomplished by decomposing the problem into two classes. The first class named Die will 
+   define the behavior for an object that represents a single six-sided die. The second class named
+   RollDice will define the behavior for an object that simulates the rolling of two dice.</p>
+<div align="center"><img src="images/classDecomposition4.jpg"> </div>
+
+<h3>Die class</h3>
+   
+<div id="csCode">
+<pre>
+public class Die
+{
+    <div id="csHighlight"><pre>// instance variables</pre></div>
+    private int faceValue;
+    
+    <div id="csHighlight"><pre>// methods</pre></div>
+    public void roll()
+    {
+        faceValue = (int)(Math.random() * 6) + 1;
+    }
+    
+    public int getFaceValue()
+    {
+        return faceValue;
+    }
+}
+</pre>
+</div>
+<p>The job of the Die class is simulate a single die. The class contains one instance variable named <strong>faceValue</strong> and two methods named <strong>roll</strong> and <strong>getFaceValue</strong>. The instance variable stores the current value of
+   the die (1 - 6). The methods define two behaviors that a die object can perform. A die can roll and a die can show you the value of the roll.</p>
+<p>Notice that the Die class does not contain a main method. This is the first time we have written a class that does
+   not include a main method. Since it does not contain a main method it cannot be executed by the computer as a stand-alone class, instead it must be used from within another class. In
+   this program the Die class will used by the RollDice class.</p>
+
+<h3>RollDice class</h3> 
+<div id="csCode">
+<pre>
+public class RollDice
+{
+    public static void main(String[] args)
+    {
+        <div id="csHighlight"><pre>Die die1 = new Die();
+        Die die2 = new Die();</pre></div>
+        
+        for(int i=1; i <= 10; i++)
+        {
+            die1.roll();
+            die2.roll();
+            
+            System.out.print(die1.getFaceValue() + " ");
+            System.out.println(die2.getFaceValue());           
+        }
+    }
+}
+</pre>
+</div>
+<p>The job of the RollDice class is simulate the rolling of two dice. The code for this class is fairly simple so all the code
+   for this class is contained within one method - the main method. Since this class contains a main method it will be where the computer starts executing the program.
+   In a multi-class program the class that contains the main method is often referred to as the <strong>driver class</strong>.</p>
+<p>The RollDice class is the manager for the program. In our hypothetical school the principal is the manager class. One of the most
+   important jobs of the principal is to divide the many jobs in the school among the other people(classes). In the same way,
+   the RollDice class is responsible for managing this program. One of its main jobs is to divide the work among the other classes
+   within the program, namely the Die class.</p>
+<h1>Communication Between Classes</h1>
+<p>In multi-class programs each class has a specific job to do in helping solve the problem. It is
+   often necessary for these classes to communicate with each other. This communication occurs
+   using a two step process. First one of the classes must initiate the communication by creating an object
+   of another class and storing its reference in an object variable. In our dice program the RollDice
+   class needs to communicate with the Die class, so it initiates the communication by creating two
+   Die objects.</p>
+<div id="csCode">
+<pre>
+Die die1 = new Die();    // first Die object
+Die die2 = new Die();    // second Die object 
+</pre>
+</div>
+<p>The second step is to use dot notation so that the initiating class can send messages to the 
+   other class. These messages are simply the public methods defined within the class. In our dice program the RollDice class uses dot notation to send messages to the
+   Die objects. First it sends a message asking each Die object to perform a roll. </p>
+<div id="csCode">
+<pre>
+die1.roll();
+die2.roll();
+</pre>
+</div>
+It then sends two more messages asking each Die object to let it see the face value of its roll.
+<div id="csCode">
+<pre>
+System.out.print(die1.getFaceValue() + " ");
+System.out.println(die2.getFaceValue()); 
+</pre>
+</div>
+<h3>Association</h3>
+<p>In OOP terminology this relationship between two classes, where one class uses another, is called 
+<strong>Association</strong>.</p>
+<h3>Aggregation</h3>
+<p>The term <strong>Aggregation</strong> is used to describe a special type of an association. Aggregation is the relationship 
+between two classes where an object of one class <strong>has</strong> an object of another. Unlike association, aggregation
+always implies a direction. In our dice program a RollDice object <strong>has a</strong> Die object. It is not true, however, that a Die object has a RollDice 
+object.</p> 
+
+<div id="csNote">
+<strong>Aggregation</strong> is a "has a" relationship. The school has a principal. The team has a coach.
+The dog has a tail.</div>
+
+<p>This relationship is demonstrated with the following illustration.</p>
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Class1/Slide1.PNG"></li>
+          <li><img src="images/Class1/Slide2.PNG"></li>
+          <li><img src="images/Class1/Slide3.PNG"></li>
+		  <li><img src="images/Class1/Slide4.PNG"></li>
+		  <li><img src="images/Class1/Slide5.PNG"></li>
+		  <li><img src="images/Class1/Slide6.PNG"></li>
+		  <li><img src="images/Class1/Slide7.PNG"></li>
+		  <li><img src="images/Class1/Slide8.PNG"></li>
+		  <li><img src="images/Class1/Slide9.PNG"></li>
+		  <li><img src="images/Class1/Slide10.PNG"></li>
+		  <li><img src="images/Class1/Slide11.PNG"></li>
+		  <li><img src="images/Class1/Slide12.PNG"></li>
+		  <li><img src="images/Class1/Slide13.PNG"></li>
+		  <li><img src="images/Class1/Slide14.PNG"></li>
+		  <li><img src="images/Class1/Slide15.PNG"></li>
+		  <li><img src="images/Class1/Slide16.PNG"></li>
+		  <li><img src="images/Class1/Slide17.PNG"></li>
+		  <li><img src="images/Class1/Slide18.PNG"></li>
+		  <li><img src="images/Class1/Slide19.PNG"></li>
+		  <li><img src="images/Class1/Slide20.PNG"></li>
+		  <li><img src="images/Class1/Slide21.PNG"></li>
+		  <li><img src="images/Class1/Slide22.PNG"></li>
+		  <li><img src="images/Class1/Slide23.PNG"></li>
+		  <li><img src="images/Class1/Slide24.PNG"></li>
+		  <li><img src="images/Class1/Slide25.PNG"></li>
+		  <li><img src="images/Class1/Slide26.PNG"></li>
+		  <li><img src="images/Class1/Slide27.PNG"></li>
+		  <li><img src="images/Class1/Slide28.PNG"></li>
+		  <li><img src="images/Class1/Slide29.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<br>
+</div>	
+

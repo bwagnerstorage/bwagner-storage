@@ -1,0 +1,98 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Bubble Sort</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Bubble Sort</li>
+						<li>How to implement a Bubble Sort</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Bubble Sort</h1>
+<p>The bubble sort is the oldest and simplest sort in use. Unfortunately, it's also the slowest.
+   The bubble sort works by comparing the first two elements in the list. If the second is larger
+   than the first, the two are swapped. It then compares the second and third item in the list,
+   and these too are swapped if necessary. When you are done with one pass, you have bubbled 
+   the largest item to the end of the list. The next time through the list, you compare item
+   0 through n - 1. That is, you start over, bubbling up the next-largest item in the list,
+   comparing it in turn with every item except the last item. When you are done with the
+   second pass, the largest and second-largest items are in place.</p>
+   
+<h1>Bubble Sort Efficiency</h1>
+<p>The bubble sort is generally considered to be the most inefficient sorting
+   algorithm in common usage. Under best case conditions (the list is already sorted), 
+   the bubble sort can approach a constant O(n) level of complexity. Average case is O(n<sup>2</sup>). </p>
+
+<p>While the insertion and selection sorts also have O(n<sup>2</sup>) complexities, they are
+   significantly more efficient than the bubble sort.</p> 
+
+<p><strong>Pros:</strong> Simplicity and ease of implementation.<br>
+<strong>Cons:</strong> Horribly inefficient.</p> 
+<br>
+<h3>Applet - Bubble Sort Demonstration</h3>
+ 
+<applet code="BubApplet.class" archive="BubSort.jar" codebase = "/applets" width="400" height="300">
+  </applet>
+
+<h1>Bubble Sort algorithm (Version 1)</h1> 
+
+<div id="csCode"><pre>
+void bubbleSort(int numbers[])
+{
+  //  Sorts list in ascending order
+  int i, j, temp;
+
+  for (i = numbers.length - 1; i >= 1; i--)
+  {
+     for (j = 1; j <= i; j++)
+     {
+        if (numbers[j-1] > numbers[j])
+        {
+	        // swap
+            temp = numbers[j-1];
+            numbers[j-1] = numbers[j];
+            numbers[j] = temp;
+        }
+     }
+  }
+}
+</pre></div> 
+
+<h1>Bubble Sort algorithm (Version 2) - more efficient version</h1>
+
+<div id="csCode"><pre>
+public void bubbleSort(int[] numbers)
+    {
+
+        //  Sorts list in ascending order, this version is 
+        //  more efficient than version 1 because if will stop
+        //  as soon as it makes a pass through the list and does not
+        //  perform a swap. (i.e. a list that is already sorted)
+        
+        int i, temp;
+        boolean done;
+        do
+        {
+           done = true;
+           for(i = 0; i < numbers.length-1; i++)
+           {
+               if (numbers[i] > numbers[i + 1])
+               {            
+                   // swap
+                   temp = numbers[i];
+                   numbers[i] = numbers[i+1];
+                   numbers[i+1] = temp;
+                   done = false;             // made a swap
+               }            
+           }        
+        } 
+        while (!done);
+    }
+ </pre></div> 

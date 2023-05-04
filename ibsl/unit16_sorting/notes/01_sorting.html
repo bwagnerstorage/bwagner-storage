@@ -1,0 +1,154 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Sorting Algorithms</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a sorting algorithm</li>
+						<li>What is Big-O Notation</li>
+						<li>What are the slow sorts</li>
+						<li>What are the fast sorts</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1></h1>
+<p>One of the fundamental problems of computer science is ordering a list of items. There's 
+   an abundance of solutions to this problem, known as <strong>sorting algorithms</strong>. Some sorting algorithms
+   are simple and intuitive, such as the selection sort. Others, such as the quick sort are extremely
+   complicated, but produce lightening-fast results.</p>
+<p>The common sorting algorithms can be divided into two classes by the complexity of their 
+   algorithms. Algorithmic complexity is a complex subject that would take too
+   much time to explain here, but suffice it to say that there's a direct correlation between
+   the complexity of an algorithm and its relative efficiency. Algorithmic complexity is generally
+   written in a form known as Big-O notation, where the O represents the complexity of the
+   algorithm and a value n represents the size of the set the algorithm is run against. 
+   Big-O provides a quantitative way of describing the run time or space efficiency of an
+   algorithm. Big-O is independent of both the programming language and the computer used.</p>
+   
+<p>Below is a table showing some common Big-O descriptions:</p>
+
+<table width="367" id="csTable">
+        <tr> 
+          <th width="127">Function Type</th>
+          <th width="206">Big-O Description</th>
+        </tr>
+        <tr> 
+          <td><strong>constant</strong></td>
+          <td> <blockquote> 
+              <blockquote> 
+                <p>O(1)</p>
+              </blockquote>
+            </blockquote></td>
+        </tr>
+        <tr> 
+          <td><strong>logarithmic</strong></td>
+          <td><blockquote> 
+              <blockquote> 
+                <p>O(log n)</p>
+              </blockquote>
+            </blockquote></td>
+        </tr>
+        <tr> 
+          <td><strong>linear</strong></td>
+          <td><blockquote> 
+              <blockquote> 
+                <p>O(n)</p>
+              </blockquote>
+            </blockquote></td>
+        </tr>
+        <tr> 
+          <td><strong>quadratic</strong></td>
+          <td><blockquote> 
+              <blockquote> 
+                <p>O(n<sup>2</sup>)</p>
+              </blockquote>
+            </blockquote></td>
+        </tr>
+        <tr> 
+          <td><strong>cubic</strong></td>
+          <td> <blockquote> 
+              <blockquote> 
+                <p>O(n<sup>3</sup>)</p>
+              </blockquote>
+            </blockquote></td>
+        </tr>
+        <tr> 
+          <td height="35"><strong>exponential</strong></td>
+          <td><blockquote> 
+              <blockquote> 
+                <p>O(2<sup>n</sup>)</p>
+              </blockquote>
+            </blockquote></td>
+        </tr>
+      </table>
+ 
+
+<p>The two classes of sorting algorithms are <strong>O(n<sup>2</sup>)</strong> or quadratic complexity, which
+   includes the bubble, insertion, and selection; and <strong>O(n log n)</strong> which includes the merge
+   and quick sorts.</p>
+
+<p>In addition to algorithmic complexity, the speed of the various sorts can be compared
+   with empirical or experimental data. Since the speed of a sort can vary greatly depending on
+   what data set it sorts, accurate empirical results require several runs of the sort be made
+   and the results averaged together. The run times on your system will almost certainly vary
+   from these results, but the relative speeds should be the same.</p>
+   
+<h1>AP Correlation</h1>
+<p>Because of the large number of sorting algorithms available the AP Committee decided
+   to limit the number of algorithms that a person taking the AP Exam is responsible for knowing
+   to only four. These four are listed below.</p>
+
+<h3>Slow Sorts</h3>
+
+<p>- Selection Sort (n<sup>2</sup>)<br>
+- Insertion Sort (n<sup>2</sup>)</p>
+
+<h3>Fast Sorts</h3>
+<p>- Merge Sort (n log n)<br>
+- Quick Sort (n log n)</p>
+
+<h1>IB Correlation</h1>
+<p>IB has limited their curriculum to only two sorts.</p>
+
+<h3>Slow Sorts</h3>
+
+<p>- Bubble Sort (n<sup>2</sup>)<br>
+- Selection Sort (n<sup>2</sup>)</p>
+
+
+
+<h1>Sort Analyzer</h1>
+<p>In discussing efficiency of an algorithm, we refer to the best case, worst case, and
+   average case. The best case is a configuration of the data that causes the algorithm to run
+   in the least possible amount of time. With sorting algorithms this often occurs when the data
+   to be sorted is already sorted. The worst case is a configuration that leads to the greatest
+   possible run time. With sorting algorithms this often occurs when the data to be sorted is
+   sorted in reverse order. Typical configurations give the average case. With sorting algorithms
+   this occurs when the data to be sorted is in random order. It is possible that best, worst,
+   and average cases don't differ much in their run times.</p>
+
+<p>Below is an applet that empirically tests the run-time efficiency of the different
+   sorting algorithms. Each algorithm can be tested against the three cases: best case,
+   worst case, and average case. For the best case we will examine the efficiency of the
+   sorting algorithms when they sort an array that is already sorted. For the worst case
+   we will examine them when they sort an array that is sorted in reverse order. For the 
+   average case we will examine them when they sort an array that is in random order.</p> 
+
+        <applet code = "SortAnalyzerApplet.class" 
+		        codebase = "/applets"
+			    width="400" 
+				height="300" 
+				align="texttop" 
+				archive="SortAnalyzer.jar">
+        </applet>
+
+<br>
+<br>
+</div>	
+

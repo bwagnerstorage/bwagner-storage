@@ -1,0 +1,245 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Shortest Path Algorithm 3</div>
+
+<div id="csContent"> 
+
+<h2>Demonstration of Modified Version of Dijkstra's Shortest Path Algorithm</h2>
+<p>Watch the demonstration to learn how a modified version of Dijkstra's Shortest Path 
+   Algorithm can be used to display the
+   shortest path from any node A to any other node B in the graph.</p>
+   
+<div class = "slider" id="slider1">
+        <ul class="bjqs">
+          <li><img src="images/Dijkstra's Algorithm 2/Slide1.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide2.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide3.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide4.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide5.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide6.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide7.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide8.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide9.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide10.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide11.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide12.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide13.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide14.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide15.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide16.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide17.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide18.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide19.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide20.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide21.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide22.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide23.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide24.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide25.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide26.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide27.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide28.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide29.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide30.PNG"></li>
+          <li><img src="images/Dijkstra's Algorithm 2/Slide31.PNG"></li>
+         </ul>
+     </div>	
+
+     	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Directions</h1>
+<div style="display: flex; justify-content: center;">
+    <img src="images/Graph/graph17.png" style="width:60%; height:60%">
+</div>
+<p>Using the above weighted graph, modify the method <strong>shortestPath</strong> so that 
+   the array <strong>path</strong> contains the nodes on the shortest path
+   through the graph. Implement the method <strong>printPath</strong> that displays the
+   vertices on the shortest path from the <strong>source</strong> vertex to the <strong>dest</strong> 
+   vertex.
+</p>
+<h3>Starter Code</h3>
+<div id="csCode" style="width:700px"><pre>
+import java.util.*;
+
+/* This program uses Dijkstra's Shortest Path Algorithm to display the
+   path from a source vertex to a destination vertex. 
+*/
+
+public class ShortestPath3 
+{
+    final public static String[] vertices = {"A","B","C","D","E","F"};
+    final public static int V = 6;
+    
+    /* This method uses Dijkstra's Shortest Path Algorithm to calculate the cost
+       from any source node A to every other node in the graph.
+       @ param adjacentMatrix - a 2D array representation of a weighted graph
+       @ param path - an array containing the shortest paths from a source node 
+                      to a destination node.
+       @ return an array containing the cost of each node in the graph 
+    */
+    public static int[] shortestPath(int[][]adjacentMatrix, int[] path)
+    {
+        boolean[] spt = new boolean[V];  // spt - shortest path tree
+        int[] cost = new int[V];
+        int source = 0;
+        cost[source] = 0; // assign source vertex a cost of 0 so it is chosen first
+        
+        // assign cost values to infinity(INF)
+        // Java does not have an infinity symbol
+        // so the cost values are set to Integer.MAX_Value
+        for(int i = 1; i < V; i++)
+        {
+            cost[i] = Integer.MAX_VALUE;        
+        }
+       
+        int node = -1;
+ 
+        // while every node in spt array has not been visited
+        while(!isComplete(spt)) 
+        {
+            // Step 1 - Find the child node with the least cost.
+            node = getMinimumAdjacentNode(cost, spt);
+            
+            // Step 2 - Mark this child node as being visited
+            spt[node] = true;
+            
+            // Step 3 - Update the cost for all child nodes if the sum of their parent
+            //          node plus the edge between parent and child is less than
+            //          the current cost of the child node.
+            LinkedList&lt;Integer&gt; children = getAdjacentNodes(adjacentMatrix, node);
+            for(int child : children)
+            {
+                int sum = cost[node] + adjacentMatrix[node][child];
+            
+                if(sum < cost[child])
+                {
+                    cost[child] = sum;
+                }
+            } 
+        }
+
+        return cost;   // return array containing list of shortest paths
+    }
+    
+    /* This method tests to see if all nodes in the graph have been visited */
+    public static boolean isComplete(boolean[] spt)
+    {
+        int count = 0;
+        for(int i=0; i &lt; V; i++)
+        {
+            if(spt[i] == true)
+               count++;
+        }
+        if(count == V)
+            return true;
+        else
+            return false;
+    }
+    
+    /* This method returns the child node that has not been visited yet and
+       has the least cost. The method returns the child nodes index value.
+    */
+    public static int getMinimumAdjacentNode(int[] cost, boolean[] spt)
+    {
+
+        int smallest = Integer.MAX_VALUE;
+        int smallestNode = 0;
+        for(int child = 0; child &lt; V; child++)
+        {
+            if(spt[child] == false && cost[child] &lt; smallest)
+            {
+                smallest = cost[child];
+                smallestNode = child;
+            }
+        }
+        return smallestNode;
+    }
+    
+    /* This method returns a list of all child nodes of parent. */
+    public static LinkedList&lt;Integer&gt; getAdjacentNodes(int[][] matrix, int parent)
+    {
+        LinkedList&lt;Integer&gt; list = new LinkedList&lt;Integer&gt;();
+        for(int child = 0; child &lt; V; child++)
+        {
+            if(matrix[parent][child] > 0)
+            {
+                list.add(child);
+            }
+        }
+        return list;
+    }
+    
+    /* This method prints the shortest path from source to dest
+       @param path - an array containing the shortest paths from a source
+                     vertex to a destination vertex.
+       @source - the starting vertex
+       @dest - the ending vertex
+    */
+    public static void printPath(int[] path, int source, int dest)
+    {
+ 
+    }
+                
+    public static void main(String[] args) 
+    {
+        // Build graph
+        int[][] adjacentMatrix = {{0, 3, 0, 0, 5, 0},
+                                  {3, 0, 2, 0, 1, 0},
+                                  {0, 1, 0, 2, 4, 3},
+                                  {0, 0, 2, 0, 3, 1},
+                                  {5, 1, 4, 3, 0, 0},
+                                  {0, 0, 3, 1, 0, 0}};
+        
+        int[] path = new int[V];
+        
+        int[] costs = shortestPath(adjacentMatrix, path);
+        
+        // print vertices letter value and its cost to the source vertex
+        for(int i = 0; i &lt; V; i++)
+        {
+            System.out.println(vertices[i] + "  " + costs[i]);
+        }
+        System.out.println();
+        System.out.println("Shortest Path from Source Vertex to Destination Vertex");
+        System.out.println("------------------------------------------------------");
+        
+        System.out.println("Shortest Path from A to E"); 
+        printPath(path, 0, 4);
+        
+        System.out.println("Shortest Path from B to F"); 
+        printPath(path, 1, 5);
+        
+        System.out.println("Shortest Path from A to D"); 
+        printPath(path, 0, 3);
+    }
+}
+               
+</pre></div>
+
+ 
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+A  0
+B  3
+C  5
+D  7
+E  4
+F  8
+
+Shortest Path from Source Vertex to Destination Vertex
+------------------------------------------------------
+Shortest Path from A to E
+A B E 
+
+Shortest Path from B to F
+B C F 
+
+Shortest Path from A to D
+A B E D 
+</pre>
+</div>
+	<br>
+</div>	
+

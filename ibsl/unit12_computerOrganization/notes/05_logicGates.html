@@ -1,0 +1,313 @@
+
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Simple Logic Gates</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>2.1.11 Define the Boolean operators: AND, OR, NOT, NAND, NOR and XOR.</li>
+						<li>2.1.12 Construct truth tables using the above operators.</li>
+						<li>2.1.13 Construct a logic diagram using AND, OR, NOT, NAND, NOR and XOR gates.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Simple Logic Gates</h1>
+<div id="ib">2.1.11 Define the Boolean operators: AND, OR, NOT, NAND, NOR and XOR.</div>
+<p>A computer runs on electricity. Information in the computer is transmitted through electrical signals. Any given electronic signal has
+   a level of voltage. In general, a voltage level in the range of 0 to 2 volts is considered "low" and is interpreted as a binary 0. A
+   signal in the 2 to 5 volt range is considered high and is interpreted as a binary 1. Signals in a computer are constrained to be within
+   one range or the other.</p>
+
+<p>A gate is a device that performs a basic operation on electrical signals. It accepts one or more input signals and produces a single
+   output signal. Several types of gates exist with each type performing a particular logical function. The gates in a computer are sometimes
+   referred to as logic gates because each performs just one logical function. The six most fundamental logic gate types include NOT, AND, OR,
+   XOR, NAND, and NOR.</p>
+
+<p>Gates are combined into circuits to perform more complicated tasks. For example, circuits can be designed to perform arithmetic and to store values. In a circuit, the output value of one gate often
+   serves as the input value for one or more other gates. The flow of electricity through a circuit is controlled by the carefully designed
+   logic of the interacting gates.</p>
+
+<p>Three different notational methods are used to describe the behavior of gates and circuits:</p>
+<div id="csList"><ul>
+<li>Boolean Expressions</li>
+<li>Logic Diagrams</li>
+<li>Truth Tables</li>
+</ul></div>
+<br>
+<h3>Boolean Expression</h3>
+<p><strong>Boolean expressions</strong> use a form of algebraic notation to demonstrate the activity of an electrical circuit. Boolean expressions use 
+   Boolean operators to express conditions that are either true or false.</p>
+   
+<p>Here is an example of a boolean expression: C = A AND B OR NOT A<br>
+In Java the expression would be written as: C = A && B | | !A</p>
+
+
+<h3>Logic Diagram</h3>
+<p>A <strong>logic diagram</strong> is a graphical representation of a circuit. Each type of gate is represented by a specific graphical symbol. 
+   By connecting those symbols in various ways, we can visually represent the logic of an entire circuit.</p>
+
+<p>The traditional symbols have distinctive shapes which make them easy to recognize but require you to memorize the shapes. 
+   For example, the AND, NOT, and NOR gates are shown below.</p>
+
+<div align="center"><img src="images/logicGates1.png"></div>
+
+<p>IB has chosen to not to use the traditional symbols but instead have adopted a different notation. 
+    To form a logic symbol you simply draw a circle around the name of the circuit. Here are the gates above 
+	using <strong>IB logic gate notation</strong>:</p>
+
+<div align="center"><img src="images/logicGates2.png"></div>
+
+<p>Below is a logic diagram of a complex circuit using the traditional
+  symbols.</p>
+
+<div align="center"><img src="images/logicDiagram1.png"></div>
+
+<h3>Truth Table</h3>
+<p>A <strong>truth table</strong> defines the function of a gate by listing all possible input combinations that the gate could encounter, 
+  along with corresponding output. More complex truth tables can be designed with sufficient row and columns to show how entire 
+  circuits perform for any set of input values.</p>
+<p>Below are truth tables for the most common logic gates.</p>
+
+<h3>NOT Gate</h3>
+<p>A NOT gate accepts one input value and produces one output value. By definition, if the input value for NOT gate is 0,
+  the output value is 1; if the input value is 1, the output is 0.</p>
+<table id="csGrid">
+<tr>
+  <td>A</td>		
+  <td>output</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>0</td>
+</tr>
+</table>
+
+<h3>AND Gate</h3>
+<p>Unlike a NOT Gate, which accepts one input signal, an AND gate accepts two input signals. The values of both input signals
+   determine what the output signal will be. If the two input values for an AND gate are both 1, the output is 1; otherwise, the
+   output is 0.</p>
+
+<table id="csGrid">
+<tr>
+  <td>A</td>		
+  <td>B</td>
+  <td>output</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>0</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>1</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>0</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>1</td>
+  <td>1</td>
+</tr>
+</table>
+
+<h3>OR Gate</h3>
+<p>Like the AND gate, the OR gate has two inputs. If both input values are 0, the output value is 0; otherwise, the output is 1.</p>
+
+<table id="csGrid">
+<tr>
+  <td>A</td>		
+  <td>B</td>
+  <td>output</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>0</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>1</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>0</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>1</td>
+  <td>1</td>
+</tr>
+</table>
+
+<h3>XOR Gate</h3>
+<p>The XOR gate, or exclusive OR, produces a 0 if its two inputs are the same and a 1 otherwise. Note the difference between
+   the XOR gate and the OR gate; they differ in only one input situation. When both input signals are 1, the OR gate produces a 1
+   and XOR gate produces a 0.</p>
+
+<table id="csGrid">
+<tr>
+  <td>A</td>		
+  <td>B</td>
+  <td>output</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>0</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>1</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>0</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>1</td>
+  <td>0</td>
+</tr>
+</table>
+
+<h3>NAND and NOR Gates</h3>
+<p>The NAND and NOR gates are essentially the opposites of the AND and OR gates, respectively. That is, the output of a NAND gate is the same
+  as if you took the output of an AND gate and put it through a NOT gate.</p>
+<table border="0" bordercolor="#FFFFFF">
+<tr><td style="border:0px" align="center"><strong>NAND</strong></td></tr>
+<tr><td  style="border:0px">
+<table id="csGrid">
+<tr>
+  <td>A</td>		
+  <td>B</td>
+  <td>output</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>0</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>1</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>0</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>1</td>
+  <td>0</td>
+</tr>
+</table>
+</td></tr>
+<tr><td style="border:0px" align="center"><strong>NOR</strong></td></tr>
+<tr><td  style="border:0px">
+<table id="csGrid">
+<tr>
+  <td>A</td>		
+  <td>B</td>
+  <td>output</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>0</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>0</td>		
+  <td>1</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>0</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>1</td>		
+  <td>1</td>
+  <td>0</td>
+</tr>
+</table>
+</td></tr></table>
+
+<div id="ib">2.1.12 Construct truth tables using the above operators.</div>
+<p><strong>Note:</strong> Problems will be limited to an output dependent on no more than three inputs.</p>
+<h3>Operator Precedence</h3>
+<p>The NOT operator is evaluated first, followed by the AND operator, and then finally the OR operator.</p>
+
+<div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/TruthTables/Slide1.PNG"></li>
+          <li><img src="images/TruthTables/Slide2.PNG"></li>
+          <li><img src="images/TruthTables/Slide3.PNG"></li>
+		  <li><img src="images/TruthTables/Slide4.PNG"></li>
+		  <li><img src="images/TruthTables/Slide5.PNG"></li>
+		  <li><img src="images/TruthTables/Slide6.PNG"></li>
+		  <li><img src="images/TruthTables/Slide7.PNG"></li>
+		  <li><img src="images/TruthTables/Slide8.PNG"></li>
+		  <li><img src="images/TruthTables/Slide9.PNG"></li>
+		  <li><img src="images/TruthTables/Slide10.PNG"></li>
+		  <li><img src="images/TruthTables/Slide11.PNG"></li>
+		  <li><img src="images/TruthTables/Slide12.PNG"></li>
+		  <li><img src="images/TruthTables/Slide13.PNG"></li>
+		  <li><img src="images/TruthTables/Slide14.PNG"></li>
+		  <li><img src="images/TruthTables/Slide15.PNG"></li>
+		  <li><img src="images/TruthTables/Slide16.PNG"></li>
+		  <li><img src="images/TruthTables/Slide17.PNG"></li>
+    </ul>
+  </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" /> 
+
+<div id="ib">2.1.13 Construct a logic diagram using AND, OR, NOT, NAND, NOR and XOR gates.</div>
+
+<div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/LogicDiagram/Slide1.PNG"></li>
+          <li><img src="images/LogicDiagram/Slide2.PNG"></li>
+          <li><img src="images/LogicDiagram/Slide3.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide4.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide5.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide6.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide7.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide8.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide9.PNG"></li>
+		  <li><img src="images/LogicDiagram/Slide10.PNG"></li>
+    </ul>
+  </div>
+
+
+<br>
+
+<br>
+<hr>
+<p>References</p>
+<a href="http://www.ee.surrey.ac.uk/Projects/Labview/gatesfunc/TruthFrameSet.htm">http://www.ee.surrey.ac.uk/Projects/Labview/gatesfunc/TruthFrameSet.htm</a><br>
+<br>
+</div>	
+

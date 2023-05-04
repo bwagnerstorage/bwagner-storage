@@ -1,0 +1,90 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Integer Calculator</div>
+
+<div id="csContent">
+<h1>Workspace: <a href="apFreeResponse/IntegerCalc.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >IntegerCalc</a></h1>  
+<h1>Directions</h1>
+<p>The program below performs basic arithmetic operations on two integer values. Modify the 
+program so that it performs error checking (exception handling) in the following areas:</p>
+
+<p>When the user enters the two integer operands used in the operation. If the user enters 
+a value that is not an integer (Ex. 2a, 4., $3) the program should display an error message and ask the user to try again.
+If the user attempts to divide by zero the program should display an error message.</p>
+
+<h1>Modifications</h1>
+<p>Implement the <strong>getInfo</strong> method. This method should display a menu which asks the user to select the
+ arithmetic operation he wishes to perform. Once the operation has been selected the user should be prompted to enter
+ the two operands used in the operation. If the user enters a value that is not a valid integer the Scanner class's 
+ nextInt method will throw an InputMisMatchException. Your method should catch this exception, display an error message,
+ and then allow the user to enter the value again. The method should return an integer representing the operation selected from the menu.</p>
+
+<p>You will need to use a <strong>try/catch block</strong> in your implementation.</p>
+
+<div id="csCode"><pre>
+public int getInfo()
+{
+
+
+}
+</pre></div>
+<p>Implement the <strong>divide</strong> method. If the user attempts to divide by zero the JVM will throw an ArithmeticException.
+ Your method should catch this exception and display an error message.</p>
+<p>You will need to use a <strong>try/catch</strong> block in your implementation.</p>
+<div id="csCode"><pre>
+public void divide()
+{
+
+
+}
+</pre></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->1
+
+Operator 1 -->10
+Operator 2 -->15
+
+10 + 15 = 25
+
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->2
+
+Operator 1 -->a3
+
+Operand is not a valid integer!
+
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->2
+
+Operator 1 -->100
+Operator 2 -->2.
+
+Operand is not a valid integer!
+
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->2
+
+Operator 1 -->100
+Operator 2 -->70
+
+100 - 70 = 30
+
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->4
+
+Operator 1 -->7
+Operator 2 -->0
+
+Error: You cannot divide by zero!
+
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->4
+
+Operator 1 -->10
+Operator 2 -->2
+
+10 / 2 = 5
+
+1)Add 2)Subtract 3)Multiply 4)Divide 5)Quit -->5
+</pre>
+</div>
+	<br>
+</div>	
+

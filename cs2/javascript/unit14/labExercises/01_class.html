@@ -1,0 +1,284 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-1 Javascript Classes</div>
+
+<div id="csContent"> 
+
+<h1>A Java Class</h1>
+  <p>In Computer Science 1 you learned that the Java language had a mechanism called a <strong>class</strong> designed to create
+     objects. Look at the following Person class written in Java.</p>
+<div id="csCode"><pre>
+public class Person
+{
+    // instance variables
+    private String firstName;
+    private String lastName;
+    
+    // constructors
+    public Person()   // default constructor
+    {
+        firstName = "";
+        lastName = "";
+    }
+
+    public Person(String first, String last)
+    {
+        firstName = first;
+        lastName = last;
+    }
+    
+    // accessor methods
+    public String getFirstName()
+    {
+        return firstName;
+    }
+    
+    public String getLastName()
+    {
+        return lastName;
+    }
+    
+    // mutator methods
+    public void setFirstName(String first)
+    {
+        firstName = first;
+    }
+    
+    public void setLastName(String last)
+    {
+        lastName = last;
+    }
+    
+    // toString method
+    public String toString()
+    {
+        return "FirstName = " + firstName + "/n" +
+                "LastName  = " + lastName;
+    }
+}
+</pre></div>
+<p>Recall that following good object-oriented programming methodology a programmer
+   declared a class's instance variables <strong>private</strong> using the private access modifier there by making them invisible to 
+   any code outside the scope of the class. To allow other classes, referred to as clients, the ability to access
+   these variables a programmer had to first create an <strong>object</strong> using one of the
+   the class's constructors.</p>
+<div id="csCode"><pre>Person person = new Person("John", "Wayne");</pre></div>
+<p>Using the keyword <strong>new</strong> this code invokes or calls a 
+   constructor to create a Person object and initializes the object's
+   instance variables with starting values. In this case, the <strong>firstName</strong>
+   variable or field is assigned the name "John" and the <strong>lastName</strong>
+   field is assigned the name "Wayne".</p>
+<p>Once an object was created by a class the client program could then send messages
+   to the object using code like the following:</p>
+
+<div id="csCode"><pre>Person person = new Person("John", "Wayne");   // create object
+
+String first = person.getFirstName();    // call to getFirstName method
+String last  = person.getLastName();     // call to getLastName method
+
+System.out.println("First Name = " + first);
+System.out.println("Last Name  = " + last);
+</pre></div>
+<p>Because the instance variables of the class were declared private they could not be
+   accessed directly so a client program would use accessor methods like
+  <strong>getFirstName</strong> and <strong>getLastName</strong> to see their values.</p>
+<p>To modify a Person object's variables, after construction, a client program would use mutator methods
+   like <strong>setFirstName</strong> or <strong>setLastName</strong>. </p>
+   <div id="csCode"><pre>person.setFirstName("Jimmy");      // call to setFirstName method
+person.setLastName("Stewart");     // call to setLastName method
+</pre></div><br>
+<h1>Javascript Class</h1>
+<p>As you have seen, Java and Javascript have some similarities but mostly they
+   are quite different. Most of the reason for this contrast in styles is due to the 
+   fact that Java follows the object-oriented programming model, whereas Javascript
+   follows more of a functional approach. In fact, it was not until the release
+   of its 7th Edition know as ECMAScript 2016 or ES6 that Javascript 
+   even had the concept or notation of a <strong>class</strong>. Being a functional
+   language, by the way this is not a bad thing, everything in the language is either
+   a primitive type or an object. This means that even functions in Javascript are 
+   objects. Coming from a C++/Java background this took me a while to wrap
+   my head around. Never the less, here is the Person class written in Javascript.</p>
+<div id="csCode"><pre>class Person
+{
+    // constructor initializes object variables
+    constructor()
+    {
+        // fields or properties
+        this.firstName = "John";
+        this.lastName = "Wayne";
+    }
+
+    // method getFullName returns the person's name firstName lastName format
+    getFullName()
+    {
+        return this.firstName + " " + this.lastName;
+    }
+
+    // method getFormalName returns the person's name in lastName, firstName
+    getFormalName()
+    {
+        return this.lastName + ", " + this.firstName;
+    }
+}</pre></div>
+<p>The first thing you will notice is that a Javascript class is not as verbose
+   as a Java class. Following is a list of the differences between a Javascript class
+   and a Java class.</p>
+
+<ol id="csList">
+    <li><p>A Javascript class has a constructor, but unlike Java, a Javascript class can only have
+           one constructor and its name must be <strong>constructor</strong>.</p>
+    <div id="csCode" style="width:632px"><pre>
+// constructor initializes object variables
+constructor()
+{
+    // fields or properties
+    this.firstName = "John";
+    this.lastName = "Wayne";
+}
+</pre></div>
+</li>
+<li><p>A Javascript class must declare its variables or fields within the constructor
+    and the variables must be preceded by the keyword <strong>this</strong>.</p>
+    <div id="csCode" style="width:632px"><pre>
+// fields or properties
+<div id="csHighlight"><pre>this</pre></div>.firstName = "John";
+<div id="csHighlight"><pre>this</pre></div>.lastName = "Wayne";
+</pre></div>
+<p>In Java terminology a class's variables were generally referred to as <strong>instance variables</strong>,
+   however in Javascript the terms <strong>field</strong> and <strong>properties</strong> are more commonly 
+   used.</p>
+   <p>Java also uses the keyword <strong>this</strong> but it is optional when declaring
+    instance variables. It also must be noted that although they both use the keyword <strong>this</strong>
+    they do not work exactly the same. We will look more closely at their differences in a future lesson.</p>
+    
+</li>
+<li><p>A Javascript <strong>constructor</strong> can assign initial values to fields
+       of a class by passing these values through the constructor's parameter list.</p>
+ <div id="csCode" style="width:632px"><pre>
+// constructor initializes object variables
+constructor<div id="csHighlight"><pre>(first, last)</pre></div>  // parameter list
+{
+ // fields or properties
+ this.firstName = first;    // assign value stored in first to firstName
+ this.lastName = last;      // assign value stored in last to lastName
+}
+</pre></div>
+<p>The variables declared inside the constructor's ending parentheses are
+   called <strong>parameters</strong>. Parameters are <strong>local variables</strong> and therefore do not
+   exist outside of the constructor. Their job is to temporarily store the values passed to the constructor from client code, and 
+   then in turn pass those values onto the instance variables of the class.
+   Notice that parameters do not have the keyword <strong>var</strong> preceding their name.</p>
+<p>Here is an example of client code that creates a Person object and passes initial values to object's
+fields using the constructor's parameter list.</p>
+<div id="csCode" style="width:632px"><pre>
+var person = new Person("John", "Wayne");  // assigns "John" to firstName field
+                                           // assigns "Wayne" to lastName field
+</pre></div>
+<p>Look at the illustration below. The code after the keyword <strong>new</strong> is actually
+   a call to the Person class's constructor and the string parameters "John" and "Wayne" are
+   passed two constructor parameter variables <strong>firstName</strong> and <strong>lastName</strong>.</p>
+<img style="border:2px solid black" src="images/js_01_class.PNG">
+</li>
+<li><p>Javascript does not use access modifiers. This means there are no public, private,
+        or protected members of a class. Everything in a Javascript class it public. This means that both its
+        <strong>variables</strong> and <strong>methods</strong> can be accessed outside of the class through the use of
+        an object and dot notation.</p>
+        <div id="csCode" style="width:632px"><pre>
+var person = new Person();
+var first = person.firstName;   // accessing Person field using dot notation
+var last = person.lastName;
+var fullName = person.getFullName();  // accessing Person method
+</pre></div>
+    </li>
+    <li><p>Like Java, a function declared inside a class is called a <strong>method</strong>. A method
+        is a special type of function that can be invoked or called within
+        other methods in the class or outside the class using an object and dot notation.
+        Notice that even though a method is a function its name is not preceded by
+        the keyword <strong>function</strong>. </p>
+        <p>Suppose a new class method is added to
+        the Person class named <strong>addDoctorTitle()</strong>. This method adds the title "Dr." to beginning 
+        of person's name.</p>
+        <div id="csCode" style="width:632px"><pre>
+addDoctorTitle()
+{
+    return "Dr." + <div id="csHighlight"><pre>this</pre></div>.getFullName();
+}
+</pre></div>
+<p>The method <strong>getFullName</strong> is used to help define the addDoctorTitle method. Methods
+can be invoked by other methods within a class but the call must be preceded by the keyword
+<strong>this</strong>.</p>
+<p>This is an example of a method being invoked outside of its class using an object and dot notation.</p>
+<div id="csCode" style="width:632px"><pre>
+var person = new Person();  // create Person object
+var formalName = person.getFormaName();  // accessing Person method
+</pre></div>    
+</li>
+</ol>
+<br>
+<hr>
+<h1>Lab Exercise</h1>
+<ol id=csList>
+    <li><p>Create an html file named 01_classes.html and add the following code.</p></li>
+<div id="csOutput"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;MyDate&lt;/title&gt;
+&lt;script src="MyDate.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="output1"&gt;&lt;/div&gt;
+    &lt;br&gt;
+    &lt;div id="output2"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+       
+    &lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+    </li>
+    <li>Create a javascript file named MyDate.js.</li>
+    <li>In the MyDate.js file define a Javascript class named <strong>MyDate</strong> with the following features:</li>
+    <ul id="csList2">
+        <li><p>A <strong>constructor</strong> with three parameters named
+        <strong>month</strong>, <strong>day</strong>, and <strong>year</strong>.</p></li>
+        <li><p>Inside the body of the constructor declare three instance variables or fields named <strong>month</strong>,
+        <strong>day</strong>, and <strong>year</strong>. Initialize each instance variable with the value contained in
+           the corresponding parameter variable. (Ex. this.month = month; )
+           Don't forget to include the keyword <strong>this</strong> in front
+           of each instance variable name.</p></li>
+        <li><p>Add a method named <strong>getDashFormat</strong> that returns a string representation
+               of a date in dashed format:  MM-DD-YYYY.</p></li>
+        <li><p>Add a method named <strong>getSlashFormat</strong> that returns a string representation
+               of a date in slash format:  MM/DD/YYYY.</p></li>
+    </ul>
+    <li>Inside the script tag of the 01_classes.html file do the following:</li>
+    <ul id="csList2">
+        <li><p>Create a variable named <strong>date</strong>.</p></li>
+        <li><p>Use the keyword <strong>new</strong> to create a <strong>MyDate</strong> object 
+               and assign its reference to the variable <strong>date</strong>.</p></li>
+               <p>When complete your code should look like the following:</p>
+               <div id="csCode"><pre>var date = new MyDate();</pre></div>
+        <li><p>Add the three string values "06", "15", "1991" to the MyDate constructor's parameter list
+               there by assigning the date object its month, day, and year values.
+               After completing the first three steps the code should look like the following:</p></li>
+               <div id="csCode"><pre>var date = new MyDate("06", "15", "1991");</pre></div>
+        <li><p>Create a variable named <strong>dashFormat</strong> and assign it the value return
+            by a call to the MyDate class's <strong>getDashFormat</strong> method. Don't forget to use
+            the <strong>date</strong> object when implementing this line of code.</p></li> 
+        <li><p>Create a variable named <strong>slashFormat</strong> and assign it the value return
+               by a call to the MyDate class's <strong>getSlashFormat</strong> method. Don't forget to use
+               the <strong>date</strong> object when implementing this line of code.</p></p></li>
+        <li><p>Using the document.getElementById method assign the "output1" div the value
+            stored in the variable <strong>dashFormat</strong>.</p></li>   
+        <li><p>Using the document.getElementById method assign the "output2" div the value
+            stored in the variable <strong>slashFormat</strong>.</p></li>      
+    </ul>
+    </ol>
+<br>
+<h1>Sample Output</h1>
+<p>06-15-1991</p>
+<p>06/15/1991</p>
+<br>
+</div>	

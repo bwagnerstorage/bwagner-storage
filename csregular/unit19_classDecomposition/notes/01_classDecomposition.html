@@ -1,0 +1,98 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Class Decomposition</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is class decomposition</li>
+						<li>How do you decompose a problem into classes</li>
+						<li>class vs object</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Class Decomposition</h1>
+  <p>As programming problems become more complex programmers look for better ways to solve the problems.
+     Earlier we learned that <strong>problem decomposition</strong> is a problem solving strategy used by programmers to decrease the complexity
+	 of a programming problem by breaking the problem down into smaller subtasks. In many of the programs you wrote you
+	 utilized a technique called <strong>method decomposition,</strong> where you divided the problems into multiple methods and each method had a
+	 specific task to do in helping solve the problem.</p>
+	 
+  <p>There is another level of problem decomposition called class decomposition. <strong>Class decomposition</strong> is the process of breaking a programming
+     problem into multiple classes where each class has a specific task to perform in solving the problem. In this unit we look at how to decompose
+	 a problem using class decomposition.</p>
+  
+ <h1>Real World Example</h1>
+ <p>To help us better understand class decomposition let's look at a real world problem, that is, the problem of running a high school. Running a
+    high school is a major undertaking. The first thing to be done in running a school is for the school board to hire a principal. The principal
+	is the school's manager, he or she is responsible for everything that goes on in the school. The principal, however, cannot run the school
+    alone, the job is just to big. So the principal hires people to help him. He hires assistant principals, counselors, teachers, librarians, 
+	coaches, secretaries, custodians, lunch workers, nurses, and the list goes on. Each person has a specific job to do in making the school run
+	efficiently.</p>
+ <p>The structure chart for a high school might look like the following.</p>
+  <div align="center"><img src="images/classDecomposition1.png"> </div>
+  
+  <h3>Class Decomposition</h3>
+  <p>Hypothetically, if we were to write a computer program that solved the problem of running a high school each worker in the school would be a <strong>class</strong>. There
+     would be a principal class, an assistant principal class, a counselor class, a teacher class, and so on. This is the process of <strong>class decomposition</strong>. 
+	 Just as each worker in the school has a specific job to do, each class within the program has its own job to do in helping solve the problem.</p>
+  
+  <p>Now let's look more closely at one of the classes of our hypothetical school, namely the teacher class. What is the overall job of a teacher? It is to manage a classroom full of students.
+  This is a complex job that entails many tasks. To manage a classroom a teacher has to perform tasks like make lesson plans, make the lessons, present the lessons, make tests, grade papers, take attendance,
+     deal with discipline problems, do tutorials, write recommendation letters, and so on. The teacher class in our school program can be divided even further using <strong>method decomposition</strong>, where each job of the teacher is translated into one or more methods.</p>
+	 
+ <p>Here is a structure chart for the teacher class.</p>
+ <div align="center"><img src="images/classDecomposition2.png"> </div>
+ 
+ <p>In summary, large complex problems can be subdivided into more manageable tasks through the process of <strong>class decomposition</strong>, where each class in the program is responsible for solving one part of the problem.
+    Each class can then be further suddivided into even smaller, more specific tasks, through the process of <strong>method decomposition</strong>, where each method within a class is responsible for performing one of the tasks
+    assigned to the class.</p>
+	
+ <H1>Class vs Object</H1>
+ <p>Beginning programmers are often confused by the terms <strong>class</strong> and <strong>object</strong>. One of the reasons for this confusion is because people tend to use the two terms interchangeably.
+    There is, however a difference. To help explain the difference let's look again at our hypothetical school. Our school was made up of many classes. One of those classes was the teacher
+	class. The teacher <strong>class</strong> describes the role of a teacher, it is in essence a job description. The teacher class does not teach. For teaching you need an actual person. Mr. Mueller who teaches
+	math, or Mrs. Ware who teaches science, or Mr. Place who teaches Spanish. They are the ones who do the teaching. Using computer terminology, these teachers would be <strong>objects</strong>. It is the
+	objects in a program that do the actual work, not the classes. A class is simply a job description, describing what an object does.</p>
+	
+	<p>Look at the demonstration below that illustrates the difference between a class and an object.</p>
+ 
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/ClassesObjects1/Slide1.PNG"></li>
+          <li><img src="images/ClassesObjects1/Slide2.PNG"></li>
+          <li><img src="images/ClassesObjects1/Slide3.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide4.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide5.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide6.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide7.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide8.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide9.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide10.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide11.PNG"></li>
+		  <li><img src="images/ClassesObjects1/Slide12.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+  
+  <p>An <strong>object</strong> is defined by a class. A <strong>class </strong>is a description, model, or blueprint from which an object is created. Consider a blueprint
+     created by an architect when designing a house. The blueprint defines the important characteristics of the house - its walls, windows,
+	 doors, electrical outlets, and so on. Once the blueprint is created, several houses can be built using it.
+	 
+	 <div align="center"><img src="images/classDecomposition3.gif" width="400px"> </div>
+
+  <p>The houses built from the blueprint are different. They are in different locations, they have different addresses, contain different furniture, and different people live in them.
+     Yet in many ways they are the "same" house. The layout of the rooms, number of windows and doors, and so on are the same in each. To create a different house, we would need a different blueprint.
+  <p>A class is a blueprint of an object. However, a class is not an object any more than a blueprint is a house.</p>
+
+	<br>
+</div>	
+

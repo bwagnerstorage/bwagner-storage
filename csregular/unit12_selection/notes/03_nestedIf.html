@@ -1,0 +1,76 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Compound if Structures</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How a nested if structure is created</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Nested if</h1>
+  <p>The statement executed as the result of an if statement could be another if statement.
+     This situation is called a <strong>nested if</strong>. It lets us make another decision after getting the
+	 results of a previous decision. The code below uses nested if statements to find the smallest
+	 of three integer values.</p>
+<div id="csNote">
+In Java, an if structure is often referred to as an if statement.</div>
+<div id="csCode">
+<pre>
+int num1 = 20;
+int num2 = 15;
+int num3 = 37;
+int min = 0;
+
+if(num1 < num2)
+{
+  if(num1 < num3)
+     min = num1;
+  else
+     min = num3;
+}
+else
+{
+  if(num2 < num3)
+     min = num2;
+  else
+     min = num3;
+}
+</pre>
+</div>
+<p>The next example shows a common format that programmers use to write nested if statements.</p>
+<div id="csCode">
+<pre>
+if(temp > 100)
+   System.out.println("It is very hot");
+else if(temp > 90)
+   System.out.println("It is hot");
+else if(temp > 80)
+   System.out.println("It is very warm");
+else if(temp > 70)
+   System.out.println("It is warm");
+else if(temp > 60)
+   System.out.println("It is cool");
+else if(temp > 50)
+   System.out.println("It is very cool");
+else if(temp > 40)
+   System.out.println("It is cold");
+else if(temp > 30)
+   System.out.println("It is very cold");
+else
+   System.out.println("It is freezing");</pre>
+</div>
+<p>Since this nested if statement is connected by a series of if-else statements only one of the
+   conditions in this nested if will evaluate to true.</p>
+<p>Notice the <strong>else</strong> at the very end. This else becomes the default for the nested 
+   if structure. If all of the other conditions are false then this else automatically becomes true.</p>
+<br>
+</div>	
+

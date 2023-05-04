@@ -1,0 +1,342 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">NonVoid2</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment you are going to practice making non-void methods. Copy the following code into a source file named <strong>NonVoid2</strong>.</p>
+<div id="csCode" style="width: 678px">
+    <pre>
+import java.util.*;
+
+public class NonVoid2
+{
+    /** @return the square of num
+     *  @param num the number to be squared
+     */
+    public int square(int num)
+    {
+        
+    }
+
+    /** @return the sum of num1, num2, and num3
+     *  @param num1 first number in the sum
+     *  @param num2 second number in the sum
+     *  @param num3 third number in the sum
+     */
+    public int sumThree(int num1, int num2, int num3)
+    {
+        
+    }
+
+    /** @return the smaller value between num1 and num2
+     *  @param num1 first number in minimum comparison
+     *  @param num2 second number in minimum comparison
+     */
+    public int smaller(int num1, int num2)
+    {
+
+    }
+    
+    /** Returns one of five fortune cookie responses chosen at random
+     *  If the random number = 0 the method returns "Your future looks bright"
+     *  If the random number = 1 the method returns "I see love in your future"
+     *  If the random number = 2 the method returns "Maybe you better stay home today"
+     *  If the random number = 3 the method returns "You will have fame and fortune"
+     *  If the random number = 4 the method returns "Happiness you will have"
+     *  @return a string response
+     */
+    public String fortuneCookie(int randomNum)
+    {
+        
+        
+    }
+    
+    /** Returns a response depending upon month's value
+     *  if month >= 1 && month <= 3 it returns "winter"
+     *  if month >= 4 && month <= 6 it returns "spring"
+     *  if month >= 7 && month <= 9 it returns "summer"
+     *  if month >= 10 && month <= 12 it returns "fall"
+     *  @return a string response
+     *  @param month the numerical month of the year
+     */
+    public String season(int month)
+    {
+
+    }
+
+    /** Determines if num is odd or even. If num is even it returns the string "even";
+     *  otherwise it returns the string "odd"
+     *  @return the string "even" or the string "odd"
+     *  @param num number used in comparison
+     */
+    public String evenOdd(int num)
+    {
+        
+    }
+}
+</pre>
+</div>
+
+<p>Copy the following code into a source file named <strong>Main.java</strong>. 
+If you are using <strong>replit</strong> you will need to remove the keyword <strong>public</strong> from the first line.</p>
+<div id="csCode" style="width: 678px">
+    <pre>
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        NonVoid2 app = new NonVoid2();
+
+        System.out.println("Test square method");
+        System.out.println("==================");
+        System.out.println("The square of 5 is " + app.square(5));
+        System.out.println("The square of 12 is " + app.square(12));
+
+        System.out.println();
+        System.out.println("Test sumThree method");
+        System.out.println("====================");
+        System.out.println("The sum of 10, 20, 30 is " + app.sumThree(10, 20, 30));
+        System.out.println("The sum of 15, 100, 75 is " + app.sumThree(15, 100, 75));
+
+        System.out.println();
+        System.out.println("Test smaller method");
+        System.out.println("====================");
+        System.out.println("Which is smaller 10 or 35? " + app.smaller(10, 35));
+        System.out.println("Which is smaller 100 or 50? " + app.smaller(100, 50));
+
+        System.out.println();
+        System.out.println("Test fortuneCookie method");
+        System.out.println("=========================");
+        System.out.println("Your fortune cookie says - " + app.fortuneCookie((int)(Math.random() * 5)));
+        System.out.println("Your fortune cookie says - " + app.fortuneCookie((int)(Math.random() * 5)));
+
+        System.out.println();
+        System.out.println("Test season method");
+        System.out.println("===================");
+        System.out.println("The month of March is in the " + app.season(3));
+        System.out.println("The month of July is in the " + app.season(7));
+
+        System.out.println();
+        System.out.println("Test evenOdd method");
+        System.out.println("===================");
+        System.out.println("The number 84 is " + app.evenOdd(84));
+        System.out.println("The number 27 is " + app.evenOdd(27));
+    }
+}
+</pre>
+</div>
+
+<p>You are going to complete the implementation of five non-void methods described below.   Do not make any modifications to the main method.</p>
+   <br>
+<h3>Method square</h3>
+<p>Complete the method <strong>square</strong> shown below. This method calculates and returns the square of the
+   parameter num. A square of a number is the number multiplied by itself.</p>
+<div id="csCode">
+<pre>
+/** @return the square of num
+ *  @param num the number to be squared
+ */
+public int square(int num)
+{
+   
+}
+</pre>
+</div>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test square method
+==================
+The square of 5 is 25
+The square of 12 is 144
+</pre></div>
+<br>
+
+<h3>Method sumThree</h3>
+<p>Complete the method <strong>sumThree</strong> shown below. This method calculates and returns the
+   sum of the three parameters num1, num2, and num3.</p>
+<div id="csCode">
+<pre>
+/** @return the sum of num1, num2, and num3
+ *  @param num1 first number in sum
+ *  @param num2 second number in sum
+ *  @param num3 third number in sum
+ */
+public int sumThree(int num1, int num2, int num3)
+{
+   
+}
+</pre>
+</div>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test sumThree method
+====================
+The sum of 10, 20, 30 is 60
+The sum of 15, 100, 75 is 190
+</pre></div>
+<br>
+
+<h3>Method smaller</h3>
+<p>Complete the method <strong>smaller</strong> shown below. This method compares num1 and num2 together and
+    returns the one that is the smallest.</p>
+<div id="csCode">
+<pre>
+/** @return the smaller of num1 and num2
+ *  @param num1 first number to compare
+ *  @param num2 second number to compare
+ */
+public int smaller(int num1, int num2)
+{
+
+}
+</pre>
+</div>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test smaller method
+====================
+Which is smaller 10 or 35? 10
+Which is smaller 100 or 50? 50
+</pre></div>
+<br>
+
+<h3>Method fortuneCookie</h3>
+<p>Read the <strong>fortuneCookie</strong> method's documentation provided in the code then complete the method shown below.</p>
+<div id="csCode">
+<pre>
+/** Returns one of five fortune cookie responses chosen at random
+ *  If the random number = 0 the method returns "Your future looks bright"
+ *  If the random number = 1 the method returns "I see love in your future"
+ *  If the random number = 2 the method returns "Maybe you better stay home today"
+ *  If the random number = 3 the method returns "You will have fame and fortune"
+ *  If the random number = 4 the method returns "Happiness you will have"
+ *  @return a string response
+ */
+public String fortuneCookie(int randomNum)
+{
+	
+}
+</pre>
+</div>
+   <p><strong>Warning:</strong> make sure your last return statement is not in an if statement;
+      otherwise you will get the following compiling error - "missing return statement".</p>
+
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 600px"><pre>
+Test fortuneCookie method
+=========================
+Your fortune cookie says - Maybe you better stay home today
+Your fortune cookie says - I see love in your future
+</pre></div>
+<br>
+
+<h3>Method season</h3>
+<p>Read the <strong>season</strong> method's documentation provided in the code then complete the method shown below.</p>
+<div id="csCode">
+<pre>
+/** Returns a response depending upon month's value
+ *  if month >= 1 && month <= 3 it returns "winter"
+ *  if month >= 4 && month <= 6 it returns "spring"
+ *  if month >= 7 && month <= 9 it returns "summer"
+ *  if month >= 10 && month <= 12 it returns "fall"
+ *  @return a string response
+ *  @param month the numerical month of the year
+ */
+public String season(int month)
+{
+
+}
+</pre>
+</div>
+   <p><strong>Warning:</strong> make sure your last return statement is not in an if statement;
+      otherwise you will get the following compiling error - "missing return statement".</p>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test season method
+===================
+The month of March is in the winter
+The month of July is in the summer
+</pre></div>
+<br>
+
+<h3>Method evenOdd</h3>
+<p>Complete the method <strong>evenOdd</strong> shown below. This method determines if parameter
+   num is odd or even. If it is odd it returns the string "odd" and if it is even it returns the
+   string "even". A number is even if it is divisible by 2.  You can use the remainder operator %
+   to check for divisibility. If the following condition evaluates to true then the variable num
+   is divisible by two.</p>
+   
+<div id="csCode" style="margin-left: 20px; width:200px">
+<pre>
+(num % 2 == 0)
+</pre>
+</div>
+<br>
+<div id="csCode">
+<pre>
+/** Determines if num is odd or even. If num is even returns the string "even";
+ *  otherwise it num is odd it returns the string "odd"
+ *  @return the string "even" or the string "odd"
+ *  @param num number used in comparison
+ */
+public String evenOdd(int num)
+{
+
+}
+</pre>
+</div>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test evenOdd method
+===================
+The number 84 is even
+The number 27 is odd
+</pre></div>
+<br>
+</div>
+<h1>Source File</h1>
+<p>NonVoid2.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test square method
+==================
+The square of 5 is 25
+The square of 12 is 144
+
+Test sumThree method
+====================
+The sum of 10, 20, 30 is 60
+The sum of 15, 100, 75 is 190
+
+Test smaller method
+====================
+Which is smaller 10 or 35? 10
+Which is smaller 100 or 50? 50
+
+Test fortuneCookie method
+=========================
+Your fortune cookie says - Maybe you better stay home today
+Your fortune cookie says - I see love in your future
+
+Test season method
+===================
+The month of March is in the winter
+The month of July is in the summer
+
+Test evenOdd method
+===================
+The number 84 is even
+The number 27 is odd
+</pre>
+</div>
+
+<img src="images/empty.gif" onload="getSolution('/csregular/unit13_javaMethods2/solutions/02_nonVoid2Solution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+</div>
+	<br>
+

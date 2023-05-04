@@ -1,0 +1,252 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">HighLow</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that generates 10 random real numbers in the range of 0-99, calculated to two decimal places,
+     and stores them in an array. The program should then calculate the average of the 10 numbers. All of the numbers
+	 in the array that are less the average should be stored in a second array and all of numbers that 
+	 are greater than the average should be stored in a third array. The program should finish by printing a summary report
+	 which includes the original list of numbers, the average, the list of numbers less than the average, and the list of numbers 
+	 greater than the average.</p>
+
+<h3>Structure Chart</h3>	
+<p>The problem has been decomposed using the following structure chart.</p>
+<div align="center"><img src="images/highLow1.png"></div>	
+
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+public class HighLow
+{
+    private double[] array = new double[10];
+    private double[] below = new double[10];
+    private double[] above = new double[10];
+
+    /* This method populates array with random real numbers in the range
+     * of 0-99 calculated to two decimal places.
+     */
+    public void populateArray()
+    {
+
+    }
+
+    /* This method calculates the average of the numbers stored in array.
+     * @return the average
+     */
+    public double average()
+    {
+
+    }
+
+    /* This method populates the below array with all the values in array
+     * that are less than the average.
+     * @return the logical size of below
+     */
+    public int populateBelow()
+    {
+
+    }
+
+    /* This method populates the above array with all the values in array
+     * that are greater than the average.
+     * @return the logical size of above
+     */
+    public int populateAbove()
+    {
+
+    }
+
+    /* Given an array and its logical size this method prints each number
+     * in the array horizontally across the screen with a space between
+     * each one.
+     * @param list the array to be printed
+     * @param size the logical size of the array
+     */
+    public void printArray(double[] list, int size)
+    {
+
+    }
+
+    /* This method prints the summary report.
+     */
+    public void printSummary()
+    {
+        int lowestSize = populateBelow();
+        int highestSize = populateAbove();
+
+        System.out.print("Array = ");   // print original array
+        printArray(array, array.length);
+        System.out.println();
+
+        System.out.println("Average = " + average());  //print average
+
+        System.out.print("Below = ");     // print  below array
+        printArray(below, lowestSize);
+        System.out.println();
+
+        System.out.print("Above = ");     // print above array
+        printArray(above, highestSize);
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        HighLow app = new HighLow();
+        app.populateArray();
+        app.printSummary();
+    }
+}
+</pre>
+</div>
+
+<p>You are going to complete 2 void methods and 3 non-void methods. Do not
+   make any modifications to the main method.</p>
+<h3>Method printSummary</h3>
+<p>The method <strong>printSummary</strong> shown below has been completed for you. Do not
+   make an modifications to this method.</p>
+<div id="csCode">
+<pre>
+/* This method prints the summary report.
+ */
+public void printSummary()
+{
+    int lowestSize = populateBelow();
+    int highestSize = populateAbove();
+
+    System.out.print("Array = ");   // print original array
+    printArray(array, array.length);
+    System.out.println();
+
+    System.out.println("Average = " + average());  //print average
+
+    System.out.print("Below = ");     // print  below array
+    printArray(below, lowestSize);
+    System.out.println();
+
+    System.out.print("Above = ");     // print above array
+    printArray(above, highestSize);
+    System.out.println();
+}
+</pre>
+</div>
+
+<h3>Method populateArray</h3>
+<p>Complete the method <strong>populateArray</strong> shown below. This method
+   populates array with random real numbers in the range of 0-99 calculated to
+   two decimal places.</p>
+<p>To generate a random real number in the range of 0 to 99 calculated to two decimal places,
+   you can use code like the following</p>
+<div id="csCode">
+<pre>
+double num = ((int)(Math.random() * 10000)) / 100.0;
+</pre>
+</div><br>
+<div id="csCode">
+<pre>
+/* This method populates array with random real numbers in the range
+ * of 0-99 calculated to two decimal places.
+ */
+public void populateArray()
+{
+
+}
+</pre>
+</div>
+
+<h3>Method average</h3>
+<p>Complete the method <strong>average</strong> shown below. This method 
+   calculates and returns the average of the numbers store in array.</p>
+<div id="csCode">
+<pre>
+/* This method calculates the average of the numbers store in array.
+ * @return the average
+ */
+public double average()
+{
+
+}
+</pre>
+</div>
+
+<h3>Method populateBelow</h3>
+<p>Complete the method <strong>populateBelow</strong> shown below. This method 
+   populates the below array with all the values in array that are less than
+   the average. The method returns the logical size of the array. The logical
+   size of an array is the count of the number of items added to the array.</p>
+<div id="csCode">
+<pre>
+/* This method populates the below array with all the values in array
+ * that are less than the average.
+ * @return the logical size of below
+ */
+public int populateBelow()
+{
+
+}
+</pre>
+</div>
+
+<h3>Method populateAbove</h3>
+<p>Complete the method <strong>populateAbove</strong> shown below. This method 
+   populates the above array with all the values in array that are greater than
+   the average. The method returns the logical size of the array. The logical
+   size of an array is the count of the number of items added to the array.</p>
+<div id="csCode">
+<pre>
+/* This method populates the below array with all the values in array
+ * that are less than the average.
+ * @return the logical size of below
+ */
+public int populateAbove()
+{
+
+}
+</pre>
+</div>
+
+
+  <h3>Method printArray</h3>
+  <p>Complete the method <strong>printArray</strong> shown below. This method 
+    traverses parameter list printing all of its values from 0 up to parameter 
+    size. It prints each number horizontally across the screen with a space between 
+    each one.</p>
+<div id="csCode">
+<pre>
+/* Given an array and its logical size this method prints each number
+ * in the array horizontally across the screen with a space between
+ * each one.
+ * @param list the array to be printed
+ * @param size the logical size of the array
+ */
+public void printArray(double[] list, int size)
+{
+
+}
+</pre>
+</div>
+
+<h1>Source File</h1>
+<p>HighLow.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Array = 31.07 23.68 75.82 79.49 64.06 20.48 76.66 34.49 28.39 16.23 
+Average = 45.037
+Below = 31.07 23.68 20.48 34.49 28.39 16.23 
+Above = 75.82 79.49 64.06 76.66
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Array = 92.19 92.66 83.35 53.74 65.74 82.7 21.02 45.7 78.43 66.67 
+Average = 68.22
+Below = 53.74 65.74 21.02 45.7 66.67 
+Above = 92.19 92.66 83.35 82.7 78.43
+</pre>
+</div>
+	<br>
+</div>
+

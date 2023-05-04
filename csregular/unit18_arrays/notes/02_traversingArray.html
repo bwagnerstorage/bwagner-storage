@@ -1,0 +1,137 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Looping Through An Array</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use a loop to traverse an array</li>
+						<li>How to use the array's length variable</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Looping Through An Array (Traversing)</h1>
+  <p>The real benefit of using an array becomes apparent when you use a looping structure, such as a
+     for loop, to access the individual elements within the array. As an example, suppose we want to
+	 create an int array of size 20 and fill each element of the array with a random number in the range
+	 of 0 to 99. We could do the following
+<div id="csCode"><pre>
+int[] nums = new int[20];       // declare and define int array of size 20
+
+nums[0] = (int)(Math.random() * 100);    // assign random values
+nums[1] = (int)(Math.random() * 100);
+nums[2] = (int)(Math.random() * 100);
+nums[3] = (int)(Math.random() * 100);
+nums[4] = (int)(Math.random() * 100);
+nums[5] = (int)(Math.random() * 100);
+nums[6] = (int)(Math.random() * 100);
+nums[7] = (int)(Math.random() * 100);
+nums[8] = (int)(Math.random() * 100);
+nums[9] = (int)(Math.random() * 100);
+nums[10] = (int)(Math.random() * 100);
+nums[11] = (int)(Math.random() * 100);
+nums[12] = (int)(Math.random() * 100);
+nums[13] = (int)(Math.random() * 100);
+nums[14] = (int)(Math.random() * 100);
+nums[15] = (int)(Math.random() * 100);
+nums[16] = (int)(Math.random() * 100);
+nums[17] = (int)(Math.random() * 100);
+nums[18] = (int)(Math.random() * 100);
+nums[19] = (int)(Math.random() * 100);</pre></div>
+<p>This method, however, is not any more efficient than actually creating 20 individual variables and 
+   assigning random values to them</p>
+<div id="csCode"><pre>
+int num1 = (int)(Math.random() * 100);
+int num2 = (int)(Math.random() * 100);
+int num3 = (int)(Math.random() * 100);
+int num4 = (int)(Math.random() * 100);
+int num5 = (int)(Math.random() * 100);
+int num6 = (int)(Math.random() * 100);
+int num7 = (int)(Math.random() * 100);
+int num8 = (int)(Math.random() * 100);
+int num9 = (int)(Math.random() * 100);
+int num10 = (int)(Math.random() * 100);
+int num11 = (int)(Math.random() * 100);
+int num12 = (int)(Math.random() * 100);
+int num13 = (int)(Math.random() * 100);
+int num14 = (int)(Math.random() * 100);
+int num15 = (int)(Math.random() * 100);
+int num16 = (int)(Math.random() * 100);
+int num17 = (int)(Math.random() * 100);
+int num18 = (int)(Math.random() * 100);
+int num19 = (int)(Math.random() * 100);
+int num20 = (int)(Math.random() * 100);
+</pre></div>
+<p>A much better approach would be to use a <strong>loop</strong> to iterate through all the elements of the array.
+</p>
+<div id="csCode"><pre>
+int[] nums = new int[20];                // declare and define int array size 20
+
+for(int i = 0; i < 20; i++)
+{
+   nums[<div id="csHighlight"><pre>i</pre></div>] = (int)(Math.random()*100);   // assign random values
+}</pre></div>
+
+<p>The for loop executes 20 times counting from 0 to 19. By using the loop control variable,
+   <strong>i</strong>, as the index into the array we are able to iterate through the entire
+   array one element at a time.</p>
+
+<p>To output the contents of the array we can again use a for loop</p>
+<div id="csCode"><pre>
+for(int i = 0; i< 20; i++)
+{
+   System.out.println(nums[i]);
+}</pre></div>
+</p>
+<h1>Array Length</h1>
+<p>Look at the following program segment which creates a double array of size 50, assigns random
+   values to each element of the array, and then calculates the average of the random values.</p>
+<div id="csCode"><pre>
+double[] samples = new double[<div id="csHighlight"><pre>50</pre></div>];              // An array of 50 double values
+
+for(int i=0; i < <div id="csHighlight"><pre>50</pre></div>; i++)
+   samples[i] = (int)(Math.random()* 100 + 1);  // generate random values
+
+double average = 0.0;
+for(int i=0; i < <div id="csHighlight"><pre>50</pre></div>; i++)
+  average += samples[i];                        // sum all the elements
+
+average /=<div id="csHighlight"><pre>50</pre></div>;                                   // calculate the average
+</pre></div>
+<p>Notice how we use the length of the array, <strong>50</strong>, all over the place. It appears in the
+   for loop, and as a divisor to calculate the average. When you use arrays you will often find that 
+   references to the length of the array are strewn all through your code. And if you later want to 
+   change the program, to handle 100 elements for instance, you have to go into the code and change all
+   the 50s to 100s. Java helps you avoid this problem by allowing you access to the length of the array 
+   using <strong>length</strong>, a data member of the array object. For the array samples, we can refer
+   to its length as <strong>samples.length</strong>. </p>
+   
+   <p>The portion of the code above that calculates the average has been updated below to reflect the use of the
+      length variable.</p>
+<div id="csCode"><pre>
+double average = 0.0;
+for(int i=0; i < <div id="csHighlight"><pre>samples.length</pre></div>; i++)
+  average += samples[i];                 // sum all the elements
+
+average /=<div id="csHighlight"><pre>samples.length</pre></div>;  
+ </pre></div>
+ 
+ <div id="csNote"><strong>Note:</strong> the String class has a <strong>method</strong> named length() that returns the number
+ of characters in the string. Contrast this with the array that uses a <strong>variable</strong> named length that contains the size of the array.
+ <br><br>
+ <strong>String method</strong><br>
+ --------------<br>
+    int len = str.length(); <font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// call method</font><br>
+    <br>
+ <strong>array variable</strong><br>
+ -------------<br>
+    int len = myArray.length; <font color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// access variable</font></div>
+<br>
+</div>	
+

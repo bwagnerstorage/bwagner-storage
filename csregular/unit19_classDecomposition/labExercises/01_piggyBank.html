@@ -1,0 +1,161 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Piggy Bank</div>
+
+<div id="csContent"> 
+<img width="150px" src="images/piggybank1.png">
+<h1>Directions</h1>
+<p>In this assignment we are going to write a program that simulates the operation of a piggy bank.
+   A piggy bank allows you to enter coins through a slot in the top. When the piggy bank is full
+   you can retrieve the money by smashing it on the ground or hitting it with a hammer.</p>
+<p>Using class decomposition we are going to decompose this problem into two classes. The first class will be named <strong>PiggyBank</strong>. Its
+   job will be to store the money that is inserted into the bank. The second class will be named
+   <strong>PiggyBankManager</strong>. Its job will be to manage the program by creating a PiggyBank object
+   that it can send messages to asking it to store the coins as they are inserted into the bank. This class will contain the main
+   method for the program.</p>
+   <h2>PiggyBank class</h2>
+   <p>Using method decomposition the PiggyBank class can be decomposed into the following methods.</p>
+   <div align="center"><img src="images/piggybank2.png"></div>
+   <p>Create a file named <strong>PiggyBank.java</strong> and add the following code.</p>
+   <div id="csCode">
+   <pre>
+public class PiggyBank
+{
+    // instance variables
+    
+    
+    // methods
+        
+} </pre>
+</div>
+<p>Recall that a class is defined by two things: what it stores (variables) and what it does (methods).
+   What a piggy bank stores is money in the form of coins. To simulate the storing of coins add the
+   following variables to the PiggyBank class under the instance variables section.</p>
+      <div id="csCode">
+   <pre>
+private int quarters;   // number of quarters
+private int dimes;      // number of dimes
+private int nickels;    // number of nickels
+private int pennies;    // number of pennies
+</pre>
+</div>
+  <p>What a piggy bank does is allow a person to insert coins in the bank. To 
+    provide this capability add the following method declarations to the PiggyBank 
+    class under the methods section.</p>
+      <div id="csCode">
+   <pre>
+// increases the number of quarters in the bank by one
+public void insertQuarter()
+{
+
+}
+
+// increases the number of dimes in the bank by one
+public void insertDime()
+{
+
+}
+
+// increases the number of nickels in the bank by one
+public void insertNickel()
+{
+
+}
+
+// increases the number of pennies in the bank by one
+public void insertPenny()
+{
+
+}</pre>
+</div>
+<p>To allow a user to retrieve the money that has been inserted into the bank add the
+   following method to the class.</p>
+<div id="csCode">
+   <pre>
+/* This method returns the total number of cents in the piggy bank
+ * @ return total cents in the bank
+ */
+public int smashBank()
+{
+
+}</pre>
+</div>
+<p><strong>Implement PiggyBank Methods</strong></p>
+<ol id="csList">
+<li><p>Implement the methods <strong>insertQuarter</strong>, <strong>insertDime</strong>, <strong>insertNickel</strong>, and <strong>insertPenny</strong>
+    so that each method's corresponding instance variable is incremented by one.</p>
+	<p>For example, the job of the <strong>insertQuarter</strong> method is to allow a user to add a quarter to the bank. To provide this 
+	capability the insertQuarter method should include code that increases the <strong>quarters</strong> variable by one.</p> </li><br>
+<li><p>Implement the method <strong>smashBank</strong>.  The purpose of this method is to allow a user to see how much money has been added to
+    the piggy bank. To do this the smashbank method needs to add the total number of cents that the bank has collected. To calculate the total 
+	cents use the following formula:</p>
+	
+	<div id="csCode" style="width:520px">
+	<pre>totalCents = quarters * 25 + dimes * 10 + nickels * 5 + pennies</pre></div>
+	<p>The smashbank method is a non-void method so it needs to return the total cents calculated.</p>
+	</li>
+</ol>
+<br>
+<h2>PiggyBankManager class</h2>
+<p>The job of the PiggyBankManager class is to manage the program by interacting with a PiggyBank 
+   object. The code for this class is fairly simple so we will place it all inside the main method.</p>
+<p>Create a file named <strong>PiggyBankManager.java</strong> and add the following code.</p>
+   <div id="csCode">
+   <pre>
+public class PiggyBankManager
+{
+     public static void main(String[] args)
+     {
+	 
+     }      
+} </pre>
+</div>
+<p>The first step in allowing the PiggyBankManager class to communicate with the PiggyBank class is
+   for the PiggyBankManager class to instantiate a PiggyBank object. To do this add the following code to the
+   main method.</p>
+      <div id="csCode">
+   <pre>
+PiggyBank bank = new PiggyBank();      // instantiate object</pre>
+</div>
+<div id="csNote">Remember <strong>Jeroo</strong>: &nbsp;Jeroo bob = new Jeroo();
+</div>
+<p>The PiggyBankManager class can now communicate with the PiggyBank object by calling its public
+   methods. Add the following code to the main method which will insert 2 quarters, 2 dimes, 
+   1 nickel, and 2 pennies into the piggy bank.</p>
+        <div id="csCode">
+   <pre>
+bank.insertDime();          // add a dime
+bank.insertQuarter();       // add a quarter
+bank.insertPenny();         // add a penny
+bank.insertNickel();        // add a nickel
+bank.insertQuarter();       // add a quarter
+bank.insertDime();          // add a dime
+bank.insertPenny();         // and a penny</pre>
+</div>
+<div id="csNote">Remember <strong>Jeroo</strong>: &nbsp;bob.hop();</div>
+<p>To see how much money has been add to the bank call the method smashBank by adding the following
+   code.</p>
+<div id="csCode">
+   <pre>
+System.out.println("Your bank has been smashed!");
+System.out.println("You saved " + bank.smashBank() + " cents.");
+System.out.println();</pre>
+</div>
+<p>Compile and run the program.</p>
+<h1>Source Files</h1>
+<p>PiggyBank.java</p>
+<p>PiggyBankManager.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Your bank has been smashed!
+You saved 77 cents.
+
+</pre>
+</div>
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit19_classDecomposition/solutions/01_piggyBankSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+	<br>
+</div>
+

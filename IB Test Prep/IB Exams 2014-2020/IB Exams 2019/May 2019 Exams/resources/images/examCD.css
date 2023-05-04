@@ -1,0 +1,145 @@
+body {
+color: #000000;
+font-size: 9pt;
+font-family: helvetica, arial, sans-serif;
+background-color: #e5f5fe;
+margin-top: 0;
+margin-right: 0;
+margin-left: 0
+}
+img.logo {
+float: right;
+margin-top: 20px;
+margin-right: 10px;
+z-index: 500;
+}
+div.topGraphic {
+background-color: #252b56;
+height: 85px;
+}
+div.topGraphic p {
+position: absolute;
+z-index: 60;
+}
+div.graphicText p.title {
+top: 2px;
+left: 250px;
+font-size: 16pt;
+margin-top: 10px;
+font-weight: bold;
+color: #ffffff;
+}
+div.graphicText p.session {
+top: 35px;
+left: 250px;
+font-size: 11pt;
+color: #0ab0ec;
+font-weight: bold;
+}
+img.brandLeft 					 {
+position: absolute;
+z-index: 2;
+top: 0
+}
+div.navigation {
+position: absolute;
+left: 15px;
+margin-top: 20px;
+}
+div.navigation a {
+text-decoration: none;
+}
+div.navigation img {
+padding-right: 5px;
+margin-right: 5px;
+}
+a img {
+border: 0;
+}
+div.main {
+margin-left: 85px;
+margin-right: 50px;
+margin-top: 30px;
+}
+h1 {
+font-size: 20px;
+font-weight: bold;
+}
+h2 {
+font-size: 16px;
+font-weight: bold;
+}
+h3 {
+font-size: 14px;
+font-weight: bold;
+}
+a {
+color: blue;
+}
+table {
+font-size: 9pt;
+}
+th {
+text-align: center;
+}
+li {
+margin-bottom: 4pt;
+}
+th {
+padding: 10px;
+}
+td#paperName {
+padding: 0;
+}
+div.ibcaAddress p, div.contactInfo p {
+margin-bottom: 0;
+margin-top: 0;
+}
+p.itemCode, p.copyright {
+text-align: right;
+}
+p.pubDate {
+font-style: italic;
+}
+table.paperTable {
+margin-bottom: 30px;
+}
+td.titleOfPaper {
+text-align: left;
+}
+td {
+text-align: center;
+}
+div.trackCopy p {
+margin-bottom: 0;
+margin-top: 0;
+}
+div.trackCopy {
+margin-top: -5pt;
+}
+table.key {
+padding: 0;
+margin-left: 0;
+width: 390px;
+margin-bottom: 30px;
+}
+table.key th, table.key td {
+text-align: left;
+margin-left: 0;
+}
+table.key th, table.key td  {
+padding: 0;
+}
+div.contactInfo {
+margin-bottom: 30px;
+}
+div.installers {
+margin-left: 30px;
+}
+table.key td p {
+margin: 0;
+}
+p.boxed {
+border: 1pt solid #0ab0ec;
+padding: 5px;
+}

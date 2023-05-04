@@ -1,0 +1,132 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Linear(Sequential) Search</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Linear Search</li>
+						<li>What is the best case efficiency of a Linear Search</li>
+						<li>What is the average case efficiency of a Linear Search</li>
+						<li>What is the worst case efficiency of a Linear Search</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Linear(Sequential) Search</h1>
+<p>Often, programmers work with large amounts of data stored in arrays. It may be necessary to determine whether an array
+   contains a value that matches a certain key value. The process of locating a key value in an array is called <strong>searching</strong>.
+   In this unit, we discuss two searching techniques-the simple linear search and the more efficient binary search.</p>
+
+<p>The applet below demonstrates the process used by a linear search to find a value in a list(array or ArrayList).</p>
+<center> <applet
+           code	= "LinearApplet.class"
+		   archive = "LinearApplet.jar"
+		   codebase = "applets"
+           width	= "500"
+           height	= "250">
+     </applet></center>
+ 
+
+<p>The linear search begins the search at the beginning of the list. It compares the search key value
+   (the value you are looking for) with the first item in the list. If there is a match it stops the search.
+   If there is not a match, it moves down to the second item in the list. It repeats this process until it
+   either finds a match or it reaches the end of the list.</p>
+
+<h1>Linear Search Algorithm</h1>
+<p>The method below performs a linear search on an array of integers. If the key value is found in the
+   array the method returns true, otherwise it returns false.</p>
+
+<div id="csCode"><pre>
+public boolean LinearSearch(int[] a, int key)
+{
+   for(int i=0; i < a.length; i++)
+   {
+      if(a[i] == key)
+         return true;  // found
+   }
+   return false;  // not found in list
+}
+</pre></div> 
+
+<p>The method above only informs the program whether a given value is in a list. 
+  Sometimes it is useful to know where in the list the item was found. This can easily
+  be done by modifying the previous method:</p>
+<div id="csCode"><pre>
+public int LinearSearch(int[] a, int key)
+{
+   for(int i=0; i < a.length; i++)
+   {
+      if(a[i] == key)
+         return i;    // return location if found
+   }
+   return -1;  // return -1 if not found
+}
+</pre></div>
+
+<p>A return value of -1 informs the program that the item was not in the list.</p>
+
+<h1>Strings</h1>
+<p>A linear search can be used to search for a String within a list. However, you must
+   remember to compare the Strings using the String class's equals or equalsIgnoreCase methods.
+   For instance, </p>
+<div id="csCode"><pre>
+public int LinearSearch(String[] a, String key)
+{
+   for(int i=0; i < a.length; i++)
+   {
+      if(a[i].equals(key) == true)
+         return i;    // return location if found
+   }
+   return -1;  // return -1 if not found
+}
+</pre></div> 
+
+<h1>Enhanced For Loop</h1>
+<p>A search can also be performed using the enhanced for loop:</p>
+<div id="csCode"><pre>
+public int LinearSearch(String[] a, String key)
+{
+   for(String str : a)
+   {
+      if(str.equals(key) == true)
+         return true;    // string found
+   }
+   return false;  // string not found
+}
+</pre></div> 
+
+<h1>Algorithm Analysis / Time Efficiency</h1>
+<p>Computer Scientists like to talk about the efficiency of an algorithm in terms
+   of its best, average, and worst case. The best case occurs when the data is organized 
+   in such a way that the algorithm works at its peak performance or fastest. The average
+   case occurs when the data is organized in such a way that the algorithm works at its
+   average speed. The worst case occurs when the algorithm is least efficient or works 
+   at its slowest speed.</p>
+
+<p>The <strong>worst case</strong> is often the one most people look at when analyzing an algorithm
+   because it gives you the best guaranteed performance of the algorithm. The average case,
+   although of interest, is sometimes hard to estimate.</p> 
+
+<p>Assume n represents the size of a list to be searched.</p>
+
+<p>The <strong>Linear Search</strong> has the following time efficiency:</p>
+
+<div id="csList">
+<ul>
+
+<li><p><strong>Best Case</strong>: When the item to be searched is the first item in the list.</p></li> 
+<li><p><strong>Worst Case</strong>: When the item to be searched is at the end of the list or not in the list.
+   The search makes <strong>n</strong> comparisons before it determines that the item is not in the list.</p></li> 
+<li><p><strong>Average Case</strong>: When the item to be searched is in a random location. The search makes
+   on average <strong>n/2</strong> comparisons before it locates the item.</p></li> 
+</ul>
+</div>
+
+<br>
+</div>	
+

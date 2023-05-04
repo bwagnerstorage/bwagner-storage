@@ -1,0 +1,81 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI13 Gradient</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In graphic programming the term gradient is used to describe a gradual blend of color which can be
+     considered as an even gradation from low to high values of color. Below are two examples of gradients.</p>
+	 <img src="images/Gradient1.jpg"><img src="images/Gradient2.jpg">
+<h3>Circle Gradient</h3>
+<p>The circle gradient can be created by drawing a series of increasingly smaller circles with each circle having a slightly lighter color than the previous circle.</p>
+
+<p>Write a GUI program that draws a circle filled with a gradient color like the sample shown above.</p>
+
+<p>Copy the following code into your source file.</p>
+<div id="csCode">
+<pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI13 extends JFrame
+{
+    // constructor
+    public GUI13()
+    {
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.white);     
+        setVisible(true);                                
+    }
+    
+    public void paint(Graphics page)
+    {
+        super.paint(page);  // erase background
+        
+
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI13 app = new GUI13();  // run program
+    }
+}
+</pre>
+</div>
+<h3>Programming Notes</h3>
+<div id="csList">
+<ol>
+<li>All of the code needs to be in the paint method.</li>
+<li>Create a for loop that counts from 0 to 255. This loop will control the number
+    of circles that will be drawn. The reason you want a loop that executes 256 
+	times is because that is the range of possible color values.</li>
+<li>When changing the color of the circle only select one of the RGB values to modify. 
+    For example, if I want to draw a red gradient circle my code to create a color might
+   look like the following, where the variable r represents the value of red.
+   <div id="csCode" style="width:500px">
+<pre>
+page.setColor(new Color(r, 0, 0));
+</pre>
+</div>
+<p>As r increases from 0 to 255 the color will change from black to increasingly lighter shades of red.</p>   
+</li>
+<li>The circle should initially be drawn with the following starting values: x = 50, y = 50, width = 400, height = 400.
+This will center the circle in the middle of the screen. The circle can be drawn using the Graphics class's <strong>fillOval</strong> method like the sample code below.<br>
+<div id="csCode" style="width:500px">
+<pre>page.fillOval(x, y, width, height);</pre>
+</div>
+
+</li>
+<li>To shrink the circle, repeatedly add 1 to x and y and subtract 2 from width and height.</li>
+</ol>
+</div>
+<h1>Source File</h1>
+<p>GUI13.java</p>
+	<br>
+</div>

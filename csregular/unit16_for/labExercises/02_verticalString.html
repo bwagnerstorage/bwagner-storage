@@ -1,0 +1,132 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">VerticalString</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a Java program that reads a string from the user and prints it vertically one character per line. Use a <strong>for loop</strong> in your implementation.
+
+<p>You will need to use the following methods:</p>
+
+<p><strong>Scanner class</strong><br>
+ &nbsp;- nextLine<br>
+<br>
+<strong>String class</strong><br>
+ &nbsp;- length<br>
+ &nbsp;- substring<br>
+</p>
+<h1>Review</h1>
+<p>To read a string value from the keyboard using the Scanner class you can use
+   either the next() method or the nextLine() method. The difference between the
+   two is that the nextLine() method will read until it encounters an end of line marker,
+   which means it will read strings that contain spaces, where as
+   the next() method will stop reading as soon as it encounters a space or end of line marker.
+</p>
+<div id="csCode">String str = keyboard.nextLine();</div>
+<p>Recall that when your program stores a string in memory it assigns a number called an 
+   index to each character of the string; starting with the index 0. In previous assignments
+   you used a String class method named <strong>substring</strong> to extract a character or
+   characters from a string which we called substrings. Below is a table that demonstrates this process.
+</p>
+<p>Suppose we create a String variable named str and assign it the string "horse".</p>
+<div id="csCode">String str = "horse";</div>
+<p>Below is a table that illustrates the creation of this string object along with a call
+   to the substring() method.</p>
+<table id="csTable">
+    <tr>
+      <th>index</th><th>char</th><th>call to substring()</th><th>value returned</th>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-size:1.8em">0</td><td  style="text-align:center; font-size:1.8em">"h"</td><td  style="text-align:center; font-size:1.8em">str.substring(0,1)</td><td style="text-align:center; font-size:1.8em">"h"</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-size:1.8em">1</td>
+      <td style="text-align:center; font-size:1.8em">"o"</td>
+      <td style="text-align:center; font-size:1.8em">str.substring(1,2)</td>
+      <td style="text-align:center; font-size:1.8em">"o"</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-size:1.8em">2</td>
+      <td style="text-align:center; font-size:1.8em">"r"</td>
+      <td style="text-align:center; font-size:1.8em">str.substring(2,3)</td>
+      <td style="text-align:center; font-size:1.8em">"r"</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-size:1.8em">3</td>
+      <td style="text-align:center; font-size:1.8em">"s"</td>
+      <td style="text-align:center; font-size:1.8em">str.substring(3,4)</td>
+      <td style="text-align:center; font-size:1.8em">"s"</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-size:1.8em">4</td>
+      <td style="text-align:center; font-size:1.8em">"e"</td>
+      <td style="text-align:center; font-size:1.8em">str.substring(4,5)</td>
+      <td style="text-align:center; font-size:1.8em">"e"</td>
+    </tr>
+</table>
+<p>Notice the call to the <strong>substring</strong> method. To extract each letter
+   of the string, one at a time, involves using a distinct pattern: (0,1), 
+  (1,2), (2,3), (3,4), (4,5). The key to solving the problem of displaying the letters
+  vertically one at a time is to use a <strong>for loop</strong> to emulate this pattern along with it's
+  <strong>loop control variable</strong> to extract the individual letters from the string.</p>
+
+<h3>for Loop Condition and String class's length Method</h3>
+<p>The for loop below iterates or loops 11 times.</p>
+<div id="csCode"><pre>for(int i = 0; i &lt;= 10; i++)</pre></div>
+
+<p>The condition statement for this loop will cause the loop to stop once the variable i
+   is greater than 10. As it relates to the vertical string problem, what value do you use in place of the 10 to make the loop stop
+   once the loop has visited every letter in a string? Thankfully, the String class provides
+   a method named <strong>length</strong> for this purpose. The length method returns the
+   number of characters in a string. For example, the string "horse" has 5 characters so the
+   method would return a value of 5.</p>
+   <div id="csCode"><pre>String str = "horse";
+for(int i = 0; i &lt; str.length(); i++)</pre></div>
+<p>Notice that because the for loop uses the less than symbol "&lt;" the loop stops one short of the length of the string. Don't forget that the
+   characters of a string are number starting with 0. The length of a string is the index value of the last character + 1.
+    </p>
+<h1>Source File</h1>
+<p>verticalString.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter a string --> Have a nice day
+
+H
+a
+v
+e
+
+a
+
+n
+i
+c
+e
+
+d
+a
+y
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter a string --> Summer
+
+S
+u
+m
+m
+e
+r
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit16_for/solutions/02_verticalStringSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+	<br>
+</div>

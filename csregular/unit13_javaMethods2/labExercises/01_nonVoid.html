@@ -1,0 +1,338 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">NonVoid1</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment you are going to practice using (calling) non-void methods. Copy the following code into a source file named <strong>NonVoid1.java</strong>.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class NonVoid1
+{
+    /** @return the average of num1 and num2
+     *  @param num1 first number in average
+     *  @param num2 second number in average
+     */
+    public double average(double num1, double num2)
+    {
+       double avg = (num1 + num2) / 2;
+       return avg;
+    }
+    
+    /** @return an integer random number in the range of [1..range] inclusive
+     *  @param range the upper bounds of generated random number
+     */
+    public int randomInt(int range)
+    {
+        return (int)(Math.random() * range) + 1;
+    }
+ 
+    /** Determines if ch is a vowel. If ch is a vowel it
+     *  returns true; otherwise it returns false.
+     *  @return true or false
+     *  @param ch the string to be tested
+     */
+    public boolean isVowel(String ch)
+    {
+        if(ch.equalsIgnoreCase("a") || ch.equalsIgnoreCase("e") || 
+           ch.equalsIgnoreCase("i") || ch.equalsIgnoreCase("o") || 
+           ch.equalsIgnoreCase("u"))
+            return true;
+        else 
+            return false;
+    }
+    
+    /** Returns a response depending upon temp's value. 
+     *  If temp >= 85 it returns the string "It's hot".
+     *  If temp >= 65 it returns the string "It's warm".
+     *  If temp >= 45 it returns the string "It's cool".
+     *  If temp < 45 it rteturns the string "It's cold".
+     *  @return a string response
+     *  @param temp the temperature input
+     */
+    public String weather(int temp)
+    {
+        if(temp >= 85)
+            return "It's hot";
+        else if(temp >= 65)
+            return "It's warm";
+        else if(temp >= 45)
+            return "It's cool";
+        else
+            return "It's cold";
+    }
+
+    /** Determines the letter grade for grade
+     *  @return a string value of "A", "B", "C", or "F"
+     *  @param grade the grade that needs to be converted into a letter grade
+     */
+    public String getLetterGrade(int grade)
+    {
+        if(grade >= 90 && grade <= 100)
+            return "A";
+        if(grade >= 80 && grade < 90)
+            return "B";
+        if(grade >= 70 && grade < 80)
+            return "C";
+        
+        return "F";
+    }
+
+    /** Determines if num is a whole number. If num is a whole number it
+     *  returns true; otherwise it returns false.
+     *  @return true or false
+     *  @param num the number in the comparison
+     */
+    public boolean isWholeNumber(int num)
+    {
+        return (num >= 0);
+    }
+}
+</pre>
+</div>
+
+<p>Copy and paste the following code into a source file named <strong>Main.java</strong>. If you are using <strong>replit</strong> you will need to remove the keyword <strong>public</strong> from the first line.</p>
+
+<div id="csCode" style="width: 678px">
+<pre>
+public class Main
+{	
+    public static void main(String[] args)
+    {
+        //----------------------------------------------------
+        // Jeroo bob = new Jeroo();     : create Jeroo object
+        // bob.hop();                   : call void method
+        // bob.plant();                 : call void method
+        // if(bob.isNet(AHEAD))         : call non-void method
+        // while(!bob.isWater(AHEAD))   : call non-void method
+        //-----------------------------------------------------
+
+        NonVoid1 app = new NonVoid1();   // create NonVoid1 object
+
+        System.out.println();
+        System.out.println("Test average method");
+        System.out.println("===================");
+        System.out.println("The average of 50 and 100 is " + app.average(50, 100));
+        System.out.println("The average of 1271 and 5446 is " + app.average(1271, 5446));
+
+
+        System.out.println();
+        System.out.println("Test randomInt method");
+        System.out.println("=====================");
+        System.out.println("An integer random number in range of [1..3] = " );
+        System.out.println("An integer random number in range of [1..50] = " );
+
+
+        System.out.println();
+        System.out.println("Test isVowel method");
+        System.out.println("===================");
+        System.out.println("The letter e is a vowel = "  );
+        System.out.println("The letter k is a vowel = "  );
+        System.out.println("The letter A is a vowel = "  );
+
+        
+        System.out.println();
+        System.out.println("Test weather method");
+        System.out.println("==========================");
+        System.out.println(  " when the temperature is 32 degrees");
+        System.out.println(  " when the temperature is 78 degrees");
+		
+
+        System.out.println();
+        System.out.println("Test getLetterGrade method");
+        System.out.println("==========================");
+        System.out.println("A score of 75 = "  );
+        System.out.println("A score of 89 = "  );
+
+
+        System.out.println();
+        System.out.println("Test isWholeNumber method");
+        System.out.println("=========================");
+        System.out.println("The number 100 is a whole number = "  );
+        System.out.println("The number -25 is a whole number = "  );
+    }
+}
+</pre>
+</div>
+<p>You are going to complete the implementation of the program's main method by writing code that will test the functionality of each
+   non-void method defined in the program. The program's output should look like the sample output shown below.</p>
+   <br>
+<h3>Method average</h3>
+
+<p>As an example, code to test the functionality of the <strong>average</strong> method has    been done for you. Look at the average method 
+   shown below. Notice the method's documentation states that the method returns the average of the two parameters <strong>num1</strong>
+   and <strong>num2</strong>. To calculate the average the method adds the values of the two parameters together then divides this sum by 2.
+   The result is stored in a local variable named <strong>avg</strong>. Non-void methods always return an answer or result of some process or calculation.
+   To meet this requirement the method returns the value of the avg variable by placing it after the Java keyword <strong>return</strong>.</p>
+   
+<div id="csCode">
+<pre>
+/** @return the average of num1 and num2
+ *  @param num1 first number in average
+ *  @param num2 second number in average
+ */
+ public double average(double num1, double num2)
+ {
+    double avg = (num1 + num2) / 2;
+    return avg;
+ }
+</pre>
+</div>
+<p>The average method could also have written like the following:</p>
+<div id="csCode">
+<pre>
+/** @return the average of num1 and num2
+ *  @param num1 first number in average
+ *  @param num2 second number in average
+ */
+ public double average(double num1, double num2)
+ {
+    return (num1 + num2) / 2;
+ }
+</pre>
+</div>
+<p>Notice that the method performs the average calculation on the return line. This makes the avg variable used in the first version unnecessary.</p>
+<p>To test whether the average method works as intended the following code was added to the program's main method.</p>
+<div id="csCode">
+<pre>
+public static void main(String[] args)
+{
+	NonVoid1 app = new NonVoid1();
+
+	System.out.println();
+	System.out.println("Test average method");
+	System.out.println("===================");
+	System.out.println("The average of 50 and 100 is " + <strong>app.average(50, 100)</strong>);
+	System.out.println("The average of 1271 and 5446 is " + <strong>app.average(1271, 5446)</strong>);
+</pre>
+</div>
+<p>The first step in testing the average method was to create an object of the class NonVoid1 and store its reference in a variable named <strong>app</strong>.
+   After the object was created a message was sent to the object using dot notation asking it to execute its average method. This is the same process used in Jeroo to execute Jeroo methods.</p>
+   <div id="csCode">
+<pre>
+Jeroo bob = new Jeroo();   // create Jeroo object and store its reference in bob
+
+bob.<div id="csHighlight">hop</div>();   // execute hop method
+
+if(bob.isWater(AHEAD))                   // execute isWater method
+{
+   bob.<div id="csHighlight">turn</div>(LEFT);
+}
+</pre>
+</div>
+
+<p>Here is a sample output of the average method's testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test average method
+===================
+The average of 50 and 100 is 75.0
+The average of 1271 and 5446 is 3358.5
+</pre></div>
+<br>
+<h3>Method randomInt</h3>
+<p>Read the documentation for the <strong>randomInt</strong> method provided in the code. Then complete the two lines of code that will test 
+   this method. The first line of code should pass the randomInt method a value of 3 through its<br> parameter list: <span style="font-family: consolas; font-size:1.2em">randomInt(3)</span>.
+   The second line of code should pass the randomInt method a value of 50 through its parameter list: <span style="font-family: consolas; font-size:1.2em">randomInt(50)</span>.</p>
+   
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test randomInt method
+=====================
+An integer random number in range of [1..3] = 2
+An integer random number in range of [1..50] = 47
+</pre></div>
+<p>Since the randomInt method generates random numbers your output will probably be different.</p>
+<br>
+<h3>Method isVowel</h3>
+<p>Read the documentation for the <strong>isVowel</strong> method provided in the code. Then complete the three lines of code that will test the method. Use the strings "e", "k", and "A" as parameter input.</p>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test isVowel method
+===================
+The letter e is a vowel = true
+The letter k is a vowel = false
+The letter A is a vowel = true
+</pre></div>
+<p>The isVowel method introduces another String class method named <strong>equalsIgnoreCase</strong>. This method is similiar to the
+   equals method in that it compares two strings for equality but it will also ignore the case of the two strings. For example: the strings "x" and "X" would be
+   equal if tested using equalsIgnoreCase.</p>
+<br>
+<h3>Method weather</h3>
+<p>Read the documentation for the <strong>weather</strong> method provided in the code. Then complete the two lines of code that will test the method. Use the integer values 32 and 78 as parameter input.</p>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test weather method
+==========================
+It's cold when the temperature is 32 degrees
+It's warm when the temperature is 78 degrees
+</pre></div>
+<p>Notice that the method call should be placed at the front of the println statement.</p>
+<br>
+<h3>Method getLetterGrade</h3>
+<p>Read the documentation for the <strong>getLetterGrade</strong> method provided in the code. Then complete the two lines of code that will test the method. Use the integer values 75 and 89 as parameter input.</p>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test getLetterGrade method
+==========================
+A score of 75 = C
+A score of 89 = B
+</pre></div>
+<br>
+<h3>Method isWholeNumber</h3>
+<p>A whole number is a positive integer greater than or equal to zero. Read the documentation for the <strong>isWholeNumber</strong> method provided in the code. 
+Then complete the two lines of code that will test the method. Use the integer values 100 and -25 as parameter input.</p>
+<p>Here is a sample output of the testing code.</p>
+<div id="csOutput" style="width: 500px"><pre>
+Test isWholeNumber method
+=========================
+The number 100 is a whole number =  true
+The number -25 is a whole number =  false
+</pre></div>
+<br>
+<h1>Source File</h1>
+<p>NonVoid1.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test average method
+===================
+The average of 50 and 100 is 75.0
+The average of 1271 and 5446 is 3358.5
+
+Test randomInt method
+=====================
+An integer random number in range of [1..3] = 2
+An integer random number in range of [1..50] = 47
+
+Test isVowel method
+===================
+The letter e is a vowel = true
+The letter k is a vowel = false
+The letter A is a vowel = true
+
+Test weather method
+==========================
+It's cold when the temperature is 32 degrees
+It's warm when the temperature is 78 degrees
+
+Test getLetterGrade method
+==========================
+A score of 75 = C
+A score of 89 = B
+
+Test isWholeNumber method
+=========================
+The number 100 is a whole number =  true
+The number -25 is a whole number =  false
+</pre>
+</div>
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit13_javaMethods2/solutions/01_nonVoid1Solution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+
+	<br>
+</div>

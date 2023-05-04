@@ -1,0 +1,154 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI17 Coin Flip</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In the previous lesson you saw how to create a textarea using the JTextArea class. 
+     The program used to demonstrate the textarea had one major limitation. There were no 
+	 scrollbars. In this lesson we look at how you go about adding scroll bars to a textarea.
+	 The program below displays the numbers from 1 to 5000 within the textarea. A vertical 
+	 scrollbar has been added so you can scroll back to see all of the numbers.</p>
+   <p>Copy the following code into your source file. Compile and run the program.</p>
+   <div id="csCode">
+   <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI17 extends JFrame implements ActionListener
+{
+    // instance variables
+    private JButton button;
+    private JTextArea textArea;
+    <div id="csHighlight"><pre>private JScrollPane scrollpane;</pre></div>
+    
+    // constructor
+    public GUI17()
+    {       
+        // create button
+        button = new JButton("run");
+        
+        // set button attributes
+        button.setLocation(220,20);
+        button.setSize(80, 25);
+        
+        // add button to frame
+        getContentPane().add(button);
+        
+        // register listener with button
+        button.addActionListener(this);
+        
+        // create textarea
+        textArea = new JTextArea();
+        
+        // set textarea attributes
+        textArea.setFont(new Font("Arial", Font.PLAIN, 16));
+        textArea.setEditable(false);   // cannot type text into textArea
+        <div id="csHighlight"><pre>textArea.setLineWrap(true);</pre></div>   // wrap text when reach right border
+        
+        
+        // create scrollpane and add textarea
+        <div id="csHighlight"><pre>scrollpane = new JScrollPane(textArea);</pre></div>
+        
+        // set scrollpane attributes
+        <div id="csHighlight"><pre>scrollpane.setLocation(50,50);</pre></div>
+        <div id="csHighlight"><pre>scrollpane.setSize(400, 400);</pre></div>
+        <div id="csHighlight"><pre>scrollpane.setBorder(BorderFactory.createLineBorder (Color.blue, 2));</pre></div>
+        
+        
+        // add scrollpane to frame
+        <div id="csHighlight"><pre>getContentPane().add(scrollpane);</pre></div>    
+        
+        // set frame attributes
+        setLayout(null);
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        setVisible(true);                                
+    }
+    
+    public void actionPerformed(ActionEvent event)
+    {
+        if(event.getSource() == button)             // identify source
+        {
+           String text = "";
+           for(int i = 1; i <= 5000; i++)
+           {
+              text += i + " ";
+           }
+           
+           textArea.setText("");     // clear text area
+           textArea.append(text);    // append text to text area
+        }
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI17 app = new GUI17();  // run program
+    }
+}</pre>
+   </div>
+
+<p>The first line of code is a textarea attribute that turns on line wrapping so that when
+   the text reaches the right boundary of the textarea window the text is wrapped so that its
+    starts at the beginning of the next line. If this line is omitted or set to false a 
+	horizontal scrollbar will appear if the text goes beyond the right boundary of the textarea.</p>
+   <div id="csCode">
+   <pre>
+textArea.setLineWrap(true);    // wrap text when reach right border of textarea
+</pre>
+   </div> 
+
+<p>The class <strong>JScrollPane</strong> is used to add scrollbars to textareas. Notice that when creating the
+   JScrollPane object you pass the textarea as a parameter.</p> 
+
+<p><strong>Important:</strong> When using a scrollpane with a textarea you do not add the textarea
+   to the content pane. Instead you add it to the scrollpane. Instead it is the scrollpane that is
+   added to the content pane of the frame.</p>
+   <div id="csCode">
+   <pre>
+scrollpane = new JScrollPane(textArea);</pre>
+   </div>
+
+<p>The location,size, and border attributes are set for the scrollpane not the textarea.</p>
+   <div id="csCode">
+   <pre>
+scrollpane.setLocation(50,50);
+scrollpane.setSize(400, 400);
+scrollpane.setBorder(BorderFactory.createLineBorder (Color.blue, 2));
+</pre>
+   </div>
+   
+<h1>Modifications</h1>
+<p>Modify the <strong>actionPerformed</strong> method so that the program simulates the flipping of a coin.</p>
+<div id="csList">
+<ol>
+
+<li>The program should generate 500 random numbers in the range of 0 - 1.</li>
+<li>Let 0 represent heads and 1 represent tails.</li>
+<li>The textarea should display the words "heads" or "tails" 500 times simulating 500 flips of a
+    coin.</li>
+<li>Below the list of heads or tails the textarea should display the count of the number of
+    heads and tails flipped.</li>
+<li>The textarea should also display the percentage of heads and tails thrown using the
+    following formula:<br><br>
+
+  <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;percentage = number thrown divided by 500 multiplied by 100.</strong><br><br>
+
+</li>
+<li>To cause each line to be displayed on a separate line you will need to use the new line
+    escape sequence (\n). Example:<br><br>
+
+<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += " heads\n";</strong>
+</li></ol> </div>
+
+   
+<h1>Source File</h1>
+<p>GUI17.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI17.png">
+	<br>
+</div>
+

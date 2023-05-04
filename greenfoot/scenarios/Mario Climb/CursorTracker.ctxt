@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=CursorTracker
+comment1.params=
+comment1.target=CursorTracker()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ CursorTracker\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

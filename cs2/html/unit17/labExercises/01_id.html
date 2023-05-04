@@ -1,0 +1,140 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">17-1 HTML IDs</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/html/html_id.asp" target="_blank" style="color:blue">HTML IDs</a></p></li>
+</ul>
+<h1>Lesson</h1>
+<p>In this lesson, you will learn how to assign an identifier to a HTML element using the <strong>id</strong> attribute. In contrast to the <strong>class</strong> attribute
+   used in the previous unit, the identifier assigned to the id attribute is unique and can only be assigned to <strong>one</strong> HTML element.  
+   Both CSS and JavaScript can use this identifier to perform certain tasks that are unique to that element.</p>
+   <p>The <strong>id</strong> attribute uses the same format as other HTML attributes.</p>
+<div id="csHtml"><pre>
+&lt;div <div id="csHighlight"><pre>id</pre></div>="myIdName"&gt;
+   
+   
+&lt;/div&gt;
+</pre></div>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>17_1_id.html</strong> and save it to your HTML folder.</p></li>
+<li><p>Copy the following HTML code into your new document.</p></li>
+<div id="csHtml"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+      &lt;head&gt;
+         &lt;title&gt;17_1_id&lt;/title&gt;
+         &lt;meta charset="utf-8"&gt;
+         &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+         &lt;style&gt;
+            body {
+                  margin: 15px;
+                  background-color:lightskyblue
+            }
+
+            #container {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: flex-end;
+            }
+
+            #blockA{
+                  width: 100px;
+                  height: 100px;
+                  background-color:beige;
+                  color:darkred;
+                  border: 4px solid darkred;
+                  font-size:5.5rem;
+                  text-align: center;
+                  box-shadow: 4px 4px 10px rgb(126, 109, 109);
+                  margin-right: 15px;
+            }
+
+            #blockB{
+                  width: 50px;
+                  height: 50px;
+                  background-color:beige;
+                  color:darkgreen;
+                  border: 4px solid darkgreen;
+                  font-size: 2.7rem;
+                  text-align: center;
+                  box-shadow: 4px 4px 10px rgb(107, 128, 115);
+                  margin-right: 15px;
+            }
+
+            #blockC {
+                  width: 80px;
+                  height: 80px;
+                  background-color:beige;
+                  color:darkblue;
+                  border: 4px solid darkblue;
+                  font-size: 4.5rem;
+                  text-align: center;
+                  box-shadow: 4px 4px 10px rgb(125, 120, 151);
+                  margin-right: 15px;
+            }
+
+            #blockD {
+                  width: 150px;
+                  height: 150px;
+                  background-color:beige;
+                  color:darkorange;
+                  border: 4px solid darkorange;
+                  font-size: 8rem;
+                  text-align: center;
+                  box-shadow: 4px 4px 10px rgb(148, 138, 112);
+                  margin-right: 15px;
+            }
+         &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+         &lt;div id="container"&gt;
+            &lt;div id="blockA"&gt;A&lt;/div&gt;
+            &lt;div id="blockB"&gt;B&lt;/div&gt;
+            &lt;div id="blockC"&gt;C&lt;/div&gt;
+            
+         &lt;/div&gt;
+      &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+<li><p>Display the html file in the browser. Notice the three blocks all have individualized
+   styling including different sizes, border color, font color and font size. This unique styling 
+   is accomplished by assigning each div its own id using the <strong>id</strong> attribute like 
+   the one shown below.</p>
+   <div id="csHtml" style="width:300px"><pre>&lt;div id="blockA"&gt;A&lt;/div&gt;</pre></div>
+</li>
+
+<li><p>
+   Using the id attribute the div is assigned the id name "blockA". This identifier uniquely identifies
+   this div in the code by this name. This id can only be assigned to one html element. Now look at the CSS code that is assigned to this id using this
+   id.
+</p>
+<div id="csHtml"><pre>#blockA{
+   width: 100px;
+   height: 100px;
+   background-color:beige;
+   color:darkred;
+   border: 4px solid darkred;
+   font-size:5.5rem;
+   text-align: center;
+   box-shadow: 4px 4px 10px rgb(126, 109, 109);
+   margin-right: 15px;
+}
+</pre></div>
+
+</li>
+<li><p>In the CSS, the hash tag symbol "#" is used to assign styling for the html element with the specified id.</p></li>
+<li><p>To see how this works, <strong>add</strong> a new div element to the html document, below the "blockC" div, that assigns the id <strong>blockD</strong> to the new div. 
+   Type the letter "D" between the div's opening and closing tags.
+</p></li>
+<p>View the page in the browser. A new block labeled "D" should now appear with its own unique styling. This styling was
+   specified in the CSS styling section using <strong>#blockD</strong>.
+</p>
+</ol>
+<br><hr><br>
+
+	<br>
+</div>	

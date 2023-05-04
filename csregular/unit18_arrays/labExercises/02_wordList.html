@@ -1,0 +1,88 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">WordList</div>
+
+<div id="csContent"> 
+<h1>Description</h1>
+  <p>Write a program that reads 10 strings from the keyboard and stores them in an array of strings,
+    then displays the list of strings vertically on the screen.</p>
+<h1>Directions</h1>
+<ol id="csList">
+<li>Create a new Java file named WordList and add the usual starter code.<br>
+<div id="csCode" style="width:600px"><pre>import java.util.*;
+
+public class WordList
+{
+  public static void main(String[] args)
+  {
+    Scanner keyboard = new Scanner(System.in);
+    
+  }
+}</pre></div>
+</li>
+<li>In the main method, create an array named <strong>words</strong> that can store 10 strings.</li><br>
+<li>Assuming that you created the <strong>words</strong> array, the following code can be used to input 10
+   strings from the keyboard and store them in the array.<br> 
+
+<div id="csCode" style="width:600px"><pre>
+words[0] = keyboard.nextLine();
+words[1] = keyboard.nextLine();
+words[2] = keyboard.nextLine();
+words[3] = keyboard.nextLine();
+words[4] = keyboard.nextLine();
+words[5] = keyboard.nextLine();
+words[6] = keyboard.nextLine();
+words[7] = keyboard.nextLine();
+words[8] = keyboard.nextLine();
+words[9] = keyboard.nextLine();
+</pre></div><br>
+Although this code works, <u>we can do alot better!</u> In the first exercise you learned that you could use
+   a <strong>for loop</strong> to display the contents of an array. In this exercise, lets use a
+   for loop to input the 10 strings and store them in the array. Before we write the for loop, look 
+   again at the code above. Notice that the 10 lines are exactly the same accept for the number in the
+   square brackets []. This number, called an <strong>index</strong>, starts with a value of 0 and increases
+   by one until it reaches 9. This behavior can be duplicated by a for loop.<br>
+<div id="csCode" style="width:600px"><pre>for(int i = 0; i &lt; 10; i++)
+{
+   words[<span id="csHighlight"><pre>i</pre></span>] = keyboard.nextLine();
+}
+</pre></div>
+<br>
+</li>
+<li>Complete the program by writing a for loop to display the 10 strings.</li>
+<h1>Source File</h1>
+<p>WordList.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter 10 words:
+red
+green
+blue
+yellow
+black
+white
+brown
+pink
+orange
+purple
+
+red
+green
+blue
+yellow
+black
+white
+brown
+pink
+orange
+purple
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit18_arrays/solutions/02_wordListSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>

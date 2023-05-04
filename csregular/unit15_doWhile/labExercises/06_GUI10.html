@@ -1,0 +1,85 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI10 Starburst</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a GUI program that uses a <strong>do while loop</strong> to create a starburst design similar
+   to the sample runs shown below.</p>
+<p>The program should draw 300 lines with each line extending out from the center of the window (250, 250)      to another point selected at random. To draw a line use the <strong>Graphics</strong> class's 
+   <strong>drawLine(x1, y1, x2, y2)</strong> method. For example, Assume that a Graphic's object named <strong>page</strong> has been defined. To draw a line from point (250, 250) to point (20, 468) you would use code like the following
+   
+<div id="csCode"><pre>
+page.drawLine(250, 250, 20, 468);
+</pre></div>
+<br>
+<h3>Alternate Between Two Colors</h3>
+   As you draw the lines alternate between two different colors.</p>
+   <p>One way to
+   alternate colors is to use the remainder operator. Look at the following code. Assume that a variable
+   named <strong>counter</strong> has been defined and is used as the <strong>loop control variable</strong> for a do while loop.
+
+<div id="csCode">
+<pre>
+if(counter % 2 == 0)
+{
+   page.setColor(Color.blue);
+}
+else
+{
+   page.setColor(Color.yellow);
+}
+</pre>
+</div>
+<p>The if statement condition calculates the remainder when counter is divided by 2. If the remainder equals 0
+   then counter is an even number. If the remainder equals 1 then counter is an odd number. As
+   counter counts up by one the if statement alternates between setting the color to either
+   blue or yellow.</p>
+<p>Copy the following code into your source file.</p>
+<div id="csCode">
+<pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI10 extends JFrame
+{
+    // constructor
+    public GUI10()
+    {
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.black);     
+        setVisible(true);                                
+    }
+    
+    public void paint(Graphics page)
+    {
+        super.paint(page);  // erase background
+        
+
+
+
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI10 app = new GUI10();  // run program
+    }
+}
+
+</pre>
+</div>
+<p>All of your code needs to be in the <strong>paint</strong> method.</p>
+<h1>Source File</h1>
+<p>GUI10.java</p>
+<h1>Sample Run 1</h1>
+<img src="images/GUI10_1.gif">
+<img src="images/GUI10_2.gif">
+	<br>
+</div>
+

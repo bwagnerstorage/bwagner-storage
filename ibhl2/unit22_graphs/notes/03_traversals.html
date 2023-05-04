@@ -1,0 +1,546 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+  <div id="csHeader">Traversals</div>
+  <div id="csContent">
+  <p>One of the most common operations performed on graphs is searching. One type of search is 
+   called a <strong>traversal</strong>. A traversal refers to the process of 
+     visiting each vertex or node in a graph.</p>
+     <p>Two common traversals are the <strong>Depth First Search(DFS)</strong> and the
+        <strong>Breadth First Search(BFS)</strong>.</p>
+  
+  <h1>Depth First Search(DFS)</h1>
+  <p>The aim of DFS algorithm is to traverse the graph in such a way that it tries to go far
+     from the source or root node. In other words, nodes are visited by going through the depth
+     of the tree from the starting node. A <strong>stack</strong> is used in the implementation
+     of the depth first search. Below are the steps used to perform a DFS:
+     <div  style="border:2px black solid; padding:5px;">
+     <ol id="csList">
+        <li style="font-size:1.2em; padding-bottom: 4px">Push the starting node(source) onto a stack.</li>
+        <li style="font-size:1.2em; padding-bottom: 4px">Mark the source node as visited.</li>
+        <li style="font-size:1.2em; padding-bottom: 4px">Loop until the stack is empty.</li>
+        <li style="font-size:1.2em; padding-bottom: 4px">Look at the node on top of the stack(peek).</li>
+        <li style="font-size:1.2em; padding-bottom: 4px">If this node has unvisited child nodes, get the first unvisited child node, and mark it as visited and push it onto the stack.</li>
+        <li style="font-size:1.2em; padding-bottom: 4px">If this child node does not have any unvisited children, then pop it from the stack.</li>    
+     </ol>
+    </div>
+     <p>Let’s see how depth first search works with respect to the following graph: </p>
+
+       <div class = "slider" id="slider1">
+       <ul class="bjqs">
+         <li><img src="images/DFS/Slide1.PNG"></li>
+         <li><img src="images/DFS/Slide2.PNG"></li>
+         <li><img src="images/DFS/Slide3.PNG"></li>
+         <li><img src="images/DFS/Slide4.PNG"></li>
+         <li><img src="images/DFS/Slide5.PNG"></li>
+         <li><img src="images/DFS/Slide6.PNG"></li>
+         <li><img src="images/DFS/Slide7.PNG"></li>
+         <li><img src="images/DFS/Slide8.PNG"></li>
+         <li><img src="images/DFS/Slide9.PNG"></li>
+         <li><img src="images/DFS/Slide10.PNG"></li>
+         <li><img src="images/DFS/Slide11.PNG"></li>
+         <li><img src="images/DFS/Slide12.PNG"></li>
+         <li><img src="images/DFS/Slide13.PNG"></li>
+         <li><img src="images/DFS/Slide14.PNG"></li>
+         <li><img src="images/DFS/Slide15.PNG"></li>
+         <li><img src="images/DFS/Slide16.PNG"></li>
+         <li><img src="images/DFS/Slide17.PNG"></li>
+         <li><img src="images/DFS/Slide18.PNG"></li>
+         <li><img src="images/DFS/Slide19.PNG"></li>
+         <li><img src="images/DFS/Slide20.PNG"></li>
+         <li><img src="images/DFS/Slide21.PNG"></li>
+         <li><img src="images/DFS/Slide22.PNG"></li>
+         <li><img src="images/DFS/Slide23.PNG"></li>
+         <li><img src="images/DFS/Slide24.PNG"></li>
+         <li><img src="images/DFS/Slide25.PNG"></li>
+         <li><img src="images/DFS/Slide26.PNG"></li>
+         <li><img src="images/DFS/Slide27.PNG"></li>
+         <li><img src="images/DFS/Slide28.PNG"></li>
+         <li><img src="images/DFS/Slide29.PNG"></li>
+         <li><img src="images/DFS/Slide30.PNG"></li>
+         <li><img src="images/DFS/Slide31.PNG"></li>
+         <li><img src="images/DFS/Slide32.PNG"></li>
+         <li><img src="images/DFS/Slide33.PNG"></li>
+         <li><img src="images/DFS/Slide34.PNG"></li>
+         <li><img src="images/DFS/Slide35.PNG"></li>
+         <li><img src="images/DFS/Slide36.PNG"></li>
+         <li><img src="images/DFS/Slide37.PNG"></li>
+         <li><img src="images/DFS/Slide38.PNG"></li>
+         <li><img src="images/DFS/Slide39.PNG"></li>
+         <li><img src="images/DFS/Slide40.PNG"></li>
+         <li><img src="images/DFS/Slide41.PNG"></li>
+         <li><img src="images/DFS/Slide42.PNG"></li>
+         <li><img src="images/DFS/Slide43.PNG"></li>
+         <li><img src="images/DFS/Slide44.PNG"></li>
+         <li><img src="images/DFS/Slide45.PNG"></li>
+         <li><img src="images/DFS/Slide46.PNG"></li>
+         <li><img src="images/DFS/Slide47.PNG"></li>
+         <li><img src="images/DFS/Slide48.PNG"></li>
+         <li><img src="images/DFS/Slide49.PNG"></li>
+         <li><img src="images/DFS/Slide50.PNG"></li>
+         <li><img src="images/DFS/Slide51.PNG"></li>
+         <li><img src="images/DFS/Slide52.PNG"></li>
+         <li><img src="images/DFS/Slide53.PNG"></li>
+         <li><img src="images/DFS/Slide54.PNG"></li>
+         <li><img src="images/DFS/Slide55.PNG"></li>
+         <li><img src="images/DFS/Slide56.PNG"></li>
+         <li><img src="images/DFS/Slide57.PNG"></li>
+         <li><img src="images/DFS/Slide58.PNG"></li>
+         <li><img src="images/DFS/Slide59.PNG"></li>
+         <li><img src="images/DFS/Slide60.PNG"></li>
+         <li><img src="images/DFS/Slide61.PNG"></li>
+        </ul>
+    </div>	
+
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Breadth First Search(BFS)</h1>
+
+<p>The aim of BFS algorithm is to traverse the graph as close as possible to the root node, as opposed
+   to the DFS algorithm which seeks to move away from the root node as quickly as possible. 
+   Instead of a stack, the BFS uses a <strong>queue</strong> to traverse all of the nodes in a graph. </p> 
+   
+<p>The BFS algorithm starts by visiting the root
+   node and then all of its neighboring nodes, also know as its child nodes. Then, it selects the 
+   nearest node from the set 
+   of neighboring nodes and visits all of its unexplored neighbor nodes as well. The algorithm follows 
+   this same process for each of the nearest nodes until it reaches it goal.
+   The algorithm explores all neighbors of all the nodes and ensures
+   that each node is visited exactly once and no node is visited twice.
+   Below are the steps used to perform a BFS:</p> 
+
+<div  style="border:2px black solid; padding:5px;">
+<ol id="csList">
+   <li style="font-size:1.2em; padding-bottom: 4px">Add the starting or source node to a queue.</li>
+   <li style="font-size:1.2em; padding-bottom: 4px">Mark the source node as visited.</li>
+   <li style="font-size:1.2em; padding-bottom: 4px">Loop until the queue is empty.</li>
+   <li style="font-size:1.2em; padding-bottom: 4px">Remove a node from the queue.</li>
+   <li style="font-size:1.2em; padding-bottom: 4px">If the removed node has unvisited child nodes, mark them as visited and add
+       the unvisited children to the queue. </li>    
+</ol>
+</div>
+
+<p>Let’s see how breadth first search works with respect to the following graph: </p>
+
+<div class = "slider" id="slider2">
+  <ul class="bjqs">
+    <li><img src="images/BFS/Slide1.PNG"></li>
+    <li><img src="images/BFS/Slide2.PNG"></li>
+    <li><img src="images/BFS/Slide3.PNG"></li>
+    <li><img src="images/BFS/Slide4.PNG"></li>
+    <li><img src="images/BFS/Slide5.PNG"></li>
+    <li><img src="images/BFS/Slide6.PNG"></li>
+    <li><img src="images/BFS/Slide7.PNG"></li>
+    <li><img src="images/BFS/Slide8.PNG"></li>
+    <li><img src="images/BFS/Slide9.PNG"></li>
+    <li><img src="images/BFS/Slide10.PNG"></li>
+    <li><img src="images/BFS/Slide11.PNG"></li>
+    <li><img src="images/BFS/Slide12.PNG"></li>
+    <li><img src="images/BFS/Slide13.PNG"></li>
+    <li><img src="images/BFS/Slide14.PNG"></li>
+    <li><img src="images/BFS/Slide15.PNG"></li>
+    <li><img src="images/BFS/Slide16.PNG"></li>
+    <li><img src="images/BFS/Slide17.PNG"></li>
+    <li><img src="images/BFS/Slide18.PNG"></li>
+    <li><img src="images/BFS/Slide19.PNG"></li>
+    <li><img src="images/BFS/Slide20.PNG"></li>
+    <li><img src="images/BFS/Slide21.PNG"></li>
+    <li><img src="images/BFS/Slide22.PNG"></li>
+    <li><img src="images/BFS/Slide23.PNG"></li>
+    <li><img src="images/BFS/Slide24.PNG"></li>
+    <li><img src="images/BFS/Slide25.PNG"></li>
+    <li><img src="images/BFS/Slide26.PNG"></li>
+    <li><img src="images/BFS/Slide27.PNG"></li>
+    <li><img src="images/BFS/Slide28.PNG"></li>
+    <li><img src="images/BFS/Slide29.PNG"></li>
+    <li><img src="images/BFS/Slide30.PNG"></li>
+    <li><img src="images/BFS/Slide31.PNG"></li>
+    <li><img src="images/BFS/Slide32.PNG"></li>
+    <li><img src="images/BFS/Slide33.PNG"></li>
+    <li><img src="images/BFS/Slide34.PNG"></li>
+    <li><img src="images/BFS/Slide35.PNG"></li>
+   </ul>
+
+  
+   <h1>Graph Implementation</h1>
+   <p>All of the sample code below builds the following unweighted undirected graph:</p>
+   <div style="display: flex; justify-content: center;">
+        <img src="images/Graph/graph14.png" style="width:40%; height:40%">
+   </div>
+   <h1>Java Implementation of DFS using Adjacency Matrix</h1>
+   <div id="csCode" style="width: 725px"><pre>import java.util.*;
+
+/*  This program executes a depth first search (DFS) on a graph represented 
+    by an adjacency matrix. It uses an array of boolean values to track the
+    nodes that have been visited. It uses a stack to allow the graph to be
+    searched in a depth first order going away from the root node as quickly
+    as possible. The stack will backtrack up the graph when the search reaches
+    a node that has no children or all of its children have been visited.
+*/
+public class DFS_AdjacencyMatrix 
+{
+    final static int V = 7;  // number of vertices in graph
+
+    public static void dfs(boolean[][] matrix)
+    {
+        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();   // stack used for backtracking
+        boolean[] visited = new boolean[V];   // tracks nodes that have been visited
+    
+        int source = 0;        // Node 0 is the root node
+        stack.push(source);    // push source node on stack
+        visited[0] = true;     // set source node as visited
+    
+        // print source - it is the first node in the dfs path
+        System.out.print(source + " ");
+    
+        while(!stack.isEmpty())
+        {
+            int node = stack.peek();    // get value of node on top of stack   
+    
+            int child = getChildNode(matrix, visited, node);   // get a neighboring node
+            if(child >= 0)  // found child that has not been visited
+            {
+                visited[child] = true;  // mark child as visited
+                stack.push(child);      // add child node to stack
+    
+                // print next node on search path
+                System.out.print(child + " ");
+            }
+            else
+            {
+                int n = (int)stack.pop();  // has no children or all have been visited
+                // so remove from stack
+            }
+        }
+        System.out.println();
+    }
+    
+    public static int getChildNode(boolean[][] matrix, boolean[] visited, int node)
+    {
+        int row = node;
+    
+        for(int child = 0; child &lt; V; child++)
+        {
+            if(matrix[row][child] == true && visited[child] == false)
+            return child;
+        }
+        return -1;  // No child nodes or all have been visited
+    }
+    
+    // undirected unweighted graph
+    public static void addEdge(boolean[][] matrix, int source, int dest)
+    {
+        matrix[source][dest] = true; // undirected graphs are bi-directional so 
+        matrix[dest][source] = true; // edge was be assigned to both directs
+    }
+    
+    public static void main(String[] args) 
+    {
+        boolean [][] adjacencyMatrix = new boolean[V][V];    // 7 vertices in graph
+                                                             // use 7 x 7 grid
+        // add 7 edges to the graph
+        addEdge(adjacencyMatrix, 0,1);  
+        addEdge(adjacencyMatrix, 0,2);
+        addEdge(adjacencyMatrix, 1,3);
+        addEdge(adjacencyMatrix, 1,4);
+        addEdge(adjacencyMatrix, 2,5);
+        addEdge(adjacencyMatrix, 3,6);
+        addEdge(adjacencyMatrix, 4,5);
+    
+        dfs(adjacencyMatrix);  // call depth first search
+    }
+}
+</pre></div>
+<br>
+<h2>Output</h2>
+  <div id="apComment"><pre>
+0 1 3 6 4 5 2
+</pre></div>
+
+<br>
+   <h1>Java Implementation of BFS using Adjacency Matrix</h1>
+   <div id="csCode" style="width: 725px"><pre>import java.util.*;
+
+/* This program executes a breadth first search (BFS) on a graph represented
+   by an adjacency matrix. It uses an array of boolean values to track the
+   nodes that have been visited. It uses a queue to allow the graph to be
+   searched level by level (level-order search) starting at the root node.
+*/
+public class BFS_AdjacencyMatrix
+{
+    final static int V = 7;
+
+    public static void bfs(boolean[][] matrix)
+    {
+        Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;(); // queue 
+        boolean[] visited = new boolean[V];  // tracks nodes that have been visited
+    
+        int source = 0;        // Node 0 is the root node
+        queue.add(source);     // add source node on queue
+        visited[0] = true;     // set source node as visited
+    
+        // print source - it is the first node in the bfs path
+        System.out.print(source + " ");
+    
+        while(!queue.isEmpty())
+        {
+            int node = queue.remove();    // remove node from front of queue
+    
+            Queue&lt;Integer&gt; children = getAllChildNodes(matrix, node); // get all neighbors
+            while(!children.isEmpty())  // cycle through all children of this node
+            {
+                int child = children.remove(); // remove first child from list of children
+                if(visited[child] == false)    // if this child has not been visited then
+                {
+                    visited[child] = true;  // mark child as visited
+                    queue.add(child);       // add child node to main queue
+
+                    // print next node on search path
+                    System.out.print(child + " ");
+                }
+            }
+        }
+        System.out.println();
+    }
+    
+    public static Queue&lt;Integer&gt; getAllChildNodes(boolean[][] matrix, int node)
+    {
+        int row = node;
+        Queue:&lt;Integer&gt; children = new LinkedList&lt;&gt;();
+        for(int child = 0; child &lt; V; child++)   
+        {
+            if(matrix[row][child] == true)  // found a child
+            {
+                children.add(child);        // add to list of children
+            }
+        }
+        return children;  // No child nodes or all have been visited
+    }
+    
+    // undirected unweighted graph
+    public static void addEdge(boolean[][] matrix, int source, int dest)
+    {
+        matrix[source][dest] = true; // undirected graphs are bi-directional so
+        matrix[dest][source] = true; // edge was be assigned to both directs
+    }
+    
+    public static void main(String[] args)
+    {
+        boolean [][] adjacencyMatrix = new boolean[V][V];    // 7 vertices in graph
+    
+        // add 7 edges to the graph
+        addEdge(adjacencyMatrix, 0,1);
+        addEdge(adjacencyMatrix, 0,2);
+        addEdge(adjacencyMatrix, 1,3);
+        addEdge(adjacencyMatrix, 1,4);
+        addEdge(adjacencyMatrix, 2,5);
+        addEdge(adjacencyMatrix, 3,6);
+        addEdge(adjacencyMatrix, 4,5);
+    
+        bfs(adjacencyMatrix);  // call breadth first search
+    }
+}
+</pre></div>
+<br>
+<h2>Output</h2>
+  <div id="apComment"><pre>
+1 2 3 4 5 6
+</pre></div>
+<br>
+   <p>The next two examples use the same graph as above but they display the
+      vertices as letters instead of numbers.
+   </p>
+   <div style="display: flex; justify-content: center;">
+        <img src="images/Graph/graph15.png" style="width:40%; height:40%">
+   </div>
+   <h1>Java Implementation of DFS using Adjacency List</h1>
+   <div id="csCode" style="width: 735px"><pre>import java.util.*;
+
+/* This program executes a depth first search (DFS) on a graph represented
+   by an adjacency list. It uses an array of boolean values to track the
+   nodes that have been visited. It uses a stack to allow the graph to be
+   searched in a depth first order going away from the root node as quickly
+   as possible. The stack will backtrack up the graph when the search reaches
+   a node that has no children or all of its children have been visited.
+*/
+public class DFS_AdjacencyList
+{
+    // This array is used to convert vertex numbers into letters
+    final static String[] vertices = {"A","B","C","D","E","F","G"};
+    final static int V = 7;
+    
+    public static void dfs(LinkedList&lt;Integer&gt;[] list)
+    {
+        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();  // stack used for backtracking
+        boolean[] visited = new boolean[V];  // tracks nodes that have been visited
+    
+        int source = 0;           // node 0 is chosen as root node
+        visited[source] = true;   // mark source node as visited
+        stack.push(source);       // push source node on stack
+    
+        // print source - convert vertex number to a letter
+        System.out.print(vertices[source] + " ");
+    
+        while(!stack.isEmpty())
+        {
+          int node = stack.peek();    // get value of node on top of stack
+    
+          int child = getChildNode(list, visited, node);   // get a neighboring node
+          if(child &gt;= 0)  // found child that has not been visited
+          {
+              visited[child] = true;  // mark child node as visited
+              stack.push(child);      // add child node to stack
+    
+              // print next node on search path and convert node number to a letter
+              System.out.print(vertices[child] + " ");
+          }
+          else
+          {
+              stack.pop();  // has no children or all have been visited
+                            // so remove from stack
+          }
+        }
+        System.out.println();
+    }
+    
+    //This method finds the first available child node
+    public static int getChildNode(LinkedList&lt;Integer&gt;[] adjacencyList, 
+                                   boolean[] visited, int node)
+    {
+      int row = node;
+      for(int i = 0; i &lt; adjacencyList[row].size(); i++) // traverse row's linked list
+      {
+        int child = adjacencyList[row].get(i);    // get child node of row
+        if(visited[child] == false)
+        return adjacencyList[row].get(i);   // return first unvisited child node
+      }
+      return -1;  // No child nodes or all have been visited
+    }
+    
+    // undirected unweighted graph
+    public static void addEdge(LinkedList&lt;Integer&gt;[] adjacencyList, int source, int dest)
+    {
+      adjacencyList[source].add(dest);
+      // Since graph is unweighted there is a path from dest to source as well
+      adjacencyList[dest].add(source);
+    }
+    
+    public static void main(String[] args)
+    {
+      // array of LinkedLists
+      LinkedList&lt;Integer&gt;[] adjacencyList = new LinkedList[V];
+    
+      // initialize each element of the array with a linked list
+      for(int i = 0; i &lt; V; i++)
+      {
+        adjacencyList[i] = new LinkedList&lt;&gt;();
+      }
+    
+      // add 7 edges to the graph
+      addEdge(adjacencyList,0,1);
+      addEdge(adjacencyList,0,2);
+      addEdge(adjacencyList,1,3);
+      addEdge(adjacencyList,1,4);
+      addEdge(adjacencyList,2,5);
+      addEdge(adjacencyList,3,6);
+      addEdge(adjacencyList,4,5);
+    
+      dfs(adjacencyList);  // call depth first search
+    }
+}
+</pre></div>
+<h2>Output</h2>
+  <div id="apComment"><pre>
+A B D G E F C
+</pre></div>
+<br>
+   <h1>Java Implementation of BFS using Adjacency List</h1>
+   <div id="csCode" style="width: 735px"><pre>import java.util.*;
+
+/* This program executes a breadth first search (BFS) on a graph represented
+   by an adjacency list. It uses an array of boolean values to track the
+   nodes that have been visited. It uses a queue to allow the graph to be
+   searched level by level (level-order search) starting at the root node.
+*/
+    
+public class BFS_AdjacencyList
+{
+  // This array is used to convert vertex numbers into letters
+  final static String[] vertices = {"A","B","C","D","E","F","G"};
+  final static int V = 7;
+    
+  public static void bfs(LinkedList&lt;Integer&gt;[] list)
+  {
+    Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();   // stack used for backtracking
+    boolean[] visited = new boolean[V];   // tracks nodes that have been visited
+    
+    int source = 0;           // node 0 is chosen as root node
+    visited[source] = true;   // mark source node as visited
+    queue.add(source);        // add source node to queue
+    
+    // print source - convert vertex number to a letter
+    System.out.print(vertices[source] + " ");
+    
+    while(!queue.isEmpty())
+    {
+      int node = queue.remove();    // remove node from queue
+    
+      LinkedList&lt;Integer&gt; children = list[node];   // get all neighboring nodes
+      for(int i = 0; i &lt; children.size(); i++)
+      {
+        int child = children.get(i);   // get a child
+        if(visited[child] == false)    // if child unvisited then
+        {
+          visited[child] = true;    // mark child node as visited
+          queue.add(child);         // add child node to queue
+    
+          // print next node on search path and convert node number to a letter
+          System.out.print(vertices[child] + " ");
+        }
+      }
+    }
+    System.out.println();
+  }
+    
+  // undirected unweighted graph
+  public static void addEdge(LinkedList&lt;Integer&gt;[] adjacencyList, int source, int dest)
+  {
+    adjacencyList[source].add(dest);
+    // Since graph is unweighted there is a path from dest to source as well
+    adjacencyList[dest].add(source);
+  }
+    
+  public static void main(String[] args)
+  {
+      // array of LinkedLists
+      LinkedList&lt;Integer&gt;[] adjacencyList = new LinkedList[V];
+    
+      // initialize each element of the array with a linked list
+      for(int i = 0; i &lt; V; i++)
+      {
+        adjacencyList[i] = new LinkedList&lt;&gt;();
+      }
+    
+      // add 7 edges to the graph
+      addEdge(adjacencyList,0,1);
+      addEdge(adjacencyList,0,2);
+      addEdge(adjacencyList,1,3);
+      addEdge(adjacencyList,1,4);
+      addEdge(adjacencyList,2,5);
+      addEdge(adjacencyList,3,6);
+      addEdge(adjacencyList,4,5);
+    
+      bfs(adjacencyList);  // call depth first search
+    }
+}
+</pre></div>
+<br>
+<h2>Output</h2>
+<div id="apComment"><pre>
+A B C D E F G
+</pre></div>
+
+<br>
+</div>

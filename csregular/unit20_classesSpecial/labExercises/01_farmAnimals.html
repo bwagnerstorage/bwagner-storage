@@ -1,0 +1,238 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Farm Animals</div>
+
+<div id="csContent"> 
+
+ 
+ <p>To help you better understand the use of constructors, accessor methods, mutator methods, and the
+    toString method you will be doing a series of simple classes designed
+    to give you practice in creating these special methods. These assignments are going to be fairly
+    trivial so you can concentrate on the process of creating the methods. In this assignment you are
+    going to implement two classes: a <strong>FarmAnimals</strong> class and a <strong>Farm</strong> class. 
+	The Farm class will be a client
+	of the FarmAnimals class. It will also contain the main method for the program.</p>
+   <div id="csNote"><strong style="color:red">Replit Users:</strong> If you are using Replit you will need to rename the Farm class to <strong>Main</strong>. Replit requires that your program have a Main class.</div>
+<h1>Directions</h1>
+<h3>FarmAnimals class</h3>
+<p>The FarmAnimals class is going to keep track of how many farm animals a farmer has on his farm.
+   Specifically, you are going to track the number of cows, horses, pigs, and chickens on the farm. 
+   On this first assignment, we will be walking through the process together.</p>
+
+<p>Create a file named <strong>FarmAnimals.java</strong> and add the following code.</p>
+<div id="csCode">
+<pre>
+public class FarmAnimals
+{
+   // instance variables
+   
+   // constructors
+   
+   // accessor methods
+   
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<p>The first step is to add our instance variables to the class. We will need a variable to store the
+farmer's name and one variable for each animal. Add the following code to the instance variables section.</p>
+<div id="csCode">
+<pre>
+private String name;      // The farmer's name
+private int cows;         // number of cows
+private int horses;       // number of horses
+private int pigs;         // number of pigs
+private int chickens;     // number of chickens</pre>
+</div>
+
+<h3>Constructors</h3>
+<p>Next we are going to define two constructors for the class. Recall that a constructor is a
+   special method designed to give initial values to the instance variables. By defining two
+   constructors we make our class more flexible and easier to use.</p> 
+
+<p>Here is the code for our first constructor. Add the code to the FarmAnimals class under the constructors section.</p>
+<div id="csCode">
+<pre>
+public FarmAnimals()
+{
+  name = "";
+  cows = 0;
+  horses = 0;
+  pigs = 0;
+  chickens = 0;
+}</pre>
+</div>
+
+<p>This constructor is called the <strong>default constructor</strong> since it does not have any 
+   parameters in its parameter list. The default constructor typically sets the instance variables
+   to default values like 0 and "" (the null string). The default constructor is called when you
+   instantiate an object using the following format.</p>
+<div id="csCode">
+<pre>
+FarmAnimals farm1 = new FarmAnimals();</pre>
+</div>
+  <p style="font-size:0.9em">*do not add this code to the FarmAnimals class. It is used 
+    in the Farm class.</p>
+
+<p>This code creates a FarmAnimals object, named farm1, and calls the default constructor
+   to initialize its instance variables. It sets the instance 
+   variables for that object to the following</p>
+<div id="csOutput">
+<pre>
+name = "" 
+cows = 0 
+horses = 0 
+pigs = 0 
+chickens = 0</pre>
+</div>
+
+<p>Here is the code for our second constructor.</p>
+<div id="csCode">
+<pre>
+public FarmAnimals(String n, int c, int h, int p, int ch)
+{
+  name = n;
+  cows = c;
+  horses = h;
+  pigs = p;
+  chickens = ch;
+}
+</pre>
+</div> 
+
+<p>We are providing this constructor, to the clients who use our class, so they have more flexibility
+in the way they can instantiate FarmAnimals objects. Instead of just using the default constructor
+which sets all of the instance variables to default values, they can use this constructor to provide
+their own values to the instance variables. Here is an example of how they might use this constructor.</p>
+<div id="csCode">
+<pre>
+FarmAnimals farm2 = new FarmAnimals("John Chisum", 50, 12, 5, 10);</pre>
+</div>
+ <p style="font-size:0.9em">*do not add this code to the FarmAnimals class. It is used 
+    in the Farm class.</p>
+<p>This constructor will instaniate a FarmAnimals object, named farm2, and set the instance 
+   variables for that object to the following</p>
+<div id="csOutput">
+<pre>
+name = "John Chisum" 
+cows = 50 
+horses = 12
+pigs = 5 
+chickens = 10</pre>
+</div>
+
+<h3>Accessor Method</h3>
+<p>Accessor methods provide clients access to the instance variables of a class so that they can
+   see the contents of the instance variables. There are 5 instance variables in the FarmAnimals
+   class so we will include 5 accessor methods. Add the following code to the FarmAnimals class
+   under the accessor methods section.</p>
+<div id="csCode">
+<pre>
+public String getName()
+{
+   return name;
+}
+
+public int getCows()
+{
+   return cows;
+}
+
+public int getHorses()
+{
+   return horses;
+}
+
+public int getPigs()
+{
+   return pigs;
+}
+
+public int getChickens()
+{
+   return chickens;
+}</pre>
+</div>
+<div id="csNote"><strong>Note:</strong> if there is an instance variable that you don't want clients to have access
+   to(Ex. a password), then don't provide an accessor method for that variable.</div>
+
+<h3>Client Program - Farm class</h3>
+<p>The purpose of the Farm class is to test the functionality of the FarmAnimals class. To do this it
+   instantiates two FarmAnimals objects and then displays information about each object.</p>
+<p>Create a file named <strong>Farm.java</strong> and add the following code.</p>
+<div id="csNote"><strong style="color:red">Replit Users:</strong> If you are using Replit you will need to rename the Farm.java file to <strong>Main.java</strong>. Replit requires that your program have a file named Main.java.</div>
+<div id="csCode">
+<pre>
+public class Farm
+{
+   public static void main(String[] args)
+   {
+
+   }	
+}</pre>
+</div>
+<p>The first step is to instantiate two FarmAnimals objects.
+   The first object, farm1, is instantiated using the default constructor, the second object, farm2,
+   is instantiated using the second constructor. Add the following code to the Farm class's main method.</p> 
+<div id="csCode">
+<pre>
+FarmAnimals farm1 = new FarmAnimals();
+FarmAnimals farm2 = new FarmAnimals("John Chisum", 50, 12, 5, 10);</pre>
+</div>   
+<p>The next step is to display the information about each farm. To do this we are going to utilize the
+   <strong>accessor methods</strong> of FarmAnimals class. Add the following code.</p>
+<div id="csCode">
+<pre>
+System.out.println("****************************");
+System.out.println("  Test Default Constructor");
+System.out.println("****************************");
+System.out.println("Farmer Name : " + farm1.getName());       // call accessor methods
+System.out.println("Cows        : " + farm1.getCows());
+System.out.println("Horses      : " + farm1.getHorses());
+System.out.println("Pigs        : " + farm1.getPigs());
+System.out.println("Chickens    : " + farm1.getChickens());
+System.out.println();
+System.out.println("****************************");
+System.out.println("    Test 2nd Constructor");
+System.out.println("****************************");
+System.out.println("Farmer Name : " + farm2.getName());
+System.out.println("Cows        : " + farm2.getCows());
+System.out.println("Horses      : " + farm2.getHorses());
+System.out.println("Pigs        : " + farm2.getPigs());
+System.out.println("Chickens    : " + farm2.getChickens());
+System.out.println();
+</pre>
+</div>
+<p>Compile and run the program.</p>
+<h1>Source File</h1>
+<p>FarmAnimals.java</p>
+<p>Farm.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+****************************
+  Test Default Constructor
+****************************
+Farmer Name     : 
+Cows            : 0
+Horses          : 0
+Pigs            : 0
+Chickens        : 0
+
+****************************
+    Test 2nd Constructor
+****************************
+Farmer Name     : John Chisum
+Cows            : 50
+Horses          : 12
+Pigs            : 5
+Chickens        : 10
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit20_classesSpecial/solutions/01_farmAnimalsSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>

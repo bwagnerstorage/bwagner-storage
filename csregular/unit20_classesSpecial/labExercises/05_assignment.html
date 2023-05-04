@@ -1,0 +1,170 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Assignment</div>
+
+<div id="csContent">  
+ <p>In this assignment you are going to implement two classes: an <strong>Assignment</strong> class and an 
+ <strong>AssignmentManager</strong> class. The AssignmentManager class will be a client
+	of the Assignment class. It will also contain the main method for the program.</p>
+
+<div id="csNote"><strong style="color:red">Replit Users:</strong> If you are using Replit you will need to rename the AssignmentManager class to <strong>Main</strong>. Replit requires that your program have a Main class.</div>
+
+<h1>Directions</h1>
+<h3>Assignment class</h3>
+<p>The Assignment class is going to store information about a school assignment. This information
+   includes the assignment name, assignment type (daily work, quiz, test), and the assignment 
+   score. The class will also have the ability to convert a numerical score into a letter grade(A,B,C,D,F).</p>
+
+<p>Create a file named <strong>Assignment.java</strong> and add the following code.</p>
+<div id="csCode">
+<pre>
+public class Assignment
+{
+   // instance variables
+   
+   // constructors
+   
+   // accessor methods
+   
+   // mutator methods
+   
+   // other methods
+   
+
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol>
+<li>Define three instance variables named <strong>name</strong>, <strong>type</strong>, and <strong>score</strong>. Name and type are of type String and 
+    score is of type int.</li>
+</ol></div>
+
+<h3>Constructors</h3>
+<div id="csList" >
+<ol start="2">
+<li>Implement two constructors. A default constructor and second constructor for assigning initial
+    values to the instance variables specified by the client.</li>
+</ol></div>
+
+<h3>Accessor Methods</h3>
+<div id="csList" >
+<ol start="3">
+<li>Implement an accessor method for each instance variable.</li>
+</ol></div>
+<h3>Mutatator Methods</h3> 
+<div id="csList" >
+<ol start="4">
+<li>Implement a mutator method for each instance variable.</li>
+</ol></div>
+
+<h3>Other Methods</h3>
+<div id="csList" >
+<ol start="5">
+<li>Implement a method named <strong>getLetterGrade</strong> that returns a string representation of a numerical 
+    score. The method should be able to determine a letter grade for an assignment according to
+    the following grading scale:</li>
+	
+	<table id="csTable" width="272">
+        <tr> 
+          <th style="width:125px">Score</th>
+          <th style="width:100px">Letter Grade</th>
+        </tr>
+        <tr> 
+          <td valign="middle"><div align="center">100 - 90</div></td>
+          <td valign="top"> <div align="center">A</div></td>
+        </tr>
+        <tr> 
+          <td valign="middle"><div align="center">89 - 80</div></td>
+          <td valign="top"><div align="center">B</div></td>
+        </tr>
+        <tr> 
+          <td valign="middle"><div align="center">79 - 70</div></td>
+          <td valign="top"><div align="center">C</div></td>
+        </tr>
+        <tr> 
+          <td valign="middle"><div align="center">69 - 60</div></td>
+          <td valign="top"><div align="center">D</div></td>
+        </tr>
+        <tr> 
+          <td valign="middle"><div align="center">Below 60</div></td>
+          <td valign="top"><div align="center">F</div></td>
+        </tr>
+      </table>	
+	
+	
+</ol></div>
+<br><br>
+<h3>Client Program - AssignmentManager class</h3>
+<p>Implement the AssignmentManager class so that it tests the complete functionality of the Assignment class 
+   including both constructors, accessor methods, and mutator methods.
+   
+<p>Create a file named <strong>AssignmentManager.java</strong> and add the following code.</p>
+
+<div id="csNote"><strong style="color:red">Replit Users:</strong> If you are using Replit you will need to rename the AssignmentManager.java file to <strong>Main.java</strong>. Replit requires that your program have a file named Main.java.</div>
+
+<div id="csCode">
+<pre>
+import java.util.*;
+
+public class AssignmentManager
+{  
+   public static void main(String[] args)
+   {
+ 
+   }	
+}</pre>
+</div>
+   
+<br>
+<h1>Source File</h1>
+<p>Assignment.java</p>
+<p>AssignmentManager.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+/**************************************/
+/*     Test Default Constructor       */
+/*     and Accessor methods           */
+/**************************************/
+Type         :
+Name         :
+Score        : 0
+Letter Grade : F
+
+/**************************************/
+/*     Test 2nd Constructor           */
+/*     and Accessor methods           */
+/**************************************/
+
+Type         : Test
+Name         : Chapter 1 Test
+Score        : 95
+Letter Grade : A
+
+Type         : Quiz
+Name         : Chapter 1 Quiz
+Score        : 83
+LetterGrade  : B
+
+/**************************************/
+/*     Test Mutator methods           */
+/*     and Accessor methods           */
+/**************************************/
+
+Type         : Test
+Name         : Chapter 1 Test
+Score        : 75
+Letter Grade : C
+
+Type         : Quiz
+Name         : Chapter 1 Quiz
+Score        : 30
+LetterGrade  : F
+
+
+</pre>
+</div>
+	<br>
+</div>

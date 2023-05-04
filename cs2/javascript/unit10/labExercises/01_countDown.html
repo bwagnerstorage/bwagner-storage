@@ -1,0 +1,353 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">10-1 Javascript Date</div>
+
+<div id="csContent">
+    <h1>Chapters</h1>
+    <ul id="csList">
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_dates.asp" target="_blank" style="color:blue">Javascript Dates</a></p>
+        </li>
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_date_formats.asp" target="_blank" style="color:blue">Javascript Date Formats</a></p>
+        </li>
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_date_methods.asp" target="_blank" style="color:blue">Javascript Date Methods</a></p>
+        </li>
+        <li>
+            <p><a href="http://www.w3schools.com/js/js_timing.asp" target="_blank" style="color:blue">Javascript Timing Events</a></p>
+        </li>
+    </ul>
+    <h1>Lab Exercise</h1>
+    <ol id="csList">
+        <li>
+            <p>File Name: 10_1_countdown.html</p>
+        </li>
+        <li>
+            <p>Copy the following code:</p>
+            <div id="csOutput" style="width: 600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Timer&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            h1 {
+                text-align: center;
+                font-size: 5.0em;
+                text-shadow: 1px 2px 3px;
+            }
+            
+            #input {
+                width: 490px;
+                margin: auto;
+            }
+            
+            .label {
+                width: 140px;
+                padding: 10px;
+                padding-bottom: 2px;
+                font-size: 2.4em;
+                font-family: consolas, sans-serif;
+                float: left;
+                text-align: center;
+                text-shadow: 1px 2px 3px;
+            }
+            
+            .spinner {
+                margin: 2px;
+                padding: 10px;
+                border: 2px solid black;
+                width: 130px;
+                font-size: 3.0em;
+                font-family: consolas, sans-serif;
+                background-color: #EEE;
+                color: black;
+                border-radius: 25px;
+                text-align: center;
+                text-shadow: 1px 2px 3px;
+                box-shadow: 3px 3px 3px;
+            }
+            
+            #output {
+                font-size: 6.0em;
+                font-family: consolas, sans-serif;
+                background-color: #EEE;
+                color: black;
+                width: 750px;
+                margin: auto;
+                border: 3px black solid;
+                border-radius: 25px;
+                visibility: hidden;
+                box-shadow: 3px 3px 3px;
+                text-align: center;
+            }
+
+            #startbutton {
+                font-size: 1.8em;
+                height: 60px;
+                margin-top: 40px;
+                padding: 10px;
+                border-radius: 25px;
+                box-shadow: 4px 4px 4px;
+                text-shadow: 1px 1px 2px;
+            }
+            
+            #startbutton:hover, .spinner:hover {
+                background-color: lightgoldenrodyellow;
+            }
+            
+            #error {
+                color: darkred;
+                width: 400px;
+                font-size: 2.2em;
+                height: 40px;
+                margin: auto;
+                text-align: center;
+                visibility: hidden;
+            }
+            
+            button:focus, input:focus {
+                outline: 0;
+            }
+            
+            .clockLabels {
+                padding: 10px;
+                padding-right: 80px;
+                float:left;
+                font-size: x-large;
+                color: #888;
+            }           
+            
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Countdown Timer&lt;/h1&gt;
+        &lt;div id="input"&gt;
+            &lt;div class="label"&gt;Month&lt;/div&gt;
+            &lt;div class="label"&gt;Day&lt;/div&gt;
+            &lt;div class="label"&gt;Year&lt;/div&gt;
+            &lt;input class="spinner" id="month" type="number" value="1" min="1" max="12"  required&gt;
+            &lt;input class="spinner" id="day" type="number" value="1" min="1" max="31" required&gt;
+            &lt;input class="spinner" id="year" type="number" value="1" min="0" max="2050"  required&gt;
+        &lt;/div&gt;
+        &lt;div style="width: 250px; margin: auto"&gt;&lt;button id="startbutton" onclick="startCountDown()"&gt;Start Countdown&lt;/button&gt;&lt;/div&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;div id="error"&gt;&lt;/div&gt;
+        &lt;div id="output"&gt;&lt;/div&gt;
+      
+        &lt;script&gt;
+            var clock;
+            var endtime;
+            var year;
+            var month;
+            var day;
+            var starttime = new Date().getFullYear();   // get current time
+            
+            document.getElementById("year").value = starttime;
+            document.getElementById("year").min = starttime;
+            
+            loadEndTime(); // read from file the last date entered
+            
+
+            function startCountDown()
+            {
+                 // Step 1
+
+                 // Step 2
+
+                 // Step 3
+
+                 // Step 4
+
+                 // Step 5
+
+                 // Step 6
+
+                 // Step 7
+
+                 // Step 8
+
+                 // Step 9
+                
+            }
+            
+            function initializeInput(id, value)
+            {
+                document.getElementById(id).innerHTML = value;
+            }
+           
+            function initializeClock(id, endtime)
+            {
+                clock = document.getElementById(id);
+                timeinterval = setInterval(function()
+                {
+                    
+                    var t = getTimeRemaining(endtime);
+                    clock.innerHTML = displayClockLabels() + format(t);
+                    if(t.total&lt;=0)
+                    {
+                      clearInterval(timeinterval);
+                    }
+                },1000);
+            }
+            
+            function displayClockLabels()
+            {
+                var labels = 
+                "&lt;div class='clockLabels' style='margin-left: 105px'&gt;days&lt;/div&gt;" +
+                "&lt;div class='clockLabels' style='padding-right: 71px'&gt;hours&lt;/div&gt;" +
+                "&lt;div class='clockLabels' style='padding-right: 58px'&gt;minutes&lt;/div&gt;" +
+                "&lt;div class='clockLabels' style='padding-right: 0px'&gt;seconds&lt;/div&gt;";
+        
+                return labels;
+            }
+            
+            function format(time)
+            {
+                var string="";
+                
+                string += time.days + ":";
+                
+                if(time.hours &lt; 10)
+                    string += "0" + time.hours + ":";
+                else
+                    string += time.hours + ":";
+                
+                if(time.minutes &lt; 10)
+                    string += "0" + time.minutes + ":";
+                else
+                    string += time.minutes + ":";
+                
+                if(time.seconds &lt; 10)
+                    string += "0" + time.seconds;
+                else
+                    string += time.seconds;
+                
+                return string;
+            }
+
+            function getTimeRemaining(endtime)
+            {
+                var current = new Date();
+                var t = Date.parse(endtime) - Date.parse(current);
+                var seconds = Math.floor( (t/1000) % 60 );
+                var minutes = Math.floor( (t/1000/60) % 60 );
+                var hours = Math.floor( (t/(1000*60*60)) % 24 );
+                var days = Math.floor( t/(1000*60*60*24));
+
+                return {
+                  'total': t,
+                  'days': days,
+                  'hours': hours,
+                  'minutes': minutes,
+                  'seconds': seconds
+                };
+              }
+              
+              function updateClock()
+              {              
+                    var t = getTimeRemaining(endtime);
+                    clock.innerHTML = displayClockLabels() + format(t);
+                    if(t.total&lt;=0)
+                    {
+                      clearInterval(timeinterval);
+                    }
+               }
+               
+               function storeEndTime()
+               {
+                   if(typeof(localStorage) !== "undefined") // browser supported?
+                   {
+                        localStorage.setItem("year", year);
+                        localStorage.setItem("month", month);
+                        localStorage.setItem("day", day);
+                   } 
+               }
+               
+               function loadEndTime()
+               {
+                   if(typeof(localStorage) !== "undefined") // browser supported?
+                   {
+                       if(localStorage.year)  // get endtime from data file
+                       {
+                           year = localStorage.getItem("year");
+                           month = localStorage.getItem("month");
+                           day = localStorage.getItem("day");
+                           monthAdjustment = parseInt(month) + 1;  // JS starts counting months at 0
+                           
+                           document.getElementById("year").value = year;
+                           document.getElementById("month").value = monthAdjustment;
+                           document.getElementById("day").value = day;
+                       }     
+                    } 
+               }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+        </li>
+        <li>
+            <p>Display the html file in a browser and test the visual components.</p>
+        </li>
+        <li>
+            <p>When the user presses the <strong>Start Countdown</strong> button the page calls the function
+                <strong>startCountDown</strong> which instructs the browser to display a timer that includes the number of days, hours, minutes, and seconds needed to reach the date specified in the three spinners.
+            </p>
+        </li>
+        <li>
+            <p>Complete the function <strong>startCountDown</strong>. </p>
+            <p>To complete the function follow these steps:</p>
+            <ol id="csList">
+                <li>
+                    <p>Set the visibility attribute of the <strong>output</strong> div to <strong>visible</strong>.</p>
+                </li>
+                <li>
+                    <p>Retrieve the values from the three spinners and store them in the global variables year, month, and day using the following code:</p>
+                    <div id="csOutput" style="width:600px">
+                        <pre>year = document.getElementById("year").value;
+month = document.getElementById("month").value - 1;  // javascript counts months starting
+day = document.getElementById("day").value;          // with 0. January = 0</pre>
+                    </div>
+                </li>
+                <li>
+                    <p>Create a Date object using the variables year, month, and day as arguments and store the its reference in the global variable <strong>endtime</strong>.</p>
+                </li>
+                <li>
+                    <p>Verify that the endTime is greater than the current time by using the following code:</p>
+                    <div id="csOutput" style="width:600px"><pre>// check for invalid endTime
+if(Date.parse(new Date()) > endtime)
+{
+    document.getElementById("error").style.visibility = "visible";
+    document.getElementById("error").innerHTML = "Oops! Invalid ending date.";
+    return;
+}</pre></div>
+                </li>
+                <li>
+                    <p>Set the visibility attribute of the <strong>error</strong> div to <strong>hidden</strong>.</p>
+                </li>
+                <li>
+                    <p>Make a call to the function <strong>storeEndTime()</strong>.</p>
+                </li>
+                <li>
+                    <p>Make a call to the function <strong>initializeClock("output", endtime)</strong> passing the string "output" and the variable endtime as arguments.</p>
+                </li>
+                <li>
+                    <p>Make a call to the function <strong>updateClock()</strong>.</p>
+                </li>
+                <li>
+                    <p>Assign the <strong>timeInterval</strong> variable a value using the following code:</p>
+                    <div id="csOutput" style="width:600px"><pre>var timeinterval = setInterval(updateClock,1000);</pre></div>
+
+                    <p>The method <strong>setInterval</strong> is a window method that can be used to set how often code is executed. The two arguments updateClock and 1000 tell the document to call the function updateClock every 1000 milliseconds(1000 milliseconds
+                        = 1 second). This is the code that allows the page to behave like a clock.</p>
+                </li>
+                </ul>
+        </li>
+        </ol>
+        <br>
+        <hr><br>
+        <img src="images/javascript_countDown1.png" style="max-width:80%; max-height:80%">
+        <br>
+</div>

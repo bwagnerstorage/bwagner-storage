@@ -1,0 +1,64 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">CountDown</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+    <p>Copy the following code into a file named <strong>CountDownApp.java</strong></p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class CountDownApp
+{
+    public static void main(String[] args)
+    {
+        CountDownTester cd = new CountDownTester();
+        Scanner keyboard = new Scanner(System.in);
+            
+        System.out.print("Enter starting value --> ");
+        int s = keyboard.nextInt();
+            
+        System.out.println(cd.countDown(s));
+    }
+}
+
+class CountDownTester
+{
+    public int countDown(int n)
+    {
+
+    }
+}
+</pre></div>
+
+<p>Implement the countDown method declared above using recursion. This method, given an initial number, should
+ print a series of numbers starting at the given number down to 1. You will need to include a System.out.println
+ statement within the countDown method.</p>
+
+<h1>Source File</h1>
+<p>.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter starting value --> 15
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+</pre>
+</div>
+	<br>
+</div>	
+

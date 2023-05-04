@@ -1,0 +1,167 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Parameters</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a parameter</li>
+					    <li>How to define a method with parameters</li>
+					    <li>What is the scope of a parameter</li>
+						<li>formal parameter vs actual parameter</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Parameter</h1>
+  <p>A <strong>parameter</strong> or argument is a value that is passed to a method so that the method can use
+     that value in its processing. A parameter is located
+	 inside the parentheses that follow a method name.</p>
+	 
+	<div align="center"><img src="images/parameter1.png"></div>
+	 
+	 <p>The value 16 is a parameter or argument for the method sqrt. The method calculates the
+	    square root of this value and assigns it to the variable num.</p> 
+  <p>A parameter can be a <strong>literal value</strong>.</p>
+  <div id="csCode">
+    <pre>
+Math.sqrt(81)
+Math.round(76.9)
+str.equals("exit")</pre>
+  </div>
+  <p>A parameter can be a <strong>variable</strong>.</p>
+  <div id="csCode"><pre>
+Math.sqrt(num)
+Math.round(average)
+str.equals(lastName)</pre>
+  </div>
+    <p>A parameter can be a <strong>mathematical expression</strong>.</p>
+  <div id="csCode">
+    <pre>
+Math.sqrt(20 + 50 + 11)
+Math.round((grade1 + grade2 + grade) / 3)</pre>
+  </div>
+<p>A parameter can be a call to <strong>another method</strong>.</p>
+  <div id="csCode">
+    <pre>
+Math.round(Math.sqrt(35))
+Math.max(num3, Math.max(num1, num2))</pre>
+  </div>
+  <p>A method can have 0, 1, or <strong>more parameters</strong>. Multiple parameters are separated by commas.</p>
+  <div id="csCode">
+   <pre>
+Math.pow(10, 2)
+Math.max(num1, num2)
+str.substring(0, str.length()/2)</pre>
+  </div>
+<h1>Writing a Method with Parameters</h1>
+<p>To add parameters to your own method definitions you simply declare one or more variables in the parentheses that follow 
+   the method name. These variable declarations need to include a data type and an identifier name. Look at the following example.</p>
+     <div id="csCode">
+   <pre>
+public double average(int gr1, int gr2, int gr3)
+{
+   return (gr1 + gr2 + gr3) / 3.0;</pre>
+}
+  </div>
+<p>Method average declares three parameters all of type int named gr1, gr2, and gr3. These parameters are used to
+   store the value of three grades that are passed to the method. The method uses these parameters
+   to calculate the average of the three grades and returns the answer.
+<p>Watch the following demonstration to see the order of execution for the method above.</p>
+
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Parameters1/Slide1.PNG"></li>
+          <li><img src="images/Parameters1/Slide2.PNG"></li>
+          <li><img src="images/Parameters1/Slide3.PNG"></li>
+		  <li><img src="images/Parameters1/Slide4.PNG"></li>
+		  <li><img src="images/Parameters1/Slide5.PNG"></li>
+		  <li><img src="images/Parameters1/Slide6.PNG"></li>
+		  <li><img src="images/Parameters1/Slide7.PNG"></li>
+		  <li><img src="images/Parameters1/Slide8.PNG"></li>
+		  <li><img src="images/Parameters1/Slide9.PNG"></li>
+		  <li><img src="images/Parameters1/Slide10.PNG"></li>
+		  <li><img src="images/Parameters1/Slide11.PNG"></li>
+		  <li><img src="images/Parameters1/Slide12.PNG"></li>
+		  <li><img src="images/Parameters1/Slide13.PNG"></li>
+		  <li><img src="images/Parameters1/Slide14.PNG"></li>
+		  <li><img src="images/Parameters1/Slide15.PNG"></li>
+		  <li><img src="images/Parameters1/Slide16.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+	<h3>Some More Examples</h3>
+	     <div id="csCode">
+   <pre>
+public void printInfo(String name, int age)
+{
+   System.out.println("My name is " + name + " and I am " + age + " years old");</pre>
+}
+  </div>
+  <br>
+ <div id="csCode">
+   <pre>
+public double area(double length, double width)
+{
+   return length * width;</pre>
+}
+  </div>
+  
+<h1>Parameter Scope</h1>
+<p>The scope of a parameter is limited to the method it is declared in. Look at the following
+   example. </p>
+<div id="csCode">
+   <pre>
+public int minimum(int num1, int num2)
+{
+   if(num1 < num2)
+     return num1;
+   else
+     return num2;</pre>
+}
+  </div>
+ <p>The parameters, num1 and num2, have method scope. This means they are <strong>local variables</strong> for the
+    method minimum. They do not exist outside this method.</p>	
+<br>
+<h1>Formal vs Actual Parameters</h1>
+<p>There are two types of parameters: formal parameters and actual parameters or arguments. The parameters in the
+   header of the method declaration are called <strong>formal parameters</strong>. The values
+   passed into a method are called <strong>actual parameters</strong> or <strong>arguments</strong>.</p>
+   <div align="center"><img src="images/parameter2.png"></div>
+   
+<h1>Helper Methods</h1>
+<p>A <strong>helper method</strong> is a method that helps another method perform its task. These are typically
+   used when a method has to perform a complicated task that is composed of several smaller tasks.
+   The smaller tasks are often performed by helper methods.</p>
+<p>Watch the following demonstration that illustrates the use of a helper method.</p>
+
+  <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/Parameters2/Slide1.PNG"></li>
+          <li><img src="images/Parameters2/Slide2.PNG"></li>
+          <li><img src="images/Parameters2/Slide3.PNG"></li>
+		  <li><img src="images/Parameters2/Slide4.PNG"></li>
+		  <li><img src="images/Parameters2/Slide5.PNG"></li>
+		  <li><img src="images/Parameters2/Slide6.PNG"></li>
+		  <li><img src="images/Parameters2/Slide7.PNG"></li>
+		  <li><img src="images/Parameters2/Slide8.PNG"></li>
+		  <li><img src="images/Parameters2/Slide9.PNG"></li>
+		  <li><img src="images/Parameters2/Slide10.PNG"></li>
+		  <li><img src="images/Parameters2/Slide11.PNG"></li>
+		  <li><img src="images/Parameters2/Slide12.PNG"></li>
+		  <li><img src="images/Parameters2/Slide13.PNG"></li>
+        </ul>
+    </div>
+
+   
+   <br>
+</div>	
+

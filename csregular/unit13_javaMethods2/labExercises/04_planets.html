@@ -1,0 +1,269 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Planets</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment you are going to write a program that calculates a person's 
+    weight on different planets according each planet's force of gravity. The 
+    force of gravity is different for each of the nine planets in our solar system. 
+    For example, on Mercury it is only 0.38 times as strong as on Earth. The table 
+    below shows the force of gravity on each planet relative to the force of gravity 
+    on Earth.</p>
+<table id="csTable" width="319px">
+  <tr> 
+    <th width="138px">Planet</td>
+    <th width="165px">Force of Gravity</td>
+  </tr>
+  <tr> 
+    <td><div align="center">Mercury</div></td>
+    <td><div align="center">0.38</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Venus</div></td>
+    <td><div align="center">0.78</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Earth</div></td>
+    <td><div align="center">1.00</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Mars</div></td>
+    <td><div align="center">0.39</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Jupiter</div></td>
+    <td><div align="center">2.65</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Saturn</div></td>
+    <td><div align="center">1.17</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Uranus</div></td>
+    <td><div align="center">1.05</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Neptune</div></td>
+    <td><div align="center">1.23</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">Pluto</div></td>
+    <td><div align="center">0.05</div></td>
+  </tr>
+</table>
+<p>* I know astronomers don't consider Pluto to be a planet anymore but 
+        its hard for me to give it up.</p>
+	
+<h3>Structure Chart</h3>	
+<p>The problem has been decomposed using the following structure chart.</p>
+<div align="center"><img src="images/planet1.png"></div>	
+
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+    <pre>
+import java.util.*;
+
+public class Planets
+{
+    private int planet;     // planet number selected from menu
+    private int weight;     // users weight on earth
+    private Scanner keyboard = new Scanner(System.in);
+
+    /** Displays a menu of the eight planets and prompts the
+     *  user to select a planet by number. The users response
+     *  is store in the variable planet.
+     */
+    public void inputPlanet()
+    {
+
+    }
+
+    /* Prompts the user to enter his/her weight on Earth.
+     * The user's response is stored in the variable weight.
+     */
+    public void inputWeight()
+    {
+
+    }
+
+    /* This method calculates the adjusted weight of a person by
+     * multiplying his/her weight by the parameter gravity. 
+     * @ return a person's adjusted weight 
+     * @ param gravity the force of gravity on a particular planet
+     */
+    public double getWeight(double gravity)
+    {
+       
+    }
+	
+   /* Determines which planet the user selected from the menu then
+    * displays the planet's name along with how much the user
+    * would weight on that planet.
+    */
+    public void printNewWeight()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Planets app = new Planets();
+
+        app.inputPlanet();
+        app.inputWeight();
+        app.printNewWeight();
+    }
+}
+</pre>
+</div>
+<p>You are going to complete 3 void methods and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+ <h3>Method inputPlanet</h3>
+ <p>Complete the method <strong>inputPlanet</strong> shown below. This method displays the 
+    eight planets in our solar system in a menu like the example below.</p>
+<div cs="csOutput">
+<pre>
+   Planets
+=============
+1. Mercury
+2. Venus
+3. Mars
+4. Jupiter
+5. Saturn
+6. Uranus
+7. Neptune
+8. Pluto
+Select planet(1-8) -->
+</pre>
+</div>
+<p>The user is prompted to select one of the planets by number. The user's response
+   is stored in the instance variable <strong>planet</strong>.</p>
+<div id="csCode">
+<pre>
+/** Displays a menu of the eight planets and prompts the
+ *  user to select a planet by number. The user's response
+ *  is store in the variable planet.
+ */
+public void inputPlanet()
+{
+
+}
+</pre>
+</div>
+ <h3>Method inputWeight</h3>
+ <p>Complete the method <strong>inputWeight</strong> shown below. This method prompts the user
+    to enter his/her weight on Earth like the example below.</p>
+<div cs="csOutput">
+<pre>
+Enter your weight on Earth -->
+</pre>
+</div>
+<p>The user's response is stored in the instance variable <strong>weight</strong>.</p>
+<div id="csCode">
+<pre>
+/* Prompts the user to enter his/her weight on Earth.
+ * The user's response is stored in the variable weight.
+ */
+public void inputWeight()
+{
+
+}
+</pre>
+</div>
+ <h3>Method getWeight</h3>
+ <p>Complete the method <strong>getWeight</strong> shown below. This method calculates and returns a person's
+    adjusted weight by multiplying the person's weight on Earth, specified in the instance variable <strong>weight</strong>, by a planet's force
+	of gravity, specified in the formal parameter <strong>gravity</strong>.</p>
+
+<div id="csCode">
+    <pre>
+    /* This method calculates the adjusted weight of a person by
+     * multiplying his/her weight by the parameter gravity. 
+     * @ return a person's adjusted weight 
+     * @ param gravity the force of gravity on a particular planet
+     */
+    public double getWeight(double gravity)
+    {
+       
+    }
+</pre>
+</div>
+<p>For example, suppose the instance variable <strong>weight</strong> was equal to 100 and the parameter <strong>gravity</strong> was equal to 0.38.
+   The method <strong>getWeight</strong> would return a value of 38.0 since 100 x 0.38 = 38.0.</p>
+
+ <h3>Method printNewWeight</h3>
+ <p>Complete the method <strong>printNewWeight</strong> shown below. This method determines
+    which planet the user selected from the menu then displays the planet's name along 
+	with how much the user would weight on that planet. Refer to the example below, assume
+	that the user selected number 5 from the menu.</p>
+<div cs="csOutput">
+<pre>
+Your weight on Saturn is 175.5
+</pre>
+</div>
+<p>The output above can be displayed using the following code</p>
+<div id="csCode"><pre>
+System.out.println("Your weight on Saturn is " + <div id="csHighlight"><pre>getWeight(1.17)</pre></div>);
+</pre></div>
+<p>Notice the call to the method <strong>getWeight</strong> within the println statement. The argument 1.17 represents the
+   force of gravity on Saturn.</p>
+<div id="csCode">
+<pre>
+/* Determines which planet the user selected from the menu then
+ * displays the planet's name along with how much the user
+ * would weight on that planet.
+ */
+public void printNewWeight()
+{
+
+}
+</pre>
+</div>
+
+<h1>Source File</h1>
+<p>Planets.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+   Planets
+=============
+1. Mercury
+2. Venus
+3. Mars
+4. Jupiter
+5. Saturn
+6. Uranus
+7. Neptune
+8. Pluto
+Select planet(1-8) -->5
+
+Enter your weight on Earth -->150
+
+Your weight on Saturn is 175.5
+</pre>
+</div>
+
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+   Planets
+=============
+1. Mercury
+2. Venus
+3. Mars
+4. Jupiter
+5. Saturn
+6. Uranus
+7. Neptune
+8. Pluto
+Select planet(1-8) -->1
+
+Enter your weight on Earth -->200
+
+Your weight on Mercury is 76.0
+</pre>
+</div>
+
+	<br>
+</div>

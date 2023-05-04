@@ -1,0 +1,115 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">7-1 Javascript Strings</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_strings.asp" target="_blank" style="color:blue">Javascript Strings</a></p></li>
+    </ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>File Name: 7_1_strings.html</p></li>
+<li><p>Copy the following code:</p>
+    <div id="csOutput" style="width: 600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;7-1 Strings&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;
+                
+            }
+            #wordBox {
+                font-size: 1.4em;
+                width: 200px;
+            }
+            #wordLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;span id="wordLabel"&gt;Word:&lt;/span&gt; 
+          &lt;input type="text" id="wordBox" onkeypress="handleKeyPress(event)"&gt;
+          &lt;button type="button" onClick="getLength()"&gt;StringLength&lt;/button&gt;
+          &lt;button type="button" onClick="toUpperCase()"&gt;Uppercase&lt;/button&gt;
+          &lt;button type="button" onClick="flip()"&gt;FlipLetters&lt;/button&gt;
+          &lt;button type="button" onClick="split()"&gt;Split&lt;/button&gt;  
+
+        &lt;br&gt;&lt;br&gt;
+      &lt;div id="output"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+        function handleKeyPress(e)
+        {
+            if(e.keyCode === 13)
+            { 
+                getLength();
+            }
+        }
+        
+        function getLength()
+        {
+
+        }
+        
+        function toUpperCase()
+        {           
+ 
+        } 
+        
+        function flip()
+        {           
+            
+        }
+        
+        function split()
+        {
+            
+        }
+    &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<li><p>The document above contains a text box and four buttons. Run the program to view it.</p></li>
+<li><p>Use the string method length to complete the function <strong>getLength</strong>. Function 
+       getLength should display in the output div the length of the word typed in the text box. For example, if
+       the word "horse" was entered into the text box then the function would display the 
+       following: Length = 5.</p>
+	   <p>To retrieve the text typed into the text box use the text box's value property. For example, suppose a text box control has the id "box". 
+	      The following code would retrieve the text typed into the text box and store it in the variable text:</p>
+		  <div id = "csOutput" style="width:460px"><pre>var text = document.getElementById("box").value;<pre></div>
+	  </li>
+<li><p>Use the string method toUpperCase to complete the function <strong>toUpperCase</strong>. Function 
+       toUpperCase should display the word typed in the text box in all uppercase letters. For example, if
+       the word "horse" was entered into the text box then the function would display the 
+       following: HORSE.</p></li>
+<li><p>Use the string methods length and substring to complete the function <strong>flip</strong>. Function 
+       flip should display the word typed in the text box with its first and last letters switched. For example, if
+       the word "horse" was entered into the text box then the function would display the 
+       following: eorsh.</p></li>
+<li><p>Use the string methods length and substring to complete the function <strong>split</strong>. Function 
+       split should display the word typed in the text box with the word split in half where the
+       first half of the word is on one line and the second half of the word is on a second line. For example, if
+       the word "horse" was entered into the text box then the function would display the 
+       following: <br>
+       ho<br>
+       rse<br>
+</p></li>
+<li><p>The page should like the one shown below.</p></li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_strings1.png">
+	<br>
+</div>	

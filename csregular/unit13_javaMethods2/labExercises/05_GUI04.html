@@ -1,0 +1,124 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI04</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>As you have already seen the JLabel class can display simple text on the frame window.
+   JLabel can also be used to display images. Look at the sample program below.</p>
+<div id="csCode">
+    <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI04 extends JFrame
+{
+    <font color="#FF0000">// Step 1 : declare JLabel variable</font>
+    private JLabel label;
+    
+    // constructor
+    public GUI04()
+    {
+        <font color="#FF0000">// Step 2: create ImageIcon object using an image file as a parameter </font>
+        ImageIcon image = new ImageIcon("bugsdaffy.jpg");
+
+        <font color="#FF0000">// Step 3: create label using ImageIcon variable as parameter</font>
+        label = new JLabel(image);
+        
+        <font color="#FF0000">// Step 4: set label attributes</font>
+        label.setLocation(0,0);
+        label.setSize(image.getIconWidth(), image.getIconHeight()); 
+        
+        <font color="#FF0000">// Step 5: add label to frame</font>
+        getContentPane().add(label);
+        
+        
+        // set frame attributes
+        setLayout(null);
+        setSize(450, 400);                                    
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
+        setVisible(true);                                     
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI04 app = new GUI04();
+    }
+}
+
+</pre>
+</div>
+
+<h3>Step 1: Declare JLabel Variable</h3>
+<p>You must declare a JLabel instance variable to store the JLabel object.</p>
+<div id="csCode">
+<pre>
+private JLabel label;
+</pre>
+</div>
+
+<h3>Step 2: Create ImageIcon Object</h3>
+<p>There is a Java Swing class named <strong>ImageIcon</strong> that can be used to store images that
+have an image format type of GIF, JPEG, or PNG.</p>
+<div id="csCode">
+<pre>
+ImageIcon image = new ImageIcon("bugsdaffy.jpg");
+</pre>
+</div>
+<p>The code above creates an ImageIcon object with the specified image file and stores its
+  reference in a variable named image. The image file must be located in the same folder as your
+  programs class file; otherwise it requires a directory path.</p>
+
+<h3>Step 3: Create JLabel</h3>
+<p>Once the ImageIcon object has been created you can create the JLabel by passing the
+   ImageIcon variable as a parameter to the JLabel constructor.</p>
+<div id="csCode">
+<pre>
+label = new JLabel(image);
+</pre>
+</div>
+
+<h3>Step 4 : Set JLabel Attributes</h3>
+<p>You can set the size of the JLabel to the dimensions of the image be using the following code.</p>
+
+ <div id="csCode">
+<pre>
+label.setSize(image.getIconWidth(), image.getIconHeight());
+</pre>
+</div>
+<h3>Step 5 : Add Label to ContentPane</h3>
+<p>In order for the label to appear in the frame window it must be added to the content pane layer.</p>
+ <div id="csCode">
+<pre>
+getContentPane().add(label);
+</pre>
+</div>
+
+<h1>Exercise</h1>
+<div id="csList">
+<ol>
+<li><p>Create a java file named GUI04 and add the code above.</p></li>
+<li><p>Right-click on the image below and select Save Image As...</p>
+ <li><p>Save the image with the file name:  <strong>bugsdaffy.jpg</strong>.</p>
+    <p>In NetBeans, you will need to save the image to the root folder of your CompSci workspace folder located on 
+    your desktop.</p>
+</li>
+<img src = "images/GUI04_2.png" style="border:2px gray solid; width:98%"><br>
+<P></P>
+<img src= "images/bugsdaffy.jpg">
+<li>Execute the program.</li>
+</ol>
+</div>
+
+
+
+<h1>Source File</h1>
+<p>GUI04.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI04.png">
+	<br>
+</div>
+

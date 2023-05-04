@@ -1,0 +1,122 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Nested Practice</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this exercise you will explore nested for loops. Copy the following code into
+     your source file. Compile and run the program.</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class Nested
+{
+    public static void main(String[] args)
+    {
+        Scanner keyboard = new Scanner(System.in);
+        int rows = 0;
+        
+        System.out.print("Enter number of rows -->");
+        rows = keyboard.nextInt();
+        
+        /*************
+         * Example 1 *
+         *************/
+        for(int r = 1; r <= rows; r++)      // outer
+        {
+            for(int c = 1; c <= rows; c++)  // inner
+            {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        
+        /*************
+         * Example 2 *
+         *************/
+        for(int r = 1; r <= rows; r++)      // outer
+        {
+            for(int c = 1; c <= rows; c++)  // inner
+            {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        
+        /*************
+         * Example 3 *
+         *************/
+        for(int r = 1; r <= rows; r++)      // outer 
+        {
+            for(int c = 1; c <= rows; c++)  // inner
+            {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        
+        /*************
+         * Example 4 *
+         *************/
+        for(int r = 1; r <= rows; r++)      // outer
+        {
+            for(int c = 1; c <= rows; c++)  // inner
+            {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+    }
+}
+  </pre>
+  </div>
+<h3>Step 1: Modify Example2</h3>
+<p>Replace the <strong>inner for loop</strong> with the following line of code.<br>
+Compile and run the program. Notice how the change affects the output.</p>
+<div id="csCode">
+<pre>
+for(int c = 1; c <= r; c++)
+</pre>
+</div>
+
+<h3>Step 2: Modify Example3</h3>
+
+<p>Replace the <strong>inner for loop</strong> with the following line of code.<br>
+Compile and run the program. Notice how the change affects the output.</p>
+<div id="csCode">
+<pre>
+for(int c = rows; c >= 1; c--)</pre>
+</div>
+<h3>Step 3: Modify Example4</h3>
+<p>Modify the <strong>inner for loop</strong> so it produces the following output.</p>
+<div id="csOutput">
+<pre>
+10 9 8 7 6 5 4 3 2 1
+10 9 8 7 6 5 4 3 2
+10 9 8 7 6 5 4 3
+10 9 8 7 6 5 4
+10 9 8 7 6 5
+10 9 8 7 6
+10 9 8 7
+10 9 8
+10 9
+10
+</pre>
+</div>
+  
+
+
+<h1>Source File</h1>
+<p>Nested.java</p>
+<br>
+	<br>
+</div>

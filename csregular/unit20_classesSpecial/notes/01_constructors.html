@@ -1,0 +1,135 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Constructors</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a constructor</li>
+						<li>How is a constructor created and invoked</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 			
+  <h1>Constructors</h1>
+  <p>A <strong>constructor</strong> is a special method within a class that has the <strong>same name</strong> as the class.
+     The primary purpose of a constructor is to assign initial values to a class's instance variables.</p>
+<div align="center"><img src="images/constructor1.png"></div>
+<p>Notice that when defining a constructor you do not specify a return type.</p>
+  <p>The following illustration demonstrates how a constructor is used within a class to
+     assign initial values to its instance variables.</p>
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Constructor1/Slide1.PNG"></li>
+          <li><img src="images/Constructor1/Slide2.PNG"></li>
+          <li><img src="images/Constructor1/Slide3.PNG"></li>
+		  <li><img src="images/Constructor1/Slide4.PNG"></li>
+		  <li><img src="images/Constructor1/Slide5.PNG"></li>
+		  <li><img src="images/Constructor1/Slide6.PNG"></li>
+		  <li><img src="images/Constructor1/Slide7.PNG"></li>
+		  <li><img src="images/Constructor1/Slide8.PNG"></li>
+		  <li><img src="images/Constructor1/Slide9.PNG"></li>
+		  <li><img src="images/Constructor1/Slide10.PNG"></li>
+		  <li><img src="images/Constructor1/Slide11.PNG"></li>
+		  <li><img src="images/Constructor1/Slide12.PNG"></li>
+		  <li><img src="images/Constructor1/Slide13.PNG"></li>
+		  <li><img src="images/Constructor1/Slide14.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Multiple Constructors</h1>
+  	<p>A class can have more than one constructor. As an example, the Student class below has two constructors. 
+	   The first constructor has no parameters. The second constructor has five parameters.</p>
+<div id="csNote">
+<strong>Note:</strong> A constructor with no parameters is called the <strong>default 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor</strong>. 
+</div>
+
+  <div id="csCode">
+  <pre>
+class Student
+{
+   // instance variables
+   private String name;     	// Student name
+   private int sixWeeks1;       // 1st 6 weeks avg
+   private int sixWeeks2;       // 2nd 6 weeks avg
+   private int sixWeeks3;       // 3rd 6 weeks avg
+   private int exam;            // semester exam
+
+   // constructors
+   public <div id="csHighlight"><pre>Student</pre></div>()
+   {
+       name = "";           // initialize name to empty string
+       sixWeeks1 = 0;       // initialize sixWeeks1 to 0
+       sixWeeks2 = 0;       // initialize sixWeeks2 to 0
+       sixWeeks3 = 0;       // initialize sixWeeks3 to 0
+       exam = 0;            // initialize exam to 0
+   }
+
+   public <div id="csHighlight"><pre>Student</pre></div>(String n, int w1, int w2, int w3, int e)
+   {
+      name = n;            // initialize name to value in n
+      sixWeeks1 = w1;      // initialize sixWeeks1 to value in w1
+      sixWeeks2 = w2;      // initialize sixWeeks2 to value in w2
+      sixWeeks3 = w3;      // initialize sixWeeks3 to value in w3
+      exam = e;            // initialize exam to value in e
+   }
+		
+   // other methods
+
+  </pre>
+  </div><br>
+    <p>Providing multiple constructors makes a class more flexible and easier to use.</p>
+ 	<p>When using multiple constructors, the parameter list of each constructor within a class must be unique.
+	   Parameter lists must differ by either the number of parameters defined or
+	   the parameter type.</p>
+	   <h3>Examples</h3>
+	   <div align="center"><img src="images/constructor2.png"></div>
+  <h1>Invoking a Constructor</h1>
+  <p>Constructors are invoked or called when you "construct" an object using the keyword <strong>new</strong>.
+     The code below instantiates three Student objects. The first line of code uses the Student class's
+	 default constructor. The second and third lines use the Student class's constructor that takes five
+	 parameters.</p>
+    <div id="csCode">
+  <pre>
+Student student1 = new Student();
+
+Student student2 = new Student("Bob", 95, 87, 99, 92);
+
+Student student3 = new Student(name, s1, s2, s3, e);
+  </pre>
+  </div><br>
+  	
+  <h1>Automatic Constructor</h1>
+  <p>If a class contains no constructors, the Java Virtual Machine(JVM) will automatically provide a <strong>default
+     constructor</strong> behind the scenes. This constructor initializes numeric variables to
+	 zero and object variables to null. If a class contains even one constructor, however, the Java Virtual
+	 Machine no longer provides a default constructor automatically.</p>
+	 
+<h1>Default Field Initialization</h1>
+<p>If you don't set an instance variable explicitly in a constructor, it is automatically set to a
+   default value: numbers are set to zero, booleans are set to false, and object references are set
+   to null. But it is considered poor programming practice to rely on this. Certainly, it makes it
+   harder for someone to understand your code if fields(instance variables) are being initialized invisibly.</p>
+   
+  <h1>Constructor Review</h1>
+  <div id="csList">
+  <ul>
+<li>A constructor has the same name as the class.</li>
+<li>A constructor is called with the <strong>new</strong> operator.</li>
+<li>A constructor does not have a return type.</li>
+<li>A class can have more than one constructor.</li>
+<li>A constructor may take zero, one, or more parameters.</li>
+<li>If your class does not have a constructor, Java will provide a default constructor for you.</li>
+  </ul></div>
+
+	<br>
+</div>	
+

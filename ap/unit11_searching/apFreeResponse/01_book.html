@@ -1,0 +1,389 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Books</div>
+
+<div id="csContent"> 
+  <h1>NetBeans Workspace: <a href="apFreeResponse/BooksNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Books</a></h1>
+
+<h1>Directions</h1>
+<p>Consider the following declarations for maintaining a list of books. 
+        Information about each book includes the title, author, and an appropriate 
+        age range for readers. The list is ordered by age range, as defined by 
+        the compareTo method. Assume that a book appears at most once in the list.</p>
+
+<div id="apCode"><pre>
+public class Book implements Comparable
+{
+   private String title;  // title of book
+   private String author; // author of book
+   private int lowAge;    // lowest recommended age
+   private int highAge;   // highest recommended age
+    
+   public Book(String t, String a, int l, int h)
+   {
+      title = t;
+      author = a;
+      lowAge = l;
+      highAge = h; 
+   }
+    
+   <div id="apHighlight"><pre>public int compareTo(Object obj)</pre></div>
+   {
+      // postcondition: returns zero if lowAge is equal to bk.lowAge &&
+      //                highAge is equal to bk.highAge;
+      //                returns -1 if lowAge is less than bk.lowAge
+      //                or lowAge is equal to bk.lowAge
+      //                and highAge is less than bk.highAge; 
+      //                otherwise it returns a 1.
+      Book bk = (Book)obj;
+      if(lowAge == bk.lowAge && highAge == bk.highAge)
+         return 0;
+      else if(lowAge < bk.lowAge || lowAge == bk.lowAge && highAge < bk.highAge)
+         return -1;
+      else
+         return 1;
+   }
+    
+   public String toString()
+   {
+      return title + " " + author + " " + lowAge + " " + highAge;     
+   }
+}
+	
+	
+public class BookList
+{
+   private ArrayList &lt;Book&gt; myList;
+   // collection of books in sorted order as defined
+   // by compareTo;  myList.length() &lt; 0
+	
+   private int myCount;
+   // number of books in myList
+	
+   public BookList()
+   {
+      myList = new ArrayList();
+      myList.add(new Book("Madeline", "Bemelmans", 3, 8));
+      myList.add(new Book("The Lorax", "Seuss", 3, 10));
+      myList.add(new Book("Harry Potter and the Sorcerer's Stone", "Rowling", 9, 99));
+      myList.add(new Book("Holes", "Sacher", 12, 18));
+      myList.add(new Book("I Know Why the Caged Bird Sings", "Angelou", 16, 99));
+		
+      myCount = myList.size();
+   }
+	
+   <div id="apHighlight"><pre>public void insertOne(Book bk)</pre></div>
+   // precondition:  this BookList is in sorted order by age
+   //                range as defined by compareTo;
+   //                bk is not already in this BookList
+   // postcondition: bk has been inserted into this BookList,
+   //                maintaining its order by age range           
+   { /* to be implemented in part (a) */}
+	
+
+   <div id="apHighlight"><pre>public void insertMany(List &ltBook&gt; second)</pre></div>
+   // precondition:  this BookList is in sorted order by range
+   //                as defined by compareTo; second contains
+   //                second.length() books in arbitrary order;
+   //                none of the books in second are in this
+   //                BookList
+   // postcondition: all the books from second have been inserted
+   //                into this BookList, maintaining its order by
+   //                age range
+   { /* to be implemented in part (b) */}
+
+
+   public String toString()
+   {
+      String str = "";
+      for(int i=0; i < myList.size(); i++)
+      {
+         str +=myList.get(i) + "\n";
+      }
+      return str;
+   }
+}
+
+</pre></div>
+
+
+<div id="csList2">
+<ol>
+<li>
+<p>Write the BookList method <strong>insertOne</strong>. Assume that the private data 
+          member myList is already ordered as defined by compareTo. The method 
+          insertOne places a book into the BookList, maintaining that order. </p>
+
+<table  id="csTable">
+            <tr> 
+              <th><div align="center"><strong>title</strong></div></th>
+              <th><div align="center"><strong>author</strong></div></th>
+              <th><div align="center"><strong>lowAge</strong></div></th>
+              <th><div align="center"><strong>highAge</strong></div></th>
+            </tr>
+            <tr> 
+              <td>Madeline</td>
+              <td>Bemelmans</td>
+              <td><div align="center">3</div></td>
+              <td><div align="center">8</div></td>
+            </tr>
+            <tr> 
+              <td>The Lorax</td>
+              <td>Seuss</td>
+              <td><div align="center">3</div></td>
+              <td><div align="center">10</div></td>
+            </tr>
+            <tr> 
+              <td>Harry Potter and the Sorcerer's Stone</td>
+              <td>Rowling</td>
+              <td><div align="center">9</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+            <tr> 
+              <td>Holes</td>
+              <td>Sacher</td>
+              <td><div align="center">12</div></td>
+              <td><div align="center">18</div></td>
+            </tr>
+            <tr> 
+              <td>I Know Why the Caged Bird Sings</td>
+              <td>Angelou</td>
+              <td><div align="center">16</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+          </table>
+
+<p>Consider the following Book bk to be inserted into library.</p>
+
+<table id="csTable">
+            <tr> 
+              <th><div align="center"><strong>title</strong></div></th>
+              <th><div align="center"><strong>author</strong></div></th>
+              <th><div align="center"><strong>lowAge</strong></div></th>
+              <th><div align="center"><strong>highAge</strong></div></th>
+            </tr>
+            <tr> 
+              <td>Little House on the Prairie</td>
+              <td>Wilder</td>
+              <td><div align="center">8</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+          </table>
+		  
+		  
+<p>After the call library.insertOne(bk), library contains the following books. Note that the books are in sorted order by lowAge, then by highAge within lowAge.</p>
+		  
+		<table id="csTable">
+            <tr> 
+              <th><div align="center"><strong>title</strong></div></th>
+              <th><div align="center"><strong>author</strong></div></th>
+              <th><div align="center"><strong>lowAge</strong></div></th>
+              <th><div align="center"><strong>highAge</strong></div></th>
+            </tr>
+            <tr> 
+              <td>Madeline</td>
+              <td>Bemelmans</td>
+              <td><div align="center">3</div></td>
+              <td><div align="center">8</div></td>
+            </tr>
+            <tr> 
+              <td>The Lorax</td>
+              <td>Seuss</td>
+              <td><div align="center">3</div></td>
+              <td><div align="center">10</div></td>
+            </tr>
+            <tr> 
+              <td>Little House on the Prairie</td>
+              <td>Wilder</td>
+              <td><div align="center">8</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+            <tr> 
+              <td>Harry Potter and the Sorcerer's Stone</td>
+              <td>Rowling</td>
+              <td><div align="center">9</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+            <tr> 
+              <td>Holes</td>
+              <td>Sacher</td>
+              <td><div align="center">12</div></td>
+              <td><div align="center">18</div></td>
+            </tr>
+            <tr> 
+              <td>I Know Why the Caged Bird Sings</td>
+              <td>Angelou</td>
+              <td><div align="center">16</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+          </table>  
+
+
+<p>Complete method <strong>InsertOne</strong> below.</p> 
+<div id="apCode"><pre>
+// precondition:  this BookList is in sorted order by age
+//                range as defined by compareTo;
+//                bk is not already in this BookList
+// postcondition: bk has been inserted into this BookList,
+//                maintaining its order by age range           
+<div id="apHighlight"><pre>public void <strong>insertOne</strong>(Book bk)</pre></div> 
+
+
+</pre></div>
+</li>
+
+
+
+<li>
+<p>Write the BookList method <strong>insertMany</strong>. This method will insert all 
+          the books from an ArrayList of Books into this BookList, maintaining 
+          the sorted order of the private data member myList, as defined by compareTo.</p> 
+          <p>For example, assume that the ArrayList books contains the following 
+            list of books to be inserted into the revised version of library shown 
+            in part (a).</p>
+
+<table id="csTable">
+            <tr> 
+              <th><div align="center"><strong>title</strong></div></th>
+              <th><div align="center"><strong>author</strong></div></th>
+              <th><div align="center"><strong>lowAge</strong></div></th>
+              <th><div align="center"><strong>highAge</strong></div></th>
+            </tr>
+            <tr> 
+              <td>The Phantom Tollbooth</td>
+              <td>Juster</td>
+              <td><div align="center">9</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+            <tr> 
+              <td>Invisible Man</td>
+              <td>Ellison</td>
+              <td><div align="center">15</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+            <tr> 
+              <td>Charlotte's Web</td>
+              <td>White</td>
+              <td><div align="center">8</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+          </table>
+		  
+<p>The following table shows the contents of library after the call library.insertMany(books).</p>
+
+<table id="csTable">
+            <tr> 
+              <th><div align="center"><strong>title</strong></div></th>
+              <th><div align="center"><strong>author</strong></div></th>
+              <th><div align="center"><strong>lowAge</strong></div></th>
+              <th><div align="center"><strong>highAge</strong></div></th>
+            </tr>
+            <tr> 
+              <td>Madeline</td>
+              <td>Bemelmans</td>
+              <td><div align="center">3</div></td>
+              <td><div align="center">8</div></td>
+            </tr>
+            <tr> 
+              <td>The Lorax</td>
+              <td>Seuss</td>
+              <td><div align="center">3</div></td>
+              <td><div align="center">10</div></td>
+            </tr>
+            <tr> 
+              <td>Charlotte's Web</td>
+              <td>White</td>
+              <td><div align="center">8</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+            <tr> 
+              <td>Little House on the Prairie</td>
+              <td>Wilder</td>
+              <td><div align="center">8</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+            <tr> 
+              <td>The Phantom Tollbooth</td>
+              <td>Juster</td>
+              <td><div align="center">9</div></td>
+              <td><div align="center">12</div></td>
+            </tr>
+            <tr> 
+              <td>Harry Potter and the Sorcerer's Stone</td>
+              <td>Rowling</td>
+              <td><div align="center">9</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+            <tr> 
+              <td>Holes</td>
+              <td>Sacher</td>
+              <td><div align="center">12</div></td>
+              <td><div align="center">18</div></td>
+            </tr>
+            <tr> 
+              <td>Invisible Man</td>
+              <td>Ellison</td>
+              <td><div align="center">15</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+            <tr> 
+              <td>I Know Why the Caged Bird Sings</td>
+              <td>Angelou</td>
+              <td><div align="center">16</div></td>
+              <td><div align="center">99</div></td>
+            </tr>
+          </table>
+		  
+<p>In writing insertMany, you may call method insertOne specified in 
+part (a). Assume that insertOne works as specified, regardless of 
+what you wrote in part (a). Do not assume that the list of books to 
+be added is in any particular order.</p>
+<p>Complete method <strong>insertMany</strong> below.</p>
+<div id="apCode"><pre>
+// precondition:  this BookList is in sorted order by range
+//                as defined by compareTo; second contains
+//                second.size() books in arbitrary order;
+//                none of the books in second are in this
+//                BookList
+// postcondition: all the books from second have been 
+//                inserted into this BookList, maintaining 
+//                its order by age range
+<div id="apHighlight"><pre>public void <strong>insertMany</strong>(List &lt;Book&gt; second)</pre></div> 
+	
+
+</pre></div>
+</li>
+</ol>
+</div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Madeline Bemelmans 3 8
+The Lorax Seuss 3 10
+Harry Potter and the Sorcerer's Stone Rowling 9 99
+Holes Sacher 12 18
+I Know Why the Caged Bird Sings Angelou 16 99
+
+
+Madeline Bemelmans 3 8
+The Lorax Seuss 3 10
+Little House on the Praire Wilder 8 12
+Harry Potter and the Sorcerer's Stone Rowling 9 99
+Holes Sacher 12 18
+I Know Why the Caged Bird Sings Angelou 16 99
+
+
+Madeline Bemelmans 3 8
+The Lorax Seuss 3 10
+Charlotte's Web White 8 12
+Little House on the Praire Wilder 8 12
+The Phantom Tollbooth Juster 9 12
+Harry Potter and the Sorcerer's Stone Rowling 9 99
+Holes Sacher 12 18
+Invisible Man Ellison 15 99
+I Know Why the Caged Bird Sings Angelou 16 99
+</pre>
+</div>
+	<br>
+</div>	
+

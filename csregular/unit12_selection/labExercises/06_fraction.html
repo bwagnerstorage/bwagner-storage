@@ -1,0 +1,268 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Fraction</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that can add, subtract, multiply, and divide fractions. Input should consist of a single line representing
+     a fraction arithmetic problem in the following format:</p>
+  <div id="csOutput" style="width: 85px">
+  <pre>
+2/3 + 1/2</pre>
+  </div>
+<p>The input will consist of fractions with single digit numerators and denominators. Once the problem has been entered the program
+   should perform the arithmetic operation indicated by the operator in the problem.</p>
+   <h3>Step 1: Problem Decomposition</h3>
+<p>Using the structure chart below decompose the problem into the following four methods:
+   <strong>getProblem</strong>, <strong>extractData</strong>, <strong>doArithmetic</strong>, and <strong>printResults</strong>.</p></h3>
+<div align="center"><img src="images/fraction1.png"></div>
+<h3>Step 2: Stub Program</h3>
+<p>Copy the stub program below and add it to your source code so that it replaces any previous code.</p>
+<br>
+<h3><strong>Replit Users</strong></h3> 
+   <p>If you are using replit you will need to a make the following changes to the stub program.</p>
+<ol id="csList">
+   <li><p>Change the program class name from Fraction to <strong>Main</strong>.</p></li>
+   <li><p>Remove the keyword public preceding the class keyword.</p>
+       It should now look like this:  <span style="font-family: Consolas; font-size:14px">class Main</span></li>
+   <li><p>In the main method at the bottom of the page Fraction is used twice. Replace them
+      both with <strong>Main</strong>.
+   </p></li>
+</ol>
+
+
+<div id="csCode"><pre>
+import java.util.*;
+
+public class Fraction 
+{
+    // Instance Variables
+
+    public void getProblem()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      getProblem");
+        System.out.println("/*********************/");
+    }
+    
+    public void extractData()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      extractData");
+        System.out.println("/*********************/");
+    }
+    
+    public void doArithmetic()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      doArithmetic");
+        System.out.println("/*********************/");
+    }
+    
+    public void printResults()
+    {
+        System.out.println("/*********************/");
+        System.out.println("      printResults");
+        System.out.println("/*********************/");
+    }
+    
+    public static void main(String[] args) 
+    {
+        Fraction app = new Fraction();
+        app.getProblem();
+        app.extractData();
+        app.doArithmetic();
+        app.printResults();
+    }
+}
+</pre>
+</div>
+<h3>Step 3: Declare Variables</h3>
+<p>Declare the following instance variables.</p>
+<div id="csCode">
+    <pre>
+private Scanner keyboard = new Scanner(System.in);
+private String problem;    <font color="#FF00FF">// fraction problem</font>       
+private int num1;          <font color="#FF00FF">// numerator of first fraction</font>
+private int denom1;        <font color="#FF00FF">// denominator of first fraction</font>
+private String operator;   <font color="#FF00FF">// arithmetic operator ("+","-","*","/")</font>
+private int num2;          <font color="#FF00FF">// numerator of second fraction</font>
+private int denom2;        <font color="#FF00FF">// denominator of second fraction</font>
+private int numAns;        <font color="#FF00FF">// numerator portion of the answer</font>
+private int denomAns;      <font color="#FF00FF">// denominator portion of the answer</font></pre>
+</div>
+<h3>Step 4: Write Method getProblem</h3>
+<p>Use Scanner class to read fraction problem from the keyboard. Include an appropriate user
+   prompt such as </p>
+<div id="csOutput">
+  <pre>
+"Enter Fraction Problem (ex: 2/3 + 3/4) -->"</pre>
+</div>
+<p>Compile and test method before continuing.</p>
+<h3>Step 5: Write Method extractData</h3>
+<p>The fraction problem is input into the program as a single string value. The extractData method
+   uses the String class's substring method to extract the numerators, denominators, and operator
+   from the problem so the arithmetic operation can be performed.</p>
+
+   <p>Assume that a fraction problem is input using the following format:</p>
+   
+      <table id="csTable" style="margin: 0px">
+        <tr> 
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>0</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>1</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>2</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>3</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>4</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>5</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>6</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>7</strong></div></td>
+          <td style="background-color:#FFFFCC"> <div align="center"><strong>8</strong></div></td>
+        </tr>
+        <tr> 
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">2</font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">/</font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">3</font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#0000FF"><font color="#FF0000"><font color="#FF00FF"><font color="#FF9900"><font color="#FF0000"></font></font></font></font></font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">+</font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#0000FF"><font color="#FF0000"><font color="#FF00FF"><font color="#FF9900"><font color="#FF0000"></font></font></font></font></font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">1</font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">/</font></div></td>
+          <td style="background-color:#FFFFFF"> <div align="center"><font color="#FF0000">5</font></div></td>
+        </tr>
+      </table>
+   <p>The value 2 above is the first numerator in the problem above. 
+      To extract this value from the problem, use the following code, which is explained in two parts:</p>
+   <h3>Part 1</h3>
+   <div id="csCode">
+    <pre>
+num1 = problem.<font color="#FF0000">substring</font>(0, 1);     <font color="#FF00FF">// extract 2 from problem </font></pre>
+   </div>
+<p>The code segment above is <strong>not</strong> complete. The variable num1 is declared as an
+   int. This is necessary so that it can be used in an arithmetic operation, however, this causes
+   a problem since the substring method returns a value of type String. To fix this problem you need
+   to convert the substring into an integer value (ex. convert "2" into 2). To do this you are going to use another Java 
+   library class named <strong>Integer</strong>. The Integer class has a method named <strong>parseInt</strong>
+   that can do this job for us. The Integer class is similar to the Math class in that its methods are static,
+   therefore you don't need to create an object in order to use them. The code segment above has
+   been modified to include the parseInt method:</p>
+   <h3>Part 2</h3>
+      <div id="csCode">
+    <pre>
+num1 = Integer.<font color="#FF0000">parseInt</font>(problem.substring(0, 1));     <font color="#FF00FF">// converts "2" into 2 </font></pre>
+   </div>
+ <p>Complete method extractData by extracting num1, denom1, num2, denom2, and operator from the
+    problem. The operator variable will contain a string value.</p>
+	<h3>Step 6: Write Method doArithmetic</h3>
+	<p>You are now ready to do the arithmetic. To determine which arithmetic operation you will need to
+	   perform do a comparison using the operator variable. If it contains a "+" you will do addition, if it contains a "-" you will do subtraction, and so forth. 
+	   Since operator is a String variable you will need to use the <strong>equals</strong> method to make the comparisons.</p>
+
+	<p><strong>Addition and Subtraction</strong></p>
+	<p>Normally when performing addition and subtraction fraction problems you need to determine the LCM
+	  (Least Common Multiply). Unfortunately we have not covered the Java commands that would enable
+	  you to perform this task, therefore you are going to use another technique called the
+	  <strong>Butterfly Method</strong>. The following diagram illustrates this technique.</p>
+     <img src="images/fraction2.png">
+	 <p>numerator answer = numerator 1 times denominator 2 plus denominator 1 times numerator 2.<br>
+	    denominator answer = denominator 1 times denominator 2.</p>
+	 <p><strong>Multiplication</strong></p>
+	 <p>To multiply fractions you multiply numerator 1 times numerator 2 and
+	    denominator 1 times denominator 2.</p>
+	 <p><strong>Division</strong></p>
+	 <p>To divide fractions you cross multiply: numerator 1 times denominator 2 and
+	    denominator 1 times numerator 2.</p><br>
+	<h3>Step 7: Write Method printResults</h3>
+	<p>Print the results of the calculation using the following format:</p>
+	<p><strong>problem  = numAns / denomAns</strong></p><br>
+<h1>Source File</h1>
+<p>Fraction.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+--------------------
+    getProblem
+--------------------
+Enter Fraction Problem (ex: 2/3 + 3/4) --> 2/5 + 1/3
+
+--------------------
+    extractData
+--------------------
+--------------------
+    doArithmetic
+--------------------
+--------------------
+    printResults
+--------------------
+
+2/5 + 1/3 = 11/15
+
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+--------------------
+    getProblem
+--------------------
+Enter Fraction Problem (ex: 2/3 + 3/4) --> 3/4 - 1/4
+
+--------------------
+    extractData
+--------------------
+--------------------
+    doArithmetic
+--------------------
+--------------------
+    printResults
+--------------------
+
+3/4 - 1/4 = 8/16
+
+</pre>
+</div>
+<h1>Sample Run 3</h1>
+<div id="csSampleRun">
+<pre>
+--------------------
+    getProblem
+--------------------
+Enter Fraction Problem (ex: 2/3 + 3/4) --> 1/2 * 2/3
+
+--------------------
+    extractData
+--------------------
+--------------------
+    doArithmetic
+--------------------
+--------------------
+    printResults
+--------------------
+
+1/2 * 2/3 = 2/6
+
+</pre>
+</div>
+<h1>Sample Run 4</h1>
+<div id="csSampleRun">
+<pre>
+--------------------
+    getProblem
+--------------------
+Enter Fraction Problem (ex: 2/3 + 3/4) --> 5/6 / 1/2
+
+--------------------
+    extractData
+--------------------
+--------------------
+    doArithmetic
+--------------------
+--------------------
+    printResults
+--------------------
+
+5/6 / 1/2 = 10/6
+
+</pre>
+</div>
+	<br>
+</div>

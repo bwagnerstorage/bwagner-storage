@@ -1,0 +1,238 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Computer Architecture</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+							<li>2.1.1 Outline the architecture of the central processing unit (CPU) and the functions of the arithmetic logic unit
+								      (ALU) and the control unit (CU) and the registers within the CPU.</li>
+							<li>2.1.2 Describe primary memory.</li>
+							<li>2.1.3 Explain the use of cache memory.</li>
+							<li>2.1.4 Explain the machine instruction cycle.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Computer Architecture</h1>
+<div id="ib">2.1.1 Outline the architecture of the central processing unit (CPU) and the functions of the arithmetic logic unit
+                   (ALU) and the control unit (CU) and the registers within the CPU.</div>
+				   
+<p><strong>Central Processing Unit (CPU)</strong> -  the key component of a computer system, which contains the circuitry necessary to
+    interpret and execute program instructions.</p>
+<p>As there are a great many variations in architecture between the different kinds of CPU, we shall look at a simplified model of the
+   structure. This simplified model consists of five parts, which are: </p>
+   <div id="csList">
+   <ul>
+   <li>Arithmetic Logic Unit(ALU)</li>
+   <li>Control Unit(CU)</li>
+   <li>Registers</li>
+   <li>System Buses</li>
+   <li>Memory</li>
+   </ul>
+   </div>
+   <div align="center"><img src="images/cpu1.png"></div>
+   
+   <h3>Arithmetic Logic Unit (ALU)</h3>
+<p>The part of the central processing unit that deals with operations such as addition, subtraction, and multiplication of integers 
+    and Boolean operations. It receives control signals from the control unit telling it to carry out these operations.</p>
+	
+<h3>Control Unit (CU)</h3>
+<p>This controls the movement of instructions in and out of the processor, and also controls the operation of the ALU. 
+It consists of a decoder, control logic circuits, and a clock to ensure everything happens at the correct time. It is also 
+responsible for performing the instruction execution cycle.</p>
+
+<h3>Registers</h3>
+<p>A register is a very small amount of very fast memory that is built into the CPU in order to speed up its operations by
+   providing quick access to commonly used values. All processors include some common registers used for specific functions. Below is a list 
+   of some of the most common ones along with their purposes:</p>
+   <div id="csList">
+   <ul>
+   <li><p><strong>Program Counter (PC)</strong> - this register holds the memory address of the next instruction that is to 
+     be executed.</p></li>
+	<li><p><strong>Instruction Register (IR)</strong> -  this register holds the instruction being executed by the CPU.</p></li>
+	<li><p><strong>Accumulator (AC)</strong> - this register holds the result of operations performed by the arithmetic and logic unit (ALU).</p></li>
+	<li><p><font color="#FF0000">Memory Address Register (MAR)</font> - this register holds the memory addresses of data and instructions.
+	   It is used to access data and instructions from memory during the execution phase of an instruction. Suppose the CPU wants to store some
+	   data in memory or read data from memory. It would place the address of the requested memory location in the MAR.
+	   The MAR is directly connected to the RAM chips on the motherboard via the address bus.</p></li> 
+	<li><p><font color="#FF0000">Memory Buffer Register (MBR)</font> - this register holds the contents of data or instructions read from, or written
+	   to memory. It is used to store data/instructions coming from memory or going to memory. The MBR is directly connected to the RAM chips 
+	   on the motherboard via the data bus.</p></li>
+   </ul></div>
+   
+   <div align="center"><img src="images/cpu2.png"></div>
+   
+<h3>System Bus</h3>
+<p>The system bus is comprised of the control bus, data bus and address bus. It is used for connections between the processor,
+   memory and peripherals, and transferal of data between the various parts. This occurs through physical connections such as cables
+   or printed circuits.</p>
+   <div id="csList">
+   <ul>
+   <li><p><strong>Control Bus</strong> - a system bus that is used by the CPU to communicate with other devices within the computer.
+      The control bus usually carries commands from the CPU and returns status signals from the devices.</p></li>
+   <li><p><strong>Address Bus</strong> - a system bus that establishes a connection between the CPU and memory which carry the address
+    to/from which the CPU wishes to read or write. An address bus is measured by the amount of memory a system can retrieve. 
+	A system with a 32-bit address bus can address 4 gibibytes(2^30) of memory space. Newer computers using a 64-bit address bus with a
+	supporting operating system can address 16 exbibytes(2^60) of memory locations, which is virtually unlimited.</p></li>
+	<li><p><strong>Data Bus</strong> - a system bus that carries data to/from the cpu, memory, and peripherals.</p></li>
+   </ul>
+   </div>
+
+<h3>Memory</h3>
+<p>The memory is not an actual part of the CPU itself, and is instead housed elsewhere on the motherboard. 
+   However, it is here that the program being executed is stored, and as such is a crucial part of the overall structure
+   involved in program execution.</p>
+
+
+<div id="ib">2.1.2 Describe primary memory.</div>
+<p><strong>Primary memory</strong> is computer memory that is accessed directly by the CPU. This includes several types of memory, 
+   such as the processor cache and system ROM. However, in most cases, primary memory refers to system RAM.</p>
+   <p>RAM, or random access memory, consists of one or more memory modules that temporarily store data while a computer is running.
+   RAM is volatile memory, meaning it is erased when the power is turned off. Therefore, each time you start up your computer, 
+   the operating system must be loaded from secondary memory (such as a hard drive) into the primary memory, or RAM. Similarly, 
+   whenever you launch an application on your computer, it is loaded into RAM.</p>
+   <p>The operating system and applications are loaded into primary memory, since RAM can be accessed much faster than storage devices.
+   In fact, the data can be transferred between CPU and RAM more than a hundred times faster than between the CPU and the hard drive.
+   By loading data into RAM, programs can run significantly faster and are much more responsive than if than constantly accessed data
+   from secondary memory.</p>
+
+<h3>RAM (random access memory)</h3> 
+  <p>RAM is a temporary (Volatile) storage area utilized by the CPU. Before a program 
+    can be ran the program is loaded into the memory which allows the CPU direct 
+    access to the program.</p>
+  <div align="center"><img src="images/ram.jpg"></div> 
+
+<h3>ROM (read-only memory)</h3>
+<p>Computers almost always contain a small amount of read-only memory that holds instructions for starting up the computer. 
+  Unlike RAM, ROM cannot be written to. It is non-volatile which means once you turn off the computer the information is still there.</p>
+ <div align="center"><img src="images/rom.jpg"></div> 
+ 
+<h3>PROM (programmable read-only memory)</h3> 
+<p>A PROM is a memory chip on which data can be written only once. Once a program has been written onto a PROM, 
+  it remains there forever. Unlike RAM, PROM's retain their contents when the computer is turned off. The difference between a
+  PROM and a ROM (read-only memory) is that a PROM is manufactured as blank memory, whereas a ROM is programmed during the
+  manufacturing process. To write data onto a PROM chip, you need a special device called a PROM programmer or PROM burner.
+  The process of programming a PROM is sometimes called burning the PROM.</p> 
+
+<h3>EPROM (erasable programmable read-only memory)</h3> 
+<p>A special type of PROM that can be erased by exposing it to ultraviolet light. Once it is erased, it can be reprogrammed.
+   An EEPROM is similar to a PROM, but requires only electricity to be erased.</p> 
+
+<h3></h3>EEPROM (electrically erasable programmable read-only memory)
+<p>Pronounced double-ee-prom, an EEPROM is a special type of PROM that can be erased by exposing it 
+  to an electrical charge. Like other types of PROM, EEPROM retains its contents even when the power is turned off. 
+  Also like other types of ROM, EEPROM is not as fast as RAM.</p>  
+
+  <h3>Comparison Chart</h3>
+  <p>The chart below compares RAM and ROM memory.</p>
+  <table id="csTable">
+  <tr>
+     <th style="width:100px"></th>
+     <th>RAM</th>
+	 <th>ROM</th>
+  </tr>
+  <tr>
+    <td><strong>Stands for:</strong>		</td>
+    <td>Random Access Memory</td>
+    <td>Read Only Memory</td>
+  </tr>
+    <tr>
+    <td><strong>Volatility:</strong>	</td>
+    <td>RAM is volatile i.e. its contents are lost when the device is powered off.</td>
+    <td>ROM is non-volatile i.e. its contents are retained even when the device is powered off.</td>
+  </tr>
+    <tr>
+    <td><strong>Types:</strong>	</td>
+    <td>The two main types of RAM are static RAM and dynamic RAM.</td>
+    <td>The types of ROM include PROM, EPROM and EEPROM.</td>
+  </tr>
+  <tr>
+    <td><strong>Use:</strong></td>
+    <td>RAM allows the computer to read data quickly to run applications. It allows reading and writing.</td>
+    <td>ROM stores the program required to initially boot the computer. It only allows reading.</td>
+  </tr>
+  <tr>
+    <td><strong>Definition:</strong></td>
+    <td>Random Access Memory or RAM is a form of data storage that can be accessed randomly at any time, in any order and from any physical location.</td>
+    <td>Read Only Memory or ROM is also a form of data storage that can not be easily altered or reprogrammed.</td>
+  </tr>
+  </table>
+<br>
+<h3>Two Types of RAM</h3>
+<p><strong>SRAM (Static Random Access Memory)</strong> is a type of memory that is faster and more reliable than the more
+  common DRAM (dynamic RAM). The term static is derived from the fact that it doesn't need to be refreshed like dynamic RAM.</p> 
+<p>Because of its cost SRAM is often used only as a memory cache usually found in the CPU (L1, L2 and L3 Cache).</p>
+
+<p><strong>DRAM (Dynamic Random Access Memory)</strong> is a type of inexpensive memory used in most personal computers.</p>
+
+<div align="center"><img src="images/memory1.png"></div>
+
+<div id="ib">2.1.3 Explain the use of cache memory.</div>
+<p><strong>Cache memory</strong> is small high-speed memory that improves the performance of a CPU by storing needed data closer - in both time and distance - to where it's needed.</p>
+<p>A microprocessor can access cache memory more quickly than it can access regular RAM. As the microprocessor processes data, it looks first
+  in the cache memory and if it finds the data there (from a previous reading of data), it does not have to do the more time-consuming reading
+   of data from larger slower memory.</p>
+<p>Cache memory is sometimes described in levels of closeness and accessibility to the microprocessor. An L1 (Level 1) cache is on the same chip as
+   the microprocessor. L2 (Level 2) is usually a separate static RAM (SRAM) chip. The main RAM is usually a dynamic RAM (DRAM) chip.</p>
+
+<div align="center"><img src="images/cache1.png"></div>
+
+  <p>With cache memory it is all about speed. L1 cache can be accesses at the 
+    same speed as the processor is running. L2 cache is approximately half as 
+    fast as L1. DRAM Memory is approximately half as fast as L2.</p>
+<p>Many modern microprocessors employ a third cache memory called the L3 cache. It is between the L2 cache and DRAM Memory.</p>
+
+  <p>A good example of the application of caching can be found in a school library. 
+    Suppose a history teacher is bringing her class to the library to research 
+    the Civil War. Before the class arrives the librarian pulls some popular books 
+    from the shelves that are about the Civil War and places them on a cart. When 
+    the class arrives the students first look on the cart for a book they would 
+    like to use. If they cannot find the book they want they can go to the shelves 
+    to find the book themselves. The cart is a cache providing quick access to 
+    the books.</p>
+   
+<p>In addition to cache memory, one can think of RAM itself as a cache of memory for hard disk storage since all of RAM's contents
+   come from the hard disk initially when you turn your computer on and load the operating system (you are loading it into RAM) and
+   later as you start new applications and access new data. RAM can also contain a special area called a <strong>disk cache</strong> that contains the
+   data most recently read in from the hard disk. </p>
+
+<div id="ib">
+    <p>2.1.4 Explain the machine instruction cycle.</p></div>
+    <p>Each time the CPU executes an instruction, it takes a series of steps. 
+      One round of steps from getting an instruction back to getting the next 
+      instruction is called the <strong>Machine Cycle</strong>.</p>
+    <p></p>
+    <h3>The Machine Cycle</h3>
+	<div id="csList">
+	<ul>
+      <li><p><strong>Fetch</strong> - get an instruction from cache or memory</p></li>
+      <li><p><strong>Decode</strong> - translate it into computer commands (machine language)</p></li>
+      <li><p><strong>Execute</strong> - actually process the command</p></li>
+      <li><p><strong>Store</strong> - write the result to memory</p></li>
+	 </ul></div> 
+	  
+      <div align="center"><img src="images/machinecycle.png"></div>
+	  
+      <h3>Speed</h3>
+     <p> The immense speed of the computer enables it to do millions of such steps 
+      in a second. In fact, MIPS, standing for millions of instructions per second, is one 
+      way to measure computer speeds.</p>
+
+  </div>
+
+<br>
+<hr>
+<br>
+<p>References</p>
+<a href="http://www.techterms.com/definition/primary_memory">http://www.techterms.com/definition/primary_memory</a><br>
+<a href="http://www.eastaughs.fsnet.co.uk/cpu/structure-bus.htm">http://www.eastaughs.fsnet.co.uk/cpu/structure-bus.htm</a><br>
+<a href="http://www.jegsworks.com/lessons/lesson4/lesson4-4.htm">http://www.jegsworks.com/lessons/lesson4/lesson4-4.htm</a><br>
+
+<br>
+</div>	
+

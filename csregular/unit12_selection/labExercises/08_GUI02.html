@@ -1,0 +1,243 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI02</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>When creating a GUI program you must first create the frame window. The next step is to add
+     graphical components to the frame. Graphical components consist of things like labels, buttons, text fields, text areas, 
+	 combo boxes, check boxes, radio buttons, sliders, and panels. In this lesson we learn how to add labels to our frame.</p>
+
+   <p>A <strong>JLabel</strong> is a swing component that is a display area for short text or an image. Adding a JLabel to a frame is a four
+      step processes. This same four step processes will be used later to add other graphical components to the frame.</p>
+   <div id="csList">
+   <ol>
+      <li>Create a JLabel variable</li>
+	  <li>Create a JLabel object and store its reference in the JLabel variable</li>
+	  <li>Set the attributes for the label (location, size, color, etc.)</li>
+	  <li>Add the JLabel to the content pane of the frame</li>
+   </ol>
+   </div>
+   <div id="csCode">
+    <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI02 extends JFrame
+{
+    <font color="#FF0000">// Step 1 : create JLabel variable</font>
+    private JLabel label;
+    
+    // constructor
+    public GUI02()
+    {   
+        <font color="#FF0000">// Step 2 : create JLabel object and store its reference in label</font>
+        label = new JLabel("This is a test");
+        
+        <font color="#FF0000">// Step 3 : set label attributes</font>
+        label.setLocation(50, 200);
+        label.setSize(600, 50);   // label's footprint - the size of the
+                                  // rectangle the label is displayed in
+        label.setForeground(Color.BLUE);
+        label.setFont(new Font("Arial", Font.PLAIN, 24));
+        
+        <font color="#FF0000">// Step 4: add label to content pane of frame</font>
+        getContentPane().add(label);
+        
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(600, 480);                              
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.white);     
+        setVisible(true);                            
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI02 app = new GUI02();   // run program
+    }
+}   
+   </pre>
+   </div>
+   <p>Before we examine the JLabel code it must be pointed out that frame attributes have not changed. You will notice,
+      however, that the code is located at the bottom of the constructor. In our GUI program ordering you will always
+	  put the code for the graphical components above the code that sets the attributes for the frame.</p>
+<h3>Step 1 : create a JLabel variable</h3>
+<div id="csCode">
+<pre>
+private JLabel label;
+</pre>
+</div>
+<p>The JLabel variable label is used to store a reference to the JLabel object so that the object can be accessed in
+   our GUI program. All graphical component variables should be declared as <strong>instance variables</strong>.</p>
+<h3>Step 2 : create a JLabel object and store its reference in the JLabel variable</h3>
+<div id="csCode">
+<pre>
+label = new JLabel("This is a test");
+</pre>
+</div>
+<p>To create a JLabel object you use the keyword new followed by JLabel. The parentheses contain the text that will 
+   be displayed on the screen.</p>
+<h3>Step 3 : set the attributes for the label (location, size, color, etc.)</h3>
+<div id="csCode">
+<pre>
+label.setLocation(10, 10);
+label.setSize(600, 50);
+label.setForeground(Color.BLUE);
+label.setFont(new Font("Arial", Font.PLAIN, 24));
+</pre>
+</div>
+<p><strong>setLocation</strong> - determines the location with the frame where the label will be displayed.<br>
+<strong>setSize</strong> - sets the size of the label. The size is dependent upon the size of the text in the label and the font size being used.<br>
+<strong>setForeground</strong> - sets the color of the label's text.<br>
+<strong>setFont</strong> - sets the font that will be used to display the text. When setting the font you must create a new font object and provide the font name, font style, and font size.</p>
+<p>There are three font style attributes.</p>
+<table id="csTable">
+        <tr> 
+          <th width="275px">Font Style</th>
+          <th>Description</th>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>PLAIN</strong></div></td>
+          <td>The plain style constant (Font.PLAIN)</td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>BOLD</strong></div></td>
+          <td>The bold style constant. (Font.BOLD)</td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>ITALIC</strong></div></td>
+          <td>The italicized style constant (Font.ITALIC)</td>
+        </tr>
+      </table>
+<p>Here are the established baseline fonts: SansSerif, Serif, Dialog, DialogInput, Monospaced. These are not system dependent.</p>
+
+<p><strong>Example</strong></p>
+<div id="csCode">
+<pre>
+Font myFont = new Font("Serif", Font.PLAIN, 18);
+</pre>
+</div>
+<p>You can also use the system specific font names like Times New Roman and Arial which are defined in the Windows operating system.</p>
+
+<p><strong>Example</strong></p>
+<div id="csCode">
+<pre>
+Font myFont = new Font("Times New Roman", Font.BOLD, 24);
+</pre>
+</div><br>
+<h3>Step 4 : add the JLabel to the content pane of the frame</h3>
+<div id="csCode">
+<pre>
+getContentPane().add(label);
+</pre>
+</div>
+<p>To add a graphical component to the content pane of the frame you use the add method.</p>
+
+<h1>Exercise</h1>
+
+ <p>There are two sets of instructions depending upon whether you are using Replit or Netbeans as your IDE (editor).
+   <h3>Replit</h3>
+   <div id="csList">
+   <ol>
+<li><p>Logon to replit.<p/></li>
+
+<li><p>Create a new Java repl named "GUI02".</p></li>
+
+<li><p>In the File section of the replit window, click the Add File icon.</p></li>
+<li><p>Name the newly created file: GUI02.java. You should now have two java files: Main and GUI02.</p></li>
+<li><p>Copy the code located at the top of the GUI02 assignment page on my website and paste it in the file GUI02.java.</p></li>
+<li><p>Select the Main.java file. Delete all of the code currently in this file.</p></li>
+<li><p>Copy the following code and paste it in Main.java file:</p>
+<div id="csCode"><pre>class Main
+{
+    public static void main(String[] args)
+    {
+        GUI02 app = new GUI02();    // run program
+    }
+}
+</pre></div>
+</li>
+<li><p>Run the program.</p></li>
+</ol>
+
+   <h3>NetBeans</h3>
+   <div id="csList">
+<ol>
+<li><p>Open your NetBeans workspace.</p></li>
+
+<li><p>Add a new empty Java file named <strong>GUI02</strong> to your project.</p></li>
+
+<li><p>Copy the code located at the top of the GUI02 assignment page into this new file.</p></li>
+<li><p>Run the program.</p></li>
+</ol>
+<h1>Modifications</h1>
+<p>
+   <div id="csList">
+<ol>
+<li><p>Change the text of the label to "Have a nice day!".</p></li>
+
+<li><p>Center the label in the middle of the frame window.</p></li>
+
+<li><p>Change the font attributes for the label. Adjust the size of the label as needed.</p>
+<p><strong>Replit Users:</strong> You may have to adjust the window size by pulling the horizontal and vertical bars to make the GUI window match the size and location numbers
+you used.</p>
+
+</li>
+
+<li><p>Change the color of the label.</p></li>
+</ol>
+<p>Here is the list of the preset colors.</p>
+  
+  <table id="csTable" style="margin: 15px">
+        <tr> 
+          <th>Color</th>
+          <th>Command</th>
+        </tr>
+        <tr> 
+          <td>black</td>
+          <td>Color.black</td>
+        </tr>
+        <tr> 
+          <td>blue</td>
+          <td>Color.blue</td>
+        </tr>
+        <tr> 
+          <td>cyan</td>
+          <td>Color.cyan</td>
+        </tr>
+        <tr> 
+          <td>gray</td>
+          <td>Color.gray</td>
+        </tr>
+        <tr> 
+          <td>green</td>
+          <td>Color.green</td>
+        </tr>
+        <tr> 
+          <td>magenta</td>
+          <td>Color.magenta</td>
+        </tr>
+        <tr> 
+          <td>orange</td>
+          <td>Color.orange</td>
+        </tr>
+        <tr> 
+          <td>white</td>
+          <td>Color.white</td>
+        </tr>
+        <tr> 
+          <td>yellow</td>
+          <td>Color.yellow</td>
+        </tr>
+      </table>
+
+<h1>Source File</h1>
+<p>GUI02.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI02.png">
+	<br>
+</div>

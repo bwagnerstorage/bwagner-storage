@@ -1,0 +1,154 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Mutator Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a mutator method</li>
+						<li>How is a mutator method created and invoked</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Mutator Methods</h1>
+  <p>Methods in a class that allow clients to modify an object's instance variables are called
+     <strong>mutator methods</strong>. If the instance variables of a class are defined with the
+	 private visibility modifier, then clients who instantiate objects of this class do not have
+	 direct access to its instance variables(i.e. cannot use dot notation). If you wish for clients
+	 to have the ability to change the value of a particular instance variable, then you must
+	 provide a mutator method for that variable in the class implementation.
+
+   <p>Look at the Student class again. Five mutator methods have been added.</p>
+  <div id="csCode">
+  <pre>
+class Student
+{
+   // instance variables
+   private String name;     	// Student name
+   private int sixWeeks1;       // 1st 6 weeks avg
+   private int sixWeeks2;       // 2nd 6 weeks avg
+   private int sixWeeks3;       // 3rd 6 weeks avg
+   private int exam;            // semester exam
+
+   // constructors
+   public Student()
+   {
+       name = "";           // initialize name to empty string
+       sixWeeks1 = 0;       // initialize sixWeeks1 to 0
+       sixWeeks2 = 0;       // initialize sixWeeks2 to 0
+       sixWeeks3 = 0;       // initialize sixWeeks3 to 0
+       exam = 0;            // initialize exam to 0
+   }
+
+   public Student(String n, int w1, int w2, int w3, int e)
+   {
+      name = n;            // initialize name to value in n
+      sixWeeks1 = w1;      // initialize sixWeeks1 to value in w1
+      sixWeeks2 = w2;      // initialize sixWeeks2 to value in w2
+      sixWeeks3 = w3;      // initialize sixWeeks3 to value in w3
+      exam = e;            // initialize exam to value in e
+   }
+		
+   // accessor methods
+   public String getName()
+   {
+      return name;
+   }
+   
+   public String getSixWeeks1()
+   {
+      return sixWeeks1;
+   }
+   
+   public String getSixWeeks2()
+   {
+      return sixWeeks2;
+   }
+   
+   public String getSixWeeks3()
+   {
+      return sixWeeks3;
+   }
+   
+   public String getExam()
+   {
+      return exam;
+   }
+   
+   // mutator methods
+   public void <div id="csHighlight"><pre>setName</pre></div>(String n)
+   {
+      name = n;
+   }
+   
+   public void <div id="csHighlight"><pre>setSixWeeks1</pre></div>(int s)
+   {
+      sixWeeks1 = s;
+   }
+   
+   public void <div id="csHighlight"><pre>setSixWeeks2</pre></div>(int s)
+   {
+      sixWeeks2 = s;
+   }
+   
+   public void <div id="csHighlight"><pre>setSixWeeks3</pre></div>(int s)
+   {
+      sixWeeks3 = s;
+   }
+   
+   public void <div id="csHighlight"><pre>setExam</pre></div>(int e)
+   {
+      exam = e;
+   }
+</pre></div>
+<p>As an example the following mutator method was defined for the class.</p>
+  <div id="csCode">
+  <pre>
+public void setName(String n)
+{
+   name = n;
+}
+</pre></div>
+<p>This method, when called, will change the value of the name instance variable to the value specified by the parameter n.
+ The method allows clients to "mutate" or change the contents of the variable name.</p>
+<p>It you don't want a client to have the ability to
+modify a particular instance varible don't provide a mutator method for that variable.</p>
+<p>Mutator methods are defined with a return type of void since they do not return a value.</p>
+<div id="csNote"><strong>Note:</strong> A common practice, although not required, is to define mutator
+ methods with the word "set" in front of their name followed by the name of the instance variable
+ they are modifying. (setLength, setWidth, setScore, setName, setTemperature, etc.)</div>
+ <h1>Invoking Mutator Methods</h1>
+  <p>The following code shows how mutator methods can be called from client code.</p>
+    <div id="csCode">
+  <pre>
+Student student1 = new Student();
+
+System.out.print("Enter Student Name -->");
+String name = keyboard.nextLine();
+student1.<div id="csHighlight"><pre>setName</pre></div>(name);
+
+System.out.print("Enter 1st 6 Weeks Avg -->");
+int s1 = keyboard.nextInt();
+student1.<div id="csHighlight"><pre>setSixWeeks1</pre></div>(s1);
+
+System.out.print("Enter 2nd 6 Weeks Avg -->");
+int s2 = keyboard.nextInt();
+student1.<div id="csHighlight"><pre>setSixWeeks2</pre></div>(s2);
+
+System.out.print("Enter 3rd 6 Weeks Avg -->");
+int s3 = keyboard.nextInt();
+student1.<div id="csHighlight"><pre>setSixWeeks3</pre></div>(s3);
+
+System.out.print("Enter Semester Exam -->");
+int e = keyboard.nextInt();
+student1.<div id="csHighlight"><pre>setExam</pre></div>(e);
+</pre></div>
+<br>
+</div>	
+

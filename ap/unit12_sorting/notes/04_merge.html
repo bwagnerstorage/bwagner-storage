@@ -1,0 +1,125 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Merge Sort</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Merge Sort</li>
+						<li>How to implement a Merge Sort</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Merge Sort</h1>
+<p>Merge sort is a well know example of an important paradigm in the design of algorithms - namely:
+   <strong>divide and conquer principle</strong>. Break the problem into smaller sub problems of the same type, solve
+   those sub problems recursively, and meld the solutions found for the individual sub problems
+   into a solution for the entire problem.</p>
+
+<p>Divide and Conquer in simpler terms</p>
+<div id="csList"><ol>
+<li>"Divide" the problem size into more comprehensible pieces.</li>
+<li>"Conquer" or resolve the smaller pieces recursively.</li>
+<li>Finally put the pieces back together to create the final solution.</li>
+</ol></div>
+
+<p>The merge sort splits the list to be sorted into two equal halves, and places them
+   in separate arrays. Each array is recursively sorted, and then merged back together to form the
+   final sorted list. Like most recursive sorts, the merge sort has an algorithmic complexity
+   of O(n log n).</p>
+ <div align="center"><img src="images/merge1.jpg"></div>
+ 
+<p><strong>Pros</strong>: Faster than the selection and insertion sorts.<br>
+<strong>Cons</strong>: At least twice the memory requirements of the other sorts; recursive.</p> 
+<br>
+<h3>Applet - Merge Sort Demonstration</h3>
+   <applet code="MergeApplet.class" archive="MergeSort.jar" codebase = "/applets" width="400" height="300">
+  </applet>
+
+<h1>Merge Sort Efficiency</h1>
+<p>The speed of the bubble, selection, and insertion sort begin to decrease as the problem size
+  increases, making the merge sort more efficient with larger size problems. Like the merge sort,
+  the quick sort has a similar big O notation,<br> O (n log n), as the merge sort but in average cases is
+  quicker. However, in its worst cases, the merge sort is much faster than the quick sort. Another disadvantage of the merge
+  sort is the need of a <strong>temporary array</strong> similar in size as the one being sorted.
+  This causes the merge sort to use up more memory because more storage is needed for the second
+  array. One great advantage of the merge sort is that you can easily merge two segments together.
+  Unlike other sorting algorithms, which only can work with what is in the internal memory,
+  the merge sort is a great <strong>external file sorter</strong>, meaning if the file being
+  sorted is too great to fit into the internal memory, the merge sort can work with external
+  files to transfer data in and out of the internal memory. Although the merge sort may have
+  its flaws and advantages, over all, it is one of the best sorting algorithms in all different
+  types of cases and situations.</p>
+
+<h1>Merge Sort Algorithm</h1>
+
+<div id="csCode"><pre>
+void mergeSort(int[] a, int lo, int hi)
+{
+   if (lo < hi)
+   {
+       int m = (lo + hi) / 2;
+       mergeSort (a, lo, m);
+       mergeSort (a, m+1, hi);
+       merge (a, lo, hi);
+   }
+}
+
+void merge(int[] a, int lo, int hi)
+{
+   int i, j, k, m;
+   int n=hi-lo+1;
+   int[] b=new int[n];           <div id="csHighlight"><pre>// temporary array</pre></div> 
+            
+   k=0;
+   m=(lo+hi)/2;
+   // copy lower half to array b
+   for(i=lo; i<=m; i++)
+   {
+       b[k]=a[i];
+       k++;
+   }
+  // copy upper half to array b in opposite order
+   for (j=hi; j>=m+1; j--)
+   {
+       b[k]=a[j];
+       k++;
+   }
+        
+   i=0; 
+   j=n-1; 
+   k=lo;
+        
+   // copy back next-greatest element at each time
+   // until i and j cross
+   while (i<=j)
+   {
+      if (b[i]<=b[j])
+      {
+         a[k]=b[i];
+         k++;
+         i++;
+      }
+      else
+      {
+         a[k]=b[j];
+         k++;
+         j--;
+      }
+   }
+}
+</pre></div> 
+
+<p><strong>Note</strong> - There are non-recursive versions of the merge sort, but they don't yield
+   any significant performance enhancement over the recursive algorithm on most machines.</p>
+
+
+
+<br>
+</div>	
+

@@ -1,0 +1,70 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SortFriends</div>
+
+<h1 style="font-size:1.2em; font-weight:700;">Video: <a href="https://www.youtube.com/watch?v=GUDLRan2DWM&list=RDCMUClEEsT7DkdVO_fkrBw0OTrA&index=6" style="color:#00F; font-size:1.2em; font-weight:600;" >Selection Sort</a></h1>
+<br><hr>
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/SortFriendsNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SortFriends</a></h1> 
+
+<h1>Directions</h1>
+<p>In this exercise, you are going to sort an array of objects using the selection sort algorithm. As you know from the unit on searching when you need to compare two objects to determine their ordering (alphabetical, numerical, etc), you cannot use the Java relational operators (<, >, <=, >=, ==, !=). Instead you must use a method named the <strong>compareTo</strong> method.</p>
+
+<div id="csCode"><pre>int result = object1.<div id="csHighlight"><pre>compareTo(object2);</pre></div></pre></div>
+
+<p>This method compares two objects and returns one of three integer values. It returns a negative number if object1 is less than the object2. It returns a positive number if object1 is greater than object2. And finally, it returns a zero if the two objects are equal. </p>
+
+
+
+<p>It is the responsibility of the designer of a class to implement a <strong>compareTo</strong> method if they wish for there class to use this method to determine object ordering. In their implementation they must determine what it means for two objects to be equal and also what it means for one object to be less than or greater than another object. </p>
+
+<p>For example, the String class implements a compareTo method. Two String objects are considered equal if they contain the same characters in the same sequence. A String object is consider to be less than another string if the character of the first string comes first in alphabetical order as compared to the second string. If the first two characters are equal the compareTo method advances to the next two characters in the strings and performs the comparison again. It continues this process until the end of at least one the strings is reached.</p>
+
+<p><strong>Question:</strong> Which character is less than the other, "a" or "A"? The answer is "A". The reason is the character "A" has an ordinal value of 65 on the ASCII chart, whereas the character "a" has an ordinal value of 97. 65 is less than 97.</p>
+
+<h3>Implement compareTo method.</h3>
+<p>The program in this exercise has a class named Friend. This class declares four fields: lastName, firstNa,e, phoneNumber, and birthdate. Write a compareTo method that determines if two Friend objects are equal according to their lastName field. If the two lastName fields are equal then it compares the two objects by their firstName field.</p>
+<p>Use the following pseudo code to implement the method:</p>
+<div id="apCode"><pre>Friend FRIEND = (Friend)OBJ
+int RESULT = this.LASTNAME.compareTo(FRIEND.LASTNAME)
+if RESULT = 0 then
+   return this.FIRSTNAME.compareTo(FRIEND.FIRSTNAME)
+else
+   return RESULT
+endif
+</pre>
+</div>
+<h3>Implement sortFriends Method</h3>
+<p>Implement the sortFriends method using the Insertion Sort algorithm. Include the Friend class's <strong>compareTo</strong> method in your implementation.</p>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Wayne, John, 390-1234, March 12
+Stewart, Jimmy, 390-5678, January 10
+Cagney, James, 390-9999, June 10
+Douglas, Michael, 390-0000, October 26
+Douglas, Kirk, 390-1111, March 17
+Fonda, Henry, 390-2222, June 24
+Crosby, Bing, 390-3333, August 12
+Hope, Bob, 390-4444, December 20
+Bogart, Humphrey, 390-5555, November 14
+Heston, Charlton, 390-6666, September 22
+Crosby, Steve, 390-7777, July 04
+
+Bogart, Humphrey, 390-5555, November 14
+Cagney, James, 390-9999, June 10
+Crosby, Bing, 390-3333, August 12
+Crosby, Steve, 390-7777, July 04
+Douglas, Kirk, 390-1111, March 17
+Douglas, Michael, 390-0000, October 26
+Fonda, Henry, 390-2222, June 24
+Heston, Charlton, 390-6666, September 22
+Hope, Bob, 390-4444, December 20
+Stewart, Jimmy, 390-5678, January 10
+Wayne, John, 390-1234, March 12
+</pre>
+</div>
+	<br>
+</div>	
+

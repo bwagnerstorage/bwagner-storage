@@ -1,0 +1,216 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Object Arrays</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an object array</li>
+						<li>How can an array be used to store user-defined types</li>	
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 		
+  <h1>Object Arrays</h1>
+  <p>You have already seen how arrays can be used to store numbers and strings.</p>
+  <div id="csCode">
+  <pre>
+int[] nums = new int[10];
+String[] words = new String[10];</pre>
+  </div>
+  <p>Arrays can also be used to store objects of classes you define. To demonstrate this we
+     are going to use the Die class implemented in a previous unit.</p>
+ <div id="csCode">
+<pre>
+public class Die
+{
+    // instance variables
+    private int faceValue;
+
+    // constructor
+    public Die()
+    {
+        faceValue = 1;
+    }
+
+    // accessor method
+    public int getFaceValue()
+    {
+        return faceValue;
+    }
+
+    public void roll()
+    {
+        faceValue = (int)(Math.random() * 6) + 1;
+    }
+}
+</pre>
+</div>
+<p>Recall that the Die class represents a single six-sided die. It has one instance variable that
+   stores the current value of the die, a default constructor, an accessor method, and
+   a method named roll which randomly assigns a value to the die in the range of 1 to 6.</p>
+   
+<h3>Yahtzee class</h3>
+ <p>Below is a class named Yahtzee that simulates the rolling of six dice.
+    It accomplishes this by storing each die in an array.</p>
+
+ <div id="csCode">
+<pre>
+public class Yahtzee
+{
+    // instance variables
+    private <div id="csHighlight"><pre>Die</pre></div>[] dice;
+
+    // constructor
+    public Yahtzee()
+    {
+       dice = new <div id="csHighlight"><pre>Die</pre></div>[5];   // initialize array and assign it to dice
+
+       for(int i = 0; i < 5; i++)
+       {
+          dice[i] = new Die();  // instantiate 5 die objects and
+                                // assign them to the array
+       }
+    }
+
+    public void rollDice()
+    {
+       for(int i = 0; i < 5; i++)
+       {
+          Die die = dice[i];   // get reference of die object from
+          die.roll();          // array and call method roll
+       }
+    }
+
+    public void displayDice()
+    {
+       for(int i = 0; i < 5; i++)
+       {
+          Die die = dice[i];
+          System.out.print(die.getFaceValue() + " ");
+       }
+       System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+       Yahtzee app = new Yahtzee();
+       app.rollDice();
+       app.displayDice();
+    }
+}
+</pre>
+</div>
+<strong>Sample Output</strong>
+<div id="csOutput">
+<pre>
+4 3 6 6 3
+</pre>
+</div>
+<br><br>
+<p>Let's break the class apart and examine it more closely.</p>
+<h3>Instance Variable</h3>
+<p>An array object variable is declared with <strong>Die</strong> as its type.
+   As you can see arrays can store user-defined types.</p>
+ <div id="csCode">
+<pre>
+private  <div id="csHighlight"><pre>Die</pre></div>[] dice;
+</pre>
+</div>
+<h3>Constructor</h3>
+<p>The constructor starts by initializing the array with a length of 5 and it
+   assigns its reference(memory location) to the variable dice.</p>
+ <div id="csCode">
+<pre>
+dice = new Die[5];
+</pre>
+</div>
+<p>Here is what the array looks like after instantiation.</p>
+<div align="center"><img src="images/objectArray1.png"></div>
+<p>The array elements do not contain Die objects yet so they are assigned a value of null.
+   The keyword <strong>null</strong> is the default value for an object variable that does not contain an object.</p>
+<p>Next the constructor instantiates 5 Die objects and stores their references in the array.
+   Each Die object occupies a different array index.</p>
+    <div id="csCode">
+<pre>
+for(int i = 0; i < 5; i++)
+{
+   dice[i] = new Die();
+}
+</pre>
+</div>
+<p>Here is what the array looks like after initialization.</p>
+<div align="center"><img src="images/objectArray2.png"></div>
+<p>Each array element is assigned a Die object. The Die constructor initializes
+   the variable faceValue with a value of 1.</p>
+<h3>rollDice Method</h3>
+<p>The rollDice method uses a for loop to access each Die object within the array.</p>
+   In the for loop an array index is used to retrieve each Die object and store their
+   reference in the local variable die.</p>
+ <div id="csCode">
+<pre>
+Die die = dice[i];
+</pre></div>
+<div align="center"><img src="images/objectArray3.png"></div>
+<p>The rollDice method then calls the <strong>roll</strong> method for the current Die object.</p>
+ <div id="csCode">
+<pre>
+die.roll();
+</pre></div>
+<div align="center"><img src="images/objectArray4.png"></div>
+<p>The roll method assigns a random value to the current Die object's faceValue variable. When the
+   current object's variable changes its value is automatically updated in the array.</p>
+<p>Using the for loop, it repeats this process for each Die object in the array.</p>
+<h3>displayDice Method</h3>
+<p>The displayDice method also uses a for loop to access each Die object within the array.</p>
+ <div id="csCode">
+<pre>
+public void displayDice()
+{
+   for(int i = 0; i < 5; i++)
+   {
+      Die die = dice[i];
+      System.out.print(die.getFaceValue() + " ");
+   }
+   System.out.println();
+}
+</pre></div>
+   <p>In the for loop an array index is used to retrieve each Die object and store their
+   reference in the local variable die. The faceValue of the Die object currently referenced in the variable 
+   die is displayed using the Die class's <strong>accessor</strong> method. The for loop
+   repeats this process for each Die object in the array.</p>
+
+<br>
+<h3>Alternative Approach - rollDice and displayDice methods</h3>
+<p>Look at the modified version of the rollDice method.</p>
+ <div id="csCode">
+<pre>
+public void rollDice()
+{
+   for(int i = 0; i < 5; i++)
+   {
+      <div id="csHighlight"><pre>dice[i]</pre></div>.roll();          
+   }
+}
+</pre></div>
+<p>The local Die variable is removed and the Die objects in the array are referenced directly. 
+   This style makes the local Die variable unnecessary.</p>
+<p>This same style can be used in the displayDice method as well.</p>
+    <div id="csCode">
+<pre>
+public void displayDice()
+{
+   for(int i = 0; i < 5; i++)
+   {
+      System.out.print(<div id="csHighlight"><pre>dice[i]</pre></div>.getFaceValue() + " ");          
+   }
+   System.out.println();
+}
+</pre></div>
+	<br>
+</div>	
+

@@ -1,0 +1,100 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">8-1 Javascript Numbers</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_numbers.asp" target="_blank" style="color:blue">Javascript Numbers</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_number_methods.asp" target="_blank" style="color:blue">Javascript Number Methods</a></p></li>
+    </ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>File Name: 8_1_numbers.html</p></li>
+<li><p>Copy the following code:</p>
+    <div id="csOutput" style="width: 600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;8-1 Numbers&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;
+                
+            }
+            .box {
+                font-size: 1.4em;
+                width: 150px;
+                margin-right: 10px;
+            }
+            .numLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }        
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+          &lt;span class="numLabel"&gt;num1&lt;/span&gt; 
+          &lt;input type="text" class="box" id="num1"&gt;
+          &lt;span class="numLabel"&gt;num2&lt;/span&gt; 
+          &lt;input type="text" class="box" id="num2"&gt;
+          &lt;button type="button" onClick="doAdd()"&gt; + &lt;/button&gt;
+          &lt;button type="button" onClick="doMultiple()"&gt; * &lt;/button&gt;
+          &lt;button type="button" onClick="doSubtract()"&gt; - &lt;/button&gt;
+          &lt;button type="button" onClick="doDivide()"&gt; / &lt;/button&gt;
+          &lt;br&gt;&lt;br&gt;
+          &lt;div id="output"&gt;&lt;/div&gt;
+    
+            &lt;script&gt;        
+                function doAdd()
+                {
+                    var  num1Box= document.getElementById("num1");
+                    var  num2Box= document.getElementById("num2");
+                    var text1 = num1Box.value;   // retrieve string from num1Box
+                    var text2 = num2Box.value;   // retrieve string from num2Box
+                    var num1 = parseInt(text1);  // convert string to integer
+                    var num2 = parseInt(text2);  // convert string to integer
+                    var ans = num1 + num2;       // add values together
+
+                    document.getElementById("output").innerHTML = text1 + " + " + text2 + " = " + ans;
+                }
+
+                function doSubtract()
+                {
+
+                }
+				
+				function doMultiple()
+                {
+                     
+                }
+
+                function doDivide()
+                {
+
+                }
+            &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<li><p>The document above is a simple calculator program that contains two text boxes and four buttons. Run the program to view it.</p></li>
+<li><p>Study the program until you understand how it works then complete the functions <strong>doAdd</strong>, <strong>doSubtract</strong>, <strong>doMultiple</strong>, and 
+        <strong>doDivide</strong> so that the calculator works as intended.</p>
+		<p>Number data retrieved from a text box are always of type String. In order to use the data in a mathematical expression the data must be converted to a Number.
+		   This can be accomplished with the Math class's <strong>parseInt</strong> method. For example, suppose your code contains a variable named data that
+		   contains the String value "99". The following code will convert the data from the String "99" to the Number 99:</p>
+		   <div id="csOutput" style="width:460px"><pre>var num = parseInt(data); </pre></div></li>
+<li><p>Add a <strong>Clear Button</strong> that clears the two text boxes and the output text when pressed.</p></li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_numbers1.png">
+	<br>
+</div>	

@@ -1,0 +1,230 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Concession Stand</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Your school's booster club runs a concession stand at sporting events to
+     raise money. They currently sale the following items:
+  <table id="csTable" style="margin:25px">
+     <tr>
+	    <th>Item</th>
+        <th>Cost</th>
+     </tr>
+	 <tr>
+	    <td>Hamburger</td>
+        <td align="right">2.00</td>
+     </tr>
+	 <tr>
+	    <td>Hotdog</td>
+        <td align="right">1.50</td>
+     </tr>
+	 <tr>
+	    <td>Chips</td>
+        <td align="right">.50</td>
+     </tr>
+	 <tr>
+	    <td>Candy</td>
+        <td align="right">1.00</td>
+     </tr>
+	 <tr>
+	    <td>Drink</td>
+        <td align="right">1.00</td>
+     </tr>
+  </table>
+  <p>They have asked you to write a program that will allow them to enter
+     the num of items sold for each food type and then generate a receipt
+	 showing the cost of each food type along with a grand total of the
+	 cost of the food. They want the receipt to only show food items that
+	 were purchased.</p>
+  <h3>Problem Decomposition</h3>
+  <p>Using the structure chart below you decomposed the problem into the following three methods:
+   <strong>enterPurchases</strong>, <strong>calculateTotals</strong>, and <strong>printReceipt</strong>.</p>
+   
+   <div align="center"><img src="images/concession1.png"></div>
+   
+  <p>Copy the following stub program into your source file.</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class ConcessionStand
+{
+    private int burgers = 0;
+    private int hotdogs = 0;
+    private int chips = 0;
+    private int candy = 0;
+    private int drinks = 0;
+
+    private double burgersTotal = 0;
+    private double hotdogsTotal = 0;
+    private double chipsTotal = 0;
+    private double candyTotal = 0;
+    private double drinksTotal = 0;
+    private double grandTotal = 0;
+
+    /* This method prompts the user to enter in the number of 
+     * items sold for each food type.
+     */
+    public void enterPurchases()
+    {
+
+    }
+	
+    /* This method calculates the total amount purchased for
+     * each food type. It also calculates the total cost of
+     * all the food purchase.
+     */
+    public void calculateTotals()
+    {
+
+    }
+
+    /* This method prints a receipt showing the totals for
+     * food type purchased along with the total cost of all
+     * the food.
+     */
+    public void printReceipt()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        ConcessionStand app = new ConcessionStand();
+        app.enterPurchases();
+        app.calculateTotals();
+        app.printReceipt();
+    }
+}
+  </pre>
+  </div>
+  
+<p>You are going to complete 3 void methods. Do not
+   make an modifications to the main method.</p>
+<h3>Method enterPurchases</h3>
+<p>Complete the method <strong>enterPurchases</strong> shown below. This method prompts </p>
+   the user to enter in the number of items sold for each food type. </p>
+<div id="csOutput">
+<pre>
+       Purchases
+------------------------
+burgers -->4
+hot dogs -->1
+chips -->4
+candy -->2
+drinks -->5
+</pre>
+</div>
+   
+   <p>The user's response is stored in the appropriate instance variables. You will need a local
+   Scanner object.</p>
+ 
+<div id="csCode">
+<pre>
+/* This method prompts the user to enter in the number of 
+ * items sold for each food type.
+ */
+public void enterPurchases()
+{
+
+}
+</pre>
+</div>
+
+<h3>Method calculateTotals</h3>
+<p>Complete the method <strong>calculateTotals</strong> shown below. This method calculates
+   the total amount purchased for each food type. It also calculates the total cost of
+   all the food purchased. Each result is stored in the appropriate instance variable.</p>
+ 
+<div id="csCode">
+<pre>
+/* This method calculates the total amount purchased for
+ * each food type. It also calculates the total cost of
+ * all the food purchase.
+*/
+public void calculateTotals()
+{
+
+}
+</pre>
+</div>
+
+<h3>Method printReceipt</h3>
+<p>Complete the method <strong>printReceipt</strong> shown below. This method prints a receipt
+   showing the totals for food type purchased along with the total cost of all the food. It
+   only prints food types that were purchased. Use <strong>printf</strong> to print
+   receipt in columnar format with decimal points lined up.</p>
+<div id="csOutput">
+<pre>
+         Receipt
+------------------------
+chips           0.50
+candy           1.00
+drinks          1.00
+------------------------
+grand total     2.50
+</pre>
+</div>
+
+ 
+<div id="csCode">
+<pre>
+/* This method prints a receipt showing the totals for
+ * food type purchased along with the total cost of all
+ * the food.
+ */
+public void printReceipt()
+{
+
+}
+</pre>
+</div>
+
+<h1>Source File</h1>
+<p>concession.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+       Purchases
+------------------------
+burgers -->4
+hot dogs -->1
+chips -->4
+candy -->2
+drinks -->5
+
+
+         Receipt
+------------------------
+burgers         8.00
+hotdogs         1.50
+chips           2.00
+candy           2.00
+drinks          5.00
+------------------------
+grand total    18.50
+</pre></div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+       Purchases
+------------------------
+burgers -->0
+hot dogs -->0
+chips -->1
+candy -->1
+drinks -->1
+
+
+         Receipt
+------------------------
+chips           0.50
+candy           1.00
+drinks          1.00
+------------------------
+grand total     2.50
+</pre></div>
+	<br>
+</div>	
+

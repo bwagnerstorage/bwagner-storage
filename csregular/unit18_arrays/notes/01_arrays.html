@@ -1,0 +1,213 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Arrays</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an array</li>
+						<li>How do you declare an array variable</li>
+						<li>How do you define an array</li>
+						<li>How do you initialize an array</li>
+						<li>How do you use an initializer list</li>
+						<li>What is an IndexOutOfBounds Exception</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Need for Arrays</h1>
+  <p>Consider a program in which a user enters 20 test scores and then calculates the average.
+     Here is the program's variable declarations</p>
+  <div id="csCode">
+  <pre>
+int test1, test2, test3,test4, test5,
+    test6, test7, test8, test9, test10,
+    test11, test12, test13, test14, test15,
+    test16, test17, test18, test19, test20;</pre>
+  </div>
+  <p>Here is the program's input statements</p>
+    <div id="csCode">
+  <pre>
+test1 = keyboard.nextInt();
+test2 = keyboard.nextInt();
+test3 = keyboard.nextInt();
+test4 = keyboard.nextInt();
+test5 = keyboard.nextInt();
+test6 = keyboard.nextInt();
+test7 = keyboard.nextInt();
+test8 = keyboard.nextInt();
+test9 = keyboard.nextInt();
+test10 = keyboard.nextInt();
+test11 = keyboard.nextInt();
+test12 = keyboard.nextInt();
+test13 = keyboard.nextInt();
+test14 = keyboard.nextInt();
+test15 = keyboard.nextInt();
+test16 = keyboard.nextInt();
+test17 = keyboard.nextInt();
+test18 = keyboard.nextInt();
+test19 = keyboard.nextInt();
+test20 = keyboard.nextInt();</pre>
+  </div>
+<p>Here is the computation of the average</p>
+  <div id="csCode">
+  <pre>
+int sum = 0;
+double avg = 0;
+sum = (test1 + test2 + test3 + test4 + test5 +
+       test6 + test7 + test8 + test9 + test10 + 
+       test11 + test12 + test13 + test14 + test15 + 
+       test16 + test17 + test18 + test19 + test20);
+avg = sum / 20;</pre>
+  </div>
+  <p>As you can see, dealing with so many variables becomes cumbersome and difficult to manage. 
+     Can you image what the program would look like if there were 50 or even 100 grades. There
+	 is a better way to do this program and it involves using an <strong>array</strong>.</p>
+	 
+  <p>Here is the exact same program again, but this time it includes an array.</p>
+    <div id="csCode">
+  <pre>
+<div id="csHighlight"><pre>int[] tests = new int[20];</pre></div>   // declare and initialize an array
+int sum = 0, avg = 0;
+
+for(int i = 0; i < 20; i++)
+{
+   tests[i] = keyboard.nextInt();     // input test scores
+   sum += tests[i];                   // sum test scores
+}
+avg = sum / 20;                       // compute class average</pre>
+  </div>
+<p>Without going into the details of how this program works, notice that using an array made the program much shorter, 
+   less cumbersome, and easier to manage. The really amazing thing is that it does not matter if 
+   there are 20, 50, 100, or even a million test scores the program would be the same size.</p>
+<p>Now that you have seen how useful an array can be let's look at how you go about making and using them.</p>
+  
+<h1>What is an Array</h1> 
+<p>In computer science, a <strong>data structure</strong> is a group of data elements grouped together under one name.
+Data structures are used for storing and organizing data so that it can be used efficiently. The
+first data structure we will look at is called an array.</p>
+<p>An <strong>array</strong> is a data structure that stores a collection of individual values that are of the same data type. 
+   Arrays are useful because instead of having to separately store related information in different
+   variables, you can store them - as a collection - in just one variable.</p>
+<h1>Declaring an Array</h1>
+<p>To declare an array variable you use the following format</p>
+    <div id="csCode">
+  <pre>
+int[] tests;    // Declare an integer array variable</pre>
+  </div>
+<p>First it must be understood that the array variable is <strong>not</strong> the array. It is only the place holder
+   for the array. In the code above, the array has not yet been defined. We will see in a moment
+   that to create the array itself we must specify its type and how many elements it is to contain.
+   To declare an array variable you must include square brackets[] between the data type and variable name.</p>
+ <h1>Defining an Array</h1>
+ <p>Once you have declared an array variable, you can define an array that it will reference with
+    code like the following</p>
+<div id="csCode">
+  <pre>
+tests = new int[10];    // Define an array of 10 integers</pre>
+  </div>
+<p>This statement creates an array that will store 10 values of type int, and records a reference
+   to the array in the variable tests. The reference is simply where the array is in memory.</p>
+<h1>Initializing an Array</h1>
+ <p>Just like with other variables you can both declare the variable and initialize the array with 
+    a single statement</p>
+
+<p>The following illustration demonstrates how to declare and initialize an array.</p>
+  
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Array1/Slide1.PNG"></li>
+          <li><img src="images/Array1/Slide2.PNG"></li>
+          <li><img src="images/Array1/Slide3.PNG"></li>
+		  <li><img src="images/Array1/Slide4.PNG"></li>
+		  <li><img src="images/Array1/Slide5.PNG"></li>
+		  <li><img src="images/Array1/Slide6.PNG"></li>
+		  <li><img src="images/Array1/Slide7.PNG"></li>
+		  <li><img src="images/Array1/Slide8.PNG"></li>
+		  <li><img src="images/Array1/Slide9.PNG"></li>
+		  <li><img src="images/Array1/Slide10.PNG"></li>
+		  <li><img src="images/Array1/Slide11.PNG"></li>
+		  <li><img src="images/Array1/Slide12.PNG"></li>
+		  <li><img src="images/Array1/Slide13.PNG"></li>
+		  <li><img src="images/Array1/Slide14.PNG"></li>
+		  <li><img src="images/Array1/Slide15.PNG"></li>
+		  <li><img src="images/Array1/Slide16.PNG"></li>
+		  <li><img src="images/Array1/Slide17.PNG"></li>
+		  <li><img src="images/Array1/Slide18.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+  
+  <h1>Initializer List</h1>
+  <p>An initializer list allows you to declare an array and assign values to each of its
+     elements in a single statement. Look at the following example.</p>
+	 <div id="csCode">
+  <pre>
+int[] array = {1, 3, 5, 7, 11, 13, 15};</pre>
+  </div>
+ <p>The code creates an array of size 7 and assigns each of the elements the following values</p>
+ <table id="csTable" width="367">
+        <tr> 
+          <th><strong>Index</strong></th>
+          <td width="35" bgcolor="#AED2FF"><div align="center">0</div></td>
+          <td width="35" bgcolor="#AED2FF"><div align="center">1</div></td>
+          <td width="35" bgcolor="#AED2FF"><div align="center">2</div></td>
+          <td width="35" bgcolor="#AED2FF"><div align="center">3</div></td>
+          <td width="35" bgcolor="#AED2FF"><div align="center">4</div></td>
+          <td width="35" bgcolor="#AED2FF"><div align="center">5</div></td>
+          <td width="35" bgcolor="#AED2FF"><div align="center">6</div></td>
+        </tr>
+        <tr> 
+          <th><strong>Element</strong></th>
+          <td><div align="center"><font color="#FF0000">1</font></div></td>
+          <td><div align="center"><font color="#FF0000">3</font></div></td>
+          <td><div align="center"><font color="#FF0000">5</font></div></td>
+          <td><div align="center"><font color="#FF0000">7</font></div></td>
+          <td><div align="center"><font color="#FF0000">11</font></div></td>
+          <td><div align="center"><font color="#FF0000">13</font></div></td>
+          <td><div align="center"><font color="#FF0000">17</font></div></td>
+        </tr>
+      </table>
+	<p>Here is an example of a string array that uses an initializer list to assign values
+	   to each of its elements.</p>
+	   <div id="csCode">
+  <pre>
+String[] flag = {"red", "white", "blue"};</pre>
+  </div>
+ <p>The code creates an array of size 3 and assigns each of the elements the following values</p>
+ <table id="csTable" width="250">
+        <tr> 
+          <th><strong>Index</strong></th>
+          <td width="50" bgcolor="#AED2FF"><div align="center">0</div></td>
+          <td width="50" bgcolor="#AED2FF"><div align="center">1</div></td>
+          <td width="50" bgcolor="#AED2FF"><div align="center">2</div></td>
+        </tr>
+        <tr> 
+          <th><strong>Element</strong></th>
+          <td><div align="center"><font color="#FF0000">"red"</font></div></td>
+          <td><div align="center"><font color="#FF0000">"white"</font></div></td>
+          <td><div align="center"><font color="#FF0000">"blue"</font></div></td>
+        </tr>
+      </table>
+<h1>Common Error</h1>
+<p>A common error that programmers make when using arrays is an <strong>IndexOutOfBounds Exception</strong>.
+   This error occurs when you attempt to index an element of an array that does not exist. Look at
+   the following example.</p>
+<div id="csCode">
+  <pre>
+int[] array = new int[3];
+array[<div id="csHighlight"><pre>3</pre></div>] = 99;   // This line causes an IndexOutOfBounds Exception</pre>
+  </div>
+<p>In this code I declare an int array of size 3. I then attempt to assign a value to
+   element 3 of the array which does not exist. Remember the indexes of an array range from 0 up to the size of the array - 1.
+   In this example the range is [0-2]. Therefore this code causes an error because I am attempting to use memory that is not assigned to me.</p>
+  <br>
+</div>	
+

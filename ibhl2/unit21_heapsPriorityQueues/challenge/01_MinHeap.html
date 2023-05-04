@@ -1,0 +1,230 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MinHeap</div>
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/MinHeap.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >MinHeap</a></h1>
+
+<div id="csContent">
+      <p>A minheap with no duplicate values is a binary tree in which the value 
+        in each node is smaller than the values in its children&#8217;s nodes. 
+        For example, trees T1 and T2 are minheaps, but tree T3 is not, because 
+        the shaded node has a larger value than one of its children (as shown 
+        by the thick line). </p>
+      <p align="center"><img src="http://bwagner.org/menu/uil/Lessons/HeapsPriorityQueues/img/MinHeap1.gif" width="518" height="322"></p>
+      <p>Consider the MinHeap class as shown below. The nodes of the min-heap 
+        will be represented by the TreeNode implementation class as shown in the 
+        Quick Reference. You may assume that the values stored in the TreeNode 
+        objects are Comparable objects.</p>
+      <div id="apCode"><pre>public class MinHeap
+{
+   private TreeNode root;
+	
+   public MinHeap()
+   {
+      root = null;
+   }
+   
+   public TreeNode smallerChild(TreeNode T)
+   {
+      <strong>/* to be implemented in part(a) */</strong>
+   }
+
+   public boolean isHeapOrdered(TreeNode T)
+   {
+      <strong>/* to be implemented in part(b) */</strong>
+   }
+	
+   // precondition: T is not null
+   private TreeNode removeMinHelper(TreeNode T)
+   {
+      <strong>/* to be implemented in part(c) */</strong>
+   }
+
+   public Object removeMin()
+   {
+      if(root == null)
+         return null;
+      else
+      {
+         Object result = root.getValue();
+         root = removeMinHelper(root);
+         return result;
+      }
+   }
+	
+   // ... other methods not shown
+}</pre></div>
+      <p>(a) Write method <em>smallerChild</em>, as started below. <em>smallerChild</em> 
+        returns a reference to the child node of T that contains the smaller value 
+        (or null if T is a leaf node). If T has only one child, <em>smallerChild</em> 
+        should return a reference to that child. If T is <em>null</em>, <em>smallerChild</em> 
+        should return <em>null</em>.</p>
+      <p>The following table shows the results of several calls to <em>minChild</em>.</p>
+      <table id="apTable">
+        <tr> 
+          <td><div align="center"><strong>Method call</strong></div></td>
+          <td><div align="center"><strong>Return value</strong></div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;minChild(T2)</td>
+          <td><div align="center">P</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;minChild(P)</td>
+          <td><div align="center">Q</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;minChild(Q)</td>
+          <td><div align="center">R</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;minChild(R)</td>
+          <td><div align="center">null</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;minChild(null)</td>
+          <td><div align="center">null</div></td>
+        </tr>
+      </table>
+    <br>
+      <p>Complete method <strong>smallerChild</strong> below.</p>
+      <div id="apCode"><pre>public TreeNode smallerChild(TreeNode T)</pre></div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <br>
+      <p>(b) Write method <em>isHeapOrdered</em>, which is described as follows. 
+        <em>isHeapOrdered</em> returns true if T is a min-heap and <em>false</em> 
+        otherwise. </p>
+      <p>In writing <em>isHeapOrdered</em>, you may call method <em>smallerChild</em> 
+        specified in part (a). Assume that <em>minChild</em> works as specified, 
+        regardless of what you wrote in part (a).</p>
+      <p>Complete method <strong>isHeapOrdered</strong> below.</p>
+      <div id="apCode"><pre>public boolean isHeapOrdered(TreeNode T)</pre></div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <br>
+      <p>c. The <em>removeMinHelper</em> method removes the minimum value from 
+        a min-heap and returns the modified min-heap. To do so, replace the value 
+        in the root node with the smaller of its children's values and then recursively 
+        call <em>removeMinHelper</em> on the subtree rooted at the smaller child. 
+        If the min-heap consists of a single node, that node is removed and <em>null</em> 
+        is returned.</p>
+      <p>For example, the following diagram illustrates the steps to restore the 
+        heap after removing 2 from the root node.</p>
+      <p><img src="http://bwagner.org/menu/uil/Lessons/HeapsPriorityQueues/img/MinHeap2.gif" width="590" height="420"><br>
+      </p>
+      <p>Write method <em>removeMinHelper</em>, which is described as follows. 
+        <em>removeMinHelper</em> should remove the minimum item from the heap 
+        and return the resulting heap.</p>
+      <p>In writing <em>removeMinHelper</em>, you may call method <em>smallerChild</em> 
+        specified in part (a). Assume that <em>smallerChild</em> works as specified, 
+        regardless of what you wrote in part (a).</p>
+      <p>Complete method <em>removeMinHelper</em> below.</p>
+      <div id="apCode"><pre>// precondition: T is not null
+private TreeNode removeMinHelper(TreeNode T)</pre></div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h2>&nbsp;</h2>
+
+
+      <br>
+      <p></p>
+      <h2>Sample Run</h2>
+      <div id="csSampleRun"><pre>Heap - T1
+---------
+    11
+  3
+    8
+      20
+1
+      17
+    5
+      14
+  2
+    4
+
+
+Test - smallerChild
+-------------------
+smallerChild of 1 = 2
+smallerChild of 8 = 20
+smallerChild of 11 = null
+
+Test - isHeapOrdered
+--------------------
+true
+true
+true
+
+
+Heap - T2
+---------
+    11
+  3
+    8
+      12
+2
+    5
+      6
+  4
+      15
+    7
+      9
+
+
+Test - smallerChild
+-------------------
+smallerChild of 4 = 5
+smallerChild of 3 = 8
+smallerChild of 15 = null
+
+Test - isHeapOrdered
+--------------------
+true
+
+
+Heap - T3
+---------
+    11
+  3
+    8
+      12
+2
+    5
+      6
+  4
+      15
+    9
+      7
+
+
+Test - smallerChild
+-------------------
+smallerChild of 5 = 6
+smallerChild of 8 = 12
+smallerChild of 11 = null
+
+Test - isHeapOrdered
+--------------------
+false
+
+
+Test - removeMin
+--------------------
+Min value = 2
+
+    11
+  8
+    12
+3
+    5
+      6
+  4
+      15
+    9
+      7
+</pre>
+</div>
+<br>

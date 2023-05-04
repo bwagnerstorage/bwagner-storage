@@ -1,0 +1,72 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Arrays as Parameters</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How arrays are passed as parameters</li>	
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 		
+  <h1>Array Parameters</h1>
+  <p>Arrays can be passed as parameters to other methods. The arrays are passed
+     using <strong>pass-by-reference</strong>.</p>
+  <p>Look at the following code.</p>
+  <div id="csCode">
+  <pre>
+public class Demo
+{
+    public void method1()
+    {
+       <div id="csHighlight"><pre>int[] nums = {10,20,30,40,50};</pre></div>
+	   
+       method2(nums);
+       printArray(nums);
+    }
+
+    public void method2(int[] nums2)
+    {
+       printArray(nums2);
+       nums2[0] = 500;
+       printArray(nums2);
+    }
+
+    public void printArray(int[] array)
+    {
+        for(int i=0; i < array.length; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        Demo app = new Demo();
+        app.method1();
+    }
+}
+</pre>
+  </div>
+  <h3>Output</h3>
+<div id="csOutput">
+<pre>
+10 20 30 40 50
+500 20 30 40 50
+500 20 30 40 50
+</pre>
+</div>
+<p>An array is defined in method1 using an initializer list. The array is then passed as a parameter
+   to method2. In method2 the array is passed to another method named printArray so that the contents
+   of the array can be displayed. Also in method2 index [0] of the array is changed to 500.</p> 
+ <p>The output demonstrates that the array is passed using pass-by-reference. When the array is printed
+   in method1 the change made to index [0] is displayed.</p>
+	<br>
+</div>	
+

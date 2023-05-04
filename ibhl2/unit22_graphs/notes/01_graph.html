@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+  <div id="csHeader">Graph</div>
+  <div id="csContent">
+    <p>A <strong>tree</strong> is a hierarchical data structure in which each element or node is connected to
+       one or more nodes beneath it. A tree has the restriction that a child node can only have one
+       parent. A tree is a special type of graph.</p>
+    <img src="images/Graph/tree.png" style="display:block; margin-left:auto; margin-right:auto; width:40%">
+
+    <p>In simplest terms a <strong>graph</strong> consists of elements (normally referred to as vertices or
+        nodes) connected by links (also known as edges). Unlike trees, in graphs, a node can have many parents.
+        Here is an example of a graph.</p>
+
+    <img src="images/Graph/graph4.png" style="display:block; margin-left:auto; margin-right:auto; width:50%">
+    <p>The graph above contains the following sets of vertices and edges:<br>
+       V = {A,B,C,D,E,F,G}<br>
+       E = {AB, AC, BE, BF, CE, DE, DF, DG, EF, FG}<br>
+    </p>
+    <p>Below are a list of terms that will help you better understand graphs.</p>
+    <table id="apTable" style="margin-left:30px;">
+      <tr>
+          <th>Term</th>
+          <th>Definition</th>
+      </tr>
+      <tr>
+      <td><strong>vertex</strong></td>
+          <td style="text-align: left">A single node or endpoint in a graph</td>
+        </tr>
+      <tr>
+        <td><strong>edge</strong></td>
+        <td style="text-align: left">A single connection between two vertices</td>
+      </tr>     
+      <tr>
+        <td><strong>adjacent</strong></td>
+        <td style="text-align: left">Two vertices are adjacent if there is an edge connecting them</td>
+      </tr>
+      <tr>
+          <td><strong>connected</strong></td>
+          <td style="text-align: left">A graph is connected if every vertex has a path to all other vertices</td>
+      </tr>
+      <tr>
+          <td><strong>strongly connected</strong></td>
+          <td style="text-align: left">A graph is strongly connected if every pair of vertices has a path between them, in both directions</td>
+      </tr>
+      <tr>
+          <td><strong>neighbor</strong></td>
+          <td style="text-align: left">Two vertices are neighbors if there is an edge connecting them</td>
+      </tr>
+      <tr>
+          <td><strong>path</strong></td>
+          <td style="text-align: left">A sequence of edges that can be followed from one vertex to another</td>
+      </tr>
+      <tr>
+          <td><strong>simple path</strong></td>
+          <td style="text-align: left">A path that contains no repeated vertices</td>
+      </tr>
+      <tr>
+          <td><strong>cycle</strong></td>
+          <td style="text-align: left">Special kind of path that ends at the same vertex where it originally started</td>
+      </tr>
+      <tr>
+          <td><strong>simple cycle</strong></td>
+          <td style="text-align: left">A cycle with no repeated vertices except for the first and last one</td>
+      </tr>
+      <tr>
+          <td><strong>Hamiltonian cycle</strong></td>
+          <td style="text-align: left">A simple cycle that contains all the vertices in the graph</td>
+      </tr>
+      <tr>
+          <td><strong>Euler cycle</strong></td>
+          <td style="text-align: left">A cycle that contains every edge in the graph exactly once</td>
+      </tr>
+    </table>
+     <br>
+    <h1>Classifications of Graphs</h1>
+    <p>There are several common types of graphs</p>
+    <ul id="csList">
+      <li style="font-size:1.2em; font: weight 500; padding-bottom:10px">Directed or undirected</li>
+      <li style="font-size:1.2em; font-weight:500; padding-bottom:10px">Weighted or unweighted</li>
+      <li style="font-size:1.2em; font-weight:500; padding-bottom:10px">Cyclic or acyclic</li>
+    </ul>
+     <br>
+    <h2 style="font-size:1.3em; font-weight:600; padding-bottom:10px">Directed or Undirected</h2>
+    <p>Graphs can be classified by whether or not their edges have direction.</p>
+    <ul id="csList">
+        <li><strong>Undirected Graph:</strong> each edge can be traversed in either direction</li>
+        <li><strong>Directed Graph:</strong> each edge can be traversed only in a specified direction, typically
+            denoted by an arrow.</li>
+    </ul>
+       <img src="images/Graph/graph1.png" style="display:block; margin-left:auto; margin-right:auto; width:60%">
+
+    <h2 style="font-size:1.3em; font-weight:600; padding-bottom:10px">Weighted or Unweighted</h2>
+    <p>Graphs can be classified by whether or not their edges have weight.</p>
+    <ul id="csList">
+        <li><strong>Weighted Graph:</strong> edges have a weight assigned to them. This weight typically shows the cost of traversing.<br>
+          Example:  distances between cities on a map</li>
+        <li><strong>Unweighted Graph:</strong> edges have no weight. The edges simply show connections.<br>
+          Example: high school course prerequisites 
+          </li>
+    </ul>
+      <img src="images/Graph/graph3.png" style="display:block; margin-left:auto; margin-right:auto; width:80%">
+
+   
+      <h2 style="font-size:1.3em; font-weight:600; padding-bottom:10px">Cyclic or Acyclic</h2>
+      <p>Graphs can be classified by whether or not they have cycles. A cycle is a
+          path through a graph that ends at the same vertex where it originally started.
+      </p>
+      <ul id="csList">
+          <li><strong>Cyclic Graph:</strong> graph contains one or more cycles</li>
+          <li><strong>Acyclic Graph:</strong> graph contains no cycles</li>
+      </ul>
+        <img src="images/Graph/graph2.png" style="display:block; margin-left:auto; margin-right:auto; width:70%">
+<br>
+
+<h1>Graph Problems</h1>
+
+    <p>Graphs are good in modeling real world problems like representing cities which are connected by roads and finding the paths between cities, modeling air traffic controller system,
+    and representing networks like the Internet. Graphs are also used in social networks like linkedIn, Facebook. For example, in Facebook, each person is represented with a vertex(or node). 
+    Each node is a structure and contains information like person id, name, gender, locale etc.</p>
+
+
+<h1>Recognizing a Graph Problem</h1>
+<p>The first key to solving a graph related problem is recognizing that it is a graph problem. 
+   If you see the problem involves a grid or network of some kind that can be a clue that it 
+   might be a graph problem. Secondly, if you are required to find a path of
+   any sort, it is usually a graph problem as well. Finally, some common keywords associated with graph
+   problems include: vertices, nodes, edges, connections, connectivity, paths, cycles and direction.
+   An example of a description of a simple problem that exhibits some of these characteristics is
+   shown below.</p>
+
+   <h2 style="font-size:1.3em; font-weight:600; padding-bottom:10px">Sample Graph Problem</h2>
+
+<p> Kolt has moved to a new town and he has to walk to his new school. His school is directly behind his 
+    house but there is a 100 acre patch of woods between them. Kolt has decided to see if he can
+    find a shortcut to school through the woods so it does not take him as long to get to school.
+    He found his house on Google Maps and noticed that the patch of woods is in a square shape
+    and there is a creek along one side of the woods and a road on the other.</p>
+
+    <p>Write a program that simulates this scenario. Given a 10 x 10 2-dimensional <strong>grid</strong> marked with the letters
+    'H', 'X', 'T', 'C', 'R' and a '.'. The 'H' represents Kolt's house, the starting point. The 'X' is his school,
+    the ending point. 'T' represents trees, the 'C' represents the creek, the 'R' represents the road, and
+    the '.' represents open areas were he can walk. He can walk horizontally, vertically, and diagonally. Find the <strong>minimum</strong> number of steps it takes Kolt
+    to find a <strong>path</strong> from his house to his school. There exists at least one path through the woods.</p>
+
+<p>This is an example of a shortest path problem which is one type of problem graphs are often used
+   to solve.
+</p><br>
+

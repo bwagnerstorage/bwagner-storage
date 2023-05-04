@@ -1,0 +1,271 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Data Transmission</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>3.1.6 Define the terms: protocol, data packet.</li>
+						<li>3.1.7 Explain why protocols are necessary.</li>
+						<li>3.1.8 Explain why the speed of data transmission across a network can vary.</li>
+						<li>3.1.9 Explain why compression of data is often necessary when transmitting across a network.</li>
+						<li>3.1.10 Outline the characteristics of different transmission media.</li>
+						<li>3.1.11 Explain how data is transmitted by packet switching.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Data Transmission</h1>
+<div id="ib">3.1.6 Define the terms: protocol, data packet.</div>
+<p>A <strong>network protocol</strong> defines rules and conventions for communication between network devices. 
+   A protocol is, in one sense, nothing more than an agreement that a particular type of data will be formatted in a particular
+   manner. HTTP, FTP, POP3, SMTP, IMAP, TCP are all examples of network protocols.</p>
+<p>A <strong>data packet</strong> contains data traveling over a network. It is a basic unit of binary data for communication over a digital
+   network.</p>
+<p><strong>Read the following article from howstuffworks.com.</strong></p>
+<a href="http://computer.howstuffworks.com/question525.htm" style="color:#0000FF; font-size:1.2em" target="_blank">http://computer.howstuffworks.com/question525.htm</a>
+
+<div id="ib">3.1.7 Explain why protocols are necessary.</div>
+
+<p>Many protocols have been defined to assist in network communication. Some of these protocols were developed to help resolve communication
+   problems like data integrity, flow control, deadlock, congestion, and error checking.</p>
+
+<h3>Data Integrity</h3>
+<p><strong>Data integrity</strong>, in the context of networking, refers to the overall completeness, accuracy and consistency of data. Data integrity must 
+   be imposed when sending data through a network.  In other words, how does a computer know that when it receives data over a network that
+   it is complete, accurate, and consistent. This can be achieved by using error checking and correction protocols.</p>
+  
+<h3>Flow Control</h3>
+<p><strong>Flow control</strong> is utilized in data communications to manage the flow of data among two different network devices, especially in cases where
+   the sending device can send data much faster than the receiver can digest.</p>
+<p>Networks of any size have many different devices connected and each device has unique data transmission abilities. For instance, 
+   a router is built to manage the routing of data whereas a desktop, at the receiving end of that data, has far less sending/receiving 
+   abilities. These differences in sending/receiving abilities may lead to conflict if the sender starts transmitting data faster than the receiving
+   devices's ability. To counteract this problem, a flow control protocol is used. </p>
+  <p>Xon-Xoff is an example of a flow control protocol that syncs the sender with 
+    the receiver. It transmits a transmit off signal when the receiver no longer 
+    has space in its buffer(memory) and a transmit on signal when the receiver 
+    can resume taking data.</p>
+	
+<h3>DeadLock</h3>
+<p>Computer networks are based on passing messages from computer to computer. The computers must have a protocol established that determines the 
+   order of communication. Without a proper protocol a situation called a deadlock can occur. A <strong>deadlock</strong> is a situation
+   in which two or more communicating computers are each waiting for the other to send a message, and thus neither ever does. In a networking
+   environment, deadlocks can occur due to lost or corrupt signals during communication. A protocol must be in place to handle these types
+   of situations or the communicating will break down.</p>
+   
+<h3>Congestion</h3>
+<p>Network devices have a memory location called a buffer that is used to store data that has been sent to them from another source. If this buffer becomes
+   full and cannot handle any more data a problem known as congestion occurs.<strong>Congestion</strong> occurs when the source sends more data
+   than the destination can handle. When this congestion occurs performance will degrade.</p>
+<p>When congestion occurs, the destination device has only two options with
+   the arriving data packets, to drop them or keep them. A protocol determines whether the destination device keeps the old packets and drops the new 
+   packets or it keeps the new packets and drops the old packets. In both the cases packets are dropped.</p>
+<p>As an example, the TCP protocol is responsible for setting the policies for congestion that occurs with packets sent over the Internet.</p>
+	
+<h3>Error Checking</h3>
+<p>Data that is transmitted over communication lines is subject to interference (noise) which can alter the nature of the data represented.
+    Error checking protocols exist to check such errors and, if an error is detected the network, will try to recover the data, often by requesting
+	a resend of the data packets.</p>
+
+<div id="csList">
+<h3>Reduncancy</h3>
+
+<p>The central concept in detecting or correcting errors is 
+redundancy. A redundancy check is extra data added to a message for the purposes of error detection. Several schemes exist to 
+ achieve error detection, and are generally quite simple. All error detection codes transmit more bits than were in the original data.</p> 
+<p>The receiver applies the same algorithm to the received data bits and compares its output to the received check bits; if the values
+ do not match, an error has occurred at some point during the transmission.</p>
+
+<p>Two common schemes used in redundant error checking are parity checking and check sum.</p>
+
+<h3>Parity Checking</h3>
+<p>Parity Checking is one of the easiest error checking methods to implement. 
+In this technique, a redundant bit called a parity bit is added 
+to every data unit so that the total number of 1's in the unit 
+(including the parity bit) becomes even (or odd). </p>
+<p>For example, suppose a sender wants to transmit the binary data 11000001.
+The sender starts by adding up all of the 1 bits. Since 11000001 contains three 1's the sum is an odd number.
+In an even parity scheme, a parity bit of 1 would be added to the data to make it add up to four, which is an even number.
+<div id="csOutput" style="width:100px">
+    11000001<font color="#FF0000">1</font>
+</div>
+In an odd parity scheme, a parity bit of 0 would be added to the data to retain the odd numbered sum.</p>
+<div id="csOutput" style="width:100px">
+    11000001<font color="#FF0000">0</font>
+</div>
+
+<p>A parity check can detect all single-bit errors. However, if any two bits change 
+in transmission, the changes cancel each other and the data 
+unit will pass a parity check even though the data is 
+damaged.</p>
+
+<h3>Checksum</h3>
+<p>The another simple method of verifying the integrity of digitally transmitted data is the checksum method.  
+A checksum can be computed in many different ways, using different algorithms. For example, one algorithm computes a checksum value 
+by adding together all the numbers in the input data. If the sum of all the numbers exceeds the highest value that a checksum 
+can hold, the checksum equals the modulus of the total--that is, the remainder that's left over when the total is divided by the
+checksum's maximum possible value plus 1. In mathematical terms, a checksum is computed with the equation</p>
+<div id="csOutput" style="width:300px" >
+    Checksum = Total % (MaxVal + 1)
+</div>
+<p>where Total equals the sum of the input data and MaxVal is the maximum checksum value you will allow.</p>
+<p>Suppose the data whose contents you wish to verify is the following stream of 10 byte values:</p>
+<div id="csOutput" style="width:300px">
+   36 211 163 4 109 192 58 247 47 92 
+</div>
+<p>If the checksum is a 1-byte value, then it can't hold a number greater than 255. The sum of the values
+   in the above data is 1,159, so the 8-bit checksum is the remainder left when 1,159 is divided by 256, or 135. If
+   the sender of the data calculated a checksum of, say, 135, and the receiver got a checksum of 246, then the data
+   was damaged during transmission.</p>
+
+<p>The problem with checksums is that although conflicting checksums are proof positive that transmitted data has been damaged,
+matching checksums doesn't necessarily prove that the data was not altered. You can reorder the numbers in the data set
+any way you want and the checksum won't change. Worse, you can change individual numbers and tweak others
+so that the checksum comes out the same.  Therefore, more advanced checksum algorithms are typically used to verify data. 
+These include cyclic redundancy check (CRC) algorithms and cryptographic hash functions.</p>
+
+<br><a href="http://computer.howstuffworks.com/encryption7.htm" style="color:#0000FF; font-size:1.2em" target="_blank">http://computer.howstuffworks.com/encryption7.htm</a>
+</div>
+ 
+
+<div id="ib">3.1.8 Explain why the speed of data transmission across a network can vary.</div>
+
+<p>Data transmitted over a network is packaged and transported in small pieces of data.
+The flow of these small pieces of data directly affects a user's experience.
+When data packets arrive in a smooth and timely manner the user sees a continuous flow of data;
+if data packets arrive with large and variable delays between packets the user's experience is degraded.</p>
+
+<p>The <strong>latency</strong> of a network connection represents the amount of time required for data to travel between
+   the sender and receiver. While all computer networks possess some inherent amount of latency, the amount varies and can 
+   suddenly increase for various reasons. People perceive these unexpected time delays as lag.</p>
+<p>Here are some causes of lag:</p>
+<div id="csList"><ul>
+<li><p>Length of the route that the packets have to take between sender and receiver.</p></li>
+<li><p>Type of media transporting the data.(e.g. fiber optics, satellite, wireless, metal wiring)</p></li>
+<li><p>Network congestion - causes data to be retransmitted.</p></li>
+<li><p>Traffic load - how many people are using network.</p></li>
+<li><p>Time of day - people use network more during peek times.</p></li>
+<li><p>Weather - satellite and wireless signal interference.</p></li>
+</ul></div>
+<div id="ib">3.1.9 Explain why compression of data is often necessary when transmitting across a network.</div>
+
+<p>Data compression is the process of encoding data to take up less storage space and less bandwidth for transmission. Digital data are compressed by 
+finding repeatable patterns of binary 0s and 1s. The more patterns can be found, the more the data can be compressed. Text can
+typically be compressed to approximately 40% of its original size, and graphics files from 20% to 90%. Some files compress very 
+little. It depends entirely on the type of compression algorithm used. As an example, the zip file format utilizes a common compression algorithm.</p>
+
+<p>Data compression has enabled information to be disseminated more rapidly.</p>
+
+<div id="ib">3.1.10 Outline the characteristics of different transmission media.</div>
+
+<table id="csTable">
+  <tr>
+     <th></th>
+     <th style="width:185px">Metal Conductor</th>
+	 <th style="width:185px">Fiber Optics</th>
+	 <th style="width:185px">Wireless</th>
+  </tr>
+  <tr>
+     <td style="background:#FFFFFF"><strong>Description</strong></td>
+     <td> Twisted Pair Cable<br>
+		  Made of copper</td>
+	 <td>Made of glass or plastic</td>
+	 <td>Radio waves</td>
+  </tr>
+  <tr>
+     <td style="background:#FFFFFF"><strong>Speed</strong></td>
+     <td>CAT 5 - 100 Mbps to 1 Gbps</td>
+	 <td>10 Gbps</td>
+	 <td>Theoritical Speeds<br>
+	--------------------<br>
+	802.11b - 11 Mbps<br>
+    802.11g - 54 Mbps<br>
+    802.11n - 600 Mbps<br>
+    802.11ac - 1300 Mbps<br><br>
+	
+	Actual Speeds<br>
+	--------------------<br>
+	802.11b - 2-3 Mbps<br>
+    802.11g - 20 Mbps<br>
+    802.11n - 40-50 Mbps<br>
+    802.11ac - 70-100 Mbps<br></td>
+  </tr>
+  <tr>
+     <td style="background:#FFFFFF"><strong>Reliability</strong></td>
+     <td>Extremely reliable, however, signal can only travel 1.2 miles before
+       it needs to be regenerated or boosted. </td>
+	 <td>Signal can travel 62 miles before it needs to be regenerated or boosted. </td>
+	 <td>Somewhat reliable.  Signal strength depends on hardware. On average a Wi-Fi signal can travel about 65 feet indoors.<br>
+	     The disparity between theoretical and practical Wi-Fi performance comes from network protocol overhead,
+	     radio interference, physical obstructions on the line of sight between devices, and distance between devices.
+		 In addition, as more devices communicate on the network simultaneously, its performance will also decrease.</td>
+  </tr>
+  <tr>
+     <td style="background:#FFFFFF"><strong>Cost</strong></td>
+     <td>cheapest</td>
+	 <td>most expensive</td>
+	 <td>cost more than cooper but less than fiber</td>
+  </tr>
+  <tr>
+     <td style="background:#FFFFFF"><strong>Security</strong></td>
+     <td>Secure</td>
+	 <td>More secure than copper</td>
+	 <td>Potentially not as secure as wired media because signal travels through
+	   air. However, if proper authentication, encryption, and access control
+	   practices are followed it is very secure.</td>
+  </tr>
+  
+</table>
+  <div id="ib">3.1.11 Explain how data is transmitted by packet switching.</div>
+
+  <p><strong>Packet switching</strong> is a network technology that breaks up a message into smaller 
+    chunks (packets) for transmission. Unlike circuit switching in traditional 
+    telephone networks, which requires the establishment of a dedicated point-to-point 
+    connection, each packet in a packet-switched network contains a destination 
+    address. Thus, all packets in a single message do not have to travel the same 
+    path. As traffic conditions change, they can be dynamically routed via different 
+    paths in the network, and they can even arrive out of order. The destination 
+    computer reassembles the packets into their proper sequence.</p>
+  <p>Below are the steps used to send packets over a network using packet switching:</p>
+  <div id="csList">
+  <ol>
+  <li>The sending computer chops data into small packets, with an address on each
+  one telling the network devices where to send them.</li>
+  <li>Each packet is assembled with a small piece of an e-mail,
+  music file or whatever type of file is being transmitted inside the packet.</li>
+  <li>The sending computer sends the packet to a nearby router and forgets about
+  it. The nearby router sends the packet to another router that is closer to the
+  recipient computer. That router sends the packet along to another, even closer
+  router, and so on.</li>
+  <li>When the receiving computer finally gets the packets (which may have all taken
+  completely different paths to get there), it uses instructions contained within
+  the packets to reassemble the data into its original state.</li>
+  </ol></div>
+
+<p>Packet switching is very efficient. It lets the network route the packets
+  along the least congested and cheapest lines. It also frees up the two computers
+  communicating with each other so that they can accept information from other
+  computers, as well.</p>
+<p>Transport Control Protocol/Internet Protocol (TCP/IP) is an example of a 
+    packet switching protocol. Some mobile phone technologies also use packet 
+    switching technologies.</p>
+
+<br>
+<hr>
+<p>References</p>
+<a href="http://compnetworking.about.com/od/networkprotocols/g/protocols.htm" style="color:#0000FF" target="_blank">http://compnetworking.about.com/od/networkprotocols/g/protocols.htm</a><br>
+<a href="http://www.techopedia.com/" style="color:#0000FF" target="_blank">http://www.techopedia.com/</a><br>
+<a href="http://ecomputernotes.com/computernetworkingnotes/communication-networks/what-is-error-correction-and-detection" style="color:#0000FF" target="_blank">http://ecomputernotes.com/computernetworkingnotes/communication-networks/what-is-error-correction-and-detection</a><br>
+<a href="http://www.wvu.edu/~lawfac/mmcdiarmid/digital%20signatures.htm" style="color:#0000FF" target="_blank">http://www.wvu.edu/~lawfac/mmcdiarmid/digital%20signatures.htm</a>
+<a href="http://compnetworking.about.com/od/basicnetworkingconcepts/a/causes-of-lag-on-computer-networks-and-online.htm" style="color:#0000FF" target="_blank">http://compnetworking.about.com/od/basicnetworkingconcepts/a/causes-of-lag-on-computer-networks-and-online.htm</a><br>
+<a href="http://computer.howstuffworks.com/ip-telephony3.htm" style="color:#0000FF" target="_blank">http://computer.howstuffworks.com/ip-telephony3.htm</a><br>
+<a href="http://www.pcmag.com/encyclopedia/term/48751/packet-switching" style="color:#0000FF" target="_blank">http://www.pcmag.com/encyclopedia/term/48751/packet-switching</a><br>
+<br>
+<br>
+</div>	
+

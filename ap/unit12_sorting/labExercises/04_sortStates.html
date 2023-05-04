@@ -1,0 +1,179 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SortStates</div>
+
+<h1 style="font-size:1.2em; font-weight:700;">Video: <a href="https://www.youtube.com/watch?v=i-SKeOcBwko&list=RDCMUClEEsT7DkdVO_fkrBw0OTrA&index=3" style="color:#00F; font-size:1.2em; font-weight:600;" target="_blank">Insertion Sort</a></h1>
+<br><hr>
+
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/SortStatesNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SortStates</a></h1>
+
+
+<h1>Directions</h1>
+  <p>Complete the program, <strong>SortStates</strong>, that sorts a states database into ascending order by population using <strong>insertion sort<strong>.
+
+<p>Implement the State class's <strong>compareTo</strong> method so that it can compare two populations for
+  ordering. Use the following pseudocode: </p>
+
+<div id="csOutput" style="width:550px">
+<pre>
+State STATE = (State)OBJ
+if getPopulation() = STATE.getPopulation() then
+   return 0
+end if
+if getPopulation() > STATE.getPopulation() then
+   return 1
+end if
+if getPopulation() < STATE.getPopulation() then
+   return -1
+end if
+</pre>
+</div>
+
+<p>Below is an array implementation of the insertion sort algorithm.</p> 
+<div id="csCode"><pre>
+void insertionSort(int numbers[])
+{
+      int i, j, index;
+
+      for (i=1; i < numbers.length; i++)
+      {
+         index = numbers[i];
+         j = i;
+         while ((j > 0) && (numbers[j-1] > index))
+         {
+            numbers[j] = numbers[j-1];
+            j = j - 1;
+         }
+         numbers[j] = index;
+      }
+}
+</pre></div>
+
+<p>Modify the <strong>insertion sort</strong> algorithm so that it can be used to sort the ArrayList
+   of States by population. You will need to use the following
+ArrayList methods in your implementation:</p>
+   <div id="csList"><ul>
+<li>Object <strong>get</strong>(int index)</li> 
+<li>void <strong>set</strong>(int index, Object element)</li> 
+</ul></div>
+<p>You will also need to use the State class's compareTo method</p>
+<div id="csList"><ul>
+<li>int <strong>compareTo</strong>(Object obj)</li> 
+</ul></div>
+
+
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Alabama        Montgomery     Yellowhammer State          4447100
+Alaska         Juneau         The Last Frontier            626932
+Arizona        Phoenix        GrandCanyonState            5130632
+Arkansas       Little Rock    The Natural State           2673400
+California     Sacramento     GoldenState                33871648
+Colorado       Denver         Centennial State            4301261
+Connecticut    Hartford       Constitution State          3405565
+Delaware       Dover          The First State              783600
+Florida        Tallahassee    Sunshine State             15982378
+Georgia        Atlanta        Peach State                 8186453
+Hawaii         Honolulu       Aloha State                 1233537
+Idaho          Boise          Gem State                   1293953
+Illinois       Springfield    Prairie State              12419293
+Indiana        Indianapolis   Hoosier State               6080485
+Iowa           Des Moines     Hawkeye State               2926324
+Kansas         Topeka         Sunflower State             2688418
+Kentucky       Frankfort      Bluegrass State             4041769
+Louisiana      Baton Rouge    Pelican State               4468976
+Maine          Augusta        Pine Tree State             1274923
+Maryland       Annapolis      Old Line State              5296486
+Massachusetts  Boston         Bay State                   6349097
+Michigan       Lansing        Wolverine State             9938444
+Minnesota      Saint Paul     North Star State            4919479
+Mississippi    Jackson        Magnolia State              2844658
+Missouri       Jefferson City Show Me State                595211
+Montana        Helena         Treasure State               902195
+Nebraska       Lincoln        Cornhusker State            1711263
+Nevada         Carson City    The Silver State            1998257
+New Hampshire  Concord        Granite State               1235786
+New Jersey     Trenton        Garden State                8414350
+New Mexico     Santa Fe       Land of Enchantment         1819046
+New York       Albany         Empire State               18976457
+North Carolina Raleigh        Tar Heel State              8049313
+North Dakota   Bismarck       Peace Garden State           642200
+Ohio           Columbus       Buckeye State              11353140
+Oklahoma       Oklahoma City  Sooner State                3450654
+Oregon         Salem          Beaver State                3421399
+Pennsylvania   Harrisburg     Keystone State             12281054
+Rhode Island   Providence     The Ocean State             1048319
+South Carolina Columbia       Palmetto State              4012012
+South Dakota   Pierre         Mount Rushmore State         754844
+Tennessee      Nashville      Volunteer State             5689283
+Texas          Austin         Lone Star State            20851820
+Utah           Salt Lake City The Beehive State           2233169
+Vermont        Montpelier     Green Mountain State         608827
+Virginia       Richmond       Old Dominion State          7078515
+Washington     Olympia        The Evergreen State         5894121
+West Virginia  Charleston     Mountain State              1808344
+Wisconsin      Madison        Badger State                5363675
+Wyoming        Cheyenne       Equality State               493782
+
+=========================
+  Sorted by Population
+=========================
+Wyoming        Cheyenne       Equality State               493782
+Missouri       Jefferson City Show Me State                595211
+Vermont        Montpelier     Green Mountain State         608827
+Alaska         Juneau         The Last Frontier            626932
+North Dakota   Bismarck       Peace Garden State           642200
+South Dakota   Pierre         Mount Rushmore State         754844
+Delaware       Dover          The First State              783600
+Montana        Helena         Treasure State               902195
+Rhode Island   Providence     The Ocean State             1048319
+Hawaii         Honolulu       Aloha State                 1233537
+New Hampshire  Concord        Granite State               1235786
+Maine          Augusta        Pine Tree State             1274923
+Idaho          Boise          Gem State                   1293953
+Nebraska       Lincoln        Cornhusker State            1711263
+West Virginia  Charleston     Mountain State              1808344
+New Mexico     Santa Fe       Land of Enchantment         1819046
+Nevada         Carson City    The Silver State            1998257
+Utah           Salt Lake City The Beehive State           2233169
+Arkansas       Little Rock    The Natural State           2673400
+Kansas         Topeka         Sunflower State             2688418
+Mississippi    Jackson        Magnolia State              2844658
+Iowa           Des Moines     Hawkeye State               2926324
+Connecticut    Hartford       Constitution State          3405565
+Oregon         Salem          Beaver State                3421399
+Oklahoma       Oklahoma City  Sooner State                3450654
+South Carolina Columbia       Palmetto State              4012012
+Kentucky       Frankfort      Bluegrass State             4041769
+Colorado       Denver         Centennial State            4301261
+Alabama        Montgomery     Yellowhammer State          4447100
+Louisiana      Baton Rouge    Pelican State               4468976
+Minnesota      Saint Paul     North Star State            4919479
+Arizona        Phoenix        GrandCanyonState            5130632
+Maryland       Annapolis      Old Line State              5296486
+Wisconsin      Madison        Badger State                5363675
+Tennessee      Nashville      Volunteer State             5689283
+Washington     Olympia        The Evergreen State         5894121
+Indiana        Indianapolis   Hoosier State               6080485
+Massachusetts  Boston         Bay State                   6349097
+Virginia       Richmond       Old Dominion State          7078515
+North Carolina Raleigh        Tar Heel State              8049313
+Georgia        Atlanta        Peach State                 8186453
+New Jersey     Trenton        Garden State                8414350
+Michigan       Lansing        Wolverine State             9938444
+Ohio           Columbus       Buckeye State              11353140
+Pennsylvania   Harrisburg     Keystone State             12281054
+Illinois       Springfield    Prairie State              12419293
+Florida        Tallahassee    Sunshine State             15982378
+New York       Albany         Empire State               18976457
+Texas          Austin         Lone Star State            20851820
+California     Sacramento     GoldenState                33871648
+
+</pre>
+</div>
+	<br>
+</div>	
+

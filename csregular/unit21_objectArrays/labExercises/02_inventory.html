@@ -1,0 +1,186 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">BookInventory</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>An English class in a small rural school is reading Hamlet. The teacher assigns a book to each
+     student in the class. She has asked you to write a program that can help her keep track of books
+	 assigned to each student. You decide the problem can be decomposed into the following two classes: 
+	 <strong>Book</strong> and <strong>Inventory</strong>. The Book class stores
+     the name of a student and the assigned book number. The Inventory class is a client of the
+	 Book class. It uses an array to store up to 20 books.</p>
+<h1>Book class</h1>
+<p>Create a file named <strong>Book.java</strong> and add the following code.</p>
+<div id=csCode>
+<pre>
+public class Book
+{
+    // instance variables
+
+    // constructors
+
+    // accessor methods
+
+    // toString method
+	
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol>
+<li>Declare a variable of type String named <strong>studentName</strong>.</li>
+<li>Declare a variable of type String named <strong>bookNumber</strong>.</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="3">
+<li>Implement a <strong>constructor</strong> which allows a client to assign initial values to studentName and 
+    bookNumber.</li>
+</ol>
+</div>
+<h3>Accessor Methods</h3>
+<div id="csList">
+<ol start="4">
+<li>Implement an <strong>accessor</strong> method for each instance variable.</li>
+</ol>
+</div>
+<h3>toString Method</h3>
+<div id="csList">
+<ol start="5">
+<li>Implement a <strong>toString</strong> method.</li>
+</ol>
+</div>
+<br>
+<h1>Inventory class</h1>
+<p>Create a file named <strong>Inventory.java</strong> and add the following code.</p>
+<div id=csCode>
+<pre>
+import java.util.*;
+
+public class Inventory
+{
+    // instance variables
+    private Book[] books;     // declare array variable
+    private int numBooks;     // logical size of array
+
+    // constructor
+    public Inventory()
+    {
+        books = new Book[20];  // instantiate array with length 20
+        numBooks = 0;          // no books added yet
+    }
+
+    /* This method allows a user to input up to 20 books and stores them
+       in the array books.
+     */
+    public void addBooks()
+    {
+        Scanner keyboard = new Scanner(System.in);
+
+
+    }
+
+    /* This method displays the student name and book number for each 
+     * Book in the array.
+     */
+    public void printBooks()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Inventory app = new Inventory();
+        app.addBooks();
+        app.printBooks();
+    }
+}
+</pre>
+</div>
+<h3>addBooks Method</h3>
+<div id="csList">
+<ol start="6">
+<li>Implement the method <strong>addBooks</strong>. This method allows a user to enter 
+    up to 20 books and stores them in the array books.<br><br>
+	Here is the pseudocode for the method.<br>
+	<div id="csOutput">
+	<pre>
+loop while ANSWER = "y"
+   output "Student Name -->"
+   input NAME
+   output "Book Number -->"
+   input NUMBER
+
+   BOOKS[NUMBOOKS] = new Book(NAME, NUMBER);
+   NUMBOOKS = NUMBOOKS + 1;
+   
+   output "Enter another book[y/n]:"
+   input ANSWER
+end loop</pre>
+	</div></li>	
+</ol>
+</div>
+
+  <h3>printBooks Method</h3>
+<div id="csList">
+<ol start="7">
+<li>Implement the method <strong>printBooks</strong>. This method displays the student
+name and book number for each Book in the array.	
+</ol>
+</div>
+<h1>Source File</h1>
+<p>Book.java</p>
+<p>Inventory.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+************************
+*       addBooks       *
+************************
+Student Name -->John Wayne
+Book Number -->5
+
+Enter another book[y/n]: y
+
+Student Name -->Jimmy Stewart
+Book Number -->19
+
+Enter another book[y/n]: y
+
+Student Name -->Natalie Wood
+Book Number -->2
+
+Enter another book[y/n]: y
+
+Student Name -->Clint Eastwood
+Book Number -->15
+
+Enter another book[y/n]: n
+
+************************
+*      printBooks      *
+************************
+Student Name = John Wayne
+Book Number = 5
+
+Student Name = Jimmy Stewart
+Book Number = 19
+
+Student Name = Natalie Wood
+Book Number = 2
+
+Student Name = Clint Eastwood
+Book Number = 15
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit21_objectArrays/solutions/02_bookInventorySolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>
+

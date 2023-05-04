@@ -1,0 +1,167 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">RepeatMenu</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that allows a user to choose from a menu of options like the sample run below.
+     If the user does not select one of the choices on the menu have the program display the menu again
+	 and ask the user to make another selection. The program should repeat this process
+	 until the user has selected a valid option. Once a valid option has been selected, the program
+	 should display the user's selection.</p>
+	 
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class RepeatMenu
+{
+    private Scanner keyboard = new Scanner(System.in);
+	
+    /* This method displays a menu and waits for the user to make a selection.
+     * If the user's selection is not a valid number (not between 1 and 5) 
+     * the method displays the menu again and allows user to make another  
+     * selection. This process is repeated until a valid selection is made.
+     * @ return the number selection made by the user.
+     */
+    public int displayMenu()
+    {
+        
+    }
+
+   /* This method makes a call to method displayMenu to get the user's 
+    * number selection. Once user's selection has been retrieved it 
+    * determines the name of the menu item selected and displays the  
+    * following message: "You have chosen (selection name)" where 
+    * selection name is the name of the menu item selected by the user.
+    */
+    public void printSelection()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        RepeatMenu app = new RepeatMenu();
+        app.printSelection();
+    }
+}
+</pre>
+</div>
+<p>You are going to complete 1 void method and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+<h3>Method displayMenu</h3>
+<p>Complete the method <strong>displayMenu</strong> shown below. This method displays
+the following menu</p>
+<div id="csOutput">
+<pre>
+      Menu
+   ==========
+1.  Dr. Pepper
+2.  Coke
+3.  Sprite
+4.  7-UP
+5.  Diet Coke
+
+Selection:
+</pre>
+</div>
+<p>After displaying the menu the method waits for the user to select one of the menu 
+   options. If the user's selection is not a valid number, in the range of 1 to 5 inclusive,
+   the method displays the menu again and waits for user to make another selection.
+   This process is repeated until a valid selection is made. The method finishes by
+   returning the user's selection. This method will need a local Scanner object.</p>
+<div id="csCode">
+<pre>
+/* This method displays a menu and waits for user to make a selection.
+ * If the user's selection is not a valid number (not between 1 and 5) the method
+ * displays the menu again and allows the user to make another selection. 
+ * This process is repeated until a valid selection is made.
+ * @ return the number selection made by the user.
+ */
+public int displayMenu()
+{
+        
+}
+</pre>
+</div>
+
+<h3>Method printSelection</h3>
+<p>Complete the method <strong>printSelection</strong> shown below. This method makes
+a call to the method <strong>displayMenu</strong> so that the user's menu selection can
+ be retrieved. Once the user's selection has been determined the method displays a 
+message like the following</p>
+<div id="csOutput">
+<pre>
+You have chosen Sprite
+</pre>
+</div>
+where Sprite is the name of the menu item selected by the user.
+<div id="csCode">
+<pre>
+/* This method makes a call to method displayMenu to get the user's 
+ * number selection. Once user's selection has been retrieved it 
+ * determines the name of the menu item selected and displays the  
+ * following message: "You have chosen (selection name)" where 
+ * selection name is the name of the menu item selected by the user.
+ */
+public void printSelection()
+{
+
+}
+</pre>
+</div>
+<p>When calling the method displayMenu store the return value in a local integer variable
+   like the following code:</p>
+<div id="csCode"><pre>
+int selection = displayMenu();
+</pre></div>
+<p>You can then use this variable in a series of if statements to determine the
+   name of the menu item selected.</p>
+<h1>Source File</h1>
+<p>repeatMenu.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+      Menu
+   ==========
+1.  Dr. Pepper
+2.  Coke
+3.  Sprite
+4.  7-UP
+5.  Diet Coke
+
+Selection: 7
+
+      Menu
+   ==========
+1.  Dr. Pepper
+2.  Coke
+3.  Sprite
+4.  7-UP
+5.  Diet Coke
+
+Selection: 9
+
+     Menu
+   ==========
+1.  Dr. Pepper
+2.  Coke
+3.  Sprite
+4.  7-UP
+5.  Diet Coke
+
+Selection: 3
+
+You have chosen Sprite
+</pre>
+</div>
+
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit15_doWhile/solutions/02_repeatMenuSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>	
+

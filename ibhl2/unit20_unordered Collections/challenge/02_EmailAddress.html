@@ -1,0 +1,273 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">EmailAddress</div>
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/EmailAddress.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >EmailAddress</a></h1>
+
+<div id="csContent"> 
+      <p>Consider an e-mail address book that allows the user to store e-mail 
+        addresses by associating them with an alias (a name used to identify the 
+        recipient or group of recipients). The address book is represented by 
+        a map in which the key is the alias and the corresponding value is a set 
+        of the actual e-mail addresses and/or other aliases associated with that 
+        key. Each alias is a key in the map representing the address book; e-mail 
+        addresses are not keys in the map. This distinguishes aliases from addresses.</p>
+        The following shows an example of an address book. <br>
+      <table id="apTable">
+	      <caption style="padding-bottom: 10px; font-size:1.2em;"><strong>AddressBook</strong></caption>
+        <tr> 
+          <td>
+              <p><strong>Alias</strong></p>
+            </div></td>
+          <td>
+              <p><strong>Expansion Set</strong></p>
+            </div></td>
+        </tr>
+        <tr> 
+          <td><p>techstaff</p></td>
+          <td><p>{ pat@ez.edu, chris@ez.edu }</p></td>
+        </tr>
+        <tr> 
+          <td><p>faculty</p></td>
+          <td><p>{ bobby, ana, sam@ez.edu }</p></td>
+        </tr>
+        <tr> 
+          <td><p>bobby</p></td>
+          <td><p>{ bob@cs.org }</p></td>
+        </tr>
+        <tr> 
+          <td><p>ana</p></td>
+          <td><p>{ ana@ez.edu }</p></td>
+        </tr>
+        <tr> 
+          <td><p>all</p></td>
+          <td><p>{ phil@ez.edu, faculty, techstaff }</p></td>
+        </tr>
+      </table>
+      <p>The e-mail address book is represented by the class <em>EmailAddresses</em>, 
+        for which a partial declaration is shown below. You will implement two 
+        methods in the <em>EmailAddresses</em> class. </p>
+      
+      <div id="apCode"><pre>public class EmailAddresses
+{
+   // Map addressBook is structured such that each key is a String 
+   // representing an alias and the corresponding value is a Set
+   // containing Strings that represent e-mail addresses and aliases
+<font color="#0000FF">   private Map&lt;String, Set&lt;String&gt;&gt; addressBook;</font>  
+ 
+   // adds all elements of the Set items to the Queue q 
+   // postcondition: the Set items is not modified;
+   //    q contains its original elements followed
+   //    by the elements from items
+   <font color="#0000FF">private void appendSetToQueue(Set&lt;String&gt; items, Queue&lt;String&gt; q)</font>
+   { /* to be implemented in part (a) */ }
+      
+
+
+   // returns a Set consisting of the e-mail addresses associated with 
+   // the parameter alias, such that all intermediate resulting aliases 
+   // have been expanded;
+   // precondition: alias is a key in addressBook 
+  <font color="#0000FF"> public Set&lt;String&gt; expandAlias(String alias)</font>
+   { /* to be implemented in part (b) */ }
+
+
+
+   // constructors, other data fields and other methods not shown
+        
+}
+</pre></div>  
+      <p>(a) Write the <em>EmailAddresses</em> method <em>appendSetToQueue</em>. 
+        This method adds the elements of the <br>
+        set parameter items to the queue parameter q. The table below shows the 
+        result of several calls to <br>
+        <em>appendSetToQueue</em>. Note that the front of each queue is to the 
+        left and the rear of each queue is to the <br>
+        right.</p>
+      <table id="apTable">
+        <tr> 
+          <td><p><strong>Set items<br>
+              (unchanged after each call)</strong></p></td>
+          <td><p><strong> Before Call to<br>
+              appendSetToQueue</p></strong></td>
+          <td><p><strong>q After the Call<br>
+              appendSetToQueue(items, q)</p></strong></td>
+        </tr>
+        <tr> 
+          <td><p>{ pat@ez.edu, chris }</p></td>
+          <td><p>[]</p></td>
+          <td><p>[pat@ez.edu, chris]</p></td>
+        </tr>
+        <tr> 
+          <td><p>{ bob@cs.org }</p></td>
+          <td><p>[pat, ana]</p></td>
+          <td><p>[pat, ana, bob@cs.org]</p></td>
+        </tr>
+        <tr> 
+          <td><p>{ sam@ez.edu, bobby }</p></td>
+          <td><p>[chris]</p></td>
+          <td><p>[chris, sam@ez.edu, bobby]</p></td>
+        </tr>
+      </table> 
+      <p>Complete method <strong>appendSetToQueue</strong> below. </p>
+      <div id="apCode"><pre>// adds all elements of the Set items to the Queue q
+// postcondition: the Set items is not modified;
+// q contains its original elements followed
+// by the elements from items
+private void <strong>appendSetToQueue</strong>(Set&lt;String&gt; items, Queue&lt;String&gt; q) </pre></div>
+      <p><br>
+	  <br>
+	  <br>
+	  <br>
+      </p>
+      <p>(b) In this part, you will write the <em>EmailAddresses</em> method <em>expandAlias</em>. 
+        When an alias is expanded, <br>
+        the expansion can contain aliases that may also need to be expanded. The 
+        sequence of expanding all such <br>
+        aliases stops when no further expansion is possible; that is, the original 
+        alias has been resolved into a set of <br>
+        e-mail addresses. <br>
+        Note that when an alias is expanded, the sequence of expansions could 
+        result in a cycle in which the original alias is expanded again. An example 
+        of a cycle occurs when expanding either of the aliases shown in the following 
+        table. For this question, you may assume that an alias cycle never occurs. 
+      </p>
+      <table id="apTable">
+        <tr> 
+          <td>
+              <p><strong>Alias</strong></p>
+            </div></td>
+          <td>
+              <p><strong>Expansion Set</strong></p>
+            </div></td>
+        </tr>
+        <tr> 
+          <td><p>players</p></td>
+          <td><p>{ offense, defense }</p></td>
+        </tr>
+        <tr> 
+          <td><p>offense</p></td>
+          <td><p>{ players }</p></td>
+        </tr>
+      </table>
+      <p>One strategy for fully expanding an alias is to use an intermediate queue 
+        to hold aliases that need to be expanded and a set to hold the resulting 
+        e-mail addresses. When an alias is removed from the queue, its associated 
+        expansion is added to the queue. If an e-mail address is removed from 
+        the queue, it is added to the result set. This process is repeated until 
+        the queue is empty.</p>
+      <p>For example, the following steps would be taken during the expansion 
+        of the alias all from the Map <em>addressBook</em> shown in the example 
+        on the next page. The first step is to add the alias all to the queue. 
+        The resulting set of e-mail addresses is initially empty as shown below. 
+      </p>
+      <pre>          (Front) (Rear)
+ Queue     [all]
+
+
+ Set       { }</pre>
+      <p>The first item is removed from the queue. Because it is an alias (all), 
+        the members of its expansion set<br>
+        are added to the queue as shown in the following table.</p>
+      <pre>          (Front)                    (Rear)
+ Queue    [phil@ez.edu, faculty, techstaff]
+
+
+ Set      { }
+      </pre>
+      <p>The next item that is removed from the queue is an e-mail address (phil@ez.edu), 
+        which is added to <br>
+        the result set of e-mail addresses associated with the original alias. 
+        After this step the queue and set contents are as shown. </p>
+      <pre>         (Front)       (Rear)
+Queue    [faculty, techstaff]
+
+
+Set      { phil@ez.edu }</pre>
+      <p>This process continues until the queue is empty. The set of e-mail addresses 
+        resulting from the expansion of the alias all is shown below. </p>
+      <pre>{ phil@ez.edu, sam@ez.edu, pat@ez.edu, chris@ez.edu, bob@cs.org, ana@ez.edu } </pre>
+      <p>Write the <em>EmailAddresses</em> method <em>expandAlias</em>. This method 
+        returns a set containing all the e-mail addresses that are associated 
+        with the parameter alias. <br>
+        The table below shows the map given at the beginning of the question, 
+        repeated here for your convenience. </p>
+      <table id="apTable">
+          <caption style="padding-bottom: 10px; font-size:1.2em;"><strong>AddressBook</strong></caption>
+        <tr> 
+          <td><p><strong>Alias</strong></p></td>
+          <td><P><strong>Expansion Set</strong></P></td>
+        </tr>
+        <tr> 
+          <td><p>techstaff</p></td>
+          <td><p>{ pat@ez.edu, chris@ez.edu }</p></td>
+        </tr>
+        <tr> 
+          <td><p>faculty</p></td>
+          <td><p>{ bobby, ana, sam@ez.edu }</p></td>
+        </tr>
+        <tr> 
+          <td><p>bobby</p></td>
+          <td><p>{ bob@cs.org }</p></td>
+        </tr>
+        <tr> 
+          <td><p>ana</p></td>
+          <td><p>{ ana@ez.edu }</p></td>
+        </tr>
+        <tr> 
+          <td><p>all</p></td>
+          <td><p>{ phil@ez.edu, faculty, techstaff }</p></td>
+        </tr>
+      </table>
+      <p> The next table shows the result of several calls to <em>expandAlias</em>. 
+        (The method returns a set; it is acceptable if your implementation produces 
+        the elements in a different order.)</p>
+
+      <table id="apTable">
+        <tr> 
+          <td>
+              <p><strong>Method Call</strong></p>
+          </td>
+          <td>
+              <p><strong>Set Returned from Method Call</strong></p>
+          </td>
+        </tr>
+        <tr> 
+          <td><p>expandAlias(&quot;bobby&quot;)</p></td>
+          <td><p>{ bob@cs.org }</p></td>
+        </tr>
+        <tr>
+          <td><p>expandAlias(&quot;faculty&quot;)</p></td>
+          <td><p>{ sam@ez.edu, bob@cs.org, ana@ez.edu</p></td>
+        </tr>
+        <tr>
+          <td><p>expandAlias(&quot;all&quot;)</p></td>
+          <td><p>{ phil@ez.edu, sam@ez.edu, pat@ez.edu, </p></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td> <p>&nbsp;&nbsp;&nbsp;chris@ez.edu, bob@cs.org, ana@edu }</p></td>
+        </tr>
+      </table> 
+      <p>In writing <em>expandAlias</em>, you may use the method <em>appendSetToQueue</em> 
+        defined for the <em>EmailAddresses</em> class specified for this problem. 
+        Assume that this method works as specified, regardless of what you wrote 
+        in part (a).</p>
+      <p>Complete method <strong>expandAlias</strong> below.</p>
+      <div id="apCode"><pre>// returns a Set consisting of the e-mail addresses associated with
+// the parameter alias, such that all intermediate resulting aliases
+// have been expanded;
+// precondition: alias is a key in addressBook
+public Set&lt;String&gt; <strong>expandAlias</strong>(String alias)</pre></div>
+<br><br><br>
+<p></p>
+<h2>Sample Run</h2>
+<div id="csSampleRun">
+<pre>{bob@cs.org}
+
+{bob@cs.org,sam@ez.edu,ana@ez.edu}
+
+{bob@cs.org,sam@ez.edu,chris@ez.edu,ana@ez.edu,pat@ez.edu,phil@ez.edu}
+</pre>
+</div>
+<br>

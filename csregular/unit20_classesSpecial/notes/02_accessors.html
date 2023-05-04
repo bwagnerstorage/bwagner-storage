@@ -1,0 +1,144 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Accessor Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an accessor method</li>
+						<li>How is an accessor method created and invoked</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Private Visibility</h1>
+  <p>Instance variables in a class should be declared with the private visibility modifier as
+     illustrated in the Student class shown below.</p>
+  
+  <div id="csCode">
+  <pre>
+class Student
+{
+   // instance variables
+   <div id="csHighlight"><pre>private</pre></div>  String name;     	// Student name
+   <div id="csHighlight"><pre>private</pre></div>  int sixWeeks1;       // 1st 6 weeks avg
+   <div id="csHighlight"><pre>private</pre></div>  int sixWeeks2;       // 2nd 6 weeks avg
+   <div id="csHighlight"><pre>private</pre></div>  int sixWeeks3;       // 3rd 6 weeks avg
+   <div id="csHighlight"><pre>private</pre></div>  int exam;            // semester exam
+</pre></div>     
+
+<p>By declaring the variables as private client programs that create objects of the class
+   are not allow to access the instance variables directly by using dot notation:</p>
+  <div id="csCode">
+  <pre>
+public static void main(String[] args)
+{
+   Student student = new Student();      // student object is instantiated
+
+   student.<div id="csHighlight"><pre>name</pre></div>  = "George Washington";   <div id="csHighlight"><pre>// Error, this is not allow!</pre></div>
+</pre></div> 
+<p>However, client programs often need the ability to see or even modify the contents of the instance
+   variables of an object. For this reason, classes are often designed with two special types of
+   methods called <strong>accessor methods</strong> and <strong>mutator methods</strong>. In this 
+   lesson we cover accessor methods.</p>
+<div id="csNote"><strong>Note:</strong> A client is a class that uses another class to help it solve
+a problem. For
+example if a class named Classroom instaniates an object of a class named Student, then 
+Classroom is a client of Student.</div>
+<h1>Accessor Methods</h1>
+<p>Methods defined in a class which allow clients to observe the value of instance variables are
+   called <strong>accessor methods</strong>. Recall, once again, that clients do not have direct access to instance
+   variables since instance variables are usually defined with the private visibility modifier.
+   The only way clients can view the values of instance variables is if there are accessor methods
+   which provide them with this information.</p>
+
+<p>Look at the Student class again. Five accessor methods have been added.</p>
+  <div id="csCode">
+  <pre>
+class Student
+{
+   // instance variables
+   private String name;     	// Student name
+   private int sixWeeks1;       // 1st 6 weeks avg
+   private int sixWeeks2;       // 2nd 6 weeks avg
+   private int sixWeeks3;       // 3rd 6 weeks avg
+   private int exam;            // semester exam
+
+   // constructors
+   public Student()
+   {
+       name = "";           // initialize name to empty string
+       sixWeeks1 = 0;       // initialize sixWeeks1 to 0
+       sixWeeks2 = 0;       // initialize sixWeeks2 to 0
+       sixWeeks3 = 0;       // initialize sixWeeks3 to 0
+       exam = 0;            // initialize exam to 0
+   }
+
+   public Student(String n, int w1, int w2, int w3, int e)
+   {
+      name = n;            // initialize name to value in n
+      sixWeeks1 = w1;      // initialize sixWeeks1 to value in w1
+      sixWeeks2 = w2;      // initialize sixWeeks2 to value in w2
+      sixWeeks3 = w3;      // initialize sixWeeks3 to value in w3
+      exam = e;            // initialize exam to value in e
+   }
+		
+   // accessor methods
+   public String <div id="csHighlight"><pre>getName</pre></div>()
+   {
+      return name;
+   }
+   
+   public String <div id="csHighlight"><pre>getSixWeeks1</pre></div>()
+   {
+      return sixWeeks1;
+   }
+   
+   public String <div id="csHighlight"><pre>getSixWeeks2</pre></div>()
+   {
+      return sixWeeks2;
+   }
+   
+   public String <div id="csHighlight"><pre>getSixWeeks3</pre></div>()
+   {
+      return sixWeeks3;
+   }
+   
+   public String <div id="csHighlight"><pre>getExam</pre></div>()
+   {
+      return exam;
+   }
+   
+</pre></div> 
+<p>The purpose of an accessor method is to allow a client "access" to an instance variable so it can see it's contents.</p>
+   For example, the getName accessor method allows clients access to see the contents of the name instance
+   variable, the getSixWeeks1 accessor method allows clients access to see the contents of the sixWeeks1 instance
+   variable, and so forth. Accessor methods only allow clients the ability to see variables contents;
+   not modify them.</p>
+<p>Accessor methods are declared with a return type that corresponds to the data type of the instance
+   variable that is being accessed. </p>
+   <div align="center"><img src="images/accessor1.png"></div>
+ <br>
+<div id="csNote"><strong>Note:</strong> A common practice is to define accessor methods with the word
+  "get" in front of their name followed by the name of the instance variable they are accessing.
+  (getName, getLength, getWidth, getScore, getTemperature, etc.)</div>
+<h1>Invoking Accessor Methods</h1>
+  <p>The following code shows how accessor methods can be called from client code.</p>
+    <div id="csCode">
+  <pre>
+Student student1 = new Student("John Wayne", 100, 95, 88, 92);
+
+System.out.println("Student Name    = " + student1.<div id="csHighlight"><pre>getName</pre></div>());
+System.out.println("1st 6 Weeks Avg = " + student1.<div id="csHighlight"><pre>getSixWeeks1</pre></div>());
+System.out.println("2nd 6 Weeks Avg = " + student1.<div id="csHighlight"><pre>getSixWeeks2</pre></div>());
+System.out.println("3rd 6 Weeks Avg = " + student1.<div id="csHighlight"><pre>getSixWeeks3</pre></div>());
+System.out.println("Semester Exam   = " + student1.<div id="csHighlight"><pre>getExam</pre></div>());
+</pre></div>
+<br>
+</div>	
+

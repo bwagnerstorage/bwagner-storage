@@ -1,0 +1,77 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">do while Statement</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>do while statement</li>
+						<li>What is a post-test loop</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>do while Statement</h1>
+  <p>The <strong>do while</strong> is another Java statement that can be used for repetition within your programs.</p>
+  <p>Here is the basic structure of the do while statement.</p>
+<div id="csCode">
+    <pre>
+do
+{
+    <div id="csComment"><pre>// statements</pre></div>
+}
+while(condition);
+</pre>
+</div>
+<p>The do while loop is similar to the while loop, except that the condition is tested at the end of the loop block. 
+   This means that the loop block is <strong>guaranteed to execute at least once</strong>, even if the expression is always false. 
+   This type of loop is called a <strong>post-test</strong> loop. Like its while loop cousin the do while can perform as either 
+   a counter-controlled loop or a sentinel-controlled loop. The following diagram contrasts the basic logic of the while and do while loops:</p>
+  
+	<div align="center"><img src="images/doWhile1.GIF"/></div>
+<div id="csNote">
+The only difference between the while loop and the do while loop is where the test is carried out.
+</div>
+<p>Here is a simple example of a do while loop that prints the numbers 1 to 10.</p>
+<div id="csCode">
+    <pre>
+int counter = 1;                    <div id="csComment"><pre> // 1) initialize loop control variable</pre></div>
+
+do
+{
+    System.out.println(counter);
+    counter++;                      <div id="csComment"><pre> // 2) increment loop control variable</pre></div>
+}
+while (counter <= 10);               <div id="csComment"><pre>// 3) loop test</pre></div>
+</pre>
+</div>
+<h1>Common Error</h1>
+<p>Leaving off the semicolon at the end of the do while is a common programming mistake. One reason for this error
+   is because a semicolon is not required when programming a while statement.</p>
+<h3>while Loop</h3>
+<div id="csCode">
+    <pre>
+while(condition)  <div id="csComment"><pre>// no semicolon here</pre></div>
+{
+                       
+}
+</pre>
+</div>
+<h3>do while Loop</h3>
+<div id="csCode">
+    <pre>
+do
+{
+                       
+}
+while(condition);  <div id="csComment"><pre>// yes semicolon here</pre></div>
+</pre>
+</div>
+	<br>
+</div>	
+

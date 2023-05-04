@@ -1,0 +1,47 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Finally</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is the keyword finally</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>finally Block</h1>
+<p>Java recognizes that there may be code that must be run before your method exits. For example, if you create a network connection,
+   allocate a Graphics object, or open a file during the course of your method, you must destroy the network connection, deallocate
+   the Graphics object, or close the file when you are done. Failing to do so can cause what is known as a resource leak.</p>
+
+<p>Typically, a program can open only so many network connections or files. These are called resources, and you have a limited 
+  number of resources available. You conserve these resources by closing them when you are done with them. If you do not close them, 
+  those resources are no longer available to the system. It is as if they leaked out of your program. Eventually, a resource leak can
+  cause your program (or other programs!) to crash.</p>
+
+<p>To make sure that situations, like the ones mentioned above, are delt with in your programs the Java framework includes
+  a <strong>finally block</strong>. Code placed in the finally block is guaranteed to run whether or not an exception is caught.
+  The code in the finally block is guaranteed to run if any portion of the try block is excuted, regardless of how the try block completes.</p>
+
+<div id="csCode"><pre>
+try
+{
+
+}
+catch
+{
+
+}
+<div id="csHighlight"><pre>finally</pre></div>
+{
+    // code that must be processed
+}
+ </pre></div>
+<br>
+</div>	
+

@@ -1,0 +1,108 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI03</div>
+<div id="csContent"> 
+<h1>Starter Code</h1>
+<div id="csCode">
+    <pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI03 extends JFrame
+{
+    <font color="#FF0000">// Step 1 : create JLabel variable</font>
+    private JLabel label;
+    
+    // constructor
+    public GUI03()
+    {   
+        <font color="#FF0000">// Step 2 : create JLabel object and store its reference in label</font>
+        label = new JLabel("Demo");
+        
+        <font color="#FF0000">// Step 3 : set label attributes</font>
+        label.setLocation(10, 10);
+        label.setSize(200, 20);
+        label.setForeground(Color.BLUE);
+        label.setFont(new Font("Arial", Font.PLAIN, 24));
+        
+        <font color="#FF0000">// Step 4: add label to content pane of frame</font>
+        getContentPane().add(label);
+        
+        // set frame attributes
+        setLayout(null);                                 
+        setSize(500, 500);                              
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        getContentPane().setBackground(Color.white);     
+        setVisible(true);                            
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI03 app = new GUI03();   // run program
+    }
+}   
+   </pre>
+   </div>
+
+<div id="csContent"> 
+<h1>Setup IDE Instructions</h1>
+ <p>There are two sets of instructions depending upon whether you are using Replit or Netbeans as your IDE (editor).
+   <h3>Replit</h3>
+   <div id="csList">
+   <ol>
+<li><p>Logon to replit.<p/></li>
+
+<li><p>Create a new Java repl named "GUI03".</p></li>
+
+<li><p>In the File section of the replit window, click the Add File icon.</p></li>
+<li><p>Name the newly created file: GUI03.java. You should now have two java files: Main and GUI03.</p></li>
+<li><p>Copy the code located at the top of this page on my website and paste it in the file GUI03.java.</p></li>
+<li><p>Select the Main.java file. Delete all of the code currently in this file.</p></li>
+<li><p>Copy the following code and paste it in Main.java file:</p>
+<div id="csCode"><pre>class Main
+{
+    public static void main(String[] args)
+    {
+        GUI03 app = new GUI03();    // run program
+    }
+}
+</pre></div>
+</li>
+</ol>
+
+   <h3>NetBeans</h3>
+   <div id="csList">
+<ol>
+<li><p>Open your NetBeans workspace.</p></li>
+
+<li><p>Add a new empty Java file named <strong>GUI03</strong> to your project.</p></li>
+
+<li><p>Copy the code located at the top of the GUI03 assignment page into this new file.</p></li>
+
+<h1>Directions</h1>
+  <p>Create a GUI program that displays the message "Don't Mess With Texas" like the sample run below.</p>
+<div id="csList">
+<ul>
+<li>The frame size should be 500 x 500.</li>
+<li>Follow the four step process to create a JLabel for each word.</li>
+<div id="csList">
+   <ol>
+     <li>Create a JLabel variable (instance variable).</li>
+	  <li>Create a JLabel object and store its reference in the JLabel variable.</li>
+	  <li>Set the attributes for the label (location, size, color, etc.).</li>
+	  <li>Add the JLabel to the content pane of the frame.</li>
+   </ol>
+   </div>
+   <p><strong>*Create a JLabel variable for each word.</strong></p>
+<li>Size of each label should be 200 x 60.</li>
+<li>Font size should be 72.</li>
+</ul></div>
+<h1>Source File</h1>
+<p>GUI03.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI03.png">
+	<br>
+</div>

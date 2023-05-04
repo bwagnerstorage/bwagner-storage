@@ -1,0 +1,216 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">14-4 People class</div>
+
+<div id="csContent"> 
+
+<h1>Lab Exercise</h1>
+<p>Create a html file named 04_class.html and add the following code.</p>
+<div id="csOutput" style="width:680px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;People Class&lt;/title&gt;
+&lt;script src="Address.js"&gt;&lt;/script&gt;
+&lt;script src="Person.js"&gt;&lt;/script&gt;
+&lt;script src="People.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+    * {
+        box-sizing: border-box;
+    }
+    #container {
+        display: flex;
+        justify-content: space-around;
+    }
+    #leftside {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border: 2px solid blue;
+        padding: 10px;
+        margin: 15px;
+        width: 600px;
+    }
+    #rightside {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border: 2px solid blue;
+        padding: 10px;
+        margin: 15px;
+        width: 600px;
+    }
+    #heading {
+        font-size: 2.4em;
+        font-weight: bold;
+        margin-left: 100px;
+    }
+    .label {
+        font-size: 1.8em;
+        width: 200px;
+
+    }
+    .textbox {
+        font-size: 1.7em;
+        padding: 8px;
+        color:crimson;
+    }
+    .row {
+        display: flex;
+        padding: 5px;
+        margin-left: 15px;
+    }
+    #buttonContainer {
+        display: flex;
+        justify-content: space-around;
+        margin: 25px;
+    }
+    button {
+        font-size: 1.8em;
+        font-weight: 600;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #output {
+        font-size: 1.8em;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="container"&gt;
+        &lt;div id="leftside"&gt;
+            &lt;h1 id="heading"&gt;Personal Information&lt;/h1&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;First Name&lt;/span&gt;
+                &lt;input id = "text1" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;Last Name&lt;/span&gt;
+                &lt;input id = "text2" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;Street Address&lt;/span&gt;
+                &lt;input id = "text3" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;City&lt;/span&gt;
+                &lt;input id = "text4" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;State&lt;/span&gt;
+                &lt;input id = "text5" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class = "label"&gt;Zip&lt;/span&gt;
+                &lt;input id = "text6" class="textbox" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div id="buttonContainer"&gt;
+                &lt;button class="submit" onclick="submitInfo()"&gt;Submit&lt;/button&gt;
+                &lt;button id="clear" onclick="clearInfo()"&gt;Clear&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="rightside"&gt;
+            &lt;div id="output"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+
+    &lt;/div&gt;
+    &lt;script&gt;      
+
+        function submitInfo()
+        {
+            var firstName = document.getElementById("text1").value;
+            var lastName = document.getElementById("text2").value;
+            var street = document.getElementById("text3").value;
+            var city = document.getElementById("text4").value;
+            var state = document.getElementById("text5").value;
+            var zip = document.getElementById("text6").value;
+
+            var address = new Address(street, city, state, zip);
+            var person = new Person(firstName, lastName, address);
+
+            
+        }
+
+        function clearInfo()
+        {
+            document.getElementById("text1").value = "";
+            document.getElementById("text2").value = "";
+            document.getElementById("text3").value = "";
+            document.getElementById("text4").value = "";
+            document.getElementById("text5").value = "";
+            document.getElementById("text6").value = "";
+            document.getElementById("output").innerHTML = "";
+        }
+    
+    &lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+<p>In this exercise you are going to create a class named People that uses an array to store
+    a list of Person objects. You will need to use the Person and Address classes used in 
+    the previous exercises.
+</p>
+<ol id="csList">
+<li><p>Create a javascript file named People.js.</p></li>
+<li><p>Define a javascript class named <strong>People</strong> that includes the following features:</p></li>
+<ul id="csList2">
+    <li><p>A constructor that takes no parameters.</p></li>
+    <li><p>In the body of the constructor add a instance variable named <strong>people</strong> and
+     initialize it with an empty array. After completing the previous two steps the constructor should
+     look like the following: </p>
+     <div id="csCode" style="width:560px"><pre>constructor()
+{
+    this.people = [];   // empty array
+}
+</pre></div>
+</li>
+<li><p>Add a method named <strong>addPerson</strong> that includes one parameter named <strong>person</strong>.
+This method assigns the parameter <strong>person</strong> to the <strong>people</strong> array using the following code: </p>
+<div id="csCode" style="width:560px"><pre>addPerson(person)
+{
+    this.people.push(person);
+}
+</pre></div>
+</li>
+<li><p>Add a method named <strong>getPeople</strong> that returns a string representation
+       of all of the Person objects in the people array.</p>
+       <p>When finished your method should look like the following:</p>
+<div id="csCode" style="width:560px"><pre>getPeople()
+{
+    var str = "";
+    for(var i = 0; i < this.people.length; i++)
+    {
+        str += this.people[i].getMailingAddress() + "&lt;br&gt;&lt;br&gt;";
+    }
+    return str;
+}    
+</li>
+</ul>
+<br>
+<p style="font-size:1.2em">Add the following javascript code to the 04_class.html so that the People class
+    provides the functionality desired.</p><br>
+       <li><p>Add a line of code that creates a <strong>People</strong> object and stores its reference in a 
+              variable named <strong>people</strong>. Place the code inside the script tag above the submitInfo function.</p>
+        <p>After competing this step your code should look like the following:</p>   
+<div id="csCode" style="width:560px"><pre>var people = new People();</pre></div>
+       </li>
+       <li><p>Add a line of code inside the <strong>submitInfo</strong> method that will add 
+              the person object to the array defined in the People class.</p>
+        <p>After competing this step your code should look like the following:</p>   
+<div id="csCode"style="width:560px" ><pre>people.addPerson(person);</pre></div>
+        </li>
+        <li><p>Add a line of code inside the <strong>submitInfo</strong> method that will display all the Person objects added to the
+        array in the People class.</p>
+      <p>After competing this step your code should look like the following:</p>   
+<div id="csCode" style="width:600px"><pre>document.getElementById("output").innerHTML = people.getPeople() + "&lt;br&gt;";</pre></div>
+      </li>
+</ol>
+<br>
+<h1>Sample Output</h1>
+<img src="images/js_04_class.png">
+<br>

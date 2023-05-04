@@ -1,0 +1,110 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Quick Sort</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Quick Sort</li>
+						<li>How to implement a Quick Sort</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Quick Sort</h1>
+<p>The quick sort is a divide-and-conquer massively recursive sort. The quick sort algorithm is
+   simple in theory, but very difficult to put into code (computer scientists tied themselves into
+   knots for years trying to write a practical implementation of the algorithm). 
+
+<p>The recursive algorithm consists of four steps (which closely resemble the merge sort):</p> 
+
+<div id="csList"><ol>
+<li>If there are one or less elements in the array to be sorted, return immediately.</li> 
+<li>Pick an element in the array to serve as a "pivot" point.</li> 
+<li>Split the array into two parts - one with elements larger than the pivot
+  and the other with elements smaller than the pivot.</li> 
+<li>Recursively repeat the algorithm for both halves of the original array.</li> 
+</ol></div>
+<br>
+<p>The efficiency of the algorithm is majorly impacted by which element is choosen as
+  the <strong>pivot point</strong>. The worst-case efficiency of the quick sort, O(n<sup>2</sup>), occurs when
+  the list is sorted and the left-most element is chosen as the pivot point. Randomly choosing
+  a pivot point rather than using the left-most element is recommended if the data to be sorted
+  isn't random. As long as the pivot point is chosen randomly, the quick sort has an algorithmic
+  complexity of<br> <strong>O(n log n)</strong>.</p> 
+<br>
+<p><strong>Pros</strong>: Extremely fast.<br>
+<strong>Cons</strong>: Very complex algorithm, massively recursive.</p> 
+<br>
+<h3>Applet - Quick Sort Demonstration</h3>
+<applet code="QuickSort.class"
+        archive="QuickSort.jar"
+		codebase = "/applets"
+		width="400" 
+		height="300">
+</applet>
+
+<h1>Quick Sort Efficiency</h1> 
+<p>The quick sort is by far the fastest of the common sorting algorithms. It's possible
+  to write a special-purpose sorting algorithm, such as the radix sort, that can beat the quick sort for some data sets,
+  but for general-case sorting there isn't anything faster.</p>
+<p>As soon as students figure this out, their immediate impulse is to use the quick sort
+  for everything - after all, faster is better, right? It's important to resist this urge -
+  the quick sort isn't always the best choice. As mentioned earlier, it's massively recursive
+  (which means that for very large sorts, you can run the system out of stack space pretty easily).
+  It's also a complex algorithm - a little too complex to make it practical for a one-time sort
+   of 25 items, for example.</p> 
+
+<p>With that said, in most cases the quick sort is the best choice if speed is important
+   (and it almost always is). Use it for repetitive sorting, sorting of medium to large lists,
+   and as a default choice when you're not really sure which sorting algorithm to use. 
+   Ironically, the quick sort has horrible efficiency when operating on lists that are mostly 
+   sorted in either forward or reverse order - avoid it in those situations.</p> 
+
+<h1>Quick Sort Algorithm</h1>
+
+<div id="csCode"><pre>
+void quickSort(int a[], int left, int right)
+{ 
+   if(left >= right)
+      return;  
+   int i = left;
+   int j = right;
+   int pivotValue = a[(left + right) / 2];   <div id="csHighlight"><pre>// choose middle as pivot</pre></div> 
+   while(i < j)
+   {
+       // Starting from left side of partition
+       // find the first value that is greater than pivot.
+       while(a[i] < pivotValue)
+          i++; 
+		    
+       // Starting from right side of partition
+       // find the first value that is less than the pivot.
+       while(a[j] > pivotValue)
+          j--;
+		   
+       // Swap the two values
+       if(i <= j)
+       {   
+          int temp = a[i];
+          a[i] = a[j];
+          a[j] = temp;
+          i++;
+          j--;
+       }
+    }
+  
+    // Recursively partition the list
+    quickSort(a, left, j);
+    quickSort(a, i, right);
+}
+</pre></div>  
+
+
+<br>
+</div>	
+

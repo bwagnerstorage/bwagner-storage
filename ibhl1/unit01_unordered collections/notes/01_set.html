@@ -1,0 +1,210 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Sets</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>How to utilize a HashSet.</li>
+						<li>How to utilize a TreeSet.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Unordered Collection: Set</h1>
+      <p><strong>Interfaces: </strong>Set 
+      <p><strong>Implementing Classes: </strong>HashSet, TreeSet</p>
+      <p>A linear collection is an ordered collection. That is, each item in an 
+        linear collection has a position at which the client can locate it. In 
+        this unit, we look at<strong> unordered collections</strong>. From the 
+        client's perspective, the items in an unordered collection are in no particular 
+        order. Thus, none of the operations on an unordered collection are position-based. 
+        Clients can insert, retrieve, or remove objects from unordered collections, 
+        but they cannot access the <em>nth</em> item, the next item, or the previous 
+        item. In this unit we look at two types of unordered collections: <strong>sets</strong> 
+        and <strong>maps</strong>.</p>
+      <p><img src="images/unorderedCollection.gif" width="400" height="250"></p>
+      <h2>Set</h2>
+      <p>A <strong>set</strong> is a collection that cannot contain duplicate 
+        elements. This interface models the concept of a set your are familiar 
+        with from mathematics. Some of the operations that you can be performed 
+        on sets in mathematics include adding an item to a set, removing an item 
+        from a set, returning the union, intersection, or difference of two sets, 
+        and testing for the empty set. Outside the realm of mathematics sets can 
+        be used to represent such things as the cards comprising a poker hand, 
+        the courses making up a student's schedule, or the processes running on 
+        a machine.</p>
+      <p>The JCF(Java Collections Framework) provides an interface to represent some of the functionality 
+        of a set. The <em>Set</em> interface contains methods inherited from the 
+        <em>Collection</em> interface and adds the restriction that duplicate 
+        elements are prohibited.</p>
+      <p>A set allows you to</p>
+	  <div id="csList"><p>
+      <ul>
+        <li>Insert a nonduplicate element into the set.</li>
+        <li>Remove an element from the set.</li>
+        <li>Test if a given element is in the set.</li>
+        <li>Iterate over the elements using Iterator.</li>
+      </ul></p></div>
+	  <br>
+      <h3><strong>interface java.util.Set&lt;E&gt;</strong></h3>
+      <table id="csTable" align="left" style="margin-top: 0px">
+        <tr> 
+          <td width="40%">int <strong>size</strong>()</td>
+          <td width="60%">returns number of items in set</td>
+        </tr>
+        <tr> 
+          <td>boolean <strong>contains</strong>(Object obj)</td>
+          <td><p>returns true if obj is in the set;<br>
+              otherwise, returns false</p></td>
+        </tr>
+        <tr> 
+          <td>boolean <strong>add</strong>(Object obj)</td>
+          <td>if obj is not present in this set, adds obj 
+            and returns true;<br>
+            otherwise, returns false</td>
+        </tr>
+        <tr> 
+          <td>boolean <strong>remove</strong>(Object obj)</td>
+          <td>if obj is present in this set, removes obj 
+            and returns true;<br>
+            otherwise, returns false</td>
+        </tr>
+        <tr> 
+          <td>Iterator &lt;E&gt; <strong>iterator</strong>()</td>
+          <td>returns an iterator on the set</td>
+        </tr>
+      </table>
+      <br>
+      <h2>Implementing Classes</h2>
+      <p>The JCF provides two <em>Set</em> implementations called <strong>HashSet</strong> 
+        and <strong>TreeSet</strong>. The names are derived from the techniques 
+        used to store and access a set's items. A <em>HashSet</em> stores its 
+        elements in a hash table and the <em>TreeSet</em> stores its elements 
+        in a balanced binary search tree. We will look more closely at the implementation 
+        of these two data structures in a future unit. </p>
+      <p>Determining which of these two classes to use is generally straightforward. 
+        <em>HashSet</em> is much faster than <em>TreeSet</em> (constant-time O(1) 
+        versus log-time O(log) for most operations) but offers no ordering guarantees. 
+        If value-ordered iteration is required, use <em>TreeSet</em>; otherwise, 
+        use <em>HashSet</em>. It's a fair bet that you'll end up using <em>HashSet</em> 
+        most of the time. </p>
+		<br>
+      <h2>HashSet Class (class java.util.HashSet&lt;E&gt; implements java.util.Set&lt;E&gt;)</h3>
+      <p>The <em>HashSet</em> class stores items in no particular order. The methods 
+        of <em>HashSet</em> in the AP Java subset are the same methods as those 
+        given for the <em>Set</em> interface: <strong>add</strong>, <strong>contains</strong>, 
+        <strong>remove, size</strong>, and <strong>iterator</strong>.</p>
+      <p><strong>Iterator</strong></p>
+      <p>An iterator for a <em>HashSet</em> returns the elements in no particular 
+        order and does not guarantee that the order will stay the same over time.</p>
+		<br>
+      <h3><strong>HashSet Examples</strong></h3>
+      <p><strong>constructor</strong></p>
+      <div id="csCode"><pre>HashSet&lt;String&gt; set = new HashSet&lt;String&gt;();</pre></div>
+      <p><strong>add Method</strong></p>
+      <div id="csCode"><pre>set.add(&quot;dog&quot;);
+set.add(&quot;cat&quot;);
+set.add(&quot;bird&quot;);
+</pre></div>
+      <p><strong>remove Method</strong></p>
+      <div id="csCode"><pre>set.remove(&quot;bird&quot;);</pre></div>
+
+      <p><strong>contains Method</strong></p>
+      <div id="csCode"><pre>if(set.contains(&quot;cat&quot;))
+{
+   System.out.println(&quot;Set contains: Cat&quot;);
+}</pre></div>
+
+      <p><strong>size Method</strong></p>
+      <div id="csCode"><pre>System.out.println(&quot;Size = &quot; + set.size());</pre></div>
+
+      <p><strong>Traverse - iterator</strong></p>
+      <div id="csCode"><pre>Iterator it = set.iterator();
+while(it.hasNext())
+{
+   System.out.println(it.next());
+}</pre></div>
+     
+<div id="csOutput">
+dog<br>
+cat<br>
+bird</div>
+<p>* no particular order</p>
+      <p><strong>Traverse - enhanced for</strong></p>
+      <div id="csCode"><pre>for(String str : set)
+{
+   System.out.println(str);
+}</pre></div>
+
+<div id="csOutput">dog<br>
+cat<br>
+bird </div>
+<p>* no particular order</p>
+<br>
+      <h2>TreeSet class (class java.util.TreeSet&lt;E&gt; implements java.util.Set&lt;E&gt;)</h2>
+      <p>Sets are unordered collections; however, there is sufficient need for 
+        a sorted version that Java includes the interface <em>SortedSet</em> and 
+        the implementation of the<em> TreeSet</em> class. The <em>TreeSet</em> 
+        class guarantees that the sorted set will be in ascending order, as determined 
+        by the <em>compareTo</em> method of the elements within the set. This 
+        means that the items of a <em>TreeSet</em> are <em>Comparable</em>. As 
+        with <em>HashSet</em>, the <em>TreeSet</em> methods in the AP Java subset 
+        are those specified for the <em>Set</em> interface: <strong>add</strong>, 
+        <strong>contains</strong>, <strong>remove</strong>, <strong>size</strong>, 
+        and <strong>iterator</strong>.</p>
+      <p><strong>Iterator</strong></p>
+      <p>The iterator for a <em>TreeSet</em> always returns the elements in ascending 
+        order.</p>
+		<br>
+      <p><strong>TreeSet Examples</strong></p>
+      <p><strong>constructor</strong></p>
+      <div id="csCode"><pre>TreeSet&lt;String&gt; set = new TreeSet&lt;String&gt;();</pre></div>
+ 
+      <p><strong>add Method</strong></p>
+      <div id="csCode"><pre>set.add(&quot;dog&quot;);
+set.add(&quot;cat&quot;);
+set.add(&quot;bird&quot;);</pre></div>
+      <p><strong>remove Method</strong></p>
+      <div id="csCode"><pre>set.remove(&quot;bird&quot;);</pre></div>
+
+      <p><strong>contains Method</strong></p>
+      <div id="csCode"><pre> if(set.contains(&quot;cat&quot;))
+{
+   System.out.println(&quot;Set contains: Cat&quot;);
+}</pre></div>
+	  
+      <p><strong>size Method</strong></p>
+      <div id="csCode"><pre>System.out.println(&quot;Size = &quot; + set.size());</pre></div>
+
+      <p><strong>Traverse - iterator</strong></p>
+      <div id="csCode"><pre>Iterator it = set.iterator();
+while(it.hasNext())
+{
+   System.out.println(it.next());
+}</pre></div>
+
+      <div id="csOutput">
+bird<br>
+cat<br>
+dog</div>
+
+<p>*ascending order</p>
+      <p><strong>Traverse - enhanced for</strong></p>
+      <div id="csCode"><pre>for(String str : set)
+{
+   System.out.println(str);
+}</pre></div>
+
+<div id="csOutput">bird<br>
+cat<br>
+dog </div>
+
+<p>* ascending order</p> 
+
+<br>
+</div>

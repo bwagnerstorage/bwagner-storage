@@ -1,0 +1,121 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Exception Classifications</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a checked exception</li>
+						<li>What is an unchecked exception</li>
+						<li>Throw vs throws</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Exception Classifications</h1>
+<p>All exceptions ultimately derive from the Throwable class. The immediate subclasses of Throwable are Error and Exception.</p>
+<p>Error is the base class for a set of exceptions thrown when there are internal errors (and resource exhaustion) 
+  inside the Java system. As a Java programmer you never throw objects derived from Error. Your only response to an Error
+  is to notify the user of the problem, and to exit as cleanly as you can.</p>
+<p>The focus of this section, therefore, will be on the Exception class half of the hierarchy. Derived 
+  from Exception are IOException and RunTimeException. IOExceptions are typically used for exceptions beyond your 
+  control (e.g., the disk is full), while RunTimeExceptions typically indicate programmer error (e.g., you tried 
+  to write past the end of an array).</p>
+
+<h1>The throws KeyWord</h1>
+
+<p>The Java framework calls Errors and RunTimeExceptions "unchecked exceptions," and it calls IOExceptions "checked exceptions."</p>
+
+<p>The term <strong>"checked"</strong> refers to the fact that the compiler will check to ensure that the exception is caught or specified.
+Checked exceptions that are not monitored by a try/catch block must be declared by the method that might throw them with the throws keyword.
+ For example, if your method reads from a file (reading from a file is covered in the next unit), it might throw an IOException. If you do
+  not include a try/catch block within the method, then you must mark your method to indicate that it throws this exception.</p>
+
+<div id="csCode"><pre>
+public void readsFromFile(String fileName) <div id="csHighlight"><pre>throws</pre></div> IOException
+{
+	
+}
+</pre></div>
+<p>By marking a method with the <strong>throws</strong> keyword you are instruction the JVM to pass any exceptions that occur
+ within the method onto the calling method so they can be handled there, usually within the calling method's own try/catch block.</p>
+
+<p>For example in our program, we could choose not to include a try/catch block within the body of the divide method. 
+  In that case we need declare that the divide method throw an ArithmeticException:</p>
+<div id="csCode"><pre>
+public void divide() throws ArithmethicException
+</pre></div>
+<p>Now it is the responsibility of the calling method, main, to handle the exception:</p>
+<div id="csCode"><pre>
+import java.util.*;
+
+public static void main(String[] args)
+{
+       DivideTester test = new DivideTester();
+       Scanner keyboard = new Scanner(System.in);
+       String ans;
+       
+       do
+       {
+          test.getNumbers();    // get two numbers
+          try
+          {
+             test.divide();        // calculate the quotient
+             test.printResults();  // print the results
+          }
+          catch(ArithmeticException e)
+          {
+             System.out.println("***Division by 0 error");
+          } 
+            
+          System.out.print("Continue[Y/N]?");
+          ans = keyboard.nextLine();
+          System.out.println();
+       } 
+       while(ans.equalsIgnoreCase("y"));
+}
+</pre></div>
+<p>By passing the exceptions on to the main method we are able to fix a glitch that occurred when we included
+   the try/catch block within the body of the divide method. Notice above that both the divide method and the printResults
+   method are included within the try block. If the divide method throws an exception the try block will immediately
+   transfer control to the catch block bypassing the printResults method. This prevents the printResults method from
+   printing when a division by zero error occurs.</p>
+
+<h1>Summary</h1>
+
+<p>To recap, the Java framework makes the distinction between <strong>checked</strong> and <strong>unchecked</strong> exceptions.</p>
+<p><strong>Unchecked exceptions</strong>, such as the ArithmeticException that is thrown when you divide by zero, are not required to be handled by your
+   program. However, if you do not handle these exceptions by either using a try/catch block or by passing them on to the calling method
+   using the keyword throws, your program will crash when it encounters them. This again is considered to be a poor programming practice.</p>
+
+<p><strong>Checked exceptions</strong>, however, are required to be handled within your program either by using a try/catch block or using the throws keyword.
+   IOExceptions are examples of checked exceptions. Whenever you expect a method to throw a checked exception, and you choose not to handle the
+   exception with a try/catch block within that method, you must use the keyword throws within the declaration of that method to indicate that
+   the method is going to pass the exception on to its calling method. Within the body of the method, if the expected exception condition is met,
+    you use the throw keyword to actually raise the exception so that it can then be passed on to the calling method.</p>
+<div id="csCode"><pre>
+public void MethodName <div id="csHighlight"><pre>throws</pre></div> IOException
+{
+   if(Exception condition occurs)
+       <div id="csHighlight"><pre>throw</pre></div> new IOException()
+}
+</pre></div>
+
+<p>When do you need to use the throws keyword?</p>
+
+<h3>Condition</h3>
+<div id="csList">
+<ul>
+<li>Who must declare with throws?</li>
+<li>You call a method that throws a checked exception.	must be declared in the calling method if you do not provide a try/catch block.</li>
+<li>You throw a checked exception with the throw statement.	The exception must be declared in the throwing method if you do not provide a try/catch block.</li>
+<li>You write code that may cause an unchecked exception to be raised (e.g., Arithmetic Exception). The throws keyword is optional.</li>
+</ul></div> 
+
+<br>
+</div>	
+

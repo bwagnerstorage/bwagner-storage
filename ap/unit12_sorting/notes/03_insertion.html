@@ -1,0 +1,62 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Insertion Sort</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Insertion Sort</li>
+						<li>How to implement a Insertion Sort</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Insertion Sort</h1>
+<p>The insertion sort works just like its name suggests - it inserts each item into its proper
+ place in the list.</p> 
+
+<p><strong>Pros</strong>: Relatively simple and easy to implement.<br>
+<strong>Cons</strong>: Inefficient for large lists.</p> 
+<br>
+<h3>Applet - Insertion Sort Demonstration</h3>
+
+ <applet code="InsApplet.class" archive="InsSort.jar" codebase = "/applets" width="400" height="300">
+  </applet>
+
+<h1>Insertion Sort Efficiency</h1>
+<p>Like the bubble sort and selection sort, the insertion sort has a complexity of
+ O(n<sup>2</sup>). Although it has the same complexity, the insertion sort is a little over
+ twice as efficient as the bubble sort and almost 40% faster than the selection sort.</p> 
+
+<p>The insertion sort is a good middle-of-the-road choice for sorting lists of a few thousand
+   items or less.  The insertion sort shouldn't be used for
+   sorting lists larger than a couple thousand items or repetitive sorting of lists larger
+   than a couple hundred items.</p> 
+
+<h1>Insertion Sort Algorithm</h1>
+<div id="csCode"><pre>
+void insertionSort(int numbers[])
+{
+    int i, j, index;
+
+    for (i=1; i < numbers.length; i++)
+    {
+       index = numbers[i];
+       j = i;
+       while ((j > 0) && (numbers[j-1] > index))
+       {
+           numbers[j] = numbers[j-1];
+           j = j - 1;
+       }
+       numbers[j] = index;
+    }
+}
+</pre></div> 
+
+<br>
+</div>	
+

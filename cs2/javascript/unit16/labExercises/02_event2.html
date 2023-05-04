@@ -1,0 +1,253 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">16-2 Javascript EventHandler 2</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="https://www.w3schools.com/js/js_htmldom_events.asp" target="_blank" style="color:blue">Events</a></p></li>
+    <li><p><a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp" target="_blank" style="color:blue">Event Listener</a></p></li>
+    <li><p><a href="https://www.w3schools.com/jsref/obj_keyboardevent.asp" target="_blank" style="color:blue">KeyboardEvent</a></p></li>
+    <li><p><a href="https://www.w3schools.com/jsref/obj_mouseevent.asp" target="_blank" style="color:blue">MouseEvent</a></p></li>
+
+</ul>
+
+
+
+<ol id="csList">
+    <li><p>Create a new folder named <strong>EventHandler2</strong>. Inside this folder create another folder
+    named <strong>js</strong>.</p></li>
+<li><P>In the EventHandler2 folder create a new html file named <strong>02_event.html</strong> and then add the following code.<br>
+<div id="csOutput" style="width:630px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Event Handling 2&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;script src="js/Animation.js"&gt;&lt;/script&gt;
+        &lt;script src="js/Square.js"&gt;&lt;/script&gt;
+        &lt;style&gt;
+        #animationCanvas { 
+            border: 3px black solid;
+        }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;canvas id="animationCanvas" width="640" height="480"&gt;&lt;/canvas&gt;
+        &lt;script&gt;
+
+            // create Animation object
+            var animate = new Animation();
+
+            // animation loop
+            function start() 
+            {
+                requestAnimationFrame(start);
+                animate.run();
+            }
+            start();
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</p></li>
+<li><p>Create a file named <strong>Animation.js</strong> in the js folder and add the following code.</p>
+<div id="csOutput" style="width:630px"><pre>class Animation
+{
+    constructor()
+    {
+        this.square = new Square(295, 215, 80);   // create square
+        this.context = null;
+        this.initialize();
+    }
+
+    initialize()
+    {
+        var canvas = document.getElementById("animationCanvas"); 
+        this.context = canvas.getContext("2d");
+        this.square.initialize(canvas, this.context);
+    }
+
+    update()
+    {
+        this.square.update();
+    }
+
+    draw()
+    {
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.square.draw();
+    }
+
+    run()
+    {
+        this.draw();
+        this.update();  
+    }
+}
+</pre></div>
+</li>
+<li><p>Create a file named <strong>Square.js</strong> in the js folder and add the following code.</p>
+<div id="csOutput" style="width:630px"><pre>
+class Square
+{
+    constructor(x, y, w)
+    {
+        this.x = x;    // square's x coordinate
+        this.y = y;    // square's y coordinate
+        this.w = w;    // square's width
+        this.fillColor = "#000000";  // square's color
+        this.context = null;
+    }
+
+    initialize(canvas, context)
+    {
+        this.context = context;
+
+        document.addEventListener("keydown", function(event) 
+        {
+            if(event.keyCode === 37)     // 37 left arrow
+            {
+                this.x -= 2;           // move left 2 pixels
+            }
+            if(event.keyCode === 38)     // 38 up arrow
+            {
+                this.y-= 2;             // move up 2 pixels
+            }
+            if(event.keyCode === 39)     // 39 right arrow
+            {
+                this.x += 2;           // move right 2 pixels
+            }
+            if(event.keyCode === 40)     // 40 down arrow
+            {
+                this.y += 2;           // move down 2 pixels
+            }
+
+        }.bind(this));
+    }
+
+    update()
+    {
+        // code not needed
+    }
+
+    draw() 
+    {
+        this.context.beginPath();              // start drawing path
+        this.context.fillStyle = this.fillColor;     // fill color
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.context.rect(this.x, this.y, this.w, this.w);
+        this.context.fill();     // draw square
+    }
+
+}
+</pre></div>
+</li>
+<li><p>Execute the program. Use the left, right, up, and down arrow keys to move the square. You will notice that the
+       square's movement is slow and there is also a pause in its movement when you change keys. The cause of this unresponsiveness
+       is the fact that the code that makes the call to the addEventListener method is in the initialize function, which is where it should be, since it
+       only needs to be executed once. However, the code inside the callback function, that responds to 
+       the "keydown" event, needs to be in the update method so that it can be executed repeatedly. 
+</p></li>
+<li><p>To fix this problem replace the Square class with the code below.</p>
+<div id="csOutput" style="width:630px"><pre>
+class Square
+{
+    constructor(x, y, w)
+    {
+        this.x = x;    // square's x coordinate
+        this.y = y;    // square's y coordinate
+        this.w = w;    // square's width
+        this.fillColor = "#000000";  // square's color
+        this.context = null;
+        this.keydown = [];     // array to store which keys have been pressed down
+    }
+
+    initialize(canvas, context)
+    {
+        this.context = context;
+
+        document.addEventListener("keydown", function(event) 
+        {
+            this.keydown[event.keyCode] = true;
+
+        }.bind(this));
+    }
+
+    isKeyDown(code)
+    {
+        if(this.keydown !== undefined && this.keydown[code] === true)
+        {
+            return true;
+        }
+        return false;
+    }
+        
+    update()
+    {
+        if(this.isKeyDown(37))     // 37 left arrow
+        {
+            this.x -= 2;           // move left 2 pixels
+        }
+        if(this.isKeyDown(38))     // 38 up arrow
+        {
+            this.y-= 2;             // move up 2 pixels
+        }
+        if(this.isKeyDown(39))     // 39 right arrow
+        {
+            this.x += 2;           // move right 2 pixels
+        }
+        if(this.isKeyDown(40))     // 40 down arrow
+        {
+            this.y += 2;           // move down 2 pixels
+        }
+    }
+
+    draw() 
+    {
+        this.context.beginPath();              // start drawing path
+        this.context.fillStyle = this.fillColor;     // fill color
+        this.context.clearRect(0,0,640,480);   // erase canvas first
+        this.context.rect(this.x, this.y, this.w, this.w);
+        this.context.fill();     // draw square
+    }
+}
+</pre></div></li>
+<h2>Changes to the Square class</h2>
+<p>Here are the changes that were made to the Square class.</p>
+<ul id="csList2">
+<li><p>Since the original code in the callback function had to be relocated, the program needed away to track which keys had been pressed.
+       An array was chosen for this purpose because it was efficient and had added benefit of being able to handle multiple key events.</p>
+    <p>Look closely at the line of code placed inside the callback function.</p>
+    <div id="csCode" style="width: 350px"><pre>this.keydown[event.keyCode] = true;</pre></div>
+    <p>The array <strong>keydown</strong> was used to track which keys had been pressed. The event parameter's keyCode field placed
+       inside the indexing brackets "[]" was used to access the state of each key. The event object's keyCode variable contains a number representing the key
+       that triggered the event. Look at the list of Javascript <a href="https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes" 
+       style="color:blue" target="_blank">keyCodes</a>.
+       <p>Since these assigned keyCode are in sequential order they can be used to reference an array index to determine which keys
+          have been pressed. Look at the following illustration.</p>
+       <img src="images/02_event2.PNG">
+</li>
+<li><p>To simplify the code a new method was added to the Square class named <strong>isKeyDown</strong>. This method, given a keyCode value, returned true or false
+       depending upon whether the specified key was pressed.</p></li>
+<li><p>The isKeyDown method is used in the update method to continually monitor for key events.</p></li>
+</ul>
+<li><p>Execute the program again with this updated Square class.</p></li>
+<li>You probably noticed that the square's responsiveness to
+        key presses was greatly improved but there is now a different problem. The keys eventually stop working.</li>
+<li><p>The reason for this error has to do with the code added to the update method. When a key is pressed the code in the update method
+          determines which key was pressed and changes that keys corresponding location within the array to true. The error comes from the
+          fact that the boolean values in the array are never changed back to false when the keys are released. 
+          Therefore the if statements eventually all become true causing a stalemate.
+</p></li>
+</ol>
+
+<h1>Your Turn</h1>
+<p>Fix the problem in the current Square class by creating another event handler in the initialize method that will respond to the <strong>"keyup"</strong> event.
+   The callback function for this handler should set the value of the array index that corresponds to the key that trigger the event, to false.</p>
+
+<br>
+<br>
+</div>

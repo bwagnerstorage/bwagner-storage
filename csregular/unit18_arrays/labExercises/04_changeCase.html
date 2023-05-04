@@ -1,0 +1,120 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ChangeCase</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Complete the program below that allows a user to enter an unknown number of words and stores them in an array. Input should
+     continue until the user types the sentinel value "stop". When the input process is complete,
+	 the program should display each word in its original form, in all upper case letters, 
+	 and in all lower case letters.</p>
+  <p>Since you do not know how many words the user will enter the program needs to make the
+     array's <strong>physical size</strong> large enough to accommodate a reasonable amount of words, 
+	 therefore the program defines an array with a physical size of 50.</p>
+<div id="csCode"><pre>private String[] words = new String[50];   // array's physical size</pre></div>
+	<p>The program also needs to include a variable that keeps track of the array's <strong>logical size</strong>,
+	 that is, the actual number of words that have been entered into the array.</p>
+	 <div id="csCode"><pre>private int size = 0;   // array's logical size</pre></div>
+<br>
+<p>Copy the following code into a file named <strong>ChangeCase.java</strong>.</p>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class ChangeCase
+{
+    // instance variables
+    private String[] words = new String[50];  // array's physical size
+    private int size = 0;                     // array's logical size
+    private Scanner keyboard = new Scanner(System.in);
+
+    /* Reads strings input from the keyboard and stores them in the array words.
+     * Input continues until the user types "stop".
+     * The logical size of the array is incremented each time a new string
+     *    is added to the array.
+     */
+    public void readWords()
+    {
+
+    }
+
+    /* Prints each word in the array three times. Once in its original form,
+     * once in all capital letters, and once in all lowercase letters.
+     */
+    public void printWords()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        ChangeCase app = new ChangeCase();
+        app.readWords();
+        app.printWords();
+    }
+}
+
+</pre></div>
+
+<h2>Method readWords</h2>
+<p>Complete the method <strong>readWords</strong>. This method should allow a user to enter words into the array
+   until the sentinel value "stop" is encountered.</p>
+  <p>To enter multiple words into the array you will need to utilize a while loop. Inorder for the while loop to work properly 
+     you will need to define a local String variable within the method to store the user's input. You can then copy this variable's value
+	 into the array with code like the following:</p>
+  <div id="csCode"><pre>
+str = keyboard.nextLine();
+words[size] = str;         // size = logical size of the array
+</pre></div>
+<p>Make sure you increment the logical size of the array to reflect the addition of a new word to the list.</p>
+<h2>Method printWords</h2>
+<p>Complete the method <strong>printWords</strong>. This method should display each word in the array in its original form, in all upper case letters, 
+	 and in all lower case letters.</p>
+  <p>The String class provides two methods for converting a string to 
+     all uppercase and lowercase letters. Look at the following example</p>
+<div id="csCode">
+<pre>
+String str = "Computer";
+System.out.println(str.toUpperCase());
+System.out.println(str.toLowerCase());
+</pre>
+</div>
+<p>This code produces the following output</p>
+<div id="csOutput">
+<pre>
+COMPUTER
+computer
+</pre>
+  </div>
+<p>In Java strings are immutable. This means once a string has been defined it cannot be changed. Therefore the <strong>toUpperCase</strong> method returns a copy of
+   the original string with all the letters converted to uppercase. The <strong>toLowerCase</strong> method returns a copy of the original string with all the letters 
+   converted to lowercase.
+</p>
+
+<h1>Source File</h1>
+<p>ChangeCase.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+    <pre>
+Enter words (type "stop" to quit):
+Dog
+cat
+Mouse
+PiG
+CHicken
+stop
+
+
+Dog  DOG  dog
+cat  CAT  cat
+Mouse  MOUSE  mouse
+PiG  PIG  pig
+CHicken  CHICKEN  chicken
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit18_arrays/solutions/04_changeCaseSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+	<br>
+</div>
+

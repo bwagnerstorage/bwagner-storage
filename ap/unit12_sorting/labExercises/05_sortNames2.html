@@ -1,0 +1,160 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SortNames</div>
+
+<h1 style="font-size:1.2em; font-weight:700;">Video: <a href="https://www.youtube.com/watch?v=TzeBrDU-JaY&list=RDCMUClEEsT7DkdVO_fkrBw0OTrA&index=1" style="color:#00F; font-size:1.2em; font-weight:600;" target="_blank" >Merge Sort</a></h1>
+<br><hr>
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/SortNamesNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SortNames</a></h1> 
+
+<h1>Directions</h1>
+  <p>Complete the program, <strong>SortNames</strong>, that reads a list of names from a text file
+     and puts them into alphabetically order using the recursive <strong>Merge sort</strong> algorithm. 
+
+<p>Below is the merge sort algorithm used to sort an array of integers.</p>
+<div id="csCode"><pre>
+void mergeSort(int[] a, int lo, int hi)
+{
+   if (lo < hi)
+   {
+       int m = (lo + hi) / 2;
+       mergeSort (a, lo, m);
+       mergeSort (a, m+1, hi);
+       merge (a, lo, hi);
+   }
+}
+
+void merge(int[] a, int lo, int hi)
+{
+   int i, j, k, m;
+   int n=hi-lo+1;
+   int[] b=new int[n];           
+// temporary array
+ 
+            
+   k=0;
+   m=(lo+hi)/2;
+   // copy lower half to array b
+   for(i=lo; i<=m; i++)
+   {
+       b[k]=a[i];
+       k++;
+   }
+  // copy upper half to array b in opposite order
+   for (j=hi; j>=m+1; j--)
+   {
+       b[k]=a[j];
+       k++;
+   }
+        
+   i=0; 
+   j=n-1; 
+   k=lo;
+        
+   // copy back next-greatest element at each time
+   // until i and j cross
+   while (i<=j)
+   {
+      if (b[i]<=b[j])
+      {
+         a[k]=b[i];
+         k++;
+         i++;
+      }
+      else
+      {
+         a[k]=b[j];
+         k++;
+         j--;
+      }
+   }
+}
+</pre></div>
+
+ 
+<p>Complete the method <strong>selectionSort</strong>. Modify the
+  algorithm so that it will sort an ArrayList of Strings. You will need to use the following
+   ArrayList methods in your implementation:</p>
+   <div id="csList"><ul>
+<li>Object <strong>get</strong>(int index)</li> 
+<li>void <strong>set</strong>(int index, Object element)</li> 
+</ul></div>
+<p>You will also need to use the String class's compareTo method</p>
+<div id="csList"><ul>
+<li>int <strong>compareTo</strong>(Object obj)</li> 
+</ul></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+John
+Samantha
+Chad
+Drew
+Bill
+Henry
+Sarah
+Christy
+Ashley
+Mary
+Steve
+Marvin
+Kelly
+Brenda
+Matthew
+Kade
+Shelly
+Tamara
+Darren
+Fred
+Austin
+Jeremy
+Terrell
+Andrew
+Kendall
+Casey
+Martha
+Amy
+Sharron
+Reggie
+
+
+====================
+    Sorted List
+====================
+
+Amy
+Andrew
+Ashley
+Austin
+Bill
+Brenda
+Casey
+Chad
+Christy
+Darren
+Drew
+Fred
+Henry
+Jeremy
+John
+Kade
+Kelly
+Kendall
+Martha
+Marvin
+Mary
+Matthew
+Reggie
+Samantha
+Sarah
+Sharron
+Shelly
+Steve
+Tamara
+Terrell
+</pre>
+</div>
+	<br>
+</div>	
+

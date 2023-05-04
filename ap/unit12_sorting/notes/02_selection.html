@@ -1,0 +1,66 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Selection Sort</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Selection Sort</li>
+						<li>How to implement a Selection Sort</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Selection Sort</h1>
+<p>The selection sort works by selecting the smallest unsorted item remaining in the list,
+   and then swapping it with the item in the next position to be filled. </p>
+<p>
+<strong>Pros</strong>: Simple and easy to implement.<br>
+<strong>Cons</strong>: Inefficient for large lists.</p>
+<br>
+<h3>Applet - Selection Sort Demonstration</h3>
+   <applet code="SelSort.class" 
+    archive="SelSort.jar" 
+	codebase = "/applets" 
+	width="400" 
+	height="300">
+  </applet>
+
+<h1>Selection Sort Efficiency</h1>
+<p>The selection sort yields a 60% performance improvement over the bubble sort, but the insertion sort
+   is over twice as fast as the bubble sort and is just as easy to implement as the selection sort.</p> 
+
+<p>If you really want to use the selection sort for some reason, try to avoid sorting lists
+   of more than a 1000 items.</p> 
+
+<h1>Source Code</h1>
+<p>Below is the basic selection sort algorithm.</p> 
+
+<div id="csCode"><pre>
+void selectionSort(int numbers[])
+{
+   int i, j;
+   int min, temp;
+
+   for (i = 0; i < numbers.length-1; i++)
+   {
+      min = i;
+      for (j = i+1; j < numbers.length; j++)
+      {
+         if (numbers[j] < numbers[min])
+            min = j;
+      }
+      // swap
+      temp = numbers[i];
+      numbers[i] = numbers[min];
+      numbers[min] = temp;
+    }
+}
+</pre></div>
+<br>
+</div>	
+

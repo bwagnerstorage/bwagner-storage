@@ -1,0 +1,203 @@
+<img src="images/empty.gif" onload="doScrollTop(); resetNested(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Nested Loops</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a nested loop</li>
+						<li>How to create and use a nested loop</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Nested Loops</h1>
+  <p>When a loop is located inside the body of another loop it is said to be <strong>nested</strong> within another loop. When you "nest" two loops,
+     the outer loop takes control of the number of complete repetitions of the inner loop. While all types of loops may be nested,
+	 the most commonly nested loops are for loops.</p>
+<div id="csCode" style="width:420px">
+<pre>
+for(int r = 0; r < 10; r++)      <div id="csHighlight"><pre>// outer loop</pre></div>
+{
+   for(int c = 0; c < 10; c++)   <div id="csHighlight"><pre>// inner loop</pre></div>
+   {
+   
+   }
+}
+</pre>
+</div>
+  <p>We have all seen web page counters that resemble the one shown below. Your car's odometer works in a similar manner.</p>
+  
+
+ <br><div id="CounterDemo"></div><br>
+
+
+
+<p>This counter and your car's odometer are little more than seven or eight nested for loops, each going from 0 to 9. The far-right
+   number iterates the fastest, visibly moving from 0 to 9 as you drive your car or increasing by one as people visit a web site.
+   A for loop which imitates the movement of the far-right number is shown below:</p>
+<div id="csCode" style="width:420px">
+<pre>
+for(int ones=0; ones <= 9; ones++)
+{
+    // display ones value
+}
+</pre>
+</div>
+<p>The far-right number, however, is not the only number that is moving. All of the other numbers are moving also, but at a much slower pace.
+   For every 10 numbers that move in the column on the right, the adjacent column is incremented by one. The two nested loops shown below may
+   be used to imitate the movement of the two far-right numbers of a web counter or an odometer:</p>
+  <img src="images/nested1.gif">
+  
+ <p>The number of digits in the web page counter or the odometer determine the number of nested loops needed to imitate the process.</p>
+
+<div id="csNote">When working with nested loops, the outer loop changes only after the inner loop is completely finished.</div>
+
+<h3>Example 1</h3>
+<p>The program below demonstrates the flow of <strong>two nested for loops</strong>. Press the Step button to advance to the next statement. Press Reset to start the program over.</p>
+
+
+        <div id="demomain" class="demoNested">
+            <div id="demoheader" class="demo">
+                <table>
+                    <tr class="demo">
+                        <td class="demo"><pre class = "var" id="var1">cntr</pre></td>
+                        <td class = "var" id="nestedbox1">0</td>
+                        <td class="demo"><pre class = "var" id="var2">i</pre></td>
+                        <td class = "var" id="nestedbox2">0</td>
+                        <td class="demo"><pre class = "var" id="var3">j</pre></td>
+                        <td class = "var" id="nestedbox3">0</td>
+                        <td class="demo"><pre class = "var" id="condition1">  i < 5</pre></td>
+                        <td class = "var" id="nestedbox4">&nbsp;</td>
+                        <td class="demo"><pre class = "var" id="condition2">  j < 5</pre></td>
+                        <td class = "var" id="nestedbox5">&nbsp;</td>
+                    </tr>
+                </table>       
+            </div>
+            <div id="demobody">
+              <table>
+                <tr class="demo" >
+                    <td class="demo"><pre class="code" id="c1">int cntr = 0;</pre></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><span class="code">for (</span>
+                        <span class="code" id="c2">int i = 0</span>
+                        <span class="code">;</span>
+                        <span class="code" id="c3">i < 5</span>
+                        <span class="code">;</span>
+                        <span class="code" id="c4">i++</span>
+                        <span class="code">)</span></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><pre class="code">{</pre></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><span class="code">&nbsp;&nbsp;&nbsp;for (</span>
+                        <span class="code" id="c5">int j = 0</span>
+                        <span class="code">;</span>
+                        <span class="code" id="c6">j < 5</span>
+                        <span class="code">;</span>
+                        <span class="code" id="c7">j++</span>
+                        <span class="code">)</span></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><pre class="code">   {</pre></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><pre class="code" id="c8">      cntr++;</pre></td>
+                </tr>             
+                <tr class="demo">
+                    <td class="demo"><pre class="code">   }</pre></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><pre class="code">}</pre></td>
+                </tr>
+                <tr class="demo">
+                    <td class="demo"><pre class="code" id="c9">System.out.println(cntr);</pre></td>
+                </tr>
+              </table>
+            </div>
+            <div id="demofooter" class="demo">
+                <div id="buttonPanel" class="demo">
+                    <button  class="demo" onclick="advanceNested()">Step</button>&nbsp;&nbsp;
+                    <button  class="demo" onclick="resetNested()">Reset</button>
+                </div>
+            </div>   
+      </div>
+
+<br>
+<p>Notice that the variable <strong>cntr</strong> has a value of 25. This value can be calculated manually by multiplying how many times the
+   outer loop executes (i < 5) by how many times the inner loop executes (j < 5). That is 5 x 5 = 25.</p>
+
+
+<h3>Example 2</h3>
+<p>A factorial of an integer, n, is the product of all the integers from 1 to n. It is written as n!. For example, <br><br>
+
+5! = 1 x 2 x 3 x 4 x 5 = 120<br>
+8! = 1 x 2 x 3 x 4 x 5 x 6 x 7 x 8 = 40320<br><br>
+
+   It may seem a little strange
+   if you haven't come across it before, but it can be a very useful value. For instance, n! is the number of ways you can arrange
+   n different things in sequence, so a deck of cards can be arranged in 52! different sequences. Let's try calculating some factorial values.</p>
+
+<p>The following example will calculate the factorial of every integer 1 up to a given limit.</p>
+<div id="csCode">
+    <pre>
+public class Factorial
+{
+   public static void main(String[] args)
+   {
+      long limit = 20;      
+      long factorial = 1;
+	  
+      // Loop from 1 to the value of limit
+      for(int i =1; i <= limit; i++)                  <font color="#FF0000">// outer loop</font>
+      {
+          factorial = 1;
+          for(int factor = 2; factor <= i; factor++)  <font color="#FF0000">//  inner loop</font>
+          {
+              factorial *= factor;
+          }
+          System.out.println(i + "!" + " is " + factorial);
+      }
+   }
+}
+</pre>
+</div>
+<p>This program will produces the following output</p>
+<div id="csOutput">
+<pre>
+1! is 1
+2! is 2
+3! is 6
+4! is 24
+5! is 120
+6! is 720
+7! is 5040
+8! is 40320
+9! is 362880
+10! is 3628800
+11! is 39916800
+12! is 479001600
+13! is 6227020800
+14! is 87178291200
+15! is 1307674368000
+16! is 20922789888000
+17! is 355687428096000
+18! is 6402373705728000
+19! is 121645100408832000
+20! is 2432902008176640000
+</pre>
+</div>
+<P>The outer loop, controlled by i, walks through all the integers from 1 to the value of limit. In each iteration
+   of the outer loop, the variable factorial is initialized to 1 and the nested loop calculates the factorial of the
+   current value of i using factor as the control counter which runs from 2 to the current value of i. The resulting
+   value of factorial is then displayed, before going to the next iteration of the outer loop.</P>
+	<br>
+</div>	
+

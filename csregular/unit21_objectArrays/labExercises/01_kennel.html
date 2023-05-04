@@ -1,0 +1,185 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Kennel</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In this assignment you are going to implement two classes: <strong>Dog</strong> and <strong>Kennel</strong>. The Dog class stores
+     information about a dog including the dog's name and breed. The Kennel class is a client of the
+	 Dog class. It can store up to 5 Dog objects in an array.</p>
+<h1>Dog class</h1>
+<p>Create a file named <strong>Dog.java</strong> and add the following code.</p>
+<div id=csCode>
+<pre>
+public class Dog
+{
+    // instance variables
+
+    // constructors
+
+    // accessor methods
+
+    // mutator methods
+	
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol>
+<li>Declare a variable of type String named <strong>name</strong>.</li>
+<li>Declare a variable of type String named <strong>breed</strong>.</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="3">
+<li>Implement a <strong>default constructor</strong>.</li>
+<li>Implement a <strong>second constructor</strong> which allows a client to assign initial values to name and 
+    breed.</li>
+</ol>
+</div>
+<h3>Accessor Methods</h3>
+<div id="csList">
+<ol start="5">
+<li>Implement an <strong>accessor method</strong> for each instance variable.</li>
+</ol>
+</div>
+<h3>Mutator Methods</h3>
+<div id="csList">
+<ol start="6">
+<li>Implement a <strong>mutator method</strong> for each instance variable.</li>
+</ol>
+</div>
+<br>
+<h1>Kennel class</h1>
+<p>Create a file named <strong>Kennel.java</strong> and add the following code.</p>
+<div id=csCode>
+<pre>
+import java.util.*;
+
+public class Kennel
+{
+    // instance variable
+    private Dog[] dogs;     // declare array variable
+
+    // constructor
+    public Kennel()
+    {
+        dogs = new Dog[5];  // instantiate array with length 5
+    }
+
+    /* This method allows a user input information about 5 dogs and
+     * stores this information in the array dogs.
+     */
+    public void addDogs()
+    {
+        Scanner keyboard = new Scanner(System.in);
+
+
+    }
+
+    /* This method displays the name and breed for each Dog in the array.
+     */
+    public void printDogs()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Kennel app = new Kennel();
+        app.addDogs();
+        app.printDogs();
+    }
+}
+</pre>
+</div>
+<h3>addDogs Method</h3>
+<div id="csList">
+<ol start="7">
+<li>Implement the method <strong>addDogs</strong>. This method allows a user to enter 
+    information for 5 dogs and store this information in the array dogs.<br><br>
+	Here is the pseudocode for the method.<br>
+	<div id="csOutput">
+	<pre>
+loop I from 0 to 4
+   output "Enter dog name -->"
+   input NAME
+   output "Enter dog breed -->"
+   input BREED
+
+   DOGS[I] = new Dog(NAME, BREED);
+end loop</pre>
+	</div></li>	
+</ol>
+</div>
+
+<h3>printDogs Method</h3>
+<div id="csList">
+<ol start="8">
+<li>Implement the method <strong>printDogs</strong>. This method displays the name and breed
+    for each dog in the array.<br><br>
+	Here is the pseudocode for the method.<br>
+	<div id="csOutput">
+	<pre>
+loop I from 0 to 4
+   output DOGS[I].getName();
+   output DOGS[I].getBreed();
+end loop</pre>
+	</div></li>	
+</ol>
+</div>
+
+
+<h1>Source File</h1>
+<p>Dog.java</p>
+<p>Kennel.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+************************
+*       addDogs        *
+************************
+Enter dog name -->Maddie
+Enter dog breed -->Golden Retriever
+
+Enter dog name -->Sam
+Enter dog breed -->Black Lab
+
+Enter dog name -->Mitzy
+Enter dog breed -->Beagle
+
+Enter dog name -->Rex
+Enter dog breed -->German Sheperd
+
+Enter dog name -->Sally
+Enter dog breed -->mix
+
+************************
+*      printDogs       *
+************************
+Dog name = Maddie
+Dog breed = Golden Retriever
+
+Dog name = Sam
+Dog breed = Black Lab
+
+Dog name = Mitzy
+Dog breed = Beagle
+
+Dog name = Rex
+Dog breed = German Sheperd
+
+Dog name = Sally
+Dog breed = mix
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit21_objectArrays/solutions/01_kennelSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+	<br>
+</div>

@@ -1,0 +1,174 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Averages</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that generates a hundred random numbers in the range of -1000 to 1000. 
+     Tally the number of positive and negative numbers that are generated along with the sum
+	 and average of the negative numbers and the sum and average of the positive numbers. 
+	 Output for the program should consist of the list of random numbers and a summary listing
+	 the tally of negative and positive numbers, sum of the negative and positive numbers,
+	 and average of the negative and positive numbers.</p>
+
+<h3>Structure Chart</h3>	
+<p>The problem has been decomposed using the following structure chart.</p>
+<div align="center"><img src="images/averages1.png"></div>	
+
+  <p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class Averages
+{
+    // instance variables
+    private int posCount = 0;
+    private int negCount = 0;
+    private int posSum = 0;
+    private int negSum = 0;
+
+    /* This method generates a 100 random numbers and determines
+     * if each number is positive or negative. If the number is
+     * positive it increments posCount by one and increases posSum
+     * by the value of the number. If the number is negative it
+     * increments negCount by one and increases negSum by the
+     * value of the number.
+     */
+    public void tallyAndSum()
+    {
+
+    }
+	
+    /* Calculates an average by dividing the sum by the count
+     * @return the average
+     * @param sum the sum that is to be averaged
+     * @param count the count of the numbers to be averaged
+     */
+    public double average(int sum, int count)
+    {
+        
+    }
+
+    /* This method prints a summary report displaying the count,
+     * sum, and average of the positive and negative numbers.
+     */
+    public void printSummary()
+    {
+
+    }
+
+    /* return a random number in the range -1000 to 1000
+     */
+    public int generateNumber()
+    {
+        return (int)(Math.random() * 2001) - 1000;
+    }
+
+    public static void main(String[] args)
+    {
+        Averages app = new Averages();
+        app.tallyAndSum();
+        app.printSummary();
+    }
+}
+</pre>
+</div>
+<p>You are going to complete 2 void methods and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+<h3>Method generateNumber</h3>
+<p>The method <strong>generateNumber</strong> has been provided for you. This method returns
+a random number in the range of -1000 to 1000 inclusive.</p>
+<div id="csCode">
+<pre>
+/* return a random number in the range -1000 to 1000
+ */
+public int generateNumber()
+{
+   return (int)(Math.random() * 2001) - 1000;
+}
+</pre>
+</div>
+
+ <h3>Method tallyAndSum</h3>
+ <p>Complete the method <strong>tallyAndSum</strong> shown below. This method 
+ generates a 100 random numbers in the range of -1000 to 1000 inclusive and determines if each number is positive or negative.
+ If the number is positive it increments posCount by one and increases posSum by the 
+ value of the number. If the number is negative it increments negCount by one and
+ increases negSum by the value of the number. Use the method <strong>generateNumber</strong> in your
+ implementation.</p>
+<div id="csCode">
+<pre>
+/* This method generates a 100 random numbers and determines
+* if each number is positive or negative. If the number is
+* positive it increments posCount by one and increases posSum
+* by the value of the number. If the number is negative it
+* increments negCount by one and increases negSum by the
+* value of the number.
+*/
+public void tallyAndSum()
+{
+
+}
+</pre>
+</div>
+
+ <h3>Method average</h3>
+ <p>Complete the method <strong>average</strong> shown below. This method calculates and 
+    returns an average given a sum and a count.</p>
+<div id="csCode">
+<pre>
+/* Calculates an average by dividing the sum by the count
+ * @return the average
+ * @param sum the sum that is to be averaged
+ * @param count the count of the numbers to be averaged
+ */
+public double average(int sum, int count)
+{
+        
+}</pre>
+</div>
+
+ <h3>Method printSummary</h3>
+ <p>Complete the method <strong>printSummary</strong> shown below. This method prints a 
+    summary report displaying the count, sum, and average of the positive and negative numbers.
+	You will need to use method <strong>average</strong> in your implementation.</p>
+<div id="csCode">
+<pre>
+/* This method prints a summary report displaying the count,
+ * sum, and average of the positive and negative numbers.
+ */
+public void printSummary()
+{
+
+}</pre>
+</div>
+
+<h1>Source File</h1>
+<p>Average.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun" style="width: 678px">
+<pre>
+394 459 838 -419 -680 -487 -610 322 50 653 408 529 630 419 -69 -977 556 -173 -76
+9 575 -53 260 675 -244 -369 -427 -196 -157 -237 -832 -384 641 -399 -488 -111 -34
+411 -994 712 119 -890 -549 891 -855 247 410 793 950 146 727 -640 380 -297 154 5
+22 -702 -867 -390 -946 -651 -740 924 29 650 -583 98 -550 924 -121 98 409 786 904
+-37 -860 -225 918 647 746 533 -853 400 -980 -924 -901 -254 814 -483 692 132 676
+-251 540 -794 131 662 -66 -684 -108 -748
+
+
+           Summary
+-------------------------------
+Positive Numbers     = 49
+Sum of Positives     = 25584
+Average of Positives = 522.0
+
+Negative Numbers     = 51
+Sum of Negatives     = -26058
+Average of Negatives = -510.0
+
+</pre>
+</div>
+	<br>
+</div>
+

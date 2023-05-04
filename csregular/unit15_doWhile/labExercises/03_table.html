@@ -1,0 +1,143 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Table</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that utilizes a do-while loop to print a table like the sample run shown below. 
+     The number of lines printed should correspond to the number entered by the user.</p>
+	 
+<p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class Table
+{
+    private Scanner keyboard = new Scanner(System.in);
+	
+    /* This method prompts the user to input an integer value which 
+     * represents the number of rows in a table.
+     * @ return number of rows entered by the user
+     */
+    public int inputNumRows()
+    {
+        
+    }
+
+    /* This method displays a table of values from 1 up to the value
+     * of parameter rows. On each row of the table the method 
+     * displays the product of 10 times the row number, the product of 100
+     * times the row number, and the product of 1000 times the row
+     * number.
+     * @param rows the number of rows in the table
+     */
+    public void displayTable(int rows)
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Table app = new Table();
+        app.displayTable(app.inputNumRows());
+    }
+}
+</pre>
+</div>
+
+<p>You are going to complete 1 void method and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+<h3>Method inputNumRows</h3>
+<p>Complete the method <strong>inputNumRows</strong> shown below. This method displays
+the following prompt</p>
+<div id="csOutput">
+<pre>
+Enter number of rows -->
+</pre>
+</div>
+<p>Once the user inputs the number of rows it is returned by the method.</p>
+<div id="csCode">
+<pre>
+/* This method prompts the user to input an integer value which 
+ * represents the number of rows in a table.
+ * @ return number of rows entered by the user
+ */
+public int inputNumRows()
+{
+        
+}
+</pre>
+</div>
+<h3>Method displayTable</h3>
+<p>Complete the method <strong>displayTable</strong> shown below. This method displays
+   a table of values from 1 up to the value of parameter rows. On each row of the table the method 
+   displays the product of 10 times the row number, the product of 100
+   times the row number, and the product of 1000 times the row number. For example, if parameter rows 
+   has a value of 5 the method would display the following table. 
+<div id="csOutput">
+<pre>
+ N  10*N   100*N   1000*N
+----------------------------
+ 1   10     100     1000
+ 2   20     200     2000
+ 3   30     300     3000
+ 4   40     400     4000
+ 5   50     500     5000
+</pre>
+</div>
+<p></p>
+<div id="csCode">
+<pre>
+/* This method displays a table of values from 1 up to the value
+* of parameter length. On each row of the table the method 
+* displays the product of 10 times the row number, the product of 100
+* times the row number, and the product of 1000 times the row
+* number.
+* @param rows the number of rows in the table
+*/
+public void displayTable(int rows)
+{
+
+}
+</pre>
+</div>
+
+<h1>Source File</h1>
+<p>Table.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter number of rows --> 9
+
+  N  10*N   100*N   1000*N
+----------------------------
+  1   10     100     1000
+  2   20     200     2000
+  3   30     300     3000
+  4   40     400     4000
+  5   50     500     5000
+  6   60     600     6000
+  7   70     700     7000 
+  8   80     800     8000
+  9   90     900     9000
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter number of rows --> 2
+
+  N  10*N   100*N   1000*N
+----------------------------
+  1   10     100     1000
+  2   20     200     2000
+</pre>
+</div>
+<br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit15_doWhile/solutions/03_tableSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+	<br>
+</div>

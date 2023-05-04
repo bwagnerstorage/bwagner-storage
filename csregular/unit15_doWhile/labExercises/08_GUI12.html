@@ -1,0 +1,164 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">GUI12 Password</div>
+
+<div id="csContent"> 
+<div id="csCode">
+<pre>
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class GUI12 extends JFrame implements ActionListener
+{
+    // instance variables
+    private JButton okButton;
+    private JButton cancelButton;
+    private JTextField usernameTextField;
+    private JTextField passwordTextField;
+    private JLabel usernameLabel;
+    private JLabel passwordLabel;
+    private JLabel welcomeLabel;
+    
+    // constructor
+    public GUI12()
+    {       
+        // create button
+        okButton = new JButton("OK");
+        cancelButton = new JButton("Cancel");
+        
+        // set button attributes
+        okButton.setLocation(250, 200);
+        okButton.setSize(80, 25);
+        cancelButton.setLocation(150, 200);
+        cancelButton.setSize(80, 25);
+
+        // add button to frame
+        getContentPane().add(okButton);
+        getContentPane().add(cancelButton);
+        
+        // register listener with button
+        okButton.addActionListener(this);
+        cancelButton.addActionListener(this);
+        
+        // create textfields
+        usernameTextField = new JTextField();
+        passwordTextField = new JTextField();
+        
+        // set textfield attributes
+        usernameTextField.setLocation(200, 100);
+        usernameTextField.setSize(150, 25);
+        passwordTextField.setLocation(200, 150);
+        passwordTextField.setSize(150, 25);     
+        
+        // add textfield to frame
+        getContentPane().add(usernameTextField);
+        getContentPane().add(passwordTextField);
+        
+        // create labels
+        usernameLabel = new JLabel("UserName");
+        passwordLabel = new JLabel("Password");
+        welcomeLabel = new JLabel("Welcome");
+        
+        // set label attributes
+        usernameLabel.setLocation(125, 100);
+        usernameLabel.setSize(100, 25);
+        passwordLabel.setLocation(125, 150);
+        passwordLabel.setSize(100, 25);
+        welcomeLabel.setLocation(150, 170);
+        welcomeLabel.setSize(250, 40);
+        welcomeLabel.setVisible(false);
+        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 48));
+        
+        // add labels to frame
+        getContentPane().add(usernameLabel);
+        getContentPane().add(passwordLabel);
+        getContentPane().add(welcomeLabel);
+        
+        // set frame attributes
+        setLayout(null);
+        setSize(500, 500);                               
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        setVisible(true);                                
+    }
+    
+    public void actionPerformed(ActionEvent event)
+    {
+       if(event.getSource() == okButton)  // ok button pressed
+       {
+	   
+	   
+       }
+       if(event.getSource() == cancelButton)  // cancel button pressed
+       {
+	   
+	   
+       }
+    }
+    
+    // main method
+    public static void main(String[] args)
+    {
+        GUI12 app = new GUI12();  // run program
+    }
+}
+
+</pre>
+</div>
+<h1>Directions</h1>
+<div id="csList">
+<ol>
+<li>Open your GUI workspace and create a file named GUI12. Copy the code above into the file. 
+    Compile and execute program.</li>
+
+<li>Implement the <strong>actionPerformed</strong> method so that when a user enters the correct username and
+    password the message "Welcome" appears within the window.</li>
+
+<li>Set the username and password that will be used in the program by adding the following code
+    to the top of the actionPerformed method.
+	<div id="csCode" style="width:640px">
+<pre>
+String myUserName = "my username";
+String myPassword = "my password"; 
+</pre>
+</div>
+Change <strong>my username</strong> and <strong>my password</strong> to your username and password.<br>
+</li>
+<li>Retrieve the username and password entered into the two textfields, <strong>usernameTextField</strong> and
+    <strong>passwordTextField</strong>, and compare them to your username and password.</li>
+<li>When the user enters the correct username and password all of the graphical components
+   should disappear by setting their visibility to false. Here is an example:
+<div id="csCode" style="width:640px">
+<pre>
+usernameLabel.setVisible(false); 
+</pre>
+</div></li>
+<li>To display the Welcome message set the visibility of the welcomeLabel to true.</li>
+
+<li>If the user enters an incorrect username or password both textfields should be cleared
+    so the user can re-enter the username and password again. Here is an example:
+<div id="csCode" style="width:640px">
+<pre>
+usernameTextField.setText("");
+</pre>
+</div>
+ </li>
+
+<li>If the user presses the Cancel button the program should terminate. To terminate the 
+    program use the following code.
+<div id="csCode" style="width:640px">
+<pre>
+System.exit(0);
+</pre>
+</div>
+ </li>
+</ol>
+</div>
+<h1>Source File</h1>
+<p>GUI12.java</p>
+<h1>Sample Run</h1>
+<img src="images/GUI12.png">
+	<br>
+</div>
+

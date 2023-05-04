@@ -1,0 +1,76 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center"></div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A palindrome is a word that is spelled the same front ways and backwards (Examples: mom, noon, racecar). 
+  Write a program that allows the user to enter a word then tells the user whether the word is a palindrome.</p>
+<p>Copy the following code into a source file named <strong>PalindromeApp.java</strong>.</p>
+<div id="csCode">
+<pre>
+import java.util.*;
+
+public class PalindromeApp
+{
+    public static void main(String[] args)
+    {
+        PalindromeTester p = new PalindromeTester();
+        Scanner keyboard = new Scanner(System.in);
+        String ans;
+
+        do
+        {
+            System.out.print("Enter a word --> ");
+            String str = keyboard.nextLine();
+
+            if(p.palindrome(str, str.length()-1) == true)
+                System.out.println("This is a palindrome");
+            else
+                System.out.println("This is not a palindrome");
+
+            System.out.println();
+            System.out.print("Continue[Y/N]? ");
+            ans = keyboard.nextLine();
+            System.out.println();
+       }
+       while(ans.equalsIgnoreCase("y"));
+    }
+}
+
+class PalindromeTester
+{
+   /** 
+    * @param str the string to test
+    * @param strLength the length of str
+    * @return true if str is a palindrome; false otherwise
+    */
+    public boolean palindrome(String str, int strLength)
+    {
+
+    }
+}
+</pre>
+</div>
+<p>Complete the method <strong>palindrome</strong> as described above.</p>
+<h1>Source File</h1>
+<p>PalindromeApp.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter a word and I will determine if it is a palindrome.
+
+Word -->  racecar
+racecar is a palindrome.
+
+continue[Y/N]? Y
+
+Word-->  cat
+cat is not a palindrome.
+
+continue[Y/N]? N
+</pre>
+</div>
+	<br>
+</div>	
+

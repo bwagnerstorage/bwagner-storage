@@ -1,0 +1,253 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Basketball</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>A basketball coach has asked you to write a program that he can use to calculate player stats 
+     after a game. Given the following information: free throws made, free throws attempted, 
+	 2 point field goals made, 2 point field goals attempted, 3 point field goals made, and 3 point
+	 field goals attempted, he wants the program to generate the following information:
+	 percentage of free throws made, percentage of 2 point field goals made, percentage of 3 point
+	 field goals made, and total points scored.</p>
+	 <p>You decide the problem can be decomposed into the following two classes: 
+	 <strong>Player</strong> and <strong>Team</strong>. The Player class stores
+     the player's name, FT made, FT attempted, 2FG made, 2FG attempted, 3FG made, and 3FG attempted. 
+	 The class also calculates the percentage of FT made, percentage of 2FG made, percentage of 3FG made, and total points scored.</p>
+	 <p>The Team class is a client of the Player class. It uses an array to store up to 20 players.</p>
+<h1>Player class</h1>
+<p>Create a file named <strong>Player.java</strong> and add the following code.</p>
+<div id=csCode>
+<pre>
+public class Player
+{
+    // instance variables
+
+    // constructors
+
+    // accessor methods
+	
+    // other methods
+
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol>
+<li>Declare a variable of type String named <strong>playerName</strong>.</li>
+<li>Declare a variable of type int named <strong>ftm</strong> (free throws made).</li>
+<li>Declare a variable of type int named <strong>fta</strong> (free throws attempted).</li>
+<li>Declare a variable of type int named <strong>fg2m</strong> (2 point field goals made).</li>
+<li>Declare a variable of type int named <strong>fg2a</strong> (2 point field goals attempted).</li>
+<li>Declare a variable of type int named <strong>fg3m</strong> (3 point field goals made).</li>
+<li>Declare a variable of type int named <strong>fg3a</strong> (3 point field goals attempted).</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="8">
+<li>Add the following constructor<br>
+<div id="csCode" style="width:600px"><pre>public Player(String playerName, int ftm, int fta,
+              int fgm2, int fga2, int fgm3, int fga3)
+   {
+       this.playerName = playerName;
+       this.ftm = ftm;
+       this.fta = fta;
+       this.fgm2 = fgm2;
+       this.fga2 = fga2;
+       this.fgm3 = fgm3;
+       this.fga3 = fga3;
+   }</pre></div>
+<p>Notice the use of the keyword <strong>"this"</strong> in the body of the constructor. "this" is used to allow an object to refer to itself. I am using it here because I did not want to come up with different variable name for each of the 7 parameters. Look at the following code from above.</p>
+<div id="csCode" style="width:130px"><pre>this.ftm = ftm;</pre></div>
+<p>The "this" in the code is used to reference the variable ftm declared in the instance variable
+   section of the class. The ftm variable that does not use "this" refers to the parameter ftm which is a temporary local variable used to assign a value to the instance variable.
+</p>
+
+</li>
+</ol>
+</div>
+<h3>Accessor Methods</h3>
+<div id="csList">
+<ol start="9">
+<li>Implement an <strong>accessor</strong> method for each instance variable.</li>
+</ol>
+</div>
+<h3>Other Methods</h3>
+<div id="csList">
+<ol start="10">
+<li>Implement a method named <strong>getFTPercentage</strong>. This method calculates 
+    and returns the free throw percentage using the following formula:<br><br>
+<div id="csOutput" style="width:580px; font-size:1.0em">
+<pre>
+FREE_THROW_PERCENTAGE =<br> ((double)FREE_THROWS_MADE / FREE_THROWS_ATTEMPTED) * 100
+</pre>
+</div>
+	</li>
+<li>Implement a method named <strong>getFG2Percentage</strong>. This method calculates 
+    and returns the 2 point field goal percentage using the following formula:<br><br>
+<div id="csOutput" style="width:580px; font-size:1.0em">
+<pre>
+2POINT_FIELDGOAL_PERCENTAGE =<br> ((double)2POINT_FIELDGOAL_MADE / 2POINT_FIELDGOAL_ATTEMPTED) * 100
+</pre>
+</div>
+</li>
+<li>Implement a method named <strong>getFG3Percentage</strong>. This method calculates 
+    and returns the 3 point field goal percentage using the following formula:<br><br>
+<div id="csOutput" style="width:580px; font-size:1.0em">
+<pre>
+3POINT_FIELDGOAL_PERCENTAGE =<br> ((double)3POINT_FIELDGOAL_MADE / 3POINT_FIELDGOAL_ATTEMPTED) * 100
+</pre>
+</div>
+	</li>
+<li>Implement a method named <strong>getPointsScored</strong>. This method calculates 
+    and returns the total points scored using the following formula:<br><br>
+<div id="csOutput" style="width:580px; font-size:1.0em">
+<pre>
+POINTS_SCORED = <br>FREE_THROWS_MADE + 2POINT_FIELDGOAL_MADE * 2 + 3POINT_FIELDGOAL_MADE * 3
+</pre>
+</div>
+	</li>
+</ol>
+</div>
+<br>
+<h1>Team class</h1>
+<p>Create a file named <strong>Team.java</strong> and add the following code.</p>
+<div id=csCode>
+<pre>
+import java.util.*;
+
+public class Team
+{
+    // instance variables
+
+    // constructor
+
+
+    /* This method allows a user to input up to 20 basketball players and 
+     *  stores them in an array.
+     */
+    public void addPlayers()
+    {
+        Scanner keyboard = new Scanner(System.in);
+
+
+    }
+
+    /* This method displays each Player in the array 
+     */
+    public void printPlayers()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Team app = new Team();
+        app.addPlayers();
+        app.printPlayers();
+    }
+}
+</pre>
+</div>
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol start="14">
+<li>Add any necessary instance variables.</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="15">
+<li>Implement any necessary constructors.</li>
+</ol>
+</div>
+<h3>addPlayers Method</h3>
+<div id="csList">
+<ol start="16">
+<li>Implement the method <strong>addPlayers</strong>. This method allows a user
+    to input up to 20 basketball players and stores them in an array.
+</li>	
+</ol>
+</div>
+
+<h3>printPlayers Method</h3>
+<div id="csList">
+<ol start="17">
+<li>Implement the method <strong>printPlayers</strong>. This method displays each
+    Player in the array. The information displayed includes the player's name, FT made,
+    FT attempted, 2FG made, 2FG attempted, 3FG made, 3FG attempted, percentage of FT made,
+    percentage of 2FG made, percentage of 3FG made, and total points scored.	
+</ol>
+</div>
+<h1>Source File</h1>
+<p>Player.java</p>
+<p>Team.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+************************
+*      addPlayers      *
+************************
+
+Enter player name-->Michael Jordan
+Enter free throws made -->5
+Enter free throws attempted -->6
+Enter 2 pt field goals made -->12
+Enter 2 pt field goals attempted -->24
+Enter 3 pt fields goals made --3
+Enter 3 pt field goals attempted -->4
+
+Enter another player [y/n]:y
+
+Enter player name-->Magic Johnson
+Enter free throws made -->1
+Enter free throws attempted -->3
+Enter 2 pt field goals made -->8
+Enter 2 pt field goals attempted -->10
+Enter 3 pt fields goals made --1
+Enter 3 pt field goals attempted -->1
+
+Enter another player [y/n]:y
+
+Enter player name-->Dirk Nowitzki
+Enter free throws made -->10
+Enter free throws attempted -->10
+Enter 2 pt field goals made -->15
+Enter 2 pt field goals attempted -->28
+Enter 3 pt fields goals made --4
+Enter 3 pt field goals attempted -->5
+
+Enter another player [y/n]:n
+
+************************
+*     printPlayers     *
+************************
+Name = Michael Jordan
+Free Throws % = 83.33333333333334
+2 pt Field Goal % = 50.0
+3 pt Field Goal % = 75.0
+Total Points Scored = 38
+
+Name = Magic Johnson
+Free Throws % = 33.33333333333333
+2 pt Field Goal % = 80.0
+3 pt Field Goal % = 100.0
+Total Points Scored = 20
+
+Name = Dirk Nowitzki
+Free Throws % = 100.0
+2 pt Field Goal % = 53.57142857142857
+3 pt Field Goal % = 80.0
+Total Points Scored = 52
+</pre>
+</div>
+
+<br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit21_objectArrays/solutions/03_basketballSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>	
+

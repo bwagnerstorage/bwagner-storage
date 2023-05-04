@@ -1,0 +1,113 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">6-2 Javascript Events</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+    <li><p><a href="http://www.w3schools.com/js/js_scope.asp" target="_blank" style="color:blue">Javascript Scope</a></p></li>
+    <li><p><a href="http://www.w3schools.com/js/js_events.asp" target="_blank" style="color:blue">Javascript Events</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+    <li><p>File Name: <strong>6_2_events.html</strong></p></li>
+    <li><p>Copy the following code:</p>
+        <div id="csOutput" style="width: 600px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;6_2_events&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;style&gt;
+            #dialog {
+                background: lightskyblue;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 400px;
+                height: 150px;
+                margin: auto;
+                text-align: center;
+                border: 2px solid black;
+                box-shadow: 10px 10px 12px grey;
+                font-family: Georgia;
+                text-shadow: 1px 1px 3px grey;
+            }
+            
+            button {
+                margin: 20px;
+                padding: 10px;
+                width: 100px;
+                background-color: lightcyan;
+                border-color: white;
+                box-shadow: 3px 3px 7px black;
+                font-weight: bold;
+            }
+            button:hover {
+                background-color: lightgreen;
+            }
+            
+            #response {
+                display: none;
+                width:100%;
+                height:100%;
+                background: red;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            #response h1 {
+                font-size: 5.0em;
+                text-align: center;
+                padding-top: 100px;
+            }            
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="dialog"&gt;&lt;h3&gt;Do your feet stink?&lt;/h3&gt;
+            
+       &lt;/div&gt;
+        &lt;div id="response"&gt;&lt;h1&gt;Just Kidding!&lt;/h1&gt;&lt;/div&gt;
+        &lt;script&gt;
+            function moveDialog()
+            {
+                var w = window.innerWidth;    // width of body
+                var h = window.innerHeight;   // height of body
+                var left = Math.floor(Math.random() * (w - 400));
+                var top = Math.floor(Math.random() * (h - 150));
+                document.getElementById("dialog").style.left = left+"px";
+                document.getElementById("dialog").style.top = top+"px";
+            }
+            
+            function closeDialog()
+            {
+                var elem = document.getElementById("dialog");
+                elem.remove();
+                document.getElementById("response").style.display = "block";
+            }
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+        </pre></div>
+    </li>
+    <li><p>The div with id <strong>dialog</strong> is styled to be a dialog box centered in the
+            middle of the document. The function <strong>moveDialog</strong> repositions the 
+            dialog box at at random location within the boundaries of the document. The function
+            <strong>closeDialog</strong> removes the dialog box from the document making it disappear.</p>
+        <p>Add two buttons to the dialog box. The first button should be labeled "Yes" and the
+           second button should be labeled "No". The "Yes" button should call the function 
+           <strong>closeDialog</strong> when it is clicked and the "No" button should call the
+           function <strong>moveDialog</strong> when the mouse moves over the top of it. The styling for the buttons has
+           been provided.</p>
+    </li>
+    <li><p>The dialog box should look like the one shown below.</p></li>
+</ol>
+<br><hr><br>
+<img src="images/javascript_events2.png">
+	<br>
+</div>	

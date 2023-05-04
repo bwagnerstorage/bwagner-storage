@@ -1,0 +1,188 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MathSet</div>
+
+<div id="csContent"> 
+      <p>The <strong>union</strong> of two sets A and B is a set that contains 
+        all of the items in A and all of the items in B.<br>
+        The <strong>intersection</strong> of two sets A and B is a set of items 
+        in A that are also items in B.<br>
+        The <strong>difference</strong> of two sets is the set of items in A that 
+        are not also items in B.<br>
+        The set B is a <strong>subset</strong> of set A if and only if B is an 
+        empty set or all of the items in B are also in A.</p>
+      <h1>Directions</h1>
+      <p>1. Copy the code below into a java file named MathSet.</p>
+      <p>2. Complete the implementation of the following methods: <strong>union</strong>, 
+        <strong>difference</strong>, <strong>subset</strong>, and <strong>toArray</strong>.</p>
+<div id="csCode"><pre>import java.util.*; <font color="#009900">// needed for Set and Map</font>
+
+public class MathSet
+{
+    String[] list1 = {"red","blue","green","yellow","orange","white","black"};
+    String[] list2 = {"green", "orange", "white", "purple", "pink", "brown"};
+        
+    Set&ltString&gt; A = new HashSet &ltString&gt();
+    Set&ltString&gt B = new HashSet &ltString&gt();
+    
+    public MathSet()
+    {
+        <font color="#009900">// Add elements to set A</font>
+        for(int i=0; i < list1.length; i++)
+           A.add(list1[i]);
+        
+        <font color="#009900">// Add elements to set B</font>
+        for(int i=0; i < list2.length; i++)
+           B.add(list2[i]);
+           
+        <font color="#009900">// Test intersection method</font>
+        Set&ltString&gt intersectSet = intersection(A,B);
+        System.out.println("Intersection Test");
+        System.out.println("----------------");
+        print(intersectSet);
+        System.out.println();
+        
+        <font color="#009900">// Test union method</font>
+        Set&ltString&gt unionSet = union(A,B);
+        System.out.println("Union Test");
+        System.out.println("----------------");
+        print(unionSet);
+        System.out.println();
+        
+        <font color="#009900">// Test difference method</font>
+        Set&ltString&gt differenceSet = difference(A,B);
+        System.out.println("Difference Test");
+        System.out.println("----------------");
+        print(differenceSet);
+        System.out.println();
+        
+        <font color="#009900">// Test subset method</font>
+        boolean isSubset = subset(A,B);
+        System.out.println("Subset Test");
+        System.out.println("----------------");
+        if(isSubset == true)
+          System.out.println("B is a subset of A");
+        else
+          System.out.println("B is not a subset of A");
+        System.out.println();
+        
+        Set&ltString&gt C = new HashSet&ltString&gt();
+        isSubset = subset(A,C);
+        System.out.println("Subset Test");
+        System.out.println("----------------");
+        if(isSubset == true)
+          System.out.println("C is a subset of A");
+        else
+          System.out.println("C is not a subset of A");
+        System.out.println();
+        
+        <font color="#009900">// Test intersection method</font>
+        String[] array = toArray(A);
+        System.out.println("toArray Test");
+        System.out.println("----------------");
+        for(int i=0; i < array.length; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+        System.out.println();
+    }
+    
+    <font color="#009900">// prints the contents of a set</font>
+    public void print(Set&ltString&gt s)
+    {
+        Iterator iter = s.iterator();
+        
+        while(iter.hasNext())
+        {
+            System.out.print(iter.next() + " ");
+        }
+        System.out.println();
+    }
+    
+<font color="#009900">    //Precondition: given two Sets: set A and set B
+    //Postcondition: returns a set of items in A that are also items in B.</font>
+    public Set&ltString&gt intersection(Set&ltString&gt a, Set&ltString&gt b)
+    {
+        Set&ltString&gt result = new HashSet&ltString&gt();    <font color="#009900">// the return set</font>
+        Iterator&ltString&gt iter = a.iterator();  <font color="#009900">// get iterator on set a</font>
+        
+        while(iter.hasNext())
+        {
+            String obj = iter.next();
+            if(b.contains(obj))       <font color="#009900">// if set b contains object from set a</font>
+               result.add(obj);
+        }
+        
+        return result;
+    }
+    
+   <font color="#009900"> //Precondition: given two Sets: set A and set B
+    //Postcondition: returns a set that contains all of the items in A and all of the items in B.
+</font>    public Set&ltString&gt <font color="#FF0000">union</font>(Set&ltString&gt a, Set&ltString&gt b)
+    {
+
+    }
+    
+    <font color="#009900">//Precondition: given two Sets: set A and set B
+    //Postcondition: returns the set of items in A that are not also items in B.
+</font>    public Set&ltString&gt <font color="#FF0000">difference</font>(Set&ltString&gt a, Set&ltString&gt b)
+    {
+
+    }
+    
+ <font color="#009900">   //Precondition: given two Sets: set A and set B
+    //Postcondition: returns true if b is a subset of a, othewise it returns false.
+</font>    public boolean <font color="#FF0000">subset</font>(Set&ltString&gt a, Set&ltString&gt b)
+    {
+
+    }
+    
+<font color="#009900">    //Precondition: given Set s.
+    //Postcondition: returns an array that contains all of the elements for Set s.
+</font>    public String[] <font color="#FF0000">toArray</font>(Set&ltString&gt s)
+    {
+ 
+    }
+    
+    
+    
+    public static void main(String[] args)
+    {
+        MathSet app = new MathSet();     
+    }
+}
+</pre></div>
+<br>
+
+  <h1>Source File</h1>
+  <p>MathSet.java</p>
+  <h1>Sample Run</h1>
+  <div id="csSampleRun"> 
+    <pre>Intersection Test
+----------------
+green white orange
+
+Union Test
+----------------
+green red white orange pink brown blue yellow purple black
+
+Difference Test
+----------------
+red blue yellow black
+
+Subset Test
+----------------
+B is not a subset of A
+
+Subset Test
+----------------
+C is a subset of A
+
+toArray Test
+----------------
+green red white orange blue yellow black
+</pre></div>
+
+<br>
+</div>

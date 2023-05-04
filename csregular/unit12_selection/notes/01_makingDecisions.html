@@ -1,0 +1,149 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Making Decisions</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Jeroo if structure vs Java if structure</li>
+						<li>How to implement a Java if structure</li>
+						<li>How to implement a Java if-else structure</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Jeroo if Structure </h1>
+  <p>In Jeroo, you learned that an if structure is used to make decisions. These decisions 
+     determined how the jeroo interacted with the island environment.  For example, </p>
+  <div id="csCode">
+    <pre>
+if(bob.isNet(AHEAD))
+{
+   bob.toss();
+}
+</pre>
+  </div>
+<p>allowed the jeroo to make the decision to toss a flower if there was a net directly in front
+   of him.</p>
+<p>The Jeroo if structure consisted of two parts: a <strong>condition</strong> and a <strong>body</strong>.</p>
+  <div id="csCode">
+    <pre>
+if(<div id="csHighlight"><pre>condition</pre></div>)
+{
+   <div id="csHighlight"><pre>body</pre></div>
+}
+</pre>
+  </div>
+<p>Recall that a <strong>condition</strong> is an expression that evaluates to either true or false. The <strong>body</strong> is the
+   code that will be executed if the condition is true.</p>
+<h1>Java if Structure </h1>
+<p>This same structure is used to form if statements in Java. However, there is one significant difference 
+   between a Jeroo if structure and a Java if structure. The condition of a Jeroo if structure is limited 
+   to a call to one of the Jeroo sensor methods such as isNet, isWater, isFacing, hasFlower, etc.
+   On the other hand, the condition of a Java if structure does not have this limitation therefore
+   it can contain expressions that include literals, variables, methods, and relational operators.</p>
+<p>Here are some examples of Java if statements.</p>
+  <div id="csCode">
+    <pre>
+if(age == 18)       <div id="csComment"><pre>// condition contains a variable and int literal</pre></div>
+   System.out.println("I can vote");
+</pre>
+  </div>
+<div id="csCode">
+    <pre>
+if(cost > moneyInPocket)     <div id="csComment"><pre>// condition contains two variables</pre></div>
+   System.out.println("I can't buy it");
+</pre>
+  </div>
+<div id="csCode">
+    <pre>
+if(answer.equals("A"))      <div id="csComment"><pre> // condition contains a method call</pre></div>
+   score++;
+</pre>
+  </div>
+<div id="csCode">
+    <pre>
+if(isVowel(letter))         <div id="csComment"><pre>// condition contains a method call</pre></div>
+   System.out.println("The letter is a vowel");
+</pre>
+  </div>
+<h3>Blocked Structure</h3>
+<p>If the body of an if structure contains more than one statement the statements <strong>must</strong> by enclosed in 
+   curly braces { }. If the if structure contains only one statement the curly braces are optional.</p>
+<div id="csCode">
+    <pre>
+if(amount <= balance)
+{
+   double newBalance = balance - amount;
+   balance = newBalance;
+}
+</pre></div>
+<p>If the body contains only one statement the braces are optional. This if structure</p>
+<div id="csCode">
+    <pre>
+if(average == 100)
+{
+   grade = "A+";
+}
+</pre></div>
+<p>can also be written as</p>
+<div id="csCode">
+    <pre>
+if(average == 100)
+   grade = "A+";</pre></div>
+<h1>if-else Statement</h1>
+<p>Like Jeroo, Java provides an <strong>if-else</strong> structure. An if-else is used when you want to do one
+   thing if a condition is true and another thing if that condition is false. An if-else
+   will always execute either the if section or the else section, but never both.</p> 
+ <div id="csCode">
+    <pre>
+if(condition)
+{
+   body1     <div id="csComment"><pre>// if section</pre></div>
+}
+<div id="csHighlight"><pre>else</pre></div>
+{
+   body2     <div id="csComment"><pre>// else section</pre></div>
+}</pre></div>  
+<p>The following is an example of an if-else structure.</p>
+ <div id="csCode">
+    <pre>
+if(amount <= balance)
+{
+   balance = balance - amount;
+}
+else
+{
+   System.out.println("You don't have enough money");
+}</pre></div>
+<p>If the condition is true, the first assignment statement is executed; if the condition is false,
+   the println statement is executed. Only one or the other will be executed.</p>
+<p>Alternatively, the above code could have written like the following.</p>
+ <div id="csCode">
+    <pre>
+if(amount <= balance)
+   balance = balance - amount;
+else
+   System.out.println("You don't have enough money");
+</pre></div>
+<p>Notice the use of indentation to show which section each statement belongs.</p>
+<h3>Programming Style</h3>
+<p>The compiler doesn't care where you place braces. Some Java programmers prefer to place braces like the following.</p>
+ <div id="csCode">
+    <pre>
+if(amount <= balance) {
+   balance = balance - amount;
+}
+else {
+   System.out.println("You don't have enough money");
+}</pre></div>
+  <p>My preference is to line the curly braces vertically underneath each like 
+    the first example.</p>
+   	<br>
+</div>	
+

@@ -1,0 +1,253 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Digits</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>In the base ten number system, also known as decimal, numbers are formed by combining the
+     digits 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In this system, place values are formed by 
+	 increasing powers of 10. Look at the diagram below.</p>
+	 
+	 
+  <table id="csTable" style="margin:10px">
+    <tr>
+	     <td align="center" width="40">100,000</td>
+		 <td align="center" width="40">10,000</td>
+		 <td align="center" width="40">1000</td>
+		 <td align="center" width="40">100</td>
+		 <td align="center" width="40">10</td>
+		 <td align="center" width="40">1</td>
+	   </tr>
+	   <tr>
+	     <td align="center">10<sup>5</sup></td>
+		 <td align="center">10<sup>4</sup></td>
+		 <td align="center">10<sup>3</sup></td>
+		 <td align="center">10<sup>2</sup></td>
+		 <td align="center">10<sup>1</sup></td>
+		 <td align="center">10<sup>0</sup></td>
+	   </tr>
+	   <tr> 
+		  <td align="center" style="background-color: #FFFFFF"> </td>
+			 
+		  <td align="center" style="background-color: #FFFFFF"> </td>
+			 
+		  <td align="center" style="background-color: #FFFFFF">2</td>
+			 
+		  <td align="center" style="background-color: #FFFFFF">4</td>
+			 
+		  <td align="center" style="background-color: #FFFFFF">5</td>
+			 
+		  <td align="center" style="background-color: #FFFFFF">1</td>
+		  </tr>
+	 </table>
+<p>The number 2451 consists of 4 digits 2, 4, 5, and 1. The value of the number is calculated as
+   follows</p>
+
+<p>1 x 1 = 1 (one's column)<br>
+5 x 10 = 50 (ten's column)<br>
+4 x 100 = 400 (hundred's column)<br>
+2 x 1000 = 2000 (thousand's column)<br>
+----------------------------------------<br>
+2000 + 400 + 50 + 1 = 2451</p>
+</p>
+<p>Copy the following code into your source file.</p>
+<div id="csCode" style="width: 678px">
+<pre>
+import java.util.*;
+
+public class Digits
+{
+    /* This method continually divides parameter num
+     * by 10 as long as num is greater than 0. The
+     * number of divisions performed equals the number
+     * of digits in num.
+     * @ return the count of the number of digits in num
+     * @ param num the number to be divided
+     */
+    public int getDigitCount(int num)
+    {
+
+    }
+
+    /* This method continually divides parameter num
+     * by 10 as long as num is greater than 0. Before
+     * each division operation, it calculates and prints
+     * the remainder of num divided by 10.
+     */
+    public void printDigits(int num)
+    {
+
+    }
+
+    /* This method prompts the user to enter a number.
+     * It then makes a call to methods getDigitCount
+     * and printDigits using the number entered by
+     * the user as a parameter for both.
+     */
+    public void manager()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        int number = 0;
+
+        System.out.print("Enter number -->");
+        number = keyboard.nextInt();
+
+        System.out.println();
+        System.out.println("Digit Count = " + getDigitCount(number));
+        System.out.println();
+        System.out.println("Digits");
+        System.out.println("------");
+        printDigits(number);
+    }
+
+    public static void main(String[] args)
+    {
+        Digits app = new Digits();
+        app.manager();
+    }
+}
+</pre>
+</div>
+<p>You are going to complete 1 void method and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+<h3>Method manager</h3>
+<p>The method <strong>manager</strong>, shown below, is provided for you. Make no modifications
+to this method.</p>
+<div id="csCode">
+<pre>
+/* This method prompts the user to enter a number.
+ * It then makes a call to methods getDigitCount
+ * and printDigits using the number entered by
+ * the user as a parameter for both.
+ */
+public void manager()
+{
+     Scanner keyboard = new Scanner(System.in);
+     int number = 0;
+
+     System.out.print("Enter number -->");
+     number = keyboard.nextInt();
+
+     System.out.println();
+     System.out.println("Digit Count = " + getDigitCount(number));
+     System.out.println();
+     System.out.println("Digits");
+     System.out.println("------");
+     printDigits(number);
+}
+</pre></div>
+
+<h3>Method getDigitCount</h3>
+<p>Given a base ten number n, the number of digits in n can be determined by continually dividing
+   n by 10 until a quotient of 0 is reached. The number of times the division operation is performed
+   equals the number of digits in the number.</p>
+<p>For example, given the number 2451 the illustration below demonstrates how to calculate the
+   number of digits.
+   
+     <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Digits1/Slide1.PNG"></li>
+          <li><img src="images/Digits1/Slide2.PNG"></li>
+          <li><img src="images/Digits1/Slide3.PNG"></li>
+		  <li><img src="images/Digits1/Slide4.PNG"></li>
+		  <li><img src="images/Digits1/Slide5.PNG"></li>
+        </ul>
+    </div>	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+<p>Complete the method <strong>getDigitCount</strong> shown below. 
+This method continually divides parameter num by 10 as long as num is
+greater than 0. The number of divisions performed equals the number of
+digits in num.</p>
+<div id="csCode">
+<pre>
+/* This method continually divides parameter num
+ * by 10 as long as num is greater than 0. The
+ * number of divisions performed equals the number
+ * of digits in num.
+ * @ return the count of the number of digits in num
+ * @ param num the number to be divided
+ */
+public int getDigitCount(int num)
+{
+
+}
+</pre>
+</div>
+
+<h3>Method printDigits</h3>
+<p>Given a number n, the individual digits can be extracted from n by continually dividing n by 10 until
+   a quotient of 0 is reached. Before each division operation the remainder of the number n is 
+   calculated by using the remainder operator (%) to divide n by 10. The remainders are the individual digits.</p>
+   
+<p>For example, given the number 2451 the illustration below demonstrates how to extract
+   the individual digits from the number.
+   
+     <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/Digits2/Slide1.PNG"></li>
+          <li><img src="images/Digits2/Slide2.PNG"></li>
+          <li><img src="images/Digits2/Slide3.PNG"></li>
+		  <li><img src="images/Digits2/Slide4.PNG"></li>
+		  <li><img src="images/Digits2/Slide5.PNG"></li>
+		  <li><img src="images/Digits2/Slide6.PNG"></li>
+		  <li><img src="images/Digits2/Slide7.PNG"></li>
+		  <li><img src="images/Digits2/Slide8.PNG"></li>
+        </ul>
+    </div>	
+<p>Complete the method <strong>printDigits</strong> shown below. 
+This method continually divides parameter num by 10 as long as num is
+greater than 0. Before each division operation, it calculates and prints 
+the remainder of num divided by 10.</p>
+<div id="csCode">
+<pre>
+/* This method continually divides parameter num
+ * by 10 as long as num is greater than 0. Before
+ * each division operation, it calculates and prints
+ * the remainder of num divided by 10.
+ */
+public void printDigits(int num)
+{
+
+}
+</pre>
+</div>
+
+
+<h1>Source File</h1>
+<p>Digits.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter number -->95678
+
+Digit Count = 5
+
+Digits
+------
+8
+7
+6
+5
+9
+
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter number -->348
+
+Digit Count = 3
+
+Digits
+------
+8
+4
+3
+
+</pre>
+</div>
+	<br>
+</div>
+

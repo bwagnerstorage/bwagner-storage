@@ -1,0 +1,152 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Comparing Strings</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use the String class's equals method</li>
+						<li>equals method vs == operator</li>
+					    <li>How to use the String class's equalsIgnoreCase method</li>
+					    <li>How to use the String class's compareTo method</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>equals Method</h1>
+  <p>In Java, strings are not primitive data; they are objects. Only primitive data can test
+     relationships using the relational operators (==, !=, &lt;, &lt;=, &gt;, &gt;=). To test the 
+	 relationship between objects requires the use of methods. For example, to test whether two
+	 strings are equal to each other, you must use the String class's <strong>equals method</strong>.
+	 Look at the following example.</p>
+  <div id="csCode">
+    <pre>
+String color = "red";
+if(color.<div id="csHighlight"><pre>equals</pre></div>("red"))   <div id="csComment"><pre>// use equals method to test for string equality</pre></div>
+{
+   System.out.println("The color is red");
+}</pre>
+  </div>
+<p>The equals method will test each character of the two strings to see if they all match. It will return
+   true if there is an exact match; otherwise it will return false. The equals method will also
+   test the length of the two strings to see if they are the same. Strings of different lengths cannot be equal.</p>
+<p>You <strong>cannot</strong> use the == operator to compare strings for equality. Look at
+   the following example.</p>
+  <div id="csCode">
+    <pre>
+String color1 = "blue";
+String color2 = "blue";
+if(color1 == color2)    
+{
+   System.out.println("The colors are the same");
+}
+else
+{
+   System.out.println("The colors are different");
+}
+</pre>
+  </div>
+  <p>The output for the code prints what you would expect.</p>
+<div id="csOutput">
+<pre>
+The colors are the same
+</pre>
+</div>
+<p>However, if I modify the code like the following</p>
+  <div id="csCode">
+    <pre>
+String color1 = "blue";
+String color2 = <div id="csHighlight"><pre>new String("blue")</pre></div>;
+if(color1 == color2)     
+{
+   System.out.println("The colors are the same");
+}
+else
+{
+   System.out.println("The colors are different");
+}
+</pre>
+  </div>
+  <p>The output for this code prints</p>
+<div id="csOutput">
+<pre>
+The colors are different
+</pre>
+</div>
+<p>even though they are the same string.</p>
+<p>The reason for this discrepancy is the == operator does not test to see if two strings are
+   equal; instead it tests to see whether the two string variables refer to the identical string
+   object. You can have strings with identical contents stored in different objects, so you will
+   never want to use this test in your programs.
+</p>
+<div id="csNote">
+Do not use the == operator to compare strings. Use the <strong>equals</strong> method instead.
+</div><br>
+<h1>equalsIgnoreCase Method</h1>
+<p>In Java, letter case matters. For example, "John" and "JOHN" are not the same string.
+   To ignore the letter case, use the <strong>equalsIgnoreCase</strong> method.</p>
+     <div id="csCode">
+    <pre>
+if(str1.equalsIgnoreCase(str2))
+{
+    <div id="csComment"><pre>// body</pre></div>
+}
+</pre>
+  </div><br>
+<h1>compareTo Method </h1>  
+<p>If two strings are not identical to each other, you still may want to know the relationship
+   between them. The <strong>compareTo</strong> method compares strings in dictionary order. If</p>
+      <div id="csCode">
+    <pre>
+str1.compareTo(str2) < 0
+</pre>
+  </div>  
+  <p>is true then the string str1 comes before the string str2 in the dictionary. For example, this
+     is the case if str1 is "John", and str2 is "Steve". If</p>
+      <div id="csCode">
+    <pre>
+str1.compareTo(str2) > 0
+</pre>
+  </div>
+    <p>is true then str1 comes after str2 in dictionary order. Finally, if</p>
+  <div id="csCode">
+    <pre>
+str1.compareTo(str2) == 0
+</pre>
+  </div>
+  <p>is true then str1 and str2 are equal.</p>
+  <p>Actually, the "dictionary" ordering used by Java is slighly different from that of a normal
+     dictionary. Java is case sensitive and sorts characters by putting numbers first, then 
+	 uppercase characters, then lowercase characters. For example, 1 comes before B, which comes
+	 before a. The space character comes before all other characters.</p>
+  <p>Here is an example of code that uses <strong>compareTo</strong> method.</p>
+<div id="csCode">
+    <pre>
+String s1 = "apple";
+String s2 = "orange";
+
+if(s1.compareTo(s2) < 0)
+{
+   System.out.println(s1 + " is less than " + s2);
+}
+else
+{
+   System.out.println(s2 + " is less than " + s1);
+}
+</pre>
+
+  </div>
+<p>The code would produce the following output.</p>
+  <div id="csOutput">
+<pre>
+apple is less than orange
+</pre>
+</div>
+<br>
+</div>	
+

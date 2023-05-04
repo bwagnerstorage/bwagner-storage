@@ -1,0 +1,122 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SortNames</div>
+
+<h1 style="font-size:1.2em; font-weight:700;">Video: <a href="https://www.youtube.com/watch?v=GUDLRan2DWM&list=RDCMUClEEsT7DkdVO_fkrBw0OTrA&index=6" style="color:#00F; font-size:1.2em; font-weight:600; target="_blank" >Selection Sort</a></h1>
+<br><hr>
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/SortNamesNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SortNames</a></h1> 
+<h1>Directions</h1>
+  <p>Complete the program, <strong>SortNames</strong>, that reads a list of names from a text file
+     and puts them into alphabetically order using the <strong>selection sort</strong> algorithm. 
+
+<p>Below is the selection sort algorithm used to sort an array of integers.</p>
+<div id="csCode"><pre>
+void selectionSort(int numbers[])
+{
+  int i, j;
+  int min, temp;
+
+  for (i = 0; i < numbers.length-1; i++)
+  {
+    min = i;
+    for (j = i+1; j < numbers.length; j++)
+    {
+      if (numbers[j] < numbers[min])
+        min = j;
+    }
+    // swap
+    temp = numbers[i];
+    numbers[i] = numbers[min];
+    numbers[min] = temp;
+  }
+}
+</pre></div>
+
+ 
+<p>Complete the method <strong>selectionSort</strong>. Modify the
+  algorithm so that it will sort an ArrayList of Strings. You will need to use the following
+   ArrayList methods in your implementation:</p>
+   <div id="csList"><ul>
+<li>Object <strong>get</strong>(int index)</li> 
+<li>void <strong>set</strong>(int index, Object element)</li> 
+</ul></div>
+<p>You will also need to use the String class's compareTo method</p>
+<div id="csList"><ul>
+<li>int <strong>compareTo</strong>(Object obj)</li> 
+</ul></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+John
+Samantha
+Chad
+Drew
+Bill
+Henry
+Sarah
+Christy
+Ashley
+Mary
+Steve
+Marvin
+Kelly
+Brenda
+Matthew
+Kade
+Shelly
+Tamara
+Darren
+Fred
+Austin
+Jeremy
+Terrell
+Andrew
+Kendall
+Casey
+Martha
+Amy
+Sharron
+Reggie
+
+
+====================
+    Sorted List
+====================
+
+Amy
+Andrew
+Ashley
+Austin
+Bill
+Brenda
+Casey
+Chad
+Christy
+Darren
+Drew
+Fred
+Henry
+Jeremy
+John
+Kade
+Kelly
+Kendall
+Martha
+Marvin
+Mary
+Matthew
+Reggie
+Samantha
+Sarah
+Sharron
+Shelly
+Steve
+Tamara
+Terrell
+</pre>
+</div>
+	<br>
+</div>	
+

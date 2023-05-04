@@ -1,0 +1,159 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Square</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that will allow a user to enter a word from the keyboard then prints the letters of the word in a square pattern like the sample runs shown below.</p>
+  <p>Copy the following code into your source file.</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class Square
+{
+    private String word = "";   // string input by user
+	
+    /* This method prompts the user to enter a string. The user's
+     * response is stored in the instance variable word.
+     */
+    public void readString()
+    {
+        
+    }
+	
+    /* This method returns a string of spaces equal to the 
+     * length - 2.
+     * @ return a string containing spaces
+     * @ param length the number of spaces needed
+     */
+    public String getSpace(int length)
+    {
+        
+    }
+	
+    /* This method displays the instance variable word
+     * in a square pattern.
+     */
+    public void printSquare()
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Square app = new Square();
+        app.readString();
+        app.printSquare();
+    }
+}
+  </pre>
+  </div>
+<p>You are going to complete 2 void methods and 1 non-void method. Do not
+   make an modifications to the main method.</p>
+<h3>Method readString</h3>
+<p>Complete the method <strong>readString</strong> shown below. This method prompts the
+   user to enter a string. The user's response is stored in the instance variable word.
+   You will need a local Scanner object.</p>
+<div id="csCode">
+<pre>
+/* This method prompts the user to enter a string. The user's
+ * response is stored in the instance variable word.
+ */
+public void readString()
+{
+        
+}
+</pre>
+</div>
+<h3>Method getSpace</h3>
+  <p>Complete the method <strong>getSpace</strong> shown below. The purrpose of 
+    this method is fill the blank space between the two columns of letters. </p>
+  <div align="center"><img src="images/squares1.png"></div>
+  <p>This is accomplished by creating and returning a string that contains spaces 
+    equal in size to the length of the input string - 2. The parameter length 
+    represents the length of the input string. For example, if parameter length 
+    equals 7 then the method would return a string containing 5 spaces. If parameter 
+    length equals 10 then the method would return a string containing 8 spaces. 
+  </p>
+  <p>To build the string of spaces you will need to use the String class's append 
+    operator +=. For example, the following code would append a space to the end 
+    of the string contained in the variable sp:</p>
+
+ <div id="csCode" style="width:100px">
+<pre>sp += " ";</pre>
+</div>
+<p>&nbsp;</p>
+<div id="csCode">
+<pre>
+
+/* This method returns a string of spaces equal to the 
+ * length - 2.
+ * @ return a string containing spaces
+ * @ param length the number of spaces needed
+ */
+public String getSpace(int length)
+{
+        
+}
+</pre>
+</div>
+
+<h3>Method printSquare</h3>
+<p>Complete the method <strong>printSquare</strong> shown below. This method prints the
+   instance variable word in a square pattern. When printing the spacing between the
+   two columns of characters make a call to method <strong>getSpace</strong> passing it the length of
+   word as a parameter.</p>
+ <p>When printing the column of characters backward you will 
+   need to use the length of word - 1. Recall that the last letter's position in
+   a string is always 1 less than its length. For example, the string "dog" has
+   a length of 3 but the last letter "g" is at position 2 in the string.</p>
+<div id="csCode">
+<pre>
+/* This method displays the instance variable word
+ * in a square pattern.
+ */
+public void printSquare()
+{
+
+}
+</pre>
+</div>
+
+<h1>Source File</h1>
+<p>Square.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter word -->computer
+
+computer
+c      r
+o      e
+m      t
+p      u
+u      p
+t      m
+e      o
+r      c
+computer
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter word -->friend
+
+friend
+f    d
+r    n
+i    e
+e    i
+n    r
+d    f
+friend
+</pre>
+</div>
+	<br>
+</div>	
+
