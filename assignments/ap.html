@@ -1,0 +1,426 @@
+<!--
+<head>
+    <title>Assignnment</title>
+    <link rel="stylesheet" type="text/css" href="css/compsci.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.treeview.css" />
+    <link rel="stylesheet" type="text/css" href="css/bjqs.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+
+    <script language="JavaScript" src="js/buildtree.js"></script>
+    <script language="JavaScript" src="js/packed.js"></script>
+    <script language="JavaScript" src="js/script.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+    <script type="text/javascript" src="js/bjqs-1.3.min.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+</head>
+<div id="csSchedule">AP</div>
+
+<table width="655px" id="csTableSchedule">
+    <tr>
+        <th style="width:60px">Day</th>
+        <th style="width:60px">Date Assigned</th>
+        <th style="width:475px">Assignment</th>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>03-03</td>
+      <td style="text-align:left">Unit 7 AP Classroom</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>03-03</td>
+      <td style="text-align:left">Unit 7 AP Classroom</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-28</td>
+      <td style="text-align:left">7.3.1 SortNames, 7.3.2 SortStates</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-26</td>
+      <td style="text-align:left">7.2.1 RecursiveSearch, AP FR Book</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-24</td>
+      <td style="text-align:left">AP FR WordPairs</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-20</td>
+      <td style="text-align:left">AP FR Delimiters</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-18</td>
+      <td style="text-align:left">AP FR Appointment</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-13</td>
+      <td style="text-align:left">AP FR StudentAnswerSheet</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-11</td>
+      <td style="text-align:left">AP FR Retirement, AP FR Cookie</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-05</td>
+      <td style="text-align:left">AP FR SchoolRoster, AP FR WordList</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>02-03</td>
+      <td style="text-align:left">7.1.3 Diet, AP FR SchoolRoster</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-30</td>
+      <td style="text-align:left">7.1.3 Diet</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-28</td>
+      <td style="text-align:left">7.1.2 PhoneList, 7.1.3 Diet</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-24</td>
+      <td style="text-align:left">7.1.1 ArrayListPractice</td>
+    </tr>
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-22</td>
+      <td style="text-align:left">AP ClassRoom Unit 6 Progress Check FRQ</td>
+    </tr>
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-17</td>
+      <td style="text-align:left">AP ClassRoom Unit 6 Progress Check MCQ</td>
+    </tr>
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-15</td>
+      <td style="text-align:left">6.3.1 SortPractice, 6.3.2 SortFriends</td>
+    </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>01-15</td>
+      <td style="text-align:left">6.2.2 States</td>
+    </tr>
+
+    <tr>
+         <td>
+             <div align="center">A</div>
+         </td>
+         <td>12-06</td>
+         <td style="text-align:left">6.2.1 SpellCheck</td>
+   </tr>
+
+    <tr>
+            <td>
+                <div align="center">A</div>
+            </td>
+            <td>12-04</td>
+            <td style="text-align:left">6.2.1 SpellCheck</td>
+    </tr>
+
+    <tr>
+      <td style="background-color: yellow" colspan="3">End of 1st Semester</td>
+   </tr>
+
+   <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>12-12</td>
+      <td style="text-align:left">Arrays Test</td>
+  </tr>
+
+  <tr>
+    <td>
+        <div align="center">A</div>
+    </td>
+    <td>12-10</td>
+    <td style="text-align:left">Arrays Test</td>
+  </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>12-02</td>
+      <td style="text-align:left">AP FR NumberCube</td>
+  </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>11-21</td>
+      <td style="text-align:left">AP FR NumberCube</td>
+  </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>11-19</td>
+      <td style="text-align:left">AP FR NumberCube</td>
+  </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>11-15</td>
+      <td style="text-align:left">AP FR StudentRecord</td>
+  </tr>
+
+    <tr>
+      <td>
+          <div align="center">A</div>
+      </td>
+      <td>11-13</td>
+      <td style="text-align:left">AP FR SelfDivisor</td>
+  </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>11-11</td>
+        <td style="text-align:left">AP FR GroceryList</td>
+    </tr>
+
+    <tr>
+         <td>
+             <div align="center">A</div>
+         </td>
+         <td>11-07</td>
+         <td style="text-align:left">6.1.4 MyArray</td>
+     </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>11-05</td>
+        <td style="text-align:left">6.1.4 MyArray</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>11-01</td>
+        <td style="text-align:left">6.1.3 Tardies</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>10-30</td>
+        <td style="text-align:left">6.1.3 Tardies</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>10-28</td>
+        <td style="text-align:left">6.1.2 Vowels</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>10-24</td>
+        <td style="text-align:left">6.1.1 Numbers</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>10-22</td>
+        <td style="text-align:left">Unit 2 FRQ</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>10-18</td>
+        <td style="text-align:left">Unit 2 FRQ</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>10-10</td>
+        <td style="text-align:left">AP FR APLine, Unit 2 MCQ Part A, B, Unit 2 FRQ</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>09-24</td>
+        <td style="text-align:left">5.2.3 School Dance</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>09-20</td>
+        <td style="text-align:left">5.2.1 Box, 5.2.2 Car</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>09-18</td>
+        <td style="text-align:left">5.1.4 Utility, 5.1.5 UIL CompSci</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>09-16</td>
+        <td style="text-align:left">5.1.3 Guessing Game</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>09-10</td>
+        <td style="text-align:left">5.1.1 Method Practice 1, 5.1.2 Method Practice 2</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>09-04</td>
+        <td style="text-align:left">AP FR Responses 2.1.1 Money</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>08-28</td>
+        <td style="text-align:left"><a href="http:\\myap.collegeboard.com" style="color:blue" target="_blank">myap.collegeboard.com</a><br>
+            Unit 1 Progress Check: MCQ Part A<br>
+            Unit 1 Progress Check: MCQ Part B</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>08-26</td>
+        <td style="text-align:left"> MagPie Activities 5</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>08-22</td>
+        <td style="text-align:left"> MagPie Activities 3, 4</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>08-20</td>
+        <td style="text-align:left"> MagPie Activities 1, 2</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>08-16</td>
+        <td style="text-align:left"> Number Systems Test</td>
+    </tr>
+
+    <tr>
+        <td>
+            <div align="center">A</div>
+        </td>
+        <td>08-14</td>
+        <td style="text-align:left">Syllabus, Number Systems Worksheet</td>
+    </tr>
+</table>
+<div align="center"></div>
+-->
