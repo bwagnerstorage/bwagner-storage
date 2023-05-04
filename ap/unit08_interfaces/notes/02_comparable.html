@@ -1,0 +1,66 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Comparable Interface</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is the Comparable Interface</li>
+						<li>How is the compareTo method used to compare two objects</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>The Comparable Interface</h1>
+<p>The Java standard class library contains a number of important interfaces including Comparable, List,
+   Iterator, and ListIterator, just to name a few. The Comparable interface contains only one method, compareTo, 
+   which takes an object as a parameter and returns an integer.
+   <strong>This interface is important because it gives us a standard way to compare one object to another.</strong> 
+<br>
+<h1>The compareTo Method</h1>
+<div id="csCode">
+<pre>
+public interface Comparable
+{
+   int compareTo(Object obj);
+}
+</pre></div>
+
+<p>The <strong>compareTo</strong> method compares the executing object to the parameter to determine their relative ordering.
+It returns an integer that is less than, equal to, or greater than zero if the executing
+object is less than, equal to, or greater than the parameter, respectively.</p>
+
+<h1>String Class's compareTo Method</h1>
+<p>The <strong>String</strong> class implements the <strong>Comparable</strong> interface therefore it contains a compareTo method. 
+   The String class uses this method to establish lexicographical ordering between two strings.</p>
+
+<p>For example, the code below would assign a <strong>negative</strong> value to result since the string
+   "cat" comes before "dog" in lexicographical ordering.</p>
+   
+<div id="csCode">
+<pre>
+int result = "cat".compareTo("dog");
+</pre></div>
+
+<p>This code would assign a <strong>positive</strong> value to result since the string
+   "pig" comes after "horse" in lexicographical ordering.</p>
+   
+<div id="csCode">
+<pre>
+int result = "pig".compareTo("horse");
+</pre></div>
+
+<p>This code would assign a value of <strong>zero</strong> to result since the two
+   strings are equal.</p>
+   
+<div id="csCode">
+<pre>
+int result = "cow".compareTo("cow");
+</pre></div>
+<br>
+</div>	
+

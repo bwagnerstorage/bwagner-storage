@@ -1,0 +1,198 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 2.1</div>
+
+<div id="csContent"> 
+<h1>FXML</h1>
+<p>Follow these steps to create a JavaFX application using a FXML file.
+<div id="csList">
+<ol>
+<li><p>Click the new Project Button.</p></li>
+<li><p>Under Categories: select <strong>JavaFX</strong>, under Projects:
+        select <strong>JavaFX FXML Application</strong>, then press Next.</p></li>
+<li><p>For the <strong>Project Name</strong> type <strong>JavaFXExercise2</strong>.<br>
+For the <strong>Project Location</strong> use the <strong>Browse</strong> button to navigate to your <strong>JavaFX Exercises</strong> folder.<br>
+Click Finished.</p></li>
+<li><p>In the Project Window right-click on the file <strong>FXMLDocument.fxml</strong> and 
+       select <strong>edit</strong>.</p>
+<img src="JavaFX/images/projectsWindow.PNG" class="center" width="50%">
+<p>The file displayed is a FXML file. <strong>FXML</strong> is an XML-based user interface markup language 
+   created by Oracle for defining the user interface of a JavaFX application. Similar
+   to HTML, FXML uses tags and attributes to layout GUI controls within an application's 
+   window.</p>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - To learn more about XML click <a href="https://www.w3schools.com/xml/xml_whatis.asp" target="_blank" style="color:blue">here</a>.</p>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - To learn more about FXML click <a href="https://www.w3schools.com/xml/xml_whatis.asp" target="_blank" style="color:blue">here</a>.</p>
+   <p>What is the purpose of FXML? FXML is another way to create the GUI interface(layouts and 
+   controls) of a JavaFX application. You can write this code yourself or better yet use <strong>Scene Builder</strong>
+   to automatically generate the FXML code as you drag and drop nodes onto your application window.</p>
+
+   <p>As mentioned above there are two ways to create a GUI interface for a 
+    JavaFX application. You can use JavaFX classes, like the example code from Unit 1, or you 
+    can use FXML markup as used in this example. 
+    Lets compare these two methods
+    by taking the code from the FXMLDocument file and compare it with JavaFX code 
+    that generates the same GUI interface.</p>
+
+<p>The code from the FXMLDocument file is shown below.</p>
+<h3>FXML Markup Code</h3>
+<div id="csCode" style="width:1220px"><pre>
+&lt;AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" x:controller="javafxexercise2.FXMLDocumentController"&gt;
+    &lt;children&gt;
+        &lt;Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" /&gt;
+        &lt;Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" /&gt;
+    &lt;/children&gt;
+&lt;/AnchorPane&gt;
+</pre></div>
+
+<p>The JavaFX code below generates the same GUI interface as the FXML code above.</p>
+
+<h3>JavaFX Code</h3>
+<div id="csCode" style="width:640px"><pre>
+Button btn = new Button();
+btn.setText("Click Me!");
+Label label = new Label();
+btn.setOnAction(new EventHandler&lt;ActionEvent&gt;() {           
+   @Override
+   public void handle(ActionEvent event) {
+    System.out.println("You clicked me!");   
+    label.setText("Hello World!");
+       
+   }
+});
+        
+AnchorPane root = new AnchorPane();
+btn.setLayoutX(126);
+btn.setLayoutY(90);
+label.setLayoutX(126);
+label.setLayoutY(120);
+        
+root.setPrefHeight(200);
+root.setPrefWidth(320);
+root.getChildren().add(btn);
+</pre><div>
+
+    </li>
+</ol>
+</div>
+<H1>FXMLLoader</H1>
+<ol id="csList" start="5">
+    <li><p>Look at the start method in this application's main class.</p>
+        <img src="JavaFX/images/JavaFX_start.png" class="center" width="90%" style="border:3px solid gray; padding:8px;"><br>
+        <p>The first line of code in the start method makes a call to the <strong>FXMLLoader</strong> class's
+        <strong>load</strong> method. The load method is responsible for using the FXML markup
+        to create all of the layout and control objects described by the FXML code. The load method actually
+        creates a <strong>scene graph</strong> for the application which is then used to create a scene for the 
+        program.
+        </p>
+    </li>
+</ol>
+<H1>FXMLDocumentController</H1>
+<ol id="csList" start="5">
+    <li><p>In the Project Window open the file <strong>FXMLDocumentController.java</strong></p>
+ <img src="JavaFX/images/projectsWindow2.PNG" class="center" width="50%"><br>
+<p>You will see the following Java code.</p>
+<img src="JavaFX/images/FXMLDocumentController.png" class="center" width="90%" style="border:3px solid gray; padding:8px;"><br>
+<h3>Binding FXML Components to Controller Fields</h3>
+<p>When using FXML to build the GUI interface for your application  
+   a <strong>JavaFX Controller</strong> class can be defined that binds the components defined within the FXML document
+   with fields (i.g. instance variables) declared in the controller class.</p>
+   <p>Binding the variables in the Java class with the GUI components defined in the FXML document
+      gives the Java class a reference to each of the controls. With a reference to a control the
+      class has the ability to make changes to the control's properties.</p>
+   <p>This binding is accomplished in two steps:</p>
+   <ol id="csList2">
+       <li><p>In the FXML document, each component is assigned a unique <strong>id</strong>.
+        For example in the FXMLDocument, the Label control is assigned the id <strong>label</strong>.</p>
+          <div id="csCode" style="width:400px"><pre>
+&lt;Label ... <span id="csHighlight"><pre>fx:id="label"</pre></span> /&gt;
+</pre></div>
+       </li>
+       <li><p>In the Java controller class, a <strong>field</strong> is declared for each component defined
+              in the FXML document. Each field's name must match the id assigned to the component
+              it is referencing. For example in the FXMLDocumentController class,
+              a field named <strong>label</strong> is declared using the FXML annotation "@FXML".</p>
+              <div id="csCode" style="width:400px"><pre>
+@FXML   // annotation
+private Label <span id="csHighlight"><pre>label</pre></span>;
+</pre></div>        
+            <p>The <strong>FXML annotation</strong> is a special instruction to the FXMLLoader class's load method. 
+               When the <strong>load</strong> method is building the controls
+               defined in the FXML document it searches the controller class
+               for annotated fields with names that match the controls ids.
+               As these control objects are created their references are assigned to the
+               matching fields found in the controller class.</p>
+       </p></li>
+   </ol>
+   <h3>Referencing Methods in the Controller</h3>
+   <p>It is possible to reference methods in the controller class from FXML. For instance, you can bind the events of a 
+      JavaFX GUI component to methods of the controller (i.e. Event Handling). This method binding, like variable binding, occurs in two
+      steps. 
+    <ol id="csList2">
+        <li><p>In the FXML document, a method name is assigned to a control's event. For example, in the FXMLDocument file a method
+               named <strong>handleButtonAction</strong> is assigned to a Button's <strong>onAction</strong> event.</p>
+        <div id="csCode" style="width:500px"><pre>
+&lt;Button ... onAction="<span id="csHighlight"><pre>&#35;handleButtonAction</pre></span>" fx:id="button" /&gt;
+</pre></div>    
+        <p>The leading <strong>hash symbol "#"</strong> in front of the method name is required.</p>
+        </li>
+        <li><p>In the Java Controller class, a method is implemented and assigned the same name as a control's event method.
+               For example in the FXMLDocumentController class an event handler method named <strong>handleButtonAction</strong>
+               is implemented to respond to the button events.
+        </p>
+        <div id="csCode" style="width:500px"><pre>
+@FXML
+private void <span id="csHighlight"><pre>handleButtonAction</pre></span>(ActionEvent event) {
+    System.out.println("You clicked me!");
+    label.setText("Hello World!");
+    button.setFont(Font.font(48));
+}
+</pre></div> 
+<p>Notice that the FXML annotation "@FXML" precedes the method's header declaration.</p>
+</li>
+</ol>
+<h3>Linking Control File with FXML File</h3>
+<p>In order for binding to occur between the FXML components and the JavaFX control variables the control class file must be
+    linked to the fxml document file. In our example, this is done in the FXML document's AnchorPane definition using its
+    <strong>fx:controller</strong> attribute.</p>
+<div id="csCode"  style="width:600px"><pre>&lt;AnchorPane ... <span id="csHighlight"><pre>fx:controller="javafxexercise2.FXMLDocumentController"</pre></span>&gt;</pre></div>      
+<p>The <strong>AnchorPane</strong> is another of the JavaFX layouts. In NetBeans, it is the default layout for FXML files. When the FXMLLoader class's
+    load method is building the scene graph for the application it assigns the AnchorPane as the root node.</p>
+</li>
+</ol>
+<br>
+<hr>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>To help you better understand the purpose of binding FXML components to fields in a controller class you are going to
+   declare a field in the FXMLDocumentController class that will be bound or linked to the Button control defined in the 
+   FXMLDocument file. Recall that this binding is a two step process:</p>
+   <ol id="csList2">
+       <li><p>Assign an id to the component in the FXML file that you wish to bind to a field in the controller class.</p>
+       <p>If you examine the FXML code you will see that the Button component has already been assigned the id "button" by the IDE, so
+           step 1 is complete.
+       </p>
+<div id="csCode" style="width:500px"><pre>&lt;Button ... fx:id="button" /&gt;</pre></div>
+    </li>
+    <li><p>Declare a field (i.e. instance variable) in the FXMLDocumentController class with the name "button". Make sure to precede the
+           variable declaration with the FXML annotation (i.e. @FXML).</p>    
+<div id="csCode" style="width:500px"><pre>@FXML
+private Button button;</pre></div>
+    </li>
+   </ol>
+</li>
+<li><p>Now that you have a reference to the Button object you can make changes to its attributes or properties. To demonstrate, add the following
+    code to button's event handler method <strong>handleButtonAction</strong>.</p>
+    <div id="csCode" style="width:500px"><pre>button.setLayoutX(10);
+button.setLayoutY(10);
+button.setFont(Font.font(24));</pre></div>
+</li>
+<li><p>Execute the program to see the changes made to the Button control.</p></li>
+<li><p>Now lets modify the FXML code by adding a new component. Add the following code to the FXMLDocument file as the third child of the AnchorPane,
+       then execute the program.</p>
+<div id="csCode" style="width:800px"><pre>&lt;Label layoutX="250" layoutY="10" text="Happy" minHeight="16" minWidth="50" fx:id="happyLabel" /&gt;</pre></div>
+</li>
+<li><p>Add a fourth component to the application.</p></li>
+</ol>
+  <br>
+</div>	
+

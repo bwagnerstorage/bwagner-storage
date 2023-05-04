@@ -1,0 +1,125 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Selection Structures in Jeroo</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to construct an if structure</li>
+					    <li>How to construct an if-else structure</li>
+					    <li>How to construct an cascading if structure</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<p>The Jeroo language supports both an if structure and an if-else structure, and supports a way
+   to construct a multi-way branching structure. The syntax of each is shown below. An example of
+   each follows its syntax.</p>		
+  <h1>Jeroo's if Structure</h1>
+  <p>The figure below shows the syntax of the if structure in Jeroo's Java style language.</p>
+  <p>There are three important things to observe about the syntax.</p>
+  
+  <div id="csList">
+     <ol>
+	    <li>The condition must be in parentheses.</li>
+		<li>There is no semicolon after the parentheses.</li>
+		<li>The if structure is not a method, which means that we do not send it as a message
+		    to a Jeroo object.</li>
+	 </ol>
+  </div>
+   <p>There are three important things to observe about the coding style.</p>
+  
+  <div id="csList">
+     <ol>
+	    <li>Braces are used to define the beginning and end of the body.</li>
+		<li>The braces are aligned with the start of the word while.</li>
+		<li>The statements between the braces are indented.</li>
+	 </ol>
+  </div>
+  <br>
+  <div align="center"><img src="images/Jeroo/control9.gif"></div>
+  
+  <h3>EXAMPLE (if structure)</h3>
+  <p>Have the Jeroo named jessica check for a net to her right. If there is one, have her disable
+     it and return to her current state. Whether or not she disables a net, jessica should hop one
+     space ahead.</p>
+	<br> 
+  <div align="center"><img src="images/Jeroo/control10.gif"></div>
+  
+  <h1>Jeroo's if-else Structure</h1>
+  <p>The figure below shows the syntax of the if-else structure in Jeroo's Java-style language.</p>
+  <p>There are four important things to observe about the syntax.</p>
+  
+  <div id="csList">
+     <ol>
+	    <li>The condition must be in parentheses.</li>
+		<li>There is no semicolon after the parentheses.</li>
+		<li>There is no semicolon after the keyword else.</li>
+		<li>The if-else structure is not a method, which means that we do not send it as a message
+		    to a Jeroo object.</li>
+	 </ol>
+  </div>
+   <p>There are three important things to observe about the coding style.</p>
+  
+  <div id="csList">
+     <ol>
+	    <li>Braces are used to define the beginning and end of the body.</li>
+		<li>The braces are aligned with the start of the word while.</li>
+		<li>The statements between the braces are indented.</li>
+	 </ol>
+  </div>
+  <br>
+  <div align="center"><img src="images/Jeroo/control11.gif"></div>
+  
+  <h3>EXAMPLE (if-else structure)</h3>
+  <p>Have the Jeroo named timmy check for a net straight ahead. If there is one, have him disable
+     it and turn around. If there is not a net straight ahead, timmy should turn right. After he
+	 disables the net and turns around or simply turns right, timmy must move one space forward.</p>
+	<br> 
+   <div align="center"><img src="images/Jeroo/control12.gif"></div>
+   
+   <h1>Jeroo's Multi-way Selection Structure (a cascaded if)</h1>
+   <p>The figure below shows a common technique for writing a multi-way selection structure in
+      Jeroo's Java-style language. Technically, this structure consists of a series of nested if
+	  statements, but the coding style obscures this fact and makes the multi-way selection logic
+	  more evident. This particular structure is often called a cascaded if.</p>
+  <p>There are five important things to observe about about this structure.</p>
+  
+  <div id="csList">
+     <ol>
+	    <li>Each condition must be in parentheses.</li>
+		<li>There is no semicolon after the parentheses.</li>
+		<li>There is no limit on the number of else-if blocks.</li>
+		<li>The final else block is optional.</li>
+		<li>This structure is not a method, which means that we do not send it as a message to a
+		    Jeroo object.</li>
+	 </ol>
+  </div>
+   <p>There are three important things to observe about the coding style.</p>
+  
+  <div id="csList">
+     <ol>
+	    <li>Braces are used to define the beginning and end of the body.</li>
+		<li>The braces are aligned with the start of the word while.</li>
+		<li>The statements between the braces are indented.</li>
+	 </ol>
+  </div>
+  <br>
+   <div align="center"><img src="images/Jeroo/control13.gif"></div>
+   
+   <h3>EXAMPLE (cascaded if structure)</h3>
+   <p>Assume that a Jeroo named louisa is carrying at least one flower. Have her check the cell
+     ahead. If that cell contains a flower, pick it. If that cell contains a net, disable it. 
+	 If that cell contains water, plant a flower at the current location. If that cell contains
+	 another Jeroo, give that Jeroo a flower. Finally, if there is nothing in that cell, have her
+	 hop once and turn left.</p>
+	 <br>
+	<div align="center"><img src="images/Jeroo/control14.gif"></div>
+  
+<br>
+</div>	
+

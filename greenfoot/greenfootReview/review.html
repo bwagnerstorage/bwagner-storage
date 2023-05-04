@@ -1,0 +1,167 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Greenfoot Review</div>
+
+<div id="csContent"> 
+<h1>Download and Open Scenario</h1>
+<ol id="csList">
+<li><p>Click on the following link to download the scenario: <a href="greenfoot/scenarios/Greenfoot Review.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Greenfoot Review</a></p></li>
+<li><p>Select <strong>Open</strong>.</p></li>
+<li><p>Copy the folder <strong>GreenfootReview</strong> and paste it in your <strong>myGreenfoot</strong> folder.</p></li>
+<li><p>Launch Greenfoot and select Open from the Scenario menu.</p></li>
+<li><p>Navigate to your MyGreenfoot folder, select the Greenfoot Exam scenario, and click Open.</p></li>
+</ol>
+<br>
+
+<h1>Greenfoot Review</h1>
+<p>In this exercise, you are going to review some of the main aspects of making a game
+   that you have learned while using Greenfoot.</p>
+<br>
+<h3>Exercise 1 - Adding objects to a world</h3>
+<p>There are three ways to add objects to a world. Two of them involve creating objects within the
+  Greenfoot environment by right-clicking on class's icon and selecting its constructor. However, these
+   two methods are temporary and you have to keep adding the objects to the world. A more permanent method
+   is to add code to the myWorld constructor.</p>
+<ol id="csList">
+  <li><p>Add the following code to the MyWorld constructor that creates a Turtle object and adds it to the world at location (50, 50).</p>
+  <div id="csCode" style="width:500px"><pre>Turtle sam = new Turtle();
+addObject(sam, 50, 50);</pre></div>
+  </li>
+  <li><p>Add code to the MyWorld constructor that creates a Lobster object named <strong>larry</strong> and adds it to the world at location (50, 350).</p></li>
+</ol>
+<br>
+<h3>Exercise 2 - move() and turn()</h3>
+<p>To move an actor within it's world you first used the 
+   <strong>move</strong> and <strong>turn</strong> methods. The move method moves an actor in its
+   current direction or heading. The default direction or heading is 0 degrees. 
+   In Greenfoot, O degrees is located on the right edge of the world (East). The direction can be changed using the turn method.
+<ol id="csList">
+  <li><p>Add the following code to the Turtle class's act method so that it rotates sam the Turtle <strong>clockwise</strong> 1 degree each game cycle.</p>
+  <div id="csCode" style="width:500px"><pre>turn(1);  // turn clockwise 1 degree</pre></div>
+  </li>
+  <li><p>Add code to the Lobster class's act method so that it rotates larry the Lobster <strong>counter-clockwise</strong> 1 degree each game cycle.</p></li>
+  <li>Remove the turn methods added to the Turtle and Lobster classes.
+  <li><p>Add the following code to the Turtle class's act method so that it moves sam the Turtle across the world at a rate of one pixel per game cycle until
+  he reaches the eastern or right boundary of the world.</p>
+  <div id="csCode" style="width:500px"><pre>move(1);  // move 1 pixel in current direction</pre></div>
+  </li>
+  <li><p>Add code to the Lobster class's act method that will move larry the Lobster across the world at a rate of <strong>two</strong> pixels per game cycle until he reaches eastern boundary.</p></li>
+  <li><p>Add the following code to the Turtle class's act method that turns sam the Turtle 180 degrees every time he 
+         reaches a world boundary.</p>
+  <div id="csCode" style="width:500px"><pre>
+if(this.isAtEdge())
+    turn(180);</pre></div>       
+  </li>
+   <li><p>Add code to the Lobster class's act method so that larry the Loster turns 180 degrees every time he 
+         reaches a world boundary so that he will continue to move, but in the opposite direction.</p></li>
+   <li><p>Include code that will <strong>stop</strong> larry from moving after he
+         travels back and forth across the world 3 times.</p></li>
+  <li><p>Modify the code in the Lobster class's act method so that larry turns <strong>90</strong> degrees instead of 180.</p>
+      <p><strong>Note:</strong>If you just do turn(90), then larry will still turn 180 degrees.
+       The reason this occurs is because after he turns 90 degrees larry will still be on the boundary edge, therefore the
+       if statement will be true for two game cycles or two calls to the act method.</p></li>
+  </ol>
+  <br>
+  <h3>Exercise 3 - Collision Detection</h3>
+  <p>Greenfoot provides several methods for detecting Actor collisions. The method we used the
+     most was the Actor class's <strong>isTouching</strong> method. The isTouching method returns true
+     if the actor that made the call to isTouching collided with another actor.</p>
+  <ol id="csList">
+  <li><p>Add the following code to the MyWorld constructor.</p>
+  <div id="csCode" style="width:500px"><pre>House house1 = new House();
+House house2 = new House();
+addObject(house1, 150, 150);
+addObject(house2, 450, 150);
+        
+WalkingMan bob = new WalkingMan();
+addObject(bob, 300, 150);</pre></div>
+</li>
+  <li><p>Add the following code to WalkingMan class's act method so that when the man collides with
+        a house he changes his direction and continues to move, but in the opposite direction.</p></li> 
+  <div id="csCode" style="width:500px"><pre>move(1);
+if(isTouching(House.class))
+{
+    turn(180); 
+}</pre></div>
+<p>Add the following line of code to the WalkingMan's act method so that his image is not upside down when
+   he changes direction.</p>
+    <div id="csCode" style="width:500px"><pre>getImage().mirrorVertically();</pre></div>
+</ol>
+<br>
+<h3>Exercise 4 - setLocation(), getX(), getY()</h3>
+  <p>The second technique used to move actors is the <strong>setLocation</strong> method.
+     Given the x and y coordinates of a location within the world the setLocation method 
+     will move the actor to this location.</p>
+<ol id="csList">
+  <li><p>Add the following code to the MyWorld constructor.</p>
+  <div id="csCode"><pre>Ambulance amber = new Ambulance();
+addObject(amber, 150, 250);</pre></div>
+</li>
+  
+  <li><p>Add the following code to amber the Ambulance's act method.</p>
+    <div id="csCode" style="width:500px"><pre>setLocation(450, 250);</pre></div>
+  </li> 
+  <li><p>Replace the setLocation method in amber's act method with the following code.</p> 
+     <div id="csCode" style="width:500px"><pre>setLocation(getX() + 1, getY());</pre></div>
+     <p>The getX() and getY() methods return the (x,y) location of an object. They can be used with
+        the setLocation method to move objects relative to their current location. This code is basically saying, "Get my current x coordinate 
+        and increase it by one, then get my current y coordinate and leave it the same. Now move me
+        to this location."<p>
+  </li> 
+</ol>
+<br>
+<h3>Exercise 5 - Keyboard Input</h3>
+  <p>Greenfoot provides methods for both keyboard and mouse input. These methods are defined in a
+     special class named <strong>Greenfoot</strong>. This class is special because the input methods
+     are called directly by the Greenfoot class without the need of a Greenfoot object.</p>
+     <p>The methods <strong>isKeyDown</strong> and <strong>getKey</strong> are demonstrated below.</p>
+    <div id="csCode"><pre>if(Greenfoot.isKeyDown("left"))  // Is the "left" key being pressed?
+{
+    // code not shown
+}
+
+String key = Greenfoot.getKey();  // get last key that was pressed and released
+if("up".equals(key))              // Was that key equal to "up" key?
+{
+    // code not shown
+}</pre></div>
+<ol id="csList">
+<li><p>Replace the code in amber the Ambulance's act method with the following code.</p></li>
+<div id="csCode" style="width:500px"><pre>if(Greenfoot.isKeyDown("left"))
+{
+    setLocation(getX() - 1, getY());
+    setRotation(180);  // west
+}
+
+else if(Greenfoot.isKeyDown("right"))
+{
+    setLocation(getX() + 1, getY());
+    setRotation(0);    // east
+}
+</pre></div>
+<p>The setRotation method in this code turns amber so that she is facing in the direction specified.
+   (East = 0, West = 180, South = 90, North = 270)</p>
+<li><p>Add code to amber's act method so that she can move up and down. The ambulance needs to rotated
+       so that amber is facing the direction she is going.</p></li>
+</ol>
+
+  <h3>Exercise 6 - Mouse Input</h3>
+  <ol id="csList">
+  <li><p>Add the following code to the House class's act method.</p>
+  <div id="csCode" style="width:600px"><pre>if(Greenfoot.mouseClicked(this))    // "this" means this house
+  {
+      spinAmount = 360;
+  }
+      
+  if(spinAmount > 0)
+  {
+      setRotation(getRotation() + 1);  // add 1 to current rotation angle
+      spinAmount--;
+  }</pre></div>
+</li>
+<li><p>Modify the code above so that a House object will spin 5 times faster and does 5 more complete circles. </p></li>
+
+</ol>
+	<br>
+</div>	
+

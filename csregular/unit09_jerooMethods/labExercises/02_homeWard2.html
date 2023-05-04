@@ -1,0 +1,103 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Homeward Angel 2</div>
+
+<div id="csContent"> 
+<h1>Lesson</h1>
+<p>In this lesson you are going to rewrite the program HomewardAngel, done previously, so that the Jeroo's behavior is divided into the following 3 Jeroo methods:</p>
+<div id="csList">
+<ul>
+  <li><strong>getFlower</strong> - this method moves the Jeroo from its starting position to on top of the flower</li>
+  <li><strong>pickAndToss</strong> - this method picks up the flower and tosses it at the net</li>
+  <li><strong>enterHouse</strong> - this method moves the Jeroo through the opening in the net and finishes inside the house</li>
+</ul>
+
+<h1>Directions</h1>
+<ol id="csList">
+<li><p>Copy the following starter code.</p>
+<div id="csCode" style="width:600px"><pre>method main()
+{
+   Jeroo angel = new Jeroo();
+       
+
+
+}</pre></div>
+</li>
+<li><p>Click on the save icon (look like a floppy disk). Navigate to your desktop and save the file
+       with the name: <strong>HomewardAngel2</strong>.
+</p></li>
+<li><p>Click on the <strong>Island File Menu</strong> and select <strong>Open</strong>.
+      Navigate to the Jeroo folder on your desktop. In the Jeroo folder open the <strong>Islands
+</strong> folder and select the island file <strong>Homeward Angel</strong>.</p></li>
+</ol>
+
+<ol id="csList" start="4">
+<li><p>User-defined methods in Jeroo are coded in the Jeroo methods section. Refer to the illustration below.</p>
+<div align="center"><img src="images/homewardAngel2.png"></div>
+<p>Copy the following code and paste it into the user-defined method section.</p>
+<div id="csCode" style="width:600px"><pre>
+method getFlower()
+{
+
+}
+
+method pickAndToss()
+{
+
+}
+
+method enterHouse()
+{
+
+}
+</pre></div>
+</li>
+<li><p>Copy the following code and paste it in the <strong>main method</strong> below the code that creates the
+Jeroo angel.</p>
+<div id="csCode" style="width:600px">
+<pre>
+angel.getFlower(); 
+angel.pickAndToss(); 
+angel.enterHouse();
+</pre></div>
+</li>
+<li><p>Copy the following code that moves angel on top of the flower so he can pick it up. Paste the code inside the curly braces for the method <strong>getFlower()</strong>.</p>
+<div id="csCode" style="width:600px"><pre>
+turn(RIGHT);
+hop(3);
+turn(LEFT);
+hop(4);
+</pre></div>
+<p>Notice the you do not put the Jeroo's name at the front of this code.</p>
+</li>
+<li><p>Copy the following code that instructs angel to pick up the flower and toss it 
+  onto a net to disable it. Paste the code inside the curly braces for the method <strong>pickAndToss()</strong>.</p>
+  <div id="csCode" style="width:600px"><pre>
+pick();
+turn(RIGHT);
+hop();
+turn(LEFT);
+hop();
+toss();
+  </pre></div>
+  </li>
+
+  <li><p>Copy the following code that instructs angel to go home. Paste the code inside the curly braces for the method <strong>enterHouse()</strong>.</p>
+<div id="csCode" style="width:600px"><pre>
+hop(4);
+turn(LEFT);
+hop(3);
+</pre></div>
+</li>
+</ol>
+  
+<h1>Source File</h1>
+<p>HomewardAngel2.jsc</p>
+<h1>Island File</h1>
+  <p>HomewardAngel.jev</p>
+<h1>Sample Run - Before Execution</h1>
+<img src="images/Jeroo/homewardAngelBegin.gif">
+<h1>Sample Run - After Execution</h1>
+<img src="images/Jeroo/homewardAngel.gif">
+	<br>
+</div>

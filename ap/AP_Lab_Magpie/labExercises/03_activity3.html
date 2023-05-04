@@ -1,0 +1,139 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Magpie Lab - Activity 3</div>
+
+<div id="csContent"> 
+<h1>Before the Activity</h1>
+<p>Download and print the following worksheet: <a href="ap/AP_Lab_Magpie/worksheets/Magpie Activity 3 Worksheet.pdf" style="color:#0000FF" target="_blank">Activity 3 Worksheet</a></p>
+
+<h1>Introduction</h1>
+<p>In the previous activity, you discovered that simply searching for collections of letters in a string does
+not always work as intended. For example, the word "cat" is in the string "Let's play <strong>cat</strong>ch!," but the
+string has nothing to do with the animal. In this activity, you will trace a method that searches for a full
+word in the string. It will check the substring before and after the string to ensure that the keyword is
+actually found.</p>
+<p>You will use some more complex String methods in this activity. The String class has many
+useful methods, not all of which are included in the AP Computer Science Java Subset. But they can be
+helpful in certain cases, so you will learn how to use the API to explore all of the methods that are built
+into Java.</p>
+
+<h1>Prepare</h1>
+<p>You are going to use the <strong>Activity3</strong> project in this activity. You will need to make Activity3 the active project.
+   This can be accomplished by right-clicking on the project name and selecting <strong>Sets as Active Project</strong>.</p>
+
+<h1>Exploration: Using the API</h1>
+<p>One of the major benefits of using Java as a programming language is that so many library classes have
+already been created for it.</p>
+<div id="csList">
+<ul>
+<li><p>Open the program <strong>StringExplorer</strong>. It currently has code to illustrate the use of the indexOf
+and toLowerCase methods.</p></li>
+<li><p>Open the API for the String class - <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html" target="_blank" style="color:#0000FF">String.</a>
+Scroll down to the Method Summary section and find the
+<strong>indexOf(String str)</strong> method. Follow the link and read the description of the indexOf
+method. What value is returned by indexOf if the substring does not occur in the string?</p></li>
+
+<li><p>Add the following lines to <strong>StringExplorer</strong> to see for yourself that indexOf behaves as specified:</p>
+<div id="apCode"><pre>
+int notFoundPos = sample.indexOf("slow");
+System.out.println("sample.indexOf(\"slow\") = " + notFoundPos);
+</pre></div>
+</li>
+<li><p>Read the description of <strong>indexOf(String str, int fromIndex)</strong>. Add lines to
+StringExplorer that illustrate how this version of indexOf differs from the one with
+one parameter.</p></li>
+</ul></div>
+
+<p>This lab activity will use a variety of different String methods. Consult the API whenever you see
+one with which you are unfamiliar.</p>
+
+<h1>Exploration: Understand the new method</h1>
+<p>This version of the Magpie class has a method named <strong>findKeyword</strong> to detect keywords.
+This method will only find exact matches of the keyword, instead of cases where the keyword is
+embedded in a longer word.</p>
+
+<div id="apCode"><pre>
+private int findKeyword(String statement, String goal, int startPos)
+{
+   String phrase = statement.trim();
+   int pos = phrase.toLowerCase().indexOf(goal.toLowerCase(), startPos);
+   while (pos >= 0)
+   {
+      String before = " ", after = " ";
+      if (pos > 0)
+      {
+         before = phrase.substring (pos - 1, pos).toLowerCase();
+      }
+      if (pos + goal.length() < phrase.length())
+      {
+         after = phrase.substring(pos + goal.length(),
+                 pos + goal.length() + 1).toLowerCase();
+      }
+      <strong>/* determine the values of pos, before, and after at this point
+                 in the method. */</strong>
+      if (((before.compareTo ("a") < 0 ) || (before.compareTo("z") > 0)) &&
+         ((after.compareTo ("a") < 0 ) || (after.compareTo("z") > 0)))
+      {
+         return pos;
+      }
+      pos = phrase.indexOf(goal.toLowerCase(), pos + 1);
+   }
+   return -1;
+}
+</pre></div>
+<p>Read through the <strong>findKeyword</strong> method. To ensure that you understand it, then trace the following
+method calls using the worksheet provided.</p>
+
+<div id="apCode"><pre>
+findKeyword("She's my sister", "sister", 0);
+findKeyword("Brother Tom is helpful", "brother", 0);
+findKeyword("I can't catch wild cats.", "cat", 0);
+findKeyword("I know nothing about snow plows.", "no", 0);
+</pre></div>
+
+<p>Write the value of each of the variable pos, before, and after each time the program control
+reaches the point in the method indicated by the comment:</p>
+
+<p><strong>/* determine the values of pos, before, and after at this point in the method. */</strong>.</p>
+<br>
+<p><strong>Example:</strong> findKeyword("yesterday is today's day before.", "day", 0);</p>
+
+<table id="apTable">
+<tr>
+  <th>Iteration</th>
+  <th>pos</th>
+  <th>before</th>
+  <th>after</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>6</td>
+  <td>"r"</td>
+  <td>" "</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>15</td>
+  <td>"o"</td>
+  <td>"'"</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>21</td>
+  <td>" "</td>
+  <td>" "</td>
+</tr>
+</table>
+
+<h1>Exercise: Use the new method</h1>
+<p>Repeat the changes you made to the program in Activity 2, using this new method to detect keywords.</p>
+
+<h1>Questions: Prepare for the next activity</h1>
+<p>Single keywords are interesting, but better chatbots look for groups of words. Consider statements like "I
+like cats," "I like math class," and "I like Spain." All of these have the form "I like something." The
+response could be "What do you like about something?" The next activity will expand on these groups.
+You will get to add one of your own, so it's a good idea to start paying close attention to common
+phrases in your own conversations.</p>
+	<br>
+</div>	
+

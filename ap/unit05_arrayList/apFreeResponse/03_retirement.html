@@ -1,0 +1,135 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Retirement</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/RetirementNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Retirement</a></h1>
+
+
+<h1>Directions</h1>
+<p>Periodically, a company processes the retirement of some of its employees. In this question, you will write methods to help the
+   company determine whether an employee is eligible to retire and to process the retirement of all eligible employees.</p>
+ 
+<p>The Employee class is declared as follows.</p>
+ <div id="apCode"><pre>
+public class Employee
+{
+    // returns the age (in years) of this employee
+    <div id="apHighlight"><pre>public int getAge()</pre></div>
+ 
+    // returns the number of years this employee has worked
+    <div id="apHighlight"><pre>public int getYearsOnJob()</pre></div>
+ 
+    // returns the salary of this employee in dollars
+    <div id="apHighlight"><pre>public double getSalary()</pre></div>
+ 
+    // returns unique employee ID number
+    <div id="apHighlight"><pre>public int getID()</pre></div>
+ 
+    // ... constructor, other member methods and data not shown.
+}
+</pre></div> 
+The Company class is declared as follows.
+ <div id="apCode"><pre>
+public class Company
+{
+   // minimum age to retire
+   <div id="apHighlight"><pre>public static final int RETIRE_AGE = 65;</pre></div>
+ 
+   // minimum years on job to retire 
+   <div id="apHighlight"><pre>public static final int RETIRE_YEARS = 20;</pre></div>
+ 
+   // minimum salary to retire
+   <div id="apHighlight"><pre>public static final double RETIRE_SALARY = 50000;</pre></div>
+    
+   // empList.size() is the number of employees in this company   
+   <div id="apHighlight"><pre>private ArrayList&lt;Employee&gt; empList;</pre></div>
+ 
+   // total salary of all employees
+ 
+   <div id="apHighlight"><pre>private double salaryBudget;</pre></div> 
+ 
+   // postcondition: returns true if emp is eligible to
+   // retire; otherwise, returns false
+   <div id="apHighlight"><pre>private boolean employeeIsEligible(Employee emp)</pre></div> 
+   { /* to be implemented in part (a) */}
+   
+   
+   // postcondition: all retirement-eligible employees have
+   // been removed from empList; empList has been resized
+   // to reflect retirements; empList remains sorted
+   // by employee ID; salaryBudget has been updated
+   // to reflect remaining employees
+   <div id="apHighlight"><pre>public void processRetirements()</pre></div> 
+   { /* to be implemented in part (b) */}
+ 
+ 
+   // ... constructors and other public members not shown
+} 
+</pre></div>
+
+<p>The data member empList is sorted in ascending order by employee ID. The total of all salaries is maintained in the data member salaryBudget.</p>
+
+<div id="csList2">
+<ol>
+<li>
+<p>An employee is eligible for retirement if (s)he meets at least two of the following requirements:</p> 
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. The employee is at least retireAge years old.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. The employee has worked for at least retireYears.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. The employee's salary is at least retireSalary.</p>
+
+<p>Write the Company member method <strong>employeeIsEligible</strong>, which is described as follows. 
+employeeIsEligible returns a Boolean value that indicates whether Employee emp is eligible
+for  retirement, using the rules described above.</p>
+ 
+<p>Complete method <strong>EmployeeIsEligible</strong> below.</p>
+<div id="apCode" style="width:550px"><pre>// postcondition: returns true if emp is eligible to
+// retire; otherwise, returns false
+<div id="apHighlight"><pre>private boolean employeeIsEligible(Employee emp)</pre></div>
+
+
+</pre></div></li> 
+ 
+<br><br> 
+<li><p>Write the Company member method <strong>processRetirements</strong>, which is described as follows.
+ processRetirements removes all retirement-eligible employees from the empList array, resizes (shrinks) empList 
+ as appropriate (maintaining its order by employee ID), and decreases salaryBudget to reflect the salary of the remaining employees.</p>
+ 
+<p>In writing processRetirements, you may call <strong>employeeIsEligible</strong>, specified in part (a).
+ Assume that employeeIsEligible works as specified, regardless of what you wrote in part (a).</p>
+ 
+<p>Complete method <strong>processRetirements</strong> below.</p>
+<div id="apCode" style="width:550px"><pre>// postcondition: all retirement-eligible employees have
+// been removed from empList; empList has been resized
+// to reflect retirements; empList remains sorted
+// by employee ID; salaryBudget has been updated
+// to reflect remaining employees
+<div id="apHighlight"><pre>public void processRetirements()</pre></div>
+
+
+</pre></div> 
+</li></ol></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>40 18 48000.0 1
+65 15 52000.0 2
+27 4 30000.0 3
+65 22 60000.0 4
+67 20 70000.0 5
+45 21 50000.0 6
+33 10 40000.0 7
+66 23 51000.0 8
+
+Salary Budget = 401000.0
+
+40 18 48000.0 1
+27 4 30000.0 3
+33 10 40000.0 7
+
+Salary Budget = 118000.0
+
+</pre>
+</div>
+	<br>
+</div>	
+

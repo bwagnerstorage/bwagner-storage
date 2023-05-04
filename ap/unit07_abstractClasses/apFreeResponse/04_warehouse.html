@@ -1,0 +1,143 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Warehouse</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/WarehouseNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Warehouse</a></h1>
+
+<p>Consider a busy warehouse with items coming and going. The following abstract class represents an inventory item in the warehouse.</p>
+
+<div id="apCode">
+<pre>
+public abstract class InventoryItem
+{
+    // instance variables
+    private int id;
+    private Date entry;
+    private double basePrice;
+    
+    <div id="apHighlight"><pre>public InventoryItem(Date entryDate, double price)</pre></div>
+    {
+        id = makeId();
+        entry = entryDate;
+        basePrice = price;
+    }
+    
+    // returns the date this item entered the warehouse
+    <div id="apHighlight"><pre>public Date getEntryDate()</pre></div>
+    {
+        return entry;
+    }
+    
+    // returns the base price of this item
+    <div id="apHighlight"><pre>public double getBasePrice()</pre></div>
+    {
+        return basePrice;
+    }
+    
+    // return id of this item
+    <div id="apHighlight"><pre>public int getID()</pre></div>
+    {
+        return id;
+    }
+    
+    // returns the price of this item
+    <div id="apHighlight"><pre>abstract public double getPrice();</pre></div>
+    
+    // returns a unique id
+    <div id="apHighlight"><pre>private static int makeId()</pre></div>
+    {
+       // implementation not shown  
+    }   
+}
+</pre>
+</div>
+
+<div id="csNote">The <strong>Date</strong> class and the <strong>GregorianCalendar</strong> class used in this problem 
+   are both part of Java's java.util package. They are used for storing date and calendar information.</div>
+<p>Each InventoryItem has a unique ID, a date of entry into the warehouse, and a base price (not shown), 
+   which implements the Comparable interface (larger Date objects are later dates). Refer to the following
+   code segment:</p>
+<div id="apCode" style="width:400px">
+<pre>
+int result = date1.compareTo(date2);
+</pre>
+</div>
+<p>The compareTo method provided by the Comparable interface returns one of three values. 
+   The compareTo method returns a negative number if date1 is less than date2, it returns
+   a positive number if date1 is greater than date2, and it returns zero if the two dates are equal.</p>
+
+<p>Some inventory items are perishable and some are not, giving the following class hierarchy.</p>
+<div align="center"><img src="images/warehouse.gif"></div>
+<p>Items that are not perishable have no discounts. The NonPerishable class is implemented as follows.</p>
+<div id="apCode">
+<pre>
+public class NonPerishable extends InventoryItem
+{
+    <div id="apHighlight"><pre>public NonPerishable(Date entry, double price)</pre></div>
+    {
+        super(entry, price);
+    }
+    
+    <div id="apHighlight"><pre>public double getPrice()</pre></div>
+    {
+        return super.getBasePrice();
+    }
+}
+</pre>
+</div>
+<p>Perishable items have an expiration date. Items already past their expiration date when they enter the warehouse
+   are discounted by 90%; otherwise no discount applies.</p>
+
+<div id="csList2">
+<ol>
+<li><p>Write the complete class declaration for the class Perishable. Include all necessary instance variables
+   and implemenations of its constructors and methods.</p></li>
+<li><p>Consider the following Warehouse class, which stores the list of items in the warehouse inventory.</p>
+<div id="apCode" style="width:620px">
+<pre>
+public class Warehouse
+{
+    private ArrayList&lt;InventoryItem&gt; items;
+    
+    // returns an ArrayList of all items whose price is between
+    // loPrice and hiPrice inclusive
+    <div id="apHighlight"><pre>public ArrayList &lt;InventoryItem&gt getItems(double loPrice, double hiPrice)</pre></div>
+    { /* implemented in part(b) */}
+
+
+    // constructors and other methods not shown
+}
+</pre>
+</div>
+<p>Write the Warehouse member method getItems, which is described as follows. getItems returns an ArrayList of all items
+   whose price is between loPrice and hiPrice inclusive.</p>
+<p>Complete method getItems below.</p>
+<div id="apCode" style="width:550px">
+<pre>
+// returns an ArrayList of all items whose price is between
+// loPrice and hiPrice inclusive
+<div id="apHighlight"><pre>public ArrayList <InventoryItem> getItems(double loPrice, double hiPrice)</pre></div>
+
+
+</pre>
+</div>
+
+</li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+1000     25.00   25.00
+1001     49.99   49.99
+1002      3.99    0.40
+1003     10.00   10.00
+1004      6.25    6.25
+ 
+</pre>
+</div>
+	<br>
+</div>	
+

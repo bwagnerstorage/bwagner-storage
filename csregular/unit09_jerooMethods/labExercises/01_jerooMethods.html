@@ -1,0 +1,75 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Jeroo Methods</div>
+
+<div id="csContent"> 
+<h1>Jeroo Simulator</h1>
+<p>According to the story on jeroo.org, the Jeroo programming environment was developed as a
+   <strong>simulator</strong>, so that scientists could, in the safety and comfort of their lab, study the peculiar behaviors of
+   these mysterious creatures. The scientist knew that Jeroos were similiar in nature to kangaroos, 
+   but they also knew they possessed their own unique set of behaviors. For example, the fact that Jeroos only
+   turn right or left in 90 degree increments. The scientist hoped the simulator might help shine 
+   some light on why these fascinating animals behave the way they do.
+  </p>
+  <p>In the Jeroo simulator, we learned that in order to add a Jeroo to an island environment we had to use code 
+     like the following:</p>
+<div id="csCode" style="width:400px"><pre>Jeroo bob = new Jeroo();</pre></div>
+<p>In programming terminology, Jeroo is referred to as a <strong>class</strong>. Classes are the backbone of 
+   Object-Oriented Programming(OOP) languages, because they are responsible for defining the attributes and behaviors for
+   the objects they create. Referring again to the line of code above, bob is a special type of variable called an <strong>object
+   variable</strong> or more simply just an <strong>object</strong> . This object, referred to as bob, is "born" into this programmming world with all 
+   the atttributes and behaviors described by its designer, the Jeroo class.</p>
+   <p>What attributes and behaviors did the Jeroo class give to bob? The attributes include 
+      the ability, like all Jeroos, to store flowers in his pouch, as well as the ability to know which direction
+      he is facing and where he is located on the island. The behaviors include the abilty to hop and turn, as well the ability to 
+      pick, plant, give, and toss flowers. There are others we will explore in a later unit.</p>
+
+  <h1>Jeroo Methods</h1>
+  <p>In Java, the behaviors defined by a class are called <strong>methods</strong>. A method can be defined as a name
+     given to a block of code that can be executed by calling the method by its name.
+     Look at the following code,</p>
+     <div id="csCode" style="width:400px"><pre>
+Jeroo bob = new Jeroo();
+bob.hop();
+</pre></div>
+     <p>In this example, the Jeroo class's hop method is being invoked (called) by the object bob.</p>
+.    <p>One of the cool features in the Jeroo simulator is that it allows programmers to make their own Jeroo methods. 
+        Follow the directions below to see how.</p>
+<h1>Directions</h1>
+<ol id="csList">
+<li><p>Click on this <a href="https:\\jeroo.org" target="_blank" style="color:blue">link</a> to open the Jeroo environment in your browser.</p></li>
+<li><p>Click on the button <strong>START CODING</strong>.</p></li>
+<li><p>Copy the following starter code to the Main Method editor.</p>
+<div id="csCode" style="width:600px"><pre>method main()
+{
+  Jeroo bob = new Jeroo(5,5,EAST,50);
+       
+
+}</pre></div>
+</li>
+<li><p>To add your own method to Jeroo class you first have to switch to the Jeroo Methods pane. 
+       To do this click the mouse on the Jeroo Methods tab. </p>
+       <img src="images/Jeroo/JerooMethods1.jpg" style="width:40%">  
+      
+</li>
+<li><p>With the Jeroo Methods pane visible. Let's make a method. One of things that I don't 
+       like about digital Jeroos is they don't know how to turn around, so let's fix that by making a method 
+       that tells the Jeroos how to turn around.</p>
+       <p>&nbsp;&nbsp;&nbsp; <strong>Step 1:</strong> Type: <span style="font-family: Consolas;">method turnAround()</span>  and then open and close curly brackets.</p>
+       <p>&nbsp;&nbsp;&nbsp; <strong>Step 2:</strong> Inside the curly brackets type: <span style="font-family: Consolas;">turn(RIGHT);</span></p>
+      <p> &nbsp;&nbsp;&nbsp; <strong>Step 3:</strong> Copy the previous code and paste in the method so that there are <strong>two</strong> turn rights.</p>
+      <p><strong>Notice:</strong> We did not use a Jeroo object to call the turn methods. This is because we are writing code that is actually
+       being added to the Jeroo class. This new method will be available to all Jeroo objects, not just bob.</p>
+</li>
+<li><p>Now that we have made our own method. Let's see if bob has really learned how to turn around. Click on the
+       <strong>Method Main</strong> tab to go back to the main method and add the following code: <span style="font-family: Consolas;">bob.turnAround();</span>
+</p></li>
+<li><p>Now that you know how a Jeroo method is made try making one of your own.</p></li>
+</ol>
+<h1>Source File</h1>
+<p>JerooMethods.jsc</p>
+<h1>Island File</h1>
+  <p>none</p>
+
+	<br>
+</div>

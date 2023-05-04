@@ -1,0 +1,55 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Elevens Lab - Activity 10</div>
+
+<div id="csContent"> 
+<h1>ThirteensBoard</h1>
+<p>The purpose of this activity is to create the Thirteens game using the knowledge gained from
+implementing the Elevens game.</p>
+
+<h1>Exploration</h1>
+<p>The rules for the Thirteens game are repeated below:</p>
+<h3>Thirteens</h3>
+<p>A game related to Elevens, called Thirteens, uses a 10-card board. Ace, 2, ... , 10, jack, queen correspond
+to the point values of 1, 2, ... , 10, 11, 12. Pairs of cards whose point values add up to 13 are selected and
+removed. Kings are selected and removed singly. Chances of winning are claimed to be about 1 out of 2.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>The Activity10 Project contains all the code for a complete working Elevens game.
+Review the code in the ElevensBoard class. Identify the changes that would be necessary to
+implement the Thirteens game.</p></li>
+<li><p>Copy and paste the ElevensBoard.java file into a new file, ThirteensBoard.java.
+Make the necessary changes to this file to implement the Thirteens game.</p></li>
+<li><p>The Activity10 Project also contains the ElevensGUIRunner.java file that is
+shown below. This program creates the board (an ElevensBoard object). Then it creates the GUI
+(a CardGameGUI object). Finally, it displays the GUI by calling its displayGame method.
+Review the code in the ElevensGUIRunner class as shown below. Identify the changes that
+would be necessary to implement the Thirteens game.</p>
+
+<div id="apCode"><pre>
+/**
+* This is a class that plays the GUI version of the Elevens game.
+* See accompanying documents for a description of how Elevens is played.
+*/
+public class ElevensGUIRunner {
+   /**
+    * Plays the GUI version of Elevens.
+    * @param args is not used.
+    */
+   public static void main(String[] args) {
+      Board board = new ElevensBoard();
+      CardGameGUI gui = new CardGameGUI(board);
+      gui.displayGame();
+   }
+}
+</pre></div></li>
+<li><p>Copy and paste the ElevensGUIRunner.java file into a new file,
+ThirteensGUIRunner.java. Make the necessary changes to this file to implement the
+Thirteens game.</p></li>
+<li><p>Run the ThirteensGUIRunner program and test your new Thirteens game.</p></li>
+</ol></div>
+</div>
+	<br>
+</div>	
+

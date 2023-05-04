@@ -1,0 +1,80 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Enhanced for Loop</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an enhanced for loop</li>
+						<li>How is an enhanced for loop used with arrays</li>
+						<li>How is an enhanced for loop used with ArrayLists</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Enhanced for Loop</h1>
+<p>
+Java version 5.0 introduced a very convenient shortcut for iterating through a sequence of elements
+ - such as the elements of an array or ArrayList. It is called the <strong>enhanced for loop</strong>.</p>
+
+<h1>Using the Enhanced for Loop with an Array</h1>
+<p>Suppose you want to total up all data values in an array named data. Here is a typically for
+   loop operation that can perform this task (Assume the array data has been defined and populated
+   with numbers).</p>
+<div id="csCode"><pre>
+double sum = 0;
+for(int i = 0; i < data.length; i++)
+{
+   double e = data[i];
+   sum += e;
+}
+</pre></div>
+<p> Now here is how you use the enhanced for loop to carry out the same task.</p>
+   <div id="csCode"><pre>
+double sum = 0;
+for(double e : data)
+{
+   sum += e;
+}
+</pre></div>
+
+<p>The loop body is executed for each element in the array data. At the beginning of each loop
+   iteration, the next element is assigned to the variable e. Then the loop body is executed. 
+   You can read this loop as "for each e in data".</p>
+
+<p>Note an important difference between the "for each" loop and the ordinary for loop. 
+   In the "for each" loop, the element variable e is assigned values data[0], data[1], and so on.
+   In the ordinary for loop, the index variable i is assigned values 0, 1, and so on.</p>
+
+<h1>Using the Enhanced for Loop with an ArrayList</h1>
+<p>You can also use the enhanced for loop to visit all elements of an ArrayList. 
+  For example, the following loop computes the total value of all accounts. (Assume an ArrayList
+  named accounts has been defined and populated with BankAccount objects.)</p>
+<div id="csCode"><pre>
+double sum = 0;
+for(BankAccount a : accounts)
+{
+   sum += a.getBalance();
+}
+ </pre></div>
+
+This loop is equivalent to the following ordinary for loop:
+<div id="csCode"><pre>
+double sum = 0;
+for(int i = 0; i < accounts.size(); i++)
+{
+   BankAccount a = accounts.get(i);
+   sum += a.getBalance();
+}
+</pre></div>
+<p>The "for each" loop, as its also called, has a very specific purpose: traversing the elements
+   of a collection, from the beginning to the end. Sometimes you don't want to start at the beginning,
+   or may need to traverse the collection backwards. In those situations, do not hesitate to use an
+   ordinary for loop.</p>
+<br>
+</div>	
+

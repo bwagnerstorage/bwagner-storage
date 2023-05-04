@@ -1,0 +1,127 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">More Operators</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Increment Operator (++)</li>
+					    <li>Decrement Operator (--)</li>
+					    <li>Compound Assignment Operators (+=, -=, *=, /=, %=)</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>More Operators</h1>
+  <p>We have already looked at several of the standard operators used in Java such as the 
+     +, -, *, /, and % operators. In this section we introduce several other operators that
+	 provide an easy and convenient way to perform certain arithmetic operations.</p>
+  <h1>Increment and Decrement Operators</h1>
+  <p><strong>Increment Operator (++)</strong>: adds 1 to any integer or floating point value.</p>
+  <div id="csCode">
+    <pre>
+int count = 5;
+count++;       <div id="csComment"><pre>// increases count by 1</pre></div></pre>
+</div>
+<p>The code above causes the value of count to be increased by one, or incremented. The value 5 is increased to 6 and
+   the 6 is assigned to the variable count.</p>
+   <p><strong>Decrement Operator (--)</strong>: subtracts 1 from any integer or floating point value.</p>
+  <div id="csCode">
+    <pre>
+int count = 5;
+count--;       <div id="csComment"><pre>// decreases count by 1</pre></div></pre></div>
+<p>The code above causes the value of count to be decreased by one, or decremented.  The value 5 is decreased to 4 and
+   the 4 is assigned to the variable count.</p>
+
+<p>Incidentally, both the increment and decrement operators can be placed before or after the 
+   variable they are modifying.</p>
+  <div id="csCode">
+    <pre>
+count++   is equivalent to    ++count
+count--   is equivalent to    --count
+</pre></div>
+<h1>Compound Assignment Operators</h1>
+<p>Several assignment operators in Java combine a basic operation with assignment. For example,
+   the += operator can be used as follows:</p>
+    <div id="csCode">
+    <pre>
+int total = 10;
+total += 5;           <div id="csComment"><pre>// increases total by 5</pre></div>
+</pre>
+  </div>
+<p>The code above causes the value of total to be increased by five. The result 15 is
+   stored back in the variable total.</p>
+<p>The code above is equivalent to the following:</p>
+    <div id="csCode">
+    <pre>
+int total = 10;
+total = total + 5;    <div id="csComment"><pre>// increases total by 5</pre></div>
+</pre>
+  </div>
+ <p>The right-hand side of the assignment operator can be a full expression. The expression on
+    the right-hand side of the operator is evaluated, then that result is added to the current
+    value of the variable on the left-hand side, and that value is stored in the variable. So 
+	the following statement:</p>
+      <div id="csCode">
+    <pre>
+total += (sum - 12) / count;
+</pre>
+  </div>
+  <p>is the same as</p>
+        <div id="csCode">
+    <pre>
+total = total + ((sum - 12) / count);
+</pre>
+  </div>
+  <table id="csTable">
+      <tr>
+	     <th>Operator</th>
+		 <th>Description</th>
+		 <th>Example</th>
+		 <th>Equivalent Expression</th>
+	  </tr>
+	  <tr>
+	     <td><div align="center">=</div></td>
+		 <td><div align="center">assignment</div></td>
+		 <td><div align="center">x = y</div></td>
+		 <td><div align="center">x = y</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">+=</div></td>
+		 <td><div align="center">addition, then assignment</div></td>
+		 <td><div align="center">x += y</div></td>
+		 <td><div align="center">x = x + y;</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">-=</div></td>
+		 <td><div align="center">subtraction, then assignment</div></td>
+		 <td><div align="center">x -= y</div></td>
+		 <td><div align="center">x = x - y</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">*=</div></td>
+		 <td><div align="center">multiplication, then assignment</div></td>
+		 <td><div align="center">x *= y</div></td>
+		 <td><div align="center">x = x * y</div></td>
+	  </tr>
+	   <tr>
+	     <td><div align="center">/=</div></td>
+		 <td><div align="center">division, then assignment</div></td>
+		 <td><div align="center">x /= y</div></td>
+		 <td><div align="center">x = x / y</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">%=</div></td>
+		 <td><div align="center">remainder, then assignment</div></td>
+		 <td><div align="center">x %= y</div></td>
+		 <td><div align="center">x = x % y</div></td>
+	  </tr>
+   </table>
+<br>
+</div>	
+

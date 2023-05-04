@@ -1,0 +1,48 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">CircleBug</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>BoxBug</strong> is a bug that moves in a box pattern. The instance variable sideLength determines
+   the number of steps a BoxBug takes before it turns.</p>
+<p>A <strong>CircleBug</strong> is similar to a BoxBug except that it moves in a circle pattern. It accomplishes this by
+   turning 45 degrees at each turn instead of 90 degrees.</p>
+
+<p>Using the BoxBug class as a model write the CircleBug class so that implements a circle behavior.</p>
+
+<p>Use the CircleBugRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>CircleBugRunner.java</strong>.</p>
+<div id="csCode">
+<pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class CircleBugRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld(new BoundedGrid(20, 20));
+		
+        CircleBug bug1 = new CircleBug(6);
+        bug1.setColor(Color.ORANGE);
+		
+        CircleBug bug2 = new CircleBug(3);
+        bug2.setColor(Color.GREEN);
+		
+        world.add(new Location(11, 2), bug1);
+        world.add(new Location(6, 10), bug2);
+        world.show();
+    }
+}
+</pre>
+</div>
+<h1>Source Files</h1>
+<p>CircleBug.java</p>
+<p>CircleBugRunner.java</p>
+
+	<br>
+</div>	
+

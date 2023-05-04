@@ -1,0 +1,60 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR StepTracker</div>
+
+<div id="csContent"> 
+
+<h1>NetBeans Project: <a href="apFreeResponse/StepTrackerNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >StepTracker</a></h1>
+
+<div id="csList">
+<ol>
+<li>Click on the link above.</li>
+<li>Open the zip file.</li>
+<li>Copy the folder to your home directory.</li>
+<li>Open the NetBeans project.</li>
+</ol>
+</div>
+<h1>Directions</h1>
+<p>This question involves the implementation of a fitness tracking system that is represented by the
+<span class="cd">StepTracker</span>  class. A <span class="cd">StepTracker</span>  object is created with a parameter that defines the minimum number of steps that must be taken for a day to be considered active.</p>
+<p>The <span class="cd">StepTracker</span>  class provides a constructor and the following methods.</p>
+<ul id="csList">
+<li><p><span class="cd">addDailySteps</span>, which accumulates information about steps, in readings taken once per day</p></li>
+</ul>
+<ul id="csList">
+<li><p><span class="cd">activeDays</span>, which returns the number of active days</p> </li>
+</ul>
+<ul id="csList">
+<li><p><span class="cd">averageSteps</span>, which returns the average number of steps per day, calculated by dividing the total number of steps taken by the number of days tracked</p></li>
+</ul>
+<p>The following table contains a sample code execution sequence and the corresponding results.</p>
+<br>
+<img src="images/StepTracker1.jpg" style="width:98%">
+
+<br><br>
+<p>Write the complete <span class="cd">StepTracker</span> class, including the constructor and any required instance variables and methods. Your implementation must meet all specifications and conform to the example.</p>
+<br><br><br><br><br><br>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Active day consists of at least 10,000 steps.
+Current Days Active: 0
+Average Number of Steps: 0.0
+
+9000 steps today, not enough to meet active goal.
+
+5000 steps today, not enough to meet active goal.
+Current Days Active: 0
+Average Number of Steps: 7000.0
+
+13000 steps today, met active goal!
+Current Days Active: 1
+Average Number of Steps: 9000.0
+
+23000 steps today, met active goal!
+
+1111 steps today, not enough to meet active goal.
+Current Days Active: 2
+Average Number of Steps: 10222.2 
+</div>	
+

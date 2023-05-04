@@ -1,0 +1,215 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Thesaurus</div>
+
+<div id="csContent"> 
+<h1>Workspace: <a href="apFreeResponse/Thesaurus.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Thesaurus</a></h1>
+
+<h1>Directions</h1>
+      <p>A thesaurus is a list of words in which each word is associated with 
+        a corresponding set of other words having the same meaning (synonyms).</p>
+      <p>The following shows an example of words and synonyms that could be listed 
+        in a thesaurus.</p>
+      <table id="csTable" width="400">
+        <tr> 
+          <th><strong>Word</strong></th>
+          <th><strong>Synonym Set</strong></th>
+        </tr>
+        <tr> 
+          <td>excellent</td>
+          <td>{brilliant, great, outstanding, tremendous}</td>
+        </tr>
+        <tr> 
+          <td>super</td>
+          <td>{excellent, fantastic, great, wonderful}</td>
+        </tr>
+        <tr> 
+          <td height="22">wonderful</td>
+          <td>{amazing, brilliant, fantastic, great}</td>
+        </tr>
+      </table>
+      <p>The thesaurus can be represented using a <strong>Map</strong> in which each key 
+        is a word, and the value associated with a particular word is a Set of 
+        synonyms. A partial definition of the <strong>Thesaurus</strong> class is shown 
+        below. </p>
+<div id="apCode"><pre>public class Thesaurus
+{
+    // stores (word, synonym set) pairs as (String, Set of Strings) 
+    private Map&lt;String, Set&lt;String&gt;&gt; wordMap;
+    
+    public Thesaurus()
+    { 
+       wordMap = new HashMap&lt;String, Set&lt;String&gt;&gt;(); 
+    } 
+     
+    // adds syn to the set of synonyms associated with word 
+    // in this Thesaurus; 
+    // if word is not a key in this Thesaurus, adds an 
+    // entry with word as key and a set containing syn 
+    // as the associated value
+    <div id="apHighlight"><pre>public void addSynonym(String word, String syn)</pre></div>
+    { /* to be implemented in part (a) */ }
+      
+	  
+    // removes the word syn from each synonym set in this Thesaurus; 
+    // returns a set of the words (keys) whose associated
+    // synonym sets originally contained the word syn;
+    // if syn was not contained in any synonym set, returns an empty set 
+    <div id="apHighlight"><pre>public Set&lt;String&gt; removeSynonym(String syn)</pre></div>
+    { /* to be implemented in part (b) */ }
+
+
+
+    // There may be fields, constructors, and methods that are not shown.
+}
+</pre></div>
+<div id="csList2"><ol>
+   <li>
+      <p>Write the <em>Thesaurus</em> method <em>addSynonym</em>. If word 
+        is already a key in <em>wordMap</em>, syn is added to the set associated 
+        with word. Otherwise, a new entry is added to wordMap with word as the 
+        key and a set containing syn as the associated value. </p>
+      <p>For example, assume that the <em>Thesaurus</em> object <em>myThesaurus</em> 
+        has been declared and initialized with the values shown at the beginning 
+        of this question. The following code segment contains two calls to <em>addSynonym</em>.</p>
+      <div id="apCode"><pre>myThesaurus.addSynonym(&quot;wonderful&quot;, &quot;magnificent&quot;); 
+myThesaurus.addSynonym(&quot;awesome&quot;, &quot;wonderful&quot;); </pre></div>
+      <p>After the code segment has executed, the contents of <em>myThesaurus</em> 
+        are as shown below.</p>
+      <table id="csTable" width="400">
+        <tr> 
+          <th><div align="center"><strong>Word</strong></div></td>
+          <th><div align="center"><strong>Synonym Set</strong></div></td>
+        </tr>
+        <tr> 
+          <td>excellent</td>
+          <td>{brilliant, great, outstanding, tremendous}</td>
+        </tr>
+        <tr> 
+          <td>super</td>
+          <td>{excellent, fantastic, great, wonderful}</td>
+        </tr>
+        <tr> 
+          <td>wonderful</td>
+          <td>{amazing, brilliant, fantastic, great, magnificent}</td>
+        </tr>
+        <tr> 
+          <td>awesome</td>
+          <td>{wonderful}</td>
+        </tr>
+      </table>
+      <p>Complete method <strong>addSynonym</strong> below. </p>
+<div id="apCode"><pre>// adds syn to the set of synonyms associated with word 
+// in this Thesaurus; 
+// if word is not a key in this Thesaurus, adds an 
+// entry with word as key and a set containing syn 
+// as the associated value
+<div id="apHighlight"><pre>public void <strong>addSynonym</strong>(String word, String syn)</pre></div>
+
+
+
+
+</pre></div>
+</li>	  
+	  
+<li>
+      <p>Write the <em>Thesaurus</em> method <em>removeSynonym</em>. The word 
+        syn should be removed from every synonym set in the thesaurus. Method 
+        <em>removeSynonym</em> returns a set (possibly empty) that contains the 
+        keys for which the associated synonym set was modified. No key is ever 
+        removed from the thesaurus, even if the synonym set associated with that 
+        key becomes empty.</p>
+      <p>For example, assume that the <em>Thesaurus</em> object <em>myThesaurus</em> 
+        has been declared and initialized with the following values. </p>
+      <table id="csTable" width="400">
+        <tr> 
+          <th><div align="center"><strong>Word</strong></div></td>
+          <th><div align="center"><strong>Synonym Set</strong></div></td>
+        </tr>
+        <tr> 
+          <td>excellent</td>
+          <td>{brilliant, great, outstanding, tremendous}</td>
+        </tr>
+        <tr> 
+          <td>super</td>
+          <td>{excellent, fantastic, great, wonderful}</td>
+        </tr>
+        <tr> 
+          <td>wonderful</td>
+          <td>{amazing, brilliant, fantastic, great, magnificent}</td>
+        </tr>
+        <tr> 
+          <td>awesome</td>
+          <td>{wonderful}</td>
+        </tr>
+      </table>
+      <p>Consider the following statement. </p>
+      <div id="apCode"><pre>Set affectedWords = myThesaurus.removeSynonym(&quot;wonderful&quot;); </pre></div>
+      <p>After the statement has executed, the contents of <em>myThesaurus</em> 
+        are as shown below, and the set <em>affectedWords</em> contains {super, 
+        awesome}. Note that the words &quot;wonderful&quot; and &quot;awesome&quot; 
+        still appear as keys in the thesaurus.</p>
+      <table id="csTable" width="400">
+        <tr> 
+          <th><div align="center"><strong>Word</strong></div></td>
+          <th><div align="center"><strong>Synonym Set</strong></div></td>
+        </tr>
+        <tr> 
+          <td>excellent</td>
+          <td>{brilliant, great, outstanding, tremendous}</td>
+        </tr>
+        <tr> 
+          <td>super</td>
+          <td>{excellent, fantastic, great}</td>
+        </tr>
+        <tr> 
+          <td>wonderful</td>
+          <td>{amazing, brilliant, fantastic, great, magnificent}</td>
+        </tr>
+        <tr> 
+          <td>awesome</td>
+          <td>{}</td>
+        </tr>
+      </table>
+      <p>Complete method <strong>removeSynonym</strong> below. </p>
+<div id="apCode"><pre>// removes the word syn from each synonym set in this Thesaurus; 
+// returns a set of the words (keys) whose associated
+// synonym sets originally contained the word syn;
+// if syn was not contained in any synonym set, returns an empty set public 
+<div id="apHighlight"><pre>Set&lt;String&gt; <strong>removeSynonym</strong>(String syn)</pre></div> 
+
+
+</pre></div>     
+</li>
+</ol></div>
+
+<h1>Sample Run</h1>
+<p>*your words may not be in same order (set)</p>
+<div id="csSampleRun">
+<pre>
+super {great,excellent,fantastic,wonderful}
+
+awesome {wonderful}
+
+excellent {tremendous,great,brillant,outstanding}
+
+wonderful {magnificent,amazing,great,brilliant,fantastic}
+
+
+super
+excellent
+wonderful
+
+
+super {excellent,fantastic,wonderful}
+
+awesome {wonderful}
+
+excellent {tremendous,brillant,outstanding}
+
+wonderful {magnificent,amazing,brilliant,fantastic} 
+
+</pre>
+
+<br>
+</div>

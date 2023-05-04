@@ -1,0 +1,112 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR GrayScale</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/GrayScaleNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >GrayScale</a></h1>
+
+
+<h1>Directions</h1>
+<p>A grayscale image is represented by a 2-dimensional rectangular array of pixels (picture elements). A pixel is an
+integer value that represents a shade of gray. In this question, pixel values can be in the range from 0 through
+255, inclusive. A black pixel is represented by 0, and a white pixel is represented by 255.</p>
+<p>The declaration of the GrayImage class is shown below. You will write two unrelated methods of the
+GrayImage class.</p>
+<img src="images/GrayScale1.png">
+
+<div id="csList2">
+<ol>
+<li><p>Write the method <strong>countWhitePixels</strong> that returns the number of pixels in the image that contain the
+value WHITE. For example, assume that pixelValues contains the following image.</p>
+
+<div align="center"><img src="images/GrayScale2.png"></div>
+
+<p>A call to countWhitePixels method would return 5 because there are 5 entries (shown in boldface)
+that have the value WHITE.</p>
+
+<p>Complete method <strong>countWhitePixels</strong> below.</p>
+<div id="apCode" style="width:550px"> <pre>
+/** @return the total number of white pixels in this image.
+ *  Postcondition: this image has not been changed.
+ */
+<div id="apHighlight"><pre>public int countWhitePixels()</pre></div> 
+
+
+ 
+</pre></div>
+</li>
+<li><p>Write the method processImage that modifies the image by changing the values in the instance
+variable pixelValues according to the following description. The pixels in the image are processed one
+at a time in row-major order. Row-major order processes the first row in the array from left to right and then
+processes the second row from left to right, continuing until all rows are processed from left to right. The
+first index of pixelValues represents the row number, and the second index represents the column
+number.</p>
+<p>The pixel value at position (row, col) is decreased by the value at position (row + 2, col + 2) if such a
+position exists. If the result of the subtraction is less than the value BLACK, the pixel is assigned the value
+of BLACK. The values of the pixels for which there is no pixel at position (row + 2, col + 2) remain
+unchanged. You may assume that all the original values in the array are within the range
+[BLACK, WHITE], inclusive.</p>
+<p>The following diagram shows the contents of the instance variable pixelValues before and after a call
+to processImage. The values shown in boldface represent the pixels that could be modified in a
+grayscale image with 4 rows and 5 columns.</p>
+
+<div align="center"><img src="images/GrayScale2.png"></div><br>
+
+Complete method <strong>processImage</strong> below.
+
+<div id="apCode" style="width:550px"> <pre>
+/** Processes this image in row-major order and decreases the
+ *  value of each pixel at position (row, col) by the value
+ *  of the pixel at position (row + 2, col + 2) if it exists.
+ *  Resulting values that would be less than BLACK are replaced
+ *  by BLACK. Pixels for which there is no pixel
+ *  at position (row + 2, col + 2) are unchanged.
+ */
+<div id="apHighlight"><pre>public void processImage()</pre></div>
+
+
+
+</pre></div>
+</li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+ 255 184 178  84 129
+  84 255 255 130  84
+  78 255   0   0  78
+  84 130 255 130  84
+
+=====================
+Test countWhitePixels
+=====================
+count = 5
+
+
+=====================
+Test processImage
+=====================
+
+Original Image
+--------------
+ 221 184 178  84 135
+  84 255 255 130  84
+  78 255   0   0  78
+  84 130 255 130  84
+
+
+Processed Image
+---------------
+ 221 184 100  84 135
+   0 125 171 130  84
+  78 255   0   0  78
+  84 130 255 130  84
+
+
+</pre>
+</div>
+	<br>
+</div>	
+

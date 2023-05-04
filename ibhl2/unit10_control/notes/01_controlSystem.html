@@ -1,0 +1,306 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Centralized Control Systems</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>7.1.1 Discuss a range of control systems.</li>
+						<li>7.1.2 Outline the uses of microprocessors and sensor input in control systems.</li>
+						<li>7.1.3 Evaluate different input devices for the collection of data in specified situations.</li>
+						<li>7.1.4 Explain the relationship between a sensor, the processor and an output transducer.</li>
+						<li>7.1.5 Describe the role of feedback in a control system.</li>
+						<li>7.1.6 Discuss the social impacts and ethical considerations associated with the use of embedded systems.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Centralized Control Systems</h1>
+
+<p>A <strong>control system</strong> is a device or set of devices that manage
+  the behavior of other devices.</p> 
+<p>Depending upon whether a human body (the operator) is physically involved, a control system can be categorized as either a <strong>Manual Control System</strong> or a <strong>Automatic
+  Control System</strong>.</p>
+<h3>Manual Control System</h3>
+<p>A simple example of a manual control system is a shower.</p>
+<div align="center"><img src="images/manual_control.gif"></div>
+<p>When the operator (a person) starts the shower the water is cold. To
+  start the heating process the valve in the hot water line is opened. The operator
+  can then determine the effectiveness of the control process by standing in the shower. If the water is too hot,
+  the valve should be closed a little or even turned off. If the water is not
+  hot enough then the valve is left open or opened wider.</p>
+  
+<p><strong>4 Functions of a Control System</strong></p>
+<p>The shower control system, completed by the operator, includes the following functions:</p>
+<div id="csList"><ul>
+<li>
+<p><strong>Measurement</strong> - This is essentially an estimate or appraisal
+  of the process being controlled by the system. In the shower example, this
+  is achieved by the right hand of the operator.</p>
+</li>
+<li>
+<p><strong>Comparison</strong> - This is an examination of the likeness of the
+  measured values and the desired values. In this example, this is carried out
+  in the brain of the operator.</p>
+</li>
+<li><p><strong>Computation</strong> - This is a calculated judgment that indicates
+    how much the measured value and the desired values differ and what action
+    and how much should be taken. In
+  this example, the operator will calculate the difference between the desired
+  temperature and the actual one.</p></li>
+ <li>
+   <p><strong>Correction</strong> - This is where the order for the adjustment
+     is carried out. In this example, the left hand of the operator takes the
+     necessary actions following the order from
+  brain.</p>
+ </li>
+ </ul></div>
+  <h3>Automatic Control System</h3>
+  <p>The manual shower control system can easily be converted to an automatic
+    control system as shown in the figure below.</p>
+	
+	<div align="center"><img src="images/automatic_control.gif"></div>
+  <div id="csList"><ul>
+  <li><p>First a temperature measurement device to measure the water
+    temperature, can be included to replace the right hand of the operator. This addition
+    to the system would have improved accuracy.</p></li>
+  <li><p>Instead of manual valves a special kind of valve called a control
+    valve can be added which is driven by compressed air or electricity. This will replace
+    the left hand of the operator.</p></li>
+  <li><p>A device called a controller, in this case a temperature controller,
+    can be included to replace the brain of the operator. This has the functions of comparison
+    and computation and can give orders to the control valve.</p></li>  
+  <li><p> The signal and order connections between the measurement device, control
+    valve and controller are transfered through cables and wires, which replace
+    the nerve system in the operator.</p></li>
+</ul></div>
+
+<p><strong>Hardware of an Automatic Control System</strong></p>
+<p>An automatic control system contains the following hardware.</p>
+<div id="csList"><ul>
+<li><p><strong>Sensor</strong> - a piece of equipment to measure system variables.
+    It serves as the signal source in automatic control.</p>
+</li>
+<li><p><strong>Controller</strong> - a piece of equipment to perform the functions
+    of comparison and computation.</p>
+</li>
+<li><p><strong>Control Element</strong> - a piece of equipment to perform the control action or to exert direct influence on the process. This element receives signals from the controller and performs some type of operation on the process. 
+Generally the control element is simply a control valve.</p></li>
+</ul></div>
+
+
+<div id="ib">7.1.1 Discuss a range of control systems.</div>
+<p>You can find control systems working in just about ever area of society including industry, business, healthcare, transportation,
+    education, energy, military, government, and the home. Some examples of control systems include automatic doors, heating systems, taxi meters,
+    elevators, washing machines,  process control, device drivers, domestic robots, GPS systems, traffic lights and other common devices.</p>
+<div id="csNote">The IB curriculum states, "Technical knowledge of specific systems is not expected but students should be able to 
+   analyse a specified system.</div>
+
+<p>Several of the control systems listed above are discussed below.</p>
+
+<h3>Automatic Doors</h3>
+<p>Automatic doors consist of a sensor, a processor and an automator. The sensor is often infrared and sends out infrared signals which
+   then bounce off of objects. These signals can also be microwaves. The sensor then receives the signal and then sends a signal to the 
+   processing unit which then processes the information and sends it to the automator, in the form of two motors that cause the doors 
+   to open for a brief moment, and then close.</p>
+
+<p>Photocells in the elevator make sure that the door does not close on people walking through. These sensors sense if there is
+   someone in the way and sends a signal to the processor. If this signal is true, stating that there is somebody in the way, the doors
+   will not close. The processor will then see whether the doors should open or close, based on the information that it has received 
+   from the sensors. If the infrared sensor senses a person, the processor will tell the motors to open the door. Then, if the photocells
+   do not sense a person in the way, the processor will send the signal to close the door again.</p>
+
+<div align="center"><img src="images/automatic door.jpg"></div>
+
+<h3>Elevator</h3>
+
+  <p>An Elevator Control System consists of buttons on the floors of a building 
+    and within the elevator, a motor to move the elevator up and down, motorised 
+    doors, and a computer to control everything. A person will first press a floor 
+    button to call an elevator. The computer will receive this and send the best 
+    suited elevator to that floor, this is determined by not only the position 
+    of the elevators but also the direction of the elevators currently in use. 
+    The computer can 'see' where the elevator cab is in the shaft as the cab has 
+    magnetic sensors on its side that read a series of holes in a long magnetic 
+    tape along the shaft. The computer will send the cab to the floor with motors 
+    that control the movement of the elevator. The motor will control the movement 
+    of the elevator cab with suspensions cables. When the elevator reaches the 
+    floor the doors will only open when the cab reaches a certain point (read 
+    with the magnetic sensor), the cab door will also have a timer to ensure it 
+    does not stay open without a passenger pressing the close door button. The 
+    passenger will then press the button of which floor he/she wishes to go to. 
+    This is request is sent to the computer. The computer will then proceed to 
+    activate the motors pulling the elevator cab to the passengers desired floor. 
+    When the elevator is approaching the floor the computer (recognized with the 
+    magnetic sensors) tells the motors to slow down gradually until a full stop 
+    at the desired floor. When the floor is reached, the doors will open.</p>
+
+<div align="center"><img src="images/elevator.jpg"></div>
+
+<h3>Traffic Light</h3>
+<p>Pedestrian crossing often use traffic lights to ensure safety for both the drivers and the pedestrians. The pedestrian pushes
+   a button which sends a signal to the microprocessor. This then waits for an appropriate time to trigger the signal to change with
+   the use of other sensors. Traffic lights use underground electrical wire to induce an electromagnetic field which will detect any
+   presence of metal.</p>
+
+<div align="center"><img src="images/traffic light.gif"></div>
+
+
+<h3>The Global Positioning System (GPS)</h3>
+
+<p>Each of these 3,000- to 4,000-pound solar-powered satellites circles the globe at about 12,000 miles (19,300 km),
+   making two complete rotations every day. If you know you are 10 miles from satellite A in the sky, you could be anywhere on 
+   the surface of a huge, imaginary sphere with a 10-mile radius. If you also know you are 15 miles from satellite B, you can overlap
+   the first sphere with another, larger sphere. The spheres intersect in a perfect circle. If you know the distance to a third satellite, you get a third sphere, which intersects with this circle at two points.
+   The Earth itself can act as a fourth sphere -- only one of the two possible points will actually be on the surface of the planet, 
+   so you can eliminate the one in space. Receivers generally look to four or more satellites, however, to improve accuracy and provide
+    precise altitude information.</p>
+
+<div align="center"><img src="images/gps.png"></div>
+
+<div id="ib">7.1.2 Outline the uses of microprocessors and sensor input in control systems.</div>
+
+<h3>Microprocessors</h3>
+<p>A <strong>microprocessor</strong> is an integrated circuit that contains the entire central processing unit of a computer on a single chip. 
+   Microprocessors take on the role of controller in most automatic control systems.</p>
+<div align="center"><img src="images/microprocessor.png" width="75%"></div>
+<div id="csList"><ul>
+<p>Having a microprocessor in a control system has several advantages</p>
+
+    <li><p>They can process data very quickly much faster than a human</p></li>
+    <li><p>Due to these fast speeds they can react very quickly to change in the control system</p></li>
+    <li><p>Control systems can run 24/7</p></li>
+    <li><p>They can work in places where it would be dangerous for humans</p></li>
+    <li><p>Outputs are consistent and error free</p></li>
+</ul></div>
+<div id="csList"><ul>
+<p>However there are several disadvantages</p>
+
+    <li><p>It may cost a lot of money to develop the software for a control system as they are specialized</p></li>
+    <li><p>The system will not be able to run in the case of a power shortage</p></li>
+    <li><p>The system will not be able to run in the case of a computer malfunction</p></li>
+    <li><p>A computer can't react to events that it has not been programmed for, unlike a human</p></li>
+</ul></div>
+
+<h3>Sensors</h3>
+<div id="csList"><ul>
+<p>Sensors are input devices that measure physical quantities. There are sensors for a lot of conditions
+   such as temperature, pressure, sound, and humidity. If the sensor is an analog device it sends its readings to
+   an Analog to Digital Converter which then sends the data on to the CPU for processing. For example:</p>
+
+    <li><p>Temperature sensors in buildings are used to maintain specific temperatures.</p></li>
+    <li><p>Security alarm systems use infrared and pressure plates to sense movement within an environment.</p></li>
+    <li><p>Magnetic sensors are used to detect metal and can be placed in roads to monitor traffic flow.</p></li>
+</ul></div>
+
+<h3>What is an ADC</h3>
+<p>An Analog to Digital Converter(ADC), converts analog data, from sensors, to readable data for a computer, which is digital data.
+ A computer can't read analog data because it is constantly changing, so an ADC samples the data to obtain digital information that can
+ be processed by a computer.</p>
+
+
+
+<div id="ib">7.1.3 Evaluate different input devices for the collection of data in specified situations.</div>
+<p>There are numerous input devices used to gather information. Some examples are shown in the table below.</p>
+<table id="csTable">
+<tr >
+  <td>Kinect</td>
+  <td><p>A motion sensing input device by Microsoft for the Xbox 360 video game console and Windows PCs. It enables users to control
+ and interact with the Xbox 360 without the need to touch a game controller, through a natural user interface using gestures and 
+ spoken commands.</p></td>
+  <td  style="background-color:#FFFFFF"><img src="images/kinect.jpg"></img></td>
+</tr>
+<tr>
+  <td>Passive Infrared Sensor (PIR)</td>
+  <td><p>An input device that measures infrared light emitted from objects that generate heat, and therefore infrared radiation,
+ in its field of view. They have many uses including security lighting and alarm systems.</p></td>
+  <td  style="background-color:#FFFFFF"><img src="images/pir.jpg"></img></td>
+</tr>
+<tr>
+  <td>Laser Rangefinder</td>
+  <td><p>An input device that bounces the energy of a laser beam off a target, and then measures the return time back to the sensor. 
+Since the speed of light is a constant, the return time gives an accurate reading of the distance to the target. Golfers often use them to determine
+the distance from their ball to the hole.</p></td>
+  <td  style="background-color:#FFFFFF"><img src="images/laserRangeFinder.jpg"></img></td>
+</tr>
+<tr>
+  <td>Temperature Sensor</td>
+  <td><p> An input device that gathers data concerning the temperature from a source and converts it to a form that can
+     be understood either by an observer or another device. These sensors come in many different forms and are used for a wide variety of purposes,
+     from simple home use to extremely accurate and precise scientific use.</p></td>
+  <td  style="background-color:#FFFFFF"><img src="images/tempSensor.jpg"></img></td>
+</tr>
+</table>
+
+<div id="ib">7.1.4 Explain the relationship between a sensor, the processor and an output transducer.</div>
+<p><strong>Transducer</strong> - an electronic device that transforms energy from one form to another. A tranducer can be either an input device (sensor)
+   or an output device (actuator).</p>
+<div id="csList">
+<ul>
+<li><p><strong>Sensor</strong> - an input device acquires information from the "real world" by detecting/measuring a signal or stimulus. 
+   Senors take some sort of physical energy - such as sound waves, temperature, or pressure - and converts it into a electronic signal that can be read.</p></li>
+<li><p><strong>Processor (Controller)</strong> - manipulates/stores the input data from a sensor.</p></li>
+<li><p><strong>Output Transducer (Actuator)</strong> - is an output device that takes an electronic signal and converts it into physical energy.</p></li>
+</ul>
+</div>
+<p>A good example of this relationship is the process of speaking through a microphone, amplifying the sound, and listening to the modified sound 
+   through speakers.</p>
+<div align="center"><img src="images/soundController.gif"></div>
+
+<p>Microphone - converts the sound waves that strike its diaphragm into an electrical signal.</p>
+<p>Amplifier - increases the power of the signal received from the microphone.</p>
+<p>Speakers - converts the electrical signal back into a sound.</p>
+
+
+<div id="ib">7.1.5 Describe the role of feedback in a control system.</div>
+
+<p>A <strong>feedback control system</strong> examines the output produced by the system so that it can make changes that will improve its efficiency.
+   In a feedback control system, information about performance is measured and that information is used to correct how the system performs.</p>
+   
+<p>An example of feedback control system is the autopilot in an airplane. The autopilot control system continually monitors the airplanes speed and altitude
+   and makes adjustments as needed to maintain the desired speed and altitude.</p>
+
+<div id="ib">7.1.6 Discuss the social impacts and ethical considerations associated with the use of embedded systems.</div>
+
+<p>An <strong>embedded system</strong> is a dedicated computer system designed for one or two specific functions. This system is embedded as a part 
+  of a complete device system that includes hardware, such as electrical and mechanical components. The embedded system is unlike the 
+  general-purpose computer (like a PC), which is engineered to manage a wide range of processing tasks.</p> 
+
+<p>Most people don't realize that the most common form of computer in use today is by far the embedded computer. In fact, 98% of computing devices
+  are embedded in all kinds of electronic equipment and machines. Computers are moving away from the desktop and are finding themselves in
+  everyday devices like credit cards, mobile phones, cars and planes or places like homes, offices and factories.</p>
+
+<p>Embedded systems are being increasingly used in critical applications such as</p>
+
+
+<p><strong>Safety-critical applications</strong></p>
+<div id="csList"><ul>
+<li><p>potential for death, injury, loss or damage to property</p></li> 
+<li><p>Examples: anti-lock brake system, laser used to perform lasik surgery, missiles</p></li>
+</ul></div>
+<p><strong>Societal-critical applications</strong></p>
+<div id="csList"><ul>
+<li><p>potential for major disruption to everyday life</p></li> 
+<li><p>Examples: traffic lights, airport flight scheduling systems, toll booths, ATM</p></li>
+</ul>
+</div> 
+<p><strong>Ethical-critical applications</strong></p>
+<div id="csList"><ul>
+<li><p>potential for unethical use</p></li>
+<li><p>Examples: survelliance, CCTV, tagging prisoners or child sex offenders</p></li>
+</ul>
+</div> 
+<p><strong>Business-critical applications</strong></p>
+<div id="csList"><ul>
+<li><p>potential for large economic loss to company/business</p></li> 
+<li><p>exposure to litigation</p></li> 
+</ul>
+</div>  
+
+<br>
+</div>	
+

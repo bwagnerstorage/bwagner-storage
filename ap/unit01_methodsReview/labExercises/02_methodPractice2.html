@@ -1,0 +1,156 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MethodPractice2</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Copy the following code into a file named MethodPractice2.java</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class MethodPractice2
+{
+    private Scanner keyboard = new Scanner(System.in);
+
+      <div id="csHighlight"><pre>// Implement methods below this line</pre></div>
+
+
+
+    public static void main(String[] args)
+    {
+        MethodPractice2 app = new MethodPractice2();
+
+        System.out.println("******************");
+        System.out.println("   Test greeting");
+        System.out.println("******************");
+        app.greeting("Kendall", 6);
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test range");
+        System.out.println("******************");
+        app.range(10, 15);
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test compare");
+        System.out.println("******************");
+        System.out.println(app.compare("demand"));
+        System.out.println(app.compare("football"));
+        System.out.println(app.compare("bulb"));
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test reverse");
+        System.out.println("******************");
+        System.out.println(app.reverse("ball"));
+        System.out.println(app.reverse("courage"));
+        System.out.println(app.reverse("hamburger"));
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test numOccurrences");
+        System.out.println("******************");
+        System.out.println(app.numOccurrences("MISSISSIPPI", "I"));
+        System.out.println(app.numOccurrences("AUTOMOBILE", "O"));
+        System.out.println(app.numOccurrences("TEXAS", "R"));
+        System.out.println();
+    }
+}</pre>
+  </div>
+  <div id="csList">
+  <ol>
+    <li>Implement a void method named <strong>greeting</strong> that includes two formal parameters.
+	    The first parameter is of type String named firstName. The second parameter is of type
+	    int named num. This method should print the phrase "__________, have a nice day!" num times
+	    where the blank is the value of the parameter firstName.<br>
+		For example, the call greeting("John", 5) would produce the following output<br>
+	    <div id="csOutput">
+		<pre>
+John, have a nice day.
+John, have a nice day.
+John, have a nice day.
+John, have a nice day.
+John, have a nice day.</pre>
+		</div><br>		
+    </li>
+	<li>Implement a void method named <strong>range</strong> that includes two formal parameters both
+	    of type int named begin and end respectively. This method should print a sequence of numbers
+	    starting at begin and ending at end. For example, the call range(5, 10) would produce the following output<br>
+	    <div id="csOutput">
+		<pre>
+5
+6
+7
+8
+9
+10</pre>
+		</div>	
+	</li>
+	<li>Implement a non-void method named <strong>compare</strong> that includes one formal parameter
+	    of type String named str. This method should return a boolean value of true if the first
+		character of str is equal to the last character; otherwise, it should return false. For 
+		example, the call compare("noon") would return true since both the first letter and
+		the last letter are the same.</li>
+		
+	<li>Implement a non-void method named <strong>reverse</strong> that includes one formal parameter
+	    of type String named str. This method should return a string that is the reverse of str.
+		For example, the call reverse("computer") would return the string "retupmoc".<br>		
+	</li>
+	
+	<li>Implement a non-void method named <strong>numOccurrences</strong> that includes two formal parameters
+	    both of type String named word and letter respectively. This method should return a count of the
+		number of times letter occurs in word. For example, the call 
+		numOccurrences("elephant", "e") would return a value of 2 since the letter "e" occurs in 
+		the word "elephant" 2 times.<br>		
+	</li>
+  </ol>
+  </div>
+<h1>Source File</h1>
+<p>MethodPractice2.java</p>
+<h1>Sample Run</h1>
+  <div id="csSampleRun"> 
+    <pre>
+******************
+   Test greeting
+******************
+Kendall, have a nice day.
+Kendall, have a nice day.
+Kendall, have a nice day.
+Kendall, have a nice day.
+Kendall, have a nice day.
+Kendall, have a nice day.
+
+******************
+   Test range
+******************
+10
+11
+12
+13
+14
+15
+
+******************
+   Test compare
+******************
+true
+false
+true
+
+******************
+   Test reverse
+******************
+llab
+egaruoc
+regrubmah
+
+***********************
+   Test numOccurrences
+***********************
+4
+2
+0
+
+</pre>
+</div>
+	<br>
+</div>	
+

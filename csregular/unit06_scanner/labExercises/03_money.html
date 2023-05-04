@@ -1,0 +1,50 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Money</div>
+
+<div id="csContent"> 
+  <h1>Directions</h1>
+  <p>Write a program that prompts the user to enter the number of pennies, nickels, dimes, and quarters currently
+     in his or her possession. Use these values to calculate the total amount of money in dollars and cents (no decimal point).
+	 To calculate the dollar and cent values you will first need to calculate the total number of cents. Here is the formula:</p>
+  <p><strong>Total Cents = Number of Quarters x 25 + Number of Dimes x 10 + Number of Nickels x 5 + Number of Pennies</strong></p>
+  <p>Once you have calculated the total number of cents you can then extract the dollar and cent amounts from the total cents
+     by using the division and remainder operators. To do this use the following formulas:</p>
+  <p><strong>Dollars = Total Cents / 100</strong><br>
+     <strong>Cents = Total Cents % 100</strong></p>
+  <p>As an example, suppose the total cents equals 240 cents. When you use the division operator to divide 240 by 100 you get 2, the dollar amount. 
+     Recall that when you divide two integer values Java performs integer division which results in an integer answer. When you
+	 use the remainder operator to calculate the remainder you get 40, the cents amount. This gives you a result of <strong>2 dollars and 40 cents</strong>.</p>
+  <p>You will need to declare the following variables in your program:</p>
+  <div id="csCode">
+    <pre>
+int quarters = 0;      <font color="#FF00FF">// number of quarters</font>
+int dimes = 0;         <font color="#FF00FF">// number of dimes</font>
+int nickels = 0;       <font color="#FF00FF">// number of nickels</font>
+int pennies = 0;       <font color="#FF00FF">// number of pennies</font>
+int totalCents = 0;    <font color="#FF00FF">// total cents collected</font>
+int dollars = 0;       <font color="#FF00FF">// dollar amount</font>
+int cents = 0;         <font color="#FF00FF">// cents amount</font>
+	</pre>
+  </div>
+  <h1>Source File</h1>
+  <p>Money.java</p>
+  <h1>Sample Run</h1>
+  <div id="csSampleRun"> 
+    <pre>
+How many pennies do you have --> 6
+How many nickels do you have --> 3
+How many dimes do you have --> 10
+How many quarters do you have --> 5
+
+Total value = 2 dollars and 46 cents
+</pre>
+  </div>
+  <br><br><br>
+  <img src="images/empty.gif" onload="getSolution('/csregular/unit06_scanner/solutions/03_moneySolution.php'); this.parentNode.removeChild(this);" />
+  <div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+  <br>
+</div>	
+
+

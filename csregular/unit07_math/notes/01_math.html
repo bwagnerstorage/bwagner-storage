@@ -1,0 +1,156 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Math Class</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Math Class</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Math Class</h1>
+  <p>The next Java standard class we will look at is the <strong>Math class</strong> which provides a range of common mathematical
+     methods. The Math class is quite extensive; however, we limit our attention to the methods listed in the table below. </p>
+  <p><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Math.html" title="Math class" target="_blank"><font color="#0000FF">Click 
+    Here</font></a> for the complete list of Math class methods.</p>
+<table id="csTable">
+<tr>
+   <th width="280">Method</th>
+   <th>What It Does</th>
+</tr>
+<tr>
+   <td>int <strong>abs</strong>(int x)</td>
+   <td>returns the absolute value of integer x</td>
+</tr>
+<tr>
+   <td>double <strong>abs</strong>(double x)</td>
+   <td>returns the absolute value of a double x</td>
+</tr>
+<tr>
+   <td>int <strong>max</strong>(int a, int b)</td>
+   <td>returns the greater of a and b</td>
+</tr>
+<tr>
+   <td>int <strong>min</strong>(int a, int b)</td>
+   <td>returns the lesser of a and b</td>
+</tr>
+<tr>
+   <td>double <strong>pow</strong>(double base, double exponent)</td>
+   <td>returns the base raised to the exponent</td>
+</tr>
+<tr>
+   <td>double <strong>random</strong>()</td>
+   <td>returns a double value with a positive sign, greater than or equal to 0.0 and less than 1.0</td>
+</tr>
+<tr>
+   <td>long <strong>round</strong>(double x)</td>
+   <td>returns x rounded to the nearest whole number. (<strong>Note:</strong> return value must be cast to an int before assignment to an int variable)</td>
+</tr>
+<tr>
+   <td>double <strong>sqrt</strong>(double x)</td>
+   <td>returns the square root of x</td>
+</tr>
+</table>
+  <p>The data type in front of the method name (Example: <font color="#FF0000">int</font> abs(int x)) tells you the
+     type of data that is returned by the method (aka: the answer). It is not included in the code that performs the calculation.</p>
+<div id="csNote">
+  <strong>Programming Note:</strong> Notice that two methods in the table are called abs. They are distinguished from each other by the fact that one
+   takes an integer and the other takes a double parameter. Using the same name for two different methods is called
+   <strong>method overloading</strong>.</div>
+
+<p>Refer to the following program segment for a sample run of each method.</p>
+<div id="csCode">
+    <pre>
+int n = 0;
+double d = 0;
+n = Math.abs(-17);          <div id="csComment"><pre>// n = 17</pre></div>
+d = Math.abs(-39.65);       <div id="csComment"><pre>// d = 39.65</pre></div>
+d = Math.pow(10, 3);        <div id="csComment"><pre>// d = 1000.0</pre></div>
+n = (int)Math.round(3.52);  <div id="csComment"><pre>// n = 4</pre></div>
+n = Math.max(25, 50);       <div id="csComment"><pre>// n = 50</pre></div>
+n = Math.min(25, 50);       <div id="csComment"><pre>// n = 25</pre></div>
+d = Math.sqrt(81);          <div id="csComment"><pre>// d = 9.0</pre></div>
+</pre>
+</div>
+<p>If you examined the code above, you may have noticed something unusual. There are no objects. Normally when you
+   want to use the functionality that a class provides you create an object of the class and then send messages to
+   the object asking it to perform the desired operation. Refer to the Scanner class below</p>
+   <div id="csCode">
+    
+    <pre>
+Scanner <div id="csHighlight"><pre>keyboard</pre></div> = new Scanner(System.in);  <div id="csComment"><pre> // keyboard is an object</pre></div>
+int n = <div id="csHighlight"><pre>keyboard</pre></div>.nextInt();
+double d = <div id="csHighlight"><pre>keyboard</pre></div>.nextDouble();
+</pre>
+</div>
+<p>The Math class is a special Java class because you can send messages directly to the class. You do not need an object.</p>
+   <div id="csCode">  
+  <pre>
+System.out.println(<div id="csHighlight"><pre>Math</pre></div>.sqrt(25));     <div id="csComment"><pre> // Math is a class</pre></div>
+</pre></div>
+<h1>random Method</h1>
+<p>Programs are often used to simulate random events such as the flips of a coin, the arrival times of customers at a bank,
+   the moment-to-moment fluctuations of the stock market, and so forth. At the heart of all such programs is a mechanism 
+   called a <strong>random number generator</strong> that returns numbers chosen at random for a predesignated interval. One implementation 
+   of Java's random number generator is the <strong>random</strong> method in the <strong>Math</strong> class. This method creates random floating point values
+   greater than or equal to 0 and less than 1 (0 <= n < 1). However, this range can be modified through casting, multiplication,
+   division, subtraction, and addition. </p>
+   
+ <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Random/Slide1.PNG"></li>
+          <li><img src="images/Random/Slide2.PNG"></li>
+          <li><img src="images/Random/Slide3.PNG"></li>
+		  <li><img src="images/Random/Slide4.PNG"></li>
+		  <li><img src="images/Random/Slide5.PNG"></li>
+		  <li><img src="images/Random/Slide6.PNG"></li>
+		  <li><img src="images/Random/Slide7.PNG"></li>
+		  <li><img src="images/Random/Slide8.PNG"></li>
+		  <li><img src="images/Random/Slide9.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" /> 
+   
+ <p>Look at the following examples:</p>
+   <div id="csCode">
+    <pre>
+double r1 = Math.random();
+System.out.println("Random 1  (0 <= r1 < 1)      = " + r1);
+        
+int r2 = (int)(Math.random() * 10);
+System.out.println("Random 2  (0 <= r2 < 10)     = " + r2);
+        
+int r3 = (int)(Math.random() * 50);
+System.out.println("Random 3  (0 <= r3 < 50)     = " + r3);
+        
+int r4 = (int)(Math.random() * 10) + 5;
+System.out.println("Random 4  (5 <= r4 < 15)     = " + r4);
+        
+int r5 = (int)(Math.random() * 1000) + 500;
+System.out.println("Random 5  (500 <= r5 < 1500) = " + r5);
+
+double r6 = (int)(Math.random() * 10) / 10.0;
+System.out.println("Random 6  ( 0 <= r6 < 1)     = " + r6);<div id="csComment"><pre>// displayed to a 10th</pre></div>
+</pre>
+</div>
+<div id="csOutput">
+<pre>
+Random 1  (0 <= r1 < 1)      = 0.8235665487595423
+Random 2  (0 <= r2 < 10)     = 5
+Random 3  (0 <= r3 < 50)     = 36
+Random 4  (5 <= r4 < 15)     = 10
+Random 5  (500 <= r5 < 1500) = 829
+Random 6  (0 <= r6 < 1)      = .6</pre>
+</div>
+	<br>
+</div>	
+

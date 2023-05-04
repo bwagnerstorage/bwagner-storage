@@ -1,0 +1,295 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SportsTeam</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A SportsTeam class is defined with the following attributes and behaviors. Copy the following code
+   into a source file named <strong>SportsTeam.java</strong>.</p>
+
+<div id="csCode"><pre>
+public class SportsTeam
+{
+    // instance variables
+    private String name;
+    private int gamesPlayed;
+    private int gamesWon;
+    private int gamesLost;
+    
+    public SportsTeam(String n)
+    {
+        name = n;
+        gamesPlayed = 0;
+        gamesWon = 0;
+        gamesLost = 0;
+    }
+    
+    public SportsTeam(String n, int g, int w, int l)
+    {
+        name = n;
+        gamesPlayed = g;
+        gamesWon = w;
+        gamesLost = l;
+    }
+    
+    public int getWinningPercentage()
+    {
+        return (int)(((double)gamesWon / gamesPlayed) * 100);
+    }
+    
+    public int getGamesPlayed()
+    {
+        return gamesPlayed;
+    }
+    
+    public int getGamesWon()
+    {
+        return gamesWon;
+    }
+    
+    public int getGamesLost()
+    {
+        return gamesLost;
+    }
+    
+    public void playGame(String results)
+    {
+        if(results.equalsIgnoreCase("w"))
+           gamesWon++;
+        if(results.equalsIgnoreCase("l"))
+           gamesLost++;
+    }
+    
+    public String toString()
+    {
+        String str;
+        str = "Team Name               = " + name + "\n" +
+              "Games played            = " + gamesPlayed + "\n" +
+              "Games won               = " + gamesWon + "\n" +
+              "Games lost              = " + gamesLost + "\n" +
+              "Winning Percentage      = " + getWinningPercentage() + "%";
+              
+        return str;              
+    }
+}
+</pre></div>
+
+<p>Define two classes, Football and Baseball, that inherit from the SportsTeam class. The diagram below illustrates this relationship.
+</p>
+   
+   <div align="center"><img src="images/sportsTeam.gif"></div>
+
+<h1>Inheritance Rules</h1>
+<div id="csList">
+<ul>
+<li>A subclass can add new private instance variables.</li> 
+<li>A subclass can add new public or private methods.</li> 
+<li>A subclass can override (redefine) inherited methods.</li> 
+<li>A subclass must define its own constructors.</li> 
+<li>A subclass cannot access the private members of its superclass.</li> 
+</ul></div>
+<br>
+<p>Copy the following code into a source file named <strong>Football.java</strong></p>
+<div id="csCode"><pre>
+public class Football extends SportsTeam
+{
+    // instance variables
+
+
+    
+    // first constructor 
+    public Football(String name)
+    {
+    
+    }
+    
+    // second constructor
+    public Football(String name, int gamesPlayed, int gamesWon, int gamesLost, int t, int f)
+    {
+    
+    }
+    
+    // accessor - getTouchDownsPerGame
+    // calculates and returns the touchdowns per game by
+    // dividing number of touchdowns by games played
+    public double getTouchDownsPerGame()
+    {
+        
+    }
+    
+    // accessor - getInterceptionsPerGame
+    // caculates and returns the interceptions per game by
+    // dividing number of interceptions by games played
+    public double getInterceptionsPerGame()
+    {
+        
+    }
+    
+    // toString method
+    public String toString()
+    {
+
+    }
+}
+</pre></div> 
+
+<p>Copy the following code into a source file named <strong>Baseball.java</strong></p>
+<div id="csCode"><pre>
+public class Baseball extends SportsTeam
+{
+	// instance variables
+
+
+	
+	// default constructor
+	public Baseball(String name)
+	{
+		
+	}
+	
+	// second constructor
+	public Baseball(String name, int gamesPlayed, int gamesWon, int gamesLost, int h, int r, int e)
+	{
+		
+	}
+	
+	// accessor method - getHomeRunsPerGame
+	// calculates and returns the homeruns per game by
+	// dividing number of homeruns by games played
+	public double getHomeRunsPerGame()
+	{
+		
+	}
+	
+	// accessor method - getRBIsPerGame
+	// calculates and returns the RBIs per game by
+	// dividing the number of RBIs by games played
+	public double getRBIsPerGame()
+	{
+		
+	}
+	
+	// accessor method - getErrorsPerGame
+	// calculates and returns the errors per game by
+	// dividing the number of errors by games played
+	public double getErrorsPerGame()
+	{
+		
+	}
+	
+	// toString method
+	public String toString()
+	{
+
+		    
+	}
+}
+</pre></div>
+
+
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<p>Make the following additions and modifications to the <strong>Football</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named <strong>numTouchDowns</strong><br> 
+- Add an instance variable of type int named <strong>numInterceptions</strong></p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- Add an accessor method named <strong>getTouchDownsPerGame</strong><br> 
+- Add an accessor method named <strong>getInterceptionsPerGame</strong></p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>toString</strong> method.
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>constructor</strong> which includes 1 parameter to initialize the name of the team.<br>
+- Add a <strong>second constructor</strong> which includes 6 parameters to initialize the instance
+  variables name, gamesPlayed, gamesWon, gamesLost, numTouchDowns, and numInterceptions. 
+</p></li>
+  
+<p>Make the following additions and modifications to the <strong>Baseball</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named <strong>numHomeRuns</strong>. <br>
+- Add an instance variable of type int named <strong>numRBIs</strong>. <br>
+- Add an instance varialbe of type int named <strong>numErrors</strong>. 
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- Add an accessor method named <strong>getHomeRunsPerGame</strong>. <br>
+- Add an accessor method named <strong>getRBIsPerGame</strong>. <br>
+- Add an accessor method named <strong>getErrorsPerGame</strong>. 
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>toString</strong> method.
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>constructor</strong> which includes 1 parameter to initialize the name of the team.<br>
+- Add a <strong>second constructor</strong> which includes 7 parameters to initialize the instance
+  variables name, gamesPlayed, gamesWon, gamesLost, numHomeRuns, numRBIs, and numErrors. 
+ </p></li>
+
+</ol>
+</div> 
+<h1>Test Class</h1>
+<p>To test the functionality of your classes copy the following code into a source file
+   named <strong>Athletics.java</strong>.</p>
+<div id="csCode"><pre>
+public class Athletics
+{
+    public Athletics()
+    {
+        Football football = new Football("Cowboys", 10, 8, 2, 20, 2);
+        Baseball baseball = new Baseball("Rangers", 20, 12, 8, 25, 65, 5);
+
+        System.out.println(football);
+        System.out.println();
+        System.out.println(baseball);
+    }
+
+    public static void main(String[] args)
+    {
+        Athletics app = new Athletics();
+    }
+}
+</pre></div>
+<h1>Source File</h1>
+<p>SportsTeam.java</p>
+<p>Football.java</p>
+<p>Baseball.java</p>
+<p>Athletics.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Team Name               = Cowboys
+Games played            = 10
+Games won               = 8
+Games lost              = 2
+Winning Percentage      = 80%
+Number of Touchdowns    = 20
+Number of Interceptions = 2
+Touchdowns per Game     = 2.0
+Interceptions per Game  = 0.2
+
+Team Name               = Rangers
+Games played            = 20
+Games won               = 12
+Games lost              = 8
+Winning Percentage      = 60%
+Number of Homeruns      = 25
+Number of RBI's         = 65
+Number of Errors        = 5
+Homeruns per Game       = 1.25
+RBIs per Game           = 3.25
+Errors per Game         = 0.25
+
+</pre>
+</div>
+	<br>
+</div>	
+
+
+

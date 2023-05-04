@@ -1,0 +1,97 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">BracketChecker</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/BracketCheckerNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >BracketChecker</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/BracketChecker.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >BracketChecker</a></h1>
+
+<h1>Directions</h1>
+  <p>Complete this program that checks the validity of algebraic expressions for properly matching open and close brackets(parentheses).</p>
+  <p>The table below shows the result of tests performed on several algebraic expressions.</p>
+  <table id="csTable" style="margin-left:20px">
+  <tr>
+     <th>Expression</th>
+	 <th>Test Results</th>
+  </tr>
+    <tr>
+     <td>(4+5)</td>
+	 <td>passed</td>
+  </tr>
+    <tr>
+     <td>(3 * (5 + 2))</td>
+	 <td>passed</td>
+  </tr>
+    <tr>
+     <td>(6 * 3) + (7 * 5))</td>
+	 <td>failed</td>
+  </tr>
+    <tr>
+     <td>((10/2 + 4) * (6 + 8) + (2 + 9))</td>
+	 <td>padded</td>
+  </tr>
+    <tr>
+     <td>25 / 5)</td>
+	 <td>failed</td>
+  </tr>
+    <tr>
+     <td>((6+8) * (5+2) *(9+9)</td>
+	 <td>failed</td>
+  </tr>
+  
+  </table>
+  
+  <p>Complete the method <strong>check</strong>. The check method performs a test to see if a given algebraic expression has the proper number and ordering of brackets. 
+     The method returns true if the expression passes the test; otherwise it returns false. You will need to use a stack in your implementation.</p>
+	 
+<div id="csCode"><pre>
+/* performs test to determine if exp has the correct number 
+ * and ordering of brackets
+ * @param the expression to be evaluated
+ * @return true if exp passes test; false otherwise
+ */
+   public boolean check(String exp)
+   {
+
+
+
+   }	 	 
+</pre></div>
+
+<h3>Pseudocode</h3>
+<div id="csOutput"><pre>
+loop I from 0 to EXPESSION.length()
+   CH = EXPRESSION.substring(I, I+1)
+   if CH = "(" then
+      STACK.push(CH)
+   end if
+   if CH = ")" then
+       if STACK.isEmpty() then
+	      return false
+	   else
+	      STACK.pop()
+       end if
+    end if
+end loop
+if STACK.isEmpty then
+   return true
+else
+   return false
+</pre></div>
+ 
+<h1>Source File</h1>
+<p>BracketChecker.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+passed
+passed
+failed
+passed
+failed
+failed
+</pre>
+</div>
+	<br>
+</div>	
+

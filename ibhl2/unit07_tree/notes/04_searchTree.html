@@ -1,0 +1,271 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Binary Search Tree</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to implement a binary tree</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Binary Search Tree</h1>
+<p>A <strong>binary search tree</strong> is a type of binary tree that allows for efficient searching and sorting of data. It has an ordering property
+   which says that for all nodes n, all keys in n's left subtree are less than the key at node n, all keys in n's right subtree are greater
+   than the key at node n. The keys of a binary search tree must be unique, no duplicates.</p>
+
+<p>View the following illustration that demonstrates some of the features of a binary search tree.</p>
+
+<div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Tree2/Slide1.PNG"></li>
+          <li><img src="images/Tree2/Slide2.PNG"></li>
+          <li><img src="images/Tree2/Slide3.PNG"></li>
+		  <li><img src="images/Tree2/Slide4.PNG"></li>
+		  <li><img src="images/Tree2/Slide5.PNG"></li>
+		  <li><img src="images/Tree2/Slide6.PNG"></li>
+		  <li><img src="images/Tree2/Slide7.PNG"></li>
+		  <li><img src="images/Tree2/Slide8.PNG"></li>
+		  <li><img src="images/Tree2/Slide9.PNG"></li>
+		  <li><img src="images/Tree2/Slide10.PNG"></li>
+		  <li><img src="images/Tree2/Slide11.PNG"></li>
+		  <li><img src="images/Tree2/Slide12.PNG"></li>
+		  <li><img src="images/Tree2/Slide13.PNG"></li>
+		  <li><img src="images/Tree2/Slide14.PNG"></li>
+		  <li><img src="images/Tree2/Slide15.PNG"></li>
+		  <li><img src="images/Tree2/Slide16.PNG"></li>
+		  <li><img src="images/Tree2/Slide17.PNG"></li>
+		  <li><img src="images/Tree2/Slide18.PNG"></li>
+        </ul>
+    </div>
+	
+		<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+<h3>Common Operations</h3>
+<p>A binary search tree includes three main operations:</p>
+<div id="csList">
+<ul>
+<li><strong>add</strong> - inserts a data item in its proper place in a tree using the ordering property.</li>
+<li><strong>contains</strong> - searches a tree for a specific key.</li>
+<li><strong>remove</strong> - deletes a data item from a tree maintaining its ordering property.</li>
+</ul>
+</div>
+
+<h3>Recursive Methods</h3>
+<p>The code below implements a binary search tree collection class using a dynamic(linked) approach. It includes the add, contains, and remove operations.
+   All three of these methods are implemented using a recursive algorithm. Implementing a recursive method using a linked approach requires a reference to the tree's
+   root node in its parameter list. Look at the header for the add method:</p>
+
+<div id="csCode"><pre>
+private TreeNode add(<div id="csHighlight"><pre>TreeNode tree</pre></div>, Comparable item)
+{
+   // recursive code
+}
+</pre></div>
+  <p>A reference to a TreeNode object is necessary for the recursion to work properly. 
+    To add a level of abstraction to this method so that users of the class do 
+    not have to access the tree's internal structure another method is provided 
+    with the same name (i.e. polymorphism). This second method does not include 
+    the TreeNode object in its parameter list. Look at its implementation: 
+  <div id="csCode"><pre>
+public void add(Comparable item)
+{
+   root = <div id="csHighlight"><pre>add(root, item)</pre></div>;
+}
+</pre></div>
+<p>This add method, when invoked, makes a call to the other add method that actually performs the add operation. This approach hides the TreeNode object from the user.</p>
+<p>The add method accessed by clients is defined with public accessibility whereas the method hidden from clients has private accessibility.</p>
+
+<h3>Comparable Interface</h3>
+<p>Look again at the add method.</p>
+<div id="csCode"><pre>
+public void add(<div id="csHighlight"><pre>Comparable</pre></div> item)
+{
+   root = add(root, item);
+}
+</pre></div>
+<p>The data added to the tree must implement the <strong>Comparable interface</strong>. Comparable objects implement a compareTo method which is used by the binary tree 
+   class to determine the order of the data. The wrapper classes(Integer, Double, etc.) and the String class implement the Comparable interface.
+   </p>
+<br>
+
+<h1>Binary Tree Class</h1>
+<div id="csCode"><pre>
+public class BinaryTree
+{
+    // instance variables
+    private TreeNode root;
+
+    public BinaryTree()
+    {
+        root = null;
+    }
+
+    public void add(Comparable item)
+    {
+        root = add(root, item);
+    }
+
+    private TreeNode add(TreeNode tree, Comparable item)
+    {
+       if(tree == null)                              // reached correct position
+          return new TreeNode(item, null, null);     // add the new node here
+       else if(item.compareTo(tree.getValue()) < 0)  // go left or right?
+          tree.setLeft(add(tree.getLeft(), item));   // link nodes as you go left
+       else
+          tree.setRight(add(tree.getRight(), item)); // link as you go right
+
+       return tree;                                  // return the tree's root
+    }
+
+    public TreeNode contains(Comparable key)
+    {
+        return contains(root, key);
+    }
+
+    private TreeNode contains(TreeNode tree, Comparable key)
+    {
+        if(tree == null)    // key not in tree
+            return null;
+        else
+        {
+            if(key.equals(tree.getValue()))        // key found; return node
+                return tree;
+            else if(key.compareTo(tree.getValue()) < 0)   // go left?
+                return tree.getLeft();
+            else                                          // go right?
+                return tree.getRight();
+        }
+    }
+
+    public TreeNode remove(Comparable key)
+    {
+       return remove(root, key);
+    }
+
+    private TreeNode remove(TreeNode tree, Comparable key)
+    {
+        if (tree == null)         // key not found; nothing to remove
+             return null;
+        else if(key.compareTo(tree.getValue()) < 0)
+        {
+           // search for key in left subtree. Set left subtree to
+           // result of recursive call to remove from left subtree
+           tree.setLeft(remove(tree.getLeft(), key));
+        }
+        else if (key.compareTo(tree.getValue()) > 0)
+        {
+           // search for key in right subtree. Set right subtree to
+           // result of recursive call to remove from right subtree
+           tree.setRight(remove(tree.getRight(), key));
+        }
+        else if (tree.getLeft() != null && tree.getRight() != null)
+        {
+           // tree refers to node to be removed and it has no null children
+           // find the in-order successor, disconnect it and return its
+           // data value, setting this as the new data element of tree
+           tree.setValue(getSuccessor(tree));
+        }
+        else if (tree.getLeft() == null)
+        {
+           // tree refers to node to be deleted and its left child is
+           // null so set tree to refer to right child
+           tree = tree.getRight();
+        }
+        else
+        {
+           // tree refers to node to be deleted and its left child
+           // is not null so set tree to refer to left child
+           tree = tree.getLeft();
+        }
+
+        return tree;
+   }
+
+   // helper for remove method
+   private Comparable getSuccessor(TreeNode node)
+   {
+      TreeNode succParent = node;
+      TreeNode succ = node;
+      TreeNode curr = node.getRight();
+
+      // locate successor
+      // The successor is leftmost node in the deleted nodes
+      // right sub-tree
+      while (curr != null)
+      {
+         succParent = succ;
+         succ = curr;
+         curr = curr.getLeft();
+      }
+
+      // test if successor is right child of its parent node
+      if (succ == succParent.getRight())
+      {
+        // set right child of parent to right child of successor
+        succParent.setRight(succ.getRight());
+      }
+      else
+      {
+        // set left child of parent to right child of successor
+        succParent.setLeft(succ.getRight());
+      }
+
+      return (Comparable)succ.getValue();
+   }
+
+   // prints tree vertically so that tree structure
+   // can be easily identified - uses reverse inorder
+   // traversal: right-root-left
+   public String toString()
+   {
+      return toString(root, 0);
+   }
+
+   // return string representation of tree's structure
+   private String toString(TreeNode tree, int level)
+   {
+      String str = "";
+      if(tree != null)
+      {
+        str += toString(tree.getRight(), level + 1);
+        for(int i = 1; i <= level; i++)
+        {
+            str = str + "  ";
+        }
+        str += tree.getValue().toString() + "\n";
+        str += toString(tree.getLeft(), level + 1);
+      }
+
+      return str;
+   }
+}
+</pre></div>
+
+<h3>remove Method</h3>
+<p>The remove method is the most difficult operation performed on a binary tree. When implementing the remove method you must consider three cases.</p>
+<div id="csList"><ol>
+<li>Remove a leaf node (no children).</li>
+
+<li>Remove a node that contains one child.</li>
+
+<li>Remove a node that contains two children.</li>
+</ol></div>
+<p>These three cases are demonstrated below:</p>
+ <p align="center"> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="500" height="350">
+          <param name="movie" value="apFreeResponse/TreeRemove.swf">
+          <param name="quality" value="high">
+          <embed src="apFreeResponse/TreeRemove.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="500" height="350"></embed></object>
+ </p>
+
+
+<br>
+</div>	
+

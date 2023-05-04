@@ -1,0 +1,38 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">OldBug</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>An <strong>OldBug</strong> is a Bug. An OldBug behaves like a Bug in every way, except that it is too old
+   and too tired to drop any flowers.</p>
+<p>Implement the OldBug class then use the OldBugRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>OldBugRunner.java</strong>.</p>
+<div id="csCode">
+<pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class OldBugRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+		
+        world.add(new OldBug());
+        world.add(new OldBug());
+		
+        world.show();
+    }
+}
+</pre>
+</div>
+ 
+<h1>Source Files</h1>
+<p>OldBug.java</p>
+<p>OldBugRunner.java</p>
+	<br>
+</div>	
+

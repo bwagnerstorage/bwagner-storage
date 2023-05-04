@@ -1,0 +1,188 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Representing Numeric Data</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+		<ul>
+          <li>How a computer represents positive integer values </li>
+          <li>How a computer represents negative integer values </li>
+		  <li>How a computer represents real number values </li>
+		  <li>How to convert a fraction into binary </li>
+        </ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 
+  <h1>Representing Positive Integers</h1>
+  <p>As we discussed in the previous section, the electrical circuitry of modern computers is specifically designed to
+     store and manipulate binary data. To better understand how data is represented in the computer
+	 we must first define two words that are used to describe binary data, namely, <strong>bit</strong> and <strong>byte</strong>.</p>
+   <ul>
+      <li><strong>bit</strong> - binary digit, a 0 or 1</li>
+	  <li><strong>byte</strong> - a series of 8 bits, 10010101</li>
+   </ul> 
+   <p>A byte is a unit of measurement for binary data. All binary data in the computer are stored as one or more bytes.
+      The largest positive integer that can be represented with one byte is 11111111 (255<sub>10</sub>). Obviously, computers
+	  need to be able to store numbers larger than 255, so computers store integer values in multiple bytes. The table
+	  below lists various positive integers and the 4 byte binary number that the computer would use to store the number.
+	  
+	  <table id="csTable">
+	    <tr>    
+          <th><strong>Integer Value</strong></th>
+		  <th><strong>Binary Number (4 bytes)</strong></th>
+	    </tr>
+		  <td>2</td>
+		  <td align="right">00000000000000000000000000000010</td>
+	    <tr>
+		</tr>
+		  <td>25</td>
+		  <td align="right">00000000000000000000000000011001</td>
+	    <tr>
+		</tr>
+		  <td>30000</td>
+		  <td align="right">00000000000000000000101110111000</td>
+	    <tr>
+		</tr>
+		  <td>2000000000</td>
+		  <td align="right">01110111001101011001010000000000</td>
+	    <tr>
+	  
+	    </tr>
+	  </table>
+  <h1>Representing Negative Integers</h1>
+  <p>As you can see, it is not difficult for computers to represent positive integers 
+    using binary numbers but what about negative numbers? How do you represent 
+    negative values using binary numbers? Aren't negative numbers just numbers 
+    with a minus sign in front? Perhaps. That is certainly one valid way to think 
+    about them. However, that is not the way computers do it. Not because they 
+    can't, it just turns out there is an easier, less complex way. Most computer 
+    hardware uses a technique called <strong>two's complement</strong>.</p>
+	 
+	 <p>View the presentation below that demonstrates two's complement representation of
+	   negative binary numbers.</p>
+	   <br>
+	   
+	 <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Twos Complement1/Slide1.PNG"></li>
+          <li><img src="images/Twos Complement1/Slide2.PNG"></li>
+          <li><img src="images/Twos Complement1/Slide3.PNG"></li>
+		  <li><img src="images/Twos Complement1/Slide4.PNG"></li>
+		  <li><img src="images/Twos Complement1/Slide5.PNG"></li>
+		  <li><img src="images/Twos Complement1/Slide6.PNG"></li>
+		  <li><img src="images/Twos Complement1/Slide7.PNG"></li>
+		  <li><img src="images/Twos Complement1/Slide8.PNG"></li>
+		  <li><img src="images/Twos Complement1/Slide9.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	<br>
+	<h1>Representing Real Numbers</h1>
+	<p>In computing, we call all noninteger values <strong>real numbers</strong>.
+	   A real number can be defined as a value with a potential fractional part.
+	   That is, real numbers have a whole part and a fractional part, either of
+	   which may be zero. For example, some real numbers in base 10 are
+	   104.32, 0.99999999, 357.0, and 3.14159.</p>
+	<p>The table below illustrates base 10 positional notation including a fractional
+	   part. The position values come from raising the base value to increasing powers
+	   (moving from decimal point to the left). The positions to the right of the
+	   decimal point work the same way, except that the powers are negative.</p>
+	   
+  <div align="center"><img src="images/real1.png" width="500" height="95"><br>
+    *10<SUP>-3</SUP> = 1/1000
+    
+  <p>In binary, the same rules apply but the base value is 2. Since we are not 
+    working in base 10, the decimal point is referred to as a <strong>radix point</strong>, 
+    a term that can be used with any base.</p>
+  <div align="center"><img src="images/real2.png" width="500" height="95"></div>
+  <p>How do we represent a real value in the computer? We store the value as an 
+    integer and include information showing where the radix point is. That is, 
+    any real value can be described by three properties: the sign (positive or 
+    negative); the mantissa, which is made up of the digits in the value with 
+    radix point assumed to be to the right; and the exponent, which determines 
+    how the radix point is shifted relative to the mantissa. A real value in base 
+    10 can, therefore, be defined by the following formula:</p>
+  <div><img src="images/real3.png"></div>
+  <p>This representation is called <strong>floating point</strong> because the 
+    number of digits is fixed but the radix point floats. When a value is in floating-point 
+    form, a positive exponent shifts the decimal point to the right, and a negative 
+    exponent shifts the decimal point to the left. The table below shows some 
+    values in decimal notation and their corresponding floating-point notation. 
+    For the sake of the discussion, we assume that only five digits can be represented 
+    in the mantissa.</p>
+  <table id="csTable">
+   <tr>
+      <th>Real Value</th>
+      <th>Floating-Point Value (five digits)</th>
+    </tr>
+    <tr>
+      <td>12001.00</td>
+      <td>12001*10<sup>0</sup></td>
+    </tr>
+    <tr>
+      <td>-120.01</td>
+      <td>-12001*10<sup>-2</sup></td>
+    </tr>
+    <tr>
+      <td>0.12000</td>
+      <td>12000*10<sup>-5</sup></td>
+    </tr>
+    <tr>
+      <td>-123.10</td>
+      <td>-12310*10<sup>-2</sup></td>
+    </tr>
+    <tr>
+      <td>155555000.00</td>
+      <td>15555*10<sup>4</sup></td>
+    </tr>
+  </table>
+  <p>Notice that in the last example, we lose information. Because we are storing only
+     five digits to represent the significant digits (the mantissa), the whole part of the
+	 value is not accurately represented in floating-point notation.</p>
+  <p>Likewise, a binary floating-point value is defined by the following formula:</p>
+  <div><img src="images/real4.png"></div>
+  <p>Note that only the base value has changed. Of course, in this scheme the 
+    mantissa would contain only binary digits. To store a floating-point number 
+    on a computer, we can store the three values that define it (sign, mantissa, 
+    and exponent). For example, according to one common standard, if we devote 
+    64 bits (8 bytes) to the storage of a floating-point value we use 1 bit for 
+    the sign, 11 bits for the exponent, and 52 bits for the mantissa.</p>
+  <div align="center"><img src="images/real5.png"></div>
+  <p>Both the mantissa and the exponent are stored as binary numbers. There are several
+     different formats used to store these two numbers in memory. Some of the formats
+	 use two's complement form to store one or both of the numbers; other formats do not.
+	 This topic, however, is beyond the level of our discussion.</p>
+   <p>We saw in an earlier lesson how to convert a base 10 number to binary, but what
+      about the fractional part of a decimal number? How do you convert the fractional
+	  part of a decimal number into binary? View the presentation below to see how.</p>
+	  
+   <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/Real Numbers 1/Slide1.PNG"></li>
+          <li><img src="images/Real Numbers 1/Slide2.PNG"></li>
+          <li><img src="images/Real Numbers 1/Slide3.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide4.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide5.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide6.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide7.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide8.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide9.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide10.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide11.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide12.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide13.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide14.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide15.PNG"></li>
+		  <li><img src="images/Real Numbers 1/Slide16.PNG"></li>
+        </ul>
+    </div>
+	
+	
+</div>	
+

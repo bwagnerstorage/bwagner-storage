@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Dummy Read</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="css/compsci.css">
+</head>
+
+<body>
+<h1>Removing the End of Line Marker (EOLN)</h1>
+<p>When users of a program are typing from the keyboard they press the Enter key to signify the end
+   of data entry. The Scanner methods nextInt, nextDouble, and next will read the data from the
+   keyboard but they do not remove the end of line marker (EOLN) left when the Enter key was pressed
+   after entering the value or values. Look at the following illustration:</p>
+ <p>Suppose a person is prompted to type an integer value from the keyboard and they type the number
+    57 and press the Enter key. The 57 and an EOLN marker are then placed in a temporary memory
+    location called the input stream buffer. The EOLN is denoted below by the symbol [EOLN].</p>
+  <div id="csOutput">
+  <pre>
+Enter an integer --> 57</pre>
+  </div>
+  <p>The Input Stream buffer would contain the following characters</p>
+  <div style="background-color:#BFDFFF; width:350px; font-size:1.3em; margin:0; padding: 5px">
+57[EOLN]
+  </div>
+  <p>Assume that the code segment below prompted the user to enter the value from the keyboard.</p>
+<div id="csCode">
+    <pre>
+System.out.print("Enter an integer --> ");
+int n = keyboard.nextInt();</pre>
+ </div>
+ <p>The <strong>nextInt</strong> method will remove the value 57 from the Input Stream buffer and store the value in
+    the variable n, but it will not read the EOLN marker. The EOLN marker is left on the Input
+    Stream buffer.</p>
+<div style="background-color:#BFDFFF; width:350px; font-size:1.3em; margin:0; padding: 5px">
+[EOLN]
+  </div>
+  <p>This scenario can cause a problem in your programs when you follow a <strong>nextInt</strong>, <strong>nextDouble</strong>, or <strong>next</strong> method by a <strong>nextLine</strong> method. 
+    Let's look at an example.</p>
+ <p>Suppose that a person was prompted to type a person's age followed by their name.</p>
+ <div id="csOutput">
+  <pre>
+Enter your age --> 16
+Enter your name --> John</pre>
+  </div>
+ <p>Here is the code segment used to read the keyboard input.</p>
+ <div id="csCode">
+    <pre>
+System.out.print("Enter your age -->");
+int age = keyboard.nextInt();                 <font color="#FF00FF">// nextInt</font>
+ 
+System.out.print("Enter your name -->");
+String name = keyboard.nextLine();            <font color="#FF00FF">// followed by nextLine</font>
+
+System.out.println("Age = " + age);
+System.out.println("Name = " + name);</pre>
+ </div>
+ <p>A sample run of the program would actually produce the following output</p>
+ <div id="csOutput">
+ <pre>
+Enter your age -->16
+Enter your name -->Age = 16
+Name =</pre>
+ </div>
+ <p>As you can see the program does not produce the desired result. The program does not allow
+    the user to enter a name because the nextLine method read the EOLN marker left by the
+	nextInt method. This caused the nextLine method to terminate early; not allowing the user
+	to enter a name.</p>
+  <h3>How to Fix Problem</h3>
+  <p>To fix this problem we are going to use what is referred to as a <strong>dummy read</strong>.
+     Look at the modified version of the code from above.</p>
+<div id="csCode">
+    <pre>
+System.out.print("Enter your age -->");
+int age = keyboard.nextInt(); 
+
+<font color="#FF0000">keyboard.nextLine(); </font>   <font color="#FF00FF">// dummy read</font>
+
+System.out.print("Enter your name -->");
+String name = keyboard.nextLine();</pre>
+ </div>
+ <p>A nextLine statement is inserted into the code between the nextInt statement and the
+    nextLine statement. This line of code will remove the EOLN marker left by the nextInt so
+	that the second nextLine statement will be able to read the name entered by the
+	user.</p>
+ <p>The nextLine method of the dummy read is not included in an assignment statement. Since the
+    rogue EOLN marker does not serve a purpose there is no need to assign it to a variable.</p>
+  <div id="csNote">A <strong>dummy read</strong> is a nextLine statement inserted into code that removes
+    an EOLN marker left by the methods next, nextInt, and nextDouble.</div>
+<br>
+</div>	
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 1.1</div>
+
+<div id="csContent"> 
+<h1>Creating a JavaFX Application (Program)</h1>
+<div id="csList">
+	<ol>
+		<li>Create a folder on your desktop named: <strong>JavaFX Exercises</strong></li>
+		<li>Launch NetBeans.</li>
+		<li>Press select new Project button. <img src="JavaFX/images/projectButton.png" width="8%"></li>
+		<li>Select JavaFX and JavaFX Application and click Next.<br><br>
+			<img src="JavaFX/images/selectJavaFX.PNG" class="center" width="80%">
+		</li>
+		<li>For the <strong>Project Name</strong> type <strong>JavaFXExercise1</strong>.<br>
+			For the <strong>Project Location</strong> use the <strong>Browse</strong> button to navigate to the <strong>JavaFX Exercises</strong> folder you created in step 1.<br><br>
+			<img src="JavaFX/images/projectName.png" class="center" width="80%">
+		
+		</li>
+		<li>Press <strong>Finish</strong> button.</li>
+
+	<p>NetBeans should generate code similar to the code shown below.</p>
+	<div id="csCode" style="width:630px"><pre>/*
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+package javafx.exercise.pkg1;
+		   
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+		   
+public class JavaFXExercise1 extends Application {
+			   
+	@Override
+	public void start(Stage primaryStage) {
+        Button btn = new Button();
+        btn.setText("Say 'Hello World'");
+        btn.setOnAction(new EventHandler;ltActionEvent;gt() {  
+            @Override
+            public void handle(ActionEvent event) {
+               System.out.println("Hello World!");
+            }
+    });
+				   
+		StackPane root = new StackPane();
+		root.getChildren().add(btn);
+				   
+		Scene scene = new Scene(root, 300, 250);
+				   
+		primaryStage.setTitle("Hello World!");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+		   
+	/**
+	* @param args the command line arguments
+	*/
+	public static void main(String[] args) {
+		launch(args);
+	}
+}</pre></div>
+		   
+		   <li>Execute the program.</li>
+		   <li>The following window should appear.<br><br>
+				<img src="JavaFX/images/helloWorld.png" class="center">
+		   </li>
+		   <li>Click on the button in the middle of the window and watch the phrase "Hello World!" appear in the console window.
+			   <p>You just completed your first JavaFX program. Lets look at the key features of this program.</p>
+		   </li>
+		</ol>
+		<h1>JavaFX Application class</h1>
+		<p>When creating a JavaFX application the program's main class must inherit or extend the <strong>Application</strong> class
+		   located in the <strong>javafx.application</strong> package.</p>
+		<div id="csCode" style="width:630px"><pre>import <span id="csHighlight"><pre>javafx.application.Application;</pre></span>
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+						   
+public class JavaFXExercise1 extends <span id="csHighlight"><pre>Application</pre></span> {
+
+
+}					   
+</pre></div>
+<p>The Application provides a method called <strong>start</strong> that you will need to override (polymorphism). This method
+   is the main entry point into your program so this is where your JavaFX code will go. </p>
+   <div id="csCode" style="width:630px"><pre>@Override
+public void <span id="csHighlight"><pre>start</pre>(Stage primaryStage) {
+	
+	/* Your JavaFX code goes here */
+
+}</pre></div>
+<div id="csNote">Notice the <strong>@Override</strong> declaration above start's method header. This is an example of <strong>Java annotation</strong>, 
+	 this particular annotation insures that the method being overridden, in this case, start, is actually a super class method, if the method is not in a super class because it
+	  is misspelled for example, an error would occur at compile time instead of run time. And as you know compile errors are much easier to debug than runtime errors.
+	  Annotations are not always required, however, it is consider a good programming practice.</div>
+<p>In a standalone (desktop) application the <strong>start</strong> method is executed in the main method by calling another Application class method 
+   named <strong>launch</strong>.
+</p>
+<h1>The Theater</h1>
+<p>The start method includes a parameter of type <strong>Stage</strong> named primaryStage. This terminology is borrowed from the 
+   theater. The stage in the theater is where the play is performed and viewed by the audience. In JavaFX the <strong>stage</strong> is a window where
+   the GUI program is executed and viewed by the user. </p>
+<h1 style="text-align:center">Stage</h1>
+   <img src="JavaFX/images/JavaFXExample1.PNG" width="80%" class="center">
+ 
+ 
+ <p>A scene in the theater is a set of activities that happen at a particular time on the stage.
+   A <strong>scene</strong> in JavaFX is a set of GUI controls or widgets that are on the stage at a particular time. These include buttons, text fields,
+   menus, and combo boxes, just to name a few.</p>
+   <h1 style="text-align:center">Scene</h1>
+   <img src="JavaFX/images/JavaFXExample2.PNG" width="80%" class="center">
+
+   <h1>Building a JavaFX Application</h1>
+<p>The process of building a JavaFx application is fairly straightforward. Your first task is to create the controls your program will need to
+   interact with the user, next you create a scene and add the controls, and lastly you assign the scene to a stage.</p>
+
+<p>Our HelloWorld program only had one control, a button. Instead of being added directly to a scene it was first added to a StackPane
+   and the StackPane was then added to the to the scene. A StackPane helps with the layout or positioning of controls in a scene. You will learn more about panes
+   in a future lesson.</p>
+<div id="csCode" style="width:630px"><pre>StackPane root = new StackPane();
+root.getChildren().add(btn);
+			   
+Scene scene = new Scene(root, 300, 250);
+			   
+primaryStage.setTitle("Hello World!");
+primaryStage.setScene(scene);
+primaryStage.show();</pre>
+</div>
+<p>This code is pretty self explanatory.However, there is one concept in this code I would like to look at and that is scene graphs.</p>
+<h3>Scene Graph</h3>
+ <p>In computer science a <strong>scene graph</strong> is data structure used to organize and manage a variety of media types, most notably 3D graphics and games.
+   JavaFX uses scene graphs to organize all the components or controls added to a scene.</p>
+   <img src="JavaFX/images/SceneGraph2.png" width="70%" class="center">  
+   <p>The scene graph stores the whole scene in the form of a graph of connected objects called nodes. There are two types of nodes: branch nodes and leaf nodes. 
+   A branch node is a node that can contain other nodes (child nodes). Branch nodes are also referred to as parent nodes
+   because they can contain child nodes. A leaf node is a node which cannot contain other nodes. The <strong>root node</strong> is the first node in the graph. The
+   root node does not have a parent.</p>
+   <img src="JavaFX/images/SceneGraph1.png" width="70%" class="center">
+
+   <p>Below is the scene graph for our HelloWorld program.</p>
+   
+   <img src="JavaFX/images/SceneGraph3.png" width="30%" class="center">
+   <p>Refer to this code in our HelloWorld program.</p>
+   <div id="csCode" style="width:630px"><pre>StackPane root = new StackPane();
+root.getChildren().add(btn);
+Scene scene = new Scene(root, 300, 250);
+</pre></div>
+<p>In the third line of code a scene object is created. It's constructor assigns the root of its scene graph to the StackPane object named root. It is also
+   sets the initial dimensions of the stage's window to 300 x 250. In the second line of code the StackPane object, root, gets a list
+   of its current children, then it calls an <code>add</code> method to add the button to this list, which adds the button to the scene graph
+   as a child of StackPane.
+</p>
+
+  <br>
+</div>	
+

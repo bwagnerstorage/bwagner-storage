@@ -1,0 +1,410 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Photographer</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A sports photographer takes pictures of youth sports teams. Coaches and parents can buy
+  pictures by purchasing one of five different picture packets. The packets offered include
+  the StarterPacket, MemoryPacket, AllStarPacket, ChampionPacket, and CollectorPacket. Each
+  packet offers a different combination of photograph sizes and quantities. The number and type
+  of photographs offered in each packet are listed below.</p>
+  
+  <table width="50%" border="1" id="csTable">
+        <tr> 
+          <th width="40%"></td>
+          <th width="12%">8x10</td>
+          <th width="12%">5x7</td>
+          <th width="12%">wallets</td>
+          <th width="12%">magazine cover</td>
+          <th width="12%">trading cards</td>
+        </tr>
+        <tr bgcolor="#F8FFF0"> 
+          <td>Starter</td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center"></div></td>
+        </tr>
+        <tr bgcolor="#F8FFF0"> 
+          <td>Memory</td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center">2</div></td>
+          <td> 
+            <div align="center">8</div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center"></div></td>
+        </tr>
+        <tr bgcolor="#F8FFF0"> 
+          <td>AllStar</td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center">16</div></td>
+        </tr>
+        <tr bgcolor="#F8FFF0"> 
+          <td>Champion</td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center">2</div></td>
+          <td> 
+            <div align="center"></div></td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center">16</div></td>
+        </tr>
+        <tr bgcolor="#F8FFF0"> 
+          <td>Collector</td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center">2</div></td>
+          <td> 
+            <div align="center">8</div></td>
+          <td> 
+            <div align="center">1</div></td>
+          <td> 
+            <div align="center">16</div></td>
+        </tr>
+      </table>
+
+<p>The StarterPacket class is defined with the following attributes and behaviors. 
+   Copy the following code into a source file named <strong>StarterPacket.java</strong>.</p>
+
+<div id="csCode"><pre>
+public class StarterPacket
+{
+   // instance variables
+   private int photo8x10;
+   
+   // constructor
+   public StarterPacket()
+   {
+      photo8x10 = 1;
+   }
+   
+   public String getPacketName()
+   {
+      return "StarterPacket";
+   }
+   
+   public String toString()
+   {
+      return getPacketName() + "\n" +
+             "8 x 10 = " + photo8x10;
+   }    
+}
+</pre></div>
+
+<p>Define two classes named <strong>MemoryPacket</strong> and <strong>AllStarPacket</strong> that both inherit the StarterPacket class.
+ Define a class named <strong>ChampionPacket</strong> that inherits from the AllStarPacket. Define a class name
+ <strong>CollectorsPacket</strong> that inherits from the ChampionPacket. The inheritance relationship is illustrated
+ by the diagram below.
+
+
+
+   <div align="center"><img src="images/photographer.png"></div>
+
+<p>Copy the following code into a source file named <strong>MemoryPacket.java</strong></p>
+<div id="csCode" style="width:550px"><pre>
+public class MemoryPacket extends StarterPacket
+{
+	
+}
+</pre></div> 
+
+<p>Copy the following code into a source file named <strong>AllStarPacket.java</strong></p>
+<div id="csCode" style="width:550px"><pre>
+public class AllStarPacket extends StarterPacket
+{
+   	
+}
+</pre></div>
+
+<p>Copy the following code into a source file named <strong>ChampionPacket.java</strong></p>
+<div id="csCode" style="width:550px"><pre>
+public class ChampionPacket extends AllStarPacket
+{
+	
+}
+</pre></div>
+
+<p>Copy the following code into a source file named <strong>CollectorPacket.java</strong></p>
+<div id="csCode" style="width:550px"><pre>
+public class CollectorPacket extends ChampionPacket
+{
+	
+}
+</pre></div>
+
+
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<p>Make the following additions and modifications to the <strong>MemoryPacket</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named <strong>photo5x7</strong>. <br>
+- Add an instance variable of type int  <strong>photoWallets</strong>.</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- none</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>getPacketName</strong> method so that it returns the packet name "Memory Packet".<br>
+- Override the <strong>toString</strong> method so that it includes the instance variables photo5x7 and photoWallets. 
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>default constructor</strong> that initializes photo5x7 to a value of 2 and photoWallets to a value of 8.</p></li>
+  
+<p>Make the following additions and modifications to the <strong>AllStarPacket</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named <strong>photoMagazineCover</strong>.<br> 
+- Add an instance variable of type int named <strong>photoTradingCards</strong>.
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- none </p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>getPacketName</strong> method so that it returns the packet name "AllStar Packet". <br>
+- Override the <strong>toString</strong> method so that it includes the instance variables photoMagazine and photoTradingCards.
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>default constructor</strong> that initializes photoMagazineCover to a value of 1 and photoTradingCards to a value of 16. 
+</p></li>
+
+<p>Make the following additions and modifications to the <strong>ChampionPacket</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named <strong>photo5x7</strong>.
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- none </p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>getPacketName</strong> method so that it returns the packet name "Champion Packet".<br>
+- Override the <strong>toString</strong> method so that it includes the instance variable photo5x7.
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>default constructor</strong> that initializes photo5x7 to a value of 2. 
+</p></li>
+  
+<p>Make the following additions and modifications to the <strong>CollectorPacket</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named  <strong>photoWallets</strong>.
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- none </p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>getPacketName</strong> method so that it returns the packet name "Collector Packet".<br>
+- Override the <strong>toString</strong> method so that it includes the instance variable photoWallets.
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>default constructor</strong> that initializes photoWallets to a value of 8. 
+</p></li>
+
+</ol>
+</div> 
+<h1>Test Class</h1>
+<p>To test the functionality of your classes copy the following code into a source file
+   named <strong>SportsPhotography.java</strong>.</p>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class SportsPhotography
+{
+    private StarterPacket photoPacket;
+    
+    public SportsPhotography()
+    {
+       Scanner keyboard = new Scanner(System.in);
+       int packet=0;
+       
+       do
+       {
+           System.out.println("Sports Photography");
+           System.out.println("------------------");
+           System.out.println("1. Starter Packet");
+           System.out.println("2. Memory Packet");
+           System.out.println("3. All Star Packet");    
+           System.out.println("4. Champion Packet ");
+           System.out.println("5. Collector Packet");
+           System.out.println("");
+           System.out.print("Select packet -->");
+           packet = keyboard.nextInt();
+           if(packet == 1)
+           {
+              photoPacket = new StarterPacket();
+           }
+           if(packet == 2)
+           {
+              photoPacket = new MemoryPacket();
+           }
+           if(packet == 3)
+           {
+              photoPacket = new AllStarPacket();
+           }
+           if(packet == 4)
+           {
+              photoPacket = new ChampionPacket();
+           }
+           if(packet == 5)
+           {
+              photoPacket = new CollectorPacket();
+           }
+           
+           System.out.println();
+           System.out.println("Picture Packet");
+           System.out.println("============");
+           System.out.println(photoPacket);
+           System.out.println();
+           System.out.println();     
+       }
+       while(true);
+    }
+    
+    public static void main(String[] args)
+    {
+        SportsPhotography app = new SportsPhotography();
+    }
+}
+</pre></div>
+<h1>Source File</h1>
+<p>StarterPacket.java</p>
+<p>MemoryPacket.java</p>
+<p>AllStarPacket.java</p>
+<p>ChampionPacket.java</p>
+<p>CollectorPacket.java</p>
+<p>SportsPhotogarphy.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Sports Photography
+------------------
+1. Starter Plan
+2. Memory Plan
+3. All Star Plan
+4. Champion Plan
+5. Collector Plan
+
+Select plan -->1
+
+Picture Plan
+============
+StarterPlan
+8 x 10 = 1
+
+
+Sports Photography
+------------------
+1. Starter Plan
+2. Memory Plan
+3. All Star Plan
+4. Champion Plan
+5. Collector Plan
+
+Select plan -->2
+
+Picture Plan
+============
+MemoryPlan
+8 x 10 = 1
+5 x 7 = 2
+Wallets = 8
+
+
+Sports Photography
+------------------
+1. Starter Plan
+2. Memory Plan
+3. All Star Plan
+4. Champion Plan
+5. Collector Plan
+
+Select plan -->3
+
+Picture Plan
+============
+AllStarPlan
+8 x 10 = 1
+Magazine Cover = 1
+Trading Cards  = 16
+
+
+Sports Photography
+------------------
+1. Starter Plan
+2. Memory Plan
+3. All Star Plan
+4. Champion Plan
+5. Collector Plan
+
+Select plan -->4
+
+Picture Plan
+============
+ChampionPlan
+8 x 10 = 1
+Magazine Cover = 1
+Trading Cards  = 16
+5 x 7 = 2
+
+
+Sports Photography
+------------------
+1. Starter Plan
+2. Memory Plan
+3. All Star Plan
+4. Champion Plan
+5. Collector Plan
+
+Select plan -->5
+
+Picture Plan
+============
+CollectorPlan
+8 x 10 = 1
+Magazine Cover = 1
+Trading Cards  = 16
+5 x 7 = 2
+Wallets = 8
+
+</pre>
+</div>
+	<br>
+</div>	
+
+
+
+
+
+
+

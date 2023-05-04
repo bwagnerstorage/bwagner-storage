@@ -1,0 +1,145 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Car</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Complete the class Car that calculates a car's miles per gallon (mpg) given the number of gallons
+   used between a specified starting and ending odometer reading. Using the car's mpg the class also
+   determines the number of miles the car can travel before the gas tank is empty.</p>
+
+  <p>Copy the following code into a file named <strong>Car.java</strong></p>
+  <div id="csCode">
+  <pre>
+
+public class Car
+{
+    // Constants
+    public final double capacity = 22;   // number of gallons the gas
+                                         // tank can hold when full
+    // Instance Variables
+
+    
+    // Constructors
+
+    
+    // Methods
+    
+    /** precondition:  gallons > 0
+     *  postcondition: calculates and returns the cars MPG (miles per gallon)
+     *     for the current odometer readings.
+     *  @return the car's MPG
+     */
+    public double calculateMPG()
+    {
+        
+    }
+    
+    /** precondition:  none
+     *  postcondition: calculates and returns the number of miles the car
+     *     can travel before its gas tank is empty.
+     *  @return number of miles car can travel before tank is empty
+     */
+    public double milesToEmpty()
+    {
+
+    }
+}</pre>
+  </div> 
+  <p>Copy the following code into a file named <strong>CarTester.java</strong></p>
+
+  <div id="csCode">
+  <pre>
+public class CarTester
+{
+    public static void main(String[] args)
+    {
+        Car car1 = new Car(1000, 1450, 20);  // instantiate Car object
+        
+        System.out.println("  Car 1");
+        System.out.println("=========");
+        System.out.printf("MPG = %.1f \n",  car1.calculateMPG());
+        System.out.printf("Miles to empty = %.1f \n", car1.milesToEmpty());
+        
+        Car car2 = new Car(15000, 15200, 12);
+        
+        System.out.println();
+        System.out.println("  Car 2");
+        System.out.println("=========");
+        System.out.printf("MPG = %.1f \n", car2.calculateMPG());
+        System.out.printf("Miles to empty = %.1f \n", car2.milesToEmpty());
+        
+        Car car3 = new Car(80000, 80727, 21);
+        
+        System.out.println();
+        System.out.println("  Car 3");
+        System.out.println("=========");
+        System.out.printf("MPG = %.1f \n", car3.calculateMPG());
+        System.out.printf("Miles to empty = %.1f \n", car3.milesToEmpty());        
+   }
+}</pre>
+  </div> 
+
+<h1>Modifications</h1>
+
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol>
+<li>Create an instance variable of type double named <strong>startMiles</strong>. This variable contains the 
+    car's starting odometer reading.</li>
+<li>Create an instance variable of type double named <strong>endMiles</strong>. This variable contains the 
+    car's ending odometer reading.</li>
+<li>Create an instance variable of type double named <strong>gallons</strong>. This variable contains the number
+    of gallons used by the car between the odometer readings. The car's gas tank has a capacity 
+	of 22 gallons.</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="4">
+<li>Create a three parameter constructor that initializes all three instance variables to the values
+    specified in the parameter list.</li>
+</ol>
+</div>
+<h3>Methods</h3>
+<div id="csList">
+<ol start="4">
+<li>Complete the method <strong>calculateMPG</strong> according to the specifications outlined in its pre and
+    post conditions.</li>
+<li>Complete the method <strong>milesToEmpty</strong> according to the specifications outlined in its pre
+    and post conditions.<br><br>
+
+Here is pseudocode that can be used to calculate the number of miles the car can travel before empty.
+
+<div id="csOutput" style="width:550px">
+<pre>
+Calculate the mpg
+Calculate number of gallons remaining in gas tank
+Multiply the mpg by number of gallons remaining in gas tank 
+</pre></div></li>
+<h1>Source File</h1>
+<p>Car.java</p>
+<p>CarTester.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+ Car 1
+=========
+MPG = 22.5
+Miles to empty = 45.0
+
+  Car 2
+=========
+MPG = 16.7
+Miles to empty = 166.7
+
+  Car 3
+=========
+MPG = 34.6
+Miles to empty = 34.6
+
+</pre>
+</div>
+	<br>
+</div>	
+

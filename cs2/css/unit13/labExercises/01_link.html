@@ -1,0 +1,86 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">13-1 CSS Links</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+<li><p><a href="http://www.w3schools.com/css/css_link.asp" target="_blank" style="color:blue">CSS Links</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>13_1_link.html</strong> and save it to your CSS folder.</p></li>
+<li><p>Give the document the title: <strong>13_1_link</strong>.</p></li>
+<li><p>Add the following starter code to the html file.</p>
+   <br>
+<div id="csHTL"><pre>&lt;!DOCTYPE html&gt;
+   &lt;html&gt;
+      &lt;head&gt;
+         &lt;title&gt;Link&lt;/title&gt;
+         &lt;style&gt;
+            #menu {
+               display: flex;
+               flex-direction: row;
+               justify-content: center;
+            }
+
+            a {
+                margin:0;
+                padding:10px;
+                background-color:black;
+                color:white;
+                font-size:1.8em;
+                width:160px;
+                text-align: center;
+      
+            }
+
+
+
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div id="menu"&gt;
+               &lt;a href="http:\\www.google.com" target="_blank"&gt;Aol&lt;/a&gt;
+               &lt;a href="http:\\www.bing.com" target="_blank"&gt;Bing&lt;/a&gt;
+               &lt;a href="http:\\www.DuckDuckGo.com" target="_blank"&gt;DuckDuckGo&lt;/a&gt;
+               &lt;a href="http:\\www.google.com" target="_blank"&gt;Google&lt;/a&gt;
+               &lt;a href="http:\\www.qwant.com" target="_blank"&gt;Qwant&lt;/a&gt;
+               &lt;a href="http:\\www.yahoo.com" target="_blank"&gt;Yahoo&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<br>
+<p>Six links have been created using the anchor tag in the body of the html. Each link references a popular search engine in use today. These links have been given some common styling in the internal styling section of the document.</p>
+<li><p>Add the <strong>text-decoration</strong> property to the anchor tag's styling. This property, when set to "none", removes the underline that usually appears when an anchor tag is used.</p>
+<div id="csHTML" style="width:350px"><pre>text-decoration: none;</pre></div>
+</li>
+<br>
+<h3>Link State</h3>
+<p>Links can be styled differently depending on what state they are in.
+   A link can be in one of the four states listed below:</p>
+   <ul id="csList2">
+      <li><strong>a:link</strong> - a normal, unvisited link</li>
+      <li><strong>a:visited</strong> - a link the user has visited</li>
+      <li><strong>a:hover</strong> - a link when the user mouses over it</li>
+      <li><strong>a:active</strong> - a link the moment it is clicked</li>
+   </ul>
+
+<p>When setting the style for several link states, there are some order rules:</p>
+<ul id="csList2">
+     <li><strong>a:hover</strong> MUST come after <strong>a:link</strong> and <strong></strong>a:visited</li>
+     <li><strong>a:active</strong> MUST come after <strong>a:hover</strong></li>
+</ul>
+<br>
+ <li><p>Add styling to the anchor tag so that when the mouse <strong>hovers</strong> over a link the background color is yellow and the text color is black.</p>
+       <img src="images/CS2/Links/css_link_02.png" style="width:95%">
+</li>
+<li><p>Add styling to the anchor tag so that when the mouse is <strong>clicked</strong> on a link the background is lightgray and the text color to black.</p>
+       <img src="images/CS2/Links/css_link_03.png" style="width:95%">
+</li>
+<p>When a link is selected a new tab should be opened in the browser containing the website of the specified search engine(Bing, Google, etc.).</p>
+
+	<br>
+</div>	

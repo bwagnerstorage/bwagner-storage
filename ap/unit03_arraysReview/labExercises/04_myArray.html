@@ -1,0 +1,373 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MyArray</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>One of the drawbacks of an array is that you are required to give it a size
+   when you instantiate it. To illeviate this problem we are going to write a class
+   named <strong>MyArray</strong> that works like an array in every way but clients do not have to
+   give it a size.</p>
+<p>This is accomplished by defining an array within the class with an initial size.
+   When the array becomes full the data from the array is copied into a new
+   array that is larger than the original array. The original array is then 
+   removed by having the array variable reference the new array.</p>
+   <div align="center"><img src="images/MyArray1.png"></div>
+<p>To simplify the coding, MyArray will be limited to integer data.</p>
+<h3>UML Class Diagram</h3>
+<p>Here is the UML Class Diagram for the class.</p>
+<img src="images/MyArray_uml.png"><br><br>
+  <p>Copy the following code into a file named <strong>MyArray.java</strong></p>
+  <div id="csCode">
+  <pre>
+public class MyArray
+{
+    // constants
+    private final int INITIAL_LENGTH = 5;  // initial length of array
+
+    // instance variables
+    private int[] array;
+    private int numElements;  // logical size of array
+
+    // constructor
+    public MyArray()
+    {
+        array = new int[INITIAL_LENGTH];  // instaniate array
+        numElements = 0;
+    }
+
+    /** postcondition: value has been appended to the end of
+     *    array. numElements has been incremented by one.
+     *  @param value the value to be added to array
+     */
+    public void add(int value)
+    {
+
+    }
+
+    /** postcondition: value has been inserted into array at position
+     *    index. numElements has been incremented by one.
+     *    by one.
+     *  @param index position to insert value
+     *  @param value the value to be inserted
+     */
+    public void add(int index, int value)
+    {
+
+
+    }
+
+    /** postcondition: the value at index has been removed from
+     *    array. numElements has been decremented
+     *    by one.
+     *  @param index position of element to be removed
+     */
+    public int remove(int index)
+    {
+
+    }
+
+    /** @return the value at index
+     *  @param index position of element to be returned
+     */
+    public int get(int index)
+    {
+
+    }
+
+    /** postcondition: array's size has been increased by one
+     */
+    public void resize()
+    {
+
+    }
+	
+    /** @return logical size of array(numElements)
+     */
+    public int size()
+    {
+        return numElements;
+    }
+
+    /** @return a string representation of array
+     */
+    public String toString()
+    {
+        String str="";
+
+        for(int i=0; i < numElements; i++)
+        {
+            str+="["+i+","+array[i]+"]\n";
+        }
+        return str;
+    }
+}  
+  </pre>
+  </div>
+  
+  <p>Copy the following code into a file named MyArrayTester.java</p>
+  <div id="csCode">
+  <pre>
+public class MyArrayTester
+{
+    public static void main(String[] args)
+    {
+        // instantiate MyArray object
+        MyArray list = new MyArray();
+
+        printTitle("Test add method (append)");
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        System.out.println(list);
+
+        printTitle("Test add method (insert)");
+        list.add(0, 40);
+        list.add(2, 50);
+        list.add(4, 60);
+        System.out.println(list);
+
+        printTitle("Test remove method");
+        list.remove(0);
+        System.out.println(list);
+        printTitle("Test remove method");
+        list.remove(4);
+        System.out.println(list);
+
+        printTitle("Test resize method");
+        for(int i=1; i <= 10; i++)
+        {
+           list.add(i* 100);
+        }
+        System.out.println(list);
+
+        printTitle("Test size and get methods");
+        for(int i=0; i < list.size(); i++)
+        {
+           System.out.println(list.get(i));
+        }
+    }
+
+    public static void printTitle(String message)
+    {
+        int len = 30 - message.length();
+        int h = len/2;
+        String sp = "";
+        for(int i=0; i < h; i++)
+        {
+            sp += " ";
+        }
+        System.out.println("******************************");
+        System.out.println(sp + message);
+        System.out.println("******************************");
+    }
+}  
+  </pre>
+  </div>
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<li>Complete the first<strong> add</strong>(append) method. This method appends a value to the
+    end of the array. If the array is full it calls resize to increase the size of the array by one.
+	Here is the pseudocode for the method.
+<div id="csOutput" style="width:575px">
+<pre>
+array[NUMELEMENTS] = VALUE
+NUMELEMENTS = NUMELEMENTS + 1
+if NUMELEMENTS = ARRAY.LENGTH then
+   resize()
+end if
+</pre>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="csList">
+<ol start="2">
+<li>Complete the second<strong> add</strong>(insert) method. An insert into the array is accomplished by
+    moving every element below the insert point down one and then inserting the new value into the array at
+	the vacant position. If the array is full it calls resize to increase the size of the array by one.
+	For example, the diagram below shows the process used to insert a value of 100 into an array at 
+	index 3.<br><br>
+<img src="images/MyArray2.png"><br><br>
+
+Here is the pseudocode for the method.
+<div id="csOutput" style="width:575px">
+<pre>
+if INDEX >=0 AND INDEX < NUMELEMENTS then
+   loop I down from NUMELEMENTS - 1 to INDEX
+      ARRAY[I + 1] = ARRAY[I]
+   end loop
+   ARRAY[INDEX] = VALUE
+   NUMELEMENTS = NUMELEMENTS + 1
+   if NUMELEMENTS = ARRAY.LENGTH then
+      resize()
+   end if
+else if INDEX < ARRAY.LENGTH then
+   add(VALUE)
+else
+   throw new java.lang.ArrayIndexOutOfBoundsException(INDEX)
+end if
+</pre>
+</div>
+<p>The line of code <strong>throw new java.lang.ArrayIndexOutOfBoundsException</strong> generates a run-time error
+   message that indicates that the variable index was outside the bounds of the array.</p>
+<div id="csNote"><strong>Note:</strong> the use of two add methods is an example of <strong>polymorphism.</strong>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="csList">
+<ol start="3">
+<li>Complete method<strong> remove</strong>. The removal of an item from an array is accomplished by moving each
+    element below the removal point up one. For example, the diagram below shows the process used to remove
+	a value from an array at index 3. <br><br>
+<img src="images/MyArray3.png"><br><br>	
+	
+	Here is the pseudocode for the method.
+<div id="csOutput" style="width:575px">
+<pre>
+ITEM = 0
+if INDEX >= 0 AND INDEX < NUMELEMENTS then
+   ITEM = ARRAY[INDEX]
+   loop I from INDEX TO NUMELEMENTS - 1
+      ARRAY[I] = ARRAY[I+1]
+   end loop
+   NUMELEMENTS = NUMELEMENTS - 1
+   return ITEM
+else
+   throw new java.lang.ArrayIndexOutOfBoundsException(INDEX);
+end if
+</pre>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="csList">
+<ol start="4">
+<li>Complete method <strong> get</strong>. This method retrieves the element at
+    index. A check is made to verify that index is in the bounds of the array.	
+	Here is the pseudocode for the method.
+<div id="csOutput" style="width:575px">
+<pre>
+if INDEX >= 0 AND INDEX < ARRAY.LENGTH then
+   return ARRAY[INDEX]
+else
+   throw new java.lang.ArrayIndexOutOfBoundsException(INDEX);
+end if
+</pre>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="csList">
+<ol start="5">
+<li>Complete method <strong> resize</strong>. This method creates a new array one size
+    larger than array. It then copies all of the data from array into the new array and
+	assigns the new array to the array variable causing the original array to be removed.	
+	Here is the pseudocode for the method.
+<div id="csOutput" style="width:575px">
+<pre>
+int[] NEWARRAY = new int[ARRAY.LENGTH + 1]
+loop I from 0 to ARRAY.LENGTH - 1
+   NEWARRAY[I] = ARRAY[I];
+end loop
+ARRAY = NEWARRAY
+</pre>
+</div>
+<div id="csNote"><strong>Note:</strong> resizing the array by one is not very efficient. Each time resize
+   is called all of the data from the original array is copied into the new array which can be an expensive
+   operation in terms of time if the array is large. A better approach would by to resize the array by a larger
+   value so that the new array is not created as often. It was resized by
+   one in our class to make testing easier.
+   </div>
+</li>
+</ol>
+</div>
+ 
+<h1>Source File</h1>
+<p>MyArray.java</p>
+<p>MyArrayTester.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+******************************
+   Test add method (append)
+******************************
+[0,10]
+[1,20]
+[2,30]
+
+******************************
+   Test add method (insert)
+******************************
+[0,40]
+[1,10]
+[2,50]
+[3,20]
+[4,60]
+[5,30]
+
+******************************
+      Test remove method
+******************************
+[0,10]
+[1,50]
+[2,20]
+[3,60]
+[4,30]
+
+******************************
+      Test remove method
+******************************
+[0,10]
+[1,50]
+[2,20]
+[3,60]
+
+******************************
+      Test resize method
+******************************
+[0,10]
+[1,50]
+[2,20]
+[3,60]
+[4,100]
+[5,200]
+[6,300]
+[7,400]
+[8,500]
+[9,600]
+[10,700]
+[11,800]
+[12,900]
+[13,1000]
+
+******************************
+  Test size and get methods
+******************************
+10
+50
+20
+60
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+
+
+</pre>
+</div>
+	<br>
+</div>	
+

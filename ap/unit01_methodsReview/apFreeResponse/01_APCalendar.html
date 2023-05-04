@@ -1,0 +1,127 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR APCalendar</div>
+
+<div id="csContent"> 
+
+<h1>NetBeans Project: <a href="apFreeResponse/APCalendarNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >APCalendar</a></h1>
+
+<div id="csList">
+<ol>
+<li>Click on the link above.</li>
+<li>Open the zip file.</li>
+<li>Copy the folder to your home directory.</li>
+<li>Open the NetBeans project APCalendar.</li>
+</ol>
+</div>
+<h1>Directions</h1>
+<p>The APCalendar class contains methods used to calculate information about a calendar. You will write two methods of the class.</p>
+<div id="apCode"><pre>public class APCalendar {
+   /** Returns true if year is a leap year and false otherwise. */
+   <span id="apHighlight"><pre>private static boolean isLeapYear(int year)</pre></span>
+   { /* implementation not shown */ }
+
+   /** Returns the number of leap years between year1 and year2, inclusive.
+   * Precondition: 0 <= year1 <= year2
+   */
+   <span id="apHighlight"><pre>public static int numberOfLeapYears(int year1, int year2)</pre></span>
+   { /* to be implemented in part (a) */ }
+
+   /** Returns the value representing the day of the week for the first
+   * day of year, where 0 denotes Sunday, 1 denotes Monday, ..., 
+   *  and 6 denotes Saturday.
+   */
+   <span id="apHighlight"><pre>private static int firstDayOfYear(int year)</pre></span>
+   { /* implementation not shown */ }
+
+   /** Returns n, where month, day, and year specify the nth day of the year.
+   * Returns 1 for January 1 (month = 1, day = 1) of any year.
+   * Precondition: The date represented by month, day, year is a valid date.
+   */
+   <span id="apHighlight"><pre>private static int dayOfYear(int month, int day, int year)</pre></span>
+   { /* implementation not shown */ }
+
+   /** Returns the value representing the day of the week for the given date
+   * (month, day, year), where 0 denotes Sunday, 1 denotes Monday, ...,
+   * and 6 denotes Saturday.
+   * Precondition: The date represented by month, day, year is a valid date.
+   */
+   <span id="apHighlight"><pre>public static int dayOfWeek(int month, int day, int year)</pre></span>
+   { /* to be implemented in part (b) */ }
+
+   // There may be instance variables, constructors, and other methods not shown.
+   }</pre></div>
+
+   <h3>Part (a)</h3>
+   <p>Write the static method <span class="cd">numberOfLeapYears</span>, which returns the number of leap years between <span class="cd"></span>year1</span> and <span class="cd"></span>year2</span>, inclusive.</p>
+   <p>In order to calculate this value, a helper method is provided for you.</p>
+   <ul id="csList">
+       <li><span class="cd">isLeapYear(year)</span> returns true if year is a leap year and false otherwise.</li>
+   </ul>
+   <br>
+   <p>Complete method numberOfLeapYears below. You must use isLeapYear appropriately to receive full credit.</p>
+   <div id="apCode"><pre> /** Returns the number of leap years between year1 and year2, inclusive.
+   * Precondition: 0 <= year1 <= year2
+   */
+   public static int numberOfLeapYears(int year1, int year2)
+
+
+
+
+</pre>
+   </div>
+   
+   <h3>Part (b)</h3>
+   <p>Write the static method <span class="cd">dayOfWeek</span>, which returns the integer value representing the day of the week for the given date (month, day, year), where 0 denotes Sunday, 1 denotes Monday, ..., and 6
+   denotes Saturday. For example, 2019 began on a Tuesday, and January 5 is the fifth day of 2019. As a result,
+   January 5, 2019, fell on a Saturday, and the method call dayOfWeek(1, 5, 2019)
+   returns 6.</p>
+   <p>As another example, January 10 is the tenth day of 2019. As a result, January 10, 2019, fell on a Thursday, and the method call dayOfWeek(1, 10, 2019) returns 4.</p>
+   <p>In order to calculate this value, two helper methods are provided for you.</p>
+   <ul id="csList">
+   <li><p><span class="cd">firstDayOfYear(year)</span> returns the integer value representing the day of the week for the first day of year, where <span class="cd">0</span> denotes Sunday, 1 denotes Monday, ..., and <span class="cd">6</span> denotes Saturday. For example, since 2019 began on a Tuesday, 
+   <span class="cd">firstDayOfYear(2019)</span> returns <span class="cd">2</span>.</p></li>
+   <li><p>
+    <span class="cd">dayOfYear(month, day, year)</span> returns <span class="cd">n</span>, where <span class="cd">month</span>, <span class="cd">day</span>, and <span class="cd">year</span> specify the nth day of the year. For the first day of the year, January 1
+    <span class="cd">(month = 1, day = 1)</span>, the value 1 is returned. This method accounts for whether year is a leap year. For example,<br> <span class="cd">dayOfYear(3, 1, 2017)</span> returns <span class="cd">60</span>, since 2017 is not a leap year, while<br> <span class="cd">dayOfYear(3, 1, 2016)</span> returns <span class="cd">61</span>, since 2016 is a leap year.</p></li></ul>
+     <br>
+
+     <img src="images/APCalendar1.jpg" style="width:98%">
+
+
+    <p>Complete method <span class="cd">dayOfWeek</span> below. You must use <span class="cd">firstDayOfYear</span> and <span class="cd">dayOfYear</span> appropriately to receive full credit.</p>
+
+<div id="apCode"><pre>/** Returns the value representing the day of the week for the given date
+ * (month, day, year), where 0 denotes Sunday, 1 denotes Monday, ...,
+ * and 6 denotes Saturday.
+ * Precondition: The date represented by month, day, year is a valid date.
+ */
+public static int dayOfWeek(int month, int day, int year)
+
+
+
+
+
+</pre></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Part A - numberOfLeapYears Test
+-------------------------------
+Number of leap years from 1800 to 1900 = 24
+Number of leap years from 1920 to 2020 = 26
+Number of leap years from 2020 to 2030 = 3
+
+
+Part B - dayOfWeek Test
+-----------------------
+Day of the week for Jan 5, 2019 = 6
+Day of the week for Jan 10, 2020 = 5
+Day of the week for March 12, 2020 = 4
+Day of the week for May 21, 2020 = 4
+Day of the week for June 15, 2021 = 2
+</pre>
+</div>
+	<br>
+</div>	
+

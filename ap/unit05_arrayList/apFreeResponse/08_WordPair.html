@@ -1,0 +1,125 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR WordPair</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/WordPairNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;">WordPair</a></h1>
+
+<h1>Directions</h1>
+<p>This question involves reasoning about pairs of words that are represented 
+   by the following <span class="cd">WordPair</span> class.</p>
+
+<div id="apCode"><pre>public class WordPair { 
+   /** Constructs a WordPair object. */ 
+   <span id="apHighlight"><pre>public WordPair(String first, String second)</pre></span> 
+   {  /* implementation not shown */  } 
+
+   /** Returns the first string of this WordPair object. */ 
+   <span id="apHighlight"><pre>public String getFirst()</pre></span> 
+   {  /* implementation not shown */  } 
+      
+   /** Returns the second string of this WordPair object. */ 
+   <span id="apHighlight"><pre>public String getSecond()</pre></span> 
+   {  /* implementation not shown */  } 
+} 
+</pre></div>
+<p>You will implement the constructor and another method for the following
+      <span class="cd">WordPairList</span> class.</p>
+<div id="apCode"><pre>public class WordPairList { 
+   /** The list of word pairs, initialized by the constructor. */ 
+   <span id="apHighlight"><pre>private ArrayList<WordPair> allPairs;</pre></span>
+
+   /** 
+    * Constructs a WordPairList object as described in part (a). 
+    *   <strong>Precondition</strong>: words.length >= 2 
+    */
+   <span id="apHighlight"><pre>public WordPairList(String[] words)</pre></span>
+      { /* to be implemented in part (a) */ }
+
+   /** Returns the number of matches as described in part (b). */ 
+   <span id="apHighlight"><pre>public int numMatches()</pre></span>
+      { /* to be implemented in part (b) */ } 
+}</pre></div>
+<br>
+<h3>Part (a)</h3>
+<p>Write the constructor for the <span class="cd">WordPairList</span> class. The constructor takes an array of strings words as a parameter and initializes the instance variable  <span class="cd">allPairs</span> to an <span class="cd">ArrayList</span> of <span class="cd">WordPair</span> objects.</p> 
+<p>A <span class="cd">WordPair</span> object consists of a word from the array paired with a word that 
+appears later in the array. The <span class="cd">allPairs</span> list <span class="cd">containsWordPair objects(words[i], words[j]) </span>
+for every <span class="cd">i</span> and <span class="cd">j</span>, where <span class="cd">0 <= i < j < words.length</span>. Each <span class="cd">WordPair</span> object is added exactly
+once to the list.</p>
+<p>The following examples illustrate two different <span class="cd">WordPairList</span> objects.</p>
+<br>
+<img src="images/WordPair1.jpg" style="width:98%">
+<br><br>
+<img src="images/WordPair2.jpg" style="width:98%">
+<br><br>
+<p>Complete the <span class="cd">WordPairList</span> constructor below.</p>
+<div id="apCode"><pre>
+/** Constructs a WordPairList object as described in part (a). 
+ *    <strong>Precondition</strong>: words.length >= 2 
+ */
+public WordPairList(String[] words) 
+
+
+
+
+
+
+</pre></div>
+
+<h3>Part (b)</h3>
+
+<p>Write the <span class="cd">WordPairList</span> method <span class="cd">numMatches</span>. This method returns the number of
+   <span class="cd">WordPair</span> objects in <span class="cd">allPairs</span> for which the two strings match.</p> 
+<p>For example, the following code segment creates a <span class="cd">WordPairList</span> object. </p>
+
+<div id="apCode"><pre>
+String[] moreWords = {"the", "red", "fox", "the", "red"}; 
+WordPairList exampleThree = new WordPairList(moreWords);
+</pre></div>
+
+<p>After the code segment has executed, the <span class="cd">allPairs</span> instance variable of <span class="cd">exampleThree</span> will contain the following <span class="cd">WordPair</span> objects in some order. The pairs in which the first string matches the second string are shaded for illustration. </p>
+
+<div id="apCode"><pre>
+("the", "red"), ("the", "fox"), <span id="apHighlight">("the", "the")</span>, 
+("the", "red"), ("red", "fox"), ("red", "the"), 
+<span id="apHighlight">("red", "red")</span>, ("fox", "the"), ("fox", "red"), 
+("the", "red") 
+</pre></div>
+<p>The call <span class="cd">exampleThree.numMatches()</span> should return 2.</p>
+<br>
+<img src="images/WordPair2.jpg" style="width:98%">
+<br><br>
+<p>Complete method <span class="cd">numMatches</span> below.</p> 
+<div id="apCode"><pre>
+/** Returns the number of matches as described in part (b). */ 
+public int numMatches()
+
+
+
+
+
+</pre></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+(one, two) (one, three) (two, three) 
+Matches = 0
+
+
+(the, more) (the, the) (the, merrier) 
+(more, the) (more, merrier) (the, merrier) 
+Matches = 1
+
+
+(the, red) (the, fox) (the, the) 
+(the, red) (red, fox) (red, the) 
+(red, red) (fox, the) (fox, red) 
+(the, red) 
+Matches = 2
+</pre>
+</div>
+	<br>
+</div>	
+

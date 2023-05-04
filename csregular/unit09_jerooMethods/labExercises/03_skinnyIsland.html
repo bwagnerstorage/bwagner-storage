@@ -1,0 +1,53 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Skinny Island</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>A Jeroo starts out on Skinny Island on the western shore, without any flowers, and must find
+     a way across to the eastern shore by picking the flowers and using them to break through the
+	 nets.</p>
+  <p>Create a method named <strong>disableNet</strong> that will pick up a flower directly in front
+     of a Jeroo and toss it onto a net that is on the other side of the flower.</p>
+  <p>Use the following method declaration</p>
+  <div id="csCode">
+    <pre>
+<font color="#FF00FF">// precondition: a flower is position directly in front of the Jeroo
+//               with a net on the other side
+// postcondition: the flower has been picked and the net has been disabled</font>
+method disableNet()
+{
+
+}
+	</pre>
+  </div>
+    <p>Use the following code as your main method.</p>
+  <div id="csCode">
+    <pre>
+method main()
+{ 
+   Jeroo bob = new Jeroo();
+   
+   bob.hop(3);
+   bob.disableNet();
+   
+   bob.hop(8);
+   bob.disableNet();
+   
+   bob.hop(8);
+   bob.disableNet();
+   
+   bob.hop(4);
+}</pre>
+  </div>
+<h1>Source File</h1>
+<p>SkinnyIsland.jsc</p>
+<h1>Island File</h1>
+  <p>SkinnyIsland.jev</p>
+<h1>Sample Run - Before Execution</h1>
+<img src="images/Jeroo/skinnyIsland.gif">
+<h1>Sample Run - After Execution</h1>
+<img src="images/Jeroo/skinnyIsland2.gif">
+	<br>
+</div>	
+

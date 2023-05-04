@@ -1,0 +1,57 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ChameleonCritter</div>
+
+<div id="csContent"> 
+<div id="csOutput"><pre>
+public void processActors(ArrayList&ltActor&gt actors)
+public void makeMove(Location loc)
+</pre></div>
+
+<hr>
+
+<div id="apCode">
+<pre>
+import info.gridworld.actor.Actor;
+import info.gridworld.actor.Critter;
+import info.gridworld.grid.Location;
+
+import java.util.ArrayList;
+
+/**
+ * A ChameleonCritter takes on the color of neighboring actors as
+ * it moves through the grid. 
+
+ * The implementation of this class is testable on the AP CS A exam.
+ */
+public class ChameleonCritter extends Critter
+{
+    /**
+     * Randomly selects a neighbor and changes this critter's color to be the
+     * same as that neighbor's. If there are no neighbors, no action is taken.
+     */
+    <div id="apHighlight"><pre>public void processActors(ArrayList&ltActor&gt actors)</pre></div>
+    {
+        int n = actors.size();
+        if (n == 0)
+            return;
+        int r = (int) (Math.random() * n);
+
+        Actor other = actors.get(r);
+        setColor(other.getColor());
+    }
+
+    /**
+     * Turns towards the new location as it moves.
+     */
+    <div id="apHighlight"><pre>public void makeMove(Location loc)</pre></div>
+    {
+        setDirection(getLocation().getDirectionToward(loc));
+        super.makeMove(loc);
+    }
+}
+</pre>
+</div>
+	<br>
+</div>	
+

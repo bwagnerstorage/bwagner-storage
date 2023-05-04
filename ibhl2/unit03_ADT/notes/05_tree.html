@@ -1,0 +1,221 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Tree ADT</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>5.1.14 Describe how trees operate logically (both binary and non-binary).</li>
+		                <li>5.1.15 Define the terms: parent, left-child, right-child, subtree, root and leaf.</li>
+						<li>5.1.16 State the result of inorder, postorder and preorder tree traversal.</li>
+						<li>5.1.17 Sketch binary trees.</li>
+						<li>5.1.18 Define the term dynamic data structure.</li>
+						<li>5.1.19 Compare the use of static and dynamic data structures.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Tree ADT</h1>
+<p>A <strong>tree</strong> is a type of data structure in which each element is attached to one or more elements directly beneath it. The connections between elements are called branches.
+  Trees are often called inverted trees because they are normally drawn with the root at the top. The elements at the very bottom of an inverted tree (that is, those that have no elements below them)
+  are called leaves.</p>
+<p>Most trees are implemented using a dynamic data structure like a linked list. One type of tree called a heap uses a static implementation(array).</p>
+<div align="center"><img src="images/tree1.png"></div>
+<h1>Tree Terminology</h1>
+<table id="csTable" width="550">
+        <tr> 
+          <th width="150">Term</td>
+          <th>Definition</td>
+        </tr>
+        <tr> 
+          <td><strong>Node</strong></td>
+          <td>An item in a tree.</td>
+        </tr>
+        <tr> 
+          <td><font color="#FF0000"><strong>Root</strong></font></td>
+          <td>The topmost node in a tree. It is the only node without a predecessor 
+            or parent.</td>
+        </tr>
+        <tr> 
+          <td><font color="#FF0000"><strong><strong>Child</strong></font></td>
+          <td>A successor of a node. A node can have more than one child, and 
+            its children are viewed as organized in left to right order. The leftmost 
+            child is called the first child, and the rightmost is the last child.</td>
+        </tr>
+        <tr> 
+          <td><font color="#FF0000"><strong>Parent</strong></font></td>
+          <td>The predecessor of a node. A node can have only one parent.</td>
+        </tr>
+        <tr> 
+          <td><strong>Branch</strong></td>
+          <td>The line that connects a parent to its child.</td>
+        </tr>
+		<tr> 
+          <td><font color="#FF0000"><strong>Subtree</strong></font></td>
+          <td>The tree formed by considering a node and all its descendants. We exclude the root when forming subtrees.</td>
+        </tr>
+        <tr> 
+          <td><strong>Path</strong></td>
+          <td>The sequence of branches that connect a node and one of its descendants.</td>
+        </tr>
+        <tr> 
+          <td><font color="#FF0000"><strong>Leaf</strong></font></td>
+          <td>A node that has no children.</td>
+        </tr>
+        <tr> 
+          <td><strong>Level</strong></td>
+          <td>The level of a node equals the length of the path connecting 
+            it to the root. Thus, the root depth or level of the root is 0. Its 
+            children are a level 1, and so on.</td>
+        </tr>
+        <tr> 
+          <td><strong>Height</strong></td>
+          <td>The height of a tree is the number of nodes on the longest path 
+            from the root to a leaf. Thus the height is one more than the level 
+            of the tree. The height is defined to be 0 for an empty tree. The 
+            height is 1 for a single node tree.</td>
+        </tr>
+        <tr> 
+          <td><strong>Balanced Tree</strong></td>
+          <td>A<strong> balanced tree</strong> has approximately the same number 
+            of nodes in the left and right subtrees at each level.</td>
+        </tr>
+        </table>
+		
+<p>*Terms highlighted in red are part of IB curriculum.</p>
+		
+<h1>Binary Tree</h1>
+
+<p>A <strong>binary tree</strong> is a special type of tree structure in which each node has at most two leaves. View the following illustration that
+demonstrates some of the features of a binary tree.</p>
+
+<div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Tree1/Slide1.PNG"></li>
+          <li><img src="images/Tree1/Slide2.PNG"></li>
+          <li><img src="images/Tree1/Slide3.PNG"></li>
+		  <li><img src="images/Tree1/Slide4.PNG"></li>
+		  <li><img src="images/Tree1/Slide5.PNG"></li>
+		  <li><img src="images/Tree1/Slide6.PNG"></li>
+		  <li><img src="images/Tree1/Slide7.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+<h1>Binary Search Tree(BST)</h1>
+
+<p>A <strong>binary search tree</strong> is a binary tree that stores elements in an ordered way that makes it efficient to find a given key and easy to access the elements in sorted order.</p>
+<div id="csList"><ul>
+<p>A binary search tree has the following properties:<br>
+<li>The <strong>left subtree</strong> of a node contains only nodes with keys less than the node's key.</li>
+<li>The <strong>right subtree</strong> of a node contains only nodes with keys greater than the node's key.</li>
+<li>There must be <strong>no duplicate</strong> nodes.</li>
+</p></ul></div>
+<p>A binary search tree is one method for implementing a <strong>keyed table</strong>. The advantage to this approach is that it combines the advantage of an array--the ability to do a binary
+   search with the advantage of a linked list--its dynamic size.</p>
+   
+<p>View the following illustration that demonstrates some of the features of a binary search tree.</p>
+
+<div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/Tree2/Slide1.PNG"></li>
+          <li><img src="images/Tree2/Slide2.PNG"></li>
+          <li><img src="images/Tree2/Slide3.PNG"></li>
+		  <li><img src="images/Tree2/Slide4.PNG"></li>
+		  <li><img src="images/Tree2/Slide5.PNG"></li>
+		  <li><img src="images/Tree2/Slide6.PNG"></li>
+		  <li><img src="images/Tree2/Slide7.PNG"></li>
+		  <li><img src="images/Tree2/Slide8.PNG"></li>
+		  <li><img src="images/Tree2/Slide9.PNG"></li>
+		  <li><img src="images/Tree2/Slide10.PNG"></li>
+		  <li><img src="images/Tree2/Slide11.PNG"></li>
+		  <li><img src="images/Tree2/Slide12.PNG"></li>
+		  <li><img src="images/Tree2/Slide13.PNG"></li>
+		  <li><img src="images/Tree2/Slide14.PNG"></li>
+		  <li><img src="images/Tree2/Slide15.PNG"></li>
+		  <li><img src="images/Tree2/Slide16.PNG"></li>
+		  <li><img src="images/Tree2/Slide17.PNG"></li>
+		  <li><img src="images/Tree2/Slide18.PNG"></li>
+        </ul>
+    </div>
+
+<h1>Tree Traversal</h1>
+
+<p>A common operation performed on a tree is a traversal. A <strong>tree traversal</strong> is the process of visiting (examining and/or updating) each node in a tree.</p>
+
+<p>There are two fundamentally different kinds of binary trees traversals--those that are <strong>depth-first</strong> and those that are <strong>breadth-first</strong>. Each node of the tree is visited 
+   three times during each of the depth-first traversals, once on its way down the tree, a second time coming up from the left child, and a third time coming up from the right child.</p>
+
+<p>There are three different types of <strong>depth-first</strong> traversals, <strong>preorder</strong>, <strong>inorder</strong>, and <strong>postorder</strong>. The preorder traversal extracts the
+   value the first time it visits the node. During the inorder traversal, the value is extracted during the second visit to the node. During the postorder traversal, the value is extracted during the third visit.</p>
+
+<p>There is only one kind of <strong>breadth-first</strong> traversal--the level order traversal. Unlike the depth-first traversals, this traversal does not follow the branches of the tree.
+   To implement a level-order traversal, we need the help of a <strong>queue</strong>.</p> 
+   
+<p>View the following illustration that demonstrates the most common tree traversals.</p>
+
+<div class = "slider" id="slider3">
+       <ul class="bjqs">
+          <li><img src="images/Tree3/Slide1.PNG"></li>
+          <li><img src="images/Tree3/Slide2.PNG"></li>
+          <li><img src="images/Tree3/Slide3.PNG"></li>
+		  <li><img src="images/Tree3/Slide4.PNG"></li>
+		  <li><img src="images/Tree3/Slide5.PNG"></li>
+		  <li><img src="images/Tree3/Slide6.PNG"></li>
+		  <li><img src="images/Tree3/Slide7.PNG"></li>
+		  <li><img src="images/Tree3/Slide8.PNG"></li>
+		  <li><img src="images/Tree3/Slide9.PNG"></li>
+		  <li><img src="images/Tree3/Slide10.PNG"></li>
+		  <li><img src="images/Tree3/Slide11.PNG"></li>
+		  <li><img src="images/Tree3/Slide12.PNG"></li>
+		  <li><img src="images/Tree3/Slide13.PNG"></li>
+		  <li><img src="images/Tree3/Slide14.PNG"></li>
+		  <li><img src="images/Tree3/Slide15.PNG"></li>
+		  <li><img src="images/Tree3/Slide16.PNG"></li>
+		  <li><img src="images/Tree3/Slide17.PNG"></li>
+		  <li><img src="images/Tree3/Slide18.PNG"></li>
+		  <li><img src="images/Tree3/Slide19.PNG"></li>
+          <li><img src="images/Tree3/Slide20.PNG"></li>
+          <li><img src="images/Tree3/Slide21.PNG"></li>
+		  <li><img src="images/Tree3/Slide22.PNG"></li>
+		  <li><img src="images/Tree3/Slide23.PNG"></li>
+		  <li><img src="images/Tree3/Slide24.PNG"></li>
+		  <li><img src="images/Tree3/Slide25.PNG"></li>
+		  <li><img src="images/Tree3/Slide26.PNG"></li>
+		  <li><img src="images/Tree3/Slide27.PNG"></li>
+		  <li><img src="images/Tree3/Slide28.PNG"></li>
+		  <li><img src="images/Tree3/Slide29.PNG"></li>
+		  <li><img src="images/Tree3/Slide30.PNG"></li>
+		  <li><img src="images/Tree3/Slide31.PNG"></li>
+		  <li><img src="images/Tree3/Slide32.PNG"></li>
+		  <li><img src="images/Tree3/Slide33.PNG"></li>
+		  <li><img src="images/Tree3/Slide34.PNG"></li>
+		  <li><img src="images/Tree3/Slide35.PNG"></li>
+		  <li><img src="images/Tree3/Slide36.PNG"></li>
+        </ul>
+    </div>
+	
+<h1>General Trees</h1>
+<p>A <strong>general tree</strong> is a tree structure in which a node can have more than two subtrees. General trees can be implemented as
+   binary trees.</p>
+   
+<div align="center"><img src="images/tree2.png"></div>
+
+<p>Examples of General Trees</p>
+<div id="csList"><ul>
+<li>Family Trees</li>
+<li>File System in an Operating System</li>
+<li>Structure Charts</li>
+</ul></div>
+
+<h1>Java Collection Framework(JCF)</h1>
+<p>The JCF implements a binary tree in two separate classes: TreeSet and TreeMap. These classes are not part of the IB curriculum.</p>	
+
+<br>
+</div>

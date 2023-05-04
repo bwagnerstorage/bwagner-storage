@@ -1,0 +1,198 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Diet</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>A friend of yours has decided to go on a diet and has asked you to write a program that will
+     help him track his progress. The program should allow him to make daily entries into a database,
+	 where each entry includes the day's date and his current weight. The program should be able to
+	 print a summary report which displays the date, weight, and weight differentrial for each entry
+	 in the database. The weight differential is the difference between the current weight and the
+	 weight recorded on the previous entry. The summary report should also include a net weight 
+	 loss/gain value. This value represents the amount of weight lossed or gained from the first
+	 entry in the database to the last entry.</p>
+
+<h3>Class Decomposition</h3>
+<p>Your implementation should be decomposed into the following 3 classes:</p>
+<div id="csList">
+<ul>
+<li>Entry class</li>
+<li>Diet class</li>
+<li>Manager class</li>
+</ul></div>
+<h3>Entry Class</h3>
+<p>This class represents a single entry into the diet database. It's attributes include a
+   String field for the entry date and a integer field for the weight. You will need to include
+   constructors, accessor methods, mutator methods, and override the toString method.</p>
+
+<h3>Diet Class</h3>
+<p>This class is responsible for creating and maintaining the diet database through
+   an Arraylist of Entry objects. It also needs to track the weight differential and the
+   net weight loss/gain attributes. The weight differential is defined as the weight difference
+   between two consecutive entries in the list. If the person weighted 179 on 8-21 and then 177
+   on 8-22 then the weight differential would be -2. The net weight loss/gain value represents 
+   the amount of weight lossed or gained since the first entry in database.</p>
+
+<p>The Diet class should include the following methods:</p>
+<div id="csList">
+<ul>
+<li><p><strong>default constructor</strong> - initializes the ArrayList, weight differential, net weight loss/gain
+ variables. </p></li>
+<li><p><strong>addEntry</strong> method - adds an Entry object to the ArrayList.</p> </li>
+<li><p><strong>getEntry</strong> method - given a date (String), this method searches the ArrayList, using a linear search algorithm, for an Entry that contains the specified date. If found it returns the Entry object, otherwise it returns null.
+(Linear Search - you simply examine each element in a list one by one until the desired element
+   is found or you reach the end of the list.)</p> </li>
+<li><p><strong>viewList</strong> method - this method prints a summary report of the database including the list
+   of entrys, the weight differential, and the net weight loss/gain values. </p></li>
+</ul></div>
+
+<h3>Manager Class</h3>
+<p>This class is the manager for the program. It is responsible for displaying and managing its
+   menu system and instaniating the Diet object. It contains the main method for the program.</p>
+
+<p>This class should contain the following methods:</p>
+<div id="csList">
+<ul>
+<li><p><strong>default constructor</strong> - the constructor should instaniate the Diet object and an Scanner object.
+    It should also call the method MainMenu to start the menu system.</p> </li>
+<li><p><strong>mainMenu</strong> method - this method is responsible for displaying the main menu for 
+the program.</p></li> 
+<li><p><strong>addRecord</strong> method - this method allows the user to make an entry into the diet database
+   by providing a date and weight.</p></li> 
+<li><p><strong>viewRecord</strong> method - this method allows the user to view a single
+ record (Entry) within the database by providing its date. If the entry is not in the database
+ the method should display the message "Entry does not exist".</p></li> 
+<li><p><strong>viewAllRecords</strong> method - this method allows the user to view all of the records
+   in the database including a summary report with the weight differential and the net weight
+   loss/gain values.</p></li> 
+</ul></div>
+
+<h1>Source File</h1>
+<p>Entry.java</p>
+<p>Diet.java</p>
+<p>Manager.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 1
+
+========================
+       Add Record
+========================
+
+Enter date -->9-1
+Enter weight -->180
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 1
+
+========================
+       Add Record
+========================
+
+Enter date -->9-2
+Enter weight -->179
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 1
+
+========================
+       Add Record
+========================
+
+Enter date -->9-3
+Enter weight -->181
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 1
+
+========================
+       Add Record
+========================
+
+Enter date -->9-12
+Enter weight -->175
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 3
+
+============================
+       View All Records
+============================
+
+   DATE     WEIGHT    DIFFERENCE
+------------------------------------
+  9-1         180           0
+  9-2         179          -1
+  9-3         181           2
+  9-12        175          -6
+-------------------------------
+Net Weight Loss/Gain = -5
+-------------------------------
+
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 2
+
+========================
+       View Record
+========================
+
+Enter date -->9-3
+
+Date   =9-3
+Weight =181
+========================
+       Main Menu
+========================
+
+1. Add Record
+2. View Record
+3. View All Records
+4. Exit
+Selection: 4
+
+</pre>
+</div>
+	<br>
+</div>	
+

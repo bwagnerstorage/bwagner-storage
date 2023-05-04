@@ -1,0 +1,160 @@
+<!DOCTYPE>>
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+   p {
+      font-size:18px;
+
+   }
+   pre {
+      font-size: 18px;
+   }
+</style> 
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th><h1>WaitingList</h1></th>
+  </tr>
+  <tr> 
+    <td colspan="2">    
+      <p>Consider a class <em>WaitingList</em> that uses the <em>ListNode</em> 
+        class to manipulate linked lists. The definition of<br>
+        class <em>WaitingList</em> is as follows.</p>
+      <pre>public class WaitingList
+{
+     private int numNodes;
+     private ListNode front;
+	 
+     // returns the number of nodes in this list 
+     <font color="#0000FF">public int <strong>size</strong>()</font>
+     { return numNodes; } 
+		
+     // returns a reference to the node at index k, 
+     // where the indexes are numbered 0 through size()-1 
+     // precondition: 0 &lt;= k &lt; size() 
+     <font color="#0000FF">private ListNode <strong>getKthNode</strong>(int k)</font>
+     { /* to be implemented in part (a) */ }
+	 
+     // removes the last num nodes from other and attaches them
+     // in the same order to the end of this WaitingList;
+     // updates the number of nodes in each list to reflect the move 
+     // precondition: size() &gt; 0;
+     // 0 &lt; num &lt;= other.size()
+     <font color="#0000FF">public void <strong>transferNodesFromEnd</strong>(WaitingList other, int num)</font>
+     { /* to be implemented in part (b) */ }
+	 
+     // There may be fields, constructors, and methods that are not shown.
+	 
+}
+</pre>
+      <p align="left">a) Write the <em>WaitingList</em> method <em>getKthNode</em>. 
+        This method should return a reference to the node at index k.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; Nodes in a <em>WaitingList</em> are indexed consecutively 
+        from the front, starting at 0. </p>
+      <p><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;In the diagram below, <em>list1.getKthNode(0)</em> 
+        returns a reference to the node containing A, <em>list1.getKthNode(1) 
+        </em>returns a reference to the node containing B, and <em>list1.getKthNode(2)</em> 
+        returns a reference to the node containing C.</p>
+      <p><img src="WL1.png"></p>
+      <p> &nbsp;&nbsp;&nbsp;Complete method <strong>getKthNode</strong> below. 
+      </p>
+      <pre>&nbsp;&nbsp;&nbsp;// returns a reference to the node at index k, 
+   // where the indexes are numbered 0 through size()-1 
+   // precondition: 0 &lt;= k &lt; size()
+   private ListNode <strong>getKthNode</strong>(int k) </pre></p>
+      <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+      <p>b) Write the <em>WaitingList</em> method <em>transferNodesFromEnd</em>. 
+        This method moves the last num nodes from the list <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other to the end of this list and updates 
+        the sizes of the two lists to reflect the results of the move. If num 
+        is equal <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to the size of other, the instance variable 
+        front in other will need to be updated as well. </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For example, assume that two <em>WaitingList</em> 
+        objects have been defined and initialized as in the following diagram. 
+      </p>
+      <p><img src="WL2.png"></p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The result of the call <em>list2.transferNodesFromEnd(list1, 
+        2)</em> would be as shown in the next diagram. </p>
+      <p><img src="WL3.png"></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note that it is not necessary to copy nodes. 
+        Solutions that allocate any new <em>ListNode</em> objects will not receive 
+        full credit. </p>
+      <p>&nbsp;&nbsp;&nbsp;In writing <em>transferNodesFromEnd</em>, you may assume 
+        that <em>getKthNode</em> works as specified <br>
+        &nbsp;&nbsp; regardless of what you wrote in part (a). </p>
+      <p>&nbsp;&nbsp;&nbsp;Complete method <strong>transferNodesFromEnd</strong> 
+        below. </p>
+      <pre>  // removes the last num nodes from other and attaches them
+  // in the same order to the end of this WaitingList;
+  // updates the number of nodes in each list to reflect the move
+  // precondition: size() &gt; 0;
+  // 0 &lt; num &lt;= other.size()
+  public void <strong>transferNodesFromEnd</strong>(WaitingList other, int num) <br>
+
+
+      
+</pre>
+      <pre>&nbsp;</pre>
+      <h2>Sample Output</h2>
+      <table width="625" border="0">
+        <tr>
+          <td bgcolor="#000000"> 
+            <pre><font color="#FFFFFF">List 1 = A B C
+
+List 2 = E F
+
+=====================
+ Test 1 - getKthNode
+=====================
+
+A
+C
+
+===============================
+ Test 2 - transferNodesFromEnd
+===============================
+List 1 = A B
+
+List 2 = E F C
+
+List 1 size = 2
+List 2 size = 3
+
+===============================
+ Test 3 - transferNodesFromEnd
+===============================
+List 1 = A
+
+List 2 = E F B C
+
+List 1 size = 1
+List 2 size = 4
+
+===============================
+ Test 4 - transferNodesFromEnd
+===============================
+List 1 =
+
+List 2 = E F A B C
+
+List 1 size = 0
+List 2 size = 5
+
+Press any key to continue...
+</font>
+          </pre></td>
+        </tr>
+      </table>
+      <p></p>
+</td>
+  </tr>
+</table>

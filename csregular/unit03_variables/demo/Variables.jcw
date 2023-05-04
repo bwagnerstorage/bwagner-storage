@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>Variables</label>
+		<id>1074</id>
+		<version>0</version>
+	</settings>
+	<users>
+		<user>
+			<path>Variables.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>Variables.jcp</path>
+		</project>
+	</projects>
+</workspace>

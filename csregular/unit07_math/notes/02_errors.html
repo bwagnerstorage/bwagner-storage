@@ -1,0 +1,98 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Programming Errors</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a syntax error</li>
+						<li>What is a run-time error</li>
+						<li>What is a logic error</li>
+						<li>What is desk checking</li>
+						<li>What is a tracing</li>
+						<li>What is a debugging</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<p>According to an old saying, we learn from our mistakes, which is fortunate because most people find it almost impossible
+   to write even simple programs without making numerous mistakes. These mistakes, or errors, are of three types: 
+   <strong>syntax errors</strong>, <strong>run-time errors</strong>, and <strong>logic errors</strong>.</p>		
+  <h1>The Three Types of Errors</h1>
+  <h3>Syntax Errors</h3>
+  <p>Syntax errors, occur when we violate a syntax rule, no matter how minor. These errors are detected at compile time.
+     For instance, if a semicolon is missing at the end of a statement or if a variable is used before it is declared,
+	 the compiler is unable to translate the program into byte code. The good news is that when the Java compiler finds
+	 a syntax error, it prints an error message, and we can make the needed correction. The bad news is that the error
+	 messages are often quite cryptic. Knowing that there is a syntax error at a particular point in a program, however,
+	 is usually a sufficient clue for finding the error.</p>
+<h3>Run-time Errors</h3>
+<p>Run-time errors occur when we ask the computer do something that it considers illegal, such as dividing by 0. For example,
+   suppose that the symbols x and y are variables. Then the expression x/y is syntactically correct, so the compiler does not
+   complain. However, when the expression is evaluated during execution of the program, the meaning of the expression depends
+   on the values contained in the variables. If the variable y has the value 0, then the expression cannot be evaluated. 
+   The good news is that the Java run-time environment will print a message telling us the nature of the error and where 
+   it was encountered. Once again, the bad news is that the error message might be hard to understand.</p>
+<h3>Logic Errors</h3>
+<p>Logic errors (also called design errors or bugs) occur when we fail to express ourselves accurately. For instance, in every day life, we might give someone the instruction to turn left when what we really meant to say is to turn right. In this example</p>
+<div id="csList"><ul>
+    <li>The instruction is phrased properly, and thus syntax is correct.</li>
+    <li>The instruction is meaningful, and thus the semantics are valid(not run-time error).</li>
+    <li>But the instruction does not do what we intended, and thus it is logically incorrect.</li>
+</ul></div>
+<p>The bad news is that programming environments do not detect logic errors automatically. The good news is that there
+   are strategies you can use to prevent logic errors and detect them when they occur. </p>
+ <h1>Error Detection</h1> 
+ <h3>Desk Checking</h3>
+ <p>One strategy we can use to reduce the number of logic errors in a program is to reread the code carefully after we
+    have written it. This is called <strong>desk checking</strong> and is best done when the mind is fresh. Because programming requires
+    exhausting and excruciating attention to detail, avoid programming for long stretches of time or when tired, a rule
+    you will break frequently unless you manage your time well.</p>
+	 <h3>Debugging</h3>
+	 <p>After we have established that a program contains a logic error, or <strong>bug</strong> as it is more affectionately called, we still
+	    have the problem of finding it. Sometimes the nature of a bug suggests its general location in a program. We then can
+	    reread this section of the program carefully with the hope of spotting the error. Unfortunately, the bug often is not
+	   located where we expect to find it, and even if it is, we will probably miss it. After all, we thought we were writing 
+	   the program correctly in the first place, so when we reread it, we tend to see what we were trying to say rather than
+	   what we actually said.</p>
+	<h3>Tracing</h3>
+	<p>Programmers, as a consequence, are frequently forced to resort to a rather tedious, but powerful, technique for finding
+	   bugs called <strong>tracing</strong>. We add to the program extra lines of code that print the values of selected variables in the terminal
+	   window. Of course, we add these lines where we anticipate they will do the most good - that is, preceding and perhaps
+	   following places in the program where we think the bug is most likely located. We then run the program again, and from
+	   the extra output, we can determine if any of the variables deviate from their expected values. If one of them does, then
+	   we know the bug is close by, but if none do, we must try again at a different point in the program. A variable's value is
+	    printed in the console window as follows:</p>
+ <p>Look at the following examples:</p>
+   <div id="csCode">
+    <pre>
+System.out.println("some message" + variable name);
+</pre>
+</div>
+<h3>Example</h3>
+<p>If at a certain point in a program you expect the variable num to have a value of 10. You could add code like the following:</p>
+   <div id="csCode">
+    <pre>
+System.out.println("num (10) = " + num);
+</pre>
+</div>
+<p>When this line is printed on the console window if the variable looks like</p>
+<div id="csOutput">
+<pre>
+num (10) = 10
+</pre>
+</div>
+<p>then you know the problem is not occurring at this spot in your program. If on the other hand, if looks like this</p>
+<div id="csOutput">
+<pre>
+num (10) = 7
+</pre>
+</div>
+<p>then you know the error is located somewhere above this line of code in your program.</p>
+	<br>
+</div>	
+

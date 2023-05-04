@@ -1,0 +1,319 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Vacation</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Wally World Resorts has asked you to design a vacation planner for their customers. 
+  The resort offers three vacation packages: the Standard Package, the Premium Package,
+  and the Platinum Package. Each package offers vacationers a different resort to meet
+  their needs and budget. With the Standard Package guests stay at the Wilderness Resort
+   at a cost of $100.00 a night. With the Premium Package guests stay at the Carribean 
+   Resort at a cost of $150.00 a night. With the Platinum Package guests stay at the
+   Spa Spectular Resort at a cost of $200.00 a night. The Premium Package offers guests
+   a meal plan that provides guests with breakfast at no additional cost. The Platinum
+   Package offers guests a meal plan that provides guests with breakfast, lunch, and dinner
+   at no additional cost.</p>
+
+<p>The StandardPackage class is defined with the following attributes and behaviors. 
+   Copy the following code into a source file named <strong>StandardPackage.java</strong>.</p>
+
+<div id="csCode"><pre>
+public class StandardPackage
+{
+    // Instance Variables
+    private int nights; 
+    
+    public StandardPackage(int n)
+    {
+        nights = n;
+    }
+    
+    public String getResort()
+    {
+       return "Wilderness Resort";  
+    }
+    
+    public double getCostPerNight()
+    {
+       return 100.00;
+    }
+    
+    public double getTotalCost()
+    {
+        return nights * getCostPerNight();
+    }
+    
+    public String toString()
+    {
+        String str = "Resort           = " + getResort() + "\n" +
+                     "Cost per night   = " + getCostPerNight() + "\n" +
+                     "Number of nights = " + nights + "\n" +
+                     "Total cost       = " + getTotalCost();
+        return str;
+    }
+}
+</pre></div>
+
+<p>Define a class named <strong>PremiumPackage</strong> that inherits the StandardPackage and define a class
+   named <strong>PlatinumPackage</strong> that inherits the PremiumPackage. The inheritance relationship
+   is illustrated by the diagram below.
+
+   <div align="center"><img src="images/vacation.gif"></div>
+
+<p>Copy the following code into a source file named <strong>PremiumPackage.java</strong></p>
+<div id="csCode"><pre>
+public class PremiumPackage extends StandardPackage
+{
+    public PremiumPackage(int nights)
+    {
+        
+    }
+    
+    public String getResort()
+    {
+        
+    }
+    
+    public double getCostPerNight()
+    {
+       
+    }
+    
+    public String getMealPlan()
+    {
+        
+    }
+    
+    public String toString()
+    {
+        
+    }
+}
+</pre></div> 
+
+<p>Copy the following code into a source file named <strong>PlatinumPackage.java</strong></p>
+<div id="csCode"><pre>
+public class PlatinumPackage extends PremiumPackage
+{
+    public PlatinumPackage(int nights)
+    {
+
+    }
+
+    public String getResort()
+    {
+
+    }
+
+    public double getCostPerNight()
+    {
+
+    }
+
+    public String getMealPlan()
+    {
+
+    }
+}
+</pre></div>
+
+
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<p>Make the following additions and modifications to the <strong>PremiumPackage</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- none</li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- Add a method named <strong>getMealPlan</strong> which returns the string "Breakfast".</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>getResort</strong> method so that it returns the resort name "Carribean Resort".<br> 
+- Override the <strong>getCostPerNight</strong> method so that it returns a value of $150.00.<br>
+- Override the <strong>toString</strong> method so that it includes information about the type of meal plan
+ (call the getMealPlan method).</p></li>
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a constructor which includes 1 parameter to initialize the number of nights.</p></li>
+  
+<p>Make the following additions and modifications to the <strong>PlatinumPackage</strong> class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- none
+</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- none </p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>getResort</strong> method so that it returns the resort name "Spa Spectacular Resort". <br>
+- Override the <strong>getCostPerNight</strong> method so that it returns a value of $200.00. <br>
+- Override the <strong>getMealPlan</strong> method so it returns the string "Breakfast, Lunch, and Dinner".<br>
+Note: No changes are needed to the toString method so it will not be overridden.</p></li>
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a constructor which includes 1 parameter to initialize the number of nights.</p></li>
+  
+</ol>
+</div> 
+<h1>Test Class</h1>
+<p>To test the functionality of your classes copy the following code into a source file
+   named <strong>VacationPlanner.java</strong>.</p>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class VacationPlanner
+{
+    private StandardPackage vacationPackage;
+    
+    public VacationPlanner()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        int pack=0;
+        int nights=0;
+        
+        do
+        {
+            System.out.println("Select Vacation Package");
+            System.out.println("-----------------------");
+            System.out.println("1. Standard Package");
+            System.out.println("2. Premium Package");
+            System.out.println("3. Platinum Package");
+            System.out.println("4. Exit");
+            System.out.println();
+            System.out.print("Select package --> ");
+            pack = keyboard.nextInt();
+            
+            if(pack < 4)
+            {
+                System.out.println();
+                System.out.println("Enter Vacation Info");
+                System.out.println("-------------------");
+                System.out.print("Enter number of nights -->");
+                nights = keyboard.nextInt();
+                System.out.println();   
+    
+                if(pack == 1)
+                {
+                    vacationPackage = new StandardPackage(nights);
+                }
+                if(pack == 2)
+                {
+                    vacationPackage = new PremiumPackage(nights);
+                }
+                if(pack == 3)
+                {
+                    vacationPackage = new PlatinumPackage(nights);           
+                }
+                
+                System.out.println("Vacation Package Summary");
+                System.out.println("------------------------");
+                System.out.println(vacationPackage);
+                System.out.println();
+                System.out.println();        
+            }           
+        }
+        while(pack < 4);     
+    }
+	
+    public static void main(String[] args)
+    {
+        VacationPlanner app = new VacationPlanner();
+    }
+}
+</pre></div>
+<h1>Source File</h1>
+<p>StandardPackage.java</p>
+<p>PremiumPackage.java</p>
+<p>Platinum.java</p>
+<p>VacationPlanner.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Select Vacation Package
+-----------------------
+1. Standard Package
+2. Premium Package
+3. Platium Package
+4. Exit
+
+Select package --> 1
+
+Enter Vacation Info
+-------------------
+Enter number of nights -->3
+
+Vacation Package Summary
+------------------------
+Resort           = Wilderness Resort
+Cost per night   = 100.0
+Number of nights = 3
+Total cost       = 300.0
+
+
+Select Vacation Package
+-----------------------
+1. Standard Package
+2. Premium Package
+3. Platium Package
+4. Exit
+
+Select package --> 2
+
+Enter Vacation Info
+-------------------
+Enter number of nights -->4
+
+Vacation Package Summary
+------------------------
+Resort           = Carribean Resort
+Cost per night   = 150.0
+Number of nights = 4
+Total cost       = 600.0
+Meal Plan        = Breakfast
+
+
+Select Vacation Package
+-----------------------
+1. Standard Package
+2. Premium Package
+3. Platium Package
+4. Exit
+
+Select package --> 3
+
+Enter Vacation Info
+-------------------
+Enter number of nights -->5
+
+Vacation Package Summary
+------------------------
+Resort           = Spa Spectacular Resort
+Cost per night   = 200.0
+Number of nights = 5
+Total cost       = 1000.0
+Meal Plan        = Breakfast, Lunch, and Dinner
+
+
+Select Vacation Package
+-----------------------
+1. Standard Package
+2. Premium Package
+3. Platium Package
+4. Exit
+
+Select package --> 4
+
+
+</pre>
+</div>
+	<br>
+</div>	
+
+
+
+
+

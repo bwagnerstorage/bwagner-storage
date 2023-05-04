@@ -1,0 +1,95 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Queue</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>5.1.10 Explain the use of arrays as static stacks and queues.</li>
+						<li>5.1.19 Compare the use of static and dynamic data structures.</li>
+						<li>5.1.20 Suggest a suitable structure for a given situation.</li>
+						<li>D.4.9 Construct algorithms using a static implementation of a list.</li>
+						<li>D.4.10 Construct list algorithms using object references.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Queue</h1>
+<p>A <strong>queue</strong> is a FIFO (First-In-First-Out) data structure. Data enters the back of the queue and exits the front.</p>
+
+<p>The illustration below demonstrates the functionality of a queue.</p>
+
+ <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Queue/Slide1.PNG"></li>
+          <li><img src="images/Queue/Slide2.PNG"></li>
+          <li><img src="images/Queue/Slide3.PNG"></li>
+		  <li><img src="images/Queue/Slide4.PNG"></li>
+		  <li><img src="images/Queue/Slide5.PNG"></li>
+		  <li><img src="images/Queue/Slide6.PNG"></li>
+		  <li><img src="images/Queue/Slide7.PNG"></li>
+		  <li><img src="images/Queue/Slide8.PNG"></li>
+		  <li><img src="images/Queue/Slide9.PNG"></li>
+		  <li><img src="images/Queue/Slide10.PNG"></li>
+		  <li><img src="images/Queue/Slide11.PNG"></li>
+		  <li><img src="images/Queue/Slide12.PNG"></li>
+		  <li><img src="images/Queue/Slide13.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Queue Implementation</h1>
+<p>A queue can be implemented as either a <strong>static data structure(array)</strong> or a <strong>dynamic data structure(object reference)</strong>.
+   Although a queue can be implemented with an array the dynamic approach is a better choice because of the fact that data enters the data structure
+   from the back and exits from the front. With the array implementation a removal from the front of the array would require data
+   movement to fill the vacant position in the array. The array approach also has the issue of a fixed size.</p>
+   
+<p>As with a stack, the dynamic data structure approach requires the use of another class to create the nodes.</p>
+<div id="csCode">
+<pre>
+public class ListNode
+{
+   // Instance Variables
+   private Object value;
+   private ListNode next;
+
+   // Constructor
+   public ListNode(Object initValue, ListNode initNext)
+   {
+      value = initValue;
+      next = initNext;
+   }
+
+   // Accessor Methods
+   public Object getValue()
+   {
+      return value;
+   }
+
+   public ListNode getNext()
+   {
+      return next;
+   }
+
+   // Mutator Methods
+   public void setValue(Object theNewValue)
+   {
+      value = theNewValue;
+   }
+
+   public void setNext(ListNode theNewNext)
+   {
+      next = theNewNext;
+   }
+}
+</pre>
+</div>
+<br>
+</div>	
+

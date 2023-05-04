@@ -1,0 +1,131 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Wrapper Classes</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a wrapper class</li>
+						<li>How are wrapper classes used with ArrayList</li>
+						<li>What is auto-boxing</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1></h1>
+<p>The ArrayList is a powerful data structure. There is, however, one major drawback. Unlike an array, an ArrayList can contain only 
+  objects, <strong>not primitive data types</strong>. You cannot use primitive types as type parameters - there is not an ArrayList&lt;int&gt; or ArrayList&lt;double&gt;.
+
+<h1>Wrapper Classes</h1>
+<p>Since numbers are not objects in Java, you cannot directly insert them into ArrayList. To store sequences of numbers in an ArrayList,
+   you must turn them into objects by using wrapper classes. There are wrapper classes for all eight primitive types:</p>
+
+<table width="350" id="csTable">
+        <tr> 
+          <th>Primitive Data Type</th>
+          <th>Wrapper Class</th>
+        </tr>
+        <tr> 
+          <td>boolean</td>
+          <td>Boolean</td>
+        </tr>
+        <tr> 
+          <td>char</td>
+          <td>Character</td>
+        </tr>
+        <tr> 
+          <td>byte</td>
+          <td>Byte</td>
+        </tr>
+        <tr> 
+          <td>short</td>
+          <td>Short</td>
+        </tr>
+        <tr> 
+          <td>int</td>
+          <td>Integer</td>
+        </tr>
+        <tr> 
+          <td>long</td>
+          <td>Long</td>
+        </tr>
+        <tr> 
+          <td>float</td>
+          <td>Float</td>
+        </tr>
+        <tr> 
+          <td>double</td>
+          <td>Double</td>
+        </tr>
+      </table>
+
+<p>Note that the wrapper class names start with uppercase letters, and that two of them differ from the names of the
+    corresponding primitive types: Integer and Character.</p>
+
+<p>Each wrapper class object contains a value of the corresponding primitive type. For example, you can create an 
+  object of the wrapper class Double with the following line of code:</p>
+<div id="csCode">
+<pre>
+Double d = new Double(29.95);</pre>
+</div>
+
+<p>The object created contains a value of type double. Refer to illustration below.</p>
+<img src="images/wrapper.gif">
+
+<p>Wrapper objects can be used anywhere that objects are required instead of primitive type values.
+   For example, you can collect a sequence of floating-point numbers in an ArrayList &lt;Double&gt;.</p>
+
+<h1>Auto-boxing</h1>
+<p>Conversion between primitive types and the corresponding wrapper classes is automatic. 
+   This process is called <strong>auto-boxing</strong>.</p>
+
+<p>For example, if you assign a number to a Double object, the number is automatically "put into a box",
+   namely a wrapper object.</p>
+<div id="csCode">
+<pre>
+Double d = 29.95;  // auto-boxing; same as Double d = new Double(29.95);</pre>
+</div>
+
+<p>Wrapper objects are automatically "unboxed" to primitive types.</p>
+<div id="csCode">
+<pre>
+double x = d;      // auto-boxing</pre>
+</div>
+
+<p>Auto-boxing even works inside arithmetic expressions. For example, the statement</p>
+<div id="csCode">
+<pre>
+Double e = d + 1;</pre>
+</div>
+
+<p>is perfectly legal. It means</p>
+<div id="csOutput" style="width:550px"><pre>
+Auto-unbox d into a double 
+Add 1 
+Auto-box the result into a new Double 
+Store a reference to the newly created wrapper object in e 
+</pre></div>
+<h1>ArrayLists of Numbers</h1>
+<p>ArrayLists of numbers are straightforward. Simply remember to use the wrapper type when you declare the ArrayList,
+   and then rely on auto-boxing.</p>
+<div id="csCode">
+<pre>
+ArrayList&lt;Double&gt; list = new ArrayList&lt;&gt;();
+list.add(29.95);
+double x = list.get(0);
+</pre>
+</div>
+<p>With older versions of Java, using wrapper classes to store numbers in an ArrayList was a considerable hassle because you
+    had to manually box and unbox the numbers.</p>
+
+ 
+
+
+
+<br>
+</div>	
+

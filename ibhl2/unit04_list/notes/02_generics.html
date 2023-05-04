@@ -1,0 +1,220 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Linked List</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>
+					    <li>What is generics</li>
+						<li>How to use generics in a class</li>				
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Generics</h1>
+<p><strong>Generics</strong> is a Java programming language feature that allows a programmer to design a class where the user of the class is able to specify the type of data that it will contain. For example,
+   a user of the ArrayList class instantiates an object using the following format:</p>
+    <div id="csCode">
+<pre>
+ArrayList <div id="csHighlight"><pre>&ltInteger&gt</pre></div> list = new ArrayList &ltInteger&gt();
+</pre>
+</div>
+<p>By using the notation &ltInteger&gt the user is able to specify the type of data the ArrayList will contain. This is generics.</p>
+
+<h3>Simple Generic Class</h3>
+
+<p>Look at the following example below that illustrates how to add generics to a collection class so that it can suppport any type.</p>
+
+<div id="csCode">
+<pre>
+public class MyLinkedList&lt<div id="csHighlight"><pre>E</pre></div>&gt
+{
+    private ListNode head;
+    private ListNode cur;
+    private ListNode prev;
+    
+    public void insertFirst(<div id="csHighlight"><pre>E</pre></div> data)
+    {
+        ListNode newNode = new ListNode(data, null);
+        if(head == null)
+        {
+            head = newNode;
+        }
+        else
+        {
+            newNode.setNext(head);
+            head = newNode;
+        }
+        
+    }
+    
+    public void insertLast(<div id="csHighlight"><pre>E</pre></div> data)
+    {
+        ListNode newNode = new ListNode(data, null);
+        cur = head;
+        while(cur != null)
+        {
+            prev = cur;
+            cur = cur.getNext();
+        }
+        prev.setNext(newNode);
+        
+    }
+    
+    public void deleteFirst()
+    {
+        head = head.getNext();
+    }
+    
+    public void deleteLast()
+    {
+        cur = head;
+        while(cur.getNext() != null)
+        {
+            prev = cur;
+            cur = cur.getNext();
+        }
+        prev.setNext(null);
+    }
+    
+    public void deleteInside(<div id="csHighlight"><pre>E</pre></div> key)
+    {
+       cur = head;
+       while(cur != null && !cur.getValue().equals(key))
+       {
+          prev = cur;
+          cur = cur.getNext();
+       }    
+       if(cur == head && cur.getValue().equals(key))
+       {
+          System.out.println("test");
+          head = head.getNext();
+       }
+       else if(cur != null)
+          prev.setNext(cur.getNext());
+    }
+    
+    public boolean search(<div id="csHighlight"><pre>E</pre></div> key)
+    {
+       cur = head;
+       while(cur != null)
+       {
+          if(cur.getValue().equals(key))
+             return true;
+          cur = cur.getNext();
+       }    
+       return false;
+    }
+</pre>
+</div>
+<p>Note that within the class, the type parameter E is used just like any regular type name. It's used to declare the return type and parameter type for the different methods. 
+   Given this class definition, we can use parameterized types such as MyLinkedList&ltString&gt and MyLinkedList&ltInteger&gt. That is, the MyLinkedList class is used in exactly
+   the same way as built-in generic classes like ArrayList and LinkedList.</p>
+<div id="csCode">
+<pre>
+ public static void main(String[] args)
+ {
+     MyLinkedList&ltString&gt list = new MyLinkedList&ltString&gt();
+     list.insertFirst("tiger");
+     list.insertFirst("lion");
+ }
+</pre>
+</div>
+<p>Note that you don't have to use "E" as the name of the type parameter in the definition of the generic class. Type parameters are like formal parameters in methods.
+   You can make up any name you like in the definition of the class. The name in the definition will be replaced by an actual type name when the class is used to declare variables or create objects.
+   If you prefer to use a more meaningful name for the type parameter, you might define the MyLinkedList class as:</p>
+   
+<div id="csCode">
+<pre>
+public class MyLinkedList&lt<div id="csHighlight"><pre>ItemType</pre></div>&gt
+{
+    private ListNode head;
+    private ListNode cur;
+    private ListNode prev;
+    
+    public void insertFirst(<div id="csHighlight"><pre>ItemType</pre></div> data)
+    {
+        ListNode newNode = new ListNode(data, null);
+        if(head == null)
+        {
+            head = newNode;
+        }
+        else
+        {
+            newNode.setNext(head);
+            head = newNode;
+        }
+        
+    }
+    
+    public void insertLast(<div id="csHighlight"><pre>ItemType</pre></div> data)
+    {
+        ListNode newNode = new ListNode(data, null);
+        cur = head;
+        while(cur != null)
+        {
+            prev = cur;
+            cur = cur.getNext();
+        }
+        prev.setNext(newNode);
+        
+    }
+    
+    public void deleteFirst()
+    {
+        head = head.getNext();
+    }
+    
+    public void deleteLast()
+    {
+        cur = head;
+        while(cur.getNext() != null)
+        {
+            prev = cur;
+            cur = cur.getNext();
+        }
+        prev.setNext(null);
+    }
+    
+    public void deleteInside(<div id="csHighlight"><pre>ItemType</pre></div> key)
+    {
+       cur = head;
+       while(cur != null && !cur.getValue().equals(key))
+       {
+          prev = cur;
+          cur = cur.getNext();
+       }    
+       if(cur == head && cur.getValue().equals(key))
+       {
+          System.out.println("test");
+          head = head.getNext();
+       }
+       else if(cur != null)
+          prev.setNext(cur.getNext());
+    }
+    
+    public boolean search(<div id="csHighlight"><pre>ItemType</pre></div> key)
+    {
+       cur = head;
+       while(cur != null)
+       {
+          if(cur.getValue().equals(key))
+             return true;
+          cur = cur.getNext();
+       }    
+       return false;
+    }
+</pre>
+</div>
+<p>Changing the name from "E" to "ItemType" has absolutely no effect on the meaning of the class definition or on the way that MyLinkedList is used.</p>
+
+<p>Generic interfaces can be defined in a similar way. </p>
+
+<br>
+<br>
+</div>	
+

@@ -1,0 +1,56 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Asteroids1</div>
+
+<div id="csContent"> 
+  <h1>Greenfoot Workspace: <a href="apFreeResponse/Asteroids1.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Asteroids1</a></h1>
+  <h2>Directions</h2>
+  <ol id="csList">
+  <li><p>Group Activity: 1 to 3 people</p></li>
+  <li><p>If Greenfoot is not installed, then click on the following link: <a href="greenfoot/greenfootInstall/Greenfoot-generic-353.jar" style="color:#00F; font-size:1.0em; font-weight:600;" >Greenfoot</a>.</p></li>
+  <li><p>Click on the following link to download the Asteroid scenario: <a href="ibhl2/Group4 Project/labExercises/Asteroids.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Asteroids</a>.
+         Once the file has been downloaded extract the Asteroid folder from the zip file and place the folder in your working directory.</p></li>
+  <li><p>Using what you have learned about <strong>velocity</strong> and <strong>acceleration</strong> complete the methods <strong>update</strong> and <strong>wrapAround</strong>
+     so that the ship behaves like the ship in the traditional Asteroid's game. In implementing these methods
+	 create any instance variables you find necessary.</p></li>
+  </ol>
+  
+  <h2>Asteroid Ship</h2>
+  <p>The Asteroid ship only moves forward by applying thrust. If you want to go in a different direction the ship must be
+     turned or rotated in the direction you want the ship to go.</p>
+  <img src="images/asteroid1.png"></img>
+  
+  <h2>Greenfoot Review</h2>
+  <p>Greenfoot's Actor class provides two ways to move an Actor.</p>
+  <h3>Option 1 (vector: magnitude and angle values)</h3>
+  <P>Use the <strong>move</strong> and <strong>turn</strong> methods. By using these methods your are
+    using a velocity vector where move represents the magnitude or length of the vector and turn represents
+	the angle(in degrees)</P>
+	<h3>Example</h3>
+	<div id="csCode"><pre>move(2);    // 2 pixels
+turn(90);   // 90 degrees</pre></div>
+	<br>
+  <h3>Option 2 (vector: x and y values)</h3>
+  <P>Use the <strong>getX</strong>, <strong>getY</strong>, and <strong>setLocation</strong> methods. By using these methods you are
+    using a velocity vector as a (x,y) position on a coordinate plane. The method <strong>getX</strong> returns the Actor's current x location and 
+	<strong>getY</strong> returns the Actor's current y location. The <strong>setLocation</strong> method allows you to update an Actor's position by
+	providing the destination location.</P>
+	<h3>Example</h3>
+	<div id="csCode"><pre>setLocation(getX() + vx,  getY() + vy);</pre></div>
+    <p>This example uses <strong>getX</strong> and <strong>getY</strong> to get the Actor's current location and then adds the horizontal
+	   velocity(vx) and the vertical velocity(vy) to move the Actor to its new position.</p>
+  
+  <h2>Conversion Formula's</h2>
+  <p>Formula for converting the properties magnitude and direction into x and y properties.</p>
+  <div id = "csCode"><pre>ax = thrust * Math.cos(Math.toRadians(getRotation()));   // thrust = 0.1
+ay = thrust * Math.sin(Math.toRadians(getRotation()));</pre></div>
+<p>Formula for converting a vector represented by x and y properties into magnitude and direction properties.</p>
+  <div id = "csCode"><pre>direction = (int)Math.toDegrees(Math.atan2(ay, ax));
+thrust = Math.sqrt(ax*ax + ay*ay);</pre></div>
+  
+  <p>Notice that the first conversion method uses an Actor method named <strong>getRotation</strong>. This 
+     method returns an Actor's current direction in degrees.</p>
+
+	<br>
+</div>	
+

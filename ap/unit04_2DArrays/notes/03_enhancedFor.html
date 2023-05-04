@@ -1,0 +1,89 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Using Enhanced for Loop with 2D Arrays</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use an enhanced for loop to access elements within a 2D Array.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Enhanced for Loop</h1>
+<p>Recall that in Java a two-dimensional array is actually an array that contains other arrays.</p>
+<p>View the following illustration that demonstrates how the enhanced for loop can take advantage of this property.</p>
+<div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/2DArray3/Slide1.PNG"></li>
+          <li><img src="images/2DArray3/Slide2.PNG"></li>
+          <li><img src="images/2DArray3/Slide3.PNG"></li>
+		  <li><img src="images/2DArray3/Slide4.PNG"></li>
+		  <li><img src="images/2DArray3/Slide5.PNG"></li>
+		  <li><img src="images/2DArray3/Slide6.PNG"></li>
+		  <li><img src="images/2DArray3/Slide7.PNG"></li>
+		  <li><img src="images/2DArray3/Slide8.PNG"></li>
+		  <li><img src="images/2DArray3/Slide9.PNG"></li>
+		  <li><img src="images/2DArray3/Slide10.PNG"></li>
+		  <li><img src="images/2DArray3/Slide11.PNG"></li>
+		  <li><img src="images/2DArray3/Slide12.PNG"></li>
+		  <li><img src="images/2DArray3/Slide13.PNG"></li>
+		  <li><img src="images/2DArray3/Slide14.PNG"></li>
+		  <li><img src="images/2DArray3/Slide15.PNG"></li>
+		  <li><img src="images/2DArray3/Slide16.PNG"></li>
+		  <li><img src="images/2DArray3/Slide17.PNG"></li>
+		  <li><img src="images/2DArray3/Slide18.PNG"></li>
+		  <li><img src="images/2DArray3/Slide19.PNG"></li>
+		  <li><img src="images/2DArray3/Slide20.PNG"></li>
+		  <li><img src="images/2DArray3/Slide21.PNG"></li>
+		  <li><img src="images/2DArray3/Slide22.PNG"></li>
+		  <li><img src="images/2DArray3/Slide23.PNG"></li>
+		  <li><img src="images/2DArray3/Slide24.PNG"></li>
+		  <li><img src="images/2DArray3/Slide25.PNG"></li>
+		  <li><img src="images/2DArray3/Slide26.PNG"></li>
+		  <li><img src="images/2DArray3/Slide27.PNG"></li>
+		  <li><img src="images/2DArray3/Slide28.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h2>Example 1</h2>
+<div id="csCode"><pre>
+int[][] matrix = {{84, 27, 91},   // 1st array
+                  {77, 42, 65},   // 2nd array
+                  {38, 73, 15}};  // 3rd array
+
+for(int[] arr : matrix)
+{ 
+   for(int num : arr)
+   {
+      System.out.print(num + " ");
+   }
+   System.out.println();
+}
+</pre></div>
+<h1></h1>
+<h2>Example 2</h2>
+<div id="csCode"><pre>
+String[][] table = {{"red", "green", "blue"},        // 1st array
+                    {"orange", "yellow", "black"}};  // 2nd array
+
+for(String[] list : table)
+{ 
+   for(String str : list)
+   {
+      System.out.print(str.substring(0, 1) + " ");  // print 1st letter
+   }
+   System.out.println();
+}
+</pre></div>
+
+<br>
+</div>	
+

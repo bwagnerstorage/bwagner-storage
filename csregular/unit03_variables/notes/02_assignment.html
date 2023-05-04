@@ -1,0 +1,176 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Assignment Operator (=)</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is the assignment operator</li>
+					    <li>How is the assignment operator used to assign a value to a variable</li>
+					    <li>Declaring a variable vs initializing a variable</li>
+					    <li>How to output variable contents to the terminal window</li>
+					    <li>What is the concatenation operator</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Assignment Operator (=)</h1>
+  <p>In Java, the equal sign (=) is called the <strong>assignment operator</strong>. The assignment operator is used to assign
+     a value to a variable. Here are some examples.</p>
+  <div id="csCode">
+    <pre>
+<div id="csComment"><pre>// declare variables</pre></div>
+int integerValue;
+double floatValue;
+char charValue;
+
+<div id="csComment"><pre>// assign values to variables</pre></div>
+integerValue = 875;
+floatValue = 28.975;
+charValue = 'b';
+</pre>
+  </div>
+<p>The assignment occurs from right to left. The value on the right is copied into the
+   variable on the left.</p>
+<p>The assign operator can be used to replace the contents of a variable with a new value.</p>
+  <div id="csCode">
+    <pre>
+<div id="csComment"><pre>// declare variable</pre></div>
+int num;
+
+<div id="csComment"><pre>// assign values to variable</pre></div>
+num = 0;
+System.out.println(num);
+num = 50;
+System.out.println(num);
+num = 225;
+System.out.println(num);
+</pre>
+  </div>
+<p>Here is the output. Notice how the variable's value changes each time the assignment
+   operator is used.</p>
+<div id="csOutput">
+0<br>
+50<br>
+225<br>
+</div>
+<div id="csNote">
+<strong>Programming Note:</strong> You can include comments in your code by placing them after two forward
+slash symbols //. Here is an example from the code above. <br>
+<br>
+    <font color="#0000FF">// declare variable</font><br>
+<br>
+Comments are ignored by the compiler and do not affect program execution.</p>
+
+</div>
+<h1>Initialize Variable</h1>
+<p>You can declare and assign a value to a variable at the same time. This is called <strong>initializing</strong> a variable.</p>
+   <div id="csCode">
+    <pre>
+int num = 500;
+double price = 89.25;
+</pre>
+  </div>
+<p>It is good practice to always initialize your variables when you declare them. If you don't
+   know what the value for a variable should be when you declare it assign it the data type's default value.
+   The default value for int and double is zero.</p>
+<div id="csCode">
+    <pre>
+int num = 0;
+double price = 0;
+</pre>
+</div>
+<p>You can declare multiple variables of the same type, on one line, by separating them with commas.</p>
+   <div id="csCode">
+    <pre>
+int game1, game2, game3;
+</pre>
+  </div>
+  <p>You can initialize multiple variables of the same type, on one line, by separating them with commas.</p>
+   <div id="csCode">
+    <pre>
+int game1 = 5, game2 = 7, game3 = 12;
+</pre>
+  </div>
+<h1>Variable Output</h1>
+<p>To display the contents of a variable you simply include the variable name in a println
+   statement without double quotes around it. If you place double quotes around the variable it
+   will display the variable's name not its contents.</p>
+   <div id="csCode">
+    <pre>
+int average = 95;
+
+System.out.println("average");
+System.out.println(average);
+</pre>
+  </div>
+<div id="csOutput">
+average<br>
+95<br>
+</div>
+<h1>Labeling Output</h1>
+<p>The term <strong>user-friendly</strong> is often associated with computer software. A
+   user-friendly program is one that is easy for a user to use and understand. One aspect of
+   a user-friendly program is the way in which the output of the program is displayed on the screen.
+   Look at the sample program below and the output produced.</p>
+<div id="csCode">
+    <pre>
+int temperature = 98;
+
+System.out.println(temperature);
+System.out.println();
+System.out.println("The high temperature today is " + temperature);
+</pre>
+  </div>
+  <div id="csOutput">
+98<br>
+<br>
+The temperature today is 98<br>
+</div>
+<p>Which of the two output lines is more user-friendly. Well, obviously the second one, because it
+   describes or labels the output so the user knows the values context. You should always strive
+   to make your programs as user-friendly as possible.</p>
+<h3>Concatenation Operator</h3>
+<p>In Java, the plus sign (+) is used to label the data within a println statement. When the
+   plus sign is used in this context it is referred to as the <strong>concatenation operator</strong>.
+   Let's look at some examples.</p>
+   <div id="csCode">
+    <pre>
+int testGrade = 87;
+int weight = 195;
+double cost = 29.95;
+
+System.out.println("Test grade = " + testGrade);
+System.out.println("You can bench press " + weight + " pounds.");
+System.out.println("The cost of the shirt is " + cost);
+</pre>
+  </div>
+<div id="csOutput">
+Test grade = 87<br>
+You can bench press 195 pounds.<br>
+The cost of the shirt is 29.95<br>
+</div>
+<p>The concatenation operator can also be used to provide spacing between data items.</p>
+   <div id="csCode">
+    <pre>
+int num1 = 10;
+int num2 = 20;
+int num3 = 30;
+
+System.out.println(num1 + " " + num2 + " " + num3);
+System.out.println(num1 + "     " + num2 + "     " + num3);
+</pre>
+  </div>
+<div id="csOutput">
+<pre>
+10 20 30
+10     20     30
+</pre></div>
+<br>
+</div>	
+

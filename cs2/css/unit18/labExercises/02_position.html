@@ -1,0 +1,133 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">18-2 CSS Position</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank" style="color:blue">Position</a></p></li>
+</ul>
+<h1>Position</h1>
+<p>In this exercise, the position property's <strong>fixed</strong> value is used to position a vertical menu of a web page by providing its location within the browser window.</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>18_2_position.html</strong> and save it to your CSS folder.</p></li>
+<li><p>In this exercise we again utilize both internal and external styling. For the external styling create a file named <strong>18_2_position.css</strong> and save it to your CSS folder. Then add the following code to this file.</p>
+<div id="csHTML"><pre>
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+}
+
+ul {
+   margin:0;
+   padding:0;
+   list-style: none;
+   background-color: maroon;
+}
+
+ul li {
+   width:240px;
+   border: 1px solid black;
+   padding: 5px;
+}
+
+ul li:hover
+{
+   background-color: black;
+}
+
+a {
+   padding: 20px;
+   padding-left: 40px;
+   text-decoration: none;
+   color: white; 
+}
+
+#content {
+   font-size: 1.4em;
+   margin-left: 250px;
+   padding: 15px;
+   border-left: 2px solid black;
+}
+</pre></div>
+</li>
+
+<li><p>Add the following starter code to your html document:</p><br>
+<div id="csHTML"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+      &lt;title&gt;Position 2&lt;/title&gt;
+
+      &lt;style&gt;
+         
+      &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div id="menu"&gt;
+      &lt;ul&gt;
+         &lt;li&gt;&lt;a href="#"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;Menu Item 4&lt;/a&gt;&lt;/li&gt;
+         &lt;li&gt;&lt;a href="#"&gt;Menu Item 5&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div id="content"&gt;
+         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales ut etiam sit amet. In massa tempor nec feugiat nisl pretium fusce. Ipsum dolor sit amet consectetur adipiscing. Tellus integer feugiat scelerisque varius morbi. Pulvinar etiam non quam lacus suspendisse faucibus. Dictum non consectetur a erat. Magnis dis parturient montes nascetur ridiculus. Diam quis enim lobortis scelerisque fermentum dui faucibus. Pharetra massa massa ultricies mi quis. Ut consequat semper viverra nam. Sit amet facilisis magna etiam tempor. Arcu vitae elementum curabitur vitae nunc. Nisl pretium fusce id velit. Imperdiet dui accumsan sit amet nulla facilisi. Risus pretium quam vulputate dignissim suspendisse in. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero. Volutpat blandit aliquam etiam erat velit.&lt;/p&gt;
+
+         &lt;p&gt;Eleifend donec pretium vulputate sapien nec sagittis aliquam. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Sit amet dictum sit amet justo donec enim. Massa sed elementum tempus egestas sed sed risus pretium. Massa massa ultricies mi quis hendrerit dolor magna eget est. Mauris sit amet massa vitae tortor condimentum lacinia. Risus feugiat in ante metus dictum at tempor commodo ullamcorper. Aliquet risus feugiat in ante metus dictum at. Amet venenatis urna cursus eget nunc.&lt;/p&gt;
+         
+         &lt;p&gt; Vel eros donec ac odio tempor orci dapibus ultrices. Ullamcorper malesuada proin libero nunc consequat. Nibh sed pulvinar proin gravida. Lacinia quis vel eros donec ac odio tempor orci dapibus. Quis imperdiet massa tincidunt nunc. Mi proin sed libero enim sed faucibus turpis in eu. Massa eget egestas purus viverra accumsan in nisl nisi. Eget sit amet tellus cras. Ut aliquam purus sit amet luctus. Tristique nulla aliquet enim tortor at. Viverra aliquet eget sit amet tellus cras. In massa tempor nec feugiat nisl pretium fusce id velit. Faucibus interdum posuere lorem ipsum dolor. Nibh mauris cursus mattis molestie a iaculis. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur.&lt;/p&gt;
+         
+         &lt;p&gt;Amet est placerat in egestas erat imperdiet sed euismod nisi. Amet porttitor eget dolor morbi non arcu. Felis donec et odio pellentesque diam. Et tortor at risus viverra adipiscing at in. Ultricies mi quis hendrerit dolor magna. Convallis convallis tellus id interdum. Pharetra sit amet aliquam id diam maecenas ultricies. Quis vel eros donec ac odio tempor orci dapibus ultrices. Diam in arcu cursus euismod. In mollis nunc sed id semper risus. In egestas erat imperdiet sed euismod nisi porta. Sed faucibus turpis in eu mi bibendum neque egestas congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Lacus laoreet non curabitur gravida arcu ac tortor.&lt;/p&gt; 
+         
+         &lt;p&gt; Sed nisi lacus sed viverra tellus in hac. Risus feugiat in ante metus dictum at. Amet est placerat in egestas erat imperdiet sed. Tempus quam pellentesque nec nam aliquam. Nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Placerat orci nulla pellentesque dignissim enim sit amet venenatis. Quis imperdiet massa tincidunt nunc pulvinar. A diam sollicitudin tempor id eu nisl nunc mi. Enim sit amet venenatis urna. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et. Non arcu risus quis varius quam quisque id diam vel. Pretium lectus quam id leo. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Rhoncus urna neque viverra justo.&lt;/p&gt;
+         
+         &lt;p&gt;Nibh ipsum consequat nisl vel pretium lectus quam. Sagittis aliquam malesuada bibendum arcu vitae elementum. Tellus elementum sagittis vitae et leo duis ut. Tortor at risus viverra adipiscing at in tellus integer. Arcu dictum varius duis at. Suspendisse in est ante in nibh mauris cursus mattis molestie. Id consectetur purus ut faucibus pulvinar. Amet nisl suscipit adipiscing bibendum. Malesuada fames ac turpis egestas. Arcu risus quis varius quam quisque id.&lt;/p&gt; 
+         
+         &lt;p&gt; Quis viverra nibh cras pulvinar mattis nunc sed blandit. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Facilisi cras fermentum odio eu. Proin libero nunc consequat interdum varius sit amet. Duis convallis convallis tellus id interdum velit. Ultrices mi tempus imperdiet nulla. Laoreet sit amet cursus sit amet dictum sit amet justo. A condimentum vitae sapien pellentesque habitant. Risus pretium quam vulputate dignissim suspendisse. Tellus integer feugiat scelerisque varius. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Sit amet risus nullam eget felis. Vel fringilla est ullamcorper eget nulla facilisi. Scelerisque in dictum non consectetur a erat nam at lectus. Felis eget velit aliquet sagittis id consectetur. Imperdiet nulla malesuada pellentesque elit.&lt;/p&gt;
+         
+         &lt;p&gt;Rhoncus dolor purus non enim praesent elementum facilisis leo. Et odio pellentesque diam volutpat commodo. Nec nam aliquam sem et. Viverra nam libero justo laoreet sit amet cursus sit. Penatibus et magnis dis parturient montes nascetur ridiculus. Nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Integer feugiat scelerisque varius morbi enim nunc. Est velit egestas dui id ornare. Adipiscing bibendum est ultricies integer quis. Lectus nulla at volutpat diam ut venenatis tellus in metus. Lectus quam id leo in vitae turpis massa sed. Ut diam quam nulla porttitor massa id neque. Nec ullamcorper sit amet risus nullam eget. Elementum tempus egestas sed sed risus pretium quam vulputate.&lt;/p&gt; 
+         
+         &lt;p&gt;Et magnis dis parturient montes nascetur ridiculus mus mauris. Sed augue lacus viverra vitae congue eu consequat ac. Nascetur ridiculus mus mauris vitae. Tristique et egestas quis ipsum suspendisse ultrices. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Integer eget aliquet nibh praesent. Iaculis urna id volutpat lacus laoreet non. Faucibus nisl tincidunt eget nullam non nisi est sit amet. Vitae proin sagittis nisl rhoncus mattis. Nullam non nisi est sit amet facilisis. Ut morbi tincidunt augue interdum velit. Nisl nisi scelerisque eu ultrices vitae auctor. Mauris rhoncus aenean vel elit scelerisque. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Donec massa sapien faucibus et molestie ac feugiat sed. Morbi tristique senectus et netus et. Et malesuada fames ac turpis egestas.&lt;/p&gt;
+         
+         &lt;p&gt;Pharetra convallis posuere morbi leo urna molestie at elementum eu. Elit ut aliquam purus sit. Facilisis volutpat est velit egestas dui. Arcu ac tortor dignissim convallis aenean et tortor at. Nibh praesent tristique magna sit amet purus gravida quis blandit. Nibh nisl condimentum id venenatis a condimentum. Morbi blandit cursus risus at ultrices mi. Euismod elementum nisi quis eleifend quam adipiscing. Ornare arcu dui vivamus arcu felis. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Sem viverra aliquet eget sit amet. Dignissim diam quis enim lobortis. Lectus quam id leo in vitae turpis massa sed elementum. Sed arcu non odio euismod lacinia at. Id cursus metus aliquam eleifend. Augue interdum velit euismod in pellentesque massa. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Egestas quis ipsum suspendisse ultrices gravida.&lt;/p&gt;  
+
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<li><p>To use the external styling you placed in the file 18_2_position.css, add the following link tag
+   to the <strong>head</strong> section of your document just above the internal styling section.
+</p>
+<div id="csHTML"><pre>&lt;link href="18_2_position.css" rel="stylesheet"&gt;</pre></div>
+</li>
+<h1>Fixed Positioning</h1>
+<p>To demonstrate fixed positioning you are going to add a vertical menu to the body section of the page. Fixed positioning allows you to specify exactly where an element is positioned relative to the browser window.</p>
+
+<li><p>Add the following internal styling to the style section of your page. Notice the use of the <strong>position</strong> property with a value of <strong>fixed</strong>.</p>
+<div id="csHTML" style="width: 400px"><pre>
+#menu {
+   position: fixed;
+   margin: 0;
+   left: 5px;
+   font-size: 1.8em;
+   height: 100%;
+   background-color: #CCCC;
+}
+</pre></div>
+<p>The css above will position the container <strong>menu</strong> on the left side of your page stretching from the top of the page down to the bottom. It's position is fixed at the top of browser window 5 pixels from its left edge.
+</p>
+</li>
+
+<li><p>View the web page in the browser. Scroll the window on the right. Notice how the menu on the left does not move. It is fixed into place. Fixed positioning allows you to place an element directly on the browser window by providing its location relative to the window. For example, <strong>top:0</strong> and <strong>left:0</strong> would be located at the top right corner of the window. By choosing <strong>top:8px</strong> and <strong>right:15px</strong> the element is positioned 8 pixels from the top of the window and 15 pixels from the window's right edge.(Typically when deciding on a location, you would choose either top or bottom and then left or right.)
+
+	<br>
+</div>	

@@ -1,0 +1,267 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Inheritance</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What are the three pillars of object-oriented programming (OOP)</li>
+						<li>What is inheritance</li>
+						<li>What are the benefits of inheritance</li>
+						<li>Superclass vs subclass</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Three Pillars of Object-Oriented Programming (OOP) </h1>
+<p>There are three fundamental aspects or pillars of Object-Oriented Progamming (OOP). They are </p>
+<div id="csList">
+<ol>
+<li>Encapsulation</li>
+<li>Polymorphism</li>
+<li>Inheritance</li>
+</ol>
+</div>
+
+<h1>Inheritance</h1>
+<p>
+In this unit we look at the third pillar <strong>inheritance</strong>; one of the most important features of object-oriented programming. Inheritance provides
+ a unique form of code-sharing by allowing you to take the implementation of any given class and build a new class based on that implementation. This new <strong>subclass</strong>
+ starts by inheriting all of the data and operations defined in the <strong>superclass</strong>. It can then extend the behavior by adding additional data and new methods to
+ operate on it. The subclass can also extend or replace behavior in the superclass by overriding methods that were already implemented.</p>
+ 
+<div align="center"><img src="images/inheritance1.gif"></div>
+
+<p>Inheritance implements the <strong>IS-A</strong> relationship between objects: an object of a subclass type IS-A (is also an object of the) superclass.
+   A high school is a kind of school. A HighSchool object IS-A (kind of) School object.</p>
+
+<p>Let's look at another example that follows this IS-A relationship. Below is the implementation of a class named Person. 
+Its definition includes three instance variables, a single constructor, three accessor methods, and a toString method.</p>
+
+<div id="csCode"><pre>
+public class Person
+{
+    // Instance Variables
+    private String name;
+    private String address;
+    private String phone;
+    
+    // Constructor
+    public Person(String n, String a, String p)
+    {
+        name = n;
+        address = a;
+        phone = p;
+    }
+    
+    // Accessor Methods
+    public String getName()
+    {
+        return name;
+    }
+    
+    public String getAddress()
+    {
+        return address;
+    }
+    
+    public String getPhone()
+    {
+        return phone;
+    }
+    
+    // toString method
+    public String toString()
+    {
+        String str;
+        str = "Name = " + name + "\n" + 
+              "Address = " + address + "\n" + 
+              "Phone = " + phone;
+              
+        return str;
+    }
+}
+</pre></div>
+<p>Now lets implement another class named Student that extends or inherits the behavior of the Person class. Notice the use of the keyword <strong>extends</strong> in its definition.</p>
+
+<div id="csCode"><pre>
+public class Student <div id="csHighlight"><pre>extends</pre></div> Person
+{
+    // Instance Variables
+    private String ID;
+    private int classification;
+    
+    // Constructor
+    public Student(String n, String a, String p, String id, int c)
+    {
+       super(n, a, p);
+       ID = id;
+       classification = c;  
+    }
+    
+    // Accessor methods
+    public String getID()
+    {
+        return ID;
+    }
+    
+    public int getClassification()
+    {
+        return classification;
+    }
+    
+    // toString method
+    public String toString()
+    {
+        String str;
+        str = super.toString() + "\n" +
+              "ID Number = " + ID + "\n" +
+              "classification = " + classification;
+              
+        return str; 
+    }
+}
+</pre></div>
+<p>In our example, the Person class is the parent or superclass and the Student class is the child or subclass. The Student class starts
+ by inheriting all of the data and operations defined in the Person class. It then extends its behavior by adding two additional instance 
+ variables (ID and classification) and two accessor methods. The Student class also extends or replaces the behavior of the toString method
+ in the superclass by overriding this method in its implementation.</p>
+ 
+ <div id="csNote"><strong>Note:</strong> When you <strong>override</strong> an inherited method you are changing the method's behavior within
+   the subclass. You are redefining it so that it better meets the needs of the new class.</div>
+
+<p>To better illustrate this process, I have rewritten the implementation of the Student class below and have included all of the 
+ variables and methods that were inherited from the Person class. The variables and methods inherited from the Person class are highlighted in red.</p>
+
+<div id="csCode"><pre>
+public class Student extends Person
+{
+    // Instance Variables
+    <div id="csHighlight"><pre>private String name;
+    private String address;
+    private String phone;</pre></div>   
+    private String ID;
+    private int classification;
+    
+    // Constructor
+    public Student(String n, String a, String p, String id, int c)
+    {
+       super(n, a, p);
+       ID = id;
+       classification = c;  
+    }
+    
+    // Accessor methods
+    <div id="csHighlight"><pre>public String getName()
+    {
+        return name;
+    }
+    
+    public String getAddress()
+    {
+        return address;
+    }
+    
+    public String getPhone()
+    {
+        return phone;
+    }</pre></div>
+	
+    public String getID()
+    {
+        return ID;
+    }
+    
+    public int getClassification()
+    {
+        return classification;
+    }
+    
+    // toString method
+   <div id="csHighlight"><pre> public String toString()
+    {
+        String str;
+        str = "Name = " + name + "\n" + 
+              "Address = " + address + "\n" + 
+              "Phone = " + phone;
+              
+        return str;
+    }</pre></div>
+
+    public String toString()
+    {
+        String str;
+        str = super.toString() + "\n" +
+              "ID Number = " + ID + "\n" +
+              "classification = " + classification;
+              
+        return str; 
+    }
+}
+</pre></div>
+<h1>Rules for Subclasses</h1>
+<div id="csList"><ul>
+
+<li><p><strong>A subclass can add new private instance variables.</strong></p>
+<p>The Student class inherits the variables name, address, and phone from the Person class. It also adds two variables of its own: ID and classification.</p></li> 
+
+<li><p><strong>A subclass can add new public or private methods.</strong></p>
+<p>The Student class inhertits the methods getName, getAddress, getPhone, and toString from the Person class. It also adds two methods of its own: getID and getClassification.</p></li>
+
+<li><p><strong>A subclass can override (redefine) inherited methods.</strong></p>
+<p>The Person class defines a toString method. The Student class also defines a toString method with
+   the same exact signature (the same name, return type, and number and types of parameters). Therefore, 
+   the Student class has overridden or redefined the toString method so that its behavior is more suitable to its specific needs.</p>
+
+<p>Look again at the Student class's toString method. Notice the use of the keyword super.</p>
+
+<div id="csCode" style="width:550px"><pre>
+public String toString()
+{
+    String str;
+    str = <div id="csHighlight"><pre>super.toString()</pre></div> + "\n" +
+          "ID Number = " + ID + "\n" +
+          "classification = " + classification;
+              
+    return str; 
+}
+</pre></div>
+<p>Sometimes the code for overriding a method includes a call to the superclass method. 
+   This is called <strong>partial overriding</strong>. Typically this occurs when the subclass method wants to do what the superclass does,
+   plus something extra. This is achieved by using the keyword <strong>super</strong> in the implementation. The toString method in the Student class partially
+   overrides the toString method in the Person class. The statement</p>
+<div id="csCode" style="width:550px"><pre>
+super.toString()
+</pre></div>
+<p>signals that the toString method in the superclass should be invoked here.</p>
+<li><p><strong>A subclass must define its own constructors.</strong></p>
+
+<p>Constructors are <strong>not</strong> inherited, therefore a subclass has to provide its own. The Student class defines the following constructor:</p>
+<div id="csCode" style="width:550px"><pre>
+public Student(String n, String a, String p, String id, int c)
+{
+   <div id="csHighlight"><pre>super(n, a, p);</pre></div>
+   ID = id;
+   classification = c;  
+}
+</pre></div></li> 
+<li><p><strong>A subclass's constructors can explicitly call the superclass's constructors using the keyword super. </strong></p>
+<P>If <strong>super</strong> is used; it must be the first statement in the subclass's constructor. In our example, the Student's constructor calls the Person class's constructor with the statement</P>
+<div id="csCode" style="width:550px"><pre>
+super(n, a, p);
+</pre></div>
+<p>which allows the name, address, and phone variables to be initialized.</p></li> 
+<li><p><strong>A subclass cannot access the private members of its superclass.</strong></p></li> 
+
+<li><p><strong>A subclass inherits all the instance variables of its superclass.</strong></p> 
+<p>However, the instance variables are usually private. The superclass's private variables are not directly
+   accessible in its subclass. So you might as well forget that they are inherited - instead, use public accessors
+   and mutators to get and set values of the superclass's instance variables.</p></li> 
+</ul></div>
+<br>
+</div>	
+

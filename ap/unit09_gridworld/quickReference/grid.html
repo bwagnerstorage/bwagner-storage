@@ -1,0 +1,148 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Grid Interface</div>
+
+<div id="csContent"> 
+<div id="csOutput" style="width:600px"><pre>
+int getNumRows() 
+int getNumCols() 
+boolean isValid(Location loc) 
+E put(Location loc, E obj) 
+E remove(Location loc) 
+E get(Location loc) 
+ArrayList&ltLocation&gt getOccupiedLocations() 
+ArrayList&ltLocation&gt getValidAdjacentLocations(Location loc) 
+ArrayList&ltLocation&gt getEmptyAdjacentLocations(Location loc) 
+ArrayList&ltLocation&gt getOccupiedAdjacentLocations(Location loc) 
+ArrayList&ltE&gt getNeighbors(Location loc)
+</pre></div>
+
+<hr>
+
+<div id="apCode">
+<pre>
+package info.gridworld.grid;
+
+import java.util.ArrayList;
+
+/**
+ * Grid provides an interface for a two-dimensional, grid-like
+ * environment containing arbitrary objects. 
+
+ * This interface is testable on the AP CS A exam.
+ */
+public interface Grid
+{
+    /**
+     * Returns the number of rows in this grid.
+     * @return the number of rows, or -1 if this grid is unbounded
+     */
+    <div id="apHighlight"><pre>int getNumRows();</pre></div>
+
+    /**
+     * Returns the number of columns in this grid.
+     * @return the number of columns, or -1 if this grid is unbounded
+     */
+    <div id="apHighlight"><pre>int getNumCols();</pre></div>
+
+    /**
+     * Checks whether a location is valid in this grid. 
+
+     * Precondition: loc is not null
+     * @param loc the location to check
+     * @return true if loc is valid in this grid,
+     * false otherwise
+     */
+    <div id="apHighlight"><pre>boolean isValid(Location loc);</pre></div>
+
+    /**
+     * Puts an object at a given location in this grid. 
+
+     * Precondition: (1) loc is valid in this grid (2)
+     * obj is not null
+     * @param loc the location at which to put the object
+     * @param obj the new object to be added
+     * @return the object previously at loc (or null
+     * if the location was previously unoccupied)
+     */
+    <div id="apHighlight"><pre>E put(Location loc, E obj);</pre></div>
+
+    /**
+     * Removes the object at a given location from this grid. 
+
+     * Precondition: loc is valid in this grid
+     * @param loc the location of the object that is to be removed
+     * @return the object that was removed (or null if the location
+     *  is unoccupied)
+     */
+    <div id="apHighlight"><pre>E remove(Location loc);</pre></div>
+
+    /**
+     * Returns the object at a given location in this grid. 
+
+     * Precondition: loc is valid in this grid
+     * @param loc a location in this grid
+     * @return the object at location loc (or null 
+     *  if the location is unoccupied)
+     */
+    <div id="apHighlight"><pre>E get(Location loc);</pre></div>
+
+    /**
+     * Gets the locations in this grid that contain objects.
+     * @return an array list of all occupied locations in this grid
+     */
+    <div id="apHighlight"><pre>ArrayList&ltLocation&gt getOccupiedLocations();</pre></div>
+
+    /**
+     * Gets the valid locations adjacent to a given location in all eight
+     * compass directions (north, northeast, east, southeast, south, southwest,
+     * west, and northwest). 
+
+     * Precondition: loc is valid in this grid
+     * @param loc a location in this grid
+     * @return an array list of the valid locations adjacent to loc
+     * in this grid
+     */
+    <div id="apHighlight"><pre>ArrayList&ltLocation&gt getValidAdjacentLocations(Location loc);</pre></div>
+
+    /**
+     * Gets the valid empty locations adjacent to a given location in all eight
+     * compass directions (north, northeast, east, southeast, south, southwest,
+     * west, and northwest). 
+
+     * Precondition: loc is valid in this grid
+     * @param loc a location in this grid
+     * @return an array list of the valid empty locations adjacent to
+     * loc in this grid
+     */
+    <div id="apHighlight"><pre>ArrayList&ltLocation&gt getEmptyAdjacentLocations(Location loc);</pre></div>
+
+    /**
+     * Gets the valid occupied locations adjacent to a given location in all
+     * eight compass directions (north, northeast, east, southeast, south,
+     * southwest, west, and northwest). 
+
+     * Precondition: loc is valid in this grid
+     * @param loc a location in this grid
+     * @return an array list of the valid occupied locations adjacent to
+     * loc in this grid
+     */
+    <div id="apHighlight"><pre>ArrayList&ltLocation&gt getOccupiedAdjacentLocations(Location loc);</pre></div>
+
+    /**
+     * Gets the neighboring occupants in all eight compass directions (north,
+     * northeast, east, southeast, south, southwest, west, and northwest).
+     * 
+
+     * Precondition: loc is valid in this grid
+     * @param loc a location in this grid
+     * @return returns an array list of the objects in the occupied locations
+     * adjacent to loc in this grid
+     */
+    <div id="apHighlight"><pre>ArrayList&ltE&gt getNeighbors(Location loc);</pre></div>
+}
+</pre>
+</div>
+	<br>
+</div>	
+

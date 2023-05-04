@@ -1,0 +1,92 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Stack</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>5.1.10 Explain the use of arrays as static stacks and queues.</li>
+						<li>5.1.19 Compare the use of static and dynamic data structures.</li>
+						<li>5.1.20 Suggest a suitable structure for a given situation.</li>
+						<li>D.4.9 Construct algorithms using a static implementation of a list.</li>
+						<li>D.4.10 Construct list algorithms using object references.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Stack</h1>
+<p>A <strong>stack</strong> is a LIFO (Last-In-First-Out) data structure. Data enters and leaves the stack from the same location - the top.</p>
+
+<p>The illustration below demonstrates the functionality of a stack.</p>
+
+ <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Stack/Slide1.PNG"></li>
+          <li><img src="images/Stack/Slide2.PNG"></li>
+          <li><img src="images/Stack/Slide3.PNG"></li>
+		  <li><img src="images/Stack/Slide4.PNG"></li>
+		  <li><img src="images/Stack/Slide5.PNG"></li>
+		  <li><img src="images/Stack/Slide6.PNG"></li>
+		  <li><img src="images/Stack/Slide7.PNG"></li>
+		  <li><img src="images/Stack/Slide8.PNG"></li>
+		  <li><img src="images/Stack/Slide9.PNG"></li>
+		  <li><img src="images/Stack/Slide10.PNG"></li>
+        </ul>
+    </div>
+	
+		
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<h1>Stack Implementation</h1>
+<p>A stack can be implemented as either a <strong>static data structure(array)</strong> or a <strong>dynamic data structure(object reference)</strong>.
+   A stack can be implemented fairly easily using an array the only drawback being the fixed size. This, however, can be remedied
+   by using a dynamic array like is done in the ArrayList class.</p>
+   
+<p>The dynamic data structure approach requires the use of another class to create the nodes, but it does not have the size limitation of the array approach.</p>
+<div id="csCode">
+<pre>
+public class ListNode
+{
+   // Instance Variables
+   private Object value;
+   private ListNode next;
+
+   // Constructor
+   public ListNode(Object initValue, ListNode initNext)
+   {
+      value = initValue;
+      next = initNext;
+   }
+
+   // Accessor Methods
+   public Object getValue()
+   {
+      return value;
+   }
+
+   public ListNode getNext()
+   {
+      return next;
+   }
+
+   // Mutator Methods
+   public void setValue(Object theNewValue)
+   {
+      value = theNewValue;
+   }
+
+   public void setNext(ListNode theNewNext)
+   {
+      next = theNewNext;
+   }
+}
+</pre>
+</div>
+<br>
+</div>	
+

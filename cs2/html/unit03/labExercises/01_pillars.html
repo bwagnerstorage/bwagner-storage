@@ -1,0 +1,267 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">3-1 Web Basics</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+		<li><p><a href="https://codepen.io/" style="color:blue" target="_blank">CodePen</a></p></li></ul>
+<h1>WebSite Code Files</h1>
+<p>A website consists of several different types of coding languages. The three most important are 
+	<strong>HTML</strong>, <strong>CSS</strong>, and <strong>Javascript</strong>. 
+	Each of these languages has a different purpose in building a
+	website. Look at the following illustration.</p>
+	<div style="display: flex; justify-content: center">
+		<img src="images/CS2/HTML/WebFundamentals.png" style="width:85%">
+	</div>
+<h3>HTML</h3>
+<p>HTML provides the structure or foundation of a web page. The web page cannot exist without HTML.
+   HTML describes which components (i.e buttons, menus, text fields, etc), images, and data will be displayed.	
+</p>
+
+<h3>CSS</h3>
+<p>CSS provides the design of a web page. How it will look. Things like colors, font size, spacing, and
+	positioning of elements on the page are all the job of CSS. 	
+</p>
+
+<h3>Javascript</h3>
+<p>Javascript provides the functionality of the web page. HTML provides the button, but it is Javascript
+   that makes the button do something when clicked.	
+</p>
+
+<h1>CodePen</h1>
+<p>There are a number of web apps that emulate a website development environment, 
+		allowing you to enter HTML, CSS and JavaScript and then display the result 
+		of that code when rendered as a website — all in one browser tab. Generally
+		speaking these tools are quite easy, great for learning, and free (for basic features),
+		and they host your rendered page at a unique web address. However, the basic
+		features are pretty limited, and the apps usually don't provide hosting space 
+		for assets (like images).</p>
+	 
+	 <p>Here are a few of the popular ones. Give them a try. We will be using <strong>CodePen</strong> in this course.</p>
+	  <ul id="csList">   
+		 <li><p><a href="https://codepen.io/" style="color:blue" target="_blank">CodePen</a></p></li>
+		 <li><p><a href="https://jsfiddle.net/" style="color:blue" target="_blank">JSFiddle</a></p></li>
+		 <li><p><a href="https://codesandbox.io/"style="color:blue" target="_blank">CodeSandBox</a></p></li>
+		 <li><p><a href="https://thimble.mozilla.org/en-US/" style="color:blue" target="_blank">Thimble</a></p></li>
+		 <li><p><a href="https://jsbin.com/?html,output"style="color:blue" target="_blank">JS Bin</a></p></li>
+		 <li><p><a href="http://next.plnkr.co/"style="color:blue" target="_blank">Plunker</a></p></li>
+
+	 </ul>
+	 <!--
+	 <h3>Open CodePen Website</h3>
+	 <a href="https://codepen.io/" style="color:blue" target="_blank">CodePen</a></li>
+	 <p>You can work in CodePen anonymously, however creating an account will give the added benefit of being able to save your work. 
+		Click the button <strong>Start Coding</strong> to begin using CodePen.</p>
+		<img src="images/CS2/CodePenSetup/setup3.png" style="width:20%"">
+	   
+	 <p>If you would like to create your own account follow the instructions below or 
+	    just skip to the Lab Exercise.</p>
+	 <h3>Create a CodePen Account (This is optional)</h3>
+	 <ul id="csList">
+	 <li><p>Click on the following link. It will take you to CodePen's main page. Once there click
+		on the green button named <strong>Sign Up for Free</strong>.</p></li>
+     <li><p>After clicking the green button a new window will appear click on the button 
+		 <strong>Sign Up With Email</strong>.
+	 <br></p></li>
+	 <li><p>The next window provides text fields for typing your name, username, password, and
+			email. For the email, use you school google account email (Example: 123456@g.dentonisd.org).
+	 
+	 <p><img src="images/CS2/CodePenSetup/setup1.png" style="width:60%; border: 6px solid darkblue"><p>
+	 <br></p></li>
+	 </ul>
+-->
+	 <h1>Lab Exercise</h1>
+	 <ol id="csList">
+       <li><p>Open CodePen, if not already open. You may have to Sign In, but more than likely it will have remembered that you were logged in after you setup your account.</p></li>
+       <li><p>After CodePen loads, click on the create new Pen button on the dashboard.</p>
+      <p><img src="images/CS2/CodePenSetup/selectPen.png" style="width:40%"></p></li>
+       <li><p>Once the new pen appears, click on the <strong>ChangeView</strong> button to change the editor layout to the one shown below highlighted in white.</p></li>
+		 <p><img src="images/CS2/CodePenSetup/setup4.png" style="width:40%"><p>
+		 <li><p>Copy the the <strong>HTML</strong> into CodePen's HTML editor.</p></li>
+		 <div id="csHtml"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;htmL&gt;
+&lt;head&gt;
+   &lt;title&gt;Converter&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div id="container"&gt;
+      &lt;h1&gt;Converter&lt;/h1&gt;
+	  &lt;form id="group"&gt;
+         &lt;label&gt;&lt;input type="radio" name="Converter" value="decimal"
+            checked&gt; Decimal to Binary&lt;/label&gt;
+         &lt;label&gt;&lt;input type="radio" name="Converter" value="binary"&gt;
+            Binary to Decimal&lt;/label&gt;
+	  &lt;/form&gt;
+      &lt;div id="container2"&gt;
+         &lt;div id="box"&gt;
+            &lt;span class="line"&gt;&lt;span class="text"&gt;Enter Number&lt;/span&gt;
+            &lt;input id = "num"class="textbox" type="text" name="number"
+               width=80px&gt;&lt;/span&gt;
+			
+            &lt;div id="buttonGroup"&gt;
+                &lt;button id="convert" name="Convert"&gt;Convert&lt;/button&gt; 
+                &lt;button id="reset" name="Clear"&gt;Clear&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;span class="line"&gt;&lt;span  class="text"&gt;Answer&lt;/span&gt;
+            &lt;input id = "ans" class="textbox" type="text" 
+                name="answer" width="80px"&gt;&lt;/span&gt; 
+         &lt;/div&gt; 
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/htmL&gt;
+</pre></div>
+<p><strong>Test</strong> the buttons and the text boxes. Do they do anything? HTML provides the page elements but it
+   does not provide their functionality. That is the job of Javascript.
+    </p>
+		 <li><p>Copy the the <strong>CSS</strong> into CodePens CSS editor.</p></li>
+		 <div id="csHtml"><pre>h1 {
+   color:blue;
+   text-shadow: 2px 2px 3px darkblue;
+   font-size: 3.0em;
+   text-align: center;
+}
+#container {
+   margin:0 auto;
+   width: 400px;
+   height: 320px;
+   border-radius: 25px;
+   background: lightcyan;
+   border: 1px solid darkblue;
+    box-shadow: 2px 2px 3px gray;
+}
+
+#group {
+   height: 30px;
+   border: 1px solid lightsalmon;
+   background: white;
+   display:flex;
+   padding-top: 8px;
+   flex-direction: row;
+   justify-content: space-around;
+}
+#box {    
+   display:flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+#container2 {
+   display:flex;
+   flex-direction: column;
+   justify-content:space-between;
+}
+.line {
+   display:flex;
+   flex-direction: row;
+   justify-content:space-evenly;
+   margin-top:15px;
+   margin-bottom:15px;
+}
+
+button {
+   margin:0 auto;
+   border-radius: 30px;
+   width: 120px;
+   height: 35px;
+}
+
+#convert {
+   background-color: aqua;
+}
+
+#reset {
+   background-color:sandybrown;
+}
+
+#buttonGroup 
+{
+   display: flex;
+   justify-content: space-around;
+}
+
+.text {
+   width:150px;
+   font-size:18px;
+   font-weight: 700;
+}
+
+.textbox {
+   font-size: 18px;
+}</pre></div>
+<p>As you can, CSS provides the design of the elements provided by the HTML. 
+   Test the buttons and text boxes again. Do they work now?
+</p>
+		 <li><p>Copy the the <strong>Javascript</strong> into CodePens Javascript editor.</p></li>
+		 <div id="csHtml"><pre>
+document.getElementById("convert").addEventListener("click", convert);
+document.getElementById("reset").addEventListener("click", clear);
+
+function convert()
+{
+   var ans;
+   var value = document.getElementById("num").value;
+   var radio = getRadioVal( document.getElementById('group'), 'Converter' );
+   if(radio == "decimal")
+      ans = decimalToBinary(value);
+   else
+      ans = binaryToDecimal(value);
+
+   document.getElementById("ans").value = ans;
+}
+
+function clear()
+{
+   document.getElementById("num").value = "";
+   document.getElementById("ans").value = "";
+}
+
+function getRadioVal(form, name) 
+{
+   var val;
+   // get list of radio buttons with specified name
+   var radios = form.elements[name];
+
+   // loop through list of radio buttons
+   var len=radios.length;
+   for (let i=0; i&lt;len; i++) 
+   {
+	  if ( radios[i].checked ) 
+      { 
+         val = radios[i].value; // if so, hold its value in val
+         break; // and break out of for loop
+      }
+    }
+    return val; // return value of checked radio or undefined if none checked
+}
+
+function binaryToDecimal(value)
+{
+   value = value+"";
+   var place = 1;
+   var ans = 0;
+   for(let i=value.length - 1; i &gt;= 0; i--)
+   {
+      let bit = value.substring(i, i+1);
+      if(bit == 1)
+      {
+         ans += place;
+      }
+      place = place * 2;
+   }
+   return ans;
+}
+
+function decimalToBinary(value)
+{
+   let n = parseInt(value);
+   return n.toString(2);
+}
+</pre></div>
+</ol>
+	<p></p>
+	<br>
+</div>	
+

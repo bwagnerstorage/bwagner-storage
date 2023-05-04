@@ -1,0 +1,131 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">2-1 How To Add CSS</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_howto.asp" target="_blank" style="color:blue">How To Add CSS</a></p></li>
+</ul>
+
+<h1>How To Add CSS</h1>
+<p>As you may remember from our study of HTML, there are three ways to style an HTML document.
+   They include</p>
+<ul id="csList">
+   <li><p>InLine Styling</p></li>
+   <li><p>Internal Styling</p></li>
+   <li><p>External Styling</p></li>
+</ul>
+<p>We refer to all three of these styling options as CSS or <strong>Cascading Style Sheets</strong>. 
+   When I first learned about CSS I was confused by the word Cascading. What did cascading mean
+   in reference to style sheets? So I looked up the definition of cascading in a dictionary. 
+   One definition of cascading is "To occur in a sequence or successive stages".<a href="https://www.thefreedictionary.com/cascading" style="color:blue">Thefreedictionary.com</a> </p>
+<p>From the above definition, it can be inferred that cascading, as it relates to style sheets,
+   means that style sheets are applied in stages one after the other. When an html document utilizes
+   more than one type of styling there is a sequential ordering that determines when the different stylings will be applied to the page.
+</p>
+<br>
+<p>Below is the order in which the different types of styling will be applied to a HTML document.</p>
+<ol id="csList">
+   <li><p>Browser Default Styling</p></li>
+   <li><p>External and Internal styling placed inside a HTML page's <strong>style</strong> tag.<br>
+         (They will be applied in the order they are listed in the style tag.)</p></li>
+   <li><p>InLine styling. (Styling inside the HTML tag).</p></li>
+</ol>
+<br>
+<p>Working through the list from top to bottom. Browser default styling has the lowest priority. Any of these
+   default settings will be overridden by the other forms of styling. External and internal styling have the next
+   priority and they can only be overridden by inline styling. Therefore, inline styling has the highest priority
+   and will override any other styling previously applied to a HTML document.</p>
+
+<p>To demonstrate this "Cascading" of styles, in this lesson you are going to modify the font size style
+   using the different forms of styling and observe their priority ordering.
+</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+	<li><p>Open your CS2 folder in VS Code.</p></li>
+	<li><p>Create a new document named <strong>2_1_howTo.html</strong> and save it to your CSS folder.</p></li>
+	<li><p>Copy the following starter code into your html document.</p>
+<div id="csHTML" style="width:950px"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;How To Add CSS&lt;/title&gt;
+  
+         &lt;!--   Internal Styling  --&gt;
+
+         &lt;!--   External Styling  --&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag. I am not using paragraph tag.
+      
+      &lt;p&gt;I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag. I am using paragraph tag.&lt;/p&gt;
+      
+      &lt;h1&gt;Heading 1: 2em or 100% larger&lt;/h1&gt;
+      &lt;h2&gt;Heading 2: 1.5em or 50% larger&lt;/h2&gt;
+      &lt;h3&gt;Heading 3: 1.17em or 17% larger&lt;/h3&gt;
+   &lt;/body&gt;
+&lt;/html>
+</pre>
+</div>
+<li><p>The starter code above does not include any styling, therefore the browser uses a default style sheet. One of the attributes set in this style sheet is the font size which is equal 
+to 16px. (px = pixels).</p></li> 
+<li><p>View this code in your browser to see the default styling.</p></li>
+
+<h2>Internal Styling</h2>
+<li><p>Add the following css code to the HTML document under the comment <span style="font-family: Consolas sans-serif; font-size:1.2em">&lt;!--   Internal Styling  --&gt;</span></p>
+<div id="csHtml" style="width:650px"><pre>
+&lt;style&gt;
+body {
+   font-size: 32px;
+}
+p {
+   font-size: 24px;
+}
+&lt;/style&gt;
+</pre></div>
+<p>View this code in your browser to see the styling for the font-size change as the internal styling
+   overrides the browser's default settings.</p>
+</li>
+
+<h2>External Styling</h2>
+<li><p>Add the following css code to the HTML document under the comment 
+      <span style="font-family: Consolas sans-serif; font-size:1.2em">&lt;!--   External Styling  --&gt;</span></p>
+<div id="csHTML" style="width:650px"><pre>
+&lt;link rel="stylesheet" type="text/css" href="01_howTo.css"&gt;
+</pre></div>
+<li><p>Create a New File named <strong>01_howTo.css</strong> and place it in your CSS folder.
+</p></li>
+<li><p>Add the following css code to the CSS file.</p>
+<div id="csHTML" style="width:650px"><pre>
+body {
+   font-size:8px;
+}
+p {
+   font-size:12px;
+}
+</pre></div>
+</li>
+<li><p>View this code in your browser to see the styling for the font-size change as the External styling
+   overrides the Internal styling because the link to the css file occurs after the Internal styling, 
+   giving the External styling a higher priority.</p>
+</li>
+<li><p>Cut or remove the External styling section from head section and paste it above the Internal styling section. In other words switch there positions.</p></li>
+<li><p>View the page in your browser again. The Internal styling should now be applied to the document, 
+   overriding the External css, because the Internal styling is defined after the External styling in the head section of
+   the document, giving the Internal style a higher priority.</p>
+</li>
+
+<h2>InLine Styling</h2>
+<li><p>Add the following inline css code to the paragraph tag &lt;p&gt;.</p>
+   <div id="csHTML" style="width:650px"><pre>
+&lt;p style="font-size:48px;"&gt;I am using paragraph tag...
+   </pre></div>
+</li>
+<li><p>View the page in the browser. The font-size of the paragraph should have changed to 48px since
+       inline styling has the highest priority of the three styling techniques and will always override their settings.
+</p></li>
+	<br>
+</div>	

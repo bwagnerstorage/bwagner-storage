@@ -1,0 +1,120 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+
+<div id="csHeader">Compound Conditions</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a compound condition statement.</li>
+					    <li>How to implement a compound condition statement.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Compound Conditions</h1>
+  <p>Conditions come in two forms, simple and complex. A <strong>simple condition</strong> is a Boolean expression
+     that does not contain any other Boolean expression. In the Jeroo language, a simple condition
+	 is formed by invoking a single sensor method. A <strong>complex condition</strong> is created by using logical
+	 operators to combine conditions. The Jeroo language contains the three most commonly used
+	 logical operators: negation (not), conjunction (and), and disjunction (or). Jeroo's Java-style
+	 language uses special keystrokes for each of these as shown in the table below.</p>
+	 <br>
+	 <div align="center"><img src="images/Jeroo/control15.gif"></div>
+  
+  <h3>Negation (NOT Operator)</h3>
+  <p>The negation reverses the value of a Boolean expression, changing true to false and false to
+     true. The table below shows the result of applying the negation operator to a Boolean 
+	 expression. In this table, P represents an arbitrary Boolean expression. The two rows
+	 underneath P show its possible values. The second column shows the corresponding values
+	 for the expression !P.</p>
+	 
+	 <br>
+	 <div align="center"><img src="images/Jeroo/control16.gif"></div>
+	 
+  <p><strong>Examples</strong></p>
+  
+  <div id="csCode"><pre>
+if(!bob.isNet(AHEAD))  // if not net in front of Jeroo
+{
+   bob.hop();
+}
+</pre></div>
+  
+  <div id="csCode"><pre>
+while(!bob.isWater(AHEAD))  // while not water in front of Jeroo
+{
+   bob.plant();
+   bob.hop();
+}
+</pre></div>
+	
+  <h3>Conjunction (AND Operator)</h3>	 
+  <p>The conjunction combines two Boolean expressions, to create a third that is only true when
+     both of the original expressions are true. The next table shows the result of applying the
+	 conjunction operator to a Boolean expression. In this table, P, and Q represent arbitrary
+	 Boolean expressions. The rows underneath P and Q show all possible combinations of their
+	 values. The third column shows the corresponding values for P && Q.</p>
+	 
+	 <br>
+	 <div align="center"><img src="images/Jeroo/control17.gif"></div>
+	 
+  <p><strong>Examples</strong></p>
+  
+  <div id="csCode"><pre>
+if(bob.isNet(AHEAD) && bob.hasFlower())  // if net ahead and Jeroo has a flower
+{
+   bob.toss();
+   bob.hop();
+}
+</pre></div>
+  
+  <div id="csCode"><pre>
+while(bob.isFacing(NORTH) && !bob.isWater(AHEAD))  // while facing North 
+{                                                  // and not water ahead
+   bob.hop();
+}
+</pre></div>
+	 
+  <h3>Disjunction (OR Operator)</h3>
+  <p>The disjunction combines two Boolean expressions, to create a third that is only false when
+     both of the original expressions are false. The table below shows the result of applying the
+	 disjunction operator to a Boolean expression. In this table, P, and Q represent arbitrary
+	 Boolean expressions. The rows underneath P and Q show all possible combinations of their 
+	 values. The third column shows the corresponding values for the expression P || Q.</p>
+	 
+	 <br>
+	 <div align="center"><img src="images/Jeroo/control18.gif"></div>
+	 
+<p><strong>Examples</strong></p>
+  
+  <div id="csCode"><pre>
+if(bob.isNet(AHEAD) || bob.isJeroo(LEFT))  // if net ahead or Jeroo to the left
+{
+   bob.turn(RIGHT);
+}
+</pre></div>
+  
+  <div id="csCode"><pre>
+while(!bob.isWater(AHEAD) || !bob.isNet(AHEAD))  // while not water or net ahead
+{
+   bob.plant();
+   bob.hop();
+}
+</pre></div>
+	 
+	<h3>More Examples (compound conditions)</h3>
+	<p>Remember that these are expressions that could be either true or false. They are not 
+	   statements of fact.</p>
+	   
+	<br>
+	 <div align="center"><img src="images/Jeroo/control19.gif"></div>
+
+<br>
+</div>	
+

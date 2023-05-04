@@ -1,0 +1,77 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SplitBug</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>SplitBug</strong> is a bug that splits or morphs into two bugs when it runs into a rock. When it
+   does not encounter a rock it moves like a ordinary bug.</p>
+
+<p>The three images below show the three possible morphs that could occur when a SplitBug encounters a rock.</p>
+<img src="images/SplitBug1.gif">
+
+<p>After running into a rock a SplitBug splits into two SplitBugs one located to the left of the bugs current position
+   and the other to the right of its current position. The new left SplitBug faces west of the bugs original direction
+   and the new right SplitBug faces east of the bugs original direction.</p>
+<img src="images/SplitBug2.gif">
+
+<p>After running into a rock a SplitBug morphs into only one bug because the location to the left
+      of its current position was either not a valid location or it was occupied by a rock.</p>
+<img src="images/SplitBug3.gif">
+
+<p>After running into a rock SplitBug morphs into only one bug because the location
+   to the right of its current position was either not a valid location or it was occupied by a rock.</p>
+
+<br>
+<p>Redefine the <strong>move</strong> method of the SplitBug class so that it has the behavior described above.</p>
+<div id="csList">
+<p>To add a new SplitBug to the grid to the left of the original SplitBug's position do the following:</p>
+<div id="csCode"  style="width:580px">
+<pre>
+Location left = loc.getAdjacentLocation(getDirection() + Location.LEFT);
+SplitBug bug = new SplitBug(getColor());
+bug.setDirection(getDirection() + Location.LEFT);
+bug.putSelfInGrid(getGrid(), left);
+</pre>
+</div>
+</div>
+
+<p>Redefine the <strong>canMove</strong> method of the SplitBug class so that it will return true if it
+   encounters an empty cell or a flower or a <strong>Rock</strong> directly in front of its current location. This will ensure
+   that the move method will be called if the SplitBug runs into a rock. </p>
+
+<p>Implement the SplitBug class then use the SplitBugRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>SplitBugRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class SplitBugRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        world.add(new Location(7, 8), new SplitBug(Color.red));
+        world.add(new Location(4, 4), new SplitBug(Color.orange));
+        world.add(new Location(2, 6), new SplitBug(Color.blue));
+        world.add(new Location(5, 5), new Rock());
+        world.add(new Location(5, 0), new Rock());
+        world.add(new Location(4, 8), new Rock());
+        world.add(new Location(2, 2), new Rock());
+        world.add(new Location(6, 3), new Rock());
+        world.show();
+    }
+}
+</pre>
+  </div>
+ 
+<h1>Source Files</h1>
+<p>SplitBug.java</p>
+<p>SplitBugRunner.java</p>
+
+	<br>
+</div>	
+

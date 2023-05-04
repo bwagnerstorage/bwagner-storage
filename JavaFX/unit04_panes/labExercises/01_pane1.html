@@ -1,0 +1,146 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 4.1</div>
+
+<div id="csContent"> 
+<h1>Layout Panes</h1>
+<p>JavaFX provides a set of classes called <strong>panes</strong>. The purpose of these panes are to provide an easy way to
+   manage the user interface of a JavaFX application. These panes are containers for storing UI controls, as well as other panes, so that
+   the controls can be arrange on the scene in an organized visually appealing manner.</p>
+
+<p>A JavaFX application can <strong>manually</strong> lay out the UI by setting the position and size properties for each control. However, an easier
+   option is to make use of layout panes. JavaFX provides several layout panes for the easy setup and management of classic 
+   layouts such as rows, columns, stacks, tiles, and others. As a window is resized, the layout pane automatically repositions and
+   resizes the nodes that it contains according to the properties of the individual nodes.</p>
+
+<p>In this unit, I am not going to discuss the ends and outs of each layout pane, I will provide links below that can provide this information, 
+   instead I am going to demonstrate the advantage of placing layout panes inside other layout panes. You will see that by nesting layout panes 
+   even more refined positioning of elements on a scene can be achieved by taking advantage of the layout properties provided by each pane. 
+</p>
+
+<p>To learn more about layout panes click on one of the following links:</p>
+<ul id="csList">
+      <li><a href="https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm" style="color:blue" target="_blank">Oracle - Working with Layouts</a></li><br>
+      <li><a href="https://www.tutorialspoint.com/javafx/javafx_layout_panes.htm" style="color:blue" target="_blank">TutorialsPoint - Layout Panes(Containers)</a></li>
+</ul>
+
+<h1>AnchorPane</h1>
+<p>Before we start this exercise I would like to take a look at a pane that we have already used several times in our exercises,
+   namely the <strong>AnchorPane</strong>. Although we have used this pane, we have never actually discussed the layout properties of this container. An
+   AnchorPane is divided into four regions: North, South, East, and West. When nodes (i.g. controls, containers) are placed within a pane they are attached to one or more of these regions.
+   If a node's region or regions is not explicitly assigned, then by default, the AnchorPane class attaches the node to both the North and West regions.
+   The effects of these attachments is best understood by looking at a demonstration.
+</p>
+<h3>Download AnchorPane Demo</h3>
+<ol id="csList">
+<li><p>Click on the following link to download a NetBeans JavaFX project: 
+      <a href="JavaFX/workspaces/AnchorPaneDemo.zip" style="color:blue; font-size: 14px">AnchorPane</a></p></li>
+<li><p>Copy the AnchorPane folder in the zip file to your work folder.</p></li>
+<li><p>Open the project <strong>AnchorPane</strong> in NetBeans.</p></li>
+<li><p>Double-click on the file FXML_AnchorPane.fxml to open it in Scene Builder. You should see the following scene window.</p>
+  <img src="JavaFX/images/AnchorPaneDemo1.PNG" style="border: 1px gray solid; width:75%">
+  <p>Looking at Hierarchy panel you will notice that there is an AnchorPane at the root level of the scene graph and it 
+     has three children: a Button, a Label, and a TextArea.</p>
+  <img src="JavaFX/images/AnchorPaneDemo2.PNG" style="border: 1px gray solid">
+</li>
+<li><p>Click on the Preview Menu on the menubar and select <strong>Show Preview in Window</strong></p></li>
+<li><p>Position the mouse over the right edge of the window so that the mouse cursor changes to a double arrow. Now click the
+       left mouse button and drag the mouse to enlarge the size of the window horizontally. Notice how the UI controls responded
+       to the resizing. Now do the same process for the other three edges of the window. Which two window edges (regions) had an
+       effect on the position of the controls? If you said Top (North) and Left (West) then you are correct. Since I did not explicitly
+       assign a region to any of the controls they were automatically attached or <strong>glued</strong> to the North and West regions.
+</p></li>
+<li><p>Close the preview window.</p></li>
+<li><p>Click on the Button control to select it. Then toggle the Layout panel. You should see the Anchor Pane Constraints controller at the top of
+       the panel.</p>
+       <img src="JavaFX/images/AnchorPaneDemo3.PNG" style="border: 1px gray solid"> 
+    <p>This controller is where you attach nodes to the different regions of the AnchorPane.</p>     
+</p></li>
+<li><p>Click on the <strong>horizontal bar</strong> that extends from the square in the middle of the controller. This will highlight the controller in red
+       like the image below.</p>
+       <img src="JavaFX/images/AnchorPaneDemo4.PNG" style="border: 1px gray solid"> 
+    <p>This will attach the Button to the AnchorPane's East region. The number that appears in the textbox is the distance the Button's right edge is
+       from the right edge of window.</p></li>
+<li><p>Open a preview Window and resize the window's right edge to see the effect this attachment has on the button.</p></li>
+<li><p>While the button is still attached to the East region, use the controller to also attach the button to the West region.</p></li>
+<li><p>Open a preview Window and resize the window again to see the effect.</p></li>
+<li><p>Now play around with the controller and the other UI controls until you have a good understanding of how the AnchorPane works. More 
+       than one control can be attached to the same region or regions.
+</p></li>
+</ol>
+
+<br>
+<hr>
+<br>
+
+<h1>Lab Exercise</h1>
+<p>In this first exercise we will be placing two GridPanes inside an AnchorPane and a VBox inside a GridPane. The final product should look like the following window.</p>
+<div style="display: flex; justify-content: center;">
+    <img src="JavaFX/images/JavaFXExercise6_1.png" style="border: 1px gray solid; width:50%"> 
+</div>
+<br>
+<ol id="csList">
+    <li><p>Click on the following link to download the NetBeans JavaFX project for this exercise: 
+         <a href="JavaFX/workspaces/JavaFXExercise6.zip" style="color:blue; font-size: 14px">JavaFXExercise6</a></p></li>
+    <li><p>Copy the JavaFXExercise6 folder in the zip file to your work folder.</p></li>
+   <li><p>Open the project JavaFxExercise6 in NetBeans.</p></li>
+   <li><P>Double-click on the file FXML_GridPane.fxml to open it in Scene Builder.</P></li>
+   <li><p>Notice that the scene graph hierarchy already contains an <strong>AnchorPane</strong> at its root level. We are going to use the default settings
+          for this container.</p></li>
+   <li><p>Under the Controls panel, drag-and-drop a <strong>Label</strong> control centered at the top of the window. Change the
+          text of the label to "Seminar Registration". Change the font to System 28px.</p></li>
+  <li><p>Under the Containers panel, drag-and-drop a <strong>GridPane</strong> container onto the window below the Label. <br>
+         The GridPane container is grid consisting of rows and columns. By default, Scene Builder creates a 2x3 grid consisting of
+         2 columns and 3 rows. By placing the GridPane container inside an AnchorPane container we are able to position the grid
+         exactly where we want it and it will be anchored or glued to that location. </p></li>
+  <li><p>In our example we need 6 rows in the grid. To add rows do the following:</p>
+  
+    <ul id="csList2">
+        <li><p>Right-click on the label for row 2 and select <strong>Add Row Below</strong> from the drop down menu.</p>
+        <img src="JavaFX/images/JavaFXExercise6_2.png" style="border: 1px gray solid; width:50%">
+        </li>
+        <li><p>Repeat these steps until you have 6 rows, labelled from 0 to 5.</p></li>
+        </ul>
+  </li>
+  <li><p>Under the Layout panel for the GridPane make the following changes:</p>
+        <ul id="csList2">
+          <li><p>Change the <strong>Pre Width</strong> value to 325.</p></li>
+          <li><p>Change the <strong>Pre Height</strong> value to 240.</p></li>
+          <li><p>Change the <strong>Layout X</strong > value to 35.</p></li> 
+          <li><p>Change the <strong>Layout Y</strong> value to 100.</p></li>
+        </ul>
+  </li>
+  <li><p>In column 0 of the grid, drag-and-drop 5 <strong>Labels</strong>, one for each row of the grid.</p></li>
+  <li><p>In column 1 of the grid, drag-and-drop 5 <strong>TextFields</strong>, one for each row of the grid.
+         The window should look like the following:</p>
+        
+         <img src="JavaFX/images/JavaFXExercise6_3.png" style="border: 1px gray solid; width:50%">
+        
+    </li>
+    <li><p>Change the text of the 5 <strong>Labels</strong> to the following: First Name, Last Name, Address, Home Phone, Cell Phone, and Email Address.</p></li>
+    <li><p>Drag-and-drop a second <strong>GridPane</strong> onto the window below the first GridPane.</p></li>
+    <li><p>Under the Layout panel for the GridPane make the following changes:</p>
+      <ul id="csList2">
+        <li><p>Change the <strong>Pre Width</strong> value to 315.</p></li>
+        <li><p>Change the <strong>Pre Height</strong> value to 180.</p></li>
+        <li><p>Change the <strong>Layout X</strong> value to 35.</p></li> 
+        <li><p>Change the <strong>Layout Y</strong> value to 365.</p></li>
+      </ul>
+    </li>
+    <li><p>In column 0 of grid, drag-and-drop 3 <strong>Labels</strong>, one for each row of the grid.</p></li>
+    <li><p>Change the text of the 3 <strong>Labels</strong> to the following: Course, Date, and Meals.</p></li>
+    <li><p>Drag-and-drop a <strong>ComboBox</strong> on to the grid at location row 0, col 1.</p></li>
+    <li><p>Drag-and-drop a <strong>Date Picker</strong> on to the grid at location row 1, col 1.</p></li>
+    <li><p>Drag-and-drop a <strong>VBox</strong> container on to the grid at location row 2, col 1. A VBox is a
+           container that aligns nodes vertically.</p></li>
+    <li><p>Drag-and-drop 3 <strong>CheckBoxes</strong> into the VBox. Name them Breakfast, Lunch, and Dinner.</p></li>
+    <li><p>For the Breakfast and Lunch check boxes set their bottom padding to 10 in the layout panel.</p></li>
+    <li><p>Drag-and-drop 2 <strong>Buttons</strong> in the bottom right corner of the window. Name the button on the right "Next" and
+           the button on the left "Cancel". Set the <strong>Pref Width</strong> of each button to 60.</p></li>
+    <li><p>From the Preview menu select Show Preview in Window.
+    Your window should look like the following:</p>
+      <img src="JavaFX/images/JavaFXExercise6_1.png" style="border: 1px gray solid; width:50%"> 
+    </li>
+</ol>
+  <br>
+</div>	

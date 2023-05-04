@@ -1,0 +1,280 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MethodPractice1</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Copy the following code into a file named MethodPractice1.java</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class MethodPractice1
+{
+    private Scanner keyboard = new Scanner(System.in);
+
+    /** This method returns a string using the following
+     *  conditions: if weight is less than 100 it returns
+     *  "small", if weight is greater than or equal to 100
+     *  and less than or equal to 200 it returns "medium",
+     *  if weight is greater than 200 it returns "large".
+     *  @return the string "small", "medium", or "large"
+     *  @param weight number representing a weight
+     */
+    public String method1(int weight)
+    {
+
+    }
+
+    /** This method prints phrase 10 times.
+     *  @ param phrase the string to be printed
+     */
+    public void method2(String phrase)
+    {
+
+    }
+
+    /** This method allows a user to enter an unknown
+     *  number of integers from the keyboard. When the
+     *  sentinel value -1 is entered the method returns
+     *  the count of the number of integers entered.
+     *  @return count of the number of integers entered
+     */
+    public int method3()
+    {
+
+    }
+
+    /** This method returns a string containing the
+     *  first and last letter of str concatenated
+     *  together.
+     *  @return a string containing two letters
+     *  @param str the string from which to extract
+     *     the first and last letters
+     */
+    public String method4(String str)
+    {
+
+    }
+
+    /** This method returns a random number.
+     *  @return a random number in range of 0 to upper-1
+     *  @param upper the upper limit of the random number
+     */
+    public int method5(int upper)
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        MethodPractice1 app = new MethodPractice1();
+
+        System.out.println("******************");
+        System.out.println("   Test Method1");
+        System.out.println("******************");
+
+        System.out.println("Weight is " + app.method1(150));
+        System.out.println("Weight is " + app.method1(99));
+        System.out.println("Weight is " + app.method1(200));
+        System.out.println("Weight is " + app.method1(300));
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method2");
+        System.out.println("******************");
+        app.method2("Computers are fun!");
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method3");
+        System.out.println("******************");
+        System.out.println("\nCount = " + app.method3());
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method4");
+        System.out.println("******************");
+        System.out.println("String = " + app.method4("red"));
+        System.out.println("String = " + app.method4("green"));
+        System.out.println("String = " + app.method4("blue"));
+
+        System.out.println("\n\n******************");
+        System.out.println("   Test Method5");
+        System.out.println("******************");
+        System.out.println("Random Number = " + app.method5(5));
+        System.out.println("Random Number = " + app.method5(50));
+        System.out.println("Random Number = " + app.method5(500));
+        System.out.println();
+    }
+}  
+  </pre>
+  </div>
+  <div id="csList">
+  <ol>
+    <li>Implement <strong>method1</strong>. This method returns a string using the following conditions:
+	    if weight is less than 100 it returns "small", if weight is greater than or equal to 100 
+		and less than or equal to 200 it returns "medium", and if weight is greater than 200 it returns
+	    "large".<br><br>
+		<p>The table below shows the return value of 4 calls made to method1.</p>
+		<table id="csTable" style="margin-left:20px">
+		<tr>
+		  <th>Call</th>
+		  <th>Return Value</th>
+		</tr>
+		<tr>
+		  <td>method1(50)</td>
+		  <td>small</td>
+		</tr>
+		<tr>
+		  <td>method1(180)</td>
+		  <td>medium</td>
+		</tr>
+		<tr>
+		  <td>method1(220)</td>
+		  <td>large</td>
+		</tr>
+		<tr>
+		  <td>method1(100)</td>
+		  <td>medium</td>
+		</tr>
+		</table>		
+    </li>
+	<li>Implement <strong>method2</strong>. This method prints the parameter phrase 10 times
+	    down the screen. For example, the call method2("Give me liberty or give me death")
+		would produce the following output<br>
+	    <div id="csOutput">
+		<pre>
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death</pre>
+		</div>
+		Use a for loop in your implementation.<br>	
+	</li>
+	<li>Implement <strong>method3</strong>. This method allows a user to enter an 
+	    unknown number of integers
+        from the keyboard. When the sentinel value -1 is entered the method displays
+	    the count of the number of integers entered. For example, if the user inputs 5 integers, not
+		including the sentinel value, the method would return 5.<br>
+		Use a while loop in your implementation.<br></li>
+	<li>Implement <strong>method4</strong>. This method returns a string containing the first and
+	    last letter of str concatenated(merged) together. <br>
+	<p>The table below shows the return value of 4 calls made to method4.</p>
+		<table id="csTable" style="margin-left:20px">
+		<tr>
+		  <th>Call</th>
+		  <th>Return Value</th>
+		</tr>
+		<tr>
+		  <td>method4("dog")</td>
+		  <td>dg</td>
+		</tr>
+		<tr>
+		  <td>method4("cat")</td>
+		  <td>ct</td>
+		</tr>
+		<tr>
+		  <td>method4("horse")</td>
+		  <td>he</td>
+		</tr>
+		<tr>
+		  <td>method4("chicken")</td>
+		  <td>cn</td>
+		</tr>
+		</table>	
+	</li>
+	<li>Implement <strong>method5</strong>. This method returns a random number in the range of 0 to
+	    upper - 1.<br>
+		<p>The table below shows the range of possible return values for 4 calls made to method5.</p>
+		<table id="csTable" style="margin-left:20px">
+		<tr>
+		  <th>Call</th>
+		  <th>Return Value Range</th>
+		</tr>
+		<tr>
+		  <td>method5(2)</td>
+		  <td>0-1</td>
+		</tr>
+		<tr>
+		  <td>method5(10)</td>
+		  <td>0-9</td>
+		</tr>
+		<tr>
+		  <td>method5(150)</td>
+		  <td>0-149</td>
+		</tr>
+		<tr>
+		  <td>method5(200)</td>
+		  <td>0-199</td>
+		</tr>
+		</table>
+	</li>
+  </ol>
+  </div>
+<h1>Source File</h1>
+<p>MethodPractice1.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+******************
+   Test Method1
+******************
+Weight is medium
+Weight is small
+Weight is medium
+Weight is large
+
+
+******************
+   Test Method2
+******************
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+Give me liberty or give me death
+
+
+******************
+   Test Method3
+******************
+Enter numbers-->
+10
+20
+30
+40
+50
+-1
+
+Count = 5
+
+
+******************
+   Test Method4
+******************
+String = rd
+String = gn
+String = be
+
+
+******************
+   Test Method5
+******************
+Random Number = 4
+Random Number = 16
+Random Number = 290
+
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,173 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Utility</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>The code below is an example of the way we typically retrieve user input from the keyboard</p>
+  <div id="csCode">
+  <pre>
+Scanner keyboard = new Scanner(System.in);
+System.out.print("Enter a number -->");      // user prompt
+int num = keyboard.nextInt();
+</pre>
+  </div>
+<p>To demonstrate static methods you are going to define 3 static methods
+   within a class named Utility that will simplify the code above by first eliminating the need
+   to instantiate a Scanner object and second it will combine together the user prompt and the line that
+   reads the input. As an example, the code below also retrieves user input from the keyboard using a
+   static method defined in the Utility class.</p>
+     <div id="csCode">
+  <pre>
+int num = Utility.readInt("Enter a number -->");
+</pre>
+  </div><br>
+<p>To display blank lines on the console window you have to include multiple
+   printlns like the code below.</p>
+   <div id="csCode">
+  <pre>
+System.out.println();
+System.out.println();
+System.out.println();
+</pre>
+  </div>
+<p>In the Utility class you are going to define a static method that displays blank lines using the
+   following syntax</p>
+<div id="csCode">
+  <pre>
+Utility.blankLines(3);
+</pre>
+  </div>
+<p>where the argument 3 indicates how many blank lines to display.</p><br>
+<p>Copy the following code into a file named <strong>Utility.java</strong>.</p>
+<div id="csCode">
+  <pre>
+import java.util.*;
+
+public class Utility
+{
+    private static Scanner keyboard = new Scanner(System.in);
+
+    /** This method prompts a user to enter
+     *  an integer value from the keyboard. It
+     *  then reads and returns the integer value  
+     *  using the Scanner class's nextInt method.
+     *  @param prompt the user prompt
+     *  @return the value read from keyboard
+     */
+    public static int readInt(String prompt)
+    {
+
+    }
+
+    /** This method prompts a user to enter
+     *  a double value from the keyboard. It
+     *  then reads and returns the double value  
+     *  using the Scanner class's nextDouble method.
+     *  @param prompt the user prompt
+     *  @return the value read from keyboard
+     */
+    public static double readDouble(String prompt)
+    {
+
+    }
+
+    /** This method prompts a user to enter
+     *  a string from the keyboard. It then
+     *  reads and returns the string using  
+     *  the Scanner class's nextLine method.
+     *  @param prompt the user prompt
+     *  @return the value read from keyboard
+     */
+    public static String readString(String prompt)
+    {
+
+    }
+
+    /** This method prints blank lines on the
+     *  console window.
+     *  @param num the number of lines to display
+     */
+    public static void blankLines(int num)
+    {
+
+    }
+}
+</pre>
+  </div>
+  <h3>Method Implementation</h3>
+  <div id="csList">
+  <ol>
+  <li>Implement method <strong>readInt</strong>. This method prompts a user to enter
+      an integer value from the keyboard. It then reads and returns the integer value 
+	  using the Scanner class's nextInt method.<br>
+	  Add a <strong>dummy read</strong> to the method just before the return line. Example, <br>
+	  <div id="csCode" style="width:400px">
+  <pre>
+<div id="csHighlight"><pre>keyboard.nextLine()</pre></div>;   // dummy read
+return ____________
+</pre>
+  </div>
+  <p>*If you don't remember what a dummy read is click on the following link: 
+	  <a style="color: #00F;" href="ap/unit01_methodsReview/labExercises/dummyRead.html" target="_blank">What is a dummy read?</a></p>
+	  </li>
+  <li>Implement method <strong>readDouble</strong>. This method prompts a user to enter
+      a double value from the keyboard. It then reads and returns the double value
+	  using the Scanner class's nextDouble method.<br>
+	  Add a <strong>dummy read</strong> to the method just before the return line.</li>
+  <li>Implement method <strong>readString</strong>. This method prompts a user to enter
+      a string from the keyboard. It then reads and returns the string using  
+      the Scanner class's nextLine method. This method does not require a dummy read.</li>
+  <li>Implement method <strong>blankLines</strong>. This method prints blank lines on the
+      console window.</li>
+  </ol>
+  </div><br>
+<p>To test your Utility class copy the following code into a file named <strong>UtilityTester.java</strong>.</p>
+<div id="csCode">
+  <pre>
+import java.util.*;
+
+public class UtilityTester
+{
+    public static void main(String[] args)
+    {
+        int iNum = Utility.readInt("Enter an integer -->");
+        System.out.println("The number = " + iNum);
+
+        Utility.blankLines(2);
+
+        double dNum = Utility.readDouble("Enter a double -->");
+        System.out.println("The number = " + dNum);
+
+        Utility.blankLines(2);
+
+        String str = Utility.readString("Enter a string -->");
+        System.out.println("The string = " + str);
+
+        Utility.blankLines(2);
+    }
+}
+</pre>
+  </div>
+<h1>Source File</h1>
+<p>Utility.java</p>
+<p>UtilityTester.java</p>
+<h1>Sample Run</h1>
+  <div id="csSampleRun"> 
+    <pre>
+Enter a integer -->50
+The number = 50
+
+
+Enter a double -->98.6
+The number = 98.6
+
+
+Enter a string -->Have a nice day
+The string = Have a nice day
+
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,77 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">17-1 CSS Max-Width</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_max-width.asp" target="_blank" style="color:blue">max-width</a></p></li>
+</ul>
+<h1>Width vs Max-Width</h1>
+<p>In this exercise, you are going to learn the difference between width and max-width.</p>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>17_1_maxWidth.html</strong> and save it to your CSS folder.</p></li>
+<li><p>Right-click on the two images below and select <strong>Save Image As..</strong>. Save the images to your CSS folder.</p>
+<img src="images/CS2/CSS/Bloodhound.jpg" style="width:25%">&nbsp;&nbsp;&nbsp;<img src="images/CS2/CSS/Redbone.jpg" style="width:25%">
+</li>
+<li><p>Add the following starter code to your html document:</p><br>
+<div id="csHTML"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+       &lt;title&gt;max-width&lt;/title&gt;
+       &lt;style&gt;
+          .container {
+             height: 350px;
+             display:flex;
+             flex-direction: column;
+             align-content: space-between;
+          }
+          #puppy1 {
+            width: 400px;
+            border: 4px solid black;
+          }
+          #puppy2 {
+            width: 400px;
+            border: 4px solid black;
+          } 
+       &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;div class="container"&gt;
+         &lt;img id="puppy1" src="Bloodhound.jpg"&gt;&lt;/div&gt;
+         &lt;img id="puppy2" src="Redbone.jpg"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<br>
+<li><p>View the page in the browser. You should see two images of hound dog puppies. Both of these images have been assigned a width of 400px. When you use the width property to assign a size to an element, in this case an image, the size is fixed and the elements size cannot be changed regardless of what is going on around it. To demonstrate this feature, resize the browser window so that the two images are covered over by the right border of the browser's window. Notice that neither of the images change their size. Instead the browser adds a horizontal scroll bar at the bottom of the window so that the images can be viewed in their entirety.</p></li>
+<li><p>In the internal styling section locate <strong>puppy1</strong>. Change the value of the width property from 400px to 100%. By using a percentage for the size the image's width the image size is no longer fixed and it will now stretch to cover 100% of the browser window. If the window is resized, the image will also resize so that it maintains the 100% coverage of the window. To demonstrate this feature, again resize the browser window. Notice that the image shrinks and stretches to maintain full coverage of the window.</p></li>
+<li><p>Change the width size of puppy1 to 50% and resize the browser window again. Notice that the puppy image maintains its size relationship with the window.</p></li>
+<li><p>Change the width property of puppy1 back to 400px.</p></li>
+
+<div style="border: 1px solid black; box-shadow: 3px 3px 3px gray; padding: 8px; margin: 15px;">
+<p>From the demonstrations above, you learned that the width property can have a fixed size or a size that is a percentage of its containers width. Both of theses scenarios are problematic for web developers who wish to use the <a href="https://www.w3schools.com/html/html_responsive.asp" style="color:blue">Responsive Web Design</a> model. If a web page containing a fixed width image is displayed on a mobile device, such as a cell phone, the image might be larger than the screen size of the device which would force the user to scroll horizontally to see the image. On the other hand, if the image width is assigned a percentage value then it becomes difficult to manage its size. For example, you may not wish for an image to always cover the entire browser window.</p>
+
+
+<p>To fix these problems, CSS has a property named <strong>max-width</strong>. Lets add some CSS code to the web page to see how max-width can help.</p>
+</div>
+<li><p>Locate the styling for <strong>puppy2</strong> and then change the width property from 400px to 100%.</p></li>
+<li><p>Add the following line of code to puppy2's styling: <span style="font-family: Consolas, serif; font-size: 14px;">
+    max-width: 400px;</span></p></li>
+<li><p>Open the web page in the browser, then resize the browser window so that it's right edge covers over the puppy images. Notice how the puppy2's width does not change until the browser window's width is smaller than 400px.</p></li>
+</ol>
+<div style="border: 1px solid black; box-shadow: 3px 3px 3px gray; padding: 8px; margin: 15px;">
+<p>First we set the puppy2's width to 100%. This normally would make the image stretch to cover the entire browser window. However, by setting the max-width property to 400px we set a maximum size for the image to 400px. The max-width property allows for the image to be smaller than 400px but it can never be larger than 400px. The image did not start scaling its size until the browser window was smaller than the max-width value of 400px.</p>
+</div>
+
+<br><hr><br>
+<div>
+
+</div> 
+	<br>
+</div>	

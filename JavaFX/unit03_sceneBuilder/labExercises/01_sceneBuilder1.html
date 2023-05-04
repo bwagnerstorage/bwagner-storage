@@ -1,0 +1,253 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 3.1</div>
+
+<div id="csContent"> 
+<h1>Scene Builder</h1>
+<p>Coding a robust GUI interface can be a daunting task. Fortunately there is an application named <strong>Scene Builder </strong> that can
+   help simplify this task. Oracle describes Scene Builder like this, <blockquote style="margin-left:30px; margin-right:30px;">JavaFX Scene Builder is a visual layout tool that lets users quickly design JavaFX
+   application user interfaces, without coding. Users can drag and drop UI components 
+   to a work area, modify their properties, apply style sheets, and the FXML code for
+   the layout that they are creating is automatically generated in the background. The
+   result is an FXML file that can then be combined with a Java project by binding the
+   UI to the application’s logic. </blockquote>
+</p>
+<h1>Installing Scene Builder</h1>
+<p>Although Scene Builder was created by Oracle, the program is now open source and updates are provided by a company named Gluon.</p>
+<p>You can download Scene Builder from Gluon's website: <a href="https://gluonhq.com/products/scene-builder/" style="color:blue; font-size: 14px" target="_blank">Gluon - Scene Builder</a></p>
+<h3>NetBeans and Scene Builder</h3>
+<p>Once Scene Builder has been installed on your computer it can be integrated into your IDE. To integrate it into
+   NetBeans follow these steps.</p>
+<ol id="csList">
+  <li><p>Click on the <strong>Tools</strong> menu and select <strong>Options</strong>.</p></li>
+  <li><p>Click on the Java icon and select the <strong>JavaFX</strong> tab.</p></li>
+  <li><p>Use the combo box to navigate to the Scene Builder's installation folder on your computer. Click OK.</p></li>
+</ol>
+<h3>Download NetBeans FXML Application</h3>
+<ol id="csList">
+<li><p>Click on the following link to download the NetBeans JavaFX project for this exercise: 
+     <a href="JavaFX/workspaces/JavaFXExercise4.zip" style="color:blue; font-size: 14px">JavaFXExercise4</a></p></li>
+    <li><p>Copy the JavaFXExercise4 folder in the zip file to your work folder.</p></li>
+</ol>
+
+<h3>Accessing Scene Builder from within NetBeans.</h3>
+<ol id="csList">
+<li><p>Open the JavaFXExercise4 project in NetBeans. 
+<li><p>Double click on the file <strong>FXMLDocument.fxml</strong> to open it in Scene Builder.</p></li>
+   The following window should appear. (Note: If you right-click on the file and select <strong>edit</strong> it will open the fxml file in NetBeans.</p>
+  </ol>
+
+    <img src="JavaFX/images/SceneBuilder1.png" style="border: 1px gray solid">
+
+<h3>Drag-and-Drop UI Controls</h3>
+<p>With Scene Builder, you have the ability to build a GUI interface by simply dragging and dropping layouts and controls
+   onto your scene's window.</p>
+<p>Select the <strong>Controls</strong> Panel on the side bar to the left. These are all of the UI controls currently available in 
+   JavaFX. </p>
+<img src="JavaFX/images/SceneBuilder2.png" style="border: 1px gray solid">
+<p>Drag-and-drop the <strong>Button</strong> control onto your scene window. When a control is added to a scene's window Scene Builder
+   automatically updates the associated fxml file.</p>
+<p>The side bar to the right has three panels: <strong>Properties</strong>, <strong>Layout</strong>, and <strong>Code</strong>. 
+   Click on the Button control to select it. It is selected if you see blue handles around its perimeter. Now click on
+   the Properties panel to expand it.</p>
+   <img src="JavaFX/images/SceneBuilder3.png" style="border: 1px gray solid">
+<p>Scene Builder gives you access to all of a control's properties. Again any changes made here will automatically be reflected in the
+   fxml file. For example, change the <strong>Text</strong> property value to word "Go". This will change the name displayed on the button. 
+   You can also change a button's name by double clicking on the button itself.</p>
+  
+<p>Click on the <strong>Layout</strong> panel.</p>
+  <img src="JavaFX/images/SceneBuilder4.png" style="border: 1px gray solid"><p>Two of the most common properties to modify here are the preferred width and 
+   preferred height properties. For example, change the <strong>Pref Width</strong> value to 100 and change 
+   the <strong>Pref Height </strong>value to 30. This will increase the size of the button. When displaying a scene's window JavaFX will
+   try to honor the preferred width and preferred height properties when displaying the controls, however that all depends upon which
+   type of layout(i.g. AnchorPane, VBox, HBox, etc.) they were placed.
+<p>Click on the <strong>Code</strong> panel.</p>
+<img src="JavaFX/images/SceneBuilder6.png" style="border: 1px gray solid">
+<h3>Automatic Creation of Controller Class</h3>
+<p>Another benefit of Site Builder is that it can create your program's Controller class. It does this by taking the value assigned 
+   to each control's <strong>fx:id</strong> property and creating a variable in the Controller with that name. If you do not assign a value to the <strong>fx:id</strong>
+    property then a variable will not be created for that control. Recall that when your program calls the FXMLLoader class's <strong>load</strong> method it will inject each variable
+    in the Controller class with the object reference of the variable's corresponding control.</p>
+<p>Back to the left side bar there is one more panel I would like to discuss. Under the Document section there is a panel named <strong>Hierarchy</strong>, click on it.</p>
+<img src="JavaFX/images/SceneBuilder5.png" style="border: 1px gray solid">
+<p>This panel displays the current scene's <strong>scene graph</strong>. Sometimes you may find it easier to drag-and-drop controls onto
+   the scene graph instead of the scene window. For example, click on the <strong>Label</strong> control and drag-and-drop it onto the scene graph.</p>
+
+
+ <br>
+ <hr>
+ <br>
+ <h1>Lab Exercise</h1>
+ <p>In this exercise you are going to add the following controls to your scene. One Label, one Button, three CheckBoxes, two RadioButtons,
+    one TextField, one ComboBox, one ListView, one DatePicker, and one TableView. When complete your scene should look like the following:
+ </p>
+ <div style="display:flex">
+ <img src="JavaFX/images/SceneBuilder7.png"  style="border: 1px gray solid; margin:auto">
+</div>
+<h3>Instructions</h3>
+<p>Before you begin this exercise remove any controls you might have added to the scene. You can remove a control either from the
+   scene window or the Hierarchy panel's scene graph. Leave the AnchorPane layout as the root node of the scene.
+</p>
+<ol id="csList">
+    <li><p>Drag a <strong>Label</strong> control to the scene window at the location shown in the sample screen above.
+           The location is an approximation. Click on the Properties panel and change the Text property to "JavaFX Controls".
+           Change the Font property to "System 24px".
+           
+    </p></li>
+    <li><p>Drag a <strong>Button</strong> control to the scene window at the location shown in the sample screen above.
+           Click on the Properties panel and change the Text property to "Go". Click on the Layout panel and change the Pref Width property
+           to "80". Click on the Code panel and change the On Action property to "handleButtonAction" (This will create a button
+           handler method in the Controller class).
+    </p></li>
+    <li><p>Above the Controls panel you will see a panel named Container. Click on it to expand it. Drag a <strong>VBox</strong> on to the scene window
+           just below the "Go" button. This will be a container or layout for the three CheckBoxes. This layout will align the three
+           CheckBoxes vertically.
+    </p></li>
+    <li><p>Click on the Controls panel to expand it. Drag three <strong>CheckBoxes</strong> inside the VBox container, one on top of the other. Resize the VBox
+           as necessary. Click on each CheckBox and change each Text property to "hamburger", "french fries", and "soda" respectively.
+           Click on the Layout panel and change two of the Padding properties for all three CheckBoxes. Change both the Top and Bottom padding
+           properties value to 5.
+    </p></li>
+    <li><p>In the Containers panel, drag a <strong>HBox</strong> layout on to the scene window below the CheckBoxes. In the Controls panel, drag two <strong>RadioButton</strong> controls
+           so they are aligned horizontally within the HBox. Click on the first RadioButton to select it, then change the Text property to 
+           "Yes" and change the second radio button to "No".
+    </p></li>
+    <li><p>Drag a <strong>TextField</strong> control to the top of the middle column. In Properties panel change the Prompt Text property to
+           "Enter word, press &lt;Enter&gt;." In the Layout panel, change the Pref Width property to "160". In the Code panel,
+           give the fx:id property the value "myTextField" and add the event handler method "handleTextFieldChange" to the <strong>on Key Pressed</strong>comboBox.
+    </p></li>
+    <li><p>Drag a <strong>CombBox</strong> control to the scene window below the TextView control. Change its Pref Width to "150" and its 
+           fx:id to "myComboBox".
+    </p></li>
+    <li><p>Drag a <strong>ListView</strong> control below the ComboBox. Set its Pref Width and Pref Height values to "200". Set its fx:id value
+           to "myListView".</p></li>
+    <li><p>Drag a <strong>DatePicker</strong> control to the top of the third column.</p></li>
+    <li><p>Drag a <strong>TableView</strong> control under the DatePicker. Set the Pref Width value to "150" and the Pref Height value to "253".
+           Set its fx:id property to "myTable".
+    </p></li>
+    <li><p>By default a <strong>TableView</strong> control includes two <strong>TableColumn</strong> controls named C1 and C2. Click on the column name C1
+           to select it and change its Text property to "Name", then change the C2 column's Text property to "Votes". Set the 
+           fx:id property of the Name column to "nameTableColumn" and set the fx:id property of the Votes column to "votesTableColumn".
+    </p></li>
+    <li><p><strong>Save</strong> the FXMLDocument file by clicking on the File menu and selecting Save. You will notice that none of 
+           the controls contain data. The data is added to the controls in the Controller class.</p></li>
+    <li><p>To preview the scene window click on the Preview Menu and select <strong>Show Preview in Window</strong>.</p></li>
+    <li><p>To preview what the Controller class generated by Site Builder will look like click on the View menu and select
+           <strong>Show Sample Controller Skeleton</strong>.
+    </p></li>
+</ol>
+<h3>Generate Controller class</h3>
+<ol id="csList">
+  <li><p>Open the <strong>JavaFXExercise4</strong> project in NetBeans, if not already open.</p></li>
+  <li><p>Right-click on the file <strong>FXMLDocument.fxml</strong> and select <strong>Edit</strong>. Scroll through the
+        file and notice that all of the controls that you added through Site Builder are coded there.</p></li>
+  <li><p>Open the file <strong>FXMLDocumentController</strong>. Noticed that the file only contains one method named initialize.</p></li>
+  <li><p>Right-click on the file <strong>FXMLDocument.fxml</strong> again, This time select the option <strong>Make Controller</strong>.</p></li>
+  <li><p>View the file <strong>FXMLDocumentController</strong> again.</p></li>
+  <li><p>The next step is to add code in the <strong>initialize</strong> method to add data to the controls and to implement the event handlers.
+         To speed up this process I have provided the Controller class code below. Delete the code currently in the Controller class and replace it with this code.</p>
+ <div id="csCode" style="width:640px" ><pre>package javafxexercise4;
+
+  import javafx.collections.FXCollections;
+  import javafx.collections.ObservableList;
+  import javafx.event.ActionEvent;
+  import javafx.fxml.FXML;
+  import javafx.scene.control.ComboBox;
+  import javafx.scene.control.Label;
+  import javafx.scene.control.ListView;
+  import javafx.scene.control.RadioButton;
+  import javafx.scene.control.TableColumn;
+  import javafx.scene.control.TableView;
+  import javafx.scene.control.TextField;
+  import javafx.scene.control.ToggleGroup;
+  import javafx.scene.control.cell.PropertyValueFactory;
+  import javafx.scene.input.KeyCode;
+  import javafx.scene.input.KeyEvent;
+  
+  public class FXMLDocumentController {
+      
+      @FXML
+      private Label label;
+      @FXML
+      private ComboBox&lt;String&gt; myComboBox;
+      @FXML
+      private ListView&lt;String&gt; myListView;
+      @FXML
+      private TableView&lt;Candidate&gt; myTable;   // Candidate class defined below
+      @FXML
+      private RadioButton yesRadioButton;
+      @FXML
+      private RadioButton noRadioButton;
+      @FXML
+      private TextField myTextField;
+      @FXML
+      private TableColumn&lt;Candidate, String&gt; nameTableColumn;
+      @FXML
+      private TableColumn&lt;Candidate, String&gt; votesTableColumn;
+     
+      // event handlers
+      @FXML
+      private void handleButtonAction(ActionEvent event) {
+          System.out.println("You clicked me!");
+          label.setText("Hello World!");
+      }
+      @FXML
+      private void handleTextFieldChange(KeyEvent event) {
+          if(event.getCode() == KeyCode.ENTER)
+          {
+              String str = myTextField.getText();
+              myListView.getItems().add(str);
+              myTextField.clear();
+          }
+      }
+      
+      // called after component variables injected from FXML file
+      public void initialize() {
+          
+          // radio buttons
+          ToggleGroup radioGroup = new ToggleGroup();
+          yesRadioButton.setToggleGroup(radioGroup);
+          noRadioButton.setToggleGroup(radioGroup);
+          
+          // combo box
+          ObservableList&lt;String&gt; list;
+          list = FXCollections.observableArrayList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+          myComboBox.setItems(list);
+          myComboBox.getSelectionModel().selectFirst();   // assign default value
+          
+          // list view
+          list = FXCollections.observableArrayList("horse", "cow", "pig", "goat", "chicken");
+          myListView.setItems(list);
+          
+          nameTableColumn.setCellValueFactory(new PropertyValueFactory&lt;&gt;("name"));
+          votesTableColumn.setCellValueFactory(new PropertyValueFactory&lt;&gt;("votes"));
+          
+          // table view
+          ObservableList&lt;Candidate&gt; list2 = FXCollections.observableArrayList();
+          list2.add(new Candidate("Gomez", 20));
+          list2.add(new Candidate("Smith", 8));
+          list2.add(new Candidate("Choo", 2));
+          list2.add(new Candidate("Harris", 35));
+          list2.add(new Candidate("Salazar", 52));
+          list2.add(new Candidate("Li", 14));
+          list2.add(new Candidate("Adams", 26));
+          list2.add(new Candidate("Kyle", 33));
+          list2.add(new Candidate("Lucas", 5));
+          list2.add(new Candidate("Howard", 16));
+          list2.add(new Candidate("Riser", 25));
+          
+          myTable.setItems(list2); 
+      }
+      
+  }
+  </pre></div>
+         
+ </li>
+  <li><p><strong>Run</strong> the program and test each control.
+         
+  </p></li>
+
+</ol>
+  <br>
+</div>	
+

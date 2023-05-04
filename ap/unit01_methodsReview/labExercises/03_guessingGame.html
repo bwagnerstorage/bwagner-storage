@@ -1,0 +1,126 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Guessing Game</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a program that plays a guessing game using the following rules:</p>
+<div id="csList">
+<ul>
+<li>The program generates a random number between 1 and 100. </li>
+<li>The player attempts to guess the number selected by the computer. </li>
+<li>If the player's guess is less than the number, the message "Too Low, Try Again." is displayed and the user is prompted to guess again. </li>
+<li>If the player's guess is greater than the number, the message "Too High, Try Again." is displayed and the user is prompted to guess again. </li>
+<li>If the player guesses the number correctly, the message "You found it in ___ tries." is displayed with the number of times the player had to guess before the number was found. </li>
+<li>Play continues until the user guesses the computer's number.</li>
+</ul>
+</div>
+<h3>Method Decomposition</h3>
+<p>This program can be decomposed into the following methods.</p>
+<div align="center"><img src="images/guessingGame.png"></div>
+
+
+ 
+
+  <p>Copy the following code into a file named GuessingGame.java</p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class GuessingGame
+{
+    // instance variables
+    private int number;      // the random number
+    private int myGuess;     // current guess
+    private int numGuesses;  // number of guesses
+
+    private Scanner keyboard = new Scanner(System.in);
+
+    /** generates a random number in the range of
+     *  1 to 100 inclusive.
+     */
+    public void generateNumber()
+    {
+
+    }
+
+    /** Displays a prompt asking player to make a guess. It
+     *  reads the guess and stores it in the variable
+     *  myGuess. It also increments the variable numGuesses.
+     */
+    public void makeGuess()
+    {
+
+    }
+
+    /* Determines whether player's guess was correct. If
+     * myGuess was a match it returns true. If myGuess was
+     * less than number then it displays the message
+     * "Too Low, Try Again!" and returns false. If myGuess
+     *  was greater than number then it displays the
+     *  message "Too High, Try Again!" and returns false.
+     */
+    public boolean winner()
+    {
+
+    }
+	
+    /** Generates the random number then allows the player to
+     *  continually guess the random number until it is found.
+     *  Once the number is found it displays a message
+     *  indicating how many guesses it took to find the
+     *  number.
+     */
+    public void playGame()
+    {
+
+    }
+
+    public static void main (String[] args)
+    {
+        GuessingGame app = new GuessingGame();
+        app.playGame();
+    }
+}
+</pre>
+  </div>
+<h3>Implement Methods</h3>
+<div id="csList">
+  <ol>
+     <li>Implement method <strong>generateNumber</strong>. This method generates a random number
+	     in the range of 1 to 100 inclusive and stores it in the variable number.</li>
+	<li>Implement method <strong>makeGuess</strong>. This method displays a prompt asking user to
+	    make a guess. It reads the guess and stores it in the variable myGuess. It also increments
+	    the variable numGuesses by one.</li>
+	<li>Implement method <strong>winner</strong>. This method determines whether the player's guess
+	    was correct. If myGuess was a match it returns true. If myGuess was less than the number then
+	    it displays the message "Too Low, Try Again!" and returns false. If myGuess was greater than 
+		the number then it displays the message "Too High, Try Again!" and returns false.</li>
+	<li>Implement method <strong>playGame</strong>. Generates the random number then allows the user to 
+	    continually guess the random number until it is found. Once the number is found it displays a
+	    message indicating how many guesses it took to find the number. Use methods <strong>generateNumber</strong>,
+		<strong>makeGuess</strong>, and <strong>winner</strong> in your implementation.</li>
+  </ol>
+</div>
+<h1>Source File</h1>
+<p>GuessingGame.java</p>
+<h1>Sample Run</h1>
+  <div id="csSampleRun"> 
+    <pre>
+Make Guess -->50
+Too High, Try Again!
+
+Make Guess -->25
+Too High, Try Again!
+
+Make Guess -->15
+Too Low, Try Again
+
+Make Guess -->20
+You found it in 4 tries.
+
+</pre>
+</div>
+	<br>
+</div>	
+

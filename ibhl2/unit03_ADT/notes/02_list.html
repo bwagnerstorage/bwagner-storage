@@ -1,0 +1,263 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">List ADT</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>5.1.11 Describe the features and characteristics of a dynamic data structure.</li>
+						<li>5.1.12 Describe how linked lists operate logically.</li>
+						<li>5.1.13 Sketch linked lists (single, double and circular).</li>	
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>List ADT</h1>
+<p>A <strong>List ADT</strong> is an abstract data type that defines data structures that are ordered by position. Each item except the first has a unique predecessor, and each item except the last has a unique successor.</p>
+
+<div align="center"><img src="images/linearCollection.gif"></div>
+
+<p>In Java, the List ADT is implemented through the List interface. The List interface adds position-oriented operations, including the ability to insert an element, 
+   get an element, as well as remove or change an element.</p>
+
+<h2>List Interface (partial listing)</h2>
+      <h3>interface java.util.List&lt;E&gt;</h3>
+      <table id="csTable" width="600px">
+        <tr bgcolor="#FFFFE8"> 
+          <td width="50%"><font color="#000000" face="Courier New, Courier, mono">int 
+            <strong>size</strong>()</font></td>
+          <td width="50%">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">appends obj to end of list; returns true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">void <strong>add</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">inserts obj at position index</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>get</strong>(int 
+            index)</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>set</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">replaces the element at position index with 
+            obj; returns the element formerly at the specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>(int 
+            index)</font></td>
+          <td><font color="#000000">removes element from position index, moving 
+            elements at position index + 1 and higher to the left (subtracts from 
+            their indices) and adjusts size; returns the element formerly at the 
+            specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">Iterator 
+            &lt;E&gt; <strong>iterator</strong>()</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">ListIterator 
+            &lt;E&gt; <strong>listIterator</strong>()</font></td>
+          <td bgcolor="#FFFFE8">&nbsp;</td>
+        </tr>
+      </table>
+<p>Two classes implement the List interface: <strong>ArrayList</strong> and <strong>LinkedList</strong>.
+   Since both of these data structures implement the List interface their behavior is similar.</p>
+   
+<div id="csNote"><strong>Note:</strong> There seems to be some confusion in the programming community as to the difference
+    between a data structure and a collection. The IB documentation defines a collection as "a set of elements. The elements may be of any type (numbers, objects, arrays, Strings, etc.)".
+	From this definition, any class that implements a data structure is a <strong>collection.</strong></div>
+<h3>Examples</h3>
+   
+<p><strong>Instantiating ArrayList</strong></p>   
+   <div id="csCode"><pre>
+ArrayList &ltInteger&gt list = new ArrayList&lt;&gt;();   
+</pre></div>
+<p>or</p>
+<div id="csCode"><pre>
+List &ltInteger&gt list = new ArrayList&lt;&gt;();   
+</pre></div>
+<p><strong>Instantiating LinkedList</strong></p>
+   <div id="csCode"><pre>
+LinkedList &ltInteger&gt list = new LinkedList&lt;&gt;();   
+</pre></div>
+<p>or</p>
+<div id="csCode"><pre>
+List &ltInteger&gt list = new LinkedList&lt;&gt;();   
+</pre></div>
+<br><br>
+<p><strong>Add Element to ArrayList</strong></p>   
+   <div id="csCode"><pre>
+list.add(num);   
+</pre></div>
+<p><strong>Add Element to LinkedList</strong></p>   
+   <div id="csCode"><pre>
+list.add(num);   
+</pre></div>
+<br><br>
+<p><strong>Remove Element from ArrayList</strong></p>   
+   <div id="csCode"><pre>
+list.remove(index);   
+</pre></div>
+<p><strong>Remove Element from LinkedList</strong></p>   
+   <div id="csCode"><pre>
+list.remove(index);   
+</pre></div>
+
+<h1>Static Data Structures vs Dynamic Data Structures</h1>
+<p>From a users point of view you would think that the ArrayList data structure and the LinkedList data structure are the same.
+   This is true for what operations the data structures perform but how theses operations are implemented (under the hood) is completely different.</p>
+   
+<p>The ArrayList class is implemented using an array. An array is what is called a static data structure. A <strong>static data structure</strong>  is a data structure 
+   that has a fixed size. This means once memory has been allocated for the structure it cannot be change while the program is running. Data is accessed in a static structure
+   through an index.</p> 
+   
+<p>The LinkedList class is implemented as a dynamic data structure. A <strong>dynamic data structure</strong> has a flexible size, it can grow or shrink as needed to contain the data to be stored.
+   Data is accessed in a dynamic structure through a reference or pointer.</p> 
+
+<p>The table below shows some of the differences between the two data structures.</p>
+<table id="csTable" width="600px">
+<tr>
+   <th width="280px">Static Data Structures </th>
+   <th>Dynamic Data Structures </th>
+</tr>
+<tr>
+   <td>Fast access to elements</td>
+   <td>Slower access to the elements</td>
+</tr>
+<tr>
+   <td>Expensive to insert/remove elements</td>
+   <td>Fast insertion/deletion of elements</td>
+</tr>
+<tr>
+   <td>Fixed maximum size</td>
+   <td>Flexible size</td>
+</tr>
+<tr>
+   <td>Memory is reserved at the time of compilation</td>
+   <td>Memory allocation takes place at the run time, only required amount of memory is allocated</td>
+</tr>
+</table>
+<p>A data structure can be implemented as either a static or dynamic structure. Deciding on what type to use depends on what the data structure is design to do.
+   Most abstract data structures are implemented as dynamic data structures.</p>
+
+<h1>Linked List Data Structure</h1>
+<p>A <strong>linked list</strong> is a dynamic data structure where each element is a separate object, called a node, that contains data and a link to the next node in the list.</p>
+<div align="center"><img src="images/linkedList1.png"></div>
+<p>A <strong>circular linked list</strong> is a linked list in which the last node points to the first node.</p>
+<div align="center"><img src="images/circular.png"></div>
+<p>A good example of an application where circular linked list should be used is a timesharing problem solved by the operating system. 
+   In a timesharing environment, the operating system must maintain a list of present users and must alternately allow each user to use a small
+   slice of CPU time, one user at a time. The operating system will pick a user, let him/her use a small amount of CPU time and then move on to 
+   the next user, etc. For this application, there should be no null pointers unless there is absolutely no one requesting CPU time.</p>
+<p>A <strong>doubly linked list</strong> is a linked list that contains links to next and previous nodes. Unlike singly linked lists where traversal is only one way, doubly linked lists allow traversals in both
+directions.</p>
+<div align="center"><img src="images/doubleList.png"></div>
+<p>View the illustration below that compares the functionality of an array(static structure) to a linked list(dynamic structure).</p>
+
+    <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/LinkedList/Slide1.PNG"></li>
+          <li><img src="images/LinkedList/Slide2.PNG"></li>
+          <li><img src="images/LinkedList/Slide3.PNG"></li>
+		  <li><img src="images/LinkedList/Slide4.PNG"></li>
+		  <li><img src="images/LinkedList/Slide5.PNG"></li>
+		  <li><img src="images/LinkedList/Slide6.PNG"></li>
+		  <li><img src="images/LinkedList/Slide7.PNG"></li>
+		  <li><img src="images/LinkedList/Slide8.PNG"></li>
+		  <li><img src="images/LinkedList/Slide9.PNG"></li>
+		  <li><img src="images/LinkedList/Slide10.PNG"></li>
+		  <li><img src="images/LinkedList/Slide11.PNG"></li>
+		  <li><img src="images/LinkedList/Slide12.PNG"></li>
+		  <li><img src="images/LinkedList/Slide13.PNG"></li>
+		  <li><img src="images/LinkedList/Slide14.PNG"></li>
+		  <li><img src="images/LinkedList/Slide16.PNG"></li>
+		  <li><img src="images/LinkedList/Slide17.PNG"></li>
+		  <li><img src="images/LinkedList/Slide18.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+<h1>Iterators</h1>
+<p>Java provides three methods or techniques for traversing the contents of a list (that is, to visit each of the items in the collection in turn). 
+  The first approach is to use methods from the List interface such as size and get. The second and more functional approach is to use a mechanism called an iterator.
+  The third is to use the enhanced for loop.</p>
+
+<p>An <strong>iterator</strong> is an object associated with a collection that makes it possible to traverse the collection. 
+   To provide consistence between all of the collections in the Java Collections Framework (JCF), code written using iterators
+   will work for any type of collection (linear, hierarchical, etc).</p>
+   
+<div id="csList">
+<p>An iterator's current position is always in one of three places:<br>
+<ul>
+<li>Just before the first item</li>
+<li>Between two adjacent items</li>
+<li>Just after the last item</li></ul></p></div>
+
+<p>Initially, when an iterator is first instantiated, the position is immediately before the first item in the list. 
+  From this position the user can navigate to the next position in the list.</p>
+
+<h3>Iterator Methods</h3>
+
+<table id="csTable">
+<tr>
+   <td width="150px">boolean hasNext()</td>
+   <td>returns true if there are any items following the current position</td>
+</tr>
+<tr>
+   <td>E next()</td>
+   <td>	Returns the next item and advances the position<br>
+Precondition: hasNext returns true.<br>
+Throws a NoSuchElementException if hasNext returns false
+</td>
+</tr>
+<tr>
+   <td>void remove()</td>
+   <td>Removes the item returned by the most recent call of next<br>
+       Precondition: next has recently been called.<br>
+       Throws an IllegalStateException if the next method has not yet been called or if the remove method has already been called after the last call to the next method
+   </td>
+</tr>
+</table>
+<h3>Using Iterator</h3>
+<p>You create an iterator object by sending the message <strong>iterator</strong> to a collection as show in the following code segment:</p>
+<div id="csCode"><pre>
+List &ltString&gt myList = new LinkedList&lt;&gt;();
+Iterator&ltString&gt iter = myList.iterator();   // get iterator from list
+</pre></div>
+
+<p>Once an iterator object has been retrieved from a list the methods hasNext and next are used for navigating the list. 
+The method remove will mutate the underlying list.</p>
+
+<p>The code segment below demonstrates a traversal of a list to display its contents using an iterator:</p>
+<div id="csCode"><pre>
+while(iter.hasNext())
+{
+   System.out.println(iter.next());
+}
+</pre></div>
+<h3>Using Enhanced for Loop</h3>
+<p>The <strong>enhanced for loop</strong> is a condensed version of an iterator block. Refer to the samples below.</p>
+<div id="csCode"><pre>
+// Enhanced for loop version
+for(String str : myList)
+{
+   System.out.println(str);
+}
+</pre></div>
+<br>
+</div>	
+

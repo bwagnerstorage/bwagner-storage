@@ -1,0 +1,104 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Variables and Data Types</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a variable</li>
+						<li>What is a data type</li>
+						<li>How to declare a variable</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Variable Declaration</h1>
+  <p>One of the most powerful features of a computer is its ability to store instructions and data in memory. 
+     A <strong>variable</strong> is a named piece of memory that you can use to store information in a Java program.</p>
+  <p>View the illustration below that demonstrates how a variable is created in a Java program.</p>
+  
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Variables1/Slide1.PNG"></li>
+          <li><img src="images/Variables1/Slide2.PNG"></li>
+          <li><img src="images/Variables1/Slide3.PNG"></li>
+		  <li><img src="images/Variables1/Slide4.PNG"></li>
+		  <li><img src="images/Variables1/Slide5.PNG"></li>
+		  <li><img src="images/Variables1/Slide6.PNG"></li>
+		  <li><img src="images/Variables1/Slide7.PNG"></li>
+		  <li><img src="images/Variables1/Slide8.PNG"></li>
+		  <li><img src="images/Variables1/Slide9.PNG"></li>
+		  <li><img src="images/Variables1/Slide10.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+  
+  <h1>Declaring a Variable</h1>
+  <p>A variable declaration consists of two parts: a data type and an identifier name.</p>
+  <div align="center"><img src="images/variable1.png"></div>
+  <h3>Identifier Name</h3>
+  <p>The variable or identifier name is the mechanism used to refer to a variable within a program.
+     Here are the rules you must follow when declaring a variable in your program.</p>
+  <div id="csList">
+  <ul>
+     <li>A variable name must begin with a letter, and must be a sequence of letters or digits.</li>
+	 <li>Symbols like '+' or '*' cannot be used in variable names.</li>
+	 <li>No spaces can be used in variable names.</li>
+	 <li>The length of a variable name is essentially unlimited.</li>
+  </ul>
+  </div>
+  <p>By convention, Java programmers write the first letter of variable names in lowercase and then
+     capitalize the first letter of any subsequent words there after. 
+     Here are some examples of valid variable names: average, num1, num2, firstLetter, largest_Num, wordCount, and negValue.</p>
+<div id="csNote">
+     <strong>Programming Note:</strong> As a programmer not only is it important to write programs that work but also to write
+     programs that are easy to read by you and other people. One way you can make a program more
+     readable is to use descriptive variable names. If you are writing a program that is calculating
+     an average the variable name <strong>average</strong> is much more descriptive than naming it <strong>x</strong>.
+     Variable names should always describe the type of data they are storing.
+  </div>
+  <h3>Data Type</h3>
+  <p>The data type serves two purposes</p>
+  <div id="csList">
+  <ol>
+   <li><p>Information that is stored in the computer's memory is stored as a contiguous series of bytes. 
+       These bytes can represent a number, a string, a picture, a chunk of sound, or whatever, as 
+	   determined by context. It is the responsibility of the data type to inform the computer of 
+	   the type of data a variable is storing.</p></li>
+   <li><p>Different data types require different amounts of memory. The data type informs the computer
+       how much memory is needed for a particular variable.</p></li>
+  </ol></div> 
+  <p>A variable's type must correspond to one of eight basic data types, defined within the language. 
+     These fundamental types, also called <strong>primitives</strong>, allow you to define variables
+	 for storing data that falls into one of three categories:</p>
+  <div id="csList">
+  <ul>
+    <li><p>Numeric values, which can be either integer or floating point</p></li> 
+    <li><p>Variables which store a single Unicode character</p></li>
+    <li><p>Logical variables that can assume the values of true or false</p></li>
+</ul></div>
+   <p>The table below lists Java's 8 primitive data types.</p>
+   <table id="csTable">
+      <tr><th>Java KeyWord</th><th>Primitive Data Type</th></tr> 
+	  <tr><td>byte</td><td>Integer Type</td></tr>
+	  <tr><td>short</td><td>Integer Type</td></tr> 
+      <tr><td><font color="#FF0000">int</font></td><td>Integer Type</td></tr>	 
+      <tr><td><font color="#FF0000">long</font></td><td>Integer Type</td></tr>
+	  <tr><td>float</td><td>Floating Point Type</td> </tr>
+      <tr><td><font color="#FF0000">double</font></td><td>Floating Point Type</td> </tr>
+      <tr><td><font color="#FF0000">char</font></td><td>Character Type</td> </tr>
+      <tr><td><font color="#FF0000">boolean</font></td><td>Boolean Type</td></tr>
+   </table>
+   <p>*The data types highlighted in red are the ones we will be using in this course.</p>
+   <p>All of the type names of the basic variable types are keywords in Java so you 
+      must not use them for other purposes.</p>
+	<br>
+</div>	
+

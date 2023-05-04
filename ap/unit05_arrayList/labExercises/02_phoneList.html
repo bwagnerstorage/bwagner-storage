@@ -1,0 +1,114 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">PhoneList</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a program that allows a user to enter contact information into a phone list. The contact
+   information includes a person's name and phone number.</p>
+   
+<h3>Class Decomposition</h3>
+<p>The problem has been decomposed into the following two classes: <strong>Contact</strong>
+   and <strong>PhoneList</strong>. The Contact class stores information about each contact.</p>
+<p>The Contact class has been provided for you.
+   Copy the following code into a file named <strong>Contact.java</strong></p>
+  <div id="csCode">
+  <pre>
+public class Contact
+{
+   private String name;
+   private String phone;
+	
+   public Contact(String n, String p)
+   {
+      name = n;
+      phone = p;	
+   }
+	
+   public String getName()
+   {
+      return name;
+   }
+	
+   public String getPhone()
+   {
+      return phone;
+   }
+}</pre>
+</div>
+<br>
+<p>The PhoneList class is a client of the Contact class. It uses aggregation or a "has a" 
+relationship. The PhoneList manages the program by allowing a user to enter contact information 
+into the program. Once data entry is complete the class displays the contact information entered.</p>
+
+<h3>Method Decomposition</h3>
+<p>Using method decomposition the class can be subdivided into two methods: <strong>getContactInfo</strong>
+and <strong>printContactInfo</strong>. The method getContactInfo is responsible for allowing a user 
+to enter contact information. The method printContactInfo is responsible for displaying the 
+contact information stored in the ArrayList.</p>
+<p>Copy the following code into a source file named <strong>PhoneList.java.</strong></p>
+<div id="csCode">
+<pre>
+import java.util.*;
+
+public class PhoneList
+{
+   private ArrayList&lt;Contact&gt; phoneList = new ArrayList&lt;Contact&gt;();
+   
+   public void getContactInfo()
+   {
+   
+   }
+   
+   public void printContactInfo()
+   {
+   
+   }
+   
+   public static void main(String[] args)
+   {
+      PhoneList app = new PhoneList();
+      app.getContactInfo();
+      app.printContactInfo();
+   }
+}</pre>
+</div>  
+ 
+<h1>Source File</h1>
+<p>Contact.java</p>
+<p>PhoneList.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter name -->John Wayne
+Enter phone number -->382-4328
+
+Continue [Y or N]? y
+
+Enter name -->Jimmy Stewart
+Enter phone number -->565-1122
+
+Continue [Y or N]? y
+
+Enter name -->Marilyn Monroe
+Enter phone number -->387-9999
+
+Continue [Y or N]? y
+
+Enter name -->Henry Fonda
+Enter phone number -->394-5434
+
+Continue [Y or N]? n
+
+       Contact List
+-----------------------------
+John Wayne      382-4328
+Jimmy Stewart   565-1122
+Marilyn Monroe  387-9999
+Henry Fonda     394-5434
+
+</pre>
+</div>
+	<br>
+</div>	
+

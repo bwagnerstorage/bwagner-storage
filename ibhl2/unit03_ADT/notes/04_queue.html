@@ -1,0 +1,140 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Queue ADT</div>
+<div id="obj">
+    <table>
+        <tr>
+            <th>What You Will Learn</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>5.1.8 Describe the characteristics and applications of a queue.</li>
+                    <li>5.1.9 Construct algorithms using the access methods of a queue.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="csContent">
+    <h1>QUEUE ADT</h1>
+    <p>Like stacks, <strong>queues</strong> are linear collections. However, insertions in a queue are restricted to one end, called the rear, and removals are restricted to the other end, called the front. A queue thus supports a First-In, First-Out protocol
+        (FIFO). Queues occur in everyday life from checkout lines in stores, to highway tollboth lines, and airport baggage check-in lines. A queue is used whenever people or things are lined up for processing on a first-come, first-serve basis.</p>
+
+    <p>Queues have two fundamental opertions: add, which adds an item to the rear of a queue, and remove, which removes an item from the front. (The traditional names of these operations are <strong>enqueue</strong> and <strong>dequeue</strong>)</p>
+
+
+
+    <p>The illustration below demonstrates the functionality of a queue.</p>
+
+    <div class="slider" id="slider1">
+        <ul class="bjqs">
+            <li><img src="images/Queue/Slide1.PNG"></li>
+            <li><img src="images/Queue/Slide2.PNG"></li>
+            <li><img src="images/Queue/Slide3.PNG"></li>
+            <li><img src="images/Queue/Slide4.PNG"></li>
+            <li><img src="images/Queue/Slide5.PNG"></li>
+            <li><img src="images/Queue/Slide6.PNG"></li>
+            <li><img src="images/Queue/Slide7.PNG"></li>
+            <li><img src="images/Queue/Slide8.PNG"></li>
+            <li><img src="images/Queue/Slide9.PNG"></li>
+            <li><img src="images/Queue/Slide10.PNG"></li>
+            <li><img src="images/Queue/Slide11.PNG"></li>
+            <li><img src="images/Queue/Slide12.PNG"></li>
+            <li><img src="images/Queue/Slide13.PNG"></li>
+        </ul>
+    </div>
+
+    <!--img tag needed to activate javascript after ajax call (enables slider code)-->
+    <img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+    <h1>Special Implementations of a Queue</h1>
+    <h3>Priority Queue</h3>
+    <div id="csList">
+        <ul>
+            <p> A <strong>priority queue</strong> is a collection of elements that each element has been assigned a priority such that order in which elements are deleted and processed comes from the following rules:<br>
+                <li>An element of higher priority is processed before any element of lower priority.</li>
+                <li>Two element with the same priority are processed according to the order in which they were added to the queue(FIFO behavior).</li>
+        </ul>
+    </div>
+    <p>A good example of a priority queue is the emergency room at a hospital. As patients enter the emerency room they are placed on a waiting list queue, however patients with more serious injuries are moved to the front of the list.</p>
+    <h3>Circular Queue</h3>
+    <p>A <strong>circular queue</strong> is a queue with a finite capacity (limited to a fixed number of items). When the number of items in the circular queue is less than the capacity, it behaves as a normal queue. However, when the queue is full, new
+        items added to the queue overwrite the older items.</p>
+    <p>A good visual image of a circular queue is a merry-go-round.</p>
+    <div align="center"><img src="images/circular2.png"></div>
+
+
+    <h1>Applications of Queues</h1>
+    <div id="csList">
+        <ul>
+            <p>Applications of queues in computer science are numerous. Following are just a few examples:
+
+                <li>Multitasking operating system - operating systems often maintain a queue of processes that are ready to execute or that are waiting for a particular event to occur.</li>
+                <li>Buffer - computer systems must often provide a "holding area" for messages between two processes, two programs, or even two systems. This holding area is usually called a "buffer" and is often implemented as a queue. </li>
+                <li>Storing client service requests in a web server</li>
+                <li>Printer queue - printers store job requests in queues so that first job sent to the printer is first job printed.</li>
+                <li>Simulations - programs that attempt to model real-world phenomenon.</li>
+        </ul>
+        </p>
+    </div>
+
+    <h1>Java Collections Framework(JCF)</h1>
+    <p>The developers of the JCF decided not to include a Queue class in the framework, instead to create a queue you use the LinkedList class which implements the Queue interface. Because of this implementation decision the add and remove methods of the
+        LinkedList class are used instead of the more traditional queue operations enqueue and dequeue.</p>
+
+    <strong>interface java.util.Queue&ltE&gt</strong>
+
+    <table id="csTable">
+        <tr>
+            <td width="150px">boolean add(E obj)</td>
+            <td>enqueues obj at the end of the queue; returns true</td>
+        </tr>
+        <tr>
+            <td>E remove()</td>
+            <td>dequeues and returns the element at the front of the queue</td>
+        </tr>
+        <tr>
+            <td>E peek()</td>
+            <td>returns the element at the front of the queue; null if the queue is empty</td>
+        </tr>
+        <tr>
+            <td>boolean isEmpty()</td>
+            <td>returns true if queue is empty; false otherwise</td>
+        </tr>
+    </table>
+
+
+    <h1>Using a Queue</h1>
+
+    <p>To create a queue use the LinkedList class which implements the Queue interface.</p>
+
+    <strong>Creating a Linked List Object</strong>
+    <div id="csCode"><pre>
+LinkedList&lt;Integer&gt; queue = new LinkedList&lt;&gt;();  // create queue
+</pre></div>
+    <p>or</p>
+    <div id="csCode"><pre>
+List&lt;Integer&gt; queue = new LinkedList&lt;&gt;();        // create queue
+</pre></div>
+    <p><strong>Adding an Object to a Queue</strong></p>
+    <div id="csCode"><pre>
+queue.add(57);  // adds item to rear of queue
+</pre></div>
+    <p><strong>Removing an Object from a Queue</strong></p>
+    <div id="csCode"><pre>
+int num = queue.remove();  // removes item from front of queue
+</pre></div>
+    <p><strong>Viewing the Top of a Queue</strong></p>
+    <div id="csCode"><pre>
+int num = queue.peek();  // does not remove the item
+</pre></div>
+    <p><strong>Traversing a Queue</strong></p>
+    <div id="csCode"><pre>
+while(!queue.isEmpty())
+{
+   System.out.println(queue.remove());
+}
+</pre></div>
+    <br>
+</div>

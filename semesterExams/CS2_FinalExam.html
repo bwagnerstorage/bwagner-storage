@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/compsci.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap"  rel="stylesheet">
+    <script src="js/script.js"></script>
+    <style>
+    table, tr, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+   }
+    </style>
+</header>
+<!--<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />-->
+<body>
+<div id="main">
+<div id="csAssignmentTitle" align="center">Compsci 2 Final Exam</div>
+
+<div id="csContent">
+<h1>Directions</h1>
+<p >Write the functions described below. All of the functions should be in the file main.py. At the top of each function display a banner that identifies which function is being displayed. For example:</p>
+<p style="font-family:Consolas; font-size:16px">***********<br>
+ Function 1<br>
+***********</p>
+<h2>&nbsp;</h2>
+<h2>Function 1</h2>
+<p>Write a function that prompts the user for two strings then displays the two strings on the screen in alphabetical order (a-z).</p>
+<h3>Sample Run 1</h3>
+<div id="csOutput"><pre>
+***********
+ Function 1
+***********
+Enter num 1--> horse
+Enter num 2--> chicken
+
+chicken
+horse
+
+</pre></div>
+
+<h2>&nbsp;</h2>
+<h2>Function 2</h2>
+<p>Write a function that allows a user enter strings from the keyboard until 
+   the sentinel value "exit" is encountered.
+   The program should store the values entered, into a list.
+   Traverse the list displaying the first letter of each string contained in the list.
+   </p>
+<h3>Sample Run 1</h3>
+<div id="csOutput"><pre>
+***********
+ Function 2
+***********
+Enter strings, type "exit" to stop:
+Enter num -->green
+Enter num -->red
+Enter num -->yellow
+Enter num -->blue
+Enter num -->orange
+Enter num -->exit
+
+g r y b o
+
+</pre></div>
+
+<h2>&nbsp;</h2>
+<h2>Function 3</h2>
+<p>Write a function that takes a single tuple as an argument. The tuple can be of any size less than or equal 20. Each cell of the tuple can contain an integer value less than or equal to 20. The function should traverse the tuple to view each number contained in each cell. As the function is traversing the tuple it should display a series of numbers from 1 up to and including the value retrieved from each cell inthe tuple.</p>
+<h3>Sample Function Call</h3>
+<div id="csCode" style="width:400px"><pre>function3((8, 15, 3, 18, 12))</pre></div>
+<h3>Sample Run 1 </h3>
+<div id="csOutput" style="width:650px"><pre>
+***********
+ Function 3
+***********
+1 2 3 4 5 6 7 8
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+1 2 3
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+1 2 3 4 5 6 7 8 9 10 11 12
+</pre></div>
+<h3>Sample Function Call 2</h3>
+<div id="csCode" style="width:400px"><pre>function3((9, 2))</pre></div> 
+<h3>Sample Run 2 </h3>
+<div id="csOutput" style="width:650px"><pre>
+***********
+ Function 3
+***********
+1 2 3 4 5 6 7 8 9
+1 2
+</pre></div>
+<h2>&nbsp;</h2>
+<h2>Function 4</h2>
+<p>The following table contains information regarding the Computer Science AP and IB exams.</p>
+
+<table>
+<tr style="background-color: lightgray">
+   <th>Exam</th>
+   <th>Subject</th>
+   <th>Date</th>
+   <th>Time</th>
+   <th>Location</th>
+</tr>
+<tr>
+   <td>AP Exam</td>
+   <td>Computer Science</td>
+   <td>May 4</td>
+   <td>12:00 PM</td>
+   <td>240</td>
+</tr>
+
+<tr>
+   <td>IB Exam Paper 1 SL/HL</td>
+   <td>Computer Science</td>
+   <td>May 5</td>
+   <td>12:00 PM</td>
+   <td>Library</td>
+</tr>
+
+<tr>
+   <td>IB Exam Paper 3 HL</td>
+   <td>Computer Science</td>
+   <td>May 6</td>
+   <td>8:00 AM</td>
+   <td>Library</td>
+</tr>
+</table>
+
+<p>Write a function that creates 3 tuples named exam1, exam2, and exam3. Add the information in the table above into the fields of the corresponding tuples.
+Create a list named exams and append the 3 tuples. Use a for loop to display the 3 exams in the following format:
+
+Exam     : IB Exam Paper 1 SL/HL
+Subject  : Computer Science
+Date     : May 5
+Time     : 12:00 PM
+Location : Library
+
+
+
+<h3>Sample Run 1 </h3>
+<h2>&nbsp;</h2>
+<div id="csOutput" style="width:650px"><pre>
+***********
+ Function 4
+***********
+
+Exam     : AP Exam
+Subject  : Computer Science
+Date     : May 4
+Time     : 12:00 PM
+Location : 240
+
+Exam     : IB Exam Paper 1 SL/HL
+Subject  : Computer Science
+Date     : May 5
+Time     : 12:00 PM
+Location : Library
+
+Exam     : IB Exam Paper 3 HL
+Subject  : Computer Science
+Date     : May 6
+Time     : 8:00 AM
+Location : Library
+
+</pre></div>
+
+<br>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">TreePriorityQueue</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/TreePriorityQueueNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >TreePriorityQueue</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/TreePriorityQueue.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >TreePriorityQueue</a></h1>
+
+<h1>Directions</h1>
+<p>A <strong>priority queue</strong> is a collection of elements that each element has been assigned a priority and such that order in which
+   elements are deleted and processed comes from the following rules:</p>
+   <div id="csList"><ul>
+    <li><p>An element of higher priority is processed before any element of lower priority.</p></li>
+    <li><p>Two element with the same priority are processed according to the order in which they were added to the queue(FIFO behavior).</p></li>
+</ul></div>
+  <p>In some applications of priority queues, each data value can be added to the priority queue multiple times. In this case, time and space can
+     be saved by storing each data value only once, with a count field to keep track of the number of times that the data value is in the priority queue.</p>
+<p>Class TreePriorityQueue is implemented using a binary search tree. Each TreeNode of the binary search tree consists of an Item object and
+    the links to the left and right subtrees. An Item object contains a Comparable data value and a count of the number of occurrences of the data.
+	When the count goes to zero as a result of a deletion, the Item object is removed from the tree.</p> 
+
+The declarations for the <strong>TreePriorityQueue</strong> class and the Item class are shown below. </p>
+<div id="csCode"><pre>
+public class TreePriorityQueue 
+{ 
+   private TreeNode root;
+ 
+   public TreePriorityQueue() 
+   { 
+      root = null; 
+   } 
+
+   //postcondition: returns true if the priority queue is empty; 
+   // otherwise, returns false
+   public boolean isEmpty() 
+   { 
+       /* implementation not shown */
+   }
+
+   // postcondition: obj has been added to the priority queue 
+   public void add(Object obj) 
+   { 
+      root = addHelper((Comparable)obj, root); 
+   }
+
+   // postcondition: obj has been added to the subtree rooted at t; 
+   // the updated subtree is returned
+   private TreeNode addHelper(Comparable obj, TreeNode t) 
+   { 
+      /* to be implemented in part (b) */
+   }
+
+   // precondition: the priority queue is not empty 
+   // postcondition: a data value of smallest priority is returned; 
+   // the priority queue is unchanged
+   public Object peekMin() 
+   { 
+      /* to be implemented in part (a) */
+   }   
+}
+
+public class Item 
+{ 
+   private Comparable data; 
+   private int count;
+    
+   public Item(Comparable d) 
+   { 
+      data = d; 
+      count = 1;
+   } 
+   
+   public void incrementCount() 
+   { 
+      count++;
+   } 
+   
+   // precondition: the count of this item is greater than 0. 
+   public void decrementCount() 
+   { 
+     count--; 
+   }
+    
+   public int getCount() 
+   { 
+      return count; 
+   } 
+
+   public Comparable getData() 
+   { 
+      return data; 
+   } 
+   
+   public String toString()
+   {
+      return data + " " + count;
+   }
+}</pre>
+</div>
+<p>For example, if the items 13, 11, 14, 11, 15, 14, and 14 are added to an initially empty TreePriorityQueue, then the resulting binary search tree is as shown below
+(with 11 occurring two times, 14 occurring three times, and 13 and 15 each occurring one time).</p>
+<div align="center"><img src="images/treePriorityQueue1.gif"></div>
+
+<div id="csList2"><ol>
+<li><p>Write the TreePriorityQueue method peekMin. Method peekMin returns the minimum data value in the priority queue. </p>
+<p>Complete method <strong>peekMin</strong> below.</p>
+<div id="csCode" style="width:550px"><pre>
+// precondition: the priority queue is not empty 
+// postcondition: a data value of smallest priority is returned; 
+// the priority queue is unchanged
+public Object peekMin() 
+{
+
+
+}
+</pre></div></li>
+
+<li><p>Write the TreePriorityQueue private method addHelper, which adds obj to the subtree rooted at t. If a node containing an Item
+   with data obj is already in the subtree, addHelper increments the count; otherwise, addHelper adds a new node containing an Item
+   with data obj and a count of 1 to the subtree, maintaining the binary search tree property. Method addHelper returns a reference to the root of the resulting subtree.</p>
+
+<p>Complete method <strong>addHelper</strong> below.</p> 
+<div id="csCode"  style="width:550px"><pre>
+// postcondition: obj has been added to the subtree rooted at t; 
+// the updated subtree is returned
+private TreeNode addHelper(Comparable obj, TreeNode t) 
+{ 
+
+
+
+}
+</pre></div>
+</li>
+ </ol></div>
+<h1>Source Files</h1>
+<p>Item.java</p>
+<p>Tester.java</p>
+<p>TreeNode.java</p>
+<p>TreePriorityQueue.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+        90 2
+    80 2
+        75 1
+50 1
+        35 2
+    20 1
+        10 3
+
+
+
+peekMin
+-------
+min = 10 3
+
+</pre>
+</div>
+	<br>
+</div>	

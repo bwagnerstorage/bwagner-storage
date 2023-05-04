@@ -1,0 +1,112 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Elevens Lab - Activity 9</div>
+
+<div id="csContent"> 
+<h1>Implementing the Elevens Board</h1>
+<p>In Activity 8, we <strong>refactored</strong> (reorganized) the original ElevensBoard class into a new Board class
+and a much smaller ElevensBoard class. The purpose of this change was to allow code reuse in new
+games such as Tens and Thirteens. Now you will complete the implementation of the methods in the
+refactored ElevensBoard class.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>Complete the <strong>ElevensBoard</strong> class, implementing the following methods.</p>
+
+<div id="csList2"><ol>
+<h3>Abstract methods from the Board class:</h3>
+<li><p><strong>isLegal</strong> - This method is described in the method heading and related comments below.
+The implementation should check the number of cards selected and utilize the ElevensBoard
+helper methods.</p>
+<div id="apCode"><pre>
+/**
+* Determines if the selected cards form a valid group for removal.
+* In Elevens, the legal groups are (1) a pair of non-face cards
+* whose values add to 11, and (2) a group of three cards consisting of
+* <div id="apHighlight"><pre>a jack, a queen, and a king</pre></div> in some order.
+* @param selectedCards the list of the indexes of the selected cards.
+* @return true if the selected cards form a valid group for removal;
+* false otherwise.
+*/
+@Override
+public boolean isLegal(List<Integer> selectedCards)
+
+
+</pre></div></li>
+<li><p><strong>anotherPlayIsPossible</strong> - This method should also utilize the helper methods. It
+should be very short.</p>
+<div id="apCode"><pre>
+/**
+* Determine if there are any legal plays left on the board.
+* In Elevens, there is a legal play if the board contains
+* (1) a pair of non-face cards whose values add to 11, or (2) a group
+* of three cards consisting of <div id="apHighlight"><pre>a jack, a queen, and a king</pre></div> in some order.
+* @return true if there is a legal play left on the board;
+*    false otherwise.
+*/
+@Override
+public boolean anotherPlayIsPossible()
+
+
+</pre></div></li>
+<h3>ElevensBoard helper methods:</h3>
+<li><p><strong>containsPairSum11</strong> - This method determines if the selected elements of cards
+contain a pair of cards whose point values add to 11.</p>
+<div id="apCode"><pre>
+/**
+* Check for an 11-pair in the selected cards.
+* @param selectedCards selects a subset of this board. It is this list
+*    of indexes into this board that are searched
+*    to find an 11-pair.
+* @return true if the board entries indexed in selectedCards
+*    contain an 11-pair; false otherwise.
+*/
+private boolean containsPairSum11(List&lt;Integer&gt; selectedCards)
+
+
+</pre></div></li>
+<li><p><strong>containsJQK</strong> - This method determines if the selected elements of cards contains a
+jack, a queen, and a king in some order.</p>
+<div id="apCode"><pre>
+/**
+* Check for a JQK in the selected cards.
+* @param selectedCards selects a subset of this board. It is this list
+*    of indexes into this board that are searched
+*    to find a JQK-triplet.
+* @return true if the board entries indexed in selectedCards
+*    include a jack, a queen, and a king; false otherwise.
+*/
+private boolean containsJQK(List&lt;Integer&gt; selectedCards)
+
+
+</pre></div></li>
+
+</ol></div></li></ol></div>
+
+<p>When you have completed these methods, run the <strong>main</strong> method found in
+ElevensGUIRunner.java. Make sure that the Elevens game works correctly.</p>
+
+<h1>Questions</h1>
+<div id="csList"><ol>
+<li><p>The size of the board is one of the differences between Elevens and Thirteens. Why is size not an
+abstract method?</p></li>
+<li><p>Why are there no abstract methods dealing with the selection of the cards to be removed or replaced
+in the array cards?</p></li>
+<li><p>Another way to create "IS-A" relationships is by implementing interfaces. Suppose that instead of
+creating an abstract Board class, we created the following Board interface, and had
+ElevensBoard implement it. Would this new scheme allow the Elevens GUI to call isLegal
+and anotherPlayIsPossible polymorphically? Would this alternate design work as well as
+the abstract Board class design? Why or why not?</p>
+<div id="apCode"><pre>
+public interface Board
+{
+   boolean isLegal(List&lt;Integer&gt; selectedCards);
+   boolean anotherPlayIsPossible();
+}
+</pre></div></li>
+</ol></div>
+
+
+	<br>
+</div>	
+

@@ -1,0 +1,126 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR NumberCube</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/NumberCubeNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >NumberCube</a></h1>
+
+<h1>Directions</h1>
+<p>A statistician is studying sequences of numbers obtained by repeatedly tossing a six-sided number cube. On each side of 
+  the number cube is a single number in the range of 1 to 6, inclusive, and no number is repeated on the cube. The statistician
+  is particularly interested in runs of numbers. A run occurs when two or more consecutive tosses of the cube produce the same
+  value. For example, in the following sequence of cube tosses, there are runs starting at positions 1, 6, 12, and 14.</p> 
+
+<div align="center"><img src="images/NumberCube1.gif"></div><br>
+
+<p>The number cube is represented by the following class.</p> 
+
+<div id="apCode">
+<pre>
+public class NumberCube
+{
+    /** @return an integer value between 1 and 6, inclusive
+     */
+    <div id="apHighlight"><pre>public int toss()</pre></div> 
+    { /* implementation not shown */ } 
+
+    // There may be instance variables, constructors, and methods that are 
+       not shown.
+} 
+</pre>
+</div> 
+
+<p>You will implement a method that collects the results of several tosses of a number cube and another method
+that calculates the longest run found in a sequence of tosses.</p> 
+
+<div id="csList2">
+<ol>
+<li>
+<p>Write the method <strong>getCubeTosses</strong> that takes a number cube and a number of tosses as parameters. The method should
+   return an array of the values produced by tossing the number cube the given number of times.</p>
+
+<p>Complete method <strong>getCubeTosses</strong> below.</p>
+
+<div id="apCode">
+<pre>
+/** Returns an array of the values obtained by tossing a 
+ *       number cube numTosses times.
+ *  @param cube a NumberCube
+ *  @param numTosses the number of tosses to be recorded
+ *  Precondition: numTosses > 0
+ *  @return an array of numTosses values
+ */
+<div id="apHighlight"><pre>public static int[] getCubeTosses(NumberCube cube, int numTosses)</pre></div>  
+
+
+</pre>
+</div> 
+</li>
+<li>
+<p>Write the method <strong>getLongestRun</strong> that takes as its parameter an array of integer values representing a series of number
+   cube tosses. The method returns the starting index in the array of a run of maximum size. A run is defined as the repeated
+   occurrence of the same value in two or more consecutive positions in the array.</p> 
+
+<p>For example, the following array contains two runs of length 4, one starting at index 6 and another starting at index 14.
+   The method may return either of those starting indexes. If there are no runs of any value, the method returns -1.</p>
+
+<div align="center"><img src="images/NumberCube1.gif"></div><br>
+Complete method <strong>getLongestRun</strong> below.
+
+<div id="apCode">
+<pre>
+/** Returns the starting index of a longest run of two or more
+ *      consecutive repeated values in the array values.
+ *  @param values an array of integer values representing a series
+ *      of number cube tosses
+ *  Precondition: values.length > 0
+ *  @return the starting index of a run of maximum size;
+ *     -1 if there is no run
+ */
+<div id="apHighlight"><pre>public static int getLongestRun(int[] values)</pre></div> 
+
+
+</pre>
+</div> 
+
+</li>
+</ol>
+</div>
+
+
+
+ 
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+---------------------------------------------------
+  4  6  4  6  2  3  5  2  3  4  4  2  4  1  4  1  5
+
+Index of Longest Run = 9
+
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+---------------------------------------------------
+  3  5  2  2  2  4  3  6  3  4  2  5  1  1  4  2  2
+
+Index of Longest Run = 2
+
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+---------------------------------------------------
+  5  1  2  2  2  3  4  2  3  1  3  6  5  3  5  1  5
+
+Index of Longest Run = 2
+
+  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+------------------------------------------------
+  1  3  2  4  6  5  1  3  2  4  6  5  1  3  2  4
+
+Index of Longest Run = -1
+
+
+</pre>
+</div>
+	<br>
+</div>	
+

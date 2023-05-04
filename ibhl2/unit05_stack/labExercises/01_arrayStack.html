@@ -1,0 +1,89 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ArrayStack</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/ArrayStackNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >ArrayStack</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/ArrayStack.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >ArrayStack</a></h1>
+
+<h1>Directions</h1>
+  <p>In this assignment you are going to complete the implementation of a collection class named <strong>ArrayStack</strong> that implements a Stack ADT.
+     The Stack ADT requirements are outlined in the following Java interface.</p>
+<div id="csCode"><pre>
+public interface Stack&ltE&gt
+{
+    // adds an item to the top of the stack
+    public void push(E item);
+
+    // removes an item from the top of the stack
+    public E pop();
+
+    // returns the top item in the stack without removing it
+    public E peek();
+
+    // returns true if the stack is empty; otherwise returns false
+    public boolean isEmpty();
+
+    // returns a String representation of the stack
+    public String toString();
+}
+</pre></div>
+
+<p>The ArrayStack class will be implemented using a <strong>static data structure</strong>. The class will also incorporate Java generics.</p>
+
+<h3>Method isFull </h3>
+<p>Implement the method <strong>isFull</strong>. Method isFull is not part of the Stack interface because it is specific to collections that use a static implementation.
+   This method returns true if the data structure has reached its capacity(array is full); false otherwise.
+   </p>
+ 
+ 
+<h1>Source File</h1>
+<p>ArrayStack.java</p>
+<p>Stack.java</p>
+<p>StackDemo.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test push
+---------
+CBA
+
+Test pop
+---------
+C
+
+Test pop
+---------
+B
+
+Test pop
+---------
+A
+
+Test isEmpty
+------------
+Stack is Empty!
+
+Test push
+---------
+FED
+
+Test peek
+---------
+F
+
+Test isEmpty and pop
+--------------------
+F E D 
+
+Test isFull
+------------
+Stack is Full!
+
+GGGGGGGGGG
+
+</pre>
+</div>
+	<br>
+</div>	
+

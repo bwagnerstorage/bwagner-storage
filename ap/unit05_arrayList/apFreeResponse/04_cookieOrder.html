@@ -1,0 +1,178 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR CookieOrder</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/CookieOrderNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >CookieOrder</a></h1>
+
+
+<h1>Directions</h1>
+<p>An organization raises money by selling boxes of cookies. A cookie order specifies the variety of cookie and the number of boxes ordered. The declaration of the CookieOrder class is shown below.</p>
+<div id="apCode"><pre>
+public class CookieOrder
+{
+    <div id="apHighlight"><pre>private String variety;</pre></div>
+    <div id="apHighlight"><pre>private int numBoxes;</pre></div>
+    
+    /** Constructs a new CookieOrder object. */
+    <div id="apHighlight"><pre>public CookieOrder(String variety, int numBoxes)</pre></div>
+    {
+       this.variety = variety;
+       this.numBoxes = numBoxes;
+    }
+    
+    /** @return the variety of cookie being ordered
+    */
+    <div id="apHighlight"><pre>public String getVariety()</pre></div>
+    { 
+       return variety;
+    }
+    
+    /** @return the number of boxes being ordered
+    */
+    <div id="apHighlight"><pre>public int getNumBoxes()</pre></div>
+    { 
+       return numBoxes;
+    }
+}</pre></div>
+<p>The MasterOrder class maintains a list of the cookies to be purchased. The declaration of the MasterOrder class is shown below.</p>
+<div id="apCode"><pre>
+public class MasterOrder
+{
+   /** The list of all cookie orders */
+   <div id="apHighlight"><pre>private List orders;</pre></div>
+	
+   /** Constructs a new MasterOrder object. */
+   <div id="apHighlight"><pre>public MasterOrder()</pre></div>
+   { 
+      orders = new ArrayList&lt;CookieOrder&gt;(); 
+   }
+	
+   /** Adds theOrder to the master order.
+    * @param theOrder the cookie order to add to the master order
+    */
+   <div id="apHighlight"><pre>public void addOrder(CookieOrder theOrder)</pre></div>
+   {
+      orders.add(theOrder);
+   }
+	
+   /** @return the sum of the number of boxes of all of the cookie orders
+    */
+   <div id="apHighlight"><pre>public int getTotalBoxes()</pre></div>
+   {  /* implemented in part(a) */  }
+	
+	
+   /** Removes all cookie orders from the master order that have 
+    *    the same variety of cookie as cookieVar and returns the 
+    *    total number of boxes that were removed.
+    * @param cookieVar the variety of cookies to remove from the
+    *    master order
+    * @return the total number of boxes of cookieVar in the cookie
+    *   orders removed
+    */
+    <div id="apHighlight"><pre>public int removeVariety(String cookieVar)</pre></div>
+    {  /* implemented in part(b) */  }
+
+
+    // There may be instance variables, constructors, and methods that
+    // are not shown.
+	
+}</pre></div>
+<div id="csList2">
+<ol>
+<li><p>The <strong>getTotalBoxes</strong> method computes and returns the sum of the number of boxes of all cookie orders.
+If there are no cookie orders in the master order, the method returns 0.</p>
+
+<p>Complete method <strong>getTotalBoxes</strong> below.</p>
+<div id="apCode" style="width:600px"><pre>
+/** @return the sum of the number of boxes of all of the cookie orders
+*/
+<div id="apHighlight"><pre>public int getTotalBoxes()</pre></div> 
+
+</pre></div>
+
+
+</li><br>
+<li><p>The <strong>removeVariety</strong> method updates the master order by removing all of the cookie orders in which the
+variety of cookie matches the parameter cookieVar. The master order may contain zero or more cookie
+orders with the same variety as cookieVar. The method returns the total number of boxes removed from
+the master order.</p>
+
+<p>For example, consider the following code segment.</p>
+<div id="apCode" style="width:550px"><pre>
+MasterOrder goodies = new MasterOrder();
+goodies.addOrder(new CookieOrder("Chocolate Chip", 1));
+goodies.addOrder(new CookieOrder("Shortbread", 5));
+goodies.addOrder(new CookieOrder("Macaroon", 2));
+goodies.addOrder(new CookieOrder("Chocolate Chip", 3));
+</pre></div>
+<p>After the code segment has executed, the contents of the master order are as shown in the following table.</p>
+<table width="80%" id="csTable">
+            <tr> 
+              <td width="24%"> <div align="center">&quot;Chocolate Chip&quot;<br>
+                  1 </div></td>
+              <td width="25%"> <div align="center">"Shortbread"<br>
+                  5</div></td>
+              <td width="25%"> <div align="center">"Macaroon"<br>
+                  2</div></td>
+              <td width="25%"> <div align="center">"Chocolate Chip"<br>
+                  3</div></td>
+            </tr>
+          </table>
+
+<p>The method call goodies.removeVariety("Chocolate Chip") returns 4 because there were
+two Chocolate Chip cookie orders totaling 4 boxes. The master order is modified as shown below.</p>
+
+          <table width="40%" id="csTable">
+            <tr> 
+              <td><div align="center">"Shortbread"<br>
+                  5</div></td>
+              <td><div align="center">"Macaroon"<br>
+                  2</div></td>
+            </tr>
+          </table>
+<p>The method call goodies.removeVariety("Brownie") returns 0 and does not change the master
+order.</p>
+
+<p>Complete method <strong>removeVariety</strong> below.</p>
+<div id="apCode" style="width:600px"><pre>
+/** Removes all cookie orders from the master order that have 
+ *  the same variety of cookie as cookieVar and returns the
+ *  total number of boxes that were removed.
+ * @param cookieVar the variety of cookies to remove 
+ *    from the master order
+ * @return the total number of boxes of cookieVar in the
+ *    cookie orders removed
+ */
+<div id="apHighlight"><pre>public int removeVariety(String cookieVar)</pre></div>
+
+
+</pre></div>
+
+</li></ol></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Chocolate Chip  1
+Shortbread  5
+Macaroon  2
+Chocolate Chip  3
+
+Number of Boxes = 11
+
+
+Shortbread  5
+Macaroon  2
+
+Number of Boxes = 7
+
+
+Shortbread  5
+Macaroon  2
+
+Number of Boxes = 7
+</pre>
+</div>
+	<br>
+</div>	
+

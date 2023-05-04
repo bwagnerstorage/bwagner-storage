@@ -1,0 +1,93 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR WordList</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/WordListNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >WordList</a></h1>
+
+
+<h1>Directions</h1>
+<p>The following class WordList is designed to store and manipulate a list of words. The incomplete class declaration is shown below. You will be asked to implement two methods.</p>
+
+<div id="apCode"><pre>
+public class WordList
+{
+   <div id="apHighlight"><pre>private ArrayList &lt;String&gt; myList;</pre></div>     // contains Strings made up of letters
+
+   // postcondition: returns the number of words in this WordList that
+   //                are exactly len letters long
+   <div id="apHighlight"><pre>public int numWordsOfLength(int len)</pre></div> 
+   {  /* to be implemented in part (a) */ }
+ 
+   // postcondition: all words that are exactly len letters long
+   //                have been removed from this WordList, with the
+   //                order of the remaining words unchanged
+   <div id="apHighlight"><pre>public void removeWordsOfLength(int len)</pre></div> 
+   {  /* to be implemented in part (b) */ }
+ 
+   // ... constructor and other methods not shown
+}
+</pre></div> 
+ 
+ <div id="csList2"><ol>
+<li><p>Write the WordList method <strong>numWordsOfLength</strong>. Method numWordsOfLength returns the 
+      number of words in the WordList that are exactly len letters long. For example, assume that the 
+      instance variable myList  of the WordList animals contains the following.</p>
+ <div id="csOutput" style="width:600px"><pre>
+["cat", "mouse", "frog", "dog", "dog"]
+
+The table below shows several sample calls to numWordsOfLength.
+ 
+            <strong>Call                                     Result returned by call</strong>
+animals.numWordsOfLength(4)           1
+animals.numWordsOfLength(3)           3
+animals.numWordsOfLength(2)           0
+</pre></div> 
+
+ <p>Complete method <strong>numWordsOfLength</strong> below.</p> 
+<div id="apCode" style="width:550px"><pre>
+// postcondition: returns the number of words in this WordList that
+//                are exactly len letters long
+<div id="apHighlight"><pre>public int numWordsOfLength(int len)</pre></div> 
+
+
+</pre></div>  
+</li> <br><br>
+<li><p>Write the WordList method <strong>removeWordsOfLength</strong>. Method removeWordsOfLength removes 
+       all words from the WordList that are exactly len letters long, leaving the order of the remaining
+       words unchanged. For example, assume that the instance variable myList of the WordListanimals
+   contains the following.</p>
+ <div id="csOutput" style="width:600px"><pre>["cat", "mouse", "frog", "dog", "dog"]
+
+The table below shows a sequence of calls to the
+removeWordsOfLength method.
+ 
+               <strong>Call                                                       myList after the call</strong>
+animals.removeWordsOfLength(4);   ["cat", "mouse", "dog", "dog"]
+animals.removeWordsOfLength(3);   ["mouse"]
+animals.removeWordsOfLength(2);   ["mouse"]
+</pre></div> 
+     
+<p>Complete method <strong>removeWordsOfLength</strong> below.</p>
+<div id="apCode" style="width:550px"><pre>
+// postcondition: all words that are exactly len letters long
+//                have been removed from this WordList, with the
+//                order of the remaining words unchanged
+<div id="apHighlight"><pre>public void removeWordsOfLength(int len)</pre></div> 
+
+
+</pre></div>
+</li>
+</ol></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+[cat, mouse, frog, dog, dog] 1 3 0
+[cat, mouse, dog, dog]
+[mouse]
+[mouse]
+</pre>
+</div>
+	<br>
+</div>	
+

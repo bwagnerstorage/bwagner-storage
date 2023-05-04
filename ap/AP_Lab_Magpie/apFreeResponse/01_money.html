@@ -1,0 +1,159 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Money</div>
+
+<div id="csContent"> 
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/MoneyNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Money</a></h1>
+
+<p>In this question, you will implement two methods of a class <strong>Money</strong>. An incomplete declaration for Money class is shown below.</p>
+<div id="apCode">
+<pre>
+class Money
+{
+    <div id="apHighlight"><pre>private String money;</pre></div> // String representation of
+                          // a decimal number
+        
+    <div id="apHighlight"><pre>public Money(String m)</pre></div>
+    {
+       money = m;
+    }
+           
+    // postcondition: returns the position of the first
+    // dot character in money or -1 if
+    // there is no dot in money
+    <div id="apHighlight"><pre>private int findDot()</pre></div>
+    {
+        
+    }
+    
+    // precondition: money corresponds to a decimal
+    // number; i.e., it contains one of
+    // the following:
+    //   (1) one or more digits
+    //   (2) a dot followed by one or more
+    //       digits, or
+    //   (3) one or more digits followed by
+    //       a dot, followed by zero or
+    //       more digits
+    <div id="apHighlight"><pre>public void printMoney()</pre></div>
+    {
+
+    }
+}
+</pre></div>
+<div id="csList2">
+ <ol>
+ <li>
+ <p>Write the method <strong>findDot</strong>, as started below. findDot returns the position of
+    the first dot character in the variable money. It returns -1 if there is no dot in the string.</p>
+
+ <table width="378" id="csTable">
+        <tr> 
+          <th width="132">money</th>
+          <th width="238">value returned by findDot()</th>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&quot;123.40&quot;</td>
+          <td><div align="center">3</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&quot;.33.&quot;</td>
+          <td><div align="center">0</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&quot;1bcx.&quot;</td>
+          <td><div align="center">4</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&quot;x&quot; </td>
+          <td><div align="center">-1</div></td>
+        </tr>
+      </table>
+
+ <p>Complete method <strong>findDot</strong> below.</p>
+<div id="apCode" style="width:600px">
+<pre>
+// postcondition: returns the position of the first
+// dot character in money or -1 if
+// there is no dot in money
+<div id="apHighlight"><pre>public int findDot()</pre></div>
+
+</pre></div>
+
+</li> 
+<li>
+<p>Write method <strong>printMoney</strong>, as started below. printMoney should first print the
+  digits that come after the dot or 0 if there is no dot or there are no digits after the dot
+   followed by a space, then the word "cents", then a space. Then it should print the digits 
+   that come before the dot followed by a space and the word "dollars".</p>
+
+<br><br>For example:</p>
+<table width="445" id="csTable">
+        <tr> 
+          <th width="89">money</th>
+          <th width="443">output produced by the call printMoney()</th>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&quot;123.40&quot;</td>
+          <td><div align="center">123 dollars and 40 cents</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&quot;.33&quot;</td>
+          <td><div align="center">0 dollars and 33 cents</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&quot;45&quot;</td>
+          <td><div align="center">45 dollars and 0 cents</div></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&quot;12.&quot;</td>
+          <td><div align="center">12 dollars and 0 cents</div></td>
+        </tr>
+      </table>
+
+<div id="apCode" style="width:600px">
+<pre>
+123 dollars and 40 cents
+0 dollars and 33 cents
+45 dollars and 0 cents
+12 dollars and 0 cents
+</pre>
+</div>
+
+
+<p>In writing method printMoney, you may include calls to the method findDot specified in
+    part (a). Assume that findDot works as specified, regardless of what you wrote for part (a).<p>
+
+<p>Complete method <strong>printMoney</strong> below. Assume that the variable money satisfies its precondition.</p>
+<div id="apCode" style="width:600px">
+<pre>
+// precondition: money corresponds to a decimal
+// number; i.e., it contains one of
+// the following:
+//   (1) one or more digits
+//   (2) a dot followed by one or more 
+// digits, or
+//   (3) one or more digits followed by
+// a dot, followed by zero or
+// more digits
+<div id="apHighlight"><pre>public void printMoney()</pre></div>
+
+
+</pre>
+</div>
+</ol></div> 
+ 
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+123 dollars and 40 cents
+0 dollars and 33 cents
+45 dollars and 0 cents
+12 dollars and 0 cents
+
+</pre>
+</div>
+	<br>
+</div>	
+

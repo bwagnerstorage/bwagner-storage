@@ -1,0 +1,85 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Elevens Lab - Activity 2</div>
+
+<div id="csContent"> 
+<h1>Initial Design of a Deck Class</h1>
+<p>Think about a deck of cards. How would you describe a deck of cards? When you play card games,
+what kinds of operations do these games require a deck to provide?</p>
+
+<h1>Exploration</h1>
+<p>Now consider implementing a class to represent a deck of cards. Describe its instance variables and
+methods, and discuss your design with a classmate.</p>
+<p>Read the partial implementation of the Deck class.
+This file contains the instance variables, constructor header, and method headers for a Deck class
+general enough to be useful for a variety of card games. Discuss the Deck class with your classmates;
+in particular, make sure you understand the role of each of the parameters to the Deck constructor,
+and of each of the private instance variables in the Deck class.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>Complete the implementation of the Deck class by coding each of the following:</p>
+<div id="csList2"><ol>
+<li><p><strong>Deck constructor</strong> - This constructor receives three arrays as parameters. The arrays contain
+the ranks, suits, and point values for each card in the deck. The constructor creates an
+ArrayList, and then creates the specified cards and adds them to the list.</p>
+<p>For example, if ranks = {"A", "B", "C"}, suits = {"Giraffes", "Lions"},
+and values = {2,1,6}, the constructor would create the following cards:</p>
+<div id="apCode"><pre>
+["A", "Giraffes", 2], ["B", "Giraffes", 1], ["C", "Giraffes", 6],
+["A", "Lions", 2], ["B", "Lions", 1], ["C", "Lions", 6]
+</pre></div>
+<p>and would add each of them to cards. The parameter size would then be set to the size of
+cards, which in this example is 6.</p>
+<p>Finally, the constructor should shuffle the deck by calling the shuffle method. Note that you
+will not be implementing the shuffle method until Activity 4.</p>
+</li>
+<li><p><strong>isEmpty</strong> - This method should return true when the size of the deck is 0; false
+otherwise.</p></li>
+<li><p><strong>size</strong> - This method returns the number of cards in the deck that are left to be dealt.</p></li>
+<li><p><strong>deal</strong> - This method "deals" a card by removing a card from the deck and returning it, if there
+are any cards in the deck left to be dealt. It returns null if the deck is empty. There are several
+ways of accomplishing this task. Here are two possible algorithms:</p>
+<p><strong>Algorithm 1</strong>: Because the cards are being held in an ArrayList, it would be easy to simply
+call the List method that removes an object at a specified index, and return that object.
+Removing the object from the end of the list would be more efficient than removing it from the
+beginning of the list. Note that the use of this algorithm also requires a separate "discard" list to
+keep track of the dealt cards. This is necessary so that the dealt cards can be reshuffled and dealt
+again.</p>
+<p><strong>Algorithm 2</strong>: It would be more efficient to leave the cards in the list. Instead of removing the
+card, simply decrement the size instance variable and then return the card at size. In this
+algorithm, the size instance variable does double duty; it determines which card to "deal" and
+it also represents how many cards in the deck are left to be dealt. This is the algorithm that you
+should implement.</p>
+</li></ol></div></li>
+<li><p>Once you have completed the Deck class, open the DeckTester.java file. Add code in the main method to create three Deck objects and test each method for
+each Deck object.
+</p></li>
+</ol></div>
+
+<h1>Questions</h1>
+<p><strong>Directions</strong>: Answer questions on a separate sheet of paper.</p>
+<div id="csList"><ol>
+<li><p>Explain in your own words the relationship between a deck and a card.</p></li>
+<li><p>Consider the deck initialized with the statements below. How many cards does the deck contain?</p>
+<div id="apCode"><pre>
+String[] ranks = {"jack", "queen", "king"};
+String[] suits = {"blue", "red"};
+int[] pointValues = {11, 12, 13};
+Deck d = new Deck(ranks, suits, pointValues);
+</pre></div>
+</li>
+<li><p>The game of Twenty-One is played with a deck of 52 cards. Ranks run from ace (highest) down to 2
+(lowest). Suits are spades, hearts, diamonds, and clubs as in many other games. A face card has point
+value 10; an ace has point value 11; point values for 2,...,10 are 2,...,10, respectively. Specify the
+contents of the ranks, suits, and pointValues arrays so that the statement</p>
+<div id="apCode"><pre>
+Deck d = new Deck(ranks, suits, pointValues);
+</pre></div>
+<p>initializes a deck for a Twenty-One game.</p>
+</li>
+<li><p>Does the order of elements of the ranks, suits, and pointValues arrays matter?</p></li>
+</ol></div>
+	<br>
+</div>	
+

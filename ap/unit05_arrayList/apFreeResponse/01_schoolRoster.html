@@ -1,0 +1,159 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR SchoolRoster</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/SchoolRosterNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SchoolRoster</a></h1>
+
+
+<h1>Directions</h1>
+<p>Assume that student records are implemented using the following class declaration.</p>
+<div id="apCode">
+<pre>
+public class StudentInfo
+{         
+     // returns the name of a student
+     <div id="apHighlight"><pre>public String getName()</pre></div>
+
+     // returns the credit hours for a student  
+     <div id="apHighlight"><pre>public int getCreditHours()</pre></div>
+
+     // returns the grade points for a student
+     <div id="apHighlight"><pre>public double getGradePoints()</pre></div>
+
+     // returns the grade point average for a student
+     <div id="apHighlight"><pre>public double getGPA()</pre></div>
+
+     // sets the grade point average for a student
+     // to the value specified in the parameter list
+     <div id="apHighlight"><pre>public void setGPA(double gpa)</pre></div>
+
+
+     // . . . constructors and other public members not shown
+
+     // . . . instance variables not shown
+}</pre>
+</div>
+<p>Consider the following incomplete SchoolRoster class declaration. A SchoolRoster object
+   stores a list of student records and contains a method for computing each student's GPA. It
+   also contains methods for determining which students are classified as seniors.</p>
+<div id="apCode">
+<pre>
+public class SchoolRoster
+{
+    // a list of students on the school's roster    
+    <div id="apHighlight"><pre>private ArrayList &lt;StudentInfo&gt; roster;</pre></div>
+
+    // precondition:  The name, creditHours 
+    //                and gradePoints data members have been
+    //                initialized for each record in roster.
+    // postcondition: the GPA data member of each record in
+    //                roster has been calculated. 
+
+    <div id="apHighlight"><pre>public void computeGPA()</pre></div>
+    { /* to be implemented in part (a) */ }
+
+ 
+
+    // postcondition: returns true if this student's credit
+    //                hours &gt;= 125 and GPA &gt;= 2.0; otherwise,
+    //                returns false.
+    <div id="apHighlight"><pre>public boolean isSenior(StudentInfo student)</pre></div>
+    { /* to be implemented in part (b) */ }
+
+ 
+
+    // postcondition: determines which students in the roster
+    //                are seniors and returns an ArrayList
+    //                containing those records. 
+    <div id="apHighlight"><pre>public ArrayList &lt;StudentInfo&gt; fillSeniorList()</pre></div>
+    { /* to be implemented in part (c) */ }
+
+ 
+    // . . . constructor and other public methods not shown
+
+}
+</pre>
+</div>
+<div id="csList2">
+<ol>
+<li><p>Write the SchoolRoster method <strong>computeGPA</strong>. This method calculates and updates the GPA field
+   for each student in the roster. A student's GPA (grade point average) is computed by dividing the
+   grade points by the credit hours. The GPA for a student with 0 credit hours should be set to 0.</p>
+
+ <p>Complete method <strong>computeGPA</strong> below.</p>
+
+<div id="apCode" style="width:550px"><pre>
+// precondition:  numStudents >=0. The name, creditHours 
+//                and gradePoints data members have been
+//                initialized for each record in roster.
+// postcondition: the GPA data member of each record in
+//                roster has been calculated. 
+<div id="apHighlight"><pre>public void computeGPA()</pre></div>
+	
+	
+</pre></div>
+</li>
+<li><p>Write the SchoolRoster method <strong>isSenior.</strong> This method should return true if the
+   given student has at least 125 credit hours and has a GPA of at least 2.0; otherwise, IsSenior
+   should return false.</p>
+<p>For example:</p>
+<div id="csOutput" style="width:630px">
+<pre>
+               <strong>student                                        Result of the call IsSenior(student)</strong>
+name   creditHours gradePoints GPA
+King       45         171      3.8     false (not enough credit hours)
+Norton    128         448      3.5     true
+Solo      125         350      2.8     true
+Kramden   150         150      1.0     false( GPA too low)
+</pre></div>
+ 
+<p>Complete method <strong>IsSenior</strong> below.</p>
+
+<div id="apCode" style="width:550px"><pre>
+// postcondition: returns true if this student's credit
+//                hours &gt;= 125 and GPA &gt;= 2.0; otherwise,
+//                returns false.
+<div id="apHighlight"><pre>public boolean isSenior(StudentInfo student)</pre></div>
+	
+	
+</pre></div>
+</li>
+<li><p>Write the SchoolRoster method <strong>fillSeniorList</strong>. This method determines which students
+   in the roster are seniors and copies those students' records to a newly created ArrayList.</p>
+<p>In writing fillSeniorList, you may call method <strong>IsSenior</strong> specified in part (b). Assume that
+   IsSenior works as specified, regardless of what you wrote in part (b).</p>
+
+<p>Complete method <strong>fillSeniorList</strong> below.</p>
+<div id="apCode" style="width:550px"><pre>
+// postcondition: determines which students in the roster
+//                are seniors and returns an ArrayList
+//                containing those records. 
+<div id="apHighlight"><pre>public ArrayList &lt;StudentInfo&gt; fillSeniorList()</pre></div>
+
+ 
+</pre></div>
+</li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+King 45 171.0 0.0
+Norton 128 448.0 0.0
+Solo 125 350.0 0.0
+Kramden 150 150.0 0.0
+
+King 45 171.0 3.8
+Norton 128 448.0 3.5
+Solo 125 350.0 2.8
+Kramden 150 150.0 1.0
+
+[Norton 128 448.0 3.5, Solo 125 350.0 2.8]
+
+</pre>
+</div>
+	<br>
+</div>	
+

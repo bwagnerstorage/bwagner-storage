@@ -1,0 +1,242 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Pseudocode</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>4.2.5 Analyse an algorithm presented as pseudocode.</li>
+						<li>4.2.6 Construct pseudocode to represent an algorithm.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Pseudocode</h1>
+<p><strong>Pseudocode</strong> is a description of a computer programming algorithm that uses the structural conventions of programming languages but omits language-specific syntax.
+  Its purpose is to generalize the logic and program flow of a computer program without worrying about the details associated with a high-level programming language.
+  Pseudocode is similar to code, but much easier to understand.</p>
+  
+  <p>The IB Diploma Programme Computer Science exam has adopted a pseudocode style similar to the style used in mathematics. The charts below show this approved notation. This notation will
+     be used on the exam to present components questions. Answers to these questions will only be required in pseudocode.</p>
+	 
+<table id="csTable" width="650">
+<tr>
+   <td width="150">Conventions</td>
+   <td><strong>Variable names</strong> are all capitals, for example, CITY<br>
+       <strong>Pseudocode keywords</strong> are lower case, for example, loop, if ...<br>
+       <strong>Method names</strong> are mixed case, for example, getRecord<br>
+       Methods are invoked using the "dot notation" used in Java, C++, C#, and similar languages, for example, BIGARRAY.binarySearch( 27 )
+  </td>
+</tr>
+<tr>
+   <td>Variable names</td>
+   <td>These will be provided and comments // used, for example:<br>
+       N = 5  // the number of items in the array<br>
+       SCOREHISTORY.getExam(NUM)  // get the student's score on exam NUM
+  </td>
+</tr>
+<tr>
+   <td>Assigning a value to a variable</td>
+   <td>Values will be assigned using = , for example:<br>
+       N = 5 // indicates the array has 5 data items<br>
+       VALUE[0] = 7 // assigns the first data item in the array a value of 7
+  </td>
+</tr>
+<tr>
+   <td>Output of information</td>
+   <td>Output - this term is sufficient to indicate the data is output to a printer,<br>
+       screen, for example:<br>
+       output COUNT // display the count on the screen<br>
+	   output "The sum = ", SUM
+  </td>
+</tr>
+<tr>
+   <td>Input of information</td>
+   <td>input COUNT // input the count from user
+  </td>
+</tr>
+<tr>
+   <td>Strings</td>
+   <td>A string can contain a set of characters, or can be empty. <br>
+       Strings can be used like any other variable, for example:<br>
+	   MYWORD = "This is a string"
+  </td>
+</tr>
+<tr>
+   <td>Arrays</td>
+   <td>An array is an indexed and ordered set of elements. <br>
+       Unless specifically defined in the question, the index of the first element<br>
+	   in an array is 0, for example: <br>
+	   NAMES[0] // The first element in the array NAMES </td>
+</tr>
+</table>
+<table id="csTable" width="650">
+<tr>
+<th width="100">Symbol</th>
+<th width="200">Definition</th>
+<th>Examples</th>
+</tr>
+
+<tr>
+<td>=</td>
+<td>assignment<br>is equal to</td>
+<td>X = 4, X = K<br>
+    if X = 5 then
+</td>
+</tr>
+
+<tr>
+<td>></td>
+<td>is greater than</td>
+<td>if X > 5 then
+</td>
+</tr>
+
+<tr>
+<td>>=</td>
+<td>is greater than or equal to</td>
+<td>if X >= 5 then
+</td>
+</tr>
+
+<tr>
+<td>&lt;</td>
+<td>is less than</td>
+<td>if X &lt; 5 then
+</td>
+</tr>
+
+<tr>
+<td><=</td>
+<td>is less than or equal to</td>
+<td>if X <= 5 then
+</td>
+</tr>
+
+<tr>
+<td>&ne;</td>
+<td>not equal to</td>
+<td>if X &ne; 5 then
+</td>
+</tr>
+
+<tr>
+<td>AND</td>
+<td>logical AND</td>
+<td>if X = 4 AND y = 5 then
+</td>
+</tr>
+
+<tr>
+<td>OR</td>
+<td>logical OR</td>
+<td>if X = 4 OR y = 5 then
+</td>
+</tr>
+
+<tr>
+<td>NOT</td>
+<td>logical NOT</td>
+<td>if NOT X = 4 then
+</td>
+</tr>
+
+<tr>
+<td>mod</td>
+<td>modulo or remainder</td>
+<td>if X mod 2 = 0 then
+</td>
+</tr>
+
+<tr>
+<td>div</td>
+<td>integer part of quotient<br>
+    integer division</td>
+<td>ANS = NUM div 10
+</td>
+</tr>
+
+</table>
+
+<table id="csTable" width="650">
+<tr width="250">
+   <td>if statement</td>
+   <td><pre style="background-color:#DDEBFF; border:0">
+if NUM mod 2 = 0 then
+   output "even number"
+end if
+</pre></td>
+</tr>
+
+<tr width="250">
+   <td>if-else statement</td>
+   <td><pre style="background-color:#DDEBFF; border:0">
+if NOT COUNT = 0 then
+   AVERAGE = TOTAL / COUNT
+   output "Average = " , AVERAGE
+else
+   output "There are no non-zero values"
+end if
+</pre></td>
+</tr>
+
+<tr width="250">
+   <td>cascading if statement</td>
+   <td><pre style="background-color:#DDEBFF; border:0">
+if GR >= 90 then
+   output "A"
+else 
+   if GR >= 80 then
+       output "B"
+   end if
+else
+   if GR >= 70 then
+       output "C"
+   end if
+else
+   output "F"
+end if
+</pre></td>
+</tr>
+
+<tr width="250">
+   <td>while loop</td>
+   <td><pre style="background-color:#DDEBFF; border:0">
+I = 0
+loop while I < 10
+   output I
+   I = I + 1
+end loop
+</pre></td>
+</tr>
+
+<tr width="250">
+   <td>do-while loop</td>
+   <td><pre style="background-color:#DDEBFF; border:0">
+I = 0
+loop until I = 10
+   output I
+   I = I + 1
+end loop
+</pre></td>
+</tr>
+
+<tr width="250">
+   <td>for loop</td>
+   <td><pre style="background-color:#DDEBFF; border:0">
+loop I from 0 to 10
+   output I
+end loop
+</pre></td>
+</tr>
+
+
+</table>
+
+<br>
+</div>	
+

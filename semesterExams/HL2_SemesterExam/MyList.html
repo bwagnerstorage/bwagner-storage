@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<style>
+   p {
+      font-size:20px;
+
+   }
+   pre {
+      font-size: 18px;
+   }
+</style>
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th><h1> MyList</h1></th>
+  </tr>
+  <tr> 
+    <td>
+      <p>Suppose myList is a linked list. A loop such as</p>
+      <pre>   for (int k = 0; k < myList.size(); k++)
+     Object a = myList.get(k);</pre>
+      <p>can be inefficient if the get method always starts at the front of the list to locate each element.</p>
+	  <br>
+	  <p>This question describes a variant of a linked list data structure that 
+        can improve the efficiency of the loop. The ListNode class is used as 
+        part of the implementation of a class MyList that remembers the node and 
+        index of the most recently visited element of the list. If the index for 
+        the next get is greater than or equal to the remembered index, the traversal 
+        starts at the remembered node instead of the front of the list.</p>
+      <p>For example, consider the following MyList that contains five 
+        elements. The call myList.get(2) returns the value C. The remembered node 
+        and remembered index will refer to the node at index 2 as shown in the 
+        diagram.</p>
+      <p><img src="List1.gif"></p>
+      <p>If the call myList.get(2) is executed again, the value C is returned 
+        again, but the traversal begins at the remNode position, instead of front, 
+        because the remembered index is 2. No other nodes are traversed because 
+        remNode is already at the correct position.</p>
+      <p>A subsequent call myList.get(4) will start the traversal at the remNode 
+        position instead of front because the remembered index is 2. It will then 
+        move forward two nodes to retrieve the node at index 4 (the value E), 
+        set remNode to the new position, and update remIndex as shown in the following 
+        diagram.</p>
+      <p><img src="List2.gif"></p>
+      <p>Finally, a subsequent call myList.get(3) will start the traversal at 
+        front because the remembered index is greater than the desired index. 
+        Starting at front, it will move forward three nodes to retrieve the node 
+        at index 3 (the value D), set remNode to the new position, and update 
+        remIndex as shown in the<br>
+        following diagram.</p>
+      <p><img src="List3.gif"></p>
+      <p>The partial declaration of the <em>MyList</em> class is shown below.</p>
+      <pre>public class MyList
+{
+    private ListNode front; // first node of this list (null if empty)
+    private int listSize; // the number of elements in this list
+    private int remIndex; // the index of the remembered node
+    private ListNode remNode; // a reference to the node accessed by most recent call to get
+    
+    /** Constructs an empty MyList.
+     */
+   <font color="#0000FF"> public MyList()</font>
+    {
+        front = null;
+        remIndex = -1;
+        remNode = null;
+        listSize = 0;
+    }
+    
+    /** Gets a value at a given index in this list.
+     *  @param n the index at which to get a value
+     *         Precondition: 0 . n < size()
+     *  @return the object at the given index
+     *  Postcondition: The remembered node and index refer to the node at index n
+     */
+    <font color="#0000FF">public Object get(int n)</font>
+    { /* to be implemented in part (a) */ }
+    
+    /** Adds a new node containing obj to the front of this list.
+     *  @param obj the value to add to the list
+     */
+    <font color="#0000FF">public void addFirst(Object obj)</font>
+    { /* to be implemented in part (b) */ }
+    
+    /** @return the size of this list
+     */
+    <font color="#0000FF">public int size()</font>
+    { return listSize; }
+    
+    // There may be methods that are not shown.
+
+}</pre>
+      <ol>
+        <li type="a"><p>Write the <em>MyList</em> method <em>get</em>. This method 
+          returns the value contained in the list node at index n. If the index 
+          n is greater than or equal to the remembered index, the method should 
+          start its traversal at the remembered node; otherwise, the method should 
+          start at the front of the list. The remembered node and index should 
+          be updated to refer to the node at the given index. <br>
+          <br>
+          Complete method get below. </p>
+          <pre> /** Gets a value at a given index in this list.
+  *  @param n the index at which to get a value
+  *         Precondition: 0 <= n < size()
+  *  @return the object at the given index
+  *  Postcondition: The remembered node and index refer to the node at index n
+  */
+ <font color="#0000FF">public Object get(int n)</font>  
+ { 
+
+
+
+
+
+ }</pre>
+        </li>
+        <li type="a"><p>Write the <em>MyList</em> method <em>addFirst</em>. Instance 
+          variables should be updated as necessary. This method should not change 
+          the value of remNode since there is no advantage to remembering a node 
+          at the front of the list. <br>
+          <br>
+          Complete method <em>addFirst</em> below. </p>
+          <pre>/** Adds a new node containing obj to the front of this list.
+ *  @param obj the value to add to the list
+ */
+ <font color="#0000FF">public void addFirst(Object obj)</font>
+ { 
+
+
+
+
+
+ }</pre>
+        </li>
+      </ol>
+      <h2>Sample Output</h2>
+      <table width="625" border="0"  style="font-family:Consolas; margin:20px">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">(0, horse) (1, chicken) (2, cow) (3, cat) (4, dog)</font></pre>
+            <p><font color="#FFFFFF">list.get(2) = cow<br>
+              list.get(4) = dog<br>
+              list.get(0) = horse<br>
+              list.get(3) = cat</font></p>
+            <p><font color="#FFFFFF">(0, sheep) (1, goat) (2, horse) (3, chicken) 
+              (4, cow) (5, cat) (6, dog)</font></p>
+            <p><font color="#FFFFFF">list.get(6) = dog<br>
+              list.get(1) = goat</font></p>
+              <br>
+          </td>
+        </tr>
+      </table>
+      <p></p></td>
+  </tr>
+</table>

@@ -1,0 +1,133 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR LightBoard</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/LightBoardNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >LightBoard</a></h1>
+
+<h1>Directions</h1>
+<p>The <span class="cd">LightBoard</span> class models a two-dimensional display of lights, where each light is either on or off, as represented by a Boolean value. You will implement a constructor to initialize the display and a method to evaluate a light.</p>
+
+<div id="apCode"><pre>
+<div id="apHighlight">public class LightBoard</div>
+{
+  /** The lights on the board, where true represents on and false represents off.
+   */
+   <div id="apHighlight">private boolean[][] lights;</div>
+
+  /** Constructs a LightBoard object having numRows rows and numCols columns.
+   * Precondition: numRows > 0, numCols > 0
+   * Postcondition: each light has a 40% probability of being set to on.
+   */
+   <div id="apHighlight">public LightBoard(int numRows, int numCols)</div>
+   { /* to be implemented in part (a) */ }
+
+   /** Evaluates a light in row index row and column index col and 
+    * returns a status as described in part (b).
+    * Precondition: row and col are valid indexes in lights.
+    */
+    <div id="apHighlight">public boolean evaluateLight(int row, int col)</div>
+   { /* to be implemented in part (b) */ }
+
+   // There may be additional instance variables, constructors, 
+   // and methods not shown.
+}
+</pre></div>
+
+<h3>Part (a)</h3>
+<p>Write the constructor for the <span class="cd">LightBoard</span> class, which initializes lights so that each light is set to on with a 40% probability. The notation lights[r][c] represents the array element at row r and column c.</p>
+<p>Complete the LightBoard constructor below</p>
+
+<div id="apCode"><pre>/** Constructs a LightBoard object having numRows rows and numCols columns.
+* Precondition: numRows > 0, numCols > 0
+* Postcondition: each light has a 40% probability of being set to on.
+*/
+public LightBoard(int numRows, int numCols)
+
+
+
+
+</pre></div>
+
+<h3>Part (b)</h3>
+<p>Write the method <span class="cd">evaluateLight</span>, which computes and returns the status of a light at a given row and column based on the following rules.</p>
+   <ol id="csList">
+      <li><p>If the light is on, return false if the number of lights in its column that are on is even, including the current light.</p></li>
+      <li><p>If the light is off, return true if the number of lights in its column that are on is divisible by three.</p></li>
+      <li><p>Otherwise, return the light’s current status.</p></li>
+   </ol>
+    <p>For example, suppose that <span class="cd">LightBoard sim = new LightBoard(7, 5)</span> creates a light board with the initial state shown below, where true represents a light that is on and false represents a light that is off. Lights that are off are shaded.</p>
+
+    <img src="images/LightBoard1.jpg" style="width:98%">
+    <br><br>
+
+    <img src="images/LightBoard2.jpg" style="width:98%">
+
+    <p>Complete the <span class="cd">evaluateLight</span> method below.</p>
+<div id="apCode"><pre>/** Evaluates a light in row index row and column index col and returns a status
+ * as described in part (b). 
+ * Precondition: row and col are valid indexes in lights. 
+ */
+ public boolean evaluateLight(int row, int col)
+
+
+
+
+
+</pre></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+   Rules
+   1. If the light is on, return false if the number of
+    lights in its column that are on is even, including the current light.
+   2. If the light is off, return true if the number of
+    lights in its column that are on is divisible by three.
+   3. Otherwise, return the light’s current status.
+   
+   
+   true   true   false  true   true   
+   
+   true   false  false  true   false  
+   
+   true   false  false  true   true   
+   
+   true   false  false  false  true   
+   
+   true   false  false  false  true   
+   
+   true   true   false  true   true   
+   
+   false  false  false  false  false  
+   
+   evaluateLight(0, 3) = false
+   evaluateLight(6, 0) = true
+   evaluateLight(4, 1) = false
+   evaluateLight(5, 4) = true
+   
+   
+   true   false  
+   
+   false  true   
+   
+   evaluateLight(0, 0) = true
+   evaluateLight(1, 1) = true
+   
+   
+   true   true   true   true   
+   
+   false  false  true   false  
+   
+   false  true   false  true   
+   
+   false  true   false  true   
+   
+   evaluateLight(1, 0) = false
+   evaluateLight(1, 3) = true
+   evaluateLight(2, 2) = false
+</pre>
+</div>
+	<br>
+</div>	
+

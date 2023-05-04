@@ -1,0 +1,86 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ArrayQueue</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/ArrayQueueNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >ArrayQueue</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/ArrayQueue.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >ArrayQueue</a></h1>
+
+<h1>Directions</h1>
+  <p>In this assignment you are going to complete the implementation of a collection class named <strong>ArrayQueue</strong> that implements a Queue ADT.
+     The Queue ADT requirements are outlined in the following Java interface.</p>
+<div id="csCode"><pre>
+public interface Queue&ltE&gt
+{
+    // adds an item to the back of the queue
+    public void enqueue(E item);
+
+    // removes an item from the front of the queue
+    public E dequeue();
+
+    // returns the front item in the queue without removing it
+    public E front();
+
+    // returns true if the queue is empty; otherwise returns false
+    public boolean isEmpty();
+
+    // returns a String representation of the queue
+    public String toString();
+
+}
+</pre></div>
+
+<p>The ArrayQueue class will be implemented using a <strong>static data structure</strong>. The class will also incorporate Java generics.</p>
+
+<h3>Method isFull </h3>
+<p>Implement the method <strong>isFull</strong>. Method isFull is not part of the Queue interface because it is specific to collections that use a static implementation.
+   This method returns true if the data structure has reached its capacity(array is full); false otherwise.
+   </p>
+ 
+<h1>Source File</h1>
+<p>ArrayQueue.java</p>
+<p>Queue.java</p>
+<p>QueueDemo.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test enqueue
+------------
+10 20 30 
+
+Test dequeue
+--------------
+10
+
+Test dequeue
+--------------
+20
+
+Test dequeue
+--------------
+30
+
+Test isEmpty
+--------------
+queue is empty!
+
+40 50 60 
+
+Test front
+--------------
+40
+
+Test isEmpty and dequeue
+------------------------
+40 50 60 
+
+Test isFull
+------------
+queue is full!
+
+70 70 70 70 70 70 70 70 70 70 
+</pre>
+</div>
+	<br>
+</div>	
+

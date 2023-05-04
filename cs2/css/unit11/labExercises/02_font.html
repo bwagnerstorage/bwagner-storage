@@ -1,0 +1,98 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">11-2 CSS Web Fonts</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts" target="_blank" style="color:blue">Web Fonts</a></li>
+<li><p><a href="https://www.fontsquirrel.com/" target="_blank" style="color:blue">Fonts Squirrel</a></p></li>
+<li><p><a href="https://fonts.google.com/" target="_blank" style="color:blue">Google Fonts</a></p></li>
+</ul>
+<h1>Description</h1>
+<p>There are four ways to select and use a font on a web page.
+<ol id="csList">
+   <li><p>Use a font that is already installed on your computer by the operating system.</p></li>
+   <li><p>Download a font from the Internet and install its files on your computer.</p></li>
+   <li><p>Download a web font and embed the font on your server. (In our case, the folder where your html files reside.)</p></li>
+   <li><p>Use an online web font service like <strong>Google Fonts</strong>. With the Google font tool, you can select a font embedded on Google’s servers, and you can copy the code that makes the font available without downloading. All fonts on the Google Fonts website are free to use.</p></li>
+
+   <br><p>Since installing fonts on school computers is blocked by admin, you will only be learning options 3 and 4 in this exercise.</p>
+</ol>
+</p>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>11_2_font.html</strong> and save it to your CSS folder.</p></li>
+<li><p>Give the document the title: <strong>11_2_font</strong>.</p></li>
+<li><p>Add the following starter code to your html document.</p>
+<div id="csHTML"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+      &lt;title&gt;Font2&lt;/title&gt;
+
+
+
+      &lt;style&gt;
+         body {
+            margin: 30px;  
+         }
+
+         #heading1 {
+            font-size: 3.0em;
+            text-align: center;  
+         }
+
+         #p1 {
+         font-size: 1.6em;
+         
+         }  
+
+         #heading2 {
+            font-size: 3.0em;
+            text-align: center;  
+            
+         }
+
+         #p2 {
+            font-size: 1.6em;
+            
+         }
+      &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+      &lt;h1 id="heading1"&gt;Embedded Font&lt;/h1&gt;
+   
+      &lt;p id="p1"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel elit scelerisque mauris pellentesque pulvinar. Volutpat lacus laoreet non curabitur gravida arcu ac tortor dignissim. Pellentesque sit amet porttitor eget dolor. Tortor condimentum lacinia quis vel eros donec ac odio tempor. Pulvinar proin gravida hendrerit lectus a. Suspendisse interdum consectetur libero id faucibus. Vitae ultricies leo integer malesuada nunc vel risus. Amet porttitor eget dolor morbi non arcu. Egestas sed tempus urna et pharetra pharetra massa. Nullam eget felis eget nunc lobortis mattis aliquam. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a. Mauris in aliquam sem fringilla ut morbi. Sociis natoque penatibus et magnis.&lt;/p&gt;
+
+      &lt;h1 id="heading2"&gt;Online Font&lt;/h1&gt;
+
+      &lt;p id="p2"&gt;Massa vitae tortor condimentum lacinia quis vel eros donec. Pellentesque nec nam aliquam sem et. Augue interdum velit euismod in pellentesque massa placerat duis. Non blandit massa enim nec dui. Id semper risus in hendrerit gravida rutrum quisque. At tellus at urna condimentum mattis pellentesque. Sit amet mattis vulputate enim. Adipiscing at in tellus integer feugiat scelerisque varius morbi. Nisl pretium fusce id velit ut tortor. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Vel pharetra vel turpis nunc eget lorem dolor.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<h3>Web Fonts</h3>
+<li><p>Read the article from Mozilla entitled <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts" target="_blank" style="color:blue">Web Fonts</a>.</p></li>
+<li><p>The article has a section entitled "<strong></strong>Active learning: A web font example"</strong>. Follow the steps to learn how to embed a font and how to use a font from an online service.</p>
+
+<p>Select and download two fonts from <a href="https://www.fontsquirrel.com/" target="_blank" style="color:blue">Fonts Squirrel</a>. Use one of the fonts for the heading "Embedded Fonts" and other for the first paragraph. The heading font should be a <strong>san serif</strong> font and the paragraph font a <strong>serif</strong>.</p></li>
+
+<h3>Online Fonts</h3>
+<li><p>Select and copy the code for two fonts from <a href="https://fonts.google.com/" target="_blank" style="color:blue">Google Fonts</a>.</p>
+<p>Again select one font for the heading and another for the paragraph.</p>
+<p>Adding an online font to your web page requires two steps.
+   Step 1: Add a <strong>link</strong> tag to the head section of your html document with Google page that contains the font information. Here is an example:</p>
+<div id="csHTML"><pre>&lt;link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"&gt;</pre></div>
+   Step 2: Add the <strong>font-family</strong> property to your web pages styling that references the name of the Google font you are using. Here is an example: 
+<div id="csHTML"><pre>font-family: 'Roboto', serif;</pre></div>
+</li>
+</ol>
+<br><hr><br>
+<div>
+<img src="images/CS2/CSS/font02.png" styling="width:99%">
+</div> 
+<br>
+</div>	

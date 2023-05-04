@@ -1,0 +1,48 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Frog</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>Frog</strong> behaves like a Bug in every way, except that it is moves or jumps two cells whenever possible and turns like a Bug otherwise.
+To access a location in the grid two positions away from a frog's current location use the Location class's <strong>getAdjacentLocation</strong> method twice.</p>
+One appropriate to simulate this behavior is to do the following within the move method:
+<div id="csOutput">
+<pre>
+if frog can jump two spaces then 
+   jump
+else
+   super.move()   // move like a bug
+</pre>
+</div>
+ 
+  <p>Implement the Frog class then use the FrogRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>FrogRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class FrogRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        Frog frog = new Frog();
+
+        world.add(new Location(7,5), frog);
+        world.show();
+    }
+}
+</pre>
+  </div>
+ 
+<h1>Source Files</h1>
+<p>Frog.java</p>
+<p>FrogRunner.java</p>
+
+	<br>
+</div>	
+

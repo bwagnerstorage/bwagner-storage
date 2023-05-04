@@ -1,0 +1,119 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Interface</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an interface</li>
+						<li>How does a class implement an interface</li>
+						<li>What is the purpose of an interface</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Interfaces</h1>
+<p>In Java an <strong>interface</strong> is a set of methods that classes must incorporate into their design. 
+Interfaces are similar to abstract classes in that they both contain abstract methods. They are different, however, in that interfaces can
+only contain abstract methods and constants. They do not contain variables, constructors, and implemented methods.</p>
+
+<div id="csNote" style="width:250px"><strong>Interfaces</strong> are not classes.</div>
+
+Look at the following example of an interface.
+<div id="csCode">
+<pre>
+public <div id="csHighlight"><pre>interface</pre></div> Pet
+{
+   public abstract void eat();
+}
+</pre></div>
+<p>To define an interface you use the keyword <strong>interface</strong> followed by the name of the interface. The methods declared in an interface must be both public and abstract.
+In fact, if you do not include these modifiers the compiler will add them for you. For this reason, most programmers do not include them.</p>
+<div id="csCode">
+<pre>
+public <div id="csHighlight"><pre>interface</pre></div> Pet
+{
+   void eat();
+}
+</pre></div>
+<p>Interfaces can also contain constants.</p>
+<div id="csCode">
+<pre>
+public <div id="csHighlight"><pre>interface</pre></div> Pet
+{
+   public final int NUM_MEALS = 2;
+   
+   void eat();
+}
+</pre></div>
+<p>Again the public declaration for the constant is optional.</p>
+
+<h1>Implementing Interfaces</h1>
+<p>Interfaces are implemented by classes. Look at the Dog class below that implements the Pet interface.</p>
+<div id="csCode">
+<pre>
+public class Dog <div id="csHighlight"><pre>implements</pre></div> Pet
+{   
+   public void eat()
+   {
+       // code to eat
+   }
+}
+</pre></div>
+<p>To implement an interface a class uses the keyword <strong>implements</strong>. </p>
+<p>Since the Dog class implements the Pet interface, it is <strong>required</strong> to implement the eat method.</p>
+<p>The Cat class below also implements the Pet interface therefore it also implements the eat method.</p>
+<div id="csCode">
+<pre>
+public class Cat <div id="csHighlight"><pre>implements</pre></div> Pet
+{   
+   public void eat()
+   {
+       // code to eat
+   }
+}
+</pre></div>
+<p>Since interfaces are not classes they cannot be instantiated.
+   The following code would cause a compile error.</p>
+
+<div id="csCode">
+<pre>Pet pet = new Pet();   <div id="csHighlight"><pre>// error</pre></div>
+</pre>
+</div>
+
+<h1>Purpose of Interfaces</h1>
+<p>Interfaces are used in Java to establish a common interface among related classes. Implementing an interface allows
+   a class to become more formal about the behavior it promises to provide. Interfaces form a contract between the class
+   and the outside world. If your class claims to implement an interface, all methods defined by that interface
+   must appear in its source code before the class will successfully compile.</p>
+   
+<p>In the example above, both the Dog and Cat classes implement the Pet interface, therefore clients of these
+   classes know they both contain an eat method.</p>
+
+<h1>Implementing Multiple Interfaces</h1>
+
+<p>When using inheritance in Java a class can only extend one parent class. Multiple inheritance is not allowed. Interfaces, however, are not classes
+   and multiple implementations are allowed. As an example, the Dog class below now implements both a Pet and Security interface.</p>
+<div id="csCode">
+<pre>
+public class Dog implements Pet, Security
+{   
+    
+}
+</pre></div>
+<p>Each interface is separated by a comma.</p>
+<p>Classes can also implement interfaces in conjunction with extending a class.</p>
+<div id="csCode">
+<pre>
+public class Dog extends Animal implements Pet, Security
+{   
+    
+}
+</pre></div>
+<br>
+</div>	
+

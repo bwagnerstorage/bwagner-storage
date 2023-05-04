@@ -1,0 +1,78 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">WizardCritter</div>
+
+<div id="csContent">
+<p>A <strong>Critter</strong> is an Actor. A Critter is more advanced than a Bug in that it has the ability to interact with
+   other actors in the grid. This is accomplished by redefining its act method.</p>
+
+<p>Below is the Critter class's implementation of the act method.</p>
+
+<div id="csCode">
+<pre>
+public void act()
+{
+     if (getGrid() == null)
+         return;
+     ArrayList&ltActor&gt actors = <div id="csHighlight"><pre>getActors()</pre></div>;
+     <div id="csHighlight"><pre>processActors(actors)</pre></div>;
+     ArrayList&ltLocation&gt moveLocs = <div id="csHighlight"><pre>getMoveLocations()</pre></div>;
+     Location loc = <div id="csHighlight"><pre>selectMoveLocation(moveLocs)</pre></div>;
+     <div id="csHighlight"><pre>makeMove(loc)</pre></div>;
+}
+</pre></div>
+<p>A Critter acts by calling the following methods</p>
+<div id="csList">
+<ul>
+<li><strong>getActors</strong> - this method gets a list of actors occupying the locations in the 8 compass directions surrounding the Critter.</li>
+<li><strong>processActors</strong> - this method is where the Critter processes (interacts with) the actors returned by getActors. A Critter processes actors be eating any actor that is not a rock or another Critter.</li>
+<li><strong>getMoveLocations</strong> - this method gets a list of unoccupied locations in the 8 compass directions surrounding the Critter.</li>
+<li><strong>selectMoveLocations</strong> - this method selects at random one of the locations returned by getMoveLocations.</li>
+<li><strong>makeMove</strong> - this method moves the Critter to the selected location returned by selectMoveLocation.</li>
+</ul>
+</div>
+<br><hr>
+<h1>Directions</h1>
+<p>A <strong>WizardCritter</strong> is a Critter with the power to transform other actors into rocks.
+   A WizardCritter gets actors like a normal Critter. When the WizardCritter encounters another actor within its
+   neighborhood it transforms it into a rock and changes its color to the WizardCritter's color. 
+   The WizardCritter has no affect on other WizardCritters.</p>
+<p>After transforming the actors around it, a WizardCritter apparates or teleports to a randomly selected empty location somewhere within the grid. </p>
+<p>A WizardCritter is instantiated with a color value specified in a constructor's parameter list.</p>
+<br>
+<p>Implement the WizardCritter class then use the WizardCritterRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>WizardCritterRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class WizardCritterRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+        world.add(new Location(7, 8), new Rock());
+        world.add(new Location(3, 3), new Rock());
+        world.add(new Location(3,6), new Bug());
+        world.add(new Location(6,2), new Bug());
+        world.add(new Location(8,1), new Bug());
+        world.add(new Location(1,2), new Critter());
+        world.add(new Location(4,7), new Critter());
+        world.add(new Location(2, 8), new Flower(Color.BLUE));
+        world.add(new Location(5, 5), new Flower(Color.PINK));
+        world.add(new Location(4, 4), new WizardCritter());
+        world.add(new Location(9, 9), new WizardCritter());
+        world.show();
+    }
+}
+</pre>
+  </div>
+<h1>Source Files</h1>
+<p>WizardCritter.java</p>
+<p>WizardCritterRunner.java</p>
+
+	<br>
+</div>	
+

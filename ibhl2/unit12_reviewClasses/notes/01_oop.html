@@ -1,0 +1,464 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Review OOP</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>D.1.1 Outline the general nature of an object.</li>
+						<li>D.1.2 Distinguish between an object(definition, template or class) and instantiation.</li>
+						<li>D.1.3 Construct unified modelling language(UML) diagrams to represent object designs.</li>
+						<li>D.1.4 Interpret UML diagrams</li>
+						<li>D.1.5 Describe the process of decomposition into several related objects.</li>
+						<li>D.1.6 Describe the relationships between objects for a given problem.</li>
+						<li>D.1.7 Outline the need to reduce dependencies between objects in a given problem.</li>
+						<li>D.1.8 Construct related objects for a given problem.</li>
+						<li>D.1.9 Explain the need for different data types to represent data items.</li>
+						<li>D.1.10 Describe how data items can be passed to and from actions as parameters.</li>
+						<li>D.2.1 Define the term encapsulation.</li>
+						<li>D.2.2 Define the term inheritance.</li>
+						<li>D.2.3 Define the term polymorphism.</li>
+						<li>D.2.4 Explain the advantages of encapsulation.</li>
+						<li>D.2.5 Explain the advantages of inheritance.</li>
+						<li>D.2.6 Explain the advantages of polymorphism.</li>
+						<li>D.2.7 Describe the advantages of libraries of objects.</li>
+						<li>D.2.8 Describe the disadvantages of OOP.</li>
+						<li>D.2.9 Discuss the use of programming teams.</li>
+						<li>D.2.10 Explain the advantages of modularity in program development.</li>
+						<li>D.3.9 Discuss the features of modern programming languages that enable internationalization.</li>
+						<li>D.3.10 Discuss the ethical and moral obligations of programmers.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1></h1>
+<div id="ib">D.1.1 Outline the general nature of an object.</div>
+
+<p>Real-world objects are everywhere: your dog, your desk, your television, your bicycle, your wallet.
+   Real-world objects share two characteristics: They all have <strong>state</strong> and <strong>behavior</strong>. 
+   Dogs have state (name, color, breed, hungry) and behavior (barking, fetching, wagging tail).
+   Bicycles also have state (current gear, current pedal cadence, current speed) and behavior (changing gear, changing pedal cadence, applying brakes).
+   The state of an object describes an object's attributes. The behavior of an object describes what it does.</p>
+
+<div id="ib">D.1.2 Distinguish between an object(definition, template or class) and instantiation.</div>
+
+<p>An <strong>object</strong> is defined by a class. A <strong>class</strong> is a description, model, or blueprint from which an object is created. 
+  Consider the blueprint created by an architect when designing a house. The blueprint defines the important characteristics
+  of the house - its walls, windows, doors, electrical outlets, and so on. Once the blueprint is created, several houses can be built using it.</p>
+
+<div align="center"><img src="images/classDecomposition3.gif" width="400px"> </div>
+
+<p>The houses built from the blueprint are different. They are in different locations, they have different addresses, contain different
+ furniture, and different people live in them. Yet in many ways they are the "same" house. The layout of the rooms, number of windows and doors,
+ and so on are the same in each. To create a different house, we would need a different blueprint. A class is a blueprint of an object.
+ However, a class is not an object any more than a blueprint is a house.</p>
+ 
+ <p><strong>Instantiation</strong> is process of using a class's constructor to create an object. To instantiate an object in Java you use the keyword <strong>new</strong>.</p>
+
+<div id="csCode"><pre>Student student = new Student("John", "Wayne");</pre></div>
+
+
+<div id="ib">D.1.3 Construct unified modelling language(UML) diagrams to represent object designs.</div>
+
+<p>UML (Unified Modeling Language) is a pictorial language that allows you to describe a software system in visual way.
+ A class diagram is a type of UML diagram that describes the attributes and operations of a class. A class diagram also shows 
+ the relationship between classes within a software system and it shows the responsibility each class has within the system.</p>
+
+<p>Below is a class diagram for a Lock and a CombinationLock class.</p>
+
+<div align="center"><img src="images/lockUML.png"></div>
+
+<p>Here is a link to a tutorial on <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/" target="_blank"><font color="#0000FF">UML</font></a>.</p>
+
+<div id="ib">D.1.4 Interpret UML diagrams</div>
+
+<p>Here is a link to a tutorial on <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/" target="_blank"><font color="#0000FF">UML</font></a>.</p>
+
+<div id="ib">D.1.5 Describe the process of decomposition into several related objects.</div>
+
+<p><strong>Class decomposition</strong> is the process of breaking a programming problem into multiple classes where each class
+ has a specific task to perform in solving the problem.</p>
+ 
+<h3>Class Decomposition Example</h3>
+
+<p>Class decomposition can be illustrated through the problem of running a high school. Running a high school is a major undertaking. 
+   The first thing to be done in running a school is for the school board to hire a principal. The principal is the school's manager, 
+   he or she is responsible for everything that goes on in the school. The principal, however, cannot run the school alone, the job 
+   is just to big. So the principal hires people to help him. He hires assistant principals, counselors, teachers, librarians, coaches,
+   secretaries, custodians, lunch workers, nurses, and the list goes on. Each person has a specific job to do in making the school run
+   efficiently.</p>
+
+<p>The structure chart for a high school might look like the following.</p>
+<div align="center"><img src="images/classDecomposition1.png"> </div>
+
+<h3>Class Decomposition</h3>
+
+<p>Hypothetically, if we were to write a computer program that solved the problem of running a high school each worker in the school
+ would be a class. There would be a principal class, an assistant principal class, a counselor class, a teacher class, and so on. This is
+ the process of class decomposition. Just as each worker in the school has a specific job to do, each class within the program has its own
+ job to do in helping solve the problem.</p>
+
+<div id="ib">D.1.6 Describe the relationships between objects for a given problem.</div>
+
+<h3>Aggregation</h3>
+<p>Here a link to a tutorial on class/object relationships <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/" style="color:blue">Link</a></p>
+<p>Aggregation is the relationship between two classes where an object of one class has an object of another.</p>
+ <p> Aggregation is a <strong>"has a"</strong> relationship. The school has a principal. The team has a coach. The dog has a tail.</p>
+ 
+<div id="csCode"><pre>public class Classroom
+{
+   private Teacher teacher;   // aggregation: a classroom has a teacher 
+   
+</pre></div>
+
+
+<h3>Inheritance</h3>
+<p>Inheritance is a feature that represents the <strong>"is a"</strong> relationship between different classes. Inheritance allows a class
+   to have the same behavior as another class and extend or tailor that behavior to provide special action for specific needs.</p>
+<p>A high school is a school, a dalmatian is a dog, a corvette is a car.</p>
+
+<div id="csCode"><pre>public class CombinationLock extends Lock
+{
+   // inheritance: a combination lock is a lock 
+   
+</pre></div>
+
+<div id="ib">D.1.7 Outline the need to reduce dependencies between objects in a given problem.</div>
+
+<h3>What is a Dependency?</h3>
+<p>Whenever a class A uses another class, then A depends on B. A cannot carry out it's work without B, and A cannot be reused without
+   also reusing B. In such a situation the class A is called the "dependant" and the class B is called the "dependency".
+   Two classes that use each other are said to be "coupled".</p>
+   
+<h3>Why are Dependencies Bad?</h3>
+<p>Dependencies are bad because they decrease reuse. Decreased reuse is bad for many reasons. Often reuse has positive impact on
+  development speed, code quality, code readability, code maintenance, etc.</p>
+
+<h3>How can Dependencies be Reduced?</h3>
+<p>One way object dependencies can be reduced is through the use of <strong>interfaces</strong> and <strong>abstract classes</strong>. 
+   Let's look at an example.</p>
+<p>Suppose you have a method in a class named printList that takes an ArrayList as a parameter.</p>
+<div id="csCode">
+<pre>
+public void printList(ArrayList list)
+{
+    // print the list
+}
+</pre>
+</div>
+<p>Method printList is dependant upon the ArrayList class. The method is restricted to only working with ArrayList objects.</p>
+<p>Now lets modify the method by replacing the ArrayList parameter with a reference to the List interface.</p>
+<div id="csCode">
+<pre>
+public void printList(List list)
+{
+    // print the list
+}
+</pre>
+</div>
+<p>By referencing the List interface the method is no longer "tightly coupled" to the ArrayList class. This makes the method more useful 
+   because it can now print any list that implements the List interface such as the LinkedList class.</p>
+
+<div id="ib">D.1.8 Construct related objects for a given problem.</div>
+
+<div id="csNote">IB documentation states "Examination problems will require students to construct definitions for no more than
+three objects and to explain their relationships to each other and to any additional classes defined by the examiners.</div>
+
+<div id="ib">D.1.9 Explain the need for different data types to represent data items.</div>
+
+<p>A data type specifies the size and type of values that can be stored in an identifier or variable. 
+  The Java language provides 8 different primitive data types. Different data types allow you to select the
+  type appropriate to the needs of the application. For example, if a program only needs variables for operations like counting or summing Java's 
+  integer types(int or long) will do, but if the program needs to store data like money that have decimal points it would need to use Java's 
+  real number types(float or double).</p>
+
+<div id="ib">D.1.10 Describe how data items can be passed to and from actions as parameters.</div>
+
+<h3>Parameters</h3>
+  <p>A <strong>parameter</strong> or argument is a value that is passed to a method so that the method can use
+     that value in its processing. A parameter is located
+	 inside the parentheses that follow a method name.</p>
+	 
+	<div align="center"><img src="images/parameter1.png"></div>
+	 
+	 <p>The value 16 is a parameter or argument for the method sqrt. The method calculates the
+	    square root of this value and assigns it to the variable num.</p> 
+  <p>A parameter can be a <strong>literal value</strong>.</p>
+  <div id="csCode">
+    <pre>
+Math.sqrt(81)
+Math.round(76.9)
+str.equals("exit")</pre>
+  </div>
+  <p>A parameter can be a <strong>variable</strong>.</p>
+  <div id="csCode"><pre>
+Math.sqrt(num)
+Math.round(average)
+str.equals(lastName)</pre>
+  </div>
+    <p>A parameter can be a <strong>mathematical expression</strong>.</p>
+  <div id="csCode">
+    <pre>
+Math.sqrt(20 + 50 + 11)
+Math.round((grade1 + grade2 + grade) / 3)</pre>
+  </div>
+<p>A parameter can be a call to <strong>another method</strong>.</p>
+  <div id="csCode">
+    <pre>
+Math.round(Math.sqrt(35))
+Math.max(num3, Math.max(num1, num2))</pre>
+  </div>
+  <p>A method can be have 0, 1, or <strong>more parameters</strong>. Multiple parameters are separated by commas.</p>
+  <div id="csCode">
+   <pre>
+Math.pow(10, 2)
+Math.max(num1, num2)
+str.substring(0, str.length()/2)</pre>
+  </div>
+<h3>Writing a Method with Parameters</h3>
+<p>To add parameters to your own method definitions you simply declare one or more variables in the parentheses that follow 
+   the method name. These variable declarations need to include a data type and an identifier name. Look at the following example.</p>
+     <div id="csCode">
+   <pre>
+public double average(int gr1, int gr2, int gr3)
+{
+   return (gr1 + gr2 + gr3) / 3.0;</pre>
+}
+  </div>
+<p>Method average declares three parameters all of type int named gr1, gr2, and gr3. These parameters are used to
+   store the value of three grades that are passed to the method. The method uses these parameters
+   to calculate the average of the three grades and returns the answer.
+<p>Watch the following demonstration to see the order of execution for the method above.</p>
+
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Parameters1/Slide1.PNG"></li>
+          <li><img src="images/Parameters1/Slide2.PNG"></li>
+          <li><img src="images/Parameters1/Slide3.PNG"></li>
+		  <li><img src="images/Parameters1/Slide4.PNG"></li>
+		  <li><img src="images/Parameters1/Slide5.PNG"></li>
+		  <li><img src="images/Parameters1/Slide6.PNG"></li>
+		  <li><img src="images/Parameters1/Slide7.PNG"></li>
+		  <li><img src="images/Parameters1/Slide8.PNG"></li>
+		  <li><img src="images/Parameters1/Slide9.PNG"></li>
+		  <li><img src="images/Parameters1/Slide10.PNG"></li>
+		  <li><img src="images/Parameters1/Slide11.PNG"></li>
+		  <li><img src="images/Parameters1/Slide12.PNG"></li>
+		  <li><img src="images/Parameters1/Slide13.PNG"></li>
+		  <li><img src="images/Parameters1/Slide14.PNG"></li>
+		  <li><img src="images/Parameters1/Slide15.PNG"></li>
+		  <li><img src="images/Parameters1/Slide16.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+	<h3>Some More Examples</h3>
+	     <div id="csCode">
+   <pre>
+public void printInfo(String name, int age)
+{
+   System.out.println("My name is " + name + " and I am " + age + " years old");</pre>
+}
+  </div>
+  <br>
+ <div id="csCode">
+   <pre>
+public double area(double length, double width)
+{
+   return length * width;</pre>
+}
+  </div>
+  
+<h1>Parameter Scope</h1>
+<p>The scope of a parameter is limited to the method it is declared in. Look at the following
+   example. </p>
+<div id="csCode">
+   <pre>
+public int minimum(int num1, int num2)
+{
+   if(num1 < num2)
+     return num1;
+   else
+     return num2;</pre>
+}
+  </div>
+ <p>The parameters, num1 and num2, have method scope. This means they are <strong>local variables</strong> for the
+    method minimum. They do not exist outside this method.</p>	
+<br>
+<h1>Formal vs Actual Parameters</h1>
+<p>There are two types of parameters: formal parameters and actual parameters or arguments. The parameters in the
+   header of the method declaration are called <strong>formal parameters</strong>. The values
+   passed into a method are called <strong>actual parameters</strong> or <strong>arguments</strong>.</p>
+   <div align="center"><img src="images/parameter2.png"></div>
+
+<div id="ib">D.2.1 Define the term encapsulation.</div>
+
+<p><strong>Encapsulation</strong> is the process of combining variables and methods in a single package called a class.</p> 
+
+<div id="ib">D.2.2 Define the term inheritance.</div>
+
+<p><strong>Inheritance</strong> is a feature that represents the <strong>"is a"</strong> relationship between different classes. Inheritance allows a class
+   to have the same behavior as another class and extend or tailor that behavior to provide special action for specific needs.</p>
+
+<div id="ib">D.2.3 Define the term polymorphism.</div>
+
+<p><strong>Polymorphism</strong> is a OOP feature that allows values of different data types to be handled using a uniform interface.
+This technique provides a consistent interface over a range of implementations.</p>
+<p>Polymorphism is implemented in Java in two forms</p>
+<div id="csList">
+<ul>
+<li><strong>Method Overloading</strong> (compile-time polymorphism) - defining more than one method in a class with the same name.</li>
+<li><strong>Method Overriding</strong> (run-time polymorphism) - the ability to redefine methods for derived classes(subclasses).</li>
+</ul>
+</div>
+
+<h3>Method Overloading Example</h3>
+<div id="csCode"><pre>
+// calculates and returns area of a rectangle
+public double <div id="csHighlight"><pre>area</pre></div>(int length, int width)
+{  
+    return length * width;
+}
+
+// calculates and returns area of a circle
+public double <div id="csHighlight"><pre>area</pre></div>(int radius)
+{
+    return Math.PI * radius * radius;
+}
+
+</pre>
+</div>
+<p>Two methods are defined both with the name area. The first method calculates the area of a rectangle and the second calculates the 
+   area of a circle.</p>
+   
+<h3>Method Overriding Example</h3>
+<div id="csCode">
+<pre>
+public class Hamburger
+{
+    public String <div id="csHighlight"><pre>getFood</pre></div>()
+    {
+        return "hamburger";
+    }
+}
+
+public class Meal extends Hamburger
+{
+    // override
+    public String <div id="csHighlight"><pre>getFood</pre></div>()
+    {
+        return super.getFood() + " french fries" + " drink"; 
+    }
+}
+</pre>
+</div>
+<p>Method getFood is overridden (redefined) in the Meal subclass so that it also includes french fries and a drink.</p>
+<div id="ib">D.2.4 Explain the advantages of encapsulation.</div>
+
+   <p>One aspect of encapsulation is the principle of <strong>information hiding</strong>. With information hiding objects hide their data
+   (instance variables) from other classes by allowing access to the data only through the public methods defined within the class. 
+   Encapsulation therefore guarantees the integrity of the data contained in the object by controlling how the data is accessed and modified.</p>
+
+<h3>Benefits of Encapsulation</h3>
+  <div id="csList">
+  <ul>
+    <li>It simplifies the interaction between objects.</li>
+	<li>Allows a class to hide the internal details of how an object does something. </li>
+	<li>A class can change its internal implementation without hurting the overall functionality of the system.</li>	
+	<li>Prevents code (data) from accidental corruption due to programming errors. </li>
+</li>
+  </ul>
+  </div>
+
+<div id="ib">D.2.5 Explain the advantages of inheritance.</div>
+
+<div id="csList">
+<ul>
+<li>Code Reuse - don't have to rewrite common code.</li>
+<li>Extensibility - code is well structured so easier to expand or update.</li>
+<li>Easier Maintenance - code is well structured so it is easier to maintain.</li>
+</ul>
+</div>
+
+<div id="ib">D.2.6 Explain the advantages of polymorphism.</div>
+
+<p>Polymorphism provides programmers the ability to treat objects of derived classes as if they were objects of the base class.</p>
+
+<h3>Benefits of Polymorphism</h3>
+<div id="csList"><ul>
+<li>Common Interface - a programmer only has to learn one method name for a multitude of implementations.</li>
+<li>Extensibility - a program that uses polymorphism is capable of handling any new requirements or 
+enhancements that arise in the future due to its common interface.</li>
+<li>Code Reuse - if an application does not use a common interface it will need to
+change and duplicate most of its code to support new implementations.</li>
+</ul></div>
+
+<div id="ib">D.2.7 Describe the advantages of libraries of objects.</div>
+<div id="csList"><ul>
+<li>Increased productivity - programmers don't have to "reinvent the wheel."</li>
+<li>Efficient code - code in libraries is typically stable and optimized.</li>
+<li>Code reuse</li>
+</div></ul>
+
+<div id="ib">D.2.8 Describe the disadvantages of OOP.</div>
+
+<div id="csList">
+<ul>
+<li>Size - OOP programs are generally larger than normal programs.</li>
+<li>Speed - OOP programs are generally slower than normal programs.</li>
+<li>Effort - OOP programs require a lot more time and effort to create.</li>
+<li>Learning - there is a larger learning curve when it comes to knowing how to develop OOP applications.</li>
+</ul>
+</div>
+<p>*In recent years the size and speed issues have been greatly improved, but the issue of effort still remains. </p>
+
+<div id="ib">D.2.9 Discuss the use of programming teams.</div>
+
+<p>A <strong>programming team</strong> is a team of people who develop or maintain computer software.
+The team programming approach has been utilized for many years but this approach has become even more important with the increased popularity of
+object-oriented programming. 
+Many of the strategies used in a team programming approach involve multiple programmers working collaboratively on the same piece
+ of source code as opposed to being individually responsible for individual tasks. 
+  Benefits of this approach include the ability for deficiencies in knowledge and ability in specific areas to be compensated
+   for by the other programmer; in addition, the shared responsibility is thought to increase incentives for meeting project
+   deadlines and quality targets. Therefore a team approach is more productive.</p>
+
+<div id="ib">D.2.10 Explain the advantages of modularity in program development.</div>
+
+<div id="csList"><ul>
+<li>Increased production - several programmers can work on individual programs at the same time, thus, making development of programs faster.</li> 
+<li>Better usability - code is easier to read and understand.</li>
+<li>Easier maintenance - code is easier to debug, update, and modify.</li>
+<li>Code reuse</li>
+</ul></div>
+
+<div id="ib">D.3.9 Discuss the features of modern programming languages that enable internationalization.</div>
+
+<p>By using the <strong>Unicode</strong> character set instead of ASCII applications can store data for any language in the world.
+   Also a program's user interface can be customized to meet the needs of the user.</p>
+
+<div id="ib">D.3.10 Discuss the ethical and moral obligations of programmers.</div>
+
+<p>"Do programmers have responsibility for how their code is used? What if a programmer writes code to pry into confidential information or
+  copy-protected material? Does he bear responsibility along with the person who used the program? What about a programmer who knowingly or
+  unknowingly writes code to "fix the books?" Should he be liable? What about software sabotage? Software warfare? Do programmers have a moral
+  responsibility if they write software that the CIA uses to disrupt communications or in other ways destabilize a foreign country? Given
+  the damage such software could potentially do, isn't that software team potentially more morally bankrupt than the Manhattan Project team?
+  What about the team writing software for sophisticated weaponry? Do they have blood on their hands? How about writing a Web site so that a
+  hate group can spread its message? What about writing the software that powers porn sites? Do developers have any control over how their software
+  is used?"</p>
+  
+  <p>Reference: <a href="http://www.informit.com/articles/article.aspx?p=21268" target="_blank"><font color="blue">http://www.informit.com/articles/article.aspx?p=21268</font></a></p>
+  <p>Reference: <a href="http://www.professays.com/essay-samples-on-computers-and-technology/moral-and-ethical-responsibility/" target="_blank"><font color="blue">http://www.professays.com/essay-samples-on-computers-and-technology/moral-and-ethical-responsibility/</font></a></p>
+
+<p></p>
+
+<br>
+</div>	
+

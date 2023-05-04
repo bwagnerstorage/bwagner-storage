@@ -1,0 +1,134 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">PostFix Evaluator</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/PostFixEvaluatorNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >PostFixEvaluator</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/PostFixEvaluator.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >PostFixEvaluator</a></h1>
+
+  <p>There are three notations used to represent arithmetic expressions:</p>
+  <div id="csList">
+  <ul>
+  <li>Infix Notation</li>
+  <li>Prefix Notation</li>
+  <li>Postfix Notation</li>
+  </ul>
+  </div>
+  <br>
+<strong>Infix Notation</strong>
+<p>This is the notation you use in math class. In this notation an operator is positioned between two operands (Ex. 7 + 8)</p>
+
+<strong>Prefix Notation</strong>
+<p>In this notation an operator is positioned in front of two operands (Ex. + 7 8)</p>
+
+<strong>Postfix Notation</strong>
+<p>In this notation an operator is positioned after two operands (Ex. 7 8 +)</p>
+
+<p>Both prefix and postfix notation are used in computers to evaluate arithmetic expressions. They use these notations instead of infix because parentheses
+   are not needed to express precedence rules(PEMDAS).</p>
+   
+  <p>The table below shows some arithmetic expressions in both infix and postfix notations.</p>
+   
+<table id="csTable" width="250px" style="margin-left:20px">
+  <tr>
+     <th>Infix</th>
+	 <th>Postfix</th>
+  </tr>
+   <tr>
+     <td>4 + 5</td>
+	 <td>4 5 +</td>
+  </tr>
+    <tr>
+     <td>3 * 4 + 2</td>
+	 <td>3 4 * 2 +</td>
+  </tr>
+    <tr>
+     <td>3 + 4 * 2</td>
+	 <td>3 4 2 * +</td>
+  </tr>
+  <tr>
+     <td>4 * 2 + 3</td>
+	 <td>3 4 2 * +</td>
+  </tr>
+  <tr>
+     <td>2 * 6 + 2 * 5</td>
+	 <td>2 6 * 2 5 * +</td>
+  </tr>
+  </table>
+  
+<h3>Evaluating a Postfix Expression</h3>
+<div id="csOutput"  style="margin-left:20px; width:600px">
+<pre>
+Start at the left of the expression. Each time an operator is
+encountered, replace the operator and its preceding two
+arguments with the value calculated by applying the operator
+to its preceding two operands (values). For example,
+
+3 4 * 2 +    // replace 3 4 * with 12
+   12 2 +    // replace 12 2 + with 14
+       14    // the value of the expression
+
+Another example:
+
+3 4 2 * +    // replace 4 2 * with 8
+    3 8 +    // replace 3 8 + with 11
+       11    // the value of the expression
+</pre>
+</div>
+
+<h1>Directions</h1>
+<p>Complete this program that evaluates arithmetic expressions that are postfix form. The program only needs to be able to evaluate integer operands
+   and the operators +, -, *, and /. Use a <strong>stack</strong> in your implementation.</p>
+  <p>Complete the method <strong>evaluate</strong>. The method evaluates a postfix 
+    expression and returns the result.</p>
+
+<div id="csCode"><pre>
+/* evaluates the postfix expression exp
+ * @param exp the postfix expression to be evaluated
+ * @return the total of exp
+ *    Precondition: exp is a well-formed postfix expression
+ */
+public int evaluate(String exp)
+{
+
+
+}
+</pre></div>
+
+<h3>split Method</h3>
+<p>The String class has a useful method named <strong>split</strong> that you can use to simplify your implementation. Look at the following example: </p>
+<div id="csCode"><pre>
+String exp = "12 8 +";
+String[] tokens = exp.split(" ");
+</pre></div>
+<p>The split method breaks a string apart into tokens and stores them in an array of Strings. The space in the split's parameter list determines how the string is 
+   going to be split apart. In this case, a new token is created each time a space is encounter. After execution, the array tokens contains the following:</p>
+<table id="csTable"  width="100px" style="margin-left:20px">
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+</tr>
+<tr>
+<td>"12"</td>
+<td>"8"</td>
+<td>"+"</td>
+</tr>
+</table>
+
+ 
+<h1>Source File</h1>
+<p>PostFixEvaluator.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+4 5 + = 9
+3 4 2 * + = 11
+2 6 * 2 5 * + = 22
+7 4 + 8 - 3 * = 9
+2 3 + 4 5 * - 2 1 / + = -13
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,132 @@
+<div id="csHeader">Program Example Using Jeroo Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to create and use Jeroo methods</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Example - Clear Nets and Pick</h1>
+  <p>The section contains an extended example that demonstrates the algorithm development process,
+     and shows a recommended process for developing source code that contains Jeroo methods.</p>
+  <p>Features of the Jeroo Language</p>
+  <div id="csList">
+    <ol>
+      <li>Main Method</li>
+	  <li>Basic Actions</li>
+	  <li>Jeroo Methods (programmer-defined methods)</li>
+    </ol>
+  </div>
+  <h3>Problem Statement (Step 1)</h3>
+  <p>A Jeroo starts at (1,4) facing North with 5 flowers in its pouch. There are two nets immediately
+     South of the Jeroo at locations (2,4) and (3,4). There is a flower directly South of the second
+	 net. Write a program that directs the Jeroo to disable the nets and pick the flower. After
+	 picking the flower, the Jeroo should return to its starting location and face South.</p>
+	 
+  <img src="images/Jeroo/method6.gif">
+	 
+  <h3>Analysis of the Problem (Step 2)</h3>
+  <div id="csList">
+    <ol>
+      <li>The Jeroo must turn around to locate the first net.</li>
+	  <li>Each net is directly South of the previous one.</li>
+	  <li>The first net is directly South of the Jeroo.</li>
+	  <li>The flower is at location (4,4).</li>
+	  <li>The Jeroo must finish facing South at location (1,4).</li>
+	  <li>The Jeroo should finish with 5 - 2 + 1 = 4 flowers.</li>
+    </ol>
+  </div>
+  <h3>Detailed Algorithm (Steps 3 and 4)</h3>
+  <div id="csOutput">
+     
+    <pre>
+Let's name the Jeroo kim.
+kim should do the following
+     Turn around         <font color="#FF00FF">// now at (1,4) facing South</font>
+     Disable two nets in a row
+          Toss
+          Hop once       <font color="#FF00FF">// now at (2,4) facing South</font>
+          Toss
+          Hop once       <font color="#FF00FF">// now at (3,4) facing South</font>
+     Get the flower
+          Hop once       <font color="#FF00FF">// now on flower at (4,4) facing South</font>
+          Pick
+     Go back to (1,4) and turn around
+          Turn around    <font color="#FF00FF">// now at (4,4) facing North</font>
+          Hop 3 times    <font color="#FF00FF">// now at (1,4) facing North</font>
+          Turn around    <font color="#FF00FF">// now at (1,4) facing South</font></pre>
+  </div>
+  <h3>Review the Algorithm (Step 5)</h3>
+   <div id="csList">
+    <ol>
+      <li>The high-level algorithm helps manage the details.</li>
+	  <li>We used a "turn around" step previously. We can use the same logic here.</li>
+	  <li>The act of turning around appears as a step in the high-level algorithm and as part of the "Go back to (1,4) and turn around" step. Interesting!</li>
+    </ol>
+  </div>
+  <h3>Possible Behaviors</h3>
+  <div id="csList">
+    <ol>
+      <li>"Turn around" is used three times </li>
+	  <li>The sequence "Toss, Hop" is used two times in the Disable nets step.</li>
+    </ol>
+  </div>
+  <p>We will write a Jeroo method for each of these behaviors, but first, we need to define a
+     purpose, preconditions, and postconditions for each method. This can be done informally,
+	 because we will write these things in a comment block at the beginning of each method.</p>
+	 
+<img src="images/Jeroo/method7.gif">
+
+  <p>The last postcondition of the tossAndHop method simply says that the Jeroo is facing the
+     direction it was facing at the start of the method. It does not prohibit the Jeroo from 
+	 changing direction during the course of the method as long as the Jeroo returns to its
+	 original direction at the end.</p>
+
+<h1>Jeroo Code for "Clear Nets and Pick"</h1>
+<p>As before, we should develop the code as a series of builds.</p>
+<h3>FIRST BUILD</h3>
+<p>The recommended first build contains three things.</p>
+  <div id="csList">
+    <ol>
+      <li>The main method.</li>
+	  <li>Declaration and instantiation of every Jeroo that will be used.</li>
+	  <li>The high-level algorithm in the form of comments.</li>
+	  <li>Skeletons for each of the Jeroo methods. These skeletons are often called stubs.</li>
+    </ol>
+  </div>
+  
+  <img src="images/Jeroo/method8.gif">
+  <img src="images/Jeroo/method9.gif">
+  
+  <h3>BUILD 2</h3>
+  <p>This build finishes the turnAround method and uses it in the main method. The new code is shown
+     in boldface type. It would be wise to test this method four times, each time start with kim
+	 facing in a different direction. Once we are comfortable that this method works correctly,
+	 we can proceed with the next build.</p>
+	 
+	 <img src="images/Jeroo/method10.gif">
+	 <img src="images/Jeroo/method11.gif">
+	 
+   <h3>BUILD 3</h3>
+   <p>This build finishes the tossAndHop method and uses it in the main method. Our focus is on
+      destroying the two nets. The new code is shown in boldface type.</p>
+	  
+	<img src="images/Jeroo/method12.gif">
+	<img src="images/Jeroo/method13.gif">
+	
+	<h3>BUILD 4 (final)</h3>
+	
+	<p>This build finishes the program. The new code is shown in boldface type. We need to check
+	   to see that kim has the correct number of flowers at the end.</p>
+	   
+	 <img src="images/Jeroo/method14.gif">
+<br>
+</div>	
+

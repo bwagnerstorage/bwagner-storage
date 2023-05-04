@@ -1,0 +1,325 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">System Design Basics</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>1.2.1 Define the terms: hardware, software, peripheral, network, human resources.</li>
+						<li>1.2.2 Describe the roles that a computer can take in a networked world.</li>
+						<li>1.2.3 Discuss the social and ethical issues associated with a networked world.</li>
+						<li>1.2.4 Identify the relevant stakeholders when planning a new system.</li>
+						<li>1.2.5 Describe methods of obtaining requirements from stakeholders.</li>
+						<li>1.2.6 Describe appropriate techniques for gathering the information needed to arrive at a workable solution.</li>
+					    <li>1.2.7 Construct suitable representations to illustrate system requirements.</li>
+						<li>1.2.8 Describe the purpose of prototypes to demonstrate the proposed system to the client.</li>
+						<li>1.2.9 Discuss the importance of iteration during the design process.</li>
+						<li>1.2.10 Explain the possible consequences of failing to involve the end-user in the design process.</li>
+						<li>1.2.11 Discuss the social and ethical issues associated with the introduction of new IT systems.</li>
+						<li>1.2.12 Define the term usability.</li>
+						<li>1.2.13 Identify a range of usability problems with commonly used digital devices.</li>
+						<li>1.2.14 Identify methods that can be used to improve the accessibility of systems.</li>
+						<li>1.2.15 Identify a range of usability problems that can occur in a system.</li>
+						<li>1.2.16 Discuss the moral, ethical, social, economic and environmental implications of the interaction between humans and machines.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 
+<h1>Components of a Computer System</h1>	
+<div id="ib">1.2.1 Define the terms: hardware, software, peripheral, network, human resources.</div>
+<div id="csList">
+<ul>
+<li><strong>Hardware</strong> - the physical parts of a computer system. </li>
+<li><strong>Software</strong> - The programs, programming languages, and data that direct the operations of a computer system.</li>
+<li><strong>Peripheral</strong> - A peripheral is any device, like a keyboard, hard drive, mouse, etc., that connects to the computer.</li>
+<li><strong>Network</strong> - A computer network is a group of computers that are connected together and share information across
+    wireless or wired technology.</li>
+<li><strong>Human Resources</strong> - The skills, energies, talents, abilities and knowledge that are used for the production
+    of goods or the rendering of services.</li>
+</ul>
+</div>
+
+<div id="ib">1.2.2 Describe the roles that a computer can take in a networked world.</div>
+
+<p>Within a network a computer can take on many roles including client, server, email server, web server, DNS Server, router and firewall.</p>
+<div id="csList">
+<ul>
+<li><strong>Client</strong> - a workstation on a network that gains access to central data files, programs, and peripheral
+    devices through a server.</li>
+<li><strong>Server</strong> - a computer or program that supplies data or resources to other machines on a network.</li>
+<li><strong>Email Server</strong> - a computer program responsible for receiving, routing, and delivering e-mail messages.</li>
+<li><strong>Web Server</strong> - a remote computer or a computer program that delivers Web pages to a user's computer, or a client,
+   upon request from a web browser.</li>
+<li><strong>DNS Server</strong> - translates a computer or domain name to the associated IP address. It provides a way
+   to map friendly host names, or URLs, to IP addresses. If you're online a lot, you use domain name servers
+   hundreds of times a day -- and you may not even know it!</li>
+<li><strong>Router</strong> - a computer or other piece of networking equipment that transmits information between two networks.</li>
+<li><strong>Firewall</strong> - a set of related programs that protects the resources of a private network from users from other networks.</li>
+</ul>
+</div>
+<div id="ib">1.2.3 Discuss the social and ethical issues associated with a networked world.</div>
+<div id="csList">
+<ul>
+<li><strong>Security</strong> - The issue of security becomes very important, computers have to protect their data
+   and make sure that data is not accessible for anyone that does not have the right to access it.</li>
+<li><strong>Privacy</strong> - The issue of privacy becomes a very sensitive issue when computers are inter-connected.
+   This issue fall backs to the issue of security and the issue of privacy has a lot in common with security, 
+   because to protect your identity you need security. You should be able to choose what information you share
+   and with who you share that information. Example: GPS on phones.</li>
+<li><strong>Censorship</strong> - Censorship becomes an issue when you inter connect computers because some of the
+   information may be deemed inappropriate by the network manager and so he could make sure that none of
+   the other computers could access this information. China is an good example.</li> 
+</ul>
+</div>
+
+<h1>System Design and Analysis</h1>
+<div id="ib">1.2.4 Identify the relevant stakeholders when planning a new system.</div>
+
+<p><strong>Stakeholder</strong> - anyone whose work will be affected by the new technology. Ideally, each key constituency
+   (e.g., physicians, nurses, medical assistants, and administrative staff) who will interact with the system 
+   should be involved in identifying requirements and designing the system.</p>
+<p>The users or clients must be consulted when designing a new system.</p>
+
+<div id="ib">1.2.5 Describe methods of obtaining requirements from stakeholders.</div>
+<div id="csList">
+<ul>
+<li>Surveys</li>
+<li>Interviews</li>
+<li>Questionnaires</li>
+<li>Direct Observation</li>
+</ul>
+</div>
+<H3>Employees</H3>
+<p>Surveys, interviews, and questionnaires can be valuable resources for designers because employees, as users of the current computer system, 
+   can play an important role in the development of a new system by</p>
+<div id="csList">
+<ul>
+<li>explaining how the current system works</li>
+<li>explaining how it could be improved</li>
+<li>providing requirements/objectives</li>
+<li>being involved in approving the proposed solution</li>
+<li>evaluating one or more prototypes</li>
+<li>testing the system to ensure that it works as expected</li>
+<li>attending training lessons to learn how to use the new system</li>
+</ul>
+</div>
+
+<h3>Direct Observation</h3>
+<P>Direct observation has both advantages and disadvantages. Below are list of a few:</P>
+<p><strong>Advantages</strong></p>
+<div id="csList2"><ul>
+      <li>Quick/first hand/realistic information on data/software/hardware/users/procedures in the current system</li>
+      <li>Help better understand positive and negative features of the current system (for example problems in accessing or validating data/user errors/security issues, etc.); </li>
+      <li>Can highlight aspects that are not detected in questionnaires/interviews so the observer can help produce more detailed reports;</li>
+</ul></div>
+<p><strong>Disadvantages</strong></p>
+<div id="csList2"><ul>
+      <li>Time consuming / expense;</li>
+      <li>The observer might need to observe a complete "cycle" which could last a significant
+          amount of time</li>
+      <li>If the observations are made by only one person, they may be biased</li>
+</ul></div>
+
+
+<div id="ib">1.2.6 Describe appropriate techniques for gathering the information needed to arrive at a workable solution.</div>
+<div id="csList">
+<ul>
+<li>Examining Current Systems</li>
+<li>Examining Competing Products</li>
+<li>Identifying Organizational Capabilities</li>
+<li>Literature Research</li>
+<li>Observation</li>
+</ul>
+</div>
+
+<div id="ib">1.2.7 Construct suitable representations to illustrate system requirements.</div>
+<div id="csList">
+<ul>
+<li><strong>System Flow Chart</strong><br>
+<p>System flowcharts are a way of displaying how data flows in a system and how decisions are made to control events.
+To illustrate this, symbols are used. They are connected together to show what happens to data and where it goes. The basic ones include:</p>
+<p><img src="images/System FlowChart Symbols.png" width="95%"></p>
+<p><strong>Example 1:</strong> System Flow Chart for the Process of Typing and Executing a Java Program</p>
+<p><img src="images/System Flow Chart Example.png" width="95%"></p>
+<p><strong>Example 2:</strong> System Flow Chart for Cruise Control System</p>
+<p>This system flowchart is a diagram for a 'cruise control' for a car. The cruise control keeps the car at a steady speed that has been set by the driver.</p>
+<p><img src="images/SystemFlowChart2.png"></p>
+<p>The flowchart shows what the outcome is if the car is going too fast or too slow. The system is designed to add fuel, or take it away and so keep the car's speed constant.
+   The output (the car's new speed) is then fed back into the system via the speed sensor.</p>
+
+<br>
+<Li><strong>Input and Output</strong><br>
+<p>For the system to work there is an <strong>input</strong> and an <strong>output</strong>. The process is taking the input and doing something with it - modifying it in some way - and producing an output.</p>
+<p>In a computer system the processing will be done by a <strong>microprocessor</strong> of some kind.</p>
+<p>Feedback is the output fed back to the input. The cruise control flowchart is an example of negative feedback because the speed is always kept at the same value. 
+Positive feedback would push the speed away from the desired value.</p>
+<strong>Examples of Inputs</strong><br>
+- keyboard<br>
+- mouse<br>
+- microphone<br>
+- scanner<br>
+- camera<br>
+- pressure sensor<br>
+- temperature sensor<br>
+- magnetic sensor<br>
+- moisture sensor<br>
+- light sensor<br><br>
+<strong>Examples of Outputs</strong><br>
+- printers<br>
+- speakers<br>
+- motors<br>
+- monitors<br>
+- heaters<br>
+- electromagnets<br>
+- bulbs/LEDs<br>
+</li><br>
+<li><strong>Data Flow Diagram</strong><br>
+<p>A data flow diagram is a graphical representation of the "flow" of data through an information system.</p>
+<p>Data flow charts are very similar to system flow charts. Data flow charts do not include decisions, they just show the path that data takes, where it is held, processed, and then output.</p></li>
+<p><strong>Example:</strong> a data flow diagram of the system used to register students at a university.</p>
+<p><img src="images/dataflow1.png"></p></li>
+<li><strong>Structure Chart</strong>
+<p>A structure chart is a chart which shows the breakdown of a system to its lowest manageable parts. They are used in structured programming to arrange program modules into
+   a tree. Each module is represented by a box, which contains the module's name. The tree structure visualizes the relationships between modules.
+   Structured Charts are an example of a top-down design where a problem (the program) is broken into its components.</p>
+   <p><strong>Example:</strong> Structure chart for a program that calculates a six weeks average.</p>
+   <p><img src="images/structurechart1.png"></p></li>
+
+<li><strong>Gantt Chart</strong><br>
+<p>A <strong>Gantt chart</strong> is a useful graphical tool which shows activities or tasks performed against time.</p>
+<p>A Gantt chart is a popular tool in project management. It basically drills down activities which need to be done by a fixed time period. It is commonly used for tracking project schedules.</p>
+<p>On the chart, tasks are shown on the vertical axis while the scheduled time-spend is laid out on the horizontal axis. 
+    Each task is represented by a bar that shows the time required for the project.</p>
+    
+<p>The bar then represents or shows percentage of tasks that have been completed. It also shows dependencies, 
+   which simply means the inter-linkages between various activities in the project.</p>
+<p><strong>Example</strong>: a Gantt chart for building a house</p>
+<p><img src="images/GanttChart1.PNG"></p></li>
+</ul>
+</div>
+<div id="ib">1.2.8 Describe the purpose of prototypes to demonstrate the proposed system to the client.</div>
+
+<p><strong>Prototyping</strong> is the process of building a model of a system. Prototypes are used to help system designers build an information system that intuitive and easy to manipulate for end users.
+   Prototyping is an iterative process that is part of the analysis phase of the systems development life cycle.</p>
+<p>Prototyping comes in many forms - from low tech sketches to high tech operational systems using CASE (computer-aided software engineering) or fourth generation languages and everywhere in between.
+   Many organizations use multiple prototyping tools. For example, some will use paper in the initial analysis to facilitate concrete user feedback and then later develop an operational
+   prototype using fourth generation languages, such as Visual Basic, during the design stage.</p>
+<strong>Some Advantages of Prototyping:</strong><br>
+- reduces development time<br>
+- reduces development costs<br>
+- requires user(client) involvement<br>
+- developers receive user feedback<br>
+- facilitates system implementation since users know what to expect<br>
+- results in higher user satisfaction<br>
+
+<div id="ib">1.2.9 Discuss the importance of iteration during the design process.</div>
+<p>The <strong>System Development Life Cycle (SDLC)</strong> is a process by which systems analysts, software engineers, programmers, and end users build information systems.</p>
+<p>The core of the SDLC (analysis-design-implementation) is based on the standard approach to problem solving. First, you need to figure out or define what the problem is (analysis), 
+    then you need to figure out a good approach for solving it (design), and finally you need to go ahead and do it (implementation).  The number of actual steps will vary depending on
+    which texts and sources you consult. A search of the Internet will show several variations of the SDLC model.</p>
+<p>The SDLC comes in two basic flavors. The <strong>waterfall or linear approach</strong> implies that you do each step in sequence. This is the way most older systems were developed. The major problem
+    is that it assumes you can do all the analysis and get everything right without doing any design or implementation. On complex systems this just isn't possible. </p>
+<p>The <strong>fountain or iterative approach</strong> implies that you do some analysis, then some design, and then some implementation. Based on what you learn, you <strong>cycle back</strong> (loop)
+    through and do more analysis, etc. This supports human learning a lot better. It is the approach used for most projects today.</p>
+
+<p>In general, the SDLC model follows the following steps:</p>
+
+<p><img src="images/sdlifecycle.jpg"></p>
+
+<p><strong>Feasibility</strong> - The existing system is evaluated. Deficiencies are identified. This can be done by interviewing users of the system and consulting with support personnel.</p>
+<p><strong>Analysis</strong> - The new system requirements are defined. In particular, the deficiencies in the existing system must be addressed with specific proposals for improvement.</p>
+<p><strong>Design</strong> - The proposed system is designed. Plans are laid out concerning the physical construction, hardware, operating systems, programming, communications, and security issues.</p>
+<p><strong>Implement</strong> - The new system is developed. The new components and programs must be obtained and installed. Users of the system must be trained in its use, and all aspects of performance must be tested.
+   If necessary, adjustments must be made at this stage.</p>
+<p><strong>Test or Deploy</strong> - The system is put into use. This can be done in various ways. The new system can phased in, according to application or location, and the old system gradually replaced.
+   In some cases, it may be more cost-effective to shut down the old system and implement the new system all at once.</p>
+<p><strong>Maintain</strong> - Once the new system is up and running for a while, it should be exhaustively evaluated. Maintenance must be kept up rigorously at all times. 
+   Users of the system should be kept up-to-date concerning the latest modifications and procedures.</p>
+   
+<p>An important aspect of SDLC is its <strong>cyclical</strong> nature. The Windows operating system is classic example of this iterative process. Windows continues to evolve as new technologies are
+   introduced and user needs change. The Windows versions that I have used include Windows 3.1, Windows 95, Windows 98, Windows ME, Windows XP, Windows 7, and Windows 8.</p>
+
+
+<div id="ib">1.2.10 Explain the possible consequences of failing to involve the end-user in the design process.</div>
+<p>The failure to involve the end-user may lead to a system or software that is not suitable for its intended use, which may have adverse effects on user productivity.
+There needs to be effective collaboration and communication between client, developer and end-user.</p>
+<div id="ib">1.2.11 Discuss the social and ethical issues associated with the introduction of new IT systems.</div>
+
+
+<strong>Computer crime:</strong> Commission of illegal acts through use of computer or against a computer system<br>
+- hackers<br>
+<strong>Computer abuse:</strong> Unethical acts, not illegal<br>
+- spamming<br>
+<strong>Employment:</strong> Reengineering work resulting in lost jobs<br>
+<strong>Equity and access - the digital divide:</strong> Certain ethnic and income groups may be less likely to have computers or Internet access<br>
+<strong>Processing or using personal or private information:</strong><br>
+- intercepting or reading e-mails<br>
+- electronic monitoring of people in the workplace<br>
+- merging of databases which contain personal information<br>
+- trading of person-related information<br>
+
+<div id="ib">1.2.12 Define the term usability.</div>
+<p><strong>Usability</strong> - The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use.</p>
+<p>This definition can be expanded by including five characteristics which must be met for the users of a product:</p> 
+- Effective <br>
+- Efficient <br>
+- Engaging <br>
+- Error Tolerant <br>
+- Easy to Learn <br>
+
+<div id="ib">1.2.13 Identify a range of usability problems with commonly used digital devices.</div>
+
+<p>Students should be aware of usability issues in a range of devices including PCs, digital cameras, cell phones, game consoles, MP3 players and other commonly used digital devices.</p>
+
+<div id="ib">1.2.14 Identify methods that can be used to improve the accessibility of systems.</div>
+
+<p>In human-computer interaction, <strong>computer accessibility</strong> refers to the accessibility of a computer system to all people, regardless of disability or severity of impairment.
+   It is largely a software concern; when software, hardware, or a combination of hardware and software, is used to enable use of a computer by a person with a disability or impairment, 
+   this is known as <strong>Assistive Technology</strong>.
+<p>There are numerous types of impairment that impact computer use. These include:<br>
+- Cognitive impairments and learning disabilities, such as dyslexia, ADHD or autism.<br>
+- Visual impairment such as low-vision, complete or partial blindness, and color blindness.<br>
+- Hearing impairment including deafness or hard of hearing.<br>
+- Motor or dexterity impairment such as paralysis, cerebral palsy, or carpal tunnel syndrome and repetitive strain injury.</p>
+
+<p>Some of the assistive technology devices used to provide accessibility include touch screens, voice recognition devices, text-to-speech, Braille keyboard, switches, joysticks, and trackballs.</p> 
+
+
+<div id="ib">1.2.15 Identify a range of usability problems that can occur in a system.</div>
+
+<p>Systems include ticketing, online payroll, scheduling, voting, voice recognition, systems that providefeedback.</p>
+<p>Lack of training, inadequate instructions, user interface not intuitive, hardware malfunctions, software bugs, etc.</p>
+
+<div id="ib">1.2.16 Discuss the moral, ethical, social, economic and environmental implications of the interaction between humans and machines.</div>
+
+<p><strong>Moral Consequences</strong><br>
+- software/music/video piracy<br>
+- facebook: proper/improper use</p>
+
+<p><strong>Ethical Consequences</strong><br>
+- cyber bullying<br>
+- privacy issues</p>
+
+<p><strong>Social Consequences</strong><br>
+- Internet: increased global interaction<br>
+- social networking: increased communication<br>
+- cell phones/texting: less face to face communication<br>
+- online dating</p>
+
+<p><strong>Economical Consequences</strong><br>
+- job creation/loss: changing technologies, new businesses, obsolete industries<br>
+- competition: advanced economies vs developing economies, new technologies vs old technologies<br>
+- online commerce</p>
+
+<p><strong>Environment Consequences</strong><br>
+- increased use of energy/electricity<br>
+- outdated hardware disposal<br>
+- save fuel: less commuting - more and more of workforce working from home</p>
+
+<br>
+</div>	
+	

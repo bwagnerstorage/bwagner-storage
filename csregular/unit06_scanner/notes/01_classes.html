@@ -1,0 +1,80 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Classes and Objects</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Procedural Approach vs Object-Oriented Approach (OOP)</li>
+						<li>What is a Class</li>
+						<li>What is an Object</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Object-Oriented Programming (OOP)</h1>
+  <p>The high-level programming languages, developed to make the programming process easier, basically fall into
+     two major groups, and these two groups utilize different approaches to programming. The first group, consisting
+	 of the older languages (COBOL, FORTRAN, BASIC, C, and Pascal), uses what is called a <strong>procedural approach</strong>. 
+	 Inadequacies in the procedural approach led to the development of the <strong>object-oriented approach</strong> and to several
+	 newer languages (Smalltalk, C++, and Java). When you use a programming language that is not object oriented,
+	 you must express the solution to every problem essentially in terms of numbers and characters - the basic kinds
+	 of data that you can manipulate in the language. In an object-oriented language like Java, things are different.
+	 Of course, you still have numbers and characters to work with - these are referred to as the basic or primitive
+	 data types (int, double, char, boolean, etc.) - but you can define other kinds of entities that are relevant to
+	 your particular problem. You solve your problem in terms of the entities or objects that occur in the context of
+	 the problem. This not only affects how a program is structured, but also the terms in which the solution to your
+	 problem is expressed. If your problem concerns baseball players, your Java program is likely to have BaseballPlayer
+	 objects in it; if you are creating a game program that simulates a car race it will probably have Car objects.</p> 
+  <p>Most programs in the real world contain hundreds of thousands of lines of code. Writing such programs is a highly
+     complex task that can only be accomplished by breaking the code into communicating components. This is an application
+	 of the well-known principle of "divide and conquer" that has been applied successfully to many human endeavors. 
+	 There are various strategies for subdividing a program, and these depend on the type of programming language used.
+	 We will now begin learning this process in the context of object-oriented programming (OOP) - that is, programming
+	 with objects. </p>
+<div id="csNote">In Java, almost everything is an object.</div>
+ <h1>Classes and Objects</h1>
+  <p>To begin with, you need to understand some of the terminology of OOP. The most important term is the <strong>class</strong>, 
+     as you have already seen, all code that you write in Java is inside a class. A class is the template or blueprint
+	 from which all <strong>objects</strong> are made. </p>
+  <div id="csNote">A <strong>class</strong> is the template or blueprint from which all objects are made.</div>
+  <p>A class is similiar to the primitive data types previously discussed, but there is one fundamental difference 
+     between the two; a class includes more than just data. A class specifies what you can do with an object of the
+	 class - that is, it defines the operations that are possible on objects of the class. In Java, these operations
+	 are called <strong>methods</strong>.</p>
+ <h3>Jeroo</h3>
+  <p>Recall a familiar line of code in Jeroo:</p>
+  <div id="csCode">
+     <pre>
+Jeroo bob = new Jeroo();</pre>
+  </div>
+  <div id="csNote">In OOP terminology you create an object by instantiating it.</div>
+  <p>Once an object has been created, you can send messages to the object asking it to perform tasks using the methods
+     that are defined within the class. Here are some examples:</p>
+<div id="csCode">
+     <pre>
+bob.hop();
+bob.turn(RIGHT);
+bob.pick();
+bob.toss();</pre>
+  </div>
+  <p>This same class-object relationship exists in Java.</p>
+ <h1>Advantages of Using Objects</h1>
+  <p>As mentioned previously, object-oriented programs are written using objects that are specific to the problem
+     being solved. Your pinball machine simulator may well define and use objects of type Table, Ball, Flipper, and Bumper.
+	 This has tremendous advantages, not only in terms of easing the development process, but also in any future expansion 
+	 of such a program. Java provides a whole range of standard classes to help you in the development of your programs, 
+	 classes for making buttons, menus, dialog boxes, and network access, just to name a few. You can also develop you own 
+	 generic classes to provide a basis for developing programs that are of particular interest to you, but the details of 
+	 that will be saved for a later unit.</p>
+ <h1>Where to Begin</h1>
+  <p>The easiest way to learn how to use classes and objects in your programs is use classes that have already been made.
+     We will start with a class named <strong>Scanner</strong> which allows you to read information from the keyboard while viewing a console window.</p>
+	<br>
+</div>	
+

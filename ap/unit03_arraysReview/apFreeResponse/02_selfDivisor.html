@@ -1,0 +1,121 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR SelfDivisor</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/SelfDivisorNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SelfDivisor</a></h1>
+
+
+<h1>Directions</h1>
+<p>A positive integer is called a "self-divisor" if every decimal digit of the number is a divisor of the number, that is, the number
+   is evenly divisible by each and every one of its digits. For example, the number 128 is a self-divisor because it is evenly
+   divisible by 1, 2, and 8. However, 26 is not a self-divisor because it is not evenly divisible by the digit 6. Note that 0 is
+   not considered to be a divisor of any number, so any number containing a 0 digit is NOT a self-divisor. There are infinitely
+   many self-divisors.</p>
+
+<div id="apCode">
+<pre>
+public class SelfDivisor
+{
+    /** @param number the number to be tested
+     *         Precondition: number > 0
+     *  @return true if every decimal digit of number is a divisor of number;
+     *          false otherwise
+     */
+    <div id="apHighlight"><pre>public static boolean isSelfDivisor(int number)</pre></div>
+    {  /* to be implemented in part(a) */ }
+    
+    /** @param start starting point for values to be checked
+     *         Precondition: start > 0
+     *  @param num the size of the array to be returned
+     *         Precondition: num > 0
+     *  @return an array containing the first num integers >= start
+                that are self-divisors
+     */
+     <div id="apHighlight"><pre>public static int[] firstNumSelfDivisors(int start, int num)</pre></div>
+     { /* to be implemented int part(b) */ }
+     
+     // There may be fields, constructors, and methods that are not shown.
+}
+</pre></div>
+<div id="csList2">
+<ol>
+<li><p>Write method <strong>isSelfDivisor</strong>, which takes a positive integer as its parameter. This method returns true if the number
+   is a self-divisor; otherwise, it returns false.</p>
+   
+<p>One approach to completing this method is to convert the parameter <strong>number</strong> to a string and then use the String class's
+   <strong>substring</strong> method to extract the individual digits from the string and then use <strong>Integer.parseInt</strong> to convert each
+   string digit into an actual integer value.</p>
+<p>Another approach is demonstrated in the following slides. This approach uses division to extract the individual
+   digits out of the parameter <strong>number</strong> without using strings.</p>
+   
+   <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/SelfDivisor/Slide1.PNG"></li>
+          <li><img src="images/SelfDivisor/Slide2.PNG"></li>
+          <li><img src="images/SelfDivisor/Slide3.PNG"></li>
+		  <li><img src="images/SelfDivisor/Slide4.PNG"></li>
+		  <li><img src="images/SelfDivisor/Slide5.PNG"></li>
+		  <li><img src="images/SelfDivisor/Slide6.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+  
+
+
+<p>Complete method <strong>isSelfDivisor</strong> below.</p>
+<div id="apCode">
+<pre>
+/** @param number the number to be tested
+ *         Precondition: number > 0
+ *  @return true if every decimal digit of number is 
+ *          a divisor of number; false otherwise
+ */
+<div id="apHighlight"><pre>public static boolean isSelfDivisor(int number)</pre></div>
+
+
+</pre></div>   
+</li>
+<li>
+<p>Write method <strong>firstNumSelfDivisors</strong>, which takes two positive integers as parameters, representing a start value and a number of
+   values. Method firstNumSelfDivisors returns an array of size num that contains the first num self-divisors that are greater than
+   or equal to start.</p>
+<p>For example, the call firstNumSelfDivisors(10, 3) should return an array containing the values 11, 12, and 15, because the first
+   three self-divisors that are greater than or equal to 10 are 11, 12, and 15.</p>
+
+<p>In writing firstNumSelfDivisors, assume that isSelfDivisor works are specified, regardless of what you wrote in part(a).</p>
+
+<p>Complete method <strong>firstNumSelfDivisors</strong> below.</p>
+
+<div id="apCode">
+<pre>
+/** @param start starting point for values to be checked
+ *         Precondition: start > 0
+ *  @param num the size of the array to be returned
+ *         Precondition: num > 0
+ *  @return an array containing the first num integers >= start
+ *          that are self-divisors
+ */
+<div id="apHighlight"><pre>public static int[] firstNumSelfDivisors(int start, int num)</pre></div>
+
+
+</pre></div>
+</li></ol></div> 
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+128 is a self-divisor.
+26 is not a self-divisor.
+420 is not a self-divisor.
+
+firstNumSelfDivisors(20, 5)-->22 24 33 36 44
+firstNumSelfDivisors(500, 10)-->515 555 612 624 636 648 666 672 728 735
+
+</pre>
+</div>
+	<br>
+</div>	
+

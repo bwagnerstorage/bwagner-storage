@@ -1,0 +1,112 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Essential Concepts</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Programming Vocabulary</li>
+					    <li>Object-oriented Programming Vocabulary</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Essential Concepts</h1>
+  <p>The Jeroo language is a small object-oriented programming language. We will use the Jeroo language to write programs that
+     control up to four jeroos. This lesson describes several general concepts about object-oriented programs. As you read 
+	 subsequent lessons, refer back to this lesson to review the meaning of important words and phrases.</p>
+ <h1>Programs and Programming Languages</h1>
+  <p>It doesn't matter whether we are sending email, surfing the net, listening to music, writing an essay, or playing a game,
+     whenever we use a computer we are using one or more computer programs. Each program is simply a set of instructions for 
+	 the computer.</p>
+  <div id="jerooNote">A computer <strong>program</strong> is a set of instructions for a computer.</div>
+  <p>Every program is written by one or more programmers. Programmers use a programming language such as Java, C++, Python, 
+     or Visual Basic to write a computer program. Programs exist in many forms. The form that a programmer writes is called
+	 the source code for the program. Unfortunately, a computer cannot use source code directly. Source code must be translated
+	 into machine language before it can be executed (run) by the computer.</p>
+  <div id="jerooNote">The <strong>source code</strong> for a program is written by a programmer in some programming language.</div>
+  <p>There are several kinds of translation. A compiler translates a program, as a whole, from one form into another, but not
+     necessarily into machine language. An interpreter translates a program into machine language one statement at a time. 
+	 Each statement is executed as soon as it has been translated.</p>
+  <div id="jerooNote">A <strong>compiler</strong> translates a program, as a whole, from one form to another.<br>
+     An <strong>interpreter</strong> translates a program into machine language one statement at a time. </div>
+  <p>Both Java and Jeroo use a two-step approach to translating source code into machine language. First, a compiler translates
+     the source code into an intermediate language. Second, an interpreter translates the intermediate language into executable
+	 instructions. In the case of Java, this intermediate language is called Java Byte Code, and the interpreter is called the
+	 Java Virtual Machine. </p>
+ <h1>Algorithms</h1>
+  <p>Every computer program starts with a plan. That plan is called an algorithm. There are many ways to write an algorithm.
+     Some are very informal, some are quite formal and mathematical in nature, and some are quite graphical. The form is not
+	 particularly important as long as it provides a good way to describe and check the logic of the plan. </p>
+  <div id="jerooNote">An <strong>algorithm</strong> is a plan for solving a problem. </div>
+ <h1>Case-Sensitive Language</h1>
+  <p>In Jeroo's Java/C++/C#-style programming language, upper-case letters and lower-case letters are treated as being different
+     from one another. For example, the words "jessica", "Jessica", and "JESSICA" are treated as three different names. Other
+	 languages might treat these as being the same. </p>
+  <div id="jerooNote">A language that treats upper-case and lower-case letters as being different from one another is said to
+     be <strong>case-sensitive</strong>.</div>
+ <h1>Syntax and Semantics</h1>
+  <p>Every language, whether it is a natural language such as English or a programming language such as Java, has a vocabulary,
+     a syntax, and a semantic meaning. </p>
+ <div id="jerooNote"><strong>Syntax</strong> is a set of rules for writing or speaking that language.<br>
+     The meaning associated with valid expressions is known as the <strong>semantics</strong> of the expression.</div>
+  <p>Examples One syntax rule is that the symbol "?" must appear at the end of a question in written English. The sentences
+     "The balls bounce." and "Bounce the balls." use the same words and punctuation, but have different semantics (different meanings). </p>
+ <h1>Object</h1>
+  <p>It should come as no surprise to learn that an object-oriented programming language works with objects. But, what is an object? 
+     Unfortunately, this concept is difficult to define because an object is simultaneously something that only exists within a 
+	 computer program and a logical representation of something else. A good approach is to define an object in terms of what it represents.</p>
+  <div id="jerooNote">An <strong>object</strong> represents a specific concept or item that is relevant to the problem we are trying to solve.</div>
+  <p>A typical program works with several different objects. Some of these may represent the same kind of thing. For example, 
+     suppose our problem were to manage the rental of books to students. We would likely have some objects that represent the 
+	 books and others that represent the students. Now, if Kim were to rent "Haiku and You" and "Cooking with Mystery Meat", 
+	 we might have two objects, one for each of these books.</p>
+  <p>The Jeroo programming language only supports one kind of object - the Jeroo, but a single program can work with as many
+     as four Jeroo objects. These objects should work together to solve a problem. </p>
+  <p>An object represents something, but we, as programmers, need to determine what characteristics of that thing are important
+     to the problem we are trying to solve. There are two parts to an object, facts about the thing it represents and tasks that
+	 the object can perform. The facts are called attributes, and the tasks are called methods.</p>
+ <h1>Attribute</h1>
+  <p>When designing an object to represent something, we must select facts about that thing that are relevant to the problem we
+     are trying to solve. For example, the title of a book would be important to a bookstore, but not to the company that shipped
+	 the book from the publisher's warehouse. On the other hand, the weight of the book would be important to the shipper, but not
+	 to the bookstore. Facts such as the title or weight of a book are called attributes. </p>
+   <div id="jerooNote">An <strong>attribute</strong> is a fact associated with a specific object.</div>
+   <p>The attributes of a Jeroo object include its location, the number of flowers in its pouch, and the direction it's facing.</p>
+  <h1>Methods and Behaviors </h1>
+   <p>When we design an object, we need to determine what tasks it should perform. In doing so, we tend to anthropomorphize the
+      item that the object represents. (To anthropomorphize means to ascribe human characteristics to non-human things.)
+	  For example, we might want a book to tell us its price or to display a picture of its cover on the screen. A behavior is
+	  an action that an object can take or a task that it can perform in response to a request from an external source.</p>
+   <div id="jerooNote">A <strong>method</strong> is a collection of statements that are written in some programming language to describe a specific behavior.</div>
+   <div id="jerooNote">A <strong>precondition</strong> for a method is something that is assumed to be true before the method is invoked.<br>
+	  A <strong>postcondition</strong> for a method is something that is assumed to be true after the method has been executed.</div>
+   <p>All Jeroo objects share the same set of behaviors. There is a set of predefined behaviors, but the language allows us to
+      write methods that define additional behaviors.</p>
+  <h1>Message (Invoking a Method)</h1>
+   <p>When we write an object-oriented program, we instantiate appropriate objects, and ask them to perform specific tasks. 
+      We use messages to make these requests. </p>
+   <div id="jerooNote">A message is a request for a specific object to perform a specific task.</div>
+   <p>When we ask an object to perform a task, we say that we are sending a message or invoking the method that describes the task.</p>
+  <h1>Classes and Instantiation</h1>
+   <p>A programmer must determine which objects are relevant to the problem being solved and the attributes and behaviors of those
+      objects. These attributes and behaviors must be written in a programming language. </p>
+   <div id="jerooNote">A <strong>class</strong> is a collection of statements that are written in some programming language to describe both the attributes and behaviors of an object.</div>
+   <p>A class is similar to a recipe for a cake or a blueprint for a house. Many people view a class as being a template for creating an object.
+      When we write an object-oriented program, we need to create specific objects as defined by the statements in the class. 
+	  We "bake" to create a cake, we "build" to create a house, and we "instantiate" to create on object within a computer program. 
+   <div id="jerooNote">The process of creating a specific object is called <strong>instantiation</strong>.</div>
+   <p>All objects that have been instantiated from the same class have the same behaviors, but usually have different values for
+      their attributes. For example, two different book objects usually have different ISBN numbers. 
+      Most object-oriented programs use two types of classes. Programmer-defined classes are ones that have been written by the
+	  programmer as part of the solution to a problem. Predefined classes have been purchased separately or are part of the 
+	  programming language, itself. 
+      The Jeroo language only supports a single predefined class - the Jeroo class. We can instantiate up to four Jeroos from this class.</p>
+<br>
+</div>	
+

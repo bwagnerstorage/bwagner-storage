@@ -1,0 +1,72 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MyLinkedList</div>
+
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/MyLinkedListNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >MyLinkedList</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/MyLinkedList.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >MyLinkedList</a></h1>
+
+<h1>Directions</h1>
+  <p>In this assignment you are going to implement your own linked list collection class named MyLinkedList. This class will have the same functionality
+     as your MyArrayList class because it implements the same interface.</p>
+	 
+<div id="csCode">
+<pre>
+public interface MyList&ltE&gt
+{
+	// appends an item to the end of a list
+	public void add(E item);
+
+	// inserts an item into a list at position index
+	public void add(int index, E item);
+
+	// removes an item from a list at position index
+	public void remove(int index);
+
+	// retrieves an item from a list at position index
+	public E get(int index);
+
+	// updates an item in a list at position index
+	public void set(int index, E item);
+
+	// returns the logical size of a list
+	public int size();
+}
+</pre>
+</div>
+<p>Your MyLinkedList class will also incorporate generics.</p>
+<h3>get Method</h3>
+<p>The value returned in your get method will need to be cast to an E.</p>
+<div id="csCode">
+<pre>
+return (E)cur.getValue();    // cast needed
+</pre>
+</div>
+<h3>Demo class</h3>
+<p>Since your MyLinkedList class uses the same interface as your MyArrayList class you can test this class
+   with the same code.</p>
+
+
+ 
+<h1>Source File</h1>
+<p>MyLinkedList.java</p>
+<p>ListNode.java</p>
+<p>List.java</p>
+<p>Demo.java</p>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+5 10 15 20 25 
+5 10 100 15 20 25 
+200 5 10 100 15 20 25 
+200 5 10 100 15 20 25 300 
+200 5 10 15 20 25 300 
+5 10 15 20 25 300 
+5 10 15 20 25 
+
+5 10 15 20 25 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 
+</pre>
+</div>
+	<br>
+</div>	

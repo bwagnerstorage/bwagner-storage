@@ -1,0 +1,137 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">remove Method</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use the remove method to remove adjacent items in an ArrayList</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>remove Method</h1>
+<p>The ArrayList class provides a method for removing items from a list. This method, given a valid 
+   index, will remove and return the object at the specified location in the list.</p>
+<div id="csCode" style="width:300px"><pre>
+Object remove(int index)
+</pre></div> 
+
+<p>Example:</p>
+<div id="csCode" style="width:300px"><pre>
+String str = list.remove(2);</pre></div> 
+
+<h1>Removing Multiple Items from ArrayList</h1>
+<p>Removing single items or items that are not neighbors from an ArrayList is a fairly 
+  straight forward process. However, care must be taken when removing two items that are 
+  adjacent to each other in a list. To better explain this potential problem we will look
+  at a simple example in which we attempt to remove all of the even numbers from an ArrayList.
+  Most students who attempt this problem do something similar to the code below.</p> 
+<div id="csCode"><pre>
+ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        
+list.add(9);
+list.add(3);
+list.add(5);
+list.add(2);
+list.add(6);
+list.add(4);
+list.add(8);
+list.add(1);
+           
+// print list   
+for(Integer n : list)
+{
+  System.out.print(n + " ");
+}
+System.out.println();
+        
+<div id="csHighlight"><pre>// remove even numbers - incorrect version</pre></div>
+for(int i=0; i < list.size(); i++)
+{
+   if(list.get(i) % 2 == 0)   // if even number, remove
+      <div id="csHighlight"><pre>list.remove(i)</pre></div>;
+}
+        
+// print list   
+for(Integer n : list)
+{
+   System.out.print(n + " ");
+}
+System.out.println();
+</pre></div>  
+
+<h3>Output</h3>
+<div id="csOutput">
+    <pre>
+9 3 5 2 6 4 8 1
+9 3 5 <span style="color:#FF0000;font-family:consolas; font-size:1.1em">6 8</span> 1
+</pre>
+  </div>
+ 
+<p>As you can see from the output two of the even numbers were not removed. 
+Let's examine the code that attempts to remove the even numbers from the list.</p>
+<div id="csCode"><pre>
+// remove even numbers - incorrect version
+for(int i=0; i < list.size(); i++)
+{
+   if(list.get(i) % 2 == 0)   // if even number, remove
+      list.remove(i);
+}
+</pre></div>
+
+<p>The algorithm basically says:</p>
+<div id="csOutput"><pre>
+Traverse the list from beginning to end
+     if the current number is even
+           remove it 
+</pre></div>
+<p></p>At first glance most students think this code will work, but let's examine it more closely by
+   looking at the point where it encounters two even numbers that are adjacent to each other.
+   Refer to the table below. Assume the code has already advanced to the index highlighted in red
+   where it encounters the first even number 2.
+<div id="csOutput"><pre>
+Index 0 1 2 <span style="color:#FF0000;font-family:consolas; font-size:1.1em">3</span> 4 5 6 7 
+Item  9 3 5 2 6 4 8 1 
+</pre></div>
+After calling the remove method with the index 3 the even number 2 is removed, the list's size is decreased by one, and the loop control variable i has advanced to index 4. This is where the problem occurs. When the item is removed from the list, the list is adjusted so that ever item below the deleted item is moved up one index. However, the loop control variable of the for loop has also advanced to the next index. This causes the item that was adjacent to the deleted item to be skipped. In this example, the even number 6 is passed over.
+<div id="csOutput"><pre>
+Index 0 1 2 3 <span style="color:#FF0000;font-family:consolas; font-size:1.1em">4</span> 5 6 
+Item  9 3 5 6 4 8 1 
+</pre></div>
+<br>
+<h1>How to Fix Problem</h1>
+<p>To correct this problem you can use code like the following</p>
+<div id="csCode"><pre>
+// remove even numbers - correct version
+int i=0;
+while(i < list.size())
+{
+   if(list.get(i) % 2 == 0)
+      list.remove(i);
+   else
+      i++;
+}
+</pre></div> 
+<p>With this code the loop control variable is only advanced when an item is not removed
+   from the list.</p>
+<p>This code will also work</p>
+<div id="csCode"><pre>
+for(int i=0; i < list.size(); i++)
+{
+   if(list.get(i) % 2 == 0)
+   {
+      list.remove(i);
+      i--;
+   }
+}
+</pre></div> 
+<p>The decrement of i counteracts the increment of i in the for loop.</p>
+
+<br>
+</div>	
+

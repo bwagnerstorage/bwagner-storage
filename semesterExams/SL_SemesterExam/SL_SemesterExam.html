@@ -1,0 +1,329 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<link rel=Edit-Time-Data href="./CS1%20Final%20Exam_files/editdata.mso">
+<title>IB SL Semester Exam</title>
+<style><!--
+.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="25" class="Normal" lang=EN-US><div class=Section1> 
+<h1><font face="Times New Roman, Times, serif;font-size: 36px">IB SL Semester Exam<b><span
+style='font-size:16.0pt;font-family:Arial;"Times New Roman"'></span></b></font><b><span
+style='font-size:16.0pt;font-family:Arial;"Times New Roman"'></span></b></h1>
+<p><b><u><span
+style='font-family:Arial;"Times New Roman"'>Directions</span></u></b></p>
+  
+<p><span style='font-family:Arial;"Times New Roman"'>This exam includes two problems. 
+  Problem 1 is worth 20 points and Problem 2 is worth 30 points. If you complete both problems 
+  your grade is 100. You can receive partial credit even if a program does not 
+  work as specified.</span></p>
+
+<p style="font-size: 18px">Download the following zip file, copy the folder to your working directory, then launch NetBeans and open the NetBean's project from within the NetBeans environment.</p>
+<div><a href="SL_SemesterExam.zip" style="font-size:24px">NetBeans Project - Semester Exam</a></div>
+
+  <p><b><u><span
+style='font-family:"Courier New";"Times New Roman";font-size: 24px'>Problem 1</span></u></b></p>
+  <p><b><span
+style='font-family:"Courier New";"Times New Roman"'>Name:</span></b><span
+style='font-family:"Courier New";"Times New Roman"'>Problem1<br>
+  </span><b><span
+style='font-family:"Courier New";"Times New Roman"'>Topics: </span></b><span style='font-family:"Courier New";"Times New Roman"'>Classes, Loops, Arrays<br>
+  </span><b><span
+style='font-family:"Courier New";"Times New Roman"'>Directions:</span></b><span
+style='font-family:"Courier New";"Times New Roman"'>This problem implements 
+  a simple record keeping program for a teacher. The teacher is allowed to enter 
+  information about his/her students into a database and then print the database 
+  to the console window. The program utilizes two classes: <em>Students </em>and<em> 
+  StudentInfo</em>. Your task is to implement two methods contained within the 
+  <em>Student</em> class: <strong>GetInfo</strong> and <strong>PrintInfo</strong>.</span></p>
+  
+<p><b><span
+style='font-family:"Courier New";"Times New Roman"'>Sample Output:</span></b></p>
+<table width="500" border="1">
+  <tr>
+    <td bgcolor="#000000">
+<pre><font color="#FFFFFF" face="Courier New, Courier, mono">===================
+      GetInfo
+===================
+
+Enter Student Last Name -->Bunny
+Enter Student First Name -->Bugs
+Enter Student ID # -->23232323
+Enter Student Address -->100 Main Street
+Enter Student Phone Number-->555-7878
+
+Enter another Student[Y/N]-->y
+
+Enter Student Last Name -->Duck
+Enter Student First Name -->Daffy
+Enter Student ID # -->12121212
+Enter Student Address -->300 Elm Street
+Enter Student Phone Number-->555-9559
+
+Enter another Student[Y/N]-->n
+
+
+===================
+     PrintInfo
+===================
+
+Last Name  : Bunny
+First Name : Bugs
+ID #       : 23232323
+Address    : 100 Main Street
+Phone      : 555-7878
+
+Last Name  : Duck
+First Name : Daffy
+ID #       : 12121212
+Address    : 300 Elm Street
+Phone      : 555-9559
+
+Press any key to continue...</font></pre></td>
+  </tr>
+</table>
+<p><b><span style="font-family: &quot;Courier New&quot;"></span></b></p>
+  <p><b><u><span
+style='font-family:"Courier New";"Times New Roman";font-size: 24px'>Problem 2</span></u></b></p>
+  
+<p><b><span
+style='font-family:"Courier New";"Times New Roman"'>Name:</span></b><span
+style='font-family:"Courier New";"Times New Roman"'>Problem2<br>
+  </span><b><span
+style='font-family:"Courier New";"Times New Roman"'>Topics: </span></b><span style='font-family:"Courier New";"Times New Roman"'>Classes, Loops, Arrays<br>
+  </span><b><span
+style='font-family:"Courier New";"Times New Roman"'>Directions:</span></b><span
+style='font-family:"Courier New";"Times New Roman"'>Your school band is hosting 
+  a garage sale on Saturday and they need a program that will help them track 
+  the items donated to the garage sale. The program includes threes classes - 
+  the <strong>Manager</strong> class, <strong>GarageSale</strong> class, and the 
+  <strong>GarageSaleItem</strong> class. You will only be implementing the <em>GarageSale</em> 
+  class. You <strong>do not</strong> need to modify the <em>Manager</em> class 
+  or the <em>GarageSaleItem</em> class. </span></p>
+<p><span
+style='font-family:"Courier New";"Times New Roman"'>The program allows the user 
+  to enter in garage sale items into a database. When an item is sold the user 
+  is able to select the item and mark it with its sale price. The program includes 
+  a summary report which includes a list of all garage sale items in the database 
+  along with their sale price. The report also prints three totals at the bottom 
+  of the report - the total number of items donated, total number of items sold, 
+  and total amount made from garage sale.</span></p>
+<h3>GarageSale class</h3>
+<p>The <em>GarageSale</em> class maintains an array called <strong>itemList</strong> 
+  for storing and managing the <em>GarageSaleItems</em>.</p>
+<p>You need to implement the following methods:</p>
+<p>1. <strong>Default Constructor</strong> - this constructor should instaniate 
+  an array<em> </em> and store its reference in the instance variable <em>itemList</em>. 
+  It should also set the logical size of the array to 0.</p>
+<p>2. <strong>The addItem Method</strong> - this method, given a <em>GarageSaleItem</em>, 
+  should add the item to the <em>itemList</em> and increment the array's logical 
+  size.</p>
+<p>3. <strong>The getItem Method</strong> - this method, given an integer index, 
+  should return the <em>GarageSaleItem</em> from the <em>itemList</em> that corresponds 
+  to the specified index number.</p>
+<p>4. <strong>The getTotalItemsCollected Method</strong> - this method should 
+  return the logical size of the array. The logical size is current number of 
+  GarageSaleItems in the array.</p>
+<p>5. <strong>The getTotalItemsSold Method</strong> - this method should calculate 
+  and return the total number of items sold from the garage sale. Here is its 
+  pseudocode:</p>
+<table width="500" border="1">
+  <tr>
+    <td bgcolor="#CCCCCC"> <pre style="font-size: 16px">create count variable and set it to zero
+
+while the number of garageSaleItems has not been reached
+    &nbsp;get an Item from the list
+     if the PriceSold of the item is not equal to zero
+          add one to count
+return count</pre></td>
+  </tr>
+</table>
+<p>7. <strong>The getTotalSales method</strong> - this method should calculate 
+  and return the total amount of sales from the garage sale. Here is its pseudocode:</p>
+<table width="500" border="1">
+  <tr> 
+    <td bgcolor="#CCCCCC"> <pre style="font-size: 16px">create total variable and set it to zero
+
+while the number of garageSaleItems has not been reached
+    &nbsp;get an Item from the list 
+     if the PriceSold of the item is not equal to zero
+          add the PriceSold to the total
+return total</pre></td>
+  </tr>
+</table>
+<h1><b><span
+style='font-family:"Courier New";"Times New Roman"'>Sample Run</span></b></h1>
+  
+<table width="562" border="1">
+  <tr>
+    <td width="552" bgcolor="#000000">
+<pre><font color="#FFFFFF" face="Courier New, Courier, mono">--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->1
+--------------------
+    Add Sale Item
+--------------------
+
+Enter item name-->brown sofa
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->1
+--------------------
+    Add Sale Item
+--------------------
+
+Enter item name-->girl's bike
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->1
+--------------------
+    Add Sale Item
+--------------------
+
+Enter item name-->set of gold clubs
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->1
+--------------------
+    Add Sale Item
+--------------------
+
+Enter item name-->skateboard
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->2
+--------------------
+   Mark Item Sold
+--------------------
+
+1. brown sofa
+2. girl's bike
+3. set of gold clubs
+4. skateboard
+
+Select item --> 3
+Enter sale price -->$ 75.00
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->2
+--------------------
+   Mark Item Sold
+--------------------
+
+1. brown sofa
+2. girl's bike
+3. set of gold clubs (sold)
+4. skateboard
+
+Select item --> 2
+Enter sale price -->$ 20.75
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->2
+--------------------
+   Mark Item Sold
+--------------------
+
+1. brown sofa
+2. girl's bike (sold)
+3. set of gold clubs (sold)
+4. skateboard
+
+Select item --> 4
+Enter sale price -->$ 5.00
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select-->3
+--------------------
+   Summary Report
+--------------------
+
+Item Name         Price Sold
+----------------------------
+brown sofa              0.00
+girl's bike            20.75
+set of gold clubs      75.00
+skateboard              5.00
+
+------------------------------
+Total Items Collected = 4
+Total Items Sold      = 3
+Total Sales           = $100.75
+
+
+--------------------
+     Garage Sale
+--------------------
+1. Add Sale Item
+2. Mark Item Sold
+3. View Sale Items
+4. Exit
+
+Select--></font>
+</pre></td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+  </body>
+</html>

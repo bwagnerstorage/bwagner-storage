@@ -1,0 +1,125 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Delimiters</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/DelimitersNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Delimiters</a></h1>
+
+<h1>Directions</h1>
+<p>Many encoded strings contain <span class="cd">delimiter</span>. A delimiter is a non-empty string that acts as a boundary between different parts of a larger string. The delimiters involved in this question occur in pairs that must be <span class="cd">balanced</span>, with each pair having an open delimiter and a close delimiter. There will be only one type of delimiter for each string. The following are examples of delimiters.</p>
+
+<img src="images/Delimiter1.jpg" style="width:98%"> 
+<br><br<
+<p>In this question, you will write two methods in the following <span class="cd">Delimiters</span> class.</p>
+
+<div id="apCode"><pre>
+   public class Delimiters
+   {
+      /** The open and close delimiters. */
+      <div id="apHighlight"><pre>private String openDel;</pre></div>
+      <div id="apHighlight"><pre>private String closeDel;</pre></div>
+
+      /** Constructs a Delimiters object where open is the open delimiter and 
+      * close is the close delimiter.
+      * Precondition: open and close are non-empty strings.
+      */
+      <div id="apHighlight"><pre>public Delimiters(String open, String close)</pre></div>
+      {
+         openDel = open;
+         closeDel = close;
+      }
+      /** Returns an ArrayList of delimiters from the array tokens, 
+       *   as described in part (a). 
+       */
+      <div id="apHighlight"><pre>public ArrayList&lt;String&gt; getDelimitersList(String[] tokens)</pre></div>
+      { /* to be implemented in part (a) */ }
+
+      /** Returns true if the delimiters are balanced and false otherwise, 
+      *     as described in part (b).
+      * Precondition: delimiters contains only valid open and close delimiters.
+      */
+      <div id="apHighlight"><pre>public boolean isBalanced(ArrayList&lt;String&gt; delimiters)</pre></div>
+      { /* to be implemented in part (b) */ }
+
+      // There may be instance variables, constructors, and methods that 
+      // are not shown.
+   }
+</pre></div>
+<br>
+<h3>Part (a)</h3>
+<p>A string containing text and possibly delimiters has been split into <span class="cd">tokens</span> and stored in <span class="cd">String[] tokens</span>. Each token is either an open delimiter, a close delimiter, or a substring that is not a delimiter. You will write the method <span class="cd">getDelimitersList</span>, which returns an <span class="cd">ArrayList</span> containing all the open and close delimiters found in <span class="cd">tokens</span> in their original order.</p>
+ <p>The following examples show the contents of an <span class="cd">ArrayList</span> returned by <span class="cd">getDelimitersList</span> for different open and close delimiters and different <span class="cd">tokens</span> arrays.</p>
+ <br>
+<img src="images/Delimiter2.jpg" style="width:98%"> 
+<br><br><br>
+<img src="images/Delimiter3.jpg" style="width:98%"> 
+<br><br>
+<p>Complete method <span class="cd">getDelimitersList</span> below.</p>
+<div id="apCode"><pre>/** Returns an ArrayList of delimiters from the array tokens, 
+ *  as described in part (a).
+ */
+public ArrayList&lt;String&gt; getDelimitersList(String[] tokens)
+
+
+
+
+</pre></div>
+<br>
+<h3>Part (b)</h3>
+<p>Write the method isBalanced, which returns true when the delimiters are balanced and returns false otherwise. The delimiters are balanced when both of the following conditions are satisfied;otherwise, they are not balanced.</p>
+<ol id="csList"></ol>
+      <li><p>When traversing the <span class="cd">ArrayList</span> from the first element to the last element, there is no point at which there are more close delimiters than open delimiters at or before that point.</p></li>
+      <li><p>The total number of open delimiters is equal to the total number of close delimiters.</p></li>
+
+      <p>Consider a <span class="cd">Delimiters</span> object for which <span class="cd">openDel</span> is <span class="cd">"&lt;sup&gt;"</span> and <span class="cd">closeDel</span> is <span class="cd">"&lt;/sup&gt;</span>". The examples below show different <span class="cd"ArrayList></span> objects that could be returned by calls to <span class="cd">getDelimitersList</span> and the value that would be returned by a call to <span class="cd">isBalanced</span>.</p>
+      <br>
+      <img src="images/Delimiter4.jpg" style="width:98%">
+      <br><br>
+      <img src="images/Delimiter5.jpg" style="width:98%">
+      <br><br>
+      <p>Complete method <span class="cd">isBalanced</span> below.</p>
+<div id="apCode"><pre>/** Returns true if the delimiters are balanced and false otherwise,
+ *  as described in part (b).
+ *    <strong>Precondition</strong>: delimiters contains only valid open and close delimiters.
+ */
+public boolean isBalanced(ArrayList&lt;String&gt; delimiters)
+
+
+
+
+
+</pre></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+   Part A - getDelimiters Test
+   ---------------------------
+   Tokens: (x + y) * 5
+   
+   Delimiters: [(, )]
+   
+   Tokens: &lt;q&gt;yy&lt;/q&gt;zz&lt;/q&gt;
+   
+   Delimiters: [&lt;q&gt;, &lt;/q&gt;, &lt;/q&gt;]
+   
+   Part B - isBalanced Test
+   ---------------------------
+   Tokens: &lt;sup&gt;&lt;sup&gt;&lt;/sup&gt;&lt;sup&gt;&lt;/sup&gt;&lt;/sup&gt;
+   Delimiters are balanced: true
+   
+   Tokens: &lt;sup&gt;&lt;/sup&gt;&lt;/sup&gt;&lt;sup&gt;
+   Delimiters are balanced: false
+   
+   Tokens: &lt;sup&gt;
+   Delimiters are balanced: false
+   
+   Tokens: &lt;sup&gt;&lt;sup&gt;&lt;/sup&gt;
+   Delimiters are balanced: false
+   
+   Tokens: &lt;sup&gt;&lt;sup&gt;&lt;sup&gt;&lt;/sup&gt;&lt;/sup&gt;&lt;/sup&gt;
+   Delimiters are balanced: true
+</pre>
+</div>
+	<br>
+</div>	
+

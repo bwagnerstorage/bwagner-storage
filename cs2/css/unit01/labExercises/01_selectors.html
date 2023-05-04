@@ -1,0 +1,186 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">1-1 CSS Selectors</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_intro.asp" target="_blank" style="color:blue">CSS Introduction</a></p></li>
+<li><p><a href="https://www.w3schools.com/css/css_syntax.asp" target="_blank" style="color:blue">CSS Syntax</a></p></li>
+<li><p><a href="https://www.w3schools.com/css/css_selectors.asp" target="_blank" style="color:blue">CSS Selectors</a></p></li>
+</ul>
+<h1>CSS Selectors</h1>
+<p><strong>CSS selectors</strong> allow you to choose the content you would like to style in a html document. 
+   CSS selectors select HTML <strong>elements</strong> according to their id, class, type, etc.</p>
+<p>There are several types of selectors in CSS. In this lesson, you will look at the five
+   "simple" selectors:</p>
+<ul id="csList">
+	<li><p>CSS Universal Selector</p></li>
+	<li><p>CSS Element Selector</p></li>
+	<li><p>CSS Group Selector</p></li>
+	<li><p>CSS Id Selector</p></li>
+	<li><p>CSS Class Selector</p></li>
+</ul>
+<p>To illustrate the different types of selectors you are going to create the following table using
+   each of the selectors listed above.</p>
+<img src="images/CS2/CSS/selectors01.png" style="width:99%">
+<br>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+   <li><p>Using Windows Explorer, create a new folder in your CS2 folder named <strong>CSS</strong>.</p></li>
+	<li><p>Open your CS2 folder in VS Code.</p></li>
+	<li><p>Create a new document named <strong>1_1_selectors.html</strong> and save it to your CSS folder.</p></li>
+	<li><p>Copy the following starter code into your html document.</p>
+<div id="csHTML" style="width:950px"><pre>
+&lt;!DOCTYPE html>
+&lt;html>
+   &lt;head>
+      &lt;title>Simple Selectors&lt;/title>
+      &lt;style>
+      /* Universal Selector */
+ 
+
+      /* Element Selector */
+
+
+      /* Group Selector */
+
+
+      /* Order of selectors is important */
+
+	
+      /* Class Selector */
+
+
+      /* ID Selector */
+
+
+      &lt;/style>
+   &lt;/head>
+   &lt;body>
+      &lt;table>
+         &lt;caption>Simple Selectors&lt;/caption>
+         &lt;tr>
+            &lt;th style="width:25%;">Type&lt;/th>
+            &lt;th style="width:30%;">Example&lt;/th>
+            &lt;th>Description&lt;/th>
+         &lt;/tr>
+         &lt;tr>
+            &lt;td>CSS Universal Selector&lt;/td>
+            &lt;td class="myClass">* { box-sizing: border-box; }&lt;/td>
+            &lt;td>Selects all HTML elements on the page.&lt;/td>
+         &lt;/tr>
+         &lt;tr>
+            &lt;td>CSS element Selector&lt;/td>
+            &lt;td class="myClass">p { color: blue; }&lt;/td>
+            &lt;td>Selects HTML elements based on the element name.&lt;/td>
+         &lt;/tr>
+         &lt;tr>
+            &lt;td>CSS Grouping Selector&lt;/td>
+            &lt;td class="myClass">h1, p, div { color: green }&lt;/td>
+            &lt;td>Selects all the HTML elements with the same style definitions.&lt;/td>
+            &lt;/tr>
+         &lt;tr>
+            &lt;td>CSS id Selector&lt;/td>
+            &lt;td class="myClass">#header { text-align: center }&lt;/td>
+            &lt;td id="myId">Uses the id attribute of an HTML element to select a specific element. 
+                The id must be unique.&lt;/td>
+         &lt;/tr>
+         &lt;tr>
+            &lt;td>CSS class Selector&lt;/td>
+            &lt;td class="myClass">.font { font-size: 1.2em }&lt;/td>
+            &lt;td>Selects HTML elements with a specific class attribute.&lt;/td>
+         &lt;/tr>
+      &lt;/table>
+   &lt;/body>
+&lt;/html>
+</pre>
+</div>
+
+<h2>Universal Selector</h2>
+<p>The Universal selector (*) allows you to select and apply styling to every element on a page.</p>
+<p>Copy the CSS code below into the html document's style section under the heading /* Universal Selector */.</p>
+<div id="csHTML" style="width:600px"><pre>
+* {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+</pre></div>
+<p>This code sets the font of <strong>every element</strong> in the document to Georgia. If the Georgia font is not available
+   then it set the font to Times New Roman, and so forth.</p>
+
+<h2>Element Selector</h2>
+<p>The Element selector allows you to select specific elements within the document to apply styling.</p>
+<p>Copy the CSS code below into the html document's style section under the heading /* Element Selector */.</p>
+<div id="csHTML" style="width:600px"><pre>
+table {
+   width: 70%;
+   margin-left: auto;
+   margin-right: auto;
+}
+caption {
+   font-size: 1.6rem;
+   padding: 10px;
+}
+td { 
+   padding: 8px;
+   color:aliceblue;
+}
+</pre></div>
+<p>This code provides styling for any <strong>table</strong>, <strong>caption</strong>, or <strong>td</strong> element placed within the document.</p>
+
+<h2>Group Selector</h2>
+<p>The Group selector allows you to apply the same styling to several elements without having to repeat the code.</p>
+<p>Copy the CSS code below into the html document's style section under the heading /* Group Selector */.</p>
+<div id="csHTML" style="width:600px"><pre>
+table, tr, td, th {
+   border-collapse: collapse;
+   border: 2px solid steelblue;
+   background-color:black;
+}
+</pre></div>
+<p>This code provides the same styling for the <strong>table</strong>, <strong>tr</strong>, <strong>td</strong>, and <strong>th</strong> elements.</p>
+
+<h2>Selector Ordering</h2>
+<p>The order the CSS selectors are listed in the style section is important. The browser reads the selectors in sequential order from
+   top to bottom.</p>
+<p>Copy the CSS code below into the html document's style section under the heading /* Order of selectors is important */.</p>
+<div id="csHTML" style="width:600px"><pre>
+th {
+   font-size: 1.2rem;
+   color:black;
+   background-color: lightsteelblue;
+}
+</pre></div>
+<p>This code provides styling for the <strong>th</strong> element. Since the Group selector shown above set the background
+   color of <strong>th</strong> tag to black, I had include another Element selector for the <strong>th</strong> tag below the Group Selector 
+   so that I could change the background color.</p>
+
+<h2>Class Selector</h2>
+<p>The Class selector allows you to apply styling to all the HTML elements that have been assigned
+   to the same class. An element is assigned to a class using its class attribute.
+</p>
+<p>Copy the CSS code below into the html document's style section under the heading /* Class Selectors */.</p>
+<div id="csHTML" style="width:600px"><pre>
+.myClass {
+   font-family: Consolas, sans-serif;
+   font-size: 0.85rem;
+   color:lightseagreen;
+}
+</pre></div>
+<p>This code provides styling for all the <strong>td</strong> elements assigned to the <strong>myClass</strong> class.</p>
+
+<h2>ID Selector</h2>
+<p>The ID selector allows you to apply styling to <strong>one element</strong> with an HTML document.
+</p>
+<p>Copy the CSS code below into the html document's style section under the heading /* ID Selectors */.</p>
+<div id="csHTML" style="width:600px"><pre>
+#myId {
+   color: red;
+}
+</pre></div>
+<p>This code provides styling for the <strong>td</strong> element assigned the id <strong>myId</strong>.</p>
+An id needs to be unique and only assigned to one HTML element within a document.
+<p>Note: You will use the id attribute a lot when you start programming in Javascript. </p>
+
+	<br>
+</div>	

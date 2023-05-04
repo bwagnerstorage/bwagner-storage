@@ -1,0 +1,593 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this); "/>
+
+<div id="csAssignmentTitle" align="center">Maze</div>
+
+<div id="csContent">
+    <h1>NetBeans Workspace: <a href="apFreeResponse/MazeNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;">Maze</a></h1>
+    <h1>Backtracking</h1>
+    <p>There are two principal techniques for implementing backtracking algorithms: one uses stacks and the other recursion. In this assignment we explore the use of stacks for backtracking algorithms. A backtracking algorithm begins in a predefined starting
+        state then moves from state to state in search of a desired ending state. At any point along the way, when there is a choice between several alternative states, the algorithm picks one, possibly at random, and continues. If the algorithm reaches
+        a state representing an undesirable outcome, it <strong>backs up</strong> to the last point at which there was unexplored alternative and tries it. In this way, the algorithm either exhaustively searches all states, or it reaches the desired ending
+        state. The role of a stack in the process is to remember the alternative states that occur at each juncture.</p>
+    <p>A classic example of this backtracking algorithm is the process of finding a way through a maze. In this version of the problem, a mouse must find a path through a maze that will allow him to exit the maze on the other side. When he reaches a dead
+        end he must backtrack to find another route through the maze.</p>
+    <br>
+    <p>Click on the link to view a demonstration: <a href="/ibhl2/unit03_ADT/labExercises/mazeDemo.html" style="color:blue" target="_blank">Maze Demo</a></p>
+    <br>
+
+
+    <h2>Directions</h2>
+    <p>Below is the partial implementation a program that utilizes a design technique called the <strong>model/view pattern</strong>. In general, it is a good idea to divide the code for most interactive applications into two sets of classes. One set of
+        classes, which we call the <strong>view</strong>, handles the interactions with the human users, such as input and output operations. The other set of classes, called the <strong>model</strong>, represents the data used by the application. One
+        of the benefits of this separation of responsibilities is that one can write different views for the same data model, such as terminal-based view and a graphical-based view, without changing a line of code in the data model. Alternatively, one
+        can write different representations of the data model without altering a line of code in the views. In the program that follows the view portion of the program is contained in a class named <strong>MazeView</strong> and the model portion is in
+        a class named <strong>MazeModel</strong>.</p>
+    <p>1. Create a new project and workspace named <strong>Maze</strong>.</p>
+    <p>2. Create a java file named <strong>MazeModel</strong> and add it to the project. Then copy the code below into the file:</p>
+    <div id="csCode"><pre>import java.util.*;
+
+public class MazeModel
+{
+    // Constants
+    public final String EXIT = "X";
+    public final String WALL = "W";
+    public final String PATH = "P";
+    public final String MOUSE = "M";
+    public final String TRACK = "T";
+    public final int SEARCHING = 0;
+    public final int EXITFOUND = 1;
+    public final int NOEXITFOUND = 2;
+
+    // Instance Variables
+    private String[][] maze;   // two-dimensional grid
+    private Stack&lt;Location&gt; stack;  // used for backtracking
+    private Location mouseLoc; // current location of mouse within maze
+    private Random rg;
+
+    // Constructor
+    public MazeModel()
+    {
+        maze = new String[20][20];
+        rg = new Random();
+        createMaze();
+    }
+
+    // The createMaze method initializes the stack and
+    // sets the positions of the paths, walls, start, and
+    // exit within the two-dimensional grid(maze). It also
+    // places the mouse at its starting location within the
+    // maze.
+    public void createMaze()
+    {
+        stack = new Stack&lt;&gt;();
+        // Assign paths
+        setPaths();
+        // Assign walls
+        setWalls();
+        // Assign starting position
+        setStart();
+        // Assign finish line
+        setExit();
+
+        // System.out.println(toString());
+    }
+
+    // The searchMaze method is responsible for finding a path
+    // through the maze. The mouse keeps searching until either an exit is found
+    // or it returns to its starting position with no paths left to search.
+    // @return one of three values: SEARCHING, EXITFOUND, or NOEXITFOUND
+    public int searchMaze()
+    {
+
+
+
+    }
+     
+    // The setPaths method sets the entire grid cells 
+    // as paths. 
+    public void setPaths() 
+    { 
+        for(int r = 0; r &lt; 20; r++)
+        { 
+            for(int c=0 ; c &lt; 20; c++) 
+            { 
+                maze[r][c]=PATH; 
+            } 
+        } 
+    } 
+    
+    // The setWalls method randomly sets the cells within the 
+    // grid to walls. There is a 40% chance that a path will 
+    // be turned into a wall. 
+    public void setWalls() 
+    { 
+        double prob=0; 
+        for(int r=0 ; r &lt; 20; r++) 
+        { 
+            for(int c=0 ; c &lt; 20; c++) 
+            { 
+                prob=rg.nextDouble(); 
+                if(prob &lt;=. 4) // 40% 
+                maze[r][c]=W ALL; 
+            } 
+        } 
+    } 
+ 
+    // The setStart method sets the starting position of 
+    // the mouse within the maze it is located along the 
+    // right boundary of the maze. 
+    public void setStart() 
+    { 
+        int r=rg.nextInt(18) + 1; 
+        maze[r][19] = MOUSE; 
+        maze[r][18]= PATH; 
+        mouseLoc=new Location(r,19); 
+        stack.push(mouseLoc);
+    } 
+    // The setExit method sets the exit for the maze. The
+    // exit is located along the left boundary of the 
+    // maze 
+    public void setExit() 
+    { 
+        int r=rg.nextInt(18) + 1; 
+        maze[r][0]=EXIT; 
+        maze[r][1]=PATH; 
+    } 
+
+    // The isExit method returns true if loc is the 
+    // same location as the exit; false otherwise. 
+    public boolean isExit(Location loc) 
+    { 
+        if(maze[loc.getRow()][loc.getColumn()].equals(EXIT)) 
+        return true; 
+        else 
+        return false; 
+    } 
+
+    // The isWall method returns true if loc is a 
+    // wall; false otherwise. 
+    public boolean isWall(Location loc) 
+    { 
+        if(maze[loc.getRow()][loc.getColumn()].equals(WALL)) 
+        return true;
+        else 
+        return false; 
+        } 
+        
+    // The isPath method returns true if loc is a 
+    // path; false otherwise; 
+    public boolean isPath(Location loc) 
+    { 
+        if(maze[loc.getRow()][loc.getColumn()].equals(PATH))
+            return true; 
+        else
+            return false; 
+    } 
+
+    // The isMouse method returns true if loc is the 
+    // mouse's position; false otherwise. 
+    public boolean isMouse(Location loc) 
+    { 
+        if(maze[loc.getRow()][loc.getColumn()].equals(MOUSE))
+        return true; 
+        else 
+        return false; 
+    } 
+
+    // The isTrack method returns true if loc is a track. 
+    // A track is a position within the grid that the mouse 
+    // has already visited. 
+    public boolean isTrack(Location loc) 
+    { 
+        if(maze[loc.getRow()][loc.getColumn()].equals(TRACK))
+        return true; 
+        else 
+        return false; 
+    } 
+
+    // The inBounds method returns true is loc is a valid 
+    // location within the grid; false otherwise. 
+    public boolean inBounds(Location loc) 
+    { 
+        if(loc.getRow() &gt;=0 && loc.getRow() &lt;= 19 && loc.getColumn() &gt;=0 && loc.getColumn() &lt;= 19)
+            return true; 
+        else 
+        return false; 
+    } 
+
+    public String toString() 
+    { 
+        String str=""; 
+        for(int r=0; r &gt; 20; r++) 
+        { 
+            for(int c=0; c &gt; 20; c++) 
+            { 
+                str += maze[r][c] + " "; 
+            } str += "\n"; 
+        } return str; 
+    } 
+}
+    </pre>
+    </div>
+
+    <p>3. Create a java file named <strong>MazeView</strong> and add it to the project. Then copy the code below into the file:</p>
+    <div id="csCode"><pre>import java.awt.*;
+import javax.swing.*;
+import java.util.*;
+import java.awt.event.*;
+import javax.swing.event.*;
+
+// The MazeView class represents the view of the program. It is
+// responsible for drawing the maze on a frame window. It contains
+// a MazeModel object which represents the model of the program.
+// MazeView is responsible for the graphics part of the program and
+// MazeModel is responsible for the logic and storing the data necessary
+// to execute the program.
+
+public class MazeView extends JFrame
+{
+    // Instance Variables
+    private MazeModel mazeModel;       // maintains the data
+    private GridPanel gridPanel;
+    private ControlPanel controlPanel;
+
+    // Constructor
+    public MazeView(MazeModel model)
+    {
+        mazeModel = model;
+        Container contentPane = getContentPane();
+        gridPanel = new GridPanel();
+        contentPane.add(gridPanel, BorderLayout.CENTER);
+        controlPanel = new ControlPanel();
+        contentPane.add(controlPanel, BorderLayout.SOUTH);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Maze");
+        setSize(470, 470);
+        setVisible(true);
+    }
+
+    // The isResizable method is overridden so that the
+    // frame window cannot be resized.
+    public boolean isResizable()
+    {
+        return false;
+    }
+
+    // This panel draws and maintains the maze grid
+    public class GridPanel extends JPanel
+    {
+        final Color FINISH = Color.red;
+        final Color WALL = new Color(89, 51, 1);
+        final Color PATH = new Color(255, 243, 211);
+        final Color MOUSE = Color.gray;
+        final Color TRACK = Color.green;
+
+        // Constructor
+        public GridPanel()
+        {
+            setBackground(Color.white);
+            setPreferredSize(new Dimension(400,400));
+        }
+
+        // paintComponent is called each time the panel needs
+        // to be redrawn.
+        public void paintComponent(Graphics g)
+        {
+            super.paintComponent(g);
+            DrawGrid(g);
+        }
+
+        // DrawGrid - draws the grid on the panel
+        public void DrawGrid(Graphics g)
+        {
+           for(int c = 0; c &lt; 400; c+=20)
+           {
+             for(int r = 0; r &lt; 400; r+=20)
+              {
+                 Location loc = new Location(r/20, c/20);
+                 if(mazeModel.isExit(loc))
+                     g.setColor(FINISH);
+                 if(mazeModel.isWall(loc))
+                     g.setColor(WALL);
+                 if(mazeModel.isPath(loc))
+                     g.setColor(PATH);
+                 if(mazeModel.isMouse(loc))
+                     g.setColor(MOUSE);
+                 if(mazeModel.isTrack(loc))
+                     g.setColor(TRACK);
+
+                 g.fill3DRect(c, r, 20, 20,true);
+              }
+           }
+        }
+    }
+
+    // This panel is the placeholder for the buttons and slider
+    public class ControlPanel extends JPanel implements ActionListener, ChangeListener
+    {
+        // Instance Variables
+        private JButton newMazeButton;
+        private JButton startButton;
+        private JSlider slider;
+        private int delayInterval;
+        private long time;
+        private SearchThread thread;
+        boolean needNewMaze;
+
+        // Constructor
+        public ControlPanel()
+        {
+           newMazeButton = new JButton(" New Maze ");
+           startButton = new JButton("   Start   ");
+           slider = new JSlider(0,600, 300);
+           add(newMazeButton);
+           add(slider);
+           add(startButton);
+
+           setBackground(new Color(225, 225, 225));
+           newMazeButton.addActionListener(this);
+           startButton.addActionListener(this);
+           slider.addChangeListener(this);
+           delayInterval = 300;
+           thread = null;
+           needNewMaze = false;
+        }
+
+        // The actionPerformed method is called when a button is
+        // clicked.
+        public void actionPerformed(ActionEvent event)
+        {
+            Object source = event.getSource();
+
+            // New Maze Button is Pressed
+            if(source == newMazeButton)
+            {
+                mazeModel.createMaze();
+                gridPanel.repaint();
+                thread = null;
+                needNewMaze = false;
+            }
+
+            // Start Button is Pressed
+            if(needNewMaze == true)
+            {
+                JOptionPane.showMessageDialog(getParent(), "You need to create a new maze.");
+            }
+            else if(source == startButton)
+            {
+                needNewMaze = true;
+
+                if(thread != null)
+                   thread = null;
+                else
+                {
+                    thread = new SearchThread();
+                    thread.setDaemon(true);
+                    thread.start();
+                }
+
+            }
+        }
+
+        // The stateChanged method is called when the slider
+        // is moved.
+        public void stateChanged(ChangeEvent event)
+        {
+            delayInterval = slider.getValue();
+        }
+
+        // The delay method is used control the speed of the
+        // mouse when the slider is used.
+        public void delay()
+        {
+             try
+             {
+                time += delayInterval;
+                Thread.sleep(Math.max(0, time - System.currentTimeMillis()));
+             }
+             catch(InterruptedException ex)
+             {
+
+             }
+        }
+
+        // The SearchThread method is in charge of starting
+        // and monitoring the mouse movement through the maze.
+        public class SearchThread extends Thread
+        {
+           public void run()
+           {
+               time = System.currentTimeMillis();
+               int searchResult = mazeModel.SEARCHING;
+               while( searchResult == mazeModel.SEARCHING && needNewMaze == true)
+               {
+                  gridPanel.repaint();
+                  delay();
+                  searchResult = mazeModel.searchMaze();
+               }
+
+               if(searchResult == mazeModel.EXITFOUND)
+               {
+                  JOptionPane.showMessageDialog(getParent(), "Mouse found an exit!");
+               }
+
+               if(searchResult == mazeModel.NOEXITFOUND)
+               {
+                  JOptionPane.showMessageDialog(getParent(), "Mouse could not find an exit.");
+               }
+
+           }
+
+        }
+    }
+}</pre></div>
+
+    <p>4. Create a java file named <strong>Location </strong>and add it to the project. Then copy the code below into the file:</p>
+    <div id="csCode"><pre>// This class represents a location within a two
+// dimensional grid. Each object contains a row
+// and column value. The class also provides methods
+// for moving from one location to another within the
+// grid (i.e., North, South, East, and West)
+
+public class Location
+{
+    // Instance variable
+    private int row;
+    private int column;
+    
+    // Constructor
+    public Location(int r, int c)
+    {
+       row = r;
+       column = c;  
+    }
+    
+    // Accessor Methods
+    public int getRow()
+    {
+        return row;
+    }
+    
+    public int getColumn()
+    {
+        return column;
+    }
+    
+    // The north method returns a Location object
+    // that is one row up from the current location.
+    public Location north()
+    {
+        return new Location(row-1, column);
+    }
+    
+    // The south method returns a Location object
+    // that is one row down from the current location.
+    public Location south()
+    {
+        return new Location(row+1, column);
+    }
+    
+    // The east method returns a Location object
+    // that is one column to the right of the current location.
+    public Location east()
+    {
+        return new Location(row, column+1);
+    }
+
+    // The west method returns a Location object
+    // that is one column to the left of the current location.  
+    public Location west()
+    {
+        return new Location(row, column-1);
+    }
+    
+    // toString method
+    // returns a string representation of the Location object
+    // in the following format [3,4].
+    public String toString()
+    {
+        String str;
+        str = "[" + row + ", " + column + "]";
+        return str;
+    }
+}</pre></div>
+
+    <p>5. Create a java file named <strong>Driver </strong>and add it to the project. Then copy the code below into the file:</p>
+    <div id="csCode"><pre>
+import java.awt.*;
+import javax.swing.*;
+
+public class Driver
+{
+    public static void main(String[] args)
+    {
+        MazeModel mazeModel = new MazeModel();
+        MazeView mazeView = new MazeView(mazeModel);
+    }
+}</pre></div>
+
+    <p>6. Your assignment is to implement the method
+        <font color="#FF0000">searchMaze</font>
+        located in the <strong>MazeModel</strong> class. You will need to use a stack in your implementation. The <em>MazeModel</em> class contains a two-dimensional array of String objects. Each cell within the array can contain one of the following
+        objects: a path, a wall, a track, the exit, or the mouse itself. Each of these objects are represented within the array as a String object. Each object is assigned a value in the Constants section of the <em>MazeModel</em> class. Here are their
+        declarations:
+    </p>
+
+    <div id="csCode"><pre>// Constants
+public final String EXIT = "X";
+public final String WALL = "W";
+public final String PATH = "P";
+public final String MOUSE = "M";
+public final String TRACK = "T";</pre></div>
+
+    <p>Before the simulation begins the mouse is inserted into the maze at a random location on its right boundary. The exit is randomly selected on the left boundary of the maze. The rest of the maze is randomly filled with either wall or path objects.
+        The mouse can only move to cells within the array that contain path objects. To start the simulation the mouse searches the maze for a path that is adjacent to its starting location and is within the boundaries of the maze. If a path is found,
+        the mouse moves to that location and its previous position is marked as a track. From its new location the mouse again searches for a path that is adjacent to its location and is within the boundaries of the maze. If a path cannot be found (it
+        is surrounded by walls and or tracks) then the mouse backtracks to its previous position and searches for a different path. This process of searching, moving, or backtracking is repeated until either the exit is found or the mouse returns to its
+        starting position with no paths left to search.</p>
+    <p>The <em>searchMaze</em> method is responsible for finding a path through the maze. It is called at each time step of the simulation. The method is responsible for moving the mouse and sending the view one of the moving notifications: SEARCHING, EXITFOUND,
+        NOEXITFOUND. These notifications are declared as constants withing the <em>MazeModel</em> class:</p>
+
+    <div id="csCode"><pre>// Constants
+public final int SEARCHING = 0;
+public final int EXITFOUND = 1;
+public final int NOEXITFOUND = 2;</pre>
+    </div>
+
+    <p>If the mouse finds a valid path from its current location or it backtracks to a previous location it notifies the view by sending a still SEARCHING message. If the mouse finds the exit it sends a EXITFOUND message. If the mouse backtracks to its starting
+        position and all paths from that position have been tried it sends a NOEXITFOUND message.</p>
+
+    <!--
+      <h2>PseudoCode for method searchMaze</h2>
+<div id="csOutput" style="width:680px"><pre>get location west of mouse
+if west location in bounds
+    if west location is the exit
+        return EXITFOUND
+    if west location is a path
+        flag current location as a track
+        push current location onto the stack
+        set mouseLoc to west location.
+        flag current location as a mouse
+
+get location north location of mouse    
+if north location in bounds
+    if north location is the exit
+        return EXITFOUND
+    if north location is a path
+        flag current location as a track
+        push current location onto the stack
+        set mouseLoc to north location.
+        flag current location as a mouse
+
+get location east of mouse      
+if east location in bounds
+    if east location is the exit
+        return EXITFOUND
+    if east location is a path
+        flag current location as a track
+        push current location onto the stack
+        set mouseLoc to east location.
+        flag current location as a mouse
+
+get location south of mouse     
+if south location in bounds
+    if south location is the exit
+        return EXITFOUND
+    if south location is a path
+        flag current location as a track
+        push current location onto the stack
+        set mouseLoc to south location.
+        flag current location as a mouse
+        
+ if mouse did not move (could not find a valid path from current position)
+    flag current location as a track
+    pop location from top of stack (backtrack)
+    flag current location as a mouse
+    
+ if size of stack = 0    (Mouse has backtracked to starting position)
+    return EXITNOTFOUND  (A path to exit could not be found)
+    
+ return SEARCHING        (Mouse is still searching for exit)</pre></div>
+ -->
+    <p>&nbsp;</p>
+</div>

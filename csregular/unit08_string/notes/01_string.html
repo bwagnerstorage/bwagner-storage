@@ -1,0 +1,245 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">String Class</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>String class</li>
+						<li>How to create a String object</li>
+						<li>How to use substring method to extract a substring from a string</li>
+						<li>How to concatenate strings together</li>
+						<li>How to use length method to retrieve the length of a string</li>
+						<li>What does immutable mean</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>String Class</h1>
+  <p>Strings are sequences of characters, such as "Hello" or "have a nice day". Java does not have
+     a built-in string type. (Recall the eight primitive types: boolean, byte, char, double, float, long, int, short.) 
+	 Instead, the standard Java library contains a predefined class called,
+	 naturally enough, <strong>String</strong>. String objects are unique in that there are two ways they can be
+	 created or instantiated. The first method uses the new operator and is the same technique used
+	 to instantiate other Java objects.</p>
+   <h3>Method 1 - Instantiating String Object</h3>
+   <div id="csCode">
+    <pre>
+String str = new String();   <div id="csComment"><pre>// instantiate String object</pre></div>
+str = "Good Morning";        <div id="csComment"><pre>// assign string value to String object</pre></div>
+System.out.println(str);</pre>
+   </div>
+   <h3>Method 2 - Instantiating String Object</h3>
+   <p>The second method is simpler and more convenient since it uses the same technique used to
+      declare primitive variables.</p>
+   <div id="csCode">
+    <pre>
+String str;              <div id="csComment"><pre>// declare String object</pre></div>
+str = "Good Morning";    <div id="csComment"><pre>// assign string value to String object</pre></div>
+System.out.println(str);</pre>
+   </div>
+  <h3>Method 3 - Instantiating String Object</h3>
+  <p>The third method is similar to the technique used to initialize primitive variables.</p>
+   <div id="csCode">
+    <pre>
+String str = "Good Morning";   <div id="csComment"><pre>// initialize String object with string value</pre></div>
+System.out.println(str);</pre>
+   </div>
+  <p>Since the String class is used in most Java programs, the designers of Java decided to allow
+     programmers the ability to instantiate String objects without having to use the new operator.
+	 However, it must be understood, that String is a class, <strong>not a primitive data type</strong>, therefore
+	 String objects can be sent messages. Below are a few examples of String methods that can be
+	 used to communicate with String objects:</p>
+   <div id="csCode">
+    <pre>
+str.length()
+str.substring(0,4)
+str.equals("married")
+str.indexOf(".")</pre>
+   </div>
+<p><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" title="String class" target="_blank"><font color="#0000FF">Click 
+   Here</font></a> for the complete list of String class methods.</p>
+  <h1>Concatenation</h1>
+  <p>Java, like most programming languages, allows you to use the + sign to join (concatenate) two strings together.</p>
+	<div id="csCode">
+    <pre>
+String firstName = "John";
+String lastName = "Wayne";
+String fullName = firstName + " " + lastName;</pre>
+   </div>
+  <p>The above code makes the value of the String variable fullName "John Wayne". Notice how I
+     inserted a space between the names. Alternatively, I could have done this by including the
+	 space with the names such as "John " or " Wayne".</p>
+  <p>When you concatenate a string with a value that is not a string, the latter is converted to a
+     string. (As you will see later, every Java object can be converted to a string.) For example:</p>
+  	<div id="csCode">
+    <pre>
+int age = 13;
+String rating = "PG" + age;</pre>
+   </div>
+   <p>sets rating to the string "PG13". This feature is commonly used in output statements, for example,</p>
+	  	<div id="csCode">
+    <pre>
+int answer = 128;
+System.out.println("The answer is " + answer);</pre>
+   </div>
+  <p>converts the integer value 128 to a string, then joins it together with the first string, to form the new string "The answer is 128".</p>
+   <h1>Substrings</h1>
+   <p>A <strong>substring</strong> is defined as a string that is part of a longer string. In Java, you can extract a substring
+      from a larger string with the <strong>substring</strong> method of the String class. For example,</p>
+  <div id="csCode">
+    <pre>
+String fruit = "watermelon";
+String s = fruit.substring(0,5);</pre>
+   </div>
+  <p>creates a string consisting of the characters "water". Java counts the characters in strings in
+     a peculiar fashion: the first character in a string has position 0.</p>
+  <p>For example, the character 'w' has position 0 in the string "watermelon", and the character 'm'
+     has position 5. The second parameter of substring is the first position that you do not want to
+	 copy. In our case, we want to copy the characters in positions 0,1,2,3 and 4 (from position 0 to
+	 position 4 inclusive). As substring counts it, this means from position 0 inclusive to position
+	 5 exclusive. For a visual description refer to diagram below.</p>
+   <img src="images/substring1.png"><br>
+   <p>To extract the substring "melon" you would use the following code. Remember the second parameter
+      is one past the character you want to end on.</p>
+  <div id="csCode">
+	 <pre>
+String fruit = "watermelon";
+String s = fruit.substring(5,10);</pre>
+   </div>
+   <img src="images/substring2.png">
+  <p>The String class provides another substring method that takes only one parameter or argument.
+     This number represents the starting position of the substring. This method automatically extracts
+	 all characters from the starting position to the end of the string. For example, to extract the
+	 substring "melon" you would use the following code.</p>
+  <div id="csCode">
+    <pre>
+String fruit = "watermelon";
+String s = fruit.substring(5);    <div id="csComment"><pre>// only need 1 parameter</pre></div></pre>
+   </div>
+  <p>You can use the substring method to extract an individual character from a string. For example,</p>
+  <div id="csCode">
+    <pre>
+String fruit = "watermelon";
+String s = fruit.substring(0,1);  <div id="csComment"><pre>// extracts 1st character</pre></div></pre>
+   </div>
+ <p>would extract the first character 'w' from the string.</p>
+  <h1>String Editing</h1>
+  <p>The String class provides a useful method named <strong>length</strong> that will tell you how many characters
+     are in a string. In Java terminology, you are retrieving the string's length. For example,</p>
+  <div id="csCode">
+    <pre>
+String fruit = "watermelon";
+int n = fruit.<font color="#FF0000">length</font>();       <div id="csComment"><pre>// length method sets n = 10</pre></div></pre>
+   </div>
+  <h3>Strings are Immutable</h3>
+  <p>The String class provides <strong>no</strong> methods that let you change a character in an existing
+     string. If you want to turn fruit into "Watermelon" with a capital 'W', you cannot directly change
+	 the first position of fruit into a 'W'. How are you going to modify the string? In Java it is quite
+	 easy: take the substring that you want to keep, and then concatenate it with the characters that you
+	 want to replace.</p>
+   <div id="csCode">
+    <pre>
+fruit = "W" + fruit.substring(1,10);   <div id="csComment"><pre>// fruit.substring(1,10) = "atermelon"</pre></div></pre>
+  </div>
+  <p>This changes the current value of the fruit variable to "Watermelon". I could have gotten the
+     same result by using the <strong>length</strong> method:</p>
+  <div id="csCode">
+    <pre>
+fruit = "W" + fruit.substring(1, fruit.length());</pre>
+  </div>
+  <p>Since you cannot change the individual characters in a Java string, the documentation refers to
+     the objects of the String class as being immutable. <strong>Immutable</strong> means they cannot be changed. Just as the number 3 is always 3, the string
+	 "watermelon" will always contain the character sequence 'w','a','t','e','r','m','e','l','o','n'. 
+	 You cannot change these values. You can, as you just saw, however, change the contents of the 
+	 string variable fruit and make it refer to a different string, just as you can make a numeric 
+	 variable currently holding the value 3 hold the value 4.</p>
+	 
+<h1>Searching a String</h1>
+<p>The String class provides a method named <strong>indexOf</strong> that will allow you to search for an individual character or substring within a string. If the search is successful the 
+   method returns the index(position) of the character or substring within the string.</p>
+   <h3>Example 1</h3>
+   <div id="csCode"><pre>
+String str = "friend";
+String index = str.indexOf("e");
+System.out.println("Index = " + index);
+</pre>   
+   </div>
+<p>The code above produces the following output:</p>
+<div id="csOutput">
+<pre>
+Index = 3
+</pre>
+</div>
+<p>The method returns a value of 3 because the string "e" was located at index 3 of the string "friend".</p>
+   <h3>Example 2</h3>
+   <div id="csCode"><pre>
+String str = "friend";
+int index = str.indexOf("x");
+System.out.println("Index = " + index);
+</pre>   
+   </div>
+<p>The code above produces the following output:</p>
+<div id="csOutput">
+<pre>
+Index = -1
+</pre>
+</div>
+<p>If the search key is <strong>not</strong> found within the string the method returns a value of -1.</p>
+
+<h3>Example 3</h3>
+   <div id="csCode"><pre>
+String str = "airplane";
+int index = str.indexOf("air");
+System.out.println("Index = " + index);
+</pre>   
+   </div>
+<p>The code above produces the following output:</p>
+<div id="csOutput">
+<pre>
+Index = 0
+</pre>
+</div>
+<p>If the search key is a substring the method returns the index where the substring begins within the string.
+   It returns -1 if the substring is not contained within the string.</p>
+   
+<h3>Example 4</h3>
+   <div id="csCode"><pre>
+String str = "airplane";
+int index = str.indexOf("a");
+System.out.println("Index = " + index);
+</pre>   
+   </div>
+<p>The code above produces the following output:</p>
+<div id="csOutput">
+<pre>
+Index = 0
+</pre>
+</div>
+<p>Notice that the string "airplane" contains two a's. The indexOf method will only return the <strong>first occurrence</strong> of a 
+   character or substring within a string.</p>
+   
+<h3>Example 5</h3>
+   <div id="csCode"><pre>
+String str = "airplane";
+int index = str.indexOf("a", 1);
+System.out.println("Index = " + index);
+   </pre>   
+   </div>
+<p>The code above produces the following output:</p>
+<div id="csOutput">
+<pre>
+Index = 5
+</pre>
+</div>
+<p>The indexOf method allows you to include another parameter which tells the method where to begin the search.
+   In this example the 1 after the search key tells the indexOf method to start its search for the "a" starting at index 1.</p>
+
+	<br>
+</div>	
+

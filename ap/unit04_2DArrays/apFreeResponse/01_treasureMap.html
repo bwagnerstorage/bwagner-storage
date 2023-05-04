@@ -1,0 +1,341 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR TreasureMap</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/TreasureMapNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >TreasureMap</a></h1>
+
+
+<h1>Directions</h1>
+<p>A treasure map is represented as a rectangular grid. Each grid location contains either a single treasure or nothing.
+   The grid is represented using a matrix(two-dimensional array) of Boolean values. If a cell in the grid contains a treasure
+   then the value true is stored in the corresponding matrix location; otherwise, the value false is stored.</p>
+
+<p>Consider the following declaration for the TreasureMap class.</p>
+<div id="apCode"><pre>
+public class TreasureMap 
+{ 
+    <div id="apHighlight"><pre>private boolean[][] myGrid;</pre></div>   // myGrid[r][c] being true indicates a 
+                                  // treasure at (r, c) 
+                                  // the matrix is sized by the constructor
+    
+    // returns true if the cell at location (row, col)
+    // contains a treasure;
+    // returns false if location (row, col) is not within
+    // the bounds of the grid or if there is no treasure 
+    // at that location 
+    <div id="apHighlight"><pre>public boolean hasTreasure(int row, int col)</pre></div>
+    {   /* implemented in part(a) */  }
+      
+    // precondition:    0 <= row < NumRows(); 0 <= col < NumCols()
+    // returns a count of the number of treasures in the
+    // cells adjacent to the location (row, col),
+    // horizontally, vertically, and diagonally
+    <div id="apHighlight"><pre>public int numAdjacent(int row, int col)</pre></div>
+    {   /* implemented in part(b) */  }
+    
+    // returns the number of rows in the treasure map 
+    <div id="apHighlight"><pre>public int numRows()</pre></div>
+    {   /* implementation not shown */  }
+
+    
+    // returns the number of columns in the treasure map
+    <div id="apHighlight"><pre>public int numCols()</pre></div>
+    {   /* implementation not shown */  }
+    
+    
+    // There may be fields, constructors, and methods that are not shown. 
+    
+      
+}
+</pre></div>
+<p>For example, suppose that the 6-by-9 grid shown below is a treasure map where the symbol * in a cell indicates a treasure.
+   In this example, myGrid[2][3] is true and myGrid[1][3] is false.</p>
+   
+         <table width="53%" height="177" border="1" align="center" id="csTable">
+        <tr> 
+          <td>&nbsp;</td>
+          <td><div align="center"><strong>0</strong></div></td>
+          <td><div align="center"><strong>1</strong></div></td>
+          <td><div align="center"><strong>2</strong></div></td>
+          <td><div align="center"><strong>3</strong></div></td>
+          <td><div align="center"><strong>4</strong></div></td>
+          <td><div align="center"><strong>5</strong></div></td>
+          <td><div align="center"><strong>6</strong></div></td>
+          <td><div align="center"><strong>7</strong></div></td>
+          <td><div align="center"><strong>8</strong></div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>0</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>1</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>2</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>3</strong></div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>4</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>5</strong></div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+      </table>
+	  
+<div id="csList2">
+<ol>
+<li><p>Write the TreasureMap method <strong>hasTreasure</strong>, which is described as follows. hasTreasure returns true if there is
+   a treasure at the location (row, col). If (row, col) is not within the bounds of the grid or if there is no treasure at
+   that location, hasTreasure returns false.</p>
+
+  <p>For example, if treasureMap theMap represents the treasure map shown at the beginning of the question, 
+   the following table gives the results of several calls to hasTreasure.</p>
+<table width="50%" height="152" border="1" align="center" id="csTable">
+            <tr> 
+              <th>Method call</div></td>
+              <th>Value returned</div></td>
+            </tr>
+            <tr> 
+              <td>theMap.hasTreasure(0, 2)</td>
+              <td><div align="center">true</div></td>
+            </tr>
+            <tr> 
+              <td>theMap.hasTreasure(0, -1) </td>
+              <td><div align="center">false </div></td>
+            </tr>
+            <tr> 
+              <td>theMap.hasTreasure(2, 3)</td>
+              <td><div align="center">true</div></td>
+            </tr>
+            <tr> 
+              <td>theMap.hasTreasure(2, 2)</td>
+              <td><div align="center">false</div></td>
+            </tr>
+            <tr> 
+              <td>theMap.hasTreasure(4, 9)</td>
+              <td><div align="center">false</div></td>
+            </tr>
+          </table>
+		  
+<p>Complete method <strong>hasTreasure</strong> below.</p>
+
+<div id="apCode" style="width:550px">
+<pre>
+// returns true if the cell at location (row, col)
+// contains a treasure;
+// returns false if location (row, col) is not within
+// the bounds of the grid or if there is no treasure 
+// at that location 
+<div id="apHighlight"><pre>public boolean hasTreasure(int row, int col)</pre></div>
+
+
+</pre>
+</div>
+</li>
+<li>
+<p>Write the method <strong>numAdjacent</strong>, which is described as follows.
+numAdjacent returns the number of treasures that are adjacent to a given location specified by row
+and col. To be adjacent, a treasure must be in one of the (at most) eight cells that border the given
+location horizontally, vertically, or diagonally; a treasure in the given location does not count as being
+adjacent.</p>
+
+<p>The treasure map below is repeated for your convenience.</p>
+<table width="53%" height="177" border="1" align="center" id="csTable">
+        <tr> 
+          <td>&nbsp;</td>
+          <td><div align="center"><strong>0</strong></div></td>
+          <td><div align="center"><strong>1</strong></div></td>
+          <td><div align="center"><strong>2</strong></div></td>
+          <td><div align="center"><strong>3</strong></div></td>
+          <td><div align="center"><strong>4</strong></div></td>
+          <td><div align="center"><strong>5</strong></div></td>
+          <td><div align="center"><strong>6</strong></div></td>
+          <td><div align="center"><strong>7</strong></div></td>
+          <td><div align="center"><strong>8</strong></div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>0</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>1</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>2</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>3</strong></div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>4</strong></div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>5</strong></div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">*</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+          <td><div align="center">-</div></td>
+        </tr>
+      </table>
+	  
+	 <p>For example, if TreasureMap theMap represents the treasure map shown above, the following table
+gives the results of several calls to numAdjacent.</p>
+
+<table width="51%" height="107" border="1" align="center" id="csTable">
+            <tr> 
+              <td>Method call</td>
+              <td>Value returned</td>
+            </tr>
+            <tr> 
+              <td>theMap.numAdjacent(3, 3)</td>
+              <td><div align="center">5</div></td>
+            </tr>
+            <tr> 
+              <td>theMap.numAdjacent(2, 4)</td>
+              <td><div align="center">3</div></td>
+            </tr>
+            <tr> 
+              <td>theMap.numAdjacent(4, 7) </td>
+              <td><div align="center">0</div></td>
+            </tr>
+          </table>
+<p>In writing numAdjacent, you may call <strong>hasTreasure</strong> specified in part (a). Assume that hasTreasure works as specified,
+   regardless of what you wrote in part (a).</p>
+
+<p>Complete method numAdjacent below.</p>
+
+<div id="apCode" style="width:550px"> <pre>
+// precondition:    0 <= row < NumRows(); 0 <= col < NumCols()
+// returns a count of the number of treasures in the
+// cells adjacent to the location (row, col),
+// horizontally, vertically, and diagonally
+<div id="apHighlight"><pre>public int numAdjacent(int row, int col)</pre></div> 
+ 
+ 
+</pre></div>
+</li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+hasTreasure(3,4) --> true
+hasTreasure(1,7) --> false
+hasTreasure(7,2) --> false
+
+numAdjacent(3,3) --> 5
+numAdjacent(2,4) --> 3
+numAdjacent(4,7) --> 0
+
+</pre>
+</div>
+	<br>
+</div>	
+

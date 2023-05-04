@@ -1,0 +1,123 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Help</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Leslie has been struggling in Algebra so her fellow classmates have all agreed to help her out by
+     giving her the left-over tenths of points from their own averages. For example, if John's average is 92.3, Leslie will get 
+     .3 points added to her average. If Joe's average is 72.7, Leslie will get .7 points. There are
+	 ten other students in Leslie's class.</p>
+<p>Write a program that will allow the teacher to input Leslie's average and then the averages of
+   her 10 classmates rounded to the nearest tenth. The program should then compute the number of points that
+   Leslie will receive and add that value to her average.</p>
+<p>To help calculate the extra points Leslie will receive you can use the Math class's floor method.
+   The <strong>floor</strong> method returns the largest double value that is less than or equal to
+   the given number and is equal to an integer. In other words, it rounds down. The table below shows the results after applying
+   the floor method to various numbers.</p>
+   <table id="csTable" style="margin: 10px">
+      <tr>
+	     <th>Before</th>
+		 <th>After</th>
+	  </tr>
+	  <tr>
+	     <td>92.5</td>
+		 <td>92.0</td>
+	  </tr>
+	  <tr>
+	     <td>76.2</td>
+		 <td>76.0</td>
+	  </tr>
+	  <tr>
+	     <td>69.9</td>
+		 <td>69.0</td>
+	  </tr>
+	  <tr>
+	     <td>-24.7</td>
+		 <td>-25.0</td>
+	  </tr>
+   </table>
+   <br>
+<p>Suppose one of the students in Leslie's class is assigned the variable name <strong>s1Avg</strong> and has an average of 98.6. 
+   Below is the code that extracts the .6 from the grade and adds it to a variable named <strong>extraPoints</strong>.</p>
+<div id="csCode">
+    <pre>
+extraPoints += s1Avg - Math.<font color="#FF0000">floor</font>(s1Avg);
+</pre>
+</div>
+<p>By subtracting student one's original average by the floor of the average you get the following result</p>
+<div id="csOutput">
+<pre>
+98.6 - 98.0 = .6
+</pre>
+</div>
+<p>This value is added to Leslie's extra points total.</p>
+<h3>Problem Decomposition</h3>
+  <p>Using the structure chart below decomposes the problem into the following three 
+    methods: <strong>getAverages</strong>, <strong>calculatePoints</strong>, and 
+    <strong>printResults</strong>.</p>
+   <div align="center"><img src="images/help1.png"></div>
+<h3>Stub Program</h3>
+  <p>Start by creating a stub program that includes all three methods. Include println 
+    statements within each method that print the name of the method when it is 
+    executed. Refer to sample run below.</p>
+<h1>Source File</h1>
+<p>Help.java</p>
+<h1>Stub Program Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+-----------------
+   getAverages
+-----------------
+
+-----------------
+ calculatePoints
+-----------------
+
+-----------------
+  printResults
+-----------------
+</pre>
+</div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+-----------------
+   getAverages
+-----------------
+
+Leslie's average -->68.2
+
+Student 1 average -->98.7
+Student 2 average -->95.5
+Student 3 average -->87.6
+Student 4 average -->78.3
+Student 5 average -->91.2
+Student 6 average -->85.8
+Student 7 average -->75.6
+Student 8 average -->99.9
+Student 9 average -->78.1
+Student 10 average -->83.7
+
+-----------------
+ calculatePoints
+-----------------
+
+
+-----------------
+  printResults
+-----------------
+
+Extra Points = 5.3999999999999915
+New Average = 73.6
+
+</pre>
+</div>
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit10_javaMethods/solutions/01_helpSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+
+	<br>
+</div>	
+

@@ -1,0 +1,212 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Tardies</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A teacher in your school has asked you to write a program to track the number of tardies students
+   in her class have accrued during the semester. The program should begin by allowing the teacher to
+   enter student information from the keyboard. This information should include the student's last
+   name, first name, and number of tardies. The program should allow for a maximum of 50 students,
+   however the teacher should be allowed to enter less than that number. Once the data entry process
+   is complete, the program should print a summary of class tardies. This summary should include the
+   total number of tardies for her class and a list of all students in the database. Refer to the the
+   sample output below.</p>
+   
+<h3>Class Decomposition</h3>
+<p>The problem has been decomposed into 2 classes: Student and Tardies. The <strong>Student</strong> class is responsible
+   for storing the information for a single student. This class has been provided for you with
+   appropriate instance variables, constructors, accessor methods, mutator methods, and a toString
+   method. The <strong>Tardies</strong> class is a client of the Student class. It is responsible for
+   maintaining a list of students, entering and
+   managing the student information, including tardies, and for displaying the summary report.</p>
+  <p>Copy the following code into a file named <strong>Student.java</strong></p>
+  <div id="csCode">
+  <pre>
+public class Student
+{
+    // Instance Variables
+    private String lastName;
+    private String firstName;
+    private int tardies;
+    
+    // Default Constructor
+    public Student()
+    {
+        lastName="";
+        firstName="";
+        tardies=0;
+    }
+    
+    // Second Constructor
+    public Student(String l, String f, int t)
+    {
+        lastName = l;
+        firstName = f;
+        tardies = t;
+    }
+    
+    // Accessor Methods
+    public String getLastName()
+    {
+        return lastName;
+    }
+    public String getFirstName()
+    {
+        return firstName;
+    }
+    public int getTardies()
+    {
+        return tardies;
+    }
+    
+    // Mutator Methods
+    public void setLastName(String l)
+    {
+        lastName = l;
+    }
+    
+    public void setFirstName(String f)
+    {
+        firstName = f;
+    }
+    
+    public void setTardies(int t)
+    {
+        tardies = t;
+    }
+    
+    // toString Method
+    public String toString()
+    {
+        String str;
+        str = "First Name = " + firstName + "\n" +
+              "Last Name  = " + lastName + "\n" +
+              "Tardies    = " + tardies + "\n";
+              
+        return str;
+    }
+}
+  </pre>
+  </div>
+  
+    <p>Copy the following code into a file named <strong>Tardies.java</strong></p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+  
+public class Tardies
+{
+    // instance variables
+    private Student[] students;    // list of students
+    private int numStudents;       // logical size of the array
+	
+    // constructor
+    public Tardies()
+    {
+        students = new Student[50];   // instantiate array
+        numStudents = 0;               
+    }
+	
+    /** precondition: none
+     *  postcondition: students array has been populated with
+     *     Student objects from keyboard input. numStudents has 
+     *     been updated to reflect the logical size of the 
+     *     array student.
+     */
+    public void enterData()
+    {
+
+    }
+
+    /* @return the total number of tardies for all students
+     *    in the class.
+     */
+    public int getTotalTardies()
+    {
+	
+    }
+	
+    /** precondition: none
+     *  postcondition: a summary report has been printed which includes
+     *     the total number of tardies for the entire class and a
+     *     list of names and tardies for every student in the class.
+     */
+    public void summaryReport()
+    {
+
+    }
+	
+    public static void main(String[] args)
+    {
+        Tardies app = new Tardies();
+        app.enterData();
+        app.summaryReport();
+    }
+}
+  </pre>
+  </div>
+
+<h1>Modifications</h1>
+<h3>Methods</h3>
+<div id="csList">
+<ol>
+<li>Implement <strong>enterData</strong> method. This method populates the students array with
+    Student objects from keyboard input. The input consists of a student's last name, first name, and
+	number of tardies. The data entry should continue until the senitel value is input. The variable numStudents should be updated to reflect the logical size of
+	the student array.</li>
+<li>Implement <strong>getTotalTardies</strong> method. This method returns the count of the
+    total number of tardies for all students in the class.</li>
+<li>Implement <strong>summaryReport</strong> method. This method prints a summary report which
+    includes the total number of tardies for the entire class and a list of names and tardies
+    for every student in the class. Appropriate labelling should be included.</li>
+</ol>
+</div>
+ 
+<h1>Source File</h1>
+<p>Student.java</p>
+<p>Tardies.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+==================
+Enter Student Data
+==================
+Enter last name --> Smith
+Enter first name --> Bill
+Enter number of tardies --> 5
+
+Enter another student[y/n]? y
+
+Enter last name --> Jones
+Enter first name --> Sarah
+Enter number of tardies --> 2
+
+Enter another student[y/n]? y
+
+Enter last name --> Sanchez
+Enter first name --> Juan
+Enter number of tardies --> 3
+
+Enter another student[y/n]? y
+
+Enter last name --> Wallace
+Enter first name --> Mary
+Enter number of tardies --> 1
+
+Enter another student[y/n]? n
+
+
+==================================
+Class Summary - Tardy Total = 11
+==================================
+
+Smith, Bill 5
+Jones, Sarah 2
+Sanchez, Juan 3
+Wallace, Mary 1
+</pre>
+</div>
+	<br>
+</div>	
+

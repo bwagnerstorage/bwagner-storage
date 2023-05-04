@@ -1,0 +1,48 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">WalkLake</div>
+
+<div id="csContent"> 
+<h1>Recursion</h1>
+  <p><strong>Recursion</strong> is a programming technique where a method calls itself. Recursion
+     is useful because it allows your program to repeat a process just like the while control
+	 structure. Let's look at an example. Suppose I have a Jeroo named bob located on the west
+	 shore of an island and I want him to walk across the island until he reaches the east shore.
+	 Using recursion I could do the following.</p>
+
+  <p>In the main method create the Jeroo bob and place him on the west shore of the island then
+     call the user defined method walk.</p>
+<br>
+<img src="images/Jeroo/demo1.gif"><br><br>
+<p>In the <strong>walk</strong> method have bob hop forward one space then have the method call itself. This call
+   to walk method is a recursive call because we are making a call to method that we are currently
+   in. When the program reaches the call to walk method it returns execution back to the top of the
+   walk method and starts over again.</p>
+<br>
+<img src="images/Jeroo/demo2.gif"><br><br>
+<p>There is, however, one flaw in this program. The Jeroo does not stop when it reaches the east
+   shore. When you use recursion it is important to add a condition to make the recursion stop.
+   In programming terminology we call this a base case. Look at the modified walk method.</p>
+   
+<br>
+<img src="images/Jeroo/demo3.gif"><br><br>
+
+<p>I have added the condition that the recursion will only continue if the water is not ahead.
+   Now the Jeroo will stop when it reaches the east shore.</p>
+   
+<h1>Directions</h1>
+<p>Monsoon rains have created a lake in the middle of Santong Island. The goal of this program is
+   to have the Jeroo explore the shoreline of the lake. The Jeroo starts at location (12,2) facing
+   North with one flower in its pouch. The Jeroo starts by planting a flower then travelling,
+   keeping the lake on its right, until it returns to the flower. The Jeroo should stop when 
+   it reaches the flower.
+   <br>Use recursion in your implementation.</p>
+<h1>Source File</h1>
+<p>WalkLake.jsc</p>
+<h1>Island File</h1>
+  <p>WalkIsland.jev</a></p>
+<h1>Sample Run</h1>
+<img src="images/Jeroo/walkLake1.gif">
+	<br>
+</div>	
+

@@ -1,0 +1,72 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">RandomBug</div>
+
+<div id="csContent"> 
+<h1>Directions</h1> 
+<p>A <strong>RandomBug</strong> is a Bug. A RandomBug is different from a Bug in three ways.</p>
+<div id="csList">
+<ol>
+<li><p>A RandomBug can move to any location within the grid chosen at random. 
+    Inorder to select a random location within the boundaries of the current grid you will need
+    to use the grid methods <strong>getNumRows</strong> and <strong>getNumCols</strong>.</p>
+	<div id="csList">
+	<p>The following code can be used to create a random location within the grid.</p>
+	  <div id="csCode" style="width:400px">
+  <pre>
+int r = (int)(Math.random() * gr.getNumRows());
+int c = (int)(Math.random() * gr.getNumCols());
+Location next = new Location(r, c));
+</pre>
+  </div>
+</div>	
+	</li>
+<li><p>A RandomBug does not leave flowers when it moves.</p></li>
+<li><p>A RandomBug will replace any object, which occupies the randomly selected location.</p>
+<div id="csList">
+<p>Override the <strong>canMove</strong> method so that always returns true.</p>
+</div>
+</li>
+</ol>
+</div>	
+	
+<p>Implement the RandomBug class then use the <strong>RandomBugRunner</strong> class below to test your new class.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class RandomBugRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        RandomBug randomBug = new RandomBug(Color.YELLOW);
+        Bug bug = new Bug();
+        world.add(new Location(5, 5), randomBug);
+        world.add(new Location(2, 2), bug);
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.show();
+    }
+}  
+  </pre>
+  </div>
+
+
+<h1>Source File</h1>
+<p>RandomBug.java</p>
+<p>RandomBugRunner.java</p>
+
+	<br>
+</div>	
+

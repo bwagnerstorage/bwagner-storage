@@ -1,0 +1,145 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Donation</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/DonationNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Donation</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/Donation.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Donation</a></h1>
+
+<h1>Directions</h1>
+<p>A set of classes is used to manage the different donations made to a charitable organization. The donors are organized into
+   clubs depending upon the amount of their donation. The class hierarchy is shown in the following diagram.
+   
+<div align="center"><img src="images/donation.gif"></div>
+
+<p>The class <strong>Donation</strong> is specified as an abstract class as shown in the following declaration.</p>
+
+<div id="csCode"><pre>
+public abstract class Donation
+{
+    private String donorName;  // the donor's name
+    
+    public Donation(String name)
+    {
+       donorName = name;    
+    }
+    
+    // returns the name of the club the donor belongs
+    public <div id="csHighlight"><pre>abstract</pre></div> String getClub();
+
+    // returns the amount of the donation
+    public <div id="csHighlight"><pre>abstract</pre></div> double getAmount();
+    
+    // returns a string with information about the donation
+    public String toString()
+    {
+        String str;
+        str = "Donor Name      = " + donorName + "\n" +
+              "Donation Club   = " + getClub() + "\n" +
+              "Donation Amount = " + getAmount();
+        return str;
+    }
+}
+</pre></div>
+<p>All donations have a donor name. For all donation classes, the toString method returns a string
+   containing the information for that donation. Three additional classes are used to represent the different
+   types of donations and are described in the table below.</p>
+
+<table width="94%"  id="csTable">
+        <tr> 
+          <th>Class</th>
+          <th>Description</th>
+          <th>Sample toString Output</th>
+        </tr>
+        <tr> 
+          <td>Silver</td>
+          <td>These donors made a $100 donation</td>
+          <td><font face="Courier New, Courier, mono">Donor Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 
+            John Wayne<br>
+            Donation Club &nbsp;&nbsp;= Silver<br>
+            Donation Amount = 100.0</font></td>
+        </tr>
+        <tr> 
+          <td>Gold</td>
+          <td>These donors made a $500 donation</td>
+          <td><font face="Courier New, Courier, mono">Donor Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 
+            Jimmy Stewart<br>
+            Donation Club &nbsp;&nbsp;= Gold<br>
+            Donation Amount = 500.0</font></td>
+        </tr>
+        <tr> 
+          <td>Platnium</td>
+          <td>These donors made a $1000 donation</td>
+          <td><font face="Courier New, Courier, mono">Donor Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 
+            Natalie Woods<br>
+            Donation Club &nbsp;&nbsp;= Platinum<br>
+            Donation Amount = 1000.0</font></td>
+        </tr>
+      </table>
+
+<p>Using the class hierarchy and specifications give above, you will write complete class declarations for the Silver,
+   Gold, and Platinum classes.</p>
+
+<h1>Modifications</h1>
+
+<div id="csList">
+<ol>
+<li><h3>Silver Class</h3>
+<p>Write the complete class declaration for the class Silver. Include all necessary instance
+    variables and implementations of its constructor and method(s). The constructor should take
+    a parameter that indicates the name of the donor. A donor becomes a member of the Silver club
+    if they make a donation of $100.</p>
+</li>
+<li><h3>Gold Class</h3>
+
+<p>Write the complete class declaration for the class Gold. Include all necessary instance
+   variables and implementations of its constructor and method(s). The constructor should take 
+   a parameter that indicates the name of the donor. A donor becomes a member of the Gold club
+   if they make a donation of $500.</p>
+</li>
+<li><h3>Platinum Class</h3>
+
+<p>Write the complete class declaration for the class Platinum. Include all necessary instance
+   variables and implementations of its constructor and method(s). The constructor should take a 
+   parameter that indicates the name of the donor. A donor becomes a member of the Platinum club
+   if they make a donation of $1000.</p>
+</li></ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Enter donor name -->John Wayne
+Enter donation amount ($100, $500, $1000) --> $100
+
+Enter Another [Y/N]? y
+
+Enter donor name -->Jimmy Stewart
+Enter donation amount ($100, $500, $1000) --> $500
+
+Enter Another [Y/N]? y
+
+Enter donor name -->Natalie Woods
+Enter donation amount ($100, $500, $1000) --> $1000
+
+Enter Another [Y/N]? n
+
+
+Summary of Donations
+====================
+Donor Name      = John Wayne
+Donation Club   = Silver
+Donation Amount = 100.0
+
+Donor Name      = Jimmy Stewart
+Donation Club   = Gold
+Donation Amount = 500.0
+
+Donor Name      = Natalie Woods
+Donation Club   = Platinium
+Donation Amount = 1000.0
+</pre>
+</div>
+	<br>
+</div>	
+

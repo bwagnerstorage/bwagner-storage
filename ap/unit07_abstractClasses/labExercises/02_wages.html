@@ -1,0 +1,133 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Wages</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/WagesNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Wages</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/Wages.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Wages</a></h1>
+
+<h1>Directions</h1>
+<p>A company hires its employees as either hourly or salary workers. A set of classes is used to handle the
+   different types of employees at the company. The class hierarchy is shown in the following diagram.</p>
+   
+   <div align="center"><img src="images/employee.gif"></div>
+
+<p>The class <strong>Employee</strong> is specified as an abstract class as shown in the following declaration.</p>
+<div id="csCode"><pre>
+public abstract class Employee
+{
+    // instance variables
+    private String name;
+    private String ssNum;
+    
+    // constructor
+    public Employee(String n, String s)
+    {
+       name = n;
+       ssNum = s;   
+    }
+    
+    public String getName()
+    {
+      return name;  
+    }
+    
+    public String getSSNum()
+    {
+      return ssNum; 
+    }
+    
+    // returns an employee's monthly salary
+    public <div id="csHighlight"><pre>abstract</pre></div> double getSalary();
+    
+}
+</pre></div>
+<p>Each employee has a name and social secuirty number. Two additional classes are used to represent the two 
+  types of employees and are described in the table below.</p>
+
+<table width = "75%" id="csTable">
+        <tr bgcolor="#000099"> 
+          <th width="20%"> <div align="center" width="40%">Class</div></th>
+          <th width="80%"> <div align="center" width="60%">Description</div></th>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>Hourly</strong></div></td>
+          <td>Hourly employees are paid by the hour. The monthly salary is calculated 
+            by multiplying the number of hours worked each month by the hourly 
+            rate. Hourly workers are also paid time and a half for any work done 
+            beyond 160 hours a month (40 hours x 4 weeks).</td>
+        </tr>
+        <tr> 
+          <td><div align="center"><strong>Salary</strong></div></td>
+          <td>Salary employees are paid a yearly salary. The monthly salary is 
+            calculated by dividing the yearly salary by 12 (12 months). Salary 
+            employees are not paid overtime.</td>
+        </tr>
+      </table>
+<h1>Modifications</h1>
+
+<div id="csList">
+<ol>
+<li><h3>Salary Class</h3>
+<p>Write the complete class declaration for the class Salary. Include all necessary instance variables
+   and implementations of its constructor and method(s). The constructor should take three parameters that
+   indicate the employee's name, social security number, and yearly salary. Implement the method getSalary
+   so that it calculates and returns the monthly salary as described above.</p>
+
+</li>
+<li><h3>Hourly Class</h3>
+<p>Write the complete class declaration for the class Hourly. Include all necessary instance variables
+   and implementations of its constructor and method(s). The constructor should take four parameters that
+   indicate the employee's name, social security number, hourly wage, and hours worked for month. Implement 
+   the method getSalary so that it calculates and returns the monthly salary as described above.</p>
+</li></ol></div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Add Employee
+==============
+
+Enter Employee Payment Type
+1. Hourly
+2. Salary
+
+Make Selection -->1
+
+Enter Employee Name -->John Wayne
+Enter Employee SS#  -->423-23-1212
+Enter hourly wage -->$8.50
+Enter hours worked for month -->180
+
+Enter another employee[y/n]?y
+
+ Add Employee
+==============
+
+Enter Employee Payment Type
+1. Hourly
+2. Salary
+
+Make Selection -->2
+
+Enter Employee Name -->Jimmy Stewart
+Enter Employee SS#  -->232-12-8983
+Enter yearly salary -->$65000
+
+Enter another employee[y/n]?n
+
+ Salary Summary
+================
+Name              =  John Wayne
+Social Security # =  423-23-1212
+Monthly Salary    =  $1615.00
+
+Name              =  Jimmy Stewart
+Social Security # =  232-12-8983
+Monthly Salary    =  $5416.67
+</pre>
+</div>
+	<br>
+</div>	
+
+	
+

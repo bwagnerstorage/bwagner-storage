@@ -1,0 +1,84 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Elevens Lab - Activity 1</div>
+
+<div id="csContent"> 
+<h1>Introduction</h1>
+<p>The following activities are
+related to a simple solitaire game
+called Elevens. You will learn the
+rules of Elevens, and will be able
+to play it by using the supplied
+Graphical User Interface (GUI)
+shown at the right. You will learn
+about the design and the Object
+Oriented Principles that
+suggested that design. You will also implement much of the code.</p>
+
+<div align="center"><img src="images/Elevens1.png"></div>
+
+<h1>Design and Create a Card Class</h1>
+<p>In this activity, you will complete a Card class that will be used to create card objects.</p>
+<p>Think about card games you've played. What kinds of information do these games require a card object to
+"know"? What kinds of operations do these games require a card object to provide?</p>
+<h1>Prepare for Lesson</h1>
+<p>Download the JCreator Elevens workspace provide in the section <strong>Elevens Workspace</strong></p>
+<h1>Exploration</h1>
+<p>Now think about implementing a class to represent a playing card. What instance variables should it have?
+What methods should it provide? Discuss your ideas for this Card class with classmates.</p>
+<p>Read the partial implementation of the Card class available in the Activity1 Project. As you read
+through this class, you will notice the use of the <strong>@Override</strong> annotation before the toString method.
+The Java @Override annotation can be used to indicate that a method is intended to override a method in a
+superclass. In this example, the Object class's toString method is being overridden in the Card class.
+If the indicated method doesn't override a method, then the Java compiler will give an error message.</p>
+<p>Here's a situation where this facility comes in handy. Programmers new to Java often encounter problems
+matching headings of overridden methods to the superclass's original method heading. For example, in the
+Weight class below, the tostring method is intended to be invoked when toString is called for a
+Weight object.</p>
+
+<div id="apCode"><pre>
+public class Weight {
+   private int pounds;
+   private int ounces;
+      ...
+   <div id="apHighlight"><pre>public String tostring(String str)</pre></div> {
+       return this.pounds + " lb. " + this.ounces + " oz.";
+   }
+   ...
+}
+</pre></div>
+
+<p>Unfortunately, this <strong>doesn't work</strong>; the tostring method given above has a different name and a different
+signature from the Object class's toString method. The correct version below has the correct name
+toString and no parameter:</p>
+
+<div id="apCode"><pre>
+   <div id="apHighlight"><pre>public String toString(String str)</pre></div> {
+       return this.pounds + " lb. " + this.ounces + " oz.";
+   }
+   ...
+}
+</pre></div>
+<p>The <strong>@Override</strong> annotation would cause an error message for the first tostring version to alert the
+programmer of the errors.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>Complete the implementation of the provided Card class. You will be required to complete:</p>
+<div id="csList2"><ol>
+<li><p>a <strong>constructor</strong> that takes two String parameters that represent the card's rank and suit, and an int
+parameter that represents the point value of the card;</p></li>
+<li><p><strong>accessor methods</strong> for the card's rank, suit, and point value;</p></li>
+<li><p>an <strong>equals</strong> method to test equality between two card objects; and</p></li>
+<li><p>a <strong>toString</strong> method to create a String that contains the rank, suit, and point value of the card
+object. The string should be in the following format:</p>
+<div id="apCode"><pre>
+rank of suit (point value = pointValue)
+</pre></div>
+</li>
+</ol></div></li>
+<li><p>Once you have completed the Card class, open the CardTester.java file. Create three Card objects and test each method for each Card object.</p></li>
+</ol></div>
+	<br>
+</div>	
+

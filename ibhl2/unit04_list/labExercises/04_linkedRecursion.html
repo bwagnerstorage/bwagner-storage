@@ -1,0 +1,98 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">LinkedRecursion</div>
+
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/LinkedRecursionNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >LinkedRecursion</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/LinkedRecursion.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >LinkedRecursion</a></h1>
+
+<h1>Directions</h1>
+  <p>Because of the way linked structures are organized recursion presents a viable and dare I say elegant way to traverse a set of nodes. Below is a recursive method that prints
+     the contents of a linked list from beginning to end.</p>
+
+<div id="csCode"><pre>
+public void printList(ListNode cur)
+{
+    if(cur != null)  // base case
+    {
+        System.out.print(cur.getValue()+ " ");
+        printList(cur.getNext());  // recursive call
+    }
+    else
+        System.out.println();
+}</pre>
+</div>
+
+<p>In this assignment you are going to complete two methods: <strong>recursiveSearch</strong> and <strong>numOccurrences.</strong> Both of these methods need to be implemented using recursion. 
+  The recursiveSearch method should search a linked list for a key value. If the value is found within the list the method it should return true; otherwise it should return false. 
+  The numOccurrences method should count and return the number of times a key occurs within a list.</p>
+
+<p>For example, suppose a list contains the following values:</p>
+
+<p> 4 8 2 4 5 3 2 4 1 3 9 2</p>
+
+<p>The table below represents several calls to the numOccurrences method.</p>
+<table id="csTable" style="margin:10px">
+<tr>
+<th>call to numOccurrences</th>
+<th>result</th>
+</tr>
+<tr>
+<td>numOccurrences(head, 1)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>numOccurrences(head, 4)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>numOccurrences(head, 7)</td>
+<td>0</td>
+</tr>
+</table>
+
+ 
+<h1>Source File</h1>
+<p>LinkedRecursion.java</p>
+<p>ListNode.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test RecursiveSearch
+====================
+10 7 26 5 31 55 64 19 89 42 75 8
+Enter search key -->10
+Search key 10 found!
+
+Search Again(Y/N)? y
+10 7 26 5 31 55 64 19 89 42 75 8
+Enter search key -->55
+Search key 55 found!
+
+Search Again(Y/N)? y
+10 7 26 5 31 55 64 19 89 42 75 8
+Enter search key -->8
+Search key 8 found!
+
+Search Again(Y/N)? y
+10 7 26 5 31 55 64 19 89 42 75 8
+Enter search key -->21
+Search key 21 not found!
+
+Search Again(Y/N)? n
+
+
+Test numOccurrences
+===================
+1 2 3 2 3 4 3 4 2 1 1 2 5 4 3 2 2 5
+
+Number of 1s = 3
+Number of 2s = 6
+Number of 3s = 4
+Number of 4s = 3
+Number of 5s = 2
+</pre>
+</div>
+	<br>
+</div>	
+

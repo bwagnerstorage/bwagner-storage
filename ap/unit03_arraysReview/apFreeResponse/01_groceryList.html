@@ -1,0 +1,307 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR GroceryList</div>
+
+<div id="csContent"> 
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/GroceryListNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >GroceryList</a></h1>
+
+<div id="csList">
+<ol>
+<li>Click on the link above.</li>
+<li>Open the zip file.</li>
+<li>Copy the folder to your home directory.</li>
+<li>Open the NetBeans Project.</li>
+</ol>
+</div>
+<h1>Directions</h1>
+<p>A grocery item consists of a name, price, size (in ounces), and a category.
+   Assume that grocery items are implemented using the following class declaration.</p>
+
+<div id="apCode">
+<pre>
+public class GroceryItem
+{
+    // sets the item name to the specified value
+    <div id="apHighlight"><pre>public void setItemName(String n)</pre></div>
+
+    // sets the item price to the specified value
+    <div id="apHighlight"><pre>public void setItemPrice(double p)</pre></div>
+
+    // sets the item size to the specified value
+    <div id="apHighlight"><pre>public void setItemSize(int s)</pre></div>
+
+    // sets the item category to the specified value
+    <div id="apHighlight"><pre>public void setItemCategory(String c)</pre></div>
+
+    // returns the item name
+    <div id="apHighlight"><pre>public String getItemName()</pre></div>
+
+    // returns the item price
+    <div id="apHighlight"><pre>public double getItemPrice()</pre></div>
+
+    // returns the item size
+    <div id="apHighlight"><pre>public int getItemSize()</pre></div>
+
+    //  returns the item category
+    <div id="apHighlight"><pre>public String getItemCategory()</pre></div>
+
+    // ... constructors and other public members not shown
+
+    // ... instance variables not shown
+
+}
+</pre>
+</div>
+ 
+<p>Consider the following declaration that will be used to keep track of information about items in a grocery store. 
+   Each item is identified by a unique one-word name and has an associated price, size, and category.</p>
+
+ 
+<div id="apCode">
+<pre>
+public class GroceryStore
+{
+    // a list of grocery items
+    <div id="apHighlight"><pre>private GroceryItem[] groceryList;</pre></div>
+
+    // returns the price of this item
+    <div id="apHighlight"><pre>public double getPrice(String itemName)</pre></div>
+    {  /* implementation not shown */}
+
+    
+    // returns the size (in ounces) of this item
+    <div id="apHighlight"><pre>public int getSize(String itemName)</pre></div>
+    {  /* implementation not shown */}
+
+ 
+    // changes the price of item associated with itemName
+   <div id="apHighlight"><pre> public void setPrice(String itemName, double price)</pre></div>
+    {  /* to be implemented in part (a) */}
+ 
+    // postcondition: returns the name of an item whose
+    //                unit price is the lowest in the
+    //                specified category; if no items in
+    //                the specified category, returns 
+    //                "none".
+    <div id="apHighlight"><pre>public String bargainItem(String category)</pre></div>
+    { /* to be implemented in part (b) */ } 
+
+  }
+</pre>
+</div>
+ 
+
+ <div id="csList2">
+ <ol>
+ <li>
+ <p>Write the GroceryStore method <strong>setPrice</strong>. This method updates the price of the given item in the groceryList to the specified price.
+ If the itemName is not in the list no changes are made.</p>
+ <p>For reference, assume groceryList contains the following grocery items.</p>
+
+<table id="csTable" style="margin:20px">
+<tr>
+<th>Name</th>
+<th>Price</th>
+<th>Size (in ounces)</th>
+<th> Category</th>
+</tr>
+<tr>
+<td>avocado</td>
+<td align="center">1.68</td>
+<td align="center">8</td>
+<td align="center">P</td>
+</tr>
+ <tr>
+<td>milk</td>
+<td align="center">1.92</td>
+<td align="center">64</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td>chicken</td>
+<td align="center">4.48</td>
+<td align="center">64</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td>broccoli</td>
+<td align="center">1.92</td>
+<td align="center">16</td>
+<td align="center">P</td>
+</tr>
+<tr>
+<td>yogurt</td>
+<td align="center">0.96</td>
+<td align="center">16</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td>spinach</td>
+<td align="center">1.76</td>
+<td align="center">16</td>
+<td align="center">P</td>
+</tr>
+<tr>
+<td>cornedbeef</td>
+<td align="center">6.72</td>
+<td align="center">48</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td>porkchops</td>
+<td align="center">2.24</td>
+<td align="center">32</td>
+<td align="center">M</td>
+</tr> 
+</table>
+ 
+<p>Complete method <strong>setPrice</strong> below.</p>
+
+ 
+<div id="apCode" style="width:600px">
+<pre>
+// changes the price of the item associated with itemName
+<div id="apHighlight"><pre>public void setPrice(String itemName, double price)</pre></div>
+
+
+</pre>
+</div>
+
+
+ </li>
+ <li><p>The unit price of an item is the price per ounce.</p> 
+
+<table id="csTable" style="margin:20px">
+<tr>
+<th>Name</th>
+<th>Price</th>
+<th>Size (in ounces)</th>
+<th> Category</th>
+</tr>
+<tr>
+<td>avocado</td>
+<td align="center">1.68</td>
+<td align="center">8</td>
+<td align="center">P</td>
+</tr>
+ <tr>
+<td>milk</td>
+<td align="center">1.92</td>
+<td align="center">64</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td>chicken</td>
+<td align="center">4.48</td>
+<td align="center">64</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td>broccoli</td>
+<td align="center">1.92</td>
+<td align="center">16</td>
+<td align="center">P</td>
+</tr>
+<tr>
+<td>yogurt</td>
+<td align="center">0.96</td>
+<td align="center">16</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td>spinach</td>
+<td align="center">1.76</td>
+<td align="center">16</td>
+<td align="center">P</td>
+</tr>
+<tr>
+<td>cornedbeef</td>
+<td align="center">6.72</td>
+<td align="center">48</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td>porkchops</td>
+<td align="center">2.24</td>
+<td align="center">32</td>
+<td align="center">M</td>
+</tr> 
+</table>
+
+<p>The <strong>unit price</strong> of avocado is 1.68 divided by 8, which equals 0.21, and the unit price of spinach is 1.76 
+   divided by 16, which equals 0.11.</p>
+<p>Write the GroceryStore method <strong>bargainItem.</strong> This method returns the name of an item whose <strong>unit price</strong> is the
+   lowest in the specified category. If there is more than one item with the lowest price, any one of these items may be returned.
+   If there are no items in the category, bargainItem returns "none". </p>
+
+<p>For example, consider the items and prices listed in the table above. Using this table, the results of three calls to bargainItem
+   are shown below.</p>
+<div id="csOutput" style="width:600px">
+<pre>
+              <strong>Method call</strong>                 <strong>Returned value</strong>
+            bargainItem("P")             spinach
+
+            bargainItem("M")             chicken or porkchops
+
+            bargainItem("B")             none
+</pre>
+</div> 
+
+<p>In writing bargainItem, you may call any of the member methods of the GroceryStore class. Assume that the member methods work as
+   specified.</p>
+
+<p>Complete method <strong>bargainItem</strong> below.</p>
+
+<div id="apCode" style="width:600px">
+<pre>
+// postcondition: returns the name of an item whose
+//                unit price is the lowest in the
+//                specified category; if no items in
+//                the specified category, returns 
+//                "none".
+<div id="apHighlight"><pre>public String bargainItem(String category)</pre></div>
+	
+	
+</pre>
+</div>
+ 
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+avocado 1.68 8 P
+milk 1.78 64 D
+chicken 4.48 64 M
+broccoli 1.92 16 P
+yogurt 0.96 16 D
+spinach 1.76 16 P
+cornedbeef 6.72 48 M
+porkchops 2.02 32 M 
+
+Test setPrice method
+====================
+milk changed from 1.78 to 1.92
+porkchops changed from 2.02 to 2.24
+
+avocado 1.68 8 P
+milk 1.92 64 D
+chicken 4.48 64 M
+broccoli 1.92 16 P
+yogurt 0.96 16 D
+spinach 1.76 16 P
+cornedbeef 6.72 48 M
+porkchops 2.24 32 M
+
+
+Test bargainItem method
+=======================
+Produce = spinach
+Meat = chicken
+Bread = none
+
+
+</pre>
+</div>
+	<br>
+</div>	
+

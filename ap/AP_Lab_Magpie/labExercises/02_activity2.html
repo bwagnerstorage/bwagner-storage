@@ -1,0 +1,65 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Magpie Lab - Activity 2</div>
+
+<div id="csContent"> 
+<h1>Introduction to the Magpie Class</h1>
+
+<p>To run Magpie follow these steps:</p>
+<div id="csList">
+<ul>
+<li><p>Download the NetBean's MagPie workspace provide in the section <strong>MagPie Workspace</strong>.</p></li>
+<li><p>Open the file <strong>MagpieRunner2</strong>, compile and execute.</p></li>
+</ul></div>
+<p>Get to know the Magpie class by typing in the following responses:</p>
+<div id="csList">
+<ul>
+<li><p>My mother and I talked last night.</p></li>
+<li><p>I said no!</p></li>
+<li><p>The weather is nice.</p></li>
+<li><p>Do you know my brother?</p></li>
+</ul></div>
+<h1>Exploration</h1>
+<p>Look at the code. See how the if statement assigns a value to the response and returns that response.
+The method <strong>getRandomResponse</strong> picks a response from a group of String objects.</p>
+<h1>Exercises</h1>
+<p>Alter the code:</p>
+<div id="csList">
+<ol>
+<li><p>Have it respond "Tell me more about your pets" when the statement contains the word "dog" or
+"cat." For example, a possible statement and response would be:</p>
+<p><strong>Statement:</strong> I like my cat Mittens.</p>
+<p><strong>Response:</strong> Tell me more about your pets.</p>
+</li>
+<li><p>Have it respond favorably when it sees the name of your teacher. Be sure to use appropriate
+pronouns! If the statement contains the salutation "Mr." then the response should include the "he" pronoun,
+if the statement contains the salutations "Mrs.", "Ms." or "Miss" the response should include the "she" pronoun, and
+finally if the statement does not contain a salutation then use "he/she" in the response. For example,</p>
+<p><strong>Statement:</strong> Mr. Finkelstein is telling us about robotics.</p>
+<p><strong>Response:</strong> He sounds like a good teacher.</p>
+</li>
+<li><p>Have the code check that the statement has at least one character. You can do this by using the
+trim method to remove spaces from the beginning and end, and then checking the length of
+the trimmed string. If there are no characters, the response should tell the user to enter
+something. For example, a possible statement and response would be:</p>
+<p><strong>Statement:</strong></p>
+<p><strong>Response:</strong> Say something, please.</p>
+</li>
+<li><p>Add two more noncommittal responses to the possible random responses.</p></li>
+<li><p>Pick three more keywords, such as "no" and "brother" and edit the getResponse method to
+respond to each of these.</p></li>
+<li><p>What happens when more than one keyword appears in a string? Consider the string "My
+mother has a dog but no cat." Explain to your neighbor how you might prioritize responses in the reply method.</p></li>
+</ol>
+</div>
+<h1>Question</h1>
+<div id="csList">
+<ol>
+<li><p>What happens when a keyword is included in another word? Consider statements like "I know
+all the state capitals" and "I like vegetables smothered in cheese." Explain the problem with the
+responses to these statements.</p></li>
+</ol></div>
+</div>
+	<br>
+</div>	
+

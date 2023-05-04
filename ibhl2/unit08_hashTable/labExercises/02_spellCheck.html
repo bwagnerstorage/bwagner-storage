@@ -1,0 +1,121 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">SpellChecker</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/SpellCheckerNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SpellChecker</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/SpellChecker.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >SpellChecker</a></h1>
+
+<p>Write a Java program that uses a hash table to implement a spelling checker. The program starts by reading a list of words from a data file
+   and inserts them into a hash table using the hash function shown below. Chaining should be used to resolve collisions. Once the hash table has
+   been populated with words allow the user to enter words and have the program search the table for the input words. If a word is found in the table
+   notify the user that the word was spelled correctly. If a word is not found in the table notify the user that the word was spelled incorrectly.</p>
+   
+<h3>Hash Function</h3>
+<div id="csCode"><pre>
+// The hash function
+// Returns a valid index within the range of arrays indices
+public int hashCode(String key)
+{
+    int sum = 0;
+    for(int i=0; i < key.length(); i++) 
+    {
+       sum += (int)key.charAt(i);   
+    }
+    return sum % TABLE_SIZE;
+}
+</pre></div>
+<p>Below is the partial implementation of the class <strong>SpellChecker</strong>.</p>
+<div id="csCode"><pre>
+public class SpellChecker
+{
+    public static final int TABLE_SIZE = 100000;   // 104217 words in list
+    private Scanner infile;
+    private ListNode[] hashTable;
+    
+    // The hash function
+    // Returns a valid index within the range of arrays indices
+    public int hashCode(String key)
+    {
+        int sum = 0;
+        for(int i=0; i < key.length(); i++) 
+        {
+           sum += (int)key.charAt(i);   
+        }
+        return sum % TABLE_SIZE;
+    }
+    
+    // Part(a)
+    // Postcondition: Calculates the hash value for word then adds word to
+    //   the hash table. Uses chaining to resolve collisions.
+    public void add(String word)
+    {
+ 
+    }
+    
+    // Part(b)
+    // Postcondition: Searches the hash table for key
+    //   If key is found the method returns true,
+    //   otherwise it returns false
+    public boolean search(String key)
+    {
+
+    }
+}
+</pre></div>
+<h1>Directions</h1>
+<div id="csList2"><ol>
+<li><p>Implement the method <strong>add</strong> of the SpellChecker class. This method should insert the given word into the hash table using chaining to
+   resolve any collisions that might occur. The method add should use the method hashCode to retrieve the initial insertion point for 
+   the given word. If the array location given by the call to hashCode is already occupied the method should traverse the linked list 
+   at that location and append the word to the end of the list (chaining).</p></li>
+<li><p>Implement the method <strong>search</strong> of the SpellChecker class. This method should search the hash table for the given word, if the word is found
+   in the table the method should return true, otherwise it should return false.</p></li>
+
+</ol></div>
+<h1>Source Files</h1>
+<p>SpellChecker.java</p>
+<p>SpellCheckerTest.java</p>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Spelling Checker
+----------------
+Enter word-->computer
+computer is spelled correctly!
+
+Spelling Checker
+----------------
+Enter word-->compoter
+compoter is spelled incorrectly!
+
+Spelling Checker
+----------------
+Enter word-->happy
+happy is spelled correctly!
+
+Spelling Checker
+----------------
+Enter word-->happi
+happi is spelled incorrectly!
+
+Spelling Checker
+----------------
+Enter word-->patriot
+patriot is spelled correctly!
+
+Spelling Checker
+----------------
+Enter word-->patriat
+patriat is spelled incorrectly!
+
+Spelling Checker
+----------------
+Enter word-->
+
+</pre>
+</div>
+	<br>
+</div>	
+

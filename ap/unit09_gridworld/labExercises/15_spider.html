@@ -1,0 +1,56 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Spider</div>
+
+<div id="csContent">
+<h1>Directions</h1>
+<p>A <strong>SpiderFood</strong> is a Bug. A SpiderFood behaves like a Bug in every way, except that it can be paralyzed
+   by Spiders. When a SpiderFood gets too close to a Spider it is paralyzed and can no longer move to a new location,
+   instead it just makes a turn.</p>
+<p>A <strong>Spider</strong> is a Critter. A Spider behaves like a Critter in every way, except that instead of eating
+   its prey it paralyzes them so that it can eat them later. However, the only kind of bug that a Spider can paralyze is SpiderFood.</p>
+
+<p>Implement the <strong>SpiderFood</strong> class. Include an instance variable of type boolean named <strong>paralyzed</strong>.
+   This variable is initially assigned a value of false but becomes true when a SpiderFood is paralyzed by a Spider. 
+   Provide a mutator method for the paralyzed variable so that can be called by a Spider to paralyze a SpiderFood. 
+   Redefine the <strong>act</strong> method so it reflects the behavior described above.</p>
+
+<p>Implement the <strong>Spider</strong> class so that it has the behavior described above.</p>
+
+<br>
+<p>Use the <strong>SpiderRunner</strong> class below to test your two new classes.</p>
+  <p>Copy the following code into a file named <strong>SpiderRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class SpiderRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        Spider spider = new Spider();
+
+        world.add(new Location(5,5), spider);
+        world.add(new Location(3,3), new SpiderFood());
+        world.add(new Location(7,7), new SpiderFood());
+        world.add(new Location(1,1), new SpiderFood());
+        world.add(new Location(5,7), new SpiderFood());
+        world.add(new Location(7,2), new SpiderFood());
+
+        world.show();
+    }
+}
+</pre>
+  </div>
+<h1>Source Files</h1>
+<p>SpiderFood.java</p>
+<p>Spider.java</p>
+<p>SpiderRunner.java</p>
+
+	<br>
+</div>	
+

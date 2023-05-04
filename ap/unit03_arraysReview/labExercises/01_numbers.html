@@ -1,0 +1,186 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Numbers</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a program that creates 20 random numbers in the range of -100 to 100 and stores them in an
+   array. Then copy all of the positive numbers from the array into a second array and all of the
+   negative numbers into third array. Display all three arrays on the screen like the sample output
+  shown below.</p>
+
+<h3>Programming Note</h3>
+
+<p>Java provides two methods for creating random numbers. The first method uses the Random class and 
+  the second method uses the Math class. With the release of Java 5, the random number generator used 
+  by the Math class was improved, therefore the AP development committee opted to use it on
+  the AP Exam instead of the Random class. The main benefit of the Math class is that you do not have
+  to create an extra object inorder to create a random number since the random method is declared static.
+
+
+
+<p><strong>Math class</strong></p>
+  <div id="csNote" style="margin: 10px">
+<strong>Math.random()</strong> - the Math class's random method returns a double value greater than or equal to 0.0 and less than 1.0.
+  </div><br>
+  
+<p>Refer to the sample below for a demonstration of how to implement these two methods.</p> 
+ <div id="csCode">
+    <pre>
+import java.util.Random;   // needed for Random class
+
+public class RandomSamples
+{
+    public static void main(String[] args)
+    {
+        
+        /**********************************************************/
+        /*                      Random Class                      */
+        /**********************************************************/
+        
+        Random rg = new Random( );
+
+        int n1 = rg.nextInt(20);                   // range 0..19
+        int n2 = rg.nextInt(10) + 40;              // range 40..50
+        int n3 = rg.nextInt(30) - 30;              // range -30..0
+        
+        System.out.println("Range 0..19  -> " + n1);
+        System.out.println("Range 40..50  -> " + n2);
+        System.out.println("Range -30..0 -> " + n3);
+        System.out.println();
+        
+        /**********************************************************/
+        /*                       Math Class                       */
+        /**********************************************************/
+        
+        int n4 = (int)(Math.random() * 19);        // range 0..19
+        int n5 = (int)(Math.random() * 10) + 40;   // range 40..50
+        int n6 = (int)(Math.random() * 30) - 30;   // range -30..0
+
+        System.out.println("Range 0..19   -> " + n4);
+        System.out.println("Range 40..50  -> " + n5);
+        System.out.println("Range -30..0  -> " + n6);       
+
+    }
+}</pre>
+</div>
+
+<h3>Method Decomposition</h3>
+<p>The problem has been decomposed into the following five methods.</p>
+<div align="center"><img src="images/numbers.png"></div>
+
+<p>Copy the following code into a source file named <strong>Numbers.java</strong>.</p>
+ <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class Numbers
+{
+    private int[] nums = new int[20];
+    private int[] positives = new int[20];
+    private int[] negatives = new int[20];
+    private int p = 0;                      // logical size of positives array
+    private int n = 0;                      // logical size of negatives array
+	
+    /** precondition: none
+     *  postcondition: nums has been populated with random numbers
+     *     in the range of -100 to 100.
+     */
+    public void populateNums()
+    {
+	
+    }
+	
+    /** precondition: none
+     *  postcondition: positives has been populated with all the
+     *     numbers in nums that were positive. The variable p has
+     *     has been updated to reflect the logical size of
+     *     positives array.
+     */
+    public void populatePositives()
+    {
+	
+    }
+
+    /** precondition: none
+     *  postcondition: negatives has been populated with all the
+     *     numbers in nums that were negative. The variable n has
+     *     has been updated to reflect the logical size of
+     *     negatives array.
+     */
+    public void populateNegatives()
+    {
+		
+    }
+	
+    /** precondition: size >=0
+     *  postcondition: all the values of array have been printed 
+     *     from index 0 to the logical size of the array.
+     *  @param array the array to be printed.
+     *  @param size the logical size of array
+     */
+    public void print(int[] array, int size)
+    {
+	
+    }
+	
+    /** precondition: none
+     *  postcondition: all three arrays have been printed with 
+     *     appropriate labelling.
+     */
+    public void printArrays()
+    {
+	
+    }
+	
+    public static void main(String[] args)
+    {
+        Numbers app = new Numbers();
+        app.populateNums();
+        app.populatePositives();
+        app.populateNegatives();
+        app.printArrays();
+    }
+}
+</pre>
+</div>
+<h1>Modifications</h1>
+<h3>Methods</h3>
+<div id="csList">
+<ol>
+<li>Implement <strong>populateNums</strong> method. This method populates the nums array with
+    random numbers in the range of -100 to 100.</li>
+<li>Implement <strong>populatePositives</strong> method. This method populates the positives array
+    with all the positive numbers in the nums array. The variable p is updated to reflect the
+	logical size of positives array.</li>
+<li>Implement <strong>populateNegatives</strong> method. This method populates the negatives array
+    with all the negative numbers in the nums array. The variable n is updated to reflect the
+	logical size of negatives array.</li>
+<li>Implement <strong>print</strong> method. This method, given an array and its logical size,
+    prints all the values of the array from index 0 to its logical size.</li>
+<li>Implement <strong>printArrays</strong> method. This method prints all three arrays with
+    appropriate labelling.</li>
+
+</ol>
+</div>
+<h1>Source File</h1>
+<p>Numbers.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Random Numbers = 20
+======================
+62 -77 -34 35 35 18 23 -40 -39 22 95 77 48 -38 73 35 56 5 -92 3
+
+Positive Numbers = 14
+======================
+62 35 35 18 23 22 95 77 48 73 35 56 5 3
+
+Negative Numbers = 6
+======================
+-77 -34 -40 -39 -38 -92
+</pre>
+</div>
+	<br>
+</div>	
+

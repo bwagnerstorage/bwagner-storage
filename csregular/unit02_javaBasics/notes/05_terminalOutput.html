@@ -1,0 +1,114 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Terminal Output</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a string</li>
+						<li>How to display strings using println statement</li>
+						<li>How to display numbers using println statement</li>
+						<li>How to use println statement to perform mathematical operations</li>
+						<li>How to display blank lines using println statement</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Terminal Output</h1>
+  <p>One of the fundamental features of a computer program is its ability to display information on a
+     computer's screen. Java provides three statements for producing output to the terminal window.
+	 They are <strong>println</strong>, <strong>print</strong>, and <strong>printf</strong>. We will only be looking at println in this lesson.</p>
+   <h1>Displaying Strings Using println Statement</h1>
+   <p>In computer jargon a word or phrase is called a <strong>string</strong>. In Java a string must be enclosed inside a par of double quotes.
+      Here are some examples of strings: "Hello World", "X", "    ", "12345", "Have a nice day!!!". To display a string using
+	  a println statement you simply place the string inside the parentheses.</p>
+
+<div id="csCode">
+<pre>
+public class MyProgram
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hello World");
+      System.out.println("X");
+      System.out.println("    ");
+      System.out.println("12345");
+      System.out.println("Have a nice day!!!");
+   }
+}
+</pre>
+</div>
+<p>The program above would produce the following output.</p>
+<div id="csOutput">
+Hello World<br>
+X<br>
+<br>
+12345<br>
+Have a nice day!!!
+</div>
+<p>Notice that each string is displayed on a separate line. The println statement appends a
+   <strong>newline character</strong> to the end of each string so that after the string is displayed the
+   window cursor goes to the beginning of the next line. This causes the next println
+   statement to display its contents on the next line.</p>
+<h1>Displaying Numbers and Mathematical Calculations Using println Statement</h1>   
+<p>You can also print numbers and mathematical calculations using the println statement.
+   You do not enclose them inside double quotes.</p>
+<div id="csCode">
+<pre>
+public class MyProgram
+{
+   public static void main(String[] args)
+   {
+      System.out.println(5);
+      System.out.println(25849);
+      System.out.println(98.6);
+      System.out.println(5+8);
+      System.out.println(20 * 7);
+      System.out.println(5 - 2 + 6 * 10);
+   }
+}
+</pre>
+</div>
+<p>The program above would produce the following output.</p>
+<div id="csOutput">
+5<br>
+25849<br>
+98.6<br>
+13<br>
+140<br>
+63
+</div>
+<p>Java uses the order of operations(PEMDAS) when performing mathematical calculations.</p>
+<h1>Displaying Blank Lines</h1>   
+<p>You can display blank lines by using a println statement with nothing in the paretheses.</p>
+<div id="csCode">
+<pre>
+public class MyProgram
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Dog");
+      System.out.println();
+      System.out.println();
+      System.out.println();
+      System.out.println("Cat");
+   }
+}
+</pre>
+</div>
+<p>The program above would produce the following output.</p>
+<div id="csOutput">
+Dog<br>
+<br>
+<br>
+<br>
+Cat
+</div>
+<br>
+</div>	
+

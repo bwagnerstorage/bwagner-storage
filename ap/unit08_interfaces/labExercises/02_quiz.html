@@ -1,0 +1,154 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Quiz</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A set of classes is used to display a quiz in various question formats. The MultipleChoice
+   class is used to create multiple choice questions. The TrueFalse class is used to create
+   true/false questions. To provide a standard functionality between the two classes, both
+   classes implement the <strong>Question</strong> interface.
+
+</p>
+<div id="csCode">
+<pre>
+public interface Question
+{
+    String getQuestion();   // returns the question in the appropriate format
+    String getAnswer();     // returns the question's answer
+}
+</pre>
+</div>  
+
+<div id="csList2">
+<ol>
+<li>
+<p>Write the complete class declaration for the class <strong>MultipleChoice</strong>.</p>
+<p>Copy the following code into a file named <strong>MultipleChoice.java</strong>.</p>
+<div id="csCode" style="width:550px">
+<pre>
+public class MultipleChoice implements Question
+{
+
+}
+</pre>
+</div>
+<div id="csList">
+<p>- Create any necessary instance variables.</p>
+<p>- Implement the method <strong>getQuestion</strong>. This method should return a string in the following format:</p>
+<div id="csOutput" style="width:400px"><pre>
+What is the capital of Texas?
+   a. Austin
+   b. Dallas
+   c. Houston
+   d. San Antonio
+</pre></div>
+<p>- Implement the method <strong>getAnswer</strong>. This method returns the question's correct answer.</p>
+<p>- Implement a <strong>constructor</strong> that takes six parameters of type String that indicate
+     the question, choiceA, choiceB, choiceC, choiceD, and answer for the multiple choice question.</p>
+</li>
+<li>
+<p>Write the complete class declaration for the class <strong>TrueFalse.</strong>
+<p>Copy the following code into a file named <strong>TrueFalse.java</strong>.</p>
+<div id="csCode" style="width:550px">
+<pre>
+public class TrueFalse implements Question
+{
+
+}
+</pre>
+</div>
+<div id="csList">
+<p>- Create any necessary instance variables.</p>
+<p>- Implement the method <strong>getQuestion</strong>. This method should return a string in the following format:</p>
+<div id="csOutput" style="width:400px"><pre>
+T/F Houston is the capital of Texas.
+</pre></div>
+<p>- Implement the method <strong>getAnswer</strong>. This method returns the question's correct answer.
+<p>- Implement a <strong>constructor</strong> that takes two parameters of type String that indicate the
+     question and answer for the true/false question.</p>
+</li>
+<li>
+<p>Implement the method <strong>DisplayTest</strong> in the Quiz class.</p>
+<p>Copy the following code into a file named <strong>Quiz.java</strong>.</p>
+<div id="csCode" style="width:670px">
+<pre>
+import java.util.*;
+
+public class Quiz
+{
+    private ArrayList &ltQuestion&gt questions;
+    
+    public Quiz()
+    {
+       questions = new ArrayList &ltQuestion&gt();
+       
+       questions.add(new TrueFalse("Houston is the capital of Texas.","F"));
+       questions.add(new MultipleChoice("The capital of Texas is",
+                         "Houston",
+                         "San Antonio",
+                         "Austin",
+                         "Dallas",
+                         "Austin"));
+       questions.add(new MultipleChoice("The largest city in Texas is",
+                         "Houston",
+                         "San Antonio",
+                         "Austin",
+                         "Dallas",
+                         "Houston"));
+       questions.add(new TrueFalse("The tallest mountain in Texas is Guadalupe Peak.", "T"));
+       
+       displayTest();
+    }
+    
+    // prints the entire quiz numbering the questions from 1 to question.size()
+    public void <div id="csHighlight"><pre>displayTest</pre></div>()
+    {
+
+
+
+    }
+    public static void main(String[] args)
+    {
+        Quiz quiz = new Quiz();
+    }
+}
+</pre>
+</div>  
+
+<p>This method should print each question in the ArrayList questions. As it prints the
+   questions it should number them from 1 to questions.size().</p>
+</li> 
+</ol>
+</div>
+<h1>Source Files</h1>
+<p>Question.java</p>
+<p>MultipleChoice.java</p>
+<p>TrueFalse.java</p>
+<p>Quiz.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+1.T/F Houston is the capital of Texas.
+
+2.The capital of Texas is
+  a.Houston
+  b.San Antonio
+  c.Austin
+  d.Dallas
+
+3.The largest city in Texas is
+  a.Houston
+  b.San Antonio
+  c.Austin
+  d.Dallas
+
+4.T/F The tallest mountain in Texas is Guadalupe Peak.
+
+</pre>
+</div>
+	<br>
+</div>	
+
+
+

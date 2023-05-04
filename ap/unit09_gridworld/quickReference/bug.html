@@ -1,0 +1,113 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Bug</div>
+
+<div id="csContent"> 
+<div id="csOutput"><pre>
+public Bug() 
+public Bug(Color bugColor) 
+public void act() 
+public void turn() 
+public void move() 
+public boolean canMove()
+</pre></div>
+
+<hr>
+
+<div id="apCode">
+<pre>
+package info.gridworld.actor;
+
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
+
+import java.awt.Color;
+
+/**
+ * A Bug is an actor that can move and turn. It drops flowers as
+ * it moves. 
+
+ * The implementation of this class is testable on the AP CS A exam.
+ */
+public class Bug extends Actor
+{
+    /**
+     * Constructs a red bug.
+     */
+    <div id="apHighlight"><pre>public Bug()</pre></div>
+    {
+        setColor(Color.RED);
+    }
+
+    /**
+     * Constructs a bug of a given color.
+     * @param bugColor the color for this bug
+     */
+    <div id="apHighlight"><pre>public Bug(Color bugColor)</pre></div>
+    {
+        setColor(bugColor);
+    }
+
+    /**
+     * Moves if it can move, turns otherwise.
+     */
+    <div id="apHighlight"><pre>public void act()</pre></div>
+    {
+        if (canMove())
+            move();
+        else
+            turn();
+    }
+
+    /**
+     * Turns the bug 45 degrees to the right without changing its location.
+     */
+    <div id="apHighlight"><pre>public void turn()</pre></div>
+    {
+        setDirection(getDirection() + Location.HALF_RIGHT);
+    }
+
+    /**
+     * Moves the bug forward, putting a flower into the location it previously
+     * occupied.
+     */
+    <div id="apHighlight"><pre>public void move()</pre></div>
+    {
+        Grid gr = getGrid();
+        if (gr == null)
+            return;
+        Location loc = getLocation();
+        Location next = loc.getAdjacentLocation(getDirection());
+        if (gr.isValid(next))
+            moveTo(next);
+        else
+            removeSelfFromGrid();
+        Flower flower = new Flower(getColor());
+        flower.putSelfInGrid(gr, loc);
+    }
+
+    /**
+     * Tests whether this bug can move forward into a location that is empty or
+     * contains a flower.
+     * @return true if this bug can move.
+     */
+    <div id="apHighlight"><pre>public boolean canMove()</pre></div>
+    {
+        Grid gr = getGrid();
+        if (gr == null)
+            return false;
+        Location loc = getLocation();
+        Location next = loc.getAdjacentLocation(getDirection());
+        if (!gr.isValid(next))
+            return false;
+        Actor neighbor = gr.get(next);
+        return (neighbor == null) || (neighbor instanceof Flower);
+        // ok to move into empty location or onto flower
+        // not ok to move onto any other actor
+    }
+}
+</pre>
+</div>
+	<br>
+</div>	
+

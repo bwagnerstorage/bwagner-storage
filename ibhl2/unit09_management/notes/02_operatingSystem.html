@@ -1,0 +1,237 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Role of Operating System</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>6.1.5 Explain the role of the operating system in terms of managing memory, peripherals and hardware interfaces.</li>
+						<li>6.1.7 Outline OS resource management techniques: scheduling, policies, multitasking, virtual memory, paging, interrupt, polling.</li>
+						<li>6.1.8 Discuss the advantages of producing a dedicated operating system for a device.</li>
+						<li>6.1.9 Outline how an operating system hides the complexity of the hardware from users and applications.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Role of Operating System</h1>
+<div id="ib">6.1.5 Explain the role of the operating system in terms of managing memory, peripherals and hardware interfaces.</div>
+
+<p>A computer is a system composed of two major components: hardware and software. Computer hardware is the physical equipment. 
+Software is the collection of programs that allows the hardware to do its job. Computer software is divided into two broad 
+categories: the <strong>operating system</strong> and <strong>application programs</strong>. Application programs use the computer hardware to
+solve users' problems. The operating system, on the other hand, manages application programs and controls access to hardware by users.</p>
+
+<div align="center"><img src="images/operatingsystem1.png"></div>
+
+<p>An operating system has three main functions: (1) manage the computer's resources, such as the cpu, memory, 
+secondary storage, and peripherals, (2) establish a user interface, and (3) execute and provide services for applications software.</p>
+
+<h2>Managing Resources</h2>
+
+<div id="csList">
+<p><strong>Processor Management</strong></p>
+<p>An operating system manages the cpu by providing applications access to its processing capabilities.</p>
+<p>In a multitasking operating system more than one program is capable of running at a time.  Today, most desktop, laptop, and tablet
+   operating systems function with some type of multitasking operating system.
+
+ <p>A multitasking operating system divides the available processor time among the threads or jobs that need it. 
+    The operating system allocates a processor time slice to each thread it executes.
+   The currently executing thread is suspended when its time slice elapses, allowing another thread to run. When the
+   system switches from one thread to another, it saves the context of the current thread and restores the saved 
+   context of the next thread in the queue.</p>
+
+<p>The length of the time slice depends on the operating system and the processor. Because each time slice is small 
+(approximately 20 milliseconds), multiple threads appear to be executing at the same time. This is actually the case
+ on multiprocessor systems, where the executable threads are distributed among the available processors.  </p>
+
+<p><strong>Memory Management</strong></p>
+<p>Operating systems use RAM to store the data required for applications and other computer functions
+	 to operate. Each computing activity that is ongoing has a certain amount of memory allocated to it, which the operating system
+	  manages. In cases where an application attempts to do something that there is not enough memory for, an operating system can 
+	  sometimes use virtual memory to carry out the required processing, by utilizing a section of hard disk memory and using it
+	  as though it is RAM.</p>
+
+<p><strong>Peripheral Management</strong></p>
+<p>Peripheral devices are managed by the operating system through the use
+   of drivers. Drivers are special system software that handle communication between the user and the hardware installed or attached to a computer.
+   All input and output operations, although invoked by an application programs, are actually carried out by the operating system.</p>
+</div>
+<h2>User Interface</h2>
+<p>This is the part of the operating system that interacts with the user.
+ There are three different types of user interfaces: command-line, menu-driven, and graphical-user interface.</p>
+ 
+<h2>Application Software Services</h2>
+<p>The operating system is responsible for executing application software when they are selected by a user. They also provided many services to
+   application software. Here is a list of a few of these services:</p>
+   <ul id="csList2"><p>
+   <li>User Interface API</li>
+   <li>Memory Allocation</li>
+   <li>File Management</li>
+   <li>Error Handling</li>
+   <li>Batch Processing (print jobs)</li></p>
+   </ul>
+
+<br><a href="http://www.howstuffworks.com/operating-system1.htm" target="_blank" style="color:#0000FF">http://www.howstuffworks.com/operating-system1.htm</a>
+
+<div id="ib">6.1.7 Outline OS resource management techniques: scheduling, policies, multitasking, virtual memory, paging, interrupt, polling.</div>
+
+<h2>Scheduling</h2>
+<p>Operating system scheduling is the process of controlling and prioritizing messages sent to a processor. An internal operating system program,
+  called the scheduler, performs this task. The goal is maintaining a constant amount of work for the processor, eliminating highs and lows in the
+   workload and making sure each process is completed within a reasonable time frame.
+<p>Since nearly every operation on a computer has at least a small amount of processor time involved, the processor can be a major source
+  of slowdowns and bottlenecks. In order to alleviate the strain on the processor, and make sure tasks are completed in a timely manner, most
+  operating systems use some form of task scheduling.</p>
+
+<h2>Policies</h2>
+<p>Policies allow the operating system to implement specific configurations for users and computers.
+   Policies are settings that control how the operating system works. You can use them to customize the user interface, 
+   restrict access to certain areas, specify security settings, and much more. </p>
+
+
+<h2>Multitasking</h2>
+<p>In a multitasking operating system where multiple programs can be running at the same time, the operating system 
+   determines which applications should run in what order and how much time should be allowed for each application
+   before giving another application a turn.</p>
+
+<h2>Virtual Memory</h2>
+
+  <p>Virtual memory is a memory management technique that temporarily stores inactive parts of the content in RAM to a disk, 
+  restoring it to RAM when quick access to it is needed. This allows software to operate as though the computer has more RAM than it actually does.
+  A computer can utilize virtual memory to store features in a program that are rarely used so they do not take up RAM.</p>
+
+  <br><a href="http://www.howstuffworks.com/virtual-memory.htm" target="_blank" style="color:#0000FF">http://www.howstuffworks.com/virtual-memory.htm</a>
+
+<h2>Paging</h2>
+ <p>Paging is a memory management technique where the operating system copies a certain number of pages from a storage device to main memory.
+ When a program needs a page that is not in main memory, the operating system copies the required page into memory and copies another
+ page back to the disk.</p>
+
+<p>With paging the operating system reads data from secondary storage in blocks called pages, all of 
+which have identical size. The physical region of memory containing a single page is called a frame. When paging is used, a frame does
+ not have to comprise a single physically contiguous region in secondary storage. This approach offers an advantage over earlier memory
+  management methods, because it facilitates more efficient and faster use of storage.</p>
+
+<h2>Interrupt</h2>
+
+<p>An interrupt is an event that alters the sequence in which the processor executes instructions. A peripheral device uses interrupts to
+   notify the CPU when it is ready to send or receive data. Most operating systems today utilize interrupts to control the flow of execution in a computer system.</p>
+
+<p>In general, there are two categories of interrupts: <strong>hardware interrupts</strong> and <strong>software interrupts</strong>. A hardware interrupt occurs, for example, when an 
+I/O operation has occurred such as a keystroke on a keyboard or button click on a mouse. A software interrupt occurs when an application program 
+terminates or requests certain services from the operating system.</p>
+ 
+<p>It is the operating systems job to watch for interrupts. If an interrupt occurs the operating system calls on a program called an interrupt handler 
+that prioritizes the interrupts and saves them in a queue if more than one is waiting to be handled. The operating system then
+uses a scheduler to figure out which program to give control to next.</p>
+
+<h2>Polling</h2>
+
+<p>Polling is an alternative to interrupts. In polling a peripheral device is repeatedly checked by the CPU for readiness, and if it is not, the computer
+   returns to a different task.</p>
+   
+<p>With polling the processor is responsible for checking peripheral devices to see if they are ready for data transfer. 
+   With interrupts the devices are responsible for notifying the processor when they need to transfer data.</p>
+   
+<p>Both polling and interrupts have advantages and disadvantages so to be most efficient processors utilize both of them.
+ A good example of polled input is mouse movement.  A mouse could produce thousands of 
+interrupts a second when the user moves the mouse.  Therefore an operating system will poll the mouse to determine the 
+current mouse position.  An example of interrupt-driven input would be a network interface controller (NIC).  A 
+NIC has a small memory location called a buffer to accommodate input and output communication. Once the buffer 
+receives a packet of data it requires the CPU to copy that packet to main memory before the next packet arrives 
+and overwrites it.  So once a packet is received the NIC will interrupt the CPU so that the data can be removed from the
+buffer into main memory and signal to the NIC that it's ok to continue receiving data.</p>
+
+<p>A good example of a system that is both polled and interrupt driven is a keyboard.  The subsystem that
+ accepts data from the keyboard generally just buffers the data for polling by the
+CPU but can be programmed to generate interrupts as well.  The most famous use of this is the key combination 
+Control-Alt-Delete, which sends an interrupt to the CPU.  This is why when a computer is busy 
+or hung pressing this key combination will interrupt the system.</p>
+
+<div id="csNote">The IB curriculum states, "Technical details as to how these
+are carried out will not be required,
+but it is expected that students will
+be familiar with these techniques
+and understand when and why
+they are used."</div>
+
+<div id="ib">6.1.8 Discuss the advantages of producing a dedicated operating system for a device.</div>
+
+<p>An operating system designed for a single purpose is often called a <strong>dedicated operating system</strong>. It performs a specific purpose,
+ such as controlling the environment in a building, controlling a gas pump, or opening and closing an automatic door. 
+ Dedicated operating systems cannot be used to run other types of programs such as games or business software.</p>
+ 
+ <p>Operating systems that are either found in embedded systems or in firmware embedded in hardware are considered to be dedicated operating systems.</p>
+ 
+ <p>The table below lists advantages and disadvantages of dedicated operating systems.</p>
+ 
+ <table id="csTable">
+    <tr>
+       <th>Advantages</th>
+	   <th>Disadvantages</th>
+    </tr>
+	<tr>
+       <td><strong>Size</strong> - code is written for specific devices therefore it is much smaller than general-purpose operating systems</td>
+	   <td><strong>Cost</strong> - more expensive to design</td>
+    </tr>
+	<tr>
+       <td><strong>Speed</strong> - code is smaller and optimized for specific devices so it is much faster</td>
+	   <td>Can only be used on the device for which it was designed</td>
+    </tr>
+		<tr>
+       <td><strong>Customizable</strong> - designed for specific devices therefore can be customized to meet the specific needs of particular devices</td>
+	   <td></td>
+    </tr>
+ </table>
+
+<div id="csNote">The IB curriculum states, "Advantages related to size, speed
+and customization should be
+considered.
+For example, using a dedicated
+operating system for a cell phone
+rather than using a pre-existing
+operating system."</div>
+
+<div id="ib">6.1.9 Outline how an operating system hides the complexity of the hardware from users and applications.</div>
+
+<p>The fundamental operation of the operating system is to abstract the hardware to the programmer and user. The operating system
+   provides generic interfaces to services provided by the underlying hardware.</p>
+<p>In a world without operating systems, every programmer would need to know the most intimate details of the underlying hardware
+  to get anything to run. Worse still, their programs would not run on other hardware, even if that hardware has only slight differences.</p>
+  
+<p>Below are some examples of abstraction that are provided by the operating system:</p>
+<div id="csList">
+  <ul>
+	<li><p><strong>File System</strong> - Secondary storage devices such as hard disks, DVDs, and USB drives all work differently at the physical level
+	    but in an operating system's virtual world they all appear to be the same. The processes of opening and saving files on these devices
+		is identical (e.g. letters assigned to each device).</p></li>
+	<li><p><strong>Application Programming Interface (API)</strong> - an operating system provides a programming language called an API
+	    that developers of applications use to standardize the features of application programs. One feature provided by the API is a GUI interface
+		that provides controls like buttons, menus, ribbons, toolbars, and sliders that have the same look and feel within different applications.
+	    This standardization makes it easier for users to use application programs.</p>
+	    <p>APIs also abstract processes like printing. The printing process is the same for different application programs.
+		   A user does not need to worry about things like what type of printer is connected to a computer. All they have to do is select print
+		   from a menu and the operating system takes care of the details.</p>	
+	</li>
+	<li><p><strong>Virtual Memory</strong> - gives a user the illusion that they have unlimited memory at their disposal.
+	   The details of the swapping of data from the hard drive to RAM is completely hidden from the user.</p></li>
+  </ul>
+</div>
+
+<div id="csNote">The IB curriculum  states, "Students should be aware of a
+range of examples where operating
+systems virtualize real devices, such
+as drive letters, virtual memory,
+input devices, the Java virtual
+machine."</div>
+
+
+
+
+<br>
+</div>	
+

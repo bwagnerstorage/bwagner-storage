@@ -1,0 +1,182 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">18-1 CSS Position</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank" style="color:blue">Position</a></p></li>
+</ul>
+<h1>Position</h1>
+<p>In this exercise, you learn how to use the <strong>position</strong> property to control how elements are placed within the browser window. The position property provides 5 different position values:</p>
+<ul id="csList">
+   <li><p>static</p></li>
+   <li><p>relative</p></li>
+   <li><p>absolute</p></li>
+   <li><p>fixed</p></li>
+   <li><p>sticky</p></li>
+</ul>
+<p>By default, the browser will position all elements on the screen using the <strong>static</strong> option.</p>
+<p>If you choose to use one of the other options then you will also need to use one or more of the following properties: <strong>left</strong>, <strong>right</strong>, <strong>top</strong>, and <strong>bottom</strong> to specify exactly where the elements should be placed within the window.</p>
+<p>In this exercise, we will only be using two of the options: absolute and sticky.</p>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>18_1_position.html</strong> and save it to your CSS folder.</p></li>
+<li><p>This exercise uses both internal and external styling. For the external styling create a file named <strong>18_1_position.css</strong> and save it to your CSS folder. Then add the following code to this file.</p>
+<div id="csHTML"><pre>
+body {
+   margin:0;
+   background-color: lavender;
+}
+
+header {
+   height: 90px;
+   font-size: 3.2em;
+   color: white;
+   background-color:rgb(51, 6, 65);
+   font-family: 'Roboto', sans-serif;
+   padding-top: 20px;
+   padding-left: 10px;
+   text-shadow: 2px 2px 2px gray;
+   border: 1px solid black;
+}
+
+nav {
+   color:white;
+   background-color:rgb(231, 211, 121);
+   font-family: 'Roboto', sans-serif;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+ul {
+   overflow: hidden;
+   text-decoration: none;
+   list-style-type: none;
+   margin: 0;
+   padding:0;
+}
+
+li {
+   float:left;
+   color: black;
+   font-weight: 700;
+   background-color:rgb(231, 211, 121);
+   font-family: 'Roboto', sans-serif;
+   font-size:1.2em;
+   height: 40px;
+   width: 150px;
+   margin: 0;
+   border-right: 1px solid black;
+   text-align: center;
+   padding-top:8px;
+}
+
+ul li:hover {
+   background-color:rgb(51, 6, 65);
+   color: white;
+}
+
+p {
+   font-family:'Merriweather', serif;
+   font-size:1.1em;
+   margin: 25px;
+   padding: 10px;
+   background-color:white;
+   border: 3px solid lightslategray;
+   border-radius: 20px;
+}
+</pre></div>
+</li>
+
+<li><p>Add the following starter code to your html document:</p><br>
+<div id="csHTML"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+      &lt;title&gt;Position&lt;/title&gt;
+      &lt;link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet"&gt; 
+      &lt;link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"&gt;
+
+
+      &lt;style&gt; 
+
+      &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;header&gt;Denton High School
+
+   &lt;/header&gt;
+   &lt;nav id="menu"&gt;
+      &lt;ul&gt;
+      &lt;li&gt;About Us&lt;/li&gt;
+      &lt;li&gt;Academics&lt;/li&gt;
+      &lt;li&gt;Activities&lt;/li&gt;
+      &lt;li&gt;Library&lt;/li&gt;
+      &lt;li&gt;Athletics&lt;/li&gt;
+      &lt;li&gt;Staff&lt;/li&gt;
+      &lt;li&gt;Campus Info&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;/nav&gt;
+   &lt;section
+   &lt;/section&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris augue neque gravida in fermentum et sollicitudin ac orci. Aliquam faucibus purus in massa tempor. Dui faucibus in ornare quam. Morbi quis commodo odio aenean sed adipiscing. In hendrerit gravida rutrum quisque non tellus orci. Ut lectus arcu bibendum at varius. Tortor dignissim convallis aenean et tortor at risus viverra. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Et malesuada fames ac turpis egestas integer eget. Magna fermentum iaculis eu non diam. Eget felis eget nunc lobortis. Mauris augue neque gravida in fermentum et sollicitudin ac orci. Ac tortor dignissim convallis aenean et tortor at risus. Sollicitudin nibh sit amet commodo nulla facilisi nullam. Ut consequat semper viverra nam libero. Duis at consectetur lorem donec massa sapien. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Laoreet id donec ultrices tincidunt arcu.&lt;/p&gt;
+
+   &lt;p&gt;Ante metus dictum at tempor commodo ullamcorper a lacus. Ipsum a arcu cursus vitae. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mus mauris vitae ultricies leo integer malesuada nunc vel. Dapibus ultrices in iaculis nunc sed augue lacus viverra vitae. Vulputate eu scelerisque felis imperdiet proin fermentum leo. Sem viverra aliquet eget sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Eu lobortis elementum nibh tellus. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Dignissim sodales ut eu sem integer vitae justo eget magna.&lt;/p&gt;
+   
+   &lt;p&gt;Pellentesque adipiscing commodo elit at. Tristique sollicitudin nibh sit amet commodo nulla. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Ac feugiat sed lectus vestibulum mattis. Eget lorem dolor sed viverra. Blandit cursus risus at ultrices mi. Purus semper eget duis at tellus. Nisl tincidunt eget nullam non nisi est sit. Arcu odio ut sem nulla pharetra. Sed tempus urna et pharetra pharetra massa massa ultricies mi. Enim lobortis scelerisque fermentum dui.&lt;/p&gt;
+   
+   &lt;p&gt;Facilisi etiam dignissim diam quis enim lobortis. Sit amet consectetur adipiscing elit duis tristique. Congue quisque egestas diam in arcu cursus euismod quis viverra. Non nisi est sit amet facilisis magna. Nisl pretium fusce id velit ut tortor. Tempor nec feugiat nisl pretium fusce id velit ut. Risus nec feugiat in fermentum posuere urna. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. In ornare quam viverra orci sagittis eu volutpat odio. Felis bibendum ut tristique et egestas. Aliquam id diam maecenas ultricies mi. Tortor pretium viverra suspendisse potenti nullam ac. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Egestas maecenas pharetra convallis posuere. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. At urna condimentum mattis pellentesque id nibh tortor id.&lt;/p&gt;
+
+   &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mauris augue neque gravida in fermentum et sollicitudin ac orci. Aliquam faucibus purus in massa tempor. Dui faucibus in ornare quam. Morbi quis commodo odio aenean sed adipiscing. In hendrerit gravida rutrum quisque non tellus orci. Ut lectus arcu bibendum at varius. Tortor dignissim convallis aenean et tortor at risus viverra. Purus sit amet volutpat consequat mauris nunc congue nisi vitae. Et malesuada fames ac turpis egestas integer eget. Magna fermentum iaculis eu non diam. Eget felis eget nunc lobortis. Mauris augue neque gravida in fermentum et sollicitudin ac orci. Ac tortor dignissim convallis aenean et tortor at risus. Sollicitudin nibh sit amet commodo nulla facilisi nullam. Ut consequat semper viverra nam libero. Duis at consectetur lorem donec massa sapien. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Laoreet id donec ultrices tincidunt arcu.&lt;/p&gt;
+
+   &lt;p&gt;Ante metus dictum at tempor commodo ullamcorper a lacus. Ipsum a arcu cursus vitae. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Mus mauris vitae ultricies leo integer malesuada nunc vel. Dapibus ultrices in iaculis nunc sed augue lacus viverra vitae. Vulputate eu scelerisque felis imperdiet proin fermentum leo. Sem viverra aliquet eget sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Eu lobortis elementum nibh tellus. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Dignissim sodales ut eu sem integer vitae justo eget magna.&lt;/p&gt;
+
+   &lt;p&gt;Pellentesque adipiscing commodo elit at. Tristique sollicitudin nibh sit amet commodo nulla. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Ac feugiat sed lectus vestibulum mattis. Eget lorem dolor sed viverra. Blandit cursus risus at ultrices mi. Purus semper eget duis at tellus. Nisl tincidunt eget nullam non nisi est sit. Arcu odio ut sem nulla pharetra. Sed tempus urna et pharetra pharetra massa massa ultricies mi. Enim lobortis scelerisque fermentum dui.&lt;/p&gt;
+   
+   &lt;p&gt;Facilisi etiam dignissim diam quis enim lobortis. Sit amet consectetur adipiscing elit duis tristique. Congue quisque egestas diam in arcu cursus euismod quis viverra. Non nisi est sit amet facilisis magna. Nisl pretium fusce id velit ut tortor. Tempor nec feugiat nisl pretium fusce id velit ut. Risus nec feugiat in fermentum posuere urna. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. In ornare quam viverra orci sagittis eu volutpat odio. Felis bibendum ut tristique et egestas. Aliquam id diam maecenas ultricies mi. Tortor pretium viverra suspendisse potenti nullam ac. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Egestas maecenas pharetra convallis posuere. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. At urna condimentum mattis pellentesque id nibh tortor id.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</li>
+<li><p>To use the external styling you placed in the file 18_1_position.css, add the following link tag
+   to the <strong>head</strong> section of your document just above the internal styling section.
+</p>
+<div id="csHTML"><pre>&lt;link href="18_1_position.css" rel="stylesheet"&gt;</pre></div>
+</li>
+<li><p>View the web page in the browser.</p></li>
+<h1>Absolute Positioning</h1>
+<p>To demonstrate absolute positioning you are going to add a logo to the header section of the page. </p>
+<li><p>Right-click on the following image and select <strong>Save image as..</strong> and save the image to your CSS folder.</p>
+<img src="images/CS2/CSS/bronco.png" style="width: 15%">
+</li>
+<li><p>Add the following html to body of the web page inside the header tag just below the title "Denton High School".</p>
+<div id="csHTML" style="width: 500px"><pre>&lt;img id="logo" src="bronco.png" style="width: 8%"&gt;</pre></div></li>
+<li><p>View the web page in the browser. Notice how the logo is position right after the title. Let's use <strong>absolute</strong> positioning to move the logo to the far right side of the header and center it vertical within the header.</p></li>
+<li><p>Add the following internal styling to the style section of your page.</p>
+<div id="csHTML" style="width: 400px"><pre>
+#logo {
+   position: absolute;
+   right: 15px;
+   top: 6px;
+   height: 100px;
+}
+</pre></div>
+</li>
+<li><p>View the page in the browser. Absolute positioning allows you to place an element inside its container, in this case, the header, by specifying the element's location relative to its container. For example, <strong>top:0</strong> and <strong>left:0</strong> would be located at the top right corner of the header element, not the window. By choosing <strong>top:8px</strong> and <strong>right:15px</strong> the logo is positioned 8 pixels from the top of the header and 15 pixels from the header's right edge.(Typically when deciding on a location, you would choose either top or bottom and then left or right.)
+<h1>Sticky Positioning</h1>
+<li><p>View the web page in the browser. Scroll the window vertically. Notice how the nav bar scrolls off the top of the screen.</p></li>
+<li><p>Add the following internal styling to the style section.</p>
+   <div id="csHTML" style="width: 400px"><pre>
+#menu {
+   position: sticky;
+   top: 0;
+}
+</pre></div>
+</li>
+<li><p>View the web page in the browser. Scroll the window vertically. Notice now how the nav bar stops scrolling when it reaches the top of the screen. <strong>Sticky</strong> positioning can best be described as a combination of <strong>relative</strong> positioning and <strong>fixed</strong> positioning. The element, in this case, the nav element, is initially positioned on the screen at a specific (relative) location. Its location can be changed by scrolling until it reaches the value specified in the <strong>top</strong> property in which case it becomes fixed at that location until the scrolling is reversed.</p></li>
+
+</div> 
+	<br>
+</div>	

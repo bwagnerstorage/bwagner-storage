@@ -1,0 +1,109 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Resolving Collisions</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to resolve a collision</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Resolving Collisions</h1>
+<p>In a hash table a collision occurs when two data items hash to the same location within the array. In this section we look at several methods for dealing with collisions.</p>
+<br>
+<h3>Linear Probing</h3>
+
+<p>When inserting data into a hash table the simplest way to resolve a collision is to search the array, starting form the collision spot, and find the first available empty position - referred to as linear probing.</p>
+
+<div align="left"><img src="images/hash9.gif"></div>
+
+<p>When a search reaches the last position of the array, the search wraps around to continue from the first position. If we assume the array does not become full 
+  and that an array cell is null when unoccupied, the code for insertions is as follows:</p>
+
+<div id="csCode"><pre>
+  // get the initial hash code
+int index = hashCode(data, array.length);
+
+// stop searching when an empty cell is encountered
+while(array[index] != null)
+{
+   // increment the index and wrap around to first position if necessary
+   index = (index + 1) % array.length;
+}
+// an empty cell is found, so store the item
+array[index] = item;</pre></div>
+
+<p>Retrievals and removals work in a similar manner, except that we search for an item that matches the target item.</p>
+
+<p>Linear collision processing is prone to a problem known as <strong>clustering</strong>. This situation occurs when the items that cause a collision
+   are relocated to the same region (a cluster) within the array. This placement usually leads to other collisions with other relocated items. During the
+   course of an application, several clusters may develop and combine into larger clusters, making the problem worse.</p>
+<br>
+<h3>Quadratic Collision Processing</h3>
+
+<p>One way to avoid the clustering associated with linear collision processing is to advance the search for an empty position a considerable 
+  distance from the collision point. Quadratic collision processsing accomplishes this by incrementing the current index by the square of a constant
+  on each attempt. If the attempt fails, we increment the constant and try again. Put another way, if we begin with an initial has code k and a constant c,
+   the formula used each pass is k + c<sup>2</sup>.</p>
+
+<p>Following is the code for insertions, updated to use quadratic collision processing:</p>
+
+<div id="csCode"><pre>
+
+// set the initial has code, index, and constant
+int hashCode = hashCode(data, array.length);
+int constant = 2;
+int index = hashCode % array.length;
+
+// stop searching when an empty cell is encountered
+while(array[index] != null)
+{
+   // increment the index and wrap around to first position if necessary
+   index = (hashCode + constant * constant) % array.length;
+   constant++;
+}
+// an empty cell is found, so store the item
+array[index] = item;</pre></div>
+
+<br>
+<h3>Chaining</h3>
+
+<p>In a collision processing strategy known as chaining, the items are stored in an array of linked lists, or chains. 
+  Each item's hash code locates the <strong>bucket</strong>, or index, of the chain in which the item already resides or is to be inserted.
+  The retrieval and removal operations each perform the following steps:</p>
+
+<div id="csList"><ol>
+<li><p>Compute the item's hash code or index in the array.</p></li>
+<li><p>Search the linked list at the index for the item.</p></li>
+</ol></div>
+<p>If the item is found, it can be returned or removed. The figure below shows an array of linked lists with five buckets and eight items.</p>
+
+<div align="left"><img src="images/hash10.gif"></div>
+
+<p>The hash code of each item is the index of its linked list in the array. For example, the items D7, D3, and D1 have the hash code 4.</p>
+
+<p>To insert an item's hash code or index in the array.</p>
+<div id="csList"><ol>
+ <li><p>  Compute the item's hash code or index in the array.</p></li> 
+  <li><p> If the array cell is empty, create a node with item and assign the node to the cell.</p></li>
+  <li><p>  Otherwise, a collision occurs. The existing item is the head of a linked list or chain of items at that position. Insert the new item at the head of this list.</p></li>
+</ol></div>
+<p>Using the ListNode class, following is the code for inserting an item using chaining:</p>
+
+<div id="csCode"><pre>
+// get the hash code
+int index = hashCode(data, array.length);
+
+// access a bucket and store the item at the head of its linked list
+array[index] = new ListNode(item, array[index]);
+</pre></div>
+
+<br>
+</div>	
+

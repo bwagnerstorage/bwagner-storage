@@ -1,0 +1,79 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">LastLetter</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Write a program that allows a user to enter a string (one or more words) from the keyboard, then
+     displays the string's last letter.</p>
+  <h3>Hints</h3>
+     <div id="csList">
+    <ul>
+	  <li>use the Scanner class's <strong>nextLine</strong> method to read a string from the keyboard</li>
+	  <li>use the String class's <strong>substring</strong> and <strong>length</strong> methods to extract the last letter from a string</li>
+	</ul>
+  </div>
+  <br>
+  <p>Recall that strings are number starting at 0. The last letter of the string "good morning" is at
+    index 11 even though there are 12 letters in the string.</p>
+  <table style="border-collapse:collapse; border: 1px solid #000000">
+  <tr style="border: 1px solid #000000">
+     <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">0</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">1</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">2</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">3</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">4</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">5</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">6</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">7</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">8</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">9</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">10</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#000000; color:#FFFFFF; font-size:1.5em; font-family:Courier New">11</td>
+  </tr>
+  <tr style="border: 1px solid #000000">
+     <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">g</td>
+     <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">o</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">o</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">d</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New"></td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">m</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">o</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">r</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">n</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">i</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">n</td>
+	 <td style="border: 1px solid #000000; text-align: center; width:20px; background-color:#FFFFFF; color:#000000; font-size:1.5em; font-family:Courier New">g</td>
+  </tr>
+  </table>
+  <p>To extract the last letter of a string with an unknown length you will need to use the String class's <strong>length</strong> method.</p>
+  <h3>Example</h3>
+  <p>Suppose the String variable str contains the string "rainbow". The code below would store a value of 7 into the integer variable len.</p>
+  <div id="csCode">
+    <pre>
+int len = str.length();</pre>
+  </div>
+<h1>Source File</h1>
+<p>LastLetter.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter a string --> mountains
+
+Last letter = s
+</pre>
+</div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter a string --> have a nice day
+
+Last letter = y
+</pre>
+</div>
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit08_string/solutions/05_lastLetterSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>

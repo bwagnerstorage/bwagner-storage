@@ -1,0 +1,168 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Appointment</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/AppointmentNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Appointment</a></h1>
+
+
+<h1>Directions</h1>
+<p>An appointment scheduling system is represented by the following three classes: TimeInterval, Appointment, and DailySchedule. 
+In this question, you will implement one method in the Appointment class and two methods in the DailySchedule class.</p>
+
+<p>A TimeInterval object represents a period of time. The TimeInterval class provides a method to determine if
+ another time interval overlaps with the time interval represented by the current TimeInterval object. An Appointment
+  object contains a time interval for the appointment and a method that determines if there is a time conflict between
+   the current appointment and another appointment. The declarations of the TimeInterval and Appointment classes are shown below.</p>
+<div id="apCode"><pre>
+public class TimeInterval
+{
+      // returns true if interval overlaps with this TimeInterval;
+      // otherwise, returns false
+      <div id="apHighlight"><pre>public boolean overlapsWith(TimeInterval interval)</pre></div>
+      { /* implementation not shown */ }
+
+      // There may be fields, constructors, and methods that are not shown.
+
+}
+
+public class Appointment
+{
+      // returns the time interval of this Appointment
+      <div id="apHighlight"><pre>public TimeInterval getTime()</pre></div>
+      { /* implementation not shown */ }
+
+      // returns true if the time interval of this Appointment
+      // overlaps with the time interval of other;
+      // otherwise, returns false
+      <div id="apHighlight"><pre>public boolean conflictsWith(Appointment other)</pre></div>
+      { /* to be implemented in part (a) */ }
+
+    // There may be fields, constructors, and methods that are not shown.
+
+}
+</pre></div>
+<div id="csList2"><ol>
+<li><p>Write the Appointment method <strong>conflictsWith</strong>. If the time interval of the current appointment
+overlaps with the time interval of the appointment other, method conflictsWith should return true, otherwise, it should return false.</p>
+
+<p>Complete method <strong>conflictsWith</strong> below.</p>
+<div id="apCode" style="width:600px"><pre>
+// returns true if the time interval of this Appointment
+// overlaps with the time interval of other;
+// otherwise, returns false
+<div id="apHighlight"><pre>public boolean conflictsWith(Appointment other)</pre></div>
+
+
+</pre></div> 
+</li>
+<li><p>A DailySchedule object contains a list of nonoverlapping Appointment objects. 
+The DailySchedule class contains methods to clear all appointments that conflict with a given appointment and to add an appointment to the schedule.</p>
+<div id="apCode" style="width:600px"><pre>
+public class DailySchedule
+{
+      // contains Appointment objects, no two Appointments overlap
+      <div id="apHighlight"><pre>private ArrayList&lt;Appointment&gt; apptList;</pre></div>
+
+      <div id="apHighlight"><pre>public DailySchedule()</pre></div>
+      { 
+	      apptList = new ArrayList&lt;Appointment&gt;();
+      }
+	  
+      // removes all appointments that overlap the given Appointment
+      // postcondition: all appointments that have a time conflict with
+      //appt have been removed from this DailySchedule
+      <div id="apHighlight"><pre>public void clearConflicts(Appointment appt)</pre></div>
+      { /* to be implemented in part (b) */ }
+	  
+      // if emergency is true, clears any overlapping appointments and adds
+      // appt to this DailySchedule; otherwise, if there are no conflicting
+      // appointments, adds appt to this DailySchedule;
+      // returns true if the appointment was added;
+      // otherwise, returns false
+      <div id="apHighlight"><pre>public boolean addAppt(Appointment appt, boolean emergency)</pre></div>
+      { /* to be implemented in part (c) */ }
+	  
+	  
+      // There may be fields, constructors, and methods that are not shown.
+	  
+}</pre></div>
+<p>Write the DailySchedule method <strong>clearConflicts.</strong> Method clearConflicts removes all appointments that conflict with the given appointment.</p>
+
+<p>In writing method clearConflicts, you may assume that <strong>conflictsWith</strong> works as specified, regardless of what you wrote in part (a).</p>
+
+<p>Complete method <strong>clearConflicts</strong> below.</p>
+<div id="apCode" style="width:600px"><pre>
+// removes all appointments that overlap the given Appointment
+// postcondition: all appointments that have a time conflict with
+//appt have been removed from this DailySchedule
+<div id="apHighlight"><pre>public void clearConflicts(Appointment appt)</pre></div>
+ 
+ 
+</pre></div></li>
+<li><p>Write the DailySchedule method <strong>addAppt</strong>. The parameters to method addAppt are an appointment and a boolean
+ value that indicates whether the appointment to be added is an emergency. If the appointment is an emergency, the
+  schedule is cleared of all appointments that have a time conflict with the given appointment and the appointment
+   is added to the schedule. If the appointment is not an emergency, the schedule is checked for any conflicting appointments.
+   If there are no conflicting appointments, the given appointment is added to the schedule. Method addAppt returns true if
+    the appointment was added to the schedule; otherwise, it returns false.</p>
+
+<p>In writing method addAppt, you may assume that <strong>conflictsWith</strong> and <strong>clearConflicts</strong> work as specified, regardless of what you wrote in parts (a) and (b).</p>
+
+<p>Complete method <strong>addAppt</strong> below.</p>
+<div id="apCode" style="width:600px"><pre>
+// if emergency is true, clears any overlapping appointments and adds
+// appt to this DailySchedule; otherwise, if there are no conflicting
+// appointments, adds appt to this DailySchedule;
+// returns true if the appointment was added;
+// otherwise, returns false
+<div id="apHighlight"><pre>public boolean addAppt(Appointment appt, boolean emergency)</pre></div>
+
+
+</pre></div>
+</li></ol></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Appointment 1     1000 1999
+Appointment 2     2000 2999
+Appointment 3     3000 3999
+Appointment 4     4000 4999
+Appointment 5     5000 5999
+
+Appointment 6 conflicts with Appointment 3.
+Since it is an emergency Appointment 6 is added
+and Appointment 3 is removed.
+
+Appointment 1     1000 1999
+Appointment 2     2000 2999
+Appointment 4     4000 4999
+Appointment 5     5000 5999
+Appointment 6     3100 3500
+
+Appointment 7 conflicts with both Appointment 1 and Appointment 2.
+Since it is an emergency Appointment 7 is added
+and Appointment 1 and Appointment 2 are removed.
+
+Appointment 4     4000 4999
+Appointment 5     5000 5999
+Appointment 6     3100 3500
+Appointment 7     1999 2001
+
+***Appointment 8 was not added***
+
+Appointment 8 conflicts with Appointment 5.
+However, it is not an emergency so it is not added
+and Appointment 5 is not removed.
+
+Appointment 4     4000 4999
+Appointment 5     5000 5999
+Appointment 6     3100 3500
+Appointment 7     1999 2001
+
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Maze</title>
+    <link rel="stylesheet" href="maze.css">
+
+    <script src="Location.js"></script>
+    <script src="MazeModel.js"></script>
+    <script src="MazeView.js"></script>
+    <script src="GridPanel.js"></script>
+    <script src="ControlPanel.js"></script>
+</head>
+
+<body>
+    <div id="mazeContainer">
+        <canvas id="mazeCanvas" width="400" height="400"></canvas>
+        <div id="mazeControlPanel">
+            <button id="mazeNewMazeButton" onclick="newMaze()">New Maze</button>
+            <div id="mazeSliderContainer">
+                <input type="range" min="16" max="1000" value="500" class="slider" id="mazeSpeedRange">
+            </div>
+            <button id="mazeStartButton" onclick="start()">Start</button>
+        </div>
+    </div>
+
+    <script>
+        var model = new MazeModel();
+        var canvas = document.getElementById("mazeCanvas");
+        var context = canvas.getContext("2d");
+        var view = new MazeView(context, model);
+
+        function newMaze() {
+            view.newMaze();
+        }
+
+        function start() {
+            view.startSearch();
+        }
+    </script>
+</body>
+
+</html>

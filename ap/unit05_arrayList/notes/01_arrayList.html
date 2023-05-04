@@ -1,0 +1,182 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">ArrayList</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an ArrayList</li>
+						<li>How to use an ArrayList to store data</li>
+						<li>Array vs ArrayList</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1></h1>
+<p>As we have seen, the array is a very powerful data structure that has many uses. It, however, has one
+   major drawback. Arrays are assigned a size at creation and this size cannot be changed. Java provides
+   a collection class named <strong>ArrayList</strong> that is very similar to an array except that it can be sized
+   dynamically while your program is running. Since the array list can grow and shrink while your program
+   runs it is a more efficient use of memory, and can also be simpler to use.</p>
+<div id="csNote"><strong>Note:</strong> a <strong>collection</strong> is an object that groups multiple elements into a single unit.
+Some collections allow duplicate elements and others do not. Some are ordered and others unordered. Java provides several
+collection classes including ArrayList, LinkedList, Stack, TreeSet, HashSet and Vector.</div>
+<h1>ArrayList vs Array</h1>
+<p>Like an array, an ArrayList is an object that contains a sequence of elements that are ordered by
+   position. Elements in both structures can be accessed and replaced at a given position. However, there
+   are several ways in which an ArrayList is unlike an array:</p>
+<div id="csList">
+<ul>
+<li>The programmer must use methods rather than the subscript operator [] to manipulate elements in an ArrayList. </li>
+<li>An ArrayList tracks both its logical size (the number of elements that are currently in it) and its 
+    physical size (the number of cells available to store elements).</li>
+<li>When the programmer creates an ArrayList, its logical size is 0. When the programmer inserts elements
+    into an ArrayList, the list automatically updates its logical size and add cells to accommodate new 
+	objects if necessary. The list's logical size is also updated when an element is removed.</li>
+<li>The positions available for access in an ArrayList range from 0 to its logical size minus 1. </li>
+</ul>
+</div>
+<h1>Declaring and Instantiating an ArrayList</h1>
+<p>To declare an ArrayList you use code like the following</p>
+<div id="csCode"><pre>
+ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+</pre></div>
+<p>Since ArrayList is a class you must use the new operator followed by a constructor call to 
+   instantiate an ArrayList object.</p>
+<p>Notice the use of the notation &lt;String&gt;. This called <strong>generics</strong> in Java. Generics is the method used 
+   to specify the data type for the list. With the release of Java 7 the second generics declaration became optional, however you still need to include the brackets.
+<div id="csCode"><pre>
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+</pre></div>
+<div id="csNote"><strong>Note:</strong> ArrayList is included in the same package as the Scanner
+  class, therefore they use the same import statement: <br><br>
+<strong>import java.util.*; </strong> 
+</div>
+<h1>ArrayList Methods</h1>
+<h3>add Methods</h3>
+<p>ArrayList provides two methods for adding elements to the list. Both of them are named add. This is an
+   example of the use of method overloading which is one form of polymorphism.</p>
+<p>The first add method works like an <strong>append</strong> by adding the element to the end of the list. The
+   method takes one parameter.</p>
+<div id="csCode" style="width:550px"><pre>
+list.add("sunshine");
+</pre></div>
+<p>The second add method takes two parameters and works like an <strong>insert</strong>. The first
+   parameter is represents the location in the list where the element is to be insert. Starting at
+   the given index position all elements below this position are pushed down one.</p>
+<div id="csCode" style="width:550px"><pre>
+list.add(3, "sunshine");
+</pre></div>
+<h3>get Method</h3>
+<p>The get method works like the array's index operator [ ]. It takes one parameter which is the location
+   of the element to be retrieved.</p>
+<div id="csCode" style="width:550px"><pre>
+String str = list.get(5);
+</pre></div>
+<h3>remove Method</h3>
+<p>The remove method takes one parameter which is the location of the element to be removed. Starting
+   at the given index position all elements below this position are moved up one. The method also
+   returns the deleted item.</p>
+<div id="csCode" style="width:550px"><pre>
+String str = list.remove(5);
+</pre></div>
+<h3>set Method</h3>
+<p>The set method replaces an element at a given location. The method takes two parameters. The first
+   parameter is the index of the element to be replaced and the second parameter is the element's new
+   value. The method returns the old element.</p>
+<div id="csCode" style="width:550px"><pre>
+String str = list.set(5, "rainbow");
+</pre></div>
+<p>or</p>
+<div id="csCode" style="width:550px"><pre>
+list.set(5, "rainbow");
+</pre></div>
+<h3>size Method</h3>
+<p>The size method returns the logical size of the ArrayList. The size method is diiferent from
+   the array's length variable and the String class's length method which return the
+   physical size.</p>
+<div id="csCode" style="width:550px"><pre>
+int numElements = list.size();
+</pre></div>
+<h1>Method Summary</h1>
+<p>Here is a list of the most commonly used ArrayList methods.</p>
+<table width="600" border="1" id="csTable">
+        <tr bgcolor="#000033"> 
+          <th width="300">ArrayList Method</th>
+          <th width="373">Description</th>
+        </tr>
+        <tr> 
+          <td>ArrayList &lt;E&gt; ()</td>
+          <td>Constructor builds an empty array list.</td>
+        </tr>
+        <tr> 
+          <td>boolean isEmpty()</td>
+          <td>Returns true if the list contains no elements and false otherwise.</td>
+        </tr>
+        <tr> 
+          <td>int size()</td>
+          <td>Returns the number of elements currently in the list.</td>
+        </tr>
+        <tr> 
+          <td>E get(int index)</td>
+          <td>Returns the element at index.</td>
+        </tr>
+        <tr> 
+          <td>E set(int index, E obj)</td>
+          <td>Replaces the element at index with obj and returns the old element.</td>
+        </tr>
+        <tr> 
+          <td>boolean add(E obj)</td>
+          <td>Appends the specified element to the end of this list. Returns true.</td>
+        </tr>
+        <tr> 
+          <td>void add(int index, E obj)</td>
+          <td>Inserts obj before the element at index or after the last element 
+            if index equals the size of the list.</td>
+        </tr>
+        <tr> 
+          <td>E remove(int index)</td>
+          <td>Removes and returns the element at index.</td>
+        </tr>
+        <tr> 
+          <td>int indexOf(E obj)</td>
+          <td>Returns the index of the first instance of obj in the list or -1 
+            if obj is not in the list.</td>
+        </tr>
+      </table>
+	  <p>*An ArrayList can store an object of any class. The E in the table above means any class.</p>
+<h1>Sample Program</h1>
+<div id="csCode">
+<pre>
+<div id="csHighlight"><pre>// Step 1: import ArrayList</pre></div>
+import java.util.*;   // needed for ArrayList
+
+public class ArrayListDemo
+{
+    public static void main(String[] args)
+    {
+        <div id="csHighlight"><pre>// Step 2: instantiate ArrayList object</pre></div>
+        ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+        
+        <div id="csHighlight"><pre>// Step 3: add items to the list</pre></div>
+        list.add("Texas");
+        list.add("Colorado");
+        list.add("Wyoming");
+        list.add("Montana");
+        
+        <div id="csHighlight"><pre>// Step 4: retrieve items from the list</pre></div>
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
+        System.out.println(list.get(2));
+        System.out.println(list.get(3));
+    }
+}
+</pre>
+</div>
+<br>
+</div>	
+

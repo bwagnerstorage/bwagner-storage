@@ -1,0 +1,110 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Ticket</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/TicketNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Ticket</a></h1>
+
+<h1>Directions</h1>
+<p> A set of classes is used to handle the different ticket types for a theater. The class hierarchy is shown in the following diagram.</p>
+<div align="center"><img src="images/ticket.gif"></div>
+<p>All tickets have a serial number and a price. The class <strong>Ticket</strong> is specified as an abstract class as shown in the following declaration.</p>
+<div id="apCode">
+<pre>
+public abstract class Ticket 
+{ 
+   private int serialNumber;   // unique ticket id number 
+
+   <div id="apHighlight"><pre>public Ticket()</pre></div> 
+   {   serialNumber = getNextSerialNumber();   } 
+
+   // returns the price for this ticket 
+   <div id="apHighlight"><pre>public abstract double getPrice();</pre></div> 
+
+   // returns a string with information about the ticket 
+   <div id="apHighlight"><pre>public String toString()</pre></div> 
+   { 
+       return "Number: " + serialNumber + "\nPrice: " + getPrice();
+   }
+ 
+   // returns a new unique serial number 
+   <div id="apHighlight"><pre>private static int getNextSerialNumber()</pre></div> 
+   {  /* implementation not shown */   }
+} 
+</pre>
+</div>
+<p>Each ticket has a unique serial number that is assigned when the ticket is constructed. For all ticket classes,
+   the toString method returns a string containing the information for that ticket. Three additional classes are 
+   used to represent the different types of tickets and are described in the table below. </p>
+   
+<table width="70%" id="csTable">
+        <tr> 
+          <th>Class</th>
+          <th width="50%">Description</th>
+          <th>Sample toString Output</th>
+        </tr>
+        <tr> 
+          <td>Walkup</td>
+          <td width="50%">These tickets are purchased on the day of the event 
+            and cost 50 dollars.</td>
+          <td>Number: 712<br>
+            Price: 50 </td>
+        </tr>
+        <tr> 
+          <td>Advance</td>
+          <td width="50%">Tickets purchased ten or more days in advance cost 30 
+            dollars. Tickets purchased fewer than ten days in advance cost 40 
+            dollars.<br></td>
+          <td>Number: 357<br>
+            Price: 40</td>
+        </tr>
+        <tr> 
+          <td>StudentAdvance</td>
+          <td width="50%">These tickets are a type of Advance ticket that costs 
+            half of what that Advance ticket would normally cost.<br></td>
+          <td>Number: 134<br>
+            Price: 15<br>
+            (student ID required) </td>
+        </tr>
+      </table>
+<p>Using the class hierarchy and specifications given above, you will write complete class declarations for the <strong>Advance</strong>
+       and <strong>StudentAdvance</strong> classes.</p>
+<div id="csList2">
+<ol>
+<li><p>Write the complete class declaration for the class <strong>Advance</strong>. Include all necessary instance variables and
+    implementations of its constructor and method(s). The constructor should take a parameter that indicates the
+    number of days in advance that this ticket is being purchased. Tickets purchased ten or more days in advance
+    cost $30; tickets purchased nine or fewer days in advance cost $40.</p></li>
+<li><p>
+    Write the complete class declaration for the class <strong>StudentAdvance</strong>. Include all necessary instance
+    variables and implementations of its constructor and method(s). The constructor should take a parameter that indicates the number of days in advance that this ticket is being purchased. The toString method should include a notation that a student ID is required for this ticket. A StudentAdvance ticket costs half of
+    what that Advance ticket would normally cost. If the pricing scheme for Advance tickets changes,
+    the StudentAdvance price should continue to be computed correctly with no code modifications to
+    the StudentAdvance class.</p></li>	  
+</ol></div>
+	  
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+5 days in advance: Number: 0
+Price: 40.0
+9 days in advance: Number: 1
+Price: 40.0
+10 days in advance: Number: 2
+Price: 30.0
+20 days in advance: Number: 3
+Price: 30.0
+
+5 days in advance: Number: 4
+Price: 20.0 (student ID required)
+9 days in advance: Number: 5
+Price: 20.0 (student ID required)
+10 days in advance: Number: 6
+Price: 15.0 (student ID required)
+20 days in advance: Number: 7
+Price: 15.0 (student ID required)
+</pre>
+</div>
+	<br>
+</div>	
+

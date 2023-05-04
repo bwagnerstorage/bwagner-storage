@@ -1,0 +1,140 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Asteroids2</div>
+
+<div id="csContent"> 
+  <h2>Modify Asteroid1 Senario</h2>
+  <p>In the Asteroid2 scenario add a new subclass to the Actor class named <strong>Asteroid</strong>, then add two more classes as subclasses of
+      the Asteroid class named <strong>LargeAsteroid</strong> and <strong>SmallAsteroid</strong>.
+	  The Actor classes panel should look like the following when done:</p>
+	  <img src="images/asteroid2.png"></img>
+  <p>Add the following code to the <strong>Asteroid</strong> class.</p>
+  <div id="csCode"><pre>import greenfoot.*;
+
+public class Asteroid extends Actor
+{
+    // instance variables
+    private int vx;              // horizontal velocity
+    private int vy;              // vertical velocity
+    private int rotationSpeed;   // how fast asteroid rotates
+    private int dir;             // direction(angle) of asteroid
+    
+    // Constructor
+    // The constructor needs to create random numbers for all four of the instance variables
+    //   vx should have a velocity between -2 and 2.
+    //   vy should have a velocity between -2 and 2.
+    //   rotationSpeed should have a range between -5 to +5 inclusive
+    //   dir should have a range of 0 to 359
+    // Lastly the constructor should set the asteroids direction
+    public Asteroid()
+    {
+
+    }
+    
+    // The act method moves the asteroid and rotates it continually
+    // Calls the wrapAround method
+    // Calls the collisionDetection method
+    public void act() 
+    {
+
+
+    }  
+    
+    // The wrapAround method should make it so that if an asteroid exits one side of the
+    // screen it reappears on the opposite side of the screen.
+    public void wrapAround()
+    {
+       
+
+    }
+    
+    // The collisionDetection method should make it so that if two asteroids collide into each
+    // other they bounce off each other and go in the opposite direction from their current heading.
+    public void collisionDetection()
+    {
+
+        
+    }
+}
+</pre></div>
+  <p>Add the following code to the <strong>SmallAsteroid</strong> class.</p>
+  <div id="csCode"><pre>import greenfoot.*;
+
+// Makes a small asteroid with dimensions 40 x 40
+public class SmallAsteroid extends Asteroid
+{
+    public SmallAsteroid()
+    {
+        GreenfootImage image = new GreenfootImage(40,40);  // creates a blank image size 40 X 40
+        image.setColor(Color.WHITE);
+        
+        image.drawLine(1,20,20,1); 
+        image.drawLine(20,1,35,15);
+        image.drawLine(35,15,34,39);  
+        image.drawLine(34,39,15,35);  
+        image.drawLine(15,35,18,25);  
+        image.drawLine(18,25,1,20);  
+           
+        setImage(image);           // set image
+    }    
+}
+</pre></div>
+  <p>Add the following code to the <strong>LargeAsteroid</strong> class.</p>
+  <div id="csCode"><pre>import greenfoot.*;
+
+// Makes a large asteroid with dimensions 80 x 80
+public class LargeAsteroid extends Asteroid
+{
+    public LargeAsteroid()
+    {
+        GreenfootImage image = new GreenfootImage(80,80);  // creates a blank image size 80 x 80
+        image.setColor(Color.WHITE);
+        
+        image.drawLine(4,4,40,30);  
+        image.drawLine(40,30,70,1); 
+        image.drawLine(70,1,78,45);
+        image.drawLine(78,45,60,77);  
+        image.drawLine(60,77,46,70);  
+        image.drawLine(46,70,20,79);  
+        image.drawLine(20,79,28,60); 
+        image.drawLine(28,60,4,4);  
+           
+        setImage(image);           // set image
+    }  
+}
+</pre></div>
+  
+  <h2>Directions</h2>
+  <ol id="csList">
+  <li><p>Add the following code to the Space class's constructor.</p>
+  <div id="csCode"><pre>Asteroid a1 = new LargeAsteroid();
+Asteroid a2 = new LargeAsteroid();
+Asteroid a3 = new LargeAsteroid();
+Asteroid a4 = new LargeAsteroid();
+Asteroid a5 = new LargeAsteroid();
+Asteroid a6 = new LargeAsteroid();
+        
+addObject(a1, Greenfoot.getRandomNumber(266), Greenfoot.getRandomNumber(300));
+addObject(a2, Greenfoot.getRandomNumber(266) + 266, Greenfoot.getRandomNumber(200));
+addObject(a3, Greenfoot.getRandomNumber(266) + 532, Greenfoot.getRandomNumber(300));
+addObject(a4, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(300) + 300);
+addObject(a5, Greenfoot.getRandomNumber(266)+266, Greenfoot.getRandomNumber(400) + 200);
+addObject(a6, Greenfoot.getRandomNumber(266) + 532, Greenfoot.getRandomNumber(300) + 300);</pre></div>
+  </li>
+  <li><p>Modify Asteroid1 by including asteroids. To do this complete all of the methods in the Asteroid class
+  including its constructor. Each asteroid should move in a random direction, with a random speed, and rotate around its center
+  at a random speed.</p></li>
+  <li><p>When an asteroid runs into the ship it should disappear or even better
+         have the ship explode. The game ends when the ship is gone.</p></li>
+  <li><p>When a laser hits a big asteroid remove that asteroid and replace it with to small asteroids.
+         If a small asteroid is hit by a laser it should be destroyed or removed.</p></li>
+  <li><p>Game ends when all asteroids have been destroyed.</p></li>
+  <h3>Extras</h3>
+  <li><p>Instead of ending the game when an asteroid hits the ship. Give the ship a certain number of
+         lives and display them on the screen. The game is over when all its lives are gone.</p></li>
+  <li><p>Add a score board to track how many asteroids have been destroyed.</p></li>
+  </ol>
+
+	<br>
+</div>	
+

@@ -1,0 +1,100 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">16-1 CSS Display</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_display_visibility.asp" target="_blank" style="color:blue">Display</a></p></li>
+</ul>
+<h1>CSS Layout - Display Property</h1>
+<p>CSS Layout refers to the arrangement of text, images, and other elements on a web page. The <strong>display</strong> property is the most important CSS property for controlling layout.</p>
+<p>The display property specifies if/how an element is displayed.</p>
+<p>Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.</p>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>16_1_display.html</strong> and save it to your CSS folder.</p></li>
+
+<li><p>Add the following starter code to your html document:</p>
+<div id="csHTML"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;Display 1&lt;/title&gt;
+   &lt;style&gt;
+      
+   &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Block Elements&lt;/h1&gt;
+&lt;p&gt;A block-level element always&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;starts on a new line&lt;/li&gt;
+   &lt;li&gt;takes up the full width of its container&lt;/li&gt;
+&lt;/ul&gt; 
+   
+   &lt;h3 class="block_container"&gt;I am a &lt;b&gt;heading&lt;/b&gt; element. Since I am a block-level element I started on a new line and I take up the entire width of my container.&lt;/h3&gt;
+   &lt;p class="block_container"&gt;I am a &lt;b&gt;paragraph&lt;/b&gt; element. Since I am a block-level element I started on a new line and I take up the entire width of my container.&lt;/p&gt;
+   &lt;div class="block_container"&gt;I am a &lt;b&gt;div&lt;/b&gt; element. Since I am a block-level element I started on a new line and I take up the entire width of my container.&lt;/div&gt;
+   
+   &lt;h1&gt;InLine Elements&lt;/h1&gt;
+   &lt;p&gt;An inline element 
+      &lt;ul&gt;
+      &lt;li&gt;does not start on a new line&lt;/li&gt;
+      &lt;li&gt;only takes up as much width as necessary&lt;/li&gt;
+      &lt;/ul&gt;&lt;br&agt;
+      &lt;img src="king.gif"&gt; 
+      &lt;img src="queen.gif"&gt;
+      &lt;img src="jack.gif"&gt;&lt;span class="inline_container"&gt;We are image elements. Since we are inline-level elements we do not start on a new line and we only take up as much width as necessary.&lt;/span&gt;
+   &lt;a class="inline_container" style="color:red"&gt;I am an &lt;b&gt;anchor&lt;/b&gt; element. Since I am a inline-level element I do not start on a new line and I only take up as much width as necessary.&lt;/a&gt;
+   &lt;span class="inline_container" style="color:blue"&gt;I am a &lt;b&gt;span&lt;/b&gt; element. Since I am a inline-level element I do not start on a new line and I only take up as much width as necessary.&lt;/span&gt;
+
+   &lt;h1&gt;Width and Height&lt;/h1&gt;
+   &lt;div class="testWidthHeight"&gt;I am a div element. Since I am a block-level element my width and height can be change using width and height properties.&lt;/div&gt;
+   &lt;br&gt;
+   &lt;span class="testWidthHeight"&gt;I am a span element. Since I am an inline-level element the width and height properties have no effect on me. &lt;/span&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+
+</li>
+<li><p>Add a class to the internal styling named <strong>block_container</strong>. Give 
+   the class the following styling:</p>
+<ul id="csList">
+   <li>Use the border property to style the border with the following attributes:
+	   border size of 1px, border style of solid, and border color of black. 
+   </li>
+   <li>
+       Set background color to light gray.
+   </li>
+   <li>Set height to 40px.</li>
+</ul></li>
+<li>Add a class to the internal styling named <strong>inline_container</strong>. Give the class
+	the following styling:
+<ul id="csList">
+	<li>Set line height property to 40px.</li>
+	<li>Set the text color to green.</li>
+</ul></li>
+<li>Add a class to the internal styling named <strong>testWidthHeight</strong>. Give the class
+	the following styling:
+<ul id="csList">
+    <li>Use the border property to style the border with the following attributes:
+		border size of 1px, border style of solid, and border color of black. 
+	</li>
+	<li>Set width to 400px.</li>
+	<li>Set height to 200px.</li>
+	<li>Set background color to lightskyblue.</li>
+</ul></li>
+<li>Display the web page in a browser and observe how block and inline elements
+	differ in the way they are displayed.
+</li>
+<li>The following link contains a zip file with the image files you will need for 
+    this exercise: <a href="cs2/css/unit16/labExercises/16_1_images.zip" style="color:blue">Image Files</a>.
+   </li>
+<br><hr><br>
+<div>
+<img src="images/CS2/CSS/display01.png" >
+</div> 
+
+	<br>
+</div>	

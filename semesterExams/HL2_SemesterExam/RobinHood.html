@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>IB HL 2 Semester Exam</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 20px;
+            }
+            p, li {
+                font-size: 1.2em;
+            }
+            table {
+                padding: 10px;
+                border: 0;
+                font-size: 1.2em;
+                font-family: consolas, sans-serif; 
+                text-align: right;       
+            }
+            td {
+                padding: 8px;
+            }
+            .code {
+                border: 3px solid black;
+                padding: 5px;
+                padding-left: 10px;
+                margin-right: 10px;
+                font-family: consolas, sans-serif;
+                font-size: 1.4em;
+                width: 800px;
+            }
+            
+            #sampleRun {
+                color: white;
+                background: black;
+                padding: 8px;
+                font-family: consolas, sans-serif;
+                font-size: 1.4em;
+                width: 800px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>IBHL 2 Semester Exam</h1>
+        <p>Robin Hood is a heroic outlaw in English folklore who,
+           according to legend, was a highly skilled archer and swordsman. He is often portrayed as
+           "robbing from the rich and giving to the poor" alongside his band of Merry Men.</p>
+        <p>In this exam you are going to complete a class named RobinHood that
+           uses a 2DArray in its implementation. </p>
+        <hr>
+        <p>The <strong>RobinHood</strong> class is shown below.</p>
+        <div class="code"><pre>
+import java.util.*;
+
+public class RobinHood 
+{
+    // instance variables
+    private int [][] town;
+    private int numRows;     // number of rows
+    private int numCols;     // number of columns
+    
+    // constructor
+    public RobinHood()
+    {
+        // instantiate a 2D array (town)
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter number of rows -->");
+        numRows = scan.nextInt();
+        
+        System.out.print("Enter number of columns -->");
+        numCols = scan.nextInt();
+        
+        town = new int[numRows][numCols];
+        
+        // Unleash Robin Hood
+        
+        populateTown();
+        System.out.println();
+        System.out.println(" Original Town");
+        System.out.println("===============");
+        displayTown();
+        int money = robTheRich();
+        System.out.println("Money collected by Robin Hood = " + money);
+        System.out.println();
+        System.out.println(" Rob the Rich");
+        System.out.println("===============");
+        displayTown();
+        giveToPoor(money);
+        System.out.println();
+        System.out.println(" Give to Poor");
+        System.out.println("===============");
+        displayTown();
+    }
+    
+    /*
+       Fills the town with random money values in the range of 1 to 20 inclusive.
+    */
+    public void populateTown()
+    {
+        for(int r = 0; r < numRows; r++)
+        {
+            for(int c = 0; c < numCols; c++)
+            {
+                town[r][c] = (int)(Math.random() * 20 + 1);  // 1..20
+            }
+        }
+    }
+    
+    // Part A
+    /* 
+       Displays the town in row-major order. If the money value in an array
+       cell is less than 10 the method adds a space in front of the single
+       digit when it is displayed.
+    */
+    public void displayTown()
+    {
+
+    }
+    
+    
+    // Part B
+    /* 
+       Traverses the town looking for the rich. (A family is rich if their 
+       value is greater than 10.) If a rich family is found all their money
+       is confiscated. The total amount of money collected from  
+       all the rich is returned.
+       @return the money collected
+    */
+    public int robTheRich()
+    {
+ 
+    }
+    
+    // Part C
+    /*
+       Returns a count of the number of families in the town that are poor.
+    */
+    public int countThePoor()
+    {
+
+    }
+    
+    //Part D
+    /*
+       Divides the moneyCollected into equal portions and 
+       distributes it to the poor.
+       @param moneyCollected the money confiscated from the rich
+    */
+    public void giveToPoor(int moneyCollected)
+    {
+
+    }
+    
+    public static void main(String[] args)
+    {
+        RobinHood app = new RobinHood();
+    }
+}
+</pre>
+    </div>
+        <p>A town is represented in the RobinHood class as a 2D array of
+           of houses. Each house contains a family that is either poor or
+           wealthy. A family is poor if their wealth is less than or equal
+           to 10 and a family is wealthy if their wealth is 
+           greater than 10. Look at the following example of a 3 by 3 2D array
+           that represents a town. The town consists of 9 houses. The house at location (0,0) 
+           contains a value 0f 16. This means the family living there has a 
+           wealth of 16 therefore they are considered wealthy. The family at location (0,1)
+           has a wealth of 5 therefore they are considered poor.
+           </p>
+        <table>
+            <tr>
+                <td>16</td>
+                <td>5</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>19</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>17</td>
+                <td>10</td>
+            </tr>   
+        </table>
+        
+        <ol type='a'>
+            <li>Complete method <strong>displayTown</strong>. This method displays the 2D array
+                <strong>town</strong> in row-major order. If the number displayed is less than 10 it prints the number
+                with a space in front of it. If the number displayed is greater than or equal to 10
+                no space is added. A sample run is shown below.
+                <table>
+                    <tr>
+                        <td>16</td>
+                        <td>5</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>19</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>17</td>
+                        <td>10</td>
+                    </tr>   
+                </table>
+            </li>
+            <li>Complete method <strong>robTheRich</strong>. This method Traverses the entire town 
+                looking for the rich. A family is rich if their value is greater than 10.
+                If a rich family is found all their money is confiscated and they are left with
+                nothing. The total amount of money collected from the rich is returned. Below is
+                the town displayed before robTheRich was executed and after robTheRich was executed.
+                
+                <h4>Before robTheRich was executed</h3>
+                <table>
+                    <tr>
+                        <td>16</td>
+                        <td>5</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>19</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>17</td>
+                        <td>10</td>
+                    </tr>   
+                </table>
+                <h4>After robTheRich was executed</h3>
+                <table>
+                    <tr>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>10</td>
+                    </tr>   
+                </table>
+            </li>
+            <li>Complete method <strong>countThePoor</strong>. This method returns a count of the number of 
+                families in the town that are poor.<br><br> 
+            </li>
+            
+            <li>Complete method <strong>giveToPoor</strong>. This method divides the moneyCollected into equal portions and 
+                distributes it to the poor. Recall that the method robTheRich takes all the money from the rich leaving
+                them with nothing.
+            </li>
+        </ol>
+        <h3>Sample Run</h3>
+           <div id="sampleRun">
+<pre>Enter number of rows -->5
+Enter number of columns -->5
+
+ Original Town
+===============
+ 7  8 15  3 12 
+ 7 19  5  6  4 
+19 20  3 17  5 
+ 9 19 10  4  2 
+14  4 18 12 10 
+
+Money collected by Robin Hood = 165
+
+ Rob the Rich
+===============
+ 7  8  0  3  0 
+ 7  0  5  6  4 
+ 0  0  3  0  5 
+ 9  0 10  4  2 
+ 0  4  0  0 10 
+
+
+ Give to Poor
+===============
+18 19  0 14  0 
+18  0 16 17 15 
+ 0  0 14  0 16 
+20  0 21 15 13 
+ 0 15  0  0 21
+
+</pre></div>
+    </body>
+</html>

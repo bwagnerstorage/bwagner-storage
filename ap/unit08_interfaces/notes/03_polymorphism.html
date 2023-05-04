@@ -1,0 +1,102 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Polymorphism and Interfaces</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How interfaces incorporate polymorphic behavior</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1></h1>
+<p>As we've seen, a class name is used to declare the type of an object reference variable.</p>
+<div id="csCode">
+<pre>
+String str;
+Scanner keyboard;
+Dog maddie;
+</pre>
+</div> 
+ <p>In the same way, an interface name can also be used as the type of a reference variable. 
+   An interface reference variable can be used to refer to any object of any class that implements
+   that interface.</p>
+
+<p>Suppose we declare an interface called <strong>Speaker</strong> as follows</p>
+
+<div id="csCode">
+<pre>
+public interface <div id="csHighlight"><pre>Speaker</pre></div>
+{
+   void speak();
+   void announce(String str);
+}
+</pre>
+</div> 
+
+<p>The interface name, Speaker, can now be used to declare an object reference variable</p>
+<div id="csCode">
+<pre>
+<div id="csHighlight"><pre>Speaker</pre></div> current;
+</pre>
+</div> 
+<p>The reference variable current can be used to refer to any object of any class that implements the Speaker interface.
+   For example, suppose we have defined two classes named Philosopher and Dog that both implement the Speaker interface,
+   we can then assign both a Philosopher object and a Dog object to a Speaker reference variable as follows</p>
+<div id="csCode">
+<pre>
+<div id="csHighlight"><pre>Speaker</pre></div> guest;
+guest = new Philosopher();
+guest.speak();
+
+<div id="csHighlight"><pre>Speaker</pre></div> maddie = new Dog();
+maddie.speak();
+</pre>
+</div> 
+
+<p>In this code, the first time the speak method is called, it invokes the speak method defined 
+in the Philosopher class. The second time it is called, it invokes the speak method of the Dog class.
+It is not the type of the reference that determines which method gets invoked, it's the type of the 
+object that the reference points to when it is invoked.</p>
+
+<p>Note that when we are using an interface reference variable, we can invoke only the methods
+ defined in the interface, even if the object it refers to has other methods. For example, suppose
+ the Philosopher class also defined a public method called lecture. The second line of the following
+ code would give us a compiler error, even though the object can in fact respond to the lecture method</p>
+<div id="csCode">
+<pre>
+Speaker special = new Philosopher();
+special.lecture();       <div id="csHighlight"><pre>// generates a compiler error </pre></div> 
+</pre>
+</div> 
+
+<p>The problem is that the compiler knows only that the object is a Speaker, and therefore 
+  can guarantee only that the object can respond to the speak and announce methods. Because the 
+  reference variable special could refer to a Dog object (which cannot lecture), it does not allow
+  the reference. If we know that such an invocation is valid, we can cast the object into the 
+  appropriate reference so that the compiler will accept it, as follows</p>
+<div id="csCode">
+<pre>
+((Philosopher)special).lecture();       // cast
+</pre>
+</div> 
+
+<p>Like polymorphic references based in inheritance, an interface name can be used as the type 
+  of a method parameter. Then any object of any class that implements the interface can be passed 
+  into the method. For example, the following method takes a Speaker object as a parameter. Now both 
+  a Dog object and a Philosopher object can be passed into it separately</p>
+<div id="csCode">
+<pre>
+public void sayIt(<div id="csHighlight"><pre>Speaker</pre></div> current)
+{
+   current.speak();
+}</pre>
+</div>
+<br>
+</div>	
+

@@ -1,0 +1,144 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR ArrayTester</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/ArrayTesterNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >ArrayTester</a></h1>
+
+<h1>Directions</h1>
+
+<div id="apCode"><pre>public class ArrayTester {
+   /**
+    * Returns an array containing the elements of 
+    *   column c of arr2D in the same order as they appear in arr2D.
+    *   <strong>Precondition</strong>: c is a valid column index in arr2D.
+    *   <strong>Postcondition</strong>: arr2D is unchanged. 
+    */
+   <span id="apHighlight"><pre>public static int[] getColumn(int[][] arr2D, int c)</pre></span> 
+   {
+         /* to be implemented in part (a) */
+   } 
+   
+   /** Returns true if and only if every value in arr1 appears in arr2. 
+    * <strong>Precondition</strong>: arr1 and arr2 have the same length. 
+    *<strong>Postcondition</strong>: arr1 and arr2 are unchanged. 
+    */
+   <span id="apHighlight"><pre>public static boolean hasAllValues(int[] arr1, int[] arr2)</pre></span> 
+   {
+         /* implementation not shown */  
+   }
+   
+   /**
+    * Returns true if arr contains any duplicate values; 
+    *   false otherwise.
+    */
+   <span id="apHighlight"><pre>public static boolean containsDuplicates(int[] arr)</pre></span>
+   {
+         /* implementation not shown */  
+   } 
+   
+   /** 
+    * Returns true if square is a Latin square as described in part (b);
+    *   false otherwise. 
+    * <strong>Precondition</strong>: square has an equal number of rows and columns. 
+    *   square has at least one row. 
+    */
+   <span id="apHighlight"><pre>public static boolean isLatin(int[][] square)</pre></span> 
+   { 
+         /* to be implemented in part (b) */  
+   } 
+}
+</pre></div>
+
+<br>
+<h3>Part (a)</h3>
+<p>Write a static method <span class="cd">getColumn</span>, which returns a one-dimensional array
+   containing the elements of a single column in a two-dimensional array.
+   The elements in the returned array should be in the same order as
+   they appear in the given column. The notation <span class="cd">arr2D[r][c]</span> represents 
+   the array element at row <span class="cd">r</span> and column <span class="cd">c</span>.</p>
+<p>The following code segment
+   initializes an array and calls the <span class="cd">getColumn</span> method.</p>
+   <br>
+   <img src="images/ArrayTester3.JPG" style="width:98%">
+<br>
+<p>Complete method <span class="cd">getColumn</span> below.</p> 
+<div id="apCode"><pre>/** 
+* Returns an array containing the elements of column c of arr2D
+* in the same order as they appear in arr2D. 
+*  <strong>Precondition</strong>: c is a valid column index in arr2D. 
+*  <strong>Postcondition</strong>: arr2D is unchanged. 
+*/
+public static int[] getColumn(int[][] arr2D, int c) 
+
+
+
+
+
+</pre></div>
+<h3>Part (b)</h3>
+<p>Write the static method isLatin, which returns true if a given 
+   two-dimensional square array is a Latin square, and otherwise, 
+   returns false. A two-dimensional square array of integers is a
+   Latin square if the following conditions are true. 
+ <ul id="csList"><li><p>The first row has no duplicate values.</p></li>
+     <li><p>All values in the first row of the square appear in
+         each row of the square.</p></li>
+     <li><p>All values in the first row of the square appear in
+         each column of the square.</p></li>
+ </ul>
+ <br>
+
+ <img src="images/ArrayTester1.JPG" style="width:98%">
+ <br><br>
+<p>The <span class="cd">ArrayTester</span> class provides two helper methods:
+   <span class="cd">containsDuplicates</span> and <span class="cd">hasAllValues</span>. The method contains
+   Duplicates returns true if the given one-dimensional array <span class="cd">arr</span>
+   contains any duplicate values and false otherwise. 
+   The method has <span class="cd">AllValues</span> returns true if and only if every value
+   in <span class="cd">arr1</span> appears in <span class="cd">arr2</span>. You do not need to write the code for 
+   these methods.</p>
+<br>
+   <img src="images/ArrayTester2.jpg" style="width:98%">
+<br><br>
+<p>Complete method <span class="cd">isLatinbelow</span>. Assume that <span class="cd">getColumn</span> works as specified,
+   regardless of what you wrote in part (a). You must use <span class="cd">getColumn</span>,
+   <span class="cd">hasAllValues</span>, and <span class="cd">containsDuplicates</span> appropriately to receive full
+   credit.</p>
+<div id="apCode"><pre>
+/** 
+* Returns true if square is a Latin square
+*   as described in part (b); false otherwise. 
+*   <strong>Precondition</strong>: square has an equal number of rows and columns. 
+*     square has at least one row. 
+*/ 
+public static boolean isLatin(int[][] square)  
+
+
+
+
+
+
+</pre></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+/***************************************/
+              Test Part(a)
+/***************************************/
+{1, 4, 7, 5}
+
+/***************************************/
+              Test Part(b)
+/***************************************/
+result = true
+result = true
+result = false
+result = false
+result = false
+</pre>
+</div>
+	<br>
+</div>	
+

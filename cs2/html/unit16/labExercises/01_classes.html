@@ -1,0 +1,120 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">16-1 HTML Classes</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="http://www.w3schools.com/html/html_classes.asp" target="_blank" style="color:blue">HTML Classes</a></p></li>
+</ul>
+<h1>Lesson</h1>
+<p>In this lesson you are going learn how to assign class names to HTML elements. Elements that are assigned or
+   share the same class name will have the same styling.</p>
+<p>The <strong>class</strong> attribute uses the same format as other html attributes.</p>
+<div id="csHtml"><pre>
+&lt;div <div id="csHighlight"><pre>class</pre></div>="myClassName"&gt;
+
+
+&lt;/div&gt;
+</pre></div>
+
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>16_1_classes.html</strong> and save it to your HTML folder.</p></li>
+<li><p>Give the document the title: <strong>16_1_classes</strong>.</p></li>
+<li><p>Copy the following HTML code into your new document.</p></li>
+<div id="csHtml"><pre>
+   &lt;!DOCTYPE html&gt;
+   &lt;html&gt;
+   &lt;head&gt;
+       &lt;title&gt;Using Classes&lt;/title&gt;
+       &lt;style&gt;
+           .myButton
+           {
+               font-size:1.4em;
+               font-family: Georgia, 'Times New Roman', Times, serif;
+               background-color:darkblue;
+               color: white;
+               border: 5px solid cornflowerblue;
+               width: 200px;
+               padding: 15px;
+               box-sizing: border-box;
+               text-align: center;
+               border-radius: 25px;
+               font-weight: 500;
+               margin: 8px;
+           }
+           .myButton:hover {
+               background-color: cornflowerblue;
+               border: 7px solid darkblue;
+               color:darkorange;
+               text-shadow: 2px 1px black;
+               font-weight: 600;
+           }
+           .myButton:active {
+               background-color: darkorange;
+               border: 6px solid darkblue;
+               color:darkblue;
+               box-shadow: 1px 1px 1px darkblue;
+               text-shadow: 0px 0px;
+           }
+       &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+       &lt;button&gt;Submit&lt;/button&gt;
+       
+       &lt;br&gt;&lt;br&gt;
+   
+       &lt;div&gt;Ok&lt;/div&gt;
+       &lt;div&gt;Login&lt;/div&gt;
+       &lt;div&gt;Cancel&lt;/div&gt;
+       &lt;div&gt;Select&lt;/div&gt;
+       &lt;div&gt;Next&lt;/div&gt;
+   &lt;/body&gt;
+   &lt;/html&gt;
+</pre></div>
+<li><p>Display the html file in the browser. Notice there is a button named Submit at the top
+       of the window. Click on this button. HTML provides a tag named &lt;button&gt; that can be used
+       to add buttons to an HTML document. However, the styling of this button is somewhat plain.
+       <p>To demonstrate how <strong>classes</strong> work in HTML you are going to transform the
+          five <strong>divs</strong> defined at the bottom of the page into buttons without using 
+          the HTML button element.</p>
+</p></li>
+<li><p>The first thing you may notice is there is a lot of CSS styling going on between the two &lt;style&gt; 
+       tags. You will learn more about this code when you do the CSS section of the course, so for now, 
+       just ignore it. The code that relates to this lesson is highlighted below.</p>
+<div id="csHtml"><pre>
+&lt;style&gt; 
+   <div id="csHighlight"><pre>.myButton</pre></div>
+   {
+
+
+   }
+&lt;/style&gt; 
+</pre></div>
+<p>In CSS, a <strong>class</strong> is defined by placing a period '.' in front of an identifier name.
+   For example, this code is defining a class named <strong>myButton</strong>.
+</p></li>
+<li><p>Once a class has been defined it can be assigned to HTML elements by using the 
+       <strong>class</strong> attribute.</p>
+<p><div id="csHighlight"><pre>Add</pre></div> the following HTML code as an attribute for the "Ok" div.</p>
+<div id="csHtml"><pre>&lt;div<div id="csHighlight"><pre> class="myButton"</pre></div>&gt;Ok&lt;/div&gt;</pre></div>
+<p>Refresh the browser window to view the changes. The "Ok" div should now be a button.</p>
+<p>As you can see, when you assign a class to an HTML element that element is displayed using the
+   class's CSS styling.</p></li>
+   <li><p><div id="csHighlight"><pre>Assign</pre></div> the <strong>myButton</strong> class as an attribute to other
+  four divs.</p>
+<p>Refresh the browser window to view the changes. All of the divs should now be buttons with the
+    exact same styling.</p></li>
+</ol>
+<h1>Lesson Review</h1>
+<ul id="csList">
+    <li><p>Classes provide an easy way for multiple HTML elements 
+        to have the same styling.</p></li>
+    <li><p>When declaring a class in CSS a period '.' is required in front of the class name.</p></li>
+    <li><p>In HTML classes are declared as attributes of HTML elements using the keyword "class".</p></li>
+</ul>
+</ol>
+
+	<br>
+</div>	

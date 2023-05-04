@@ -1,0 +1,103 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Hashing</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a hash table</li>
+						<li>What is a collision</li>	
+						<li>What is linear probing</li>
+						<li>What is chaining</li>	
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Hashing</h1>
+<p>A <strong>hash table</strong> is an ADT that provides a way of mapping any object (a key) to an associated object (a value). This mapping is very efficient for both adding objects 
+  to the data structure and retrieving objects from the data structure. Both the adding and retrieving work on the order of constant time O(1).</p>
+
+<p>A hash table is made up of two parts: an array (the actual table where the data to be searched is stored) and a mapping function, known as a <strong>hash function</strong>. 
+   The hash function is a mapping from the input space to the integer space that defines the indices of the array. In other words, the hash function provides a way for assigning
+   numbers to the input data such that the data can then be stored at the array index corresponding to the assigned number.
+   Let's take a simple example. First, we start with a hash table array of strings (we'll use strings as the data being stored and searched in this example). Let's say the hash table size is 12: </p>
+   
+   <div align="left"><img src="images/hash1.gif"></div>
+   
+   <p>Next we need a hash function. There are many possible ways to construct a hash function. We'll discuss these possibilities more in the next section.
+      For now, let's assume a simple hash function that takes a string as input. The returned hash value will be the sum of the ASCII characters that make 
+	  up the string mod(%) the size of the array (It is important to finish the hash function with a mod operation. This insures that the calculated array
+	  index will be within the lower and upper bounds of the array indices):</p>
+  
+  <div id="csCode"><pre>
+// hash function
+public int hashCode(String str, int array_size)
+{
+   int sum =0;
+   for(int i=0; i < str.length(); i++)
+   {
+      sum += (int)str.charAt(i);   // sum characters
+   }
+   return sum % array_size;        // perform mod
+}</pre></div>
+
+<p>Now that we have a framework in place, let's try using it. First, let's store a string into the table: "Steve".</p>
+
+<p>We run "Steve" through the hash function, and find that hashCode("Steve",12) yields 3.</p>
+
+<p>We insert it into the hash table: </p>
+
+ <div align="left"><img src="images/hash2.gif"></div>
+ 
+ <p>Let's try another string: "Spark". We run the string through the hash function and find that hashCode("Spark",12) yields 6.</p>
+
+<p>We insert it into the hash table:</p> 
+
+ <div align="left"><img src="images/hash3.gif"></div>
+ 
+ <p>Let's try another: "Notes". We run "Notes" through the hash function and find that hashCode("Notes",12) is 3.</p>
+
+<p>We insert it into the hash table: </p>
+
+ <div align="left"><img src="images/hash4.gif"></div>
+ 
+ <p>Ikes! What happened? A hash function doesn't guarantee that every input will map to a different output. Because of the nature of the hash function
+    there is always the chance that two inputs will hash to the same output. This indicates that both elements should be inserted at the same place in
+   the array, and this is impossible. This phenomenon is known as a <strong>collision</strong>.</p>
+<p>There are many algorithms for dealing with collisions, such as <strong>linear probing</strong> and <strong>chaining</strong>. While each of the methods has its advantages, 
+   we will only discuss chaining here.</p>
+<p>Chaining requires a slight modification to the data structure. Instead of storing the data elements right into the array, they are stored in linked lists.
+   Each slot in the array then points to one of these linked lists. When an element hashes to a value, it is added to the linked list at that index in the array.
+   Because a linked list has no limit on length, collisions are no longer a problem. If more than one element hashes to the same value, then both are stored in that linked list.</p>
+<p>Let's look at the above example again, this time with our modified data structure: </p>
+
+<div align="left"><img src="images/hash5.gif"></div>
+
+<p>Again, let's try adding "Steve" which hashes to 3: </p>
+
+<div align="left"><img src="images/hash6.gif"></div>
+
+<p>And "Spark" which hashes to 6: </p>
+
+<div align="left"><img src="images/hash7.gif"></div>
+
+<p>Now we add "Notes" which hashes to 3, just like "Steve": </p>
+
+<div align="left"><img src="images/hash8.gif"></div>
+
+<p>Once we have our hash table populated, a search follows the same steps as doing an insertion. We hash the data we're searching for, go to that place in the array,
+ look down the list originating from that location, and see if what we're looking for is in the list. The number of steps is O(1).</p>
+<p>Chaining allows us to solve the problem of collision in a simple yet powerful manner. Of course, there are some drawbacks. Imagine the worst case scenario where
+ through some fluke of bad luck and bad programming, every data element hashed to the same value. In that case, to do a lookup, we'd really be doing a straight linear
+ search on a linked list, which means that our search operation is back to being O(n). The worst case search time for a hash table is O(n). However, the probability of 
+ that happening is so small that, while the worst case search time is O(n), both the best and average cases are O(1).</p>
+
+<p>We will look more closely at strategies for collision resolution in the next section.</p>
+  
+<br>
+</div>	
+

@@ -1,0 +1,172 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Question 2: Climbing Club</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+    <p>Download the following workspace: <a style="color:#0000ff; font-size:1.5em" href="/ap/Final Exam/ClimbingClub.zip">Climbing Club</a> and save it to your Java folder.</p>
+     <br> <hr size=2 width="100%" align=center> <br>
+	 
+      <p>A mountain climbing club maintains a record of the climbs that its members 
+        have made. Information about a
+        climb includes the name of the mountain peak and the amount of time it 
+        took to reach the top. The information is
+        contained in the <strong>ClimbInfo</strong> class as declared below.</p>
+      <div id="apCode"><pre>
+public class ClimbInfo
+{
+   /** Creates a ClimbInfo object with name peakName and time climbTime.
+     * @param peakName the name of the mountain peak
+     * @param climbTime the number of minutes taken to complete the climb
+     */
+   <div id="apHighlight"><pre>public ClimbInfo(String peakName, int climbTime)</pre></div>
+   { /* implementation not shown */ } 
+
+   /** @return the name of the mountain peak
+     */
+   <div id="apHighlight"><pre>public String getName()</pre></div>
+   { /* implementation not shown */ }
+        
+   /** @return the number of minutes taken to complete the climb
+     */
+   <div id="apHighlight"><pre>public int getTime()</pre></div>
+   { /* implementation not shown */ }
+      
+   // There may be instance variables, constructors, and methods that 
+   //   are not shown.
+}
+</pre></div>
+      <p>The ClimbingClub class maintains a list of the climbs made by members 
+        of the club. The declaration of the <strong>ClimbingClub</strong> class is shown below. </p>
+	  <p>You will write two different implementations of the addClimb
+        method.</p>
+      <div id="apCode"><pre>
+public class ClimbingClub
+{
+   /** The list of climbs completed by members of the club.
+     * Guaranteed not to be null. Contains only non-null references.
+     */
+   <div id="apHighlight"><pre>private List&lt;ClimbInfo&gt; climbList;</pre></div>
+
+   /** Creates a new ClimbingClub object. 
+     */
+   <div id="apHighlight"><pre>public ClimbingClub()</pre></div>
+   { 
+      climbList = new ArrayList&lt;ClimbInfo&gt;(); 
+   }
+
+   /** Adds a new climb with name peakName and time climbTime to the 
+     *   list of climbs.
+     * @param peakName the name of the mountain peak climbed
+     * @param climbTime the number of minutes taken to complete the climb
+     */
+   <div id="apHighlight"><pre>public void addClimb(String peakName, int climbTime)</pre></div>
+   {
+      /* to be implemented in part (a) with ClimbInfo objects in 
+           the order they were added */
+      /* to be implemented in part (b) with ClimbInfo objects in 
+           alphabetical order by name */
+   }
+	  
+   // There may be instance variables, constructors, and methods that
+   //   are not shown.
+} 
+</pre></div>
+
+<div id="csList2">
+      <ol>
+        <li> 
+          <p>Write an implementation of the ClimbingClub method addClimb that 
+            stores the ClimbInfo objects in the order they were added. This implementation of addClimb 
+            should create a new ClimbInfo object with the given name and time. It appends a reference 
+            to that object to the end of climbList. For example, consider the following code segment.
+            
+			<div id="apCode"><pre>
+ClimbingClub hikerClub = new ClimbingClub();
+hikerClub.addClimb(&quot;Monadnock&quot;, 274);
+hikerClub.addClimb(&quot;Whiteface&quot;, 301);
+hikerClub.addClimb(&quot;Algonquin&quot;, 225);
+hikerClub.addClimb(&quot;Monadnock&quot;, 344);
+</pre></div>
+        <p>When the code segment has completed executing, the instance variable climbList would contain the
+           following entries.</p>
+        <p align="center"><img src="/ap/Final Exam/CC1.jpg" width="598" height="305"></p>
+		
+        <p align="left">Complete method <strong>addClimb</strong> below.
+		<div id="apCode"><pre>
+/** Adds a new climb with name peakName and time climbTime to the 
+  *   list of climbs.
+  * @param peakName the name of the mountain peak climbed
+  * @param climbTime the number of minutes taken to complete the climb
+  * <strong>Postcondition</strong>: The new entry is at the end of climbList;
+  * The order of the remaining entries is unchanged.
+  */
+<div id="apHighlight"><pre>public void addClimb(String peakName, int climbTime)</pre></div>
+		  
+		  
+		  
+</pre></div>
+</li>
+      <li><p>Write an implementation of the ClimbingClub method <strong>addClimb</strong> 
+          that stores the elements of climbList in alphabetical order by name (as determined by the compareTo 
+          method of the String class). This implementation of addClimb should create a new ClimbInfo 
+          object with the given name and time and then insert the object into the appropriate position in 
+          climbList. Entries that have the same name will be grouped together and can appear in any order within 
+          the group.</p> 
+		  
+		  <p>For example, consider the following code segment.
+         
+		  <div id="apCode"><pre>
+ClimbingClub hikerClub = new ClimbingClub();
+hikerClub.addClimb(&quot;Monadnock&quot;, 274);
+hikerClub.addClimb(&quot;Whiteface&quot;, 301);
+hikerClub.addClimb(&quot;Algonquin&quot;, 225);
+hikerClub.addClimb(&quot;Monadnock&quot;, 344);
+</pre></div>
+          
+		  <p>When the code segment has completed execution, the instance variable 
+          climbList would contain the following entries in either of the orders shown below.</p> 
+          <p><img src="/ap/Final Exam/CC2.jpg" width="599" height="458"></p>
+          <p>  Complete method <strong>addClimb</strong> below.</p>
+           
+		   <div id="apCode"><pre>
+/** Adds a new climb with name peakName and time climbTime to the list of climbs.
+  * Alphabetical order is determined by the compareTo method of the String class.
+  * @param peakName the name of the mountain peak climbed
+  * @param climbTime the number of minutes taken to complete the climb
+  * <strong>Precondition</strong>: entries in climbList are in alphabetical order by name.
+  * <strong>Postcondition</strong>: entries in climbList are in alphabetical order by name.
+  */
+<div id="apHighlight"><pre>public void addClimb(String peakName, int climbTime)</pre></div>
+
+
+
+</pre></div>
+        </li>
+      </ol>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>=============
+Test addClimb
+=============
+
+Part A
+-------
+Monadnock 274
+Whiteface 301
+Algonquin 225
+Monadnock 344
+
+
+Part B
+-------
+Algonquin 225
+Monadnock 344
+Monadnock 274
+Whiteface 301
+
+</pre></div>
+
+<br>
+</div>

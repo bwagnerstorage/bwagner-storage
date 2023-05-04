@@ -1,0 +1,618 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 5.1</div>
+
+<div id="csContent"> 
+<h1>IB Computer Science Internal Assessment (IA) Example</h1>
+<p>In the IA folder I posted an IA sample named WeightTraining that was written as a console program. Each year I have students
+   who would like to write their IA as a GUI program. So I thought I would rewrite the WeightTraining program
+   so that it implements a GUI interface using JavaFX, SceneBuilder, and the MVC programming pattern. </p>
+
+<p>As mentioned above, the WeightTraining program was originally a console program written for a football coach at our school.
+   This coach was responsible for managing the weight training program for all athletes in the football program. To track
+   the progress of each player he used an index card system, where each player had an index card containing their weight lifting information that included their name, 
+   bench press max, squat max, incline plane max, and power clean max. 
+</p>
+<p>Players were assigned a workout time in the weight room according to which team they played on. There was a varsity team and three
+   sub-varsity teams. Maximizing time in the weight room was critical so that every player was able to visit each of the weight lifting stations 
+   in the time allotted.
+   One way to maximize this time was to group students according to their bench press max. Since players in the same group had similar weight amounts
+   less time was spent switching out weights between reps. The coach organized the index cards into 4 stacks, according to team, and them sorted 
+   each stack according to players bench press max.</p>
+<p>The WeightTraining program was designed to digitize this process by allowing the coach to input player information into a database
+   and then provide him with time saving features like automatically placing students into groups, providing printing options, etc.</p>
+
+<h3>Download WeightTraining Project</h3>
+<ol id="csList">
+  <li><p>Click on the following link to download the NetBeans JavaFX project for this exercise:
+      <a href="JavaFX/workspaces/WeightTrainingGUI.zip" style="color:blue; font-size: 14px">WeightTraining</a></p></li>
+  </li>
+  <li><p>Copy the WeightTrainingGUI folder in the zip file to your work folder.</p></li>
+  <li><p>Open the project <strong>WeightTrainingGUI</strong> in NetBeans.</p></li>  
+</ol>
+<h1>Design Stage</h1>
+<h3>Success Criterion</h3>
+<p>Below is an updated version of the success criterion from the original program.</p>
+<ul id="csList" style="padding-bottom: 10px">
+<li style="padding-bottom: 10px">Add players to a database with the following information: name, team, grade level and current weight maxes for the 4 basic lifts - power clean, squat, bench, and incline.</li>
+<li style="padding-bottom: 10px">View a list of all players in the database in alphabetical order.</li>
+<li style="padding-bottom: 10px">View an individual player’s weight lifting data.</li>
+<li style="padding-bottom: 10px">Make changes to a player's weight lifting information.</li>
+<li style="padding-bottom: 10px">Delete a player or clear the entire database.</li>
+<li style="padding-bottom: 10px">Filter the player database by any of the player information fields.</li>
+<li style="padding-bottom: 10px">Automatically place players into workout groups according to their team and bench press max.</li>
+<li style="padding-bottom: 10px">Printout the generated workout groups. </li>
+<li style="padding-bottom: 10px">Create a GUI program that will give the program a modern look and feel and will allow for easy navigation through its different features.</li>
+<li style="padding-bottom: 10px">Include File I/O so that the data can be stored to a data file and automatically reloaded into the program each time it is launched.</li>
+</ul>
+
+<p>Using the <strong>Success Criterion</strong> I started the design of the program by using
+   SceneBuilder to create a prototype. The prototype gives the client a visual idea of what the program's user interface
+   will look like. This is a good first step because your client can give you feedback as to whether they like the look
+   and feel of the program and whether there is something they would like to add, remove, or change.</p>
+<h3>SceneBuilder</h3>
+<p>Using SceneBuilder I came up with the following design.</p>
+<div style="padding-bottom: 20px"><img src="JavaFX/images/FXML_AddPlayer.PNG"></div>
+<div style="padding-bottom: 20px"><img src="JavaFX/images/FXML_EditPlayer.PNG"></div>
+<div style="padding-bottom: 20px"><img src="JavaFX/images/FXML_DeletePlayer.PNG"></div>
+<div style="padding-bottom: 20px"><img src="JavaFX/images/FXML_FilterPlayer.PNG"></div>
+<div style="padding-bottom: 20px"><img src="JavaFX/images/FXML_Groups.PNG"></div>
+<p>Look at the scene graph created by SceneBuilder.</p>
+<div style="padding-bottom: 20px"><img src="JavaFX/images/FXML_HierarchyWindow.PNG"></div>
+<p>I used a <strong>BorderPane</strong> as the root level of the scene graph. The top section of the BorderPane contains a menubar. The left and bottom 
+   sections of the BorderPane were not used. The center section contains a TableView control. The right section contains a StackPane container.
+   By using the StackPane, which is organized like a deck of cards, I was able to incorporate 5 different panels into one scene. There is
+   an AddPlayer panel, EditPlayer panel, DeletePlayer panel, FilterPlayer panel, and a Group Panel. Each of these panels is contained
+   within a VBox container.
+</p>
+<div id="csNote">My original design did not look like the screen shots above. I had to go through several revisions before I settled on the one you see here.
+   This just illustrates that the software development cycle is indeed cyclical. Your first design is often not your final design.
+</div>
+
+<h3>MVC Design Pattern</h3>
+<p>The next step I took in the design stage was to establish a MVC design pattern by deciding on the classes I would need to represent
+   the program's model, view, and control elements.</p>
+<p>I used a structured chart to give a visual representation of the classes that will make up the MVC pattern.</p>
+<div style="padding-bottom: 10px"><img src="JavaFX/images/WeightTraining_Structure Chart.png" width="95%"></div>
+
+<h3>Class Descriptions</h3>
+<p><strong>Model</strong></p>
+<ul id="csList">
+  <li><strong>Player Class</strong> - this class will include fields for a player's name, team, classification(9,10,11,12),
+       bench press max, squat max, incline plane max, and power clean max. It will also contain getter and setter methods.</li>
+  <li><strong>MaxDatabase Class</strong> - this class will include a list of Players. It will also provide methods for file I/O,
+  adding, editing, and removing players from the list, and creating and manipulating the workout groups.</li>
+  <li><strong>Group class</strong> - this class will include a list of players assigned to a group and a field for the number of players in the group.</li>
+</ul>
+<p><strong>View</strong></p>
+<ul id="csList">
+  <li><strong>FXML_WeightTraining</strong> - this will be a fxml file generated by SceneBuilder. It will contain the definition of all
+    GUI controls used in the user interface.
+  </li>
+  <li><strong>PrintGroups</strong> - this class will provide the functionality to print the workout groups on a printer.</li>
+</ul>
+<p><strong>Control</strong></p>
+<ul id="csList">
+  <li><strong>WeightTrainingController</strong> - this class will contain references to both the model and view. It will have fields
+    for all GUI controls defined in the fxml file. It will also provide event handlers for these controls.</li>
+</ul>
+
+<p>There will be one more class named <strong>WeightTrainingGUI</strong> that will be the driver class for the program containing 
+   both the main method and start method used by JavaFX.</p>
+
+   <br>
+<h3>File I/O</h3>
+<p>The program will provide persistent storage through the use of a text file. The text file will include all players in the database.
+   The user will have the option to save the current data from a menuItem in the menubar File menu. The program will also provide a warning 
+   if the user is trying to exit the program without saving. The program will provide the user the option to save if they so chose.</p>
+<p>Below is a sample data file.</p>
+<div style="padding-bottom: 10px"><img src="JavaFX/images/textfile.png"></div>
+<br>
+<h3>Test Plan</h3>
+<p>To test the functionality of the main features of the program I will perform the following tests:</p>
+<ol id="csList"> 
+  <li style="padding-bottom: 5px"><strong>Menu Test</strong> - test the menuItems Add Player, Edit Player, Delete Player, and Filter Player from the Player menu to verify that they make their
+     corresponding panel visible on the right side of the window.</li>
+  <li style="padding-bottom: 10px"><strong>Add Player Test</strong> - add several players using the AddPlayer panel and verify that they are add to the player database and are visible in the TableView control.</li>
+  <li style="padding-bottom: 10px"><strong>File I/O Test</strong> - use the save option under the File menu and verify that the player database is saved
+     to the data file. Exit the program, then execute it again to verify the data in the data file is automatically
+     added to the player database.</li>
+  <li style="padding-bottom: 10px"><strong>Edit Player Test</strong> - change some of information in two of the players using the EditPlayer panel and verify that the information is update in the player database and
+       and the TableView. Save the player database then exit and restart the program to verify that the changes made to the player records
+       are updated on the data file.</li>
+  <li style="padding-bottom: 10px"><strong>Delete Player Test</strong> - remove a player at the beginning, middle, and end from the list of players 
+    using the DeletePlayer panel and verify that these players are removed from the player database and the TableView.
+    Save the player database then exit and restart the program to verify that the player records
+    deleted from the player database are also removed from the data file.</li>
+  <li style="padding-bottom: 10px"><strong>Filter Player Test</strong> - use the FilterPlayer panel to test each Player
+     field to verify that they can be filtered by the desired value. Try filtering by more
+     than one field to verify that functionality.</li>
+   <li style="padding-bottom: 10px"><strong>Generate Groups Test</strong> - use the Groups panel to test the Generate Group button add
+       the Team filter to verify that the groups are organized as desired. </li>
+   <li style="padding-bottom: 10px"><strong>Groups Print Test</strong> - click the Print Groups button to verify that all the
+      groups are printed on the printer in the desired format.
+   </li>
+   <li style="padding-bottom: 10px"><strong>Close Out Year Test</strong> - select the Close Out Year option under the File menu to
+       verify that the database is updated by removing all seniors and advancing underclassmen
+       to the next grade level.</li>
+</ol>
+
+<h1>Development Stage</h1>
+<h3>Data Structures and Collection Classes</h3>
+<p></p>
+<p><strong>Array</strong></p>
+<p>An <strong>array</strong> was utilized in the Group class to store the players assigned to each workout group. Since the size of the
+   groups were known before the groups were created it made since to use an array. 
+</p>
+<p><strong>ArrayList</strong></p>
+<p>For the program's main database, which was a list of Players, I chose the <strong>ArrayList</strong> class from Java's Collection classes.  
+   Since the number of players in the list was constantly changing, the 
+   ArrayList's ability to easily add and remove Players, along with its automatic resizing capability, made it a good chose.</p>
+<p><strong>ObservableList</strong></p>
+   <p>In JavaFX, to add player information to either a ListView or TableView control the data must first be transferred into a class that implements
+   the javafx.collections.ObservableList&lt;E&gt; interface. An ObservableList is a list that can have a listener attached to it so that
+   any time the list is modified the listener or event handler is notified. For example, the following code uses a Factory method
+   named observableArrayList to create an Observable ArrayList.
+</p>
+   <div id="csCode"><pre>ObservableList tableData = FXCollections.observableArrayList();</pre></div>
+<p>This is important because in order to sync the <strong>model's</strong> ArrayList of Players with the GUI controls in the <strong>view</strong> 
+   the ArrayList's data had to be added to an ObservableList, which in turn was attached to a GUI control like a ListView or TableView.
+</p>
+<p>This process was accomplished with the code like the following:</p>
+<div id="csCode"><pre>tableData.addAll(players);    // players - ArrayList of Players
+player_table.setItems(tableData);</pre></div>
+
+  <p>The parameter <strong>players</strong> is the ArrayList of Players, the variable <strong>tableData</strong> is the reference to the ObservableList, and 
+     the variable <strong>player_table</strong> is a reference to a TableView control used to display the list of Players.
+  </p>
+
+<br><br>
+<h3>List of Programming Techniques</h3>
+<p>In writing the program I utilized many programming techniques. Below is a list of some of those techniques.</p>
+<ul id="csList">
+  <li style="padding-bottom: 5px">Class Decomposition</li>
+  <li style="padding-bottom: 5px">Standardized GUI Library - JavaFX</li>
+  <li style="padding-bottom: 5px">Rapid Application Development Software (RAD) - SceneBuilder</li>
+  <li style="padding-bottom: 5px">Searching</li>
+  <li style="padding-bottom: 5px">Sorting</li>
+  <li style="padding-bottom: 5px">Data Filtering</li>
+  <li style="padding-bottom: 5px">Printer Output</li>
+</ul>
+<br>
+
+<p><strong>Class Decomposition</strong></p>
+<p>Using the MVC design pattern the program was decomposed into seven classes. The table below lists the classes according to whether 
+   they were part of the Model, View, or Controller.
+</p>
+<table id="csTable">
+<th>Model</th>
+<th>View</th>
+<th>Controller</th>
+<tr>
+   <td>Player</td>
+   <td>FXML_WeightTraining (fxml file)</td>
+   <td>WeightTrainingGUI</td>
+</tr>
+<tr>
+    <td>MaxDatabase</td>
+    <td>PrintGroups</td>
+    <td>FXML_WeightTrainingController</td>
+</tr>
+<tr>
+    <td>Group</td>
+    <td>PrintFilters</td>
+    <td></td>
+  </tr>
+</table>
+<p>For example, the <strong>Player</strong> class is shown below. It contains many of the features of a well formed Java class.
+   It has private instance variables, three constructors, getter and setter methods for all instance variables, a toString method,
+   and the class implements the Comparable interface so it also has a compareTo method.
+</p>
+<div id="csCode"><pre>
+public class Player implements Comparable<Player>
+{
+      // instance variables  
+      private String firstName;
+      private String lastName;
+      private String team;
+      private int classification;
+      private int  benchMax;
+      private int  squatMax;
+      private int  inclineMax;
+      private int  powerMax;
+      
+      // constructor    
+      public Player()
+      {
+          firstName = "";
+          lastName = "";
+          team = "";
+          classification = 0;
+          benchMax = 0;
+          squatMax = 0;
+          inclineMax = 0;
+          powerMax = 0;
+  
+      }
+      
+      // constructor
+      public Player(String last, String first, String t, int c, int b, int s, int i, int p)
+      {
+          firstName = first;
+          lastName = last;
+          team = t;
+          classification = c;
+          benchMax = b;
+          squatMax = s;
+          inclineMax = i;
+          powerMax = p;
+      }
+      
+      // constructor
+      public Player(String last, String first, String t, int c, int g, int b, int s, int i, int p)
+      {
+          firstName = first;
+          lastName = last;
+          team = t;
+          classification = c;
+          benchMax = b;
+          squatMax = s;
+          inclineMax = i;
+          powerMax = p;
+          
+      }
+      
+      // accessor methods 
+      public String getFirstName()
+      {
+          return firstName;
+      }
+      
+      public String getLastName()
+      {
+          return lastName;
+      }
+      
+      public int getBenchMax()
+      {
+          return benchMax;
+      }
+      
+      public int getSquatMax()
+      {
+          return squatMax;
+      }
+          
+      public int getInclineMax()
+      {
+          return inclineMax;
+      }
+              
+      public int getPowerMax()
+      {
+          return powerMax;
+      }
+      
+      public String getTeam()
+      {
+          return team;
+      }
+      
+      public int getClassification()
+      {
+          return classification;
+      }
+      
+      // mutator method
+      public void setFirstName(String n)
+      {
+          firstName = n;
+      }
+      
+      public void setLastName(String n)
+      {
+          lastName = n;
+      }
+      
+      public void setBenchMax(int b)
+      {
+          benchMax = b;
+      }
+      
+      public void setSquatMax(int s)
+      {
+          squatMax = s;
+      }
+          
+      public void setInclineMax(int i)
+      {
+          inclineMax = i;
+      }
+      
+      public void setPowerMax(int p)
+      {
+          powerMax = p;
+      }
+      
+      public void setTeam(String t)
+      {
+          team = t;
+      }
+      
+      public void setClassification(int c)
+      {
+          classification = c;
+      }
+      
+      // toString
+      @Override
+      public String toString()
+      {
+          return String.format("%-17s%4s%n%-17s%4s%n%-17s%4s%n%-17s%4d%n%-17s%4d%n%-17s%4d%n%-17s%4d%n%-17s%4d%n%-17s%4d",
+                        "First Name:", getFirstName(),
+                        "Last Name:", getLastName(),
+                        "Team:", getTeam(),
+                        "Classification:", getClassification(),
+                        "Bench Max:", getBenchMax(), 
+                        "Squat Max:", getSquatMax(),  
+                        "Incline Max:", getInclineMax(), 
+                        "Power Clean Max:", getPowerMax());
+      }
+      
+      // CompareTo Method
+      @Override
+      public int compareTo(Player obj)
+      {
+          int result = 0;
+          result = this.team.compareTo(obj.team);
+          if(result == 0)
+          {
+              if(this.benchMax &lt; obj.benchMax)
+                  return -1;
+              else if(this.benchMax> obj.benchMax)
+                  return 1;
+              else 
+                  return 0;
+          }
+          return result;
+      }
+}
+</pre></div>
+<br>
+<p><strong>Standardized GUI Library - JavaFX</strong></p>
+<p>In writing this GUI program I utilized the JavaFX standard library. Below is a screenshot of the program's
+   main method that extends a JavaFX class named <strong>Application</strong>. By inheriting this class the program
+   became a JavaFX application with all features afforded to JavaFX GUI program.
+</p>
+<img src="JavaFX/images/JavaFX_main.png" style="border:2px black solid" width="98%">
+<br>
+<br>
+<p><strong>Rapid Application Development Software (RAD) - SceneBuilder</strong></p>
+<p>To create the user interface for the program I utilized a RAD software package named SceneBuilder. With SceneBuilder you
+   don't have to code the JavaFX components, but instead you drag and drop these components 
+   to a work area that represents a scene in the program. In the work area you can make modifications to components properties, reposition them within the scene, and apply style sheets. 
+   When you are done you save the work area to a FXML file that can then be used to generate the user interface for the program.
+</p>
+<p>Below is a screenshot of the SceneBuilder software.</p>
+<img src="JavaFX/images/SceneBuilder1.png" style="border:2px black solid" width="98%">
+<br><br>
+<p>Here is a portion of the fxml file that was generated by SceneBuilder for the weightTraining program's main scene (i.e. window). This
+   section of code is responsible for building the program's menubar.
+</p>
+<img src="JavaFX/images/fxml_sample.png" style="border:2px black solid" width="98%">
+
+<br><br>
+<p><strong>Searching</strong></p>
+<p>To provide searching capability for the program the linear or sequential search algorithm was used to create one method for each of the
+   fields in the Player class (i.g. lastName, firstName, benchMax, etc.) The linear search was selected, first of all, because the
+   players in the ArrayList were not in an particular order, so the binary search algorithm could not be used without first sorting
+   the data. Secondly, the database was fairly small in size so the linear search was adequately efficient.
+</p>
+<p>Below is a screenshot of a method that performs a linear search on the lastName field of player in the players ArrayList.</p>
+<img src="JavaFX/images/linear search.png" style="border:2px black solid" width="98%">
+<br><br>
+<p><strong>Sorting</strong></p>
+<p>JavaFX's TableView control provides sorting on any column within a table simply be clicking on the column heading. I needed
+    to provide my own sorting capability in order to place players into workout groups. According to the success criterion, the
+    players needed to be placed into groups according to which team they were on and their bench press max. To accomplish this
+    I decided I needed to be able sort the list of players by both team and bench press max. Once the players were
+    sorted all I had to do to create the groups was to traverse the list from beginning to end placing each player into a group
+    until the specified group size was reached. When the group was full I would just start a new group. This process continued until all 
+    players were placed in a group.</p>
+
+<p>The sorting algorithm I chose to use was the <strong>Insertion Sort</strong>. The reason I selected this algorithm
+   was because it is what is called a <strong>stable</strong> sort. A sort is considered stable if elements with the same value retain their original
+   order after sorting. In other words, when a stable sort is comparing two values, if the values are equal, they remain in their same position within the list.
+   A sorting algorithm must have this property in order to be able to sort a list by more than one of its fields. In my case, I needed to sort the
+   list of players by team and bench press max.</p>
+
+<p>Below is a screenshot of this sorting algorithm.</p>
+<img src="JavaFX/images/sort.png" style="border:2px black solid" width="98%">
+<p>The method <strong>sortGroups</strong> first makes a copy of players, then its performs the sort on the copy. This
+   prevents the original list of players from being modified.</p>
+
+<p>They way that the insertion sort above was able to sort by two fields was because it made a call to the Player class's <strong>compareTo</strong> method.</p>
+<div id="csCode"><pre>@Override
+public int compareTo(Player obj)
+{
+    int result = 0;
+    result = this.team.compareTo(obj.team);
+    if(result == 0)
+    {
+        if(this.benchMax &lt; obj.benchMax)
+            return -1;
+        else if(this.benchMax> obj.benchMax)
+            return 1;
+        else 
+            return 0;
+    }
+    return result;
+}</pre></div>
+<p>The compareTo method first compares the team value of two players by calling the String class's compareTo method. If the result of the 
+   comparison was a negative number or a positive number then that value was returned and the sorting algorithm used this value to rearrange the
+   two players by their team value. If, however, the result of the comparison was zero, then the two players were on the same team, so the
+   compareTo method then compares the two players by their bench press max value. Now the sorting algorithm uses this value to rearrange
+   the two players by their bench press value.
+</p>
+
+
+<br><br>
+<p><strong>Data Filtering</strong></p>
+<p>Under the Filter menu there is an option named Filter Players that displays the following window.</p>
+<img src="JavaFX/images/Filter1.png" style="border:2px black solid" width="98%">
+<p>One of the success criterion requested by the client was the ability to filter the list of players by one of the player
+   fields so that he could, for example, only view players who were seniors or only players who were on the varsity. I thought
+   it would be cool to allow the user to filter by more than one field and also to continually update the filtered list after ever
+   character is typed or removed. For example, the screen below shows how the TableView changes after a single letter is typed in the 
+   last name field.
+</p>
+<img src="JavaFX/images/Filter2.png" style="border:2px black solid" width="98%">
+
+<p>Then again after a second letter is typed in the field.</p>
+<img src="JavaFX/images/Filter3.png" style="border:2px black solid" width="98%">
+
+<p>Then final I change fields to the team field and select Varsity from the drop down list.</p>
+<img src="JavaFX/images/Filter4.png" style="border:2px black solid" width="98%">
+
+<br><br>
+<p>My original filtering algorithm used a stack data structure, but it failed during testing when I attempted to filter by more
+   than one field. Specifically it did not display the correct list when I tried to remove a character from a previous field
+   that had been used as a filter. Below is my alternate solution.</p>
+   <div id="csCode" style="width:720px"><pre>public void filterPlayerUpdate()
+{
+      tableData.clear();
+      ArrayList&lt;Player&gt; players = maxdb.getPlayers();
+      tableData.addAll(players);
+
+      if(!lastName_field4.getText().equals("") && !lastName_field4.getText().equals(" "))
+      {
+          String name = lastName_field4.getText().trim();
+          ArrayList&lt;Player&gt; p = searchByLastName(tableData, name);
+          tableData.retainAll(p);
+      }
+      
+      if(!firstName_field4.getText().equals("") && !lastName_field4.getText().equals(" "))
+      {
+          String name = firstName_field4.getText().trim();
+          ArrayList&lt;Player&gt; p = searchByFirstName(tableData, name);
+          tableData.retainAll(p);
+      }
+      
+      if(!bench_field4.getText().equals("") && !bench_field4.getText().equals(" "))
+      {
+          int num = Integer.parseInt(bench_field4.getText().trim());
+          ArrayList&lt;Player&gt; p = searchByBenchMax(tableData, num);
+          tableData.retainAll(p);
+      }
+      
+      if(!squat_field4.getText().equals("") && !squat_field4.getText().equals(" "))
+      {
+          int num = Integer.parseInt(squat_field4.getText().trim());
+          ArrayList&lt;Player&gt; p = searchBySquatMax(tableData, num);
+          tableData.retainAll(p);
+      }
+      
+      if(!incline_field4.getText().equals("") && !incline_field4.getText().equals(" "))
+      {
+          int num = Integer.parseInt(incline_field4.getText().trim());
+          ArrayList&lt;Player&gt; p = searchByInclineMax(tableData, num);
+          tableData.retainAll(p);
+      }
+      
+      if(!power_field4.getText().equals("") && !power_field4.getText().equals(" "))
+      {
+          int num = Integer.parseInt(power_field4.getText().trim());
+          ArrayList&lt;Player&gt; p = searchByPowerMax(tableData, num);
+          tableData.retainAll(p);
+      }
+      
+      if(!team_combo4.getValue().equals("") && !team_combo4.getValue().equals(" "))
+      {
+          String name = team_combo4.getValue().trim();
+          ArrayList&lt;Player&gt; p = searchByTeam(tableData, name);
+          tableData.retainAll(p);
+      }
+      
+      if(!team_combo4.getValue().equals("") && !team_combo4.getValue().equals(" "))
+      {
+          String name = team_combo4.getValue().trim();
+          ArrayList&lt;Player&gt; p = searchByTeam(tableData, name);
+          tableData.retainAll(p);
+      }
+      
+      if(!class_combo4.getValue().equals("") && !class_combo4.getValue().equals(" "))
+      {
+          int num = Integer.parseInt(class_combo4.getValue().trim());
+          ArrayList$lt;Player&gt; p = searchByClass(tableData, num);
+          tableData.retainAll(p);
+      }
+      
+      player_table.setItems(tableData);
+}</pre></div>
+      <p>The method <strong>filterPlayerUpdate</strong> is called when one of the textfields is changed either by adding or removing
+         a character or if one of the combo boxes is modified. When the method is invoked it clears the ObservableList
+         <strong>tableData</strong> and populates it with the complete list of players. It then determines which components
+         contain filtering data and calls the search method for each of these components. The players that meet the 
+         search criteria of a component are added to a temporary ArrayList. The players in the ArrayList that are not also
+         in tableData are removed from tableData, there in performing a filter. When the method has finished applying all
+         active filters to tableData, tableData is then attached to the TableView control for display.</p>
+    
+      <p>Incidentally, the filtering algorithm is also used in the EditPanel and the DeletePanel so that a player can be found more quickly.</p>
+
+
+
+
+      <br><br>
+      <p><strong>Printer Output</strong></p>
+      <p>The ability to print player information to a printer was an important feature of the program. This feature was implemented in two classes: <strong>PrintGroups</strong>
+        and <strong>PrintFilter</strong>. These two classes were very similar because they used the same boilerplate code for setting
+        up the printer environment. This standard code was adopted from the following site:
+        <a href="https://docs.oracle.com/javase/tutorial/2d/printing/" style="color:blue" target="_blank" >https://docs.oracle.com/javase/tutorial/2d/printing/.</a></p>
+
+        <div id="csNote">The term <strong>boilerplate code</strong> refers to sections of code that have to be included in many places with little
+             or no alteration. Boiler plate code is often used for initializing some process.</div>
+
+        <p>There was, however, one method in the two classes that did require some customizing. Below is
+           a method named <strong>initTextLines</strong> from the PrintFilter class. It was in this method that the
+           the data to be printed was formatted.</p>
+
+        <div id="csCode" style="width:1000px"><pre>private void initTextLines()
+{
+    if (textLines == null)
+    {
+        int numLines=players.size();
+        textLines = new String[numLines + 2];
+        textLines[0] = String.format("%-9s%-21s%-9s%-9s%-9s%-9s%n","Team", "Name", "Bench", "Squat", "Incline", "Power");
+        textLines[1] = String.format("%s%n","--------------------------------------------------------------------");
+        int i=2;
+        while(i < numLines)
+        { 
+            textLines[i] = String.format("%-9s%-18s%8d%9d%11d%7d%n", players.get(i-2).getTeam(), 
+                                            players.get(i-2).getLastName() + ", " + players.get(i-2).getFirstName(),
+                                            players.get(i-2).getBenchMax(), players.get(i-2).getSquatMax(), 
+                                            players.get(i-2).getInclineMax(), players.get(i-2).getPowerMax());
+            
+            i+=RECORD_SIZE;   // advance to next record
+        }
+        textLines[i++] = "\n";   // add to blank lines
+        textLines[i++] = "\n";      
+    }
+}</pre></div>
+
+        <p>The instance variable <strong>players</strong> referenced the list of players to be printed. 
+           The instance variable <strong>textLines</strong> was a String array that stored every line of
+           data to be printed, including any header or footer information. The constant RECORD_SIZE specified
+           how many lines a player's data occupied in the textLines array. In the PrintFilter class, RECORD_SIZE was assigned a
+           value of 1 and in the PrintGroups class RECORD_SIZE was assigned the size of the groups.</p>
+
+    <p>Here is an example of a document printed by the PrinterFilter class.</p>
+    <img src="JavaFX/images/FilterPrint.png" style="border:2px black solid" width="98%">
+    <br><br>
+
+    <p>Here is an example of a document printed by the PrinterGroup class.</p>
+    <img src="JavaFX/images/GroupPrint.png" style="border:2px black solid" width="98%">
+    <br><br>
+
+
+  <br>
+</div>	

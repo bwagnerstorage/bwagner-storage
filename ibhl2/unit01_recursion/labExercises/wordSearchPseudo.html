@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+   <style>
+  #code  {
+  padding: 5px;
+  margin-left: 25px;
+  margin-top:15px;
+  margin-bottom:15px;
+  color: #000000;
+  background-color:#FFFFFF;
+  border: 3px solid #000000;
+  width: 800px;
+  font-family: consolas,  Inconsolata, courier new, mono;
+  font-size:1.2em;
+  box-shadow: 8px 8px 4px #CCCCCC;
+}
+
+#code pre
+{
+    padding: 0px;
+    margin: 5px;
+    color: #000000;
+	background-color:#FFFFFF;
+	border: 0;
+	font-family: consolas,  Inconsolata, courier new, mono;
+	font-size:1.1em;
+}
+</style>
+</head>
+<body style = "background-color:#EEEE">
+<h1 align="center">WordSearch PseudoCode</h1>
+
+<div id="code"><pre>
+   method searchPuzzle(String WORD)
+      loop R from 0 to PUZZLE.length - 1
+         loop C from 0 to PUZZLE[r].length - 1
+            if findWord(WORD, R, C, 0) == true then
+               return true
+            end if
+         end loop
+         return false
+      end loop
+
+
+   method boolean findWord(String WORD, int R, int C, int INDEX)
+      if NOT inBounds(R,C) then
+         return false
+      end if
+      if INDEX >= WORD.length() then  
+         return true
+      end if
+      if PUZZLE[R][C] = WORD.substring(INDEX, INDEX + 1) then
+         if findWord(WORD, R+1, C, INDEX+1)    or
+            findWord(WORD, R+1, C-1, INDEX+1)  or
+            findWord(WORD, R, C-1, INDEX+1)    or
+            findWord(WORD, R-1, C-1, INDEX+1)  or
+            findWord(WORD, R-1, C, INDEX+1)    or
+            findWord(WORD, R-1, C+1, INDEX+1)  or
+            findWord(WORD, R, C+1, INDEX+1)    or
+            findWord(WORD, R+1, C+1, INDEX+1)  then
+               return true
+         end if
+      end if
+</pre></div>
+	<br>
+   <p style="font-size: 1.2em;">Searches in 8 compass directions: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest.</p>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">String Conversion</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Use Integer class's parseInt method to convert a string to an int</li>
+					    <li>Use Double class's parseDouble method to convert a string to a double</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Integer Class</h1>
+  <p>It is sometimes necessary in your programs to convert a string to another type such as int or double. 
+     Java provides a class named <strong>Integer</strong> that has methods for this purpose. As an example, suppose
+	 you want to convert the string "35" to an integer. This can be done with the following code segment:</p>
+  <div id="csCode">
+    <pre>
+String age = "35";
+int num = Integer.<div id="csHighlight"><pre>parseInt</pre></div>(age);  <div id="csComment"><pre>// the string stored in age is</pre></div>
+                                  <div id="csComment"><pre>// converted to an integer value</pre></div> 
+</pre></div>
+  <p>The code uses the Integer class's <strong>parseInt</strong> method to convert the
+     string "35" to 35. Once converted it is assigned to the integer variable num.</p>
+  <h1>Double Class</h1>
+  <p>The same conversion can be applied to doubles as well using the Double class's <strong>parseDouble</strong> method. Refer to the following code segment:</p>
+  <div id="csCode">
+    <pre>
+String taxrate = "8.75";
+double num = Double.<div id="csHighlight"><pre>parseDouble</pre></div>(taxrate);  <div id="csComment"><pre>// the string stored in taxrate is</pre></div>
+                                           <div id="csComment"><pre>// converted to a double</pre></div></pre>
+  </div>
+  <p>The string "8.75" is converted to 8.75.</p>
+  <p><strong>Caution:</strong> The parameter of the parseInt or parseDouble methods must be a digit
+     character or your program will terminate with a run-time error. Example:</p>
+  <div id="csCode">
+    <pre>
+int num = Integer.parseInt("A");      <div id="csComment"><pre>// error</pre></div></pre>
+  </div>
+  <p>This code will cause an error because the string "A" is not a numeric value, therefore
+     the conversion cannot take place.</p>
+
+
+<br>
+</div>	
+

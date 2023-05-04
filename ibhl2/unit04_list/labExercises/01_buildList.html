@@ -1,0 +1,80 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">BuildList</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/BuildListNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >BuildList</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/BuildList.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >BuildList</a></h1>
+
+<h1>Directions</h1>
+  <p>In this assignment you are going to complete three methods: build1, build2, and build3.</p>
+  <div id="csList2">
+  <ol type="a">
+  <li>
+        <p>Complete method <strong>build1</strong>. In method build1 create 5 
+          nodes and store them in the instance variables provided at the top. 
+          Assign a value of 1 to node1, a value of 2 to node2, and so on. Using 
+          only a constructor link the 5 nodes together to form a linked list. 
+          You will need to instaniate (create) the nodes in reverse order starting 
+          with node 5. Link node 1 to node 2, node 2 to node 3, and so on.</p>
+      
+   </li>
+  <li>
+        <p>Complete method <strong>build2</strong>. Create a linked list 
+          using the same node variables, but this time use a constructor and the 
+          setNext method to build the list. First create the 5 nodes using the 
+          ListNode constructor setting each nodes <strong>next</strong> variable 
+          to null. Then using the <strong>setNext</strong> method link the nodes 
+          together from front to back. Link node1 to node2, node2 to node3, and 
+          so on.</p>
+      </li>
+	  
+  <li><p>Complete method <strong>build3</strong>. Create a link list using the variables head, newNode, and cur. Create the list with 20 nodes number from 1 to 20. To implement the method, convert the pseudocode provided below into Java.</p>
+  <div id="csOutput"><pre>   HEAD = new ListNode(1, null)
+   CUR = HEAD
+   NUM = 1;
+   while(NUM <= 20)
+      NEWNODE = new ListNode(NUM, null)
+      CUR.setNext(NEWNODE)
+      CUR = CUR.getNext()
+      NUM = NUM + 1
+   end loop</pre></div>
+  </li>
+  <li><p>Complete method <strong>build4</strong>. Create a link list using the variables head, newNode, and cur. Create the list with 20 nodes number from 1 to 20. To implement the method, convert the pseudocode provided below into Java.</p>
+  <div id="csOutput"><pre>   HEAD = null
+   CUR = null
+   loop I from 1 to 20
+      if(HEAD == null) then
+          HEAD = new ListNode(I, null)
+          CUR = HEAD
+      else
+          NEWNODE = new ListNode(I, null)
+          CUR.setNext(NEWNODE)
+          CUR = CUR.getNext()
+      end if
+   end loop</pre></div>
+  </li>
+  <li><p>Complete method <strong>build5</strong>. Create a link list using the variables head, newNode, and cur. Create the list with 20 nodes number from 1 to 20. To implement the method, convert the pseudocode provided below into Java.</p>
+  <div id="csOutput"><pre>HEAD = null
+loop I from 1 to 20
+   HEAD = new ListNode(I, HEAD)
+end loop</pre></div>
+<p>As you can see from builds 3,4, and 5 that there is more than one way to create a linked list.</p></li>
+  </ol>
+  </div>
+ 
+<h1>Source File</h1>
+<p>BuildList.java</p>
+<p>ListNode.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+1 2 3 4 5 
+1 2 3 4 5 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+</pre>
+</div>
+	<br>
+</div>	
+

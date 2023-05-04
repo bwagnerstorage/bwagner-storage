@@ -1,0 +1,135 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Scanner Class</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use the Scanner class to retrieve user input from keyboard</li>
+					    <li>How to use nextInt() method to retrieve integer input</li>
+						<li>How to use nextDouble() method to retrieve floating-point input</li>
+					    <li>print Statement</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Scanner Class</h1>
+  <p>The <strong>Scanner</strong> class is a standard Java class that can be used to read user input from the keyboard or a file. 
+     The class contains several methods for reading user input from the keyboard. Right now we will only concern
+	 ourselves with two of its methods: <strong>nextInt()</strong> and <strong>nextDouble()</strong>. Each of these methods will be demonstrated below.
+	 Before we can use the Scanner class in our programs we must include the following import statement at the top of our program. </p>
+  <div id="csCode">
+     <pre>
+import java.util.Scanner;</pre>
+  </div>
+  <p>The import statement instructs the compiler to give a program access to the 
+    Scanner class. The words java and util in the statement are called packages 
+    and we will talk more about that later. The important thing to remember here 
+    is that if you want to use the Scanner class in your program you must include 
+    the above line of code at the very top of your program. Once we have imported 
+    the Scanner class into our program, we are ready to instaniate a Scanner object. 
+    Look at the following code: </p>
+  <div id="csCode">
+     <pre>
+Scanner keyboard = new Scanner(System.in);</pre> </div>
+  <p>The above code creates a <strong>Scanner object</strong> named <strong>keyboard</strong>. The name keyboard is arbitrary, you can name your objects
+     anything you want as long as you follow the rules for declaring identifiers. It should, however, be a name that
+	 actually describes what the object does. Since the Scanner object above is going to be reading user input from 
+	 the keyboard, keyboard is a good choice for its name.</p>
+  <p>The <strong>System.in</strong> you see in the parentheses tells the computer that you want to read from the standard input device - the keyboard.</p>
+ <h1>nextInt() Method</h1>
+  <p>The <strong>nextInt()</strong> method inables users to read integer values from the keyboard. Look at the code segment below:</p>
+  <div id="csCode">
+     <pre>
+int num = keyboard.nextInt();</pre> </div>
+  <p>In this statement, the keyboard object responds to the message <strong>nextInt</strong> by waiting for the user to type a number and
+     then press the Enter key, at which point the keyboard object passes the typed number on to the program. The number
+	 is then assigned to the variable num by means of the assignment operator (=). As the user types at the keyboard, 
+	 the characters are automatically echoed in the console window, however it is not until the user presses the Enter
+	 key that this input becomes available to the program.</p>
+ <h3>print Statement</h3>
+  <p>It is customary to precede each nextInt in your program with a user prompt. A <strong>user prompt</strong> is simply a statement that informs the user
+     of the type of information they will be entering from the keyboard. For example, in the code below, I instruct the user to
+	 "Enter the number of games played-->". This prompt tells the user what kind of information is required by the program to continue. </p>
+  <div id="csCode">
+    <pre>
+System.out.<div id="csHighlight"><pre>print</pre></div>("Enter the number of games played--> ");    <div id="csComment"><pre>// user prompt</pre></div>
+int games = keyboard.nextInt();</pre>
+     </div>
+  <p>The code above is introducing a new Java statement named <strong>print</strong>. You are already familiar with println statement. The difference between the
+     print and the println statements is that the println moves the console cursor to the beginning of the next line after printing, whereas the print statement does not.
+	 Therefore when using a print statement the next item printed will be on the same line as the previous item.</p>
+  <p>The reason I used a print statement in the prompt, instead of the println, is so the user can enter the information on the same line
+     as the prompt. Notice the output from the code above, the 5 entered by the user is on the same line as the prompt.</p>
+<div id="csOutput">
+   <pre>
+Enter the number of games played--> 5</pre>
+</div>
+ <p>Lets look at a program that summarizes the steps involved in reading an integer from the console window:</p>
+  <div id="csCode" style="width:680px">
+    <pre>
+import java.util.Scanner;  <div id="csComment"><pre>// Step 1: include an import statement at the top</pre></div>
+
+public class ReadIntegers
+{
+   public static void main(String[] args)
+   {
+      Scanner keyboard = new Scanner(System.in); <div id="csComment"><pre>// Step 2: instaniate Scanner object</pre></div>
+      int num1 = 0, num2 = 0, num3 = 0;
+      
+      System.out.print("Enter 1st Number--> ");
+      num1 = keyboard.nextInt();                   <div id="csComment"><pre>// Step 3: call nextInt() method</pre></div>
+      System.out.print("Enter 2nd Number--> ");    <div id="csComment"><pre>//         and store the results </pre></div>
+      num2 = keyboard.nextInt();                   <div id="csComment"><pre>//         in integer variables</pre></div>
+      System.out.print("Enter 3rd Number--> ");
+      num3 = keyboard.nextInt();
+      
+      System.out.println();
+      System.out.println("Number 1 = " + num1);  <div id="csComment"><pre>// Step 4: use the integer variables</pre></div>
+      System.out.println("Number 2 = " + num2);  <div id="csComment"><pre>//         in your program.</pre></div>
+      System.out.println("Number 3 = " + num3);
+   }
+}</pre></div>
+ <p>Here is sample run of the program above. Keep in mind that the numbers 10, 20, and 30 where entered from the
+    keyboard while the program was running.</p>
+ <div id="csOutput">
+   <pre>
+Enter 1st Number--> 10
+Enter 2nd Number--> 20
+Enter 3rd Number--> 30
+
+Number 1 = 10
+Number 2 = 20
+Number 3 = 30</pre>
+</div>
+ <h1>nextDouble() Method</h1>
+  <p>The <strong>nextDouble</strong> method is identical to the nextInt method except that it reads floating-point or decimal values
+     from the keyboard instead of integers. Look at the following code segment:</p>
+  <div id="csCode">
+    <pre>
+Scanner keyboard = new Scanner(System.in);       
+double num = 0;                                  
+                                                 
+System.out.print("Enter a decimal number --> "); 
+num = keyboard.nextDouble();                     <div id="csComment"><pre>// read decimal value from</pre></div>
+                                                 <div id="csComment"><pre>// the keyboard</pre></div>
+System.out.println();
+System.out.println("The number entered = " + num);</pre></div>
+  <p>Here is a sample output:</p>
+   <div id="csOutput">
+   <pre>
+Enter a decimal number --> 3.14159
+
+The number entered = 3.14159</pre>
+</div>
+  <p>Notice that the value entered from the keyboard (3.14159) is a floating-point number. You are not required to include
+     the decimal point when entering values with nextDouble(). If you enter, for example, 300, the nextDouble method will
+	 convert the number to 300.0 for you.</p> 
+<br>
+</div>	
+

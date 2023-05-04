@@ -1,0 +1,137 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Variable Scope</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is variable scope</li>
+						<li>What is a default value</li>
+					    <li>How to initialize instance variables</li>
+						<li>How to initialize local variables</li>
+						<li>How to initialize String variables</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Variable Scope</h1>
+  <p><strong>Variable scope</strong> identifies which parts of a program can see or use a variable.
+     A variable exists from the point in a program where it is declared to the end of the block that
+	 contains the declaration.</p>
+
+   <p>The illustration below explains variable scope.</p>
+
+    <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Scope 1/Slide1.PNG"></li>
+          <li><img src="images/Scope 1/Slide2.PNG"></li>
+          <li><img src="images/Scope 1/Slide3.PNG"></li>
+		  <li><img src="images/Scope 1/Slide4.PNG"></li>
+		  <li><img src="images/Scope 1/Slide5.PNG"></li>
+		  <li><img src="images/Scope 1/Slide6.PNG"></li>
+		  <li><img src="images/Scope 1/Slide7.PNG"></li>		  
+		  <li><img src="images/Scope 1/Slide8.PNG"></li>		  
+		  <li><img src="images/Scope 1/Slide9.PNG"></li>		 
+		  <li><img src="images/Scope 1/Slide10.PNG"></li>
+		  <li><img src="images/Scope 1/Slide11.PNG"></li>
+		  <li><img src="images/Scope 1/Slide12.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+	<h1>Initializing Instance Variables</h1>
+	<p>From the illustration above you learned that instance variables have class scope. Instance variables
+	   are unique in that they do not have to be initialized. Recall that when you initialize a variable you
+	   are both declaring it and giving it an initial value.</p>
+	<div id="csCode">
+	<pre>
+int num = 25;   <div id="csComment"><pre> // initialized with a value of 25</pre></div></pre>
+	</div>
+	<p>If you declare an instance variable without initializing it the JVM(Java Virtual Machine) will assign the variable its default value. Look at the example below.</p>
+	<div id="csCode">
+	<pre>
+private int sum;</pre>
+	</div>
+	<p>Since the instance variable sum is declared without being initialized the JVM will assign it a default value of zero. The table below
+	   shows the default values for the primitive data types we use in this course.</p>
+	<table id="csTable">
+	<tr>
+	   <th>Data Type</th>
+	   <th>Default Value</th>
+	</tr>
+    <tr>
+	   <td>int</td>
+	   <td align="center">0</td>
+	</tr>
+	    <tr>
+	   <td>long</td>
+	   <td align="center">0</td>
+	</tr>
+	<tr>
+	   <td>double</td>
+	   <td align="center">0.0</td>
+	</tr>
+     <tr>
+	   <td>boolean</td>
+	   <td align="center">false</td>
+	</tr>
+	</table>
+	<p>If an instance variable is an object variable, that is, a variable that stores a reference to an object, it is assigned a default value of <strong>null</strong> by
+	   the JVM if it not assigned to an object. Here is an example.</p>
+		<div id="csCode">
+	<pre>
+private Scanner scan;</pre>
+	</div>
+	<p>Since instance variable scan is not assigned a reference to an object it is assigned a value of <strong>null</strong> by the JVM.</p>
+	<h1>Initializing Local Variables</h1>
+	<p>Unlike instance variables, local variables that have not be initialized are <strong>not</strong> assigned default values by the JVM. Look at the following example.</p>
+		<div id="csCode">
+	<pre>
+public void method1()
+{
+    int sum;</pre>
+}
+	</div>
+  <p>Since the local variable sum is not initialized, it is not assigned a value. A local variable that has no value can cause a 
+     compiling error in some situations. Look at the following example.</p>
+<div id="csCode">
+	<pre>
+public void method1()
+{
+    int sum;
+	
+    sum += 5;</pre>
+}
+</div>
+<p>This code will produce the following compiling error.</p>
+<div id="csOutput">
+ error: variable sum might not have been initialized
+</div>
+<p>This code causes an error because the += operator needs take the value that is currently in sum and add 5 to it
+   but it can't because sum does not have a value. The code can be fixed by initializing the variable sum to zero.</p>
+   <div id="csCode">
+	<pre>
+public void method1()
+{
+    int sum <font color="#FF0000">= 0</font>;
+	
+    sum += 5;</pre>
+}
+</div>
+<div id="csNote"><strong>Programming Note:</strong> It is a good programming practice to always initialize local variables.
+</div>
+<h3>Initializing String Variables</h3>
+<p>When initializing a String variable, if you want to assign it a default value, use the empty string "" (no space between quotes).</p>
+<div id="csCode">
+	<pre>String str = "";      <div id="csComment"><pre>// initialized to the empty string</pre></div></pre>
+</div>
+<br>
+</div>	
+

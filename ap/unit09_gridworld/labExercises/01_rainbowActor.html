@@ -1,0 +1,68 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">RainbowActor</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>RainbowActor</strong> is an Actor. A RainbowActor appears like an Actor in every way, except for its color. 
+   Every instance of a RainbowActor object is constructed with a random color.</p>
+<p>Copy the following code into a file named <strong>RainbowActor.java</strong>.</p>
+<div id="csCode">
+<pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class RainbowActor extends Actor
+{
+
+}
+</pre>
+</div>
+  
+<p>Implement a default constructor for the RainbowActor class that allows a RainbowActor to be instantiated
+   with a random color.</p>
+<p>The following code can be used to create a random color.</p>
+<div id="csCode">
+<pre>
+int r = (int)(Math.random() * 256);
+int g = (int)(Math.random() * 256);
+int b = (int)(Math.random() * 256);
+Color color = new Color(r, g, b);
+</pre>
+</div>
+<p>To assign a random color to the RainbowActor you will need to use the <strong>setColor</strong> method
+   inherited from the Actor class.</p>
+<p>Copy the following code into a file named <strong>RainbowActorRunner.java</strong>. This class
+   can be used to test the functionality of your RainbowActor class.</p>
+<div id="csCode">
+<pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class RainbowActorRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+		
+        world.add(new RainbowActor());
+        world.add(new RainbowActor());
+		
+        world.show();
+    }
+}
+</pre>
+</div>
+
+ 
+<h1>Source Files</h1>
+<p>RainbowActor.java</p>
+<p>RainbowActorRunner.java</p>
+
+	<br>
+</div>	
+

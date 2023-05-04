@@ -1,0 +1,89 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Turtle</div>
+
+<div id="csContent">
+<h1>Directions</h1>
+<p>A <strong>Turtle</strong> is a Critter. A Turtle is a Critter in every way except that
+  it only has a lifespan of 10 steps. After 10 steps a Turtle dies and is removed from the grid. Turtles cannot eat TurtleEggs.</p>
+
+<p>A <strong>MaleTurtle</strong> is a Turtle. A MaleTurtle is a Turtle in every way except that it is always the color blue.</p>
+
+<p>A <strong>FemaleTurtle</strong> is a Turtle. A FemaleTurtle is a Turtle in every way except that it lays
+   an egg when it comes in contact with a MaleTurtle. The egg is laid in a location, selected at random, from a
+   list of unoccupied locations surrounding the FemaleTurtle. A FemaleTurtle is always green.</p>
+
+<p>A <strong>TurtleEgg</strong> is an Actor. A TurtleEgg is an Actor in every way except that after being laid it incubates
+   for a period of 5 steps then it becomes a Turtle. The Turtle hatched from the egg has a 50% chance of either being a MaleTurtle
+   or a FemaleTurtle.</p>
+
+<br>
+
+<p>Implement the <strong>Turtle</strong> class. Include an instance variable of type int named <strong>lifespan</strong>.
+   Initialize lifespan with a value of 10 in a constructor. Remember that Turtles cannot eat TurtleEggs.</p>
+
+<p>Redefine the Turtle class's <strong>act</strong> method using the code below. Notice the addition of a check
+   to see if the grid is equal to null. This is necessary because Turtles remove themselves from the grid in the
+   processActors method when they reach the end of their lifespan. The methods getMoveLocations, selectMoveLocations,
+   and makeMove can no longer be executed if the Turtle is not associated with a grid.</p>
+
+<div id="csCode"><pre>
+public void act()
+{
+     <div id="csHighlight"><pre>if (getGrid() == null)
+        return;</pre></div> 
+     ArrayList&ltActor&gt actors = getActors();
+     processActors(actors);
+     if(getGrid() != null)
+     {
+         ArrayList&ltLocation&gt moveLocs = getMoveLocations();
+         Location loc = selectMoveLocation(moveLocs);
+         makeMove(loc);
+     }
+}
+</pre></div> 
+
+<p>Implement the <strong>MaleTurtle</strong> class. Initialize its color attribute to blue in a constructor.</p>
+
+<p>Implement the <strong>FemaleTurtle</strong> class. Initialize its color attribute to green in a constructor.<br>
+   Include in your implementation the behavior described above.</p>
+   
+<p>Implement the <strong>TurtleEgg</strong> class. Include in your implementation the behavior described above.</p>
+
+
+<br>
+<p>Use the <strong>TurtleRunner</strong> class below to test your new classes.</p>
+  <p>Copy the following code into a file named <strong>TurtleRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class TurtleRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        FemaleTurtle femaleTurtle = new FemaleTurtle();
+        MaleTurtle maleTurtle = new MaleTurtle();
+
+        world.add(new Location(5,5), femaleTurtle);
+        world.add(new Location(4,4), maleTurtle);
+
+        world.show();
+    }
+}
+</pre>
+  </div>
+<h1>Source Files</h1>
+<p>Turtle.java</p>
+<p>MaleTurtle.java</p>
+<p>FemaleTurtle.java</p>
+<p>TurtleEgg.java</p>
+<p>TurtleRunner.java</p>
+
+	<br>
+</div>	
+

@@ -1,0 +1,47 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center"></div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>SpiralBug</strong> is a BoxBug except that it drops flowers in a spiral pattern. The SpiralBug
+   accomplishes this by adjusting its side length each time it turns.</p>
+  
+  <p>Implement the SpiralBug class then use the SpiralBugRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>SpiralBugRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class SpiralBugRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld(new BoundedGrid(30, 30));
+		
+        SpiralBug bug1 = new SpiralBug(2);
+        bug1.setColor(Color.BLUE);
+		
+        SpiralBug bug2 = new SpiralBug(3);
+        bug2.setColor(Color.YELLOW);
+		
+        world.add(new Location(11, 6), bug1);
+        world.add(new Location(6, 10), bug2);
+        world.show();
+    }
+} 
+  </pre>
+  </div>
+
+ 
+<h1>Source Files</h1>
+<p>SpiralBug.java</p>
+<p>SpiralBugRunner.java</p>
+<h1>Sample Run</h1>
+<img src="images/SpiralBug.gif">
+	<br>
+</div>	
+

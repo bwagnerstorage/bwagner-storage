@@ -1,0 +1,153 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR FrogSimulation</div>
+
+<div id="csContent"> 
+
+<h1>NetBeans Project: <a href="apFreeResponse/FrogSimulationNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >FrogSimulation</a></h1>
+
+<div id="csList">
+<ol>
+<li>Click on the link above.</li>
+<li>Open the zip file.</li>
+<li>Copy the folder to your home directory.</li>
+<li>Open the NetBeans project FrogSimulation.</li>
+</ol>
+</div>
+<h1>Directions</h1>
+<p>This question involves reasoning about a simulation of a frog hopping in a straight line. The frog attempts to hop to a goal within a specified number of hops. The simulation is encapsulated 
+in the following <span class="cd">FrogSimulation</span> class. You will write two of the methods in this class.</p>
+<div id="apCode"><pre>public class FrogSimulation { 
+   /** Distance, in inches, from the starting position to the goal.*/ 
+   <span id="apHighlight"><pre>private int goalDistance;</pre></span>
+
+   /** Maximum number of hops allowed to reach the goal. */
+   <span id="apHighlight"><pre>private int maxHops;</pre></span>
+
+   /** Constructs a FrogSimulation where dist is the distance, in inches, 
+    *    from the starting position to the goal, and numHops is 
+    *    the maximum number of hops allowed to reach the goal. 
+    *    Precondition: dist > 0; numHops > 0 
+    */
+   <span id="apHighlight"><pre>public FrogSimulation(int dist, int numHops)</pre></span>
+   { 
+      goalDistance = dist; 
+      maxHops = numHops; 
+   }
+
+   /** 
+    * Returns an integer representing the distance, 
+    * in inches, to be moved when the frog hops.
+    */ 
+   <span id="apHighlight"><pre>private int hopDistance()</pre></span>
+      {  /* implementation not shown */  } 
+
+   /** 
+    * Simulates a frog attempting to reach the goal 
+    *   as described in part (a). 
+    * Returns true if the frog successfully reached or
+    *   passed the goal during the simulation; 
+    *   false otherwise. 
+    */
+   <span id="apHighlight"><pre>public boolean simulate()</pre></span>
+       {  /* to be implemented in part (a) */  }
+
+   /** 
+    * Runs num simulations and returns the proportion of
+    *   simulations in which the frog successfully reached
+    *   or passed the goal. 
+    *   Precondition: num > 0 
+    */
+    <span id="apHighlight"><pre>public double runSimulations(int num)</pre></span>
+       {  /* to be implemented in part (b) */  }
+       
+}</pre></div>
+
+
+<h3>Part (a)</h3>
+<p>Write the <span class="cd">simulate</span> method, which simulates the frog attempting to hop in a straight
+line to a goal from the frog's starting position of 0 within a maximum number of hops. The method returns
+<span class="cd">true</span> if the frog successfully reached the goal with in the maximum number of hops; otherwise, the method returns <span class="cd">false</span>.</p>
+
+<p>The <span class="cd">FrogSimulation</span> class provides a method called <span class="cd">hopDistance</span> that returns an integer 
+representing the distance (positive or negative) to be moved when the frog hops. 
+A positive distance represents a move toward the goal. A negative distance 
+represents a move away from the goal. The returned distance may vary from call to call.
+Each time the frog hops, its position is adjusted by the value returned by a
+call to the <span class="cd">hopDistance</span> method.</p> 
+<p>The frog hops until one of the following conditions becomes true:</p>
+<ul id="csList">
+<li><p>The frog has reached or passed the goal.</p></li>
+<li><p>The frog has reached a negative position.</p></li>
+<li><p>The frog has taken the maximum number of hops without reaching the goal.</p></li>
+</ul>
+
+<p>The following example shows a declaration of a <span class="cd">FrogSimulation</span> object 
+   for which the goal distance is 24 inches and the maximum number of hops is 5.
+   The table shows some possible outcomes of calling the <span class="cd">simulate</span> method. </p>
+
+<br>
+<img src="images/FrogSimulation1.jpg" style="width:98%"> 
+</br><br>
+<p>Complete method <span class="cd">simulate</span> below. You must use <span class="cd">hopDistance</span> appropriately to receive full credit.</p> 
+<div id="apCode"><pre>
+/** 
+ * Simulates a frog attempting to reach the goal as 
+ *   described in part (a). 
+ * Returns true if the frog successfully reached or passed
+ *   the goal during the simulation; false otherwise. 
+ */
+public boolean simulate()
+
+
+
+
+
+</pre></div>
+
+<h3>Part (b)</h3>
+<p>Write the <span class="cd">runSimulations</span> method, which performs a given number of simulations
+   and returns the proportion of simulations in which the frog successfully
+   reached or passed the goal. For example, if the parameter passed to <span class="cd">runSimulations</span> 
+   is 400, and 100 of the 400 simulate method calls returned <span class="cd"></span>true, then the
+   <span class="cd">runSimulations</span> method should return 0.25.</p>
+<p>Complete method <span class="cd">runSimulations</span> below. Assume that <span class="cd">simulate</span> works as specified, 
+   regardless of what you wrote in part (a). You must use <span class="cd">simulate</span> 
+   appropriately to receive full credit.</p>
+
+<div id="apCode"><pre>
+/** Runs num simulations and returns the proportion of simulations
+ *    in which the frog successfully reached or passed the goal. 
+ *    <strong>Precondition</strong>: num > 0 
+ */
+public double runSimulations(int num)
+
+
+
+
+
+
+</pre></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+new FrogSimulation(12, 9)
+Proportion: 0.82   This proportion should trend in the high range.
+   
+   
+new FrogSimulation(10, 2)
+Proportion: 0.36   This proportion should trend in the low range.
+   
+   
+new FrogSimulation(20, 6)
+Proportion:  0.4   This proportion should trend in the lower middle range.
+   
+   
+new FrogSimulation(30, 12)
+Proportion: 0.62   This proportion should trend in the higher middle range.
+</pre>
+</div>
+	<br>
+</div>	
+

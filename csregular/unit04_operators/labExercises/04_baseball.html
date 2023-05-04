@@ -1,0 +1,78 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Baseball</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>A friend of yours plays baseball and would like for you to write a program to calculate
+     his batting average. So far this season his stats are as follows:</p>
+	 <table id="csTable">
+<tr>
+  <th>Stat</th>
+  <th>Amount</th>
+</tr>
+<tr>
+  <td><div align="center"></div>Hits</div></td>
+  <td><div align="center">27</div></td>
+</tr>
+<tr>
+  <td><div align="center">Number of at Bats</div></td>
+  <td><div align="center">80</div></td>
+</tr>
+</table>
+<p>He would like the average rounded to the nearest thousandth and displayed as an integer 
+   like the following examples:</p>
+<table id="csTable">
+<tr>
+  <th>Average</th>
+  <th>Rounded to the Nearest Thousandth</th>
+  <th>Average Converted to Integer</th>
+</tr>
+<tr>
+  <td><div align="center">.32925</div></td>
+  <td><div align="center">.330</div></td>
+  <td><div align="center">330</div></td>
+</tr>
+<tr>
+  <td><div align="center">.26672</div></td>
+  <td><div align="center">.267</div></td>
+  <td><div align="center">267</div></td>
+</tr>
+<tr>
+  <td><div align="center">.31111</div></td>
+  <td><div align="center">.311</div></td>
+  <td><div align="center">311</div></td>
+</tr>
+</table>
+  <p>Use the following instructions in your implementation:</p>
+<div id=csList>
+<ol>
+<li>Create 4 variables named hits, atBats, battingAvg, and roundedAvg. The variables hits, atBats,
+    and roundedAvg are of type int and battingAvg is of type double. Initialize hits to 27, atBats
+    to 80, battingAvg to zero, and roundedAvg to zero.</li>
+<li>Calculate his batting average using the following formula:<br><br>
+    &nbsp;&nbsp;&nbsp;battingAvg equals hits divided by atBats<br><br>
+    *Since both hits and atBats are integers you will need to <font color="#FF0000">cast</font> 
+    one of them to a double before doing the division. </li>
+<li>To round to the nearest thousandth use the following formula:<br><br>
+    &nbsp;&nbsp;&nbsp;battingAvg equals (battingAvg + 0.0005)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *<strong>option:</strong> you can also use += operator<br><br></li>
+<li>To convert the rounded average to an integer do the following:<br>
+  - multiply battingAvg by 1000 and store the answer back into battingAvg<br>
+  - <font color="#FF0000">cast</font> battingAvg to an int and store the result in roundedAvg</li>   
+<li>The program's output should be in the same format as the Sample Run below.</li>   
+</ul>
+</div>
+<h1>Source File</h1>
+<p>Baseball.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Hits = 27
+At Bats = 80
+-------------------------
+Batting Average = 338 
+</pre>
+</div>
+	<br>
+</div>	
+

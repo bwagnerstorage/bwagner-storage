@@ -1,0 +1,111 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Elevens Lab - Activity 3</div>
+
+<div id="csContent"> 
+<h1>Shuffling the Cards in a Deck</h1>
+<p>Think about how you shuffle a deck of cards by hand. How well do you think it randomizes the cards in
+the deck?</p>
+<h1>Exploration</h1>
+<p>
+We now consider the shuffling of a deck, that is, the permutation of its cards into a random-looking
+sequence. A requirement of the shuffling procedure is that any particular permutation has just as much
+chance of occurring as any other. We will be using the Math.random method to generate random
+numbers to produce these permutations.</p>
+<p>Several ideas for designing a shuffling method come to mind. We will consider two:</p>
+
+<h3>Perfect Shuffle</h3>
+<p>Card players often shuffle by splitting the deck in half and then interleaving the two half-decks, as shown
+below.</p>
+
+<div align="center"><img src="images/Elevens2.png"></div>
+
+<p>This procedure is called a <strong>perfect shuffle</strong> if the interleaving alternates between the two half-decks.
+Unfortunately, the perfect shuffle comes nowhere near generating all possible deck permutations.
+In fact, eight shuffles of a 52-card deck return the deck to its original state!</p>
+
+<p>Consider the following "perfect shuffle" algorithm that starts with an array named cards that contains
+52 cards and creates an array named shuffled.</p>
+
+<div id="apCode"><pre>
+Initialize shuffled to contain 52 "empty" elements.
+Set k to 0.
+For j = 0 to 25,
+   - Copy cards[j] to shuffled[k];
+   - Set k to k+2.
+Set k to 1.
+For j = 26 to 51,
+   - Copy cards[j] to shuffled[k];
+   - Set k to k+2.
+</pre></div>
+
+<p>This approach moves the first half of cards to the even index positions of shuffled, and it moves
+the second half of cards to the odd index positions of shuffled.</p>
+<p>The above algorithm shuffles 52 cards. If an odd number of cards is shuffled, the array shuffled has
+one more even-indexed position than odd-indexed positions. Therefore, the first loop must copy one
+more card than the second loop does. This requires rounding up when calculating the index of the middle
+of the deck. In other words, in the first loop j must go up to (cards.length + 1) / 2,
+exclusive, and in the second loop j must begin at (cards.length + 1) / 2.</p>
+
+<h3>Selection Shuffle</h3>
+<p>Consider the following algorithm that starts with an array named cards that contains 52 cards and
+creates an array named shuffled. We will call this algorithm the "<strong>selection shuffle</strong>."</p>
+
+<div id="apCode"><pre>
+Initialize shuffled to contain 52 "empty" elements.
+Then for k = 0 to 51,
+   - Repeatedly generate a random integer j between 0 and 51, inclusive until
+     cards[j] contains a card (not marked as empty);
+   - Copy cards[j] to shuffled[k];
+   - Set cards[j] to empty.
+</pre></div>
+
+<p>This approach finds a suitable card for the kth position of the deck. Unsuitable candidates are any cards
+that have already been placed in the deck.</p>
+<p>While this is a more promising approach than the perfect shuffle, its big defect is that it runs too slowly.
+Every time an empty element is selected, it has to loop again. To determine the last element of
+shuffled requires an average of 52 calls to the random number generator.</p>
+
+<p>A better version, the "<strong>efficient selection shuffle</strong>," works as follows:</p>
+<div id="apCode"><pre>
+For k = 51 down to 1,
+   - Generate a random integer r between 0 and k, inclusive;
+   - Exchange cards[k] and cards[r].
+</pre></div>
+
+<p>This has the same structure as <strong>selection sort</strong>:</p>
+<div id="apCode"><pre>
+For k = 51 down to 1,
+   - Find r, the position of the largest value among cards[0] through cards[k];
+   - Exchange cards[k] and cards[r].
+</pre></div>
+<p>The selection shuffle algorithm does not require to a loop to find the largest (or smallest) value to swap, so
+it works quickly.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>Use the file Shuffler.java to implement the <strong>perfect
+shuffle</strong> and the <strong>efficient selection shuffle</strong> methods as described in the Exploration section of this
+activity. You will be shuffling arrays of integers.</p></li>
+<li><p>Shuffler.java also provides a main method that calls the shuffling methods. Execute the
+main method and inspect the output to see how well each shuffle method actually randomizes the
+array elements. You should execute main with different values of SHUFFLE_COUNT and
+VALUE_COUNT.</p></li>
+</ol></div>
+<h1>Questions</h1>
+<p><strong>Directions</strong>: Answer questions on a separate sheet of paper.</p>
+<div id="csList"><ol>
+<li><p>Write a static method named <strong>flip</strong> that simulates a flip of a weighted coin by returning either
+"heads" or "tails" each time it is called. The coin is twice as likely to turn up heads as tails.
+Thus, flip should return "heads" about twice as often as it returns "tails."</p></li>
+<li><p>Write a static method named <strong>arePermutations</strong> that, given two int arrays of the same length
+but with no duplicate elements, returns true if one array is a permutation of the other (i.e., the
+arrays differ only in how their contents are arranged). Otherwise, it should return false.</p></li>
+<li><p>Suppose that the initial contents of the values array in Shuffler.java are {1, 2, 3, 4}. 
+   For what sequence of random integers would the efficient selection shuffle change values to
+contain {4, 3, 2, 1}?</p></li>
+</ol></div>
+</div>
+	<br>
+</div>	
+

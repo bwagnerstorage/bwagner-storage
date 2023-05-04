@@ -1,0 +1,271 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Simple Jeroo Program</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to Create a Simple Jeroo Program</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Simple Program</h1>
+  <p>This section provides an introduction to the process of writing a Jeroo program. We introduce the form of a program,
+     the possible ways to instantiate (create) a Jeroo, and the basic actions that every Jeroo understands.</p>
+ <h1>Basic Concepts</h1>
+  <p>At one level, a Jeroo program is just a text file, but one with identifiable parts. The largest parts are called
+     methods. The body of each method consists of comments, blank lines, action statements, and control structures.</p>
+  <p>Jeroo's Java style programming language is case-sensitive. This means that upper-case and lower-case letters are 
+     considered to be different from one another. We need to be careful and consistent whenever we type the source code
+     for a Jeroo program.</p>
+  <p>It's not enough to write a program that solves the intended problem. The program's logic must be well designed, 
+     and it must be easy for someone to read and understand the program's source code. Whitespace, comments, and descriptive
+	 identifiers all contribute to making a program easier to read.</p>
+  <p>Whitespace consists of blank lines, spaces, tabs, and newline (end-of-line characters). Blank lines should be used to
+     organize the parts of the source code into groups that correspond to the logic of the algorithm. Indentations using
+	 tabs or spaces should be used to show the extent of methods and control structures. Spaces should be used to help a
+	 reader see the important parts of a line of source code. A newline (press Enter or Return on the keyboard) should be
+	 used at the end of every statement, to break up long statements into smaller parts, and to help show the major parts
+	 of the code. The recommended way to use whitespace will be demonstrated in the examples, and discussed as necessary.</p>
+  <p>Comments are phrases that a programmer inserts into a program to provide additional information for anyone who reads
+     the program. Comments are ignored when the program is executed (run). A comment in Jeroo's Java style language begins
+	 with the digraph // and continues until the end of the line.</p>
+ <h1>Form of a Jeroo Program</h1>
+  <p>Methods are the primary components of a Jeroo program. Every Jeroo program must have exactly one main method, and it may
+     contain any number of programmer-defined Jeroo methods. Programmer-defined Jeroo methods are discussed in later unit.</p>
+  <p>The main method describes how to use one or more Jeroos to solve a specific problem. The form of the main method is shown
+     in the figure below. Everything that appears between the braces should be indented 2 or 3 spaces.</p>
+   <div id="csCode"><pre>
+method main()
+{
+
+}
+</pre></div>
+<p> * The Jeroo main method is simplier than the Java main method.</p>
+ <h1>Declaring and Instantiating Jeroos</h1>
+  <p>Every Jeroo program uses from one to four Jeroo objects to solve a problem. The first part of the main method must be
+     used to declare and instantiate all the Jeroos that will be used by the program. The syntax of this statement is shown
+	 below. There are two parts to the statement, the declaration and the instantiation</p>
+  <div align="center"><img src="images/Jeroo/instantiate.gif"></div>
+<p><strong>Example</strong></p>
+   <div id="csCode"><pre>
+Jeroo bob = new Jeroo();
+</pre></div>
+ <h3>Declaration Portion</h3>
+  <p>The declaration portion indicates that the programmer plans to use a Jeroo to help solve the problem. The programmer must
+     provide an identifier (or name) for the Jeroo object. The following box contains the rules for creating identifiers in 
+	 Jeroo's programming language.</p>
+ <div id="csList">
+    <ul>
+	  <li>The first character must be a letter, a dollar sign ($), or an underscore (_).</li>
+	  <li>The remaining characters can be letters, digits, dollar signs, or underscores.</li>
+	  <li>There is no limit on the length of an identifier.</li>
+	</ul></div>
+ <h3>Instantiation Portion</h3>
+  <p>The instantiation portion is a request that the Jeroo object be created. The crucial part of the instantiation is the
+     constructor, which has the form Jeroo(...). The parentheses are to be filled in with initial values of the attributes for
+	 that Jeroo object. Every Jeroo object has three attributes: its location, its direction, and the number of flowers in its
+	 pouch. If we choose not to specify an initial value for one or more of the attributes, the constructor provides default 
+	 values as shown in table below.</p>
+  <table id="csTable">
+    <tr>
+	   <th width="150">Attribute</th>
+	   <th width="120">Default</th>
+	</tr>
+	<tr>
+	   <td><div align="center">Location</div></td>
+	   <td><div align="center">(0,0)</div></td>
+	</tr>
+	<tr>
+	   <td><div align="center">Direction</div></td>
+	   <td><div align="center">EAST</div></td>
+	</tr>
+  	<tr>
+	   <td><div align="center">Flowers</div></td>
+	   <td><div align="center">0</div></td>
+	</tr>
+  </table>
+  <p>As a convenience, the Jeroo language contains six different constructors, all but one of which allows us to provide values
+     for just some of the attributes. Default values will be provided for the others. The constructors are summarized below.</p>
+  <table id="csTable">
+    <tr>
+	   <th>Examples</th>
+	   <th>Attributes</th>
+	</tr>
+	<tr>
+	   <td>//---Accept all defaults ---<br>
+            Jeroo jessica = new Jeroo();</td>
+	   <td>Name: jessica<br>
+             Location: (0,0)<br>
+             Direction: EAST<br>
+             Flowers: 0</td>
+	</tr>
+	<tr>
+	   <td>//--- Specify just the flowers ---<br>
+            Jeroo jessica = new Jeroo(8);</td>
+	   <td>Name: jessica<br>
+            Location: (0,0)<br>
+            Direction: EAST<br>
+            Flowers: 8</td>
+	</tr>
+  	<tr>
+	   <td>//--- Specify just the location ---<br>
+            Jeroo jessica = new Jeroo(3,4);</td>
+	   <td>Name: jessica<br>
+              Location: (3,4)<br>
+              Direction: EAST<br>
+              Flowers: 0</td>
+	</tr>
+	<tr>
+	   <td>//--- Specify location and direction ---<br>
+            Jeroo jessica = new Jeroo(3,4,WEST);</td>
+	   <td>Name: jessica<br>
+             Location: (3,4)<br>
+             Direction: WEST<br>
+             Flowers: 0</td>
+	</tr>
+	<tr>
+	   <td>//--- Specify location and flowers ---<br>
+            Jeroo jessica = new Jeroo(3,4,8);</td>
+	   <td>Name: jessica<br>
+             Location: (3,4)<br>
+             Direction: EAST<br>
+             Flowers: 8</td>
+	</tr>
+	<tr>
+	   <td>//--- Specify all attributes ---<br>
+           Jeroo jessica = new Jeroo(3,4,SOUTH,8);</td>
+	   <td>Name: jessica<br>
+            Location: (3,4)<br>
+            Direction: SOUTH<br>
+            Flowers: 8</td>
+	</tr>
+  </table>
+   <p>The equal sign between the declaration and instantiation portions indicates that the newly created
+      Jeroo object is to be associated with the identifier in the declaration portion.</p>
+	  
+<p><strong>Example</strong></p>
+<div id="csCode"><pre>
+Jeroo bob = new Jeroo(5, 6, SOUTH, 10);   
+</pre></div>
+<p> * bob starts at location (5,6), facing SOUTH, with 10 flowers in pouch</p>
+  <h1>Action Statements</h1>
+   <p>An action statement is a request that a Jeroo perform a specific task. That task can be either one of the
+      basic action methods that are part of the Jeroo language or a Jeroo method that has been written by the
+	  programmer. The syntax of an action statement is shown below.</p>
+    <div align="center"><img src="images/Jeroo/actionStatements.gif"></div>
+	
+	<p><strong>Example</strong></p>
+   <div id="csCode"><pre>
+Jeroo bob = new Jeroo();
+bob.hop();
+bob.turn(LEFT);
+</pre></div>
+	
+   <p>The Jeroo language includes the seven action methods shown in table below. Three of these, give, turn,
+      and one version of hop require an argument value.</p>
+   <table id="csTable">
+    <tr>
+	   <th>Method</th>
+	   <th>Purpose</th>
+	   <th>Example</th>
+	</tr>
+	<tr>
+	   <td>hop()</div></td>
+	   <td>Hop one space ahead.
+           The program terminates with an error condition if the hopping Jeroo lands in the water, lands on another Jeroo, or hops onto a net.
+           A Jeroo can hop onto a flower.</td>
+	   <td>jessica.hop();</td>
+	</tr>
+	<tr>
+	   <td>hop(number)</td>
+	   <td>Hop number times in a row, where number is a positive integer.</td>
+	   <td>jessica.hop(3);
+           jessica.hop(12);</td>
+	</tr>
+	<tr>
+	   <td>pick()</td>
+	   <td>Pick a flower from the current location. Nothing happens if there is no flower at the current location.</td>
+	   <td>jessica.pick();</td>
+	</tr>
+	<tr>
+	   <td>plant()</td>
+	   <td>Plant a flower at the current location.
+           Nothing happens if the Jeroo does not have a flower to plant.</td>
+	   <td>jessica.plant();</td>
+	</tr>
+	<tr>
+	   <td>toss()</td>
+	   <td>Toss a flower one space ahead.
+           The tossed flower is lost forever.
+           If the flower lands on a net, the net is disabled.</td>
+	   <td>jessica.toss();</td>
+	</tr>
+	<tr>
+	   <td>turn(relativeDirection)</td>
+	   <td>Turn in the indicated direction<br>
+           [ turn(AHEAD) and turn(HERE) are meaningless ]</td>
+	   <td>jessica.turn(LEFT);
+           jessica.turn(RIGHT);</td>
+	</tr>
+	<tr>
+	   <td>give(relativeDirection)</td>
+	   <td>Give a flower to a Jeroo in a neighboring cell in the indicated direction. 
+	       Nothing happens if the giving Jeroo has no flowers or if there is no Jeroo in the indicated direction.<br>
+           [give(HERE) is meaningless ]</td>
+	   <td>jessica.give(LEFT);
+           jessica.give(RIGHT);</td>
+	</tr>
+  </table>
+  <h1>Example - Pick and Plant</h1>
+  <p>This section contains an extended example that demonstrates a recommended process for converting an algorithm into completed source code.
+     The problem statement and the detailed algorithm are repeated here for your convenience.</p>
+  <h3>Problem Statement</h3>
+  <div align="center"><img src="images/Jeroo/pickandplant.gif"></div>
+  <br><br>
+  <h3>Detailed Algorithm</h3>
+  <p>Let's name the jeroo Bobby.<br>
+     Bobby should do the following<br>
+      &nbsp;&nbsp;&nbsp;Get the flower<br>
+      &nbsp;&nbsp;&nbsp;Hop 3 times<br>
+      &nbsp;&nbsp;&nbsp;Pick the flower<br>
+      &nbsp;&nbsp;&nbsp;Put the flower<br>
+      &nbsp;&nbsp;&nbsp;Turn right<br>
+      &nbsp;&nbsp;&nbsp;Hop 2 times<br>
+      &nbsp;&nbsp;&nbsp;Plant a flower<br>
+      &nbsp;&nbsp;&nbsp;Hop East<br>
+      &nbsp;&nbsp;&nbsp;Turn left<br>
+      &nbsp;&nbsp;&nbsp;Hop once</p>
+  <h3>Jeroo Code for "Pick and Plant"</h3>
+  <p>A good programmer doesn't write a program all at once. Instead, the programmer will write and test the program in a series of builds.
+     Each build adds to the previous one. The high-level algorithm will guide us in this process.</p>
+  <h3>FIRST BUILD</h3>
+  <p>The recommended first build contains three things.</p>
+  <div id="csList">
+    <ol>
+	   <li>The main method</li>
+       <li>Declaration and instantiation of every Jeroo that will be used</li>
+       <li>The high-level algorithm in the form of comments.</li></ul></div> 
+    <div align="center"><img src="images/Jeroo/ppBuild1.gif"></div>
+  <p>Once the first build is working correctly, we can proceed to the others. In this case, each build will correspond to one step
+     in the high-level algorithm. It may seem like a lot of work to use four builds for such a simple program, but doing so helps
+     establish habits that will become invaluable as the programs become more complex.</p>
+ <h3>BUILD 2</h3>
+  <p>This build adds the logic to "get the flower". The blank lines help show the organization of the logic.
+     The new code is shown in boldface type.</p>
+	 <div align="center"><img src="images/Jeroo/ppBuild2.gif"></div>
+  <h3>BUILD 3</h3>
+  <p>This build adds the logic to "put the flower". The new code is shown in boldface type.</p>
+	 <div align="center"><img src="images/Jeroo/ppBuild3.gif"></div>
+  <h3>BUILD 4(Final)</h3>
+  <p>This build adds the logic to "hop East". The new code is shown in boldface type.</p>
+	 <div align="center"><img src="images/Jeroo/ppBuild4.gif"></div>
+<br>
+</div>	
+

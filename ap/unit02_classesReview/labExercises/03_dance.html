@@ -1,0 +1,326 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">School Dance</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>The student council at your school is sponsoring a dance and they have asked you to write a program
+   to help them track the number of students entering the dance and how much money is made off of 
+   ticket sales. The council has decided to sell tickets to the dance according to the Renaissance
+   incentives program. (Renaissance is the school's rewards program that offers discounts to school
+   functions for students who make good grades.)</p>
+<p>Ticket prices are as follows:</p>
+
+<p>Renaissance Level Ticket Price</p> 
+<div id="csList">
+<ul>
+<li>Gold - Free</li> 
+<li>Silver - 2.00</li> 
+<li>Bronze - 4.00</li> 
+<li>No Pass - 6.00</li>
+</ul>
+</div>
+<p>A student holding a gold card is admitted into the dance at no charge. A student holding a silver
+  card is charged 2.00 dollars, a student holding a bronze card is charged 4.00 dollars, and a 
+  student without a Renaissance card is charged 6.00 dollars.</p>
+
+<p>Copy the following code into a file named <strong>Dance.java</strong></p>
+
+  <div id="csCode">
+    <pre>
+public class Dance
+{
+   // Constants
+   public final int GoldPass = 1;
+   public final int SilverPass = 2;
+   public final int BronzePass = 3;
+   public final int NoPass = 4;
+   
+   // Instance Variables
+
+
+   
+   // Constructors
+   public Dance()
+   {
+
+
+   }
+   
+   // Methods
+
+   /** precondition:  value of code is in the range (1 to 4) inclusive.
+    *  postcondition: updates the ticketSales by the price of the ticket 
+    *     specified by the parameter code. The attendance variable is 
+    *     incremented by one.
+    *  @param code a value from (1 - 4) indicating the type of ticket
+    */
+   public void buyTicket(int code)
+   {
+
+
+   }
+
+   /** @return the value of attendance
+    */
+   public int getAttendance()
+   {
+      
+   }
+   
+   /** @return the amount of ticketSales
+    */
+   public double getTicketSales()
+   {
+      
+   } 
+}</pre>
+  </div>
+<p>Copy the following code into a file named <strong>StudentCouncil.java</strong></p>
+  <div id="csCode">
+  <pre>
+import java.util.*;
+
+public class StudentCouncil
+{ 
+    // Instance Variables
+    private Dance dance;
+    private Scanner scan;
+    
+    // Constructor
+    public StudentCouncil()
+    {
+        dance = new Dance();
+        scan = new Scanner(System.in);
+    }
+    
+    // Methods
+    public void mainMenu()
+    {
+        int ans=0;
+        
+        do
+        {
+            System.out.println("======================");
+            System.out.println("        Main Menu");
+            System.out.println("======================");
+            System.out.println("1. Buy a Ticket");
+            System.out.println("2. Print Summary Report");
+            System.out.println("3. Exit");
+            System.out.println();
+            System.out.print("Selection --> ");
+            ans = scan.nextInt();
+            System.out.println();
+            
+            if(ans == 1)
+            {
+                buyTicket();
+            }
+            else if (ans == 2)
+            {
+                printSummary();
+            }
+        
+        }
+        while(ans != 3);
+        
+    }
+    
+    /** precondition:  none
+     *  postcondition: prints a menu of ticket options and allows the 
+     *     user to select one of the items in the menu. It purchases 
+     *     a ticket according to ticket type selected.
+     */
+    public void buyTicket()
+    {       
+        
+    }
+    
+    /** precondition:  none
+     *  postcondition: prints a summary report that includes the
+     *     current number of students attending the dance and the 
+     *     current amount of money made from ticket sales.
+     */   
+    public void printSummary()
+    {
+
+    }
+	
+    public static void main(String[] args)
+    {
+        StudentCouncil app = new StudentCouncil();
+        app.mainMenu();
+    }
+}</pre>
+  </div>
+  
+<h1>Modifications</h1>
+<p>Complete the <strong>Dance</strong> class using the following specifications.</p>
+
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol start="1">
+<li>Create an instance variable of type int named <strong>attendance</strong>. This variable contains the
+    current number of students attending the dance.</li>
+<li>Create an instance variable of type double named <strong>ticketSales</strong>. This variable contains 
+    the current amount of money made off of ticket sales.</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="3">
+<li>Create a no parameter constructor that initializes both instance variables to their
+    default values.</li>
+</ol>
+</div>
+<h3>Methods</h3>
+<div id="csList">
+<ol start="4">
+<li>Complete the method <strong>buyTicket</strong> according to the specifications outlined in its pre and
+    post conditions.</li>
+<li>Complete the method <strong>getAttendance</strong> according to the specifications outlined in its
+    pre and post conditions.</li> 
+<li>Complete the method <strong>getTicketSales</strong> according to the specifications outlined in
+    its pre and post conditions</li>.
+</ol>
+</div>
+
+<p>Complete the <strong>StudentCouncil</strong> class using the following specifications.</p>
+
+<h3>Methods</h3>
+<div id="csList">
+<ol start="7">
+<li>Complete the method <strong>buyTicket</strong> according to the specifications outlined in its pre
+    and post conditions.</li>
+<li>Complete the method <strong>printSummary </strong>according to the specifications outlined in
+    its pre and post conditions.</li>
+</ol>
+</div>
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+<h1>Source File</h1>
+<p>Dance.java</p>
+<p>StudentCouncil.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+======================
+        Main Menu
+======================
+1. Buy a Ticket
+2. Print Summary Report
+3. Exit
+
+Selection --> 1
+
+===================
+     Buy Ticket
+===================
+1. Gold Pass
+2. Silver Pass
+3. Bronze Pass
+4. No Pass
+
+Selection -->1
+
+======================
+        Main Menu
+======================
+1. Buy a Ticket
+2. Print Summary Report
+3. Exit
+
+Selection --> 1
+
+===================
+     Buy Ticket
+===================
+1. Gold Pass
+2. Silver Pass
+3. Bronze Pass
+4. No Pass
+
+Selection -->2
+
+======================
+        Main Menu
+======================
+1. Buy a Ticket
+2. Print Summary Report
+3. Exit
+
+Selection --> 1
+
+===================
+     Buy Ticket
+===================
+1. Gold Pass
+2. Silver Pass
+3. Bronze Pass
+4. No Pass
+
+Selection -->3
+
+======================
+        Main Menu
+======================
+1. Buy a Ticket
+2. Print Summary Report
+3. Exit
+
+Selection --> 1
+
+===================
+     Buy Ticket
+===================
+1. Gold Pass
+2. Silver Pass
+3. Bronze Pass
+4. No Pass
+
+Selection -->4
+
+======================
+        Main Menu
+======================
+1. Buy a Ticket
+2. Print Summary Report
+3. Exit
+
+Selection --> 2
+
+
+===========================
+        Summary Report
+===========================
+Total Attendance =   4
+Ticket Sales     = $ 12.00
+
+
+======================
+        Main Menu
+======================
+1. Buy a Ticket
+2. Print Summary Report
+3. Exit
+
+Selection --> 3
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,142 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Queue1</div>
+
+<div id="csContent">
+    <h1>Directions</h1>
+    <p>Write a program that allows you to enter and delete integers from a list. All additions to the list must occur at the end of the list and all deletions must occur at the beginning of the list (FIFO). Use the <strong>LinkedList</strong> class which
+        implements the <strong>Deque</strong> interface. The program needs to be menu driven like the sample output below.</p>
+    <br>
+    <strong>interface java.util.Deque&lt;E&gt;</strong>
+
+    <table id="csTable">
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>add(E e)</td>
+            <td>Appends the specified element to the end of this list.</td>
+        </tr>
+        <tr>
+            <td>add(int index, E element)</td>
+            <td>Appends the specified element to the end of this list.</td>
+        </tr>
+        <tr>
+            <td>addFirst(E element)</td>
+            <td>Inserts the specified element at the front of this list.</td>
+        </tr>
+        <tr>
+            <td>addLast(E element)</td>
+            <td>Inserts the specified element at the end of this list.</td>
+        </tr>
+        <tr>
+            <td>clear()</td>
+            <td>Removes all of the elements from this list.</td>
+        </tr>
+        <tr>
+            <td>E element()</td>
+            <td>Retrieves, but does not remove, the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E get(int index)</td>
+            <td>Returns the element at the specified position in this list.</td>
+        </tr>
+        <tr>
+            <td>E getFirst()</td>
+            <td>Retrieves, but does not remove, the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E getLast()</td>
+            <td>Retrieves, but does not remove, the last element of this list.</td>
+        </tr>
+        <tr>
+            <td>boolean isEmpty</td>
+            <td>Returns true if this list contains no elements.</td>
+        </tr>
+        <tr>
+            <td>Iterator iterator()</td>
+            <td>Returns an iterator over the elements in this list in proper sequence.</td>
+        </tr>
+        <tr>
+            <td>ListIterator listIterator()</td>
+            <td>Returns a list iterator over the elements in this list in proper sequence.</td>
+        </tr>
+        <tr>
+            <td>E remove()</td>
+            <td>Retrieves and removes the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E remove(int index)</td>
+            <td>Removes the element at the specified position in this list.</td>
+        </tr>
+
+        <tr>
+            <td>E removeFirst()</td>
+            <td>Retrieves and removes the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E removeLast()</td>
+            <td>Retrieves and removes the last element of this list.</td>
+        </tr>
+        <tr>
+            <td>int size()</td>
+            <td>Returns the number of elements in this list.</td>
+        </tr>
+
+    </table>
+
+    <p>Each time an operation is performed on the queue the queue needs to be printed. The following method can be used to print the queue without performing a dequeue:</p>
+
+    <div id="csCode"><pre>
+public void printQueue(DeQue&ltInteger&gt queue)
+{
+   System.out.println("Current List");
+   for(Integer n : queue)
+   {
+   		System.out.print(n + " ");
+   }
+   System.out.println();
+   System.out.println();
+}
+
+</pre></div>
+    <h1>Source File</h1>
+    <p>Queue1.java</p>
+    <h1>Sample Run</h1>
+    <div id="csSampleRun">
+        <pre>
+Enter Task  A)dd,  D)elete,  E)xit A
+Enter number-> 10
+Current List
+10
+
+Enter Task  A)dd,  D)elete,  E)xit A
+Enter number-> 15
+Current List
+10 15
+
+Enter Task  A)dd,  D)elete,  E)xit A
+Enter number-> 2
+Current List
+10 15 2
+
+Enter Task  A)dd,  D)elete,  E)xit D
+Current List
+15 2
+
+Enter Task  A)dd,  D)elete,  E)xit D
+Current List
+2
+
+Enter Task  A)dd,  D)elete,  E)xit D
+Enter number-> 21
+Current List
+2 21
+
+Enter Task  A)dd,  D)elete,  E)xit E
+Current List
+</pre>
+    </div>
+    <br>
+</div>

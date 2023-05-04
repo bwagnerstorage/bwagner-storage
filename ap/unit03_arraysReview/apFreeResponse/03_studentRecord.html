@@ -1,0 +1,145 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR StudentRecord</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/StudentRecordNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >StudentRecord</a></h1>
+
+
+<h1>Directions</h1>
+<p>Consider a grade-averaging scheme in which the final average of a student's scores is computed differently from the
+   traditional average if the scores have "improved." Scores have improved if each score is greater than or equal to the
+   previous score. The final average of the scores is computed as follows. </p>
+<p>A student has n scores indexed from 0 to n-1. If the scores have improved, only those scores with indexes greater than
+   or equal to n/2 are averaged. If the scores have not improved, all the scores are averaged.</p>
+
+<p>The following table shows several lists of scores and how they would be averaged using the scheme described above. </p>
+
+<table id="csTable">
+<tr>
+<th>Student Scores</th>
+<th>Improved?</th>
+<th>Final Average </th>
+</tr>
+<tr>
+<td>50, 50, 20, 80, 53</td>
+<td align="center">No</td>
+<td>(50 + 50 + 20 + 80 + 53) / 5.0 = 50.6 </td>
+</tr>
+  
+<tr>
+<td>20, 50, 50, 53, 80</td>
+<td align="center">Yes</td>
+<td>(50 + 53 + 80) / 3.0 = 61.0 </td>
+</tr>
+   
+<tr>
+<td>20, 50, 50, 80</td>
+<td align="center">Yes</td>
+<td>(50 + 80) / 2.0 = 65.0 </td>
+</tr>
+  
+</table>
+<p>Consider the following incomplete StudentRecord class declaration. Each StudentRecord object stores a list of that student's
+   scores and contains methods to compute that student's final average. </p>
+
+<div id="apCode">
+<pre>
+public class StudentRecord
+{ 
+     <div id="apHighlight"><pre>private int[] scores;</pre></div> // contains scores.length values 
+                           // scores.length > 1 
+
+     // returns the average (arithmetic mean) of the values in scores 
+     // whose subscripts are between first and last, inclusive 
+     // precondition: 0 <= first <= last < scores.length 
+     <div id="apHighlight"><pre>private double average(int first, int last)</pre></div> 
+     { /* to be implemented in part (a) */ }
+     
+     // returns true if each successive value in scores is greater 
+     // than or equal to the previous value; 
+     // otherwise, returns false 
+     <div id="apHighlight"><pre>private boolean hasImproved() </pre></div>
+     { /* to be implemented in part (b) */ } 
+     
+     
+     // if the values in scores have improved, returns the average 
+     // of the elements in scores with indexes greater than or equal 
+     // to scores.length/2; 
+     // otherwise, returns the average of all of the values in scores 
+     <div id="apHighlight"><pre>public double finalAverage() </pre></div>
+     { /* to be implemented in part (c) */ } 
+
+
+     // constructors and other data fields not shown 
+}
+</pre></div>
+
+<div id="csList2">
+<ol>
+<li>
+<p>Write the StudentRecord method <strong>average</strong>. This method returns the average of the values in scores given
+   a starting and an ending index.</p>
+
+<p>Complete method <strong>average</strong> below.</p>
+
+<div id="apCode">
+<pre> 
+// constructors and other data fields not shown 
+// returns the average (arithmetic mean) of the values in scores 
+// whose subscripts are between first and last, inclusive 
+// precondition: 0 <= first <= last < scores.length 
+<div id="apHighlight"><pre>private double average(int first, int last)</pre></div> 
+
+
+</pre></div>
+</li>
+<li>
+<p>Write the StudentRecord method <strong>hasImproved</strong>.</p>
+
+Complete method <strong>hasImproved</strong> below.
+
+<div id="apCode">
+<pre>
+// returns true if each successive value in scores is greater 
+// than or equal to the previous value; 
+// otherwise, returns false 
+<div id="apHighlight"><pre>private boolean hasImproved()</pre></div> 
+
+
+</pre></div>
+</li>
+
+<li>
+<p>Write the StudentRecord method <strong>finalAverage</strong>. In writing finalAverage, you must call the methods defined
+    in parts (a) and (b). Assume that these methods work as specified, regardless of what you wrote in parts (a) and (b).</p>
+
+Complete method <strong>finalAverage</strong> below. 
+
+<div id="apCode">
+<pre>
+// if the values in scores have improved, returns the average 
+// of the elements in scores with indexes greater than or equal 
+// to scores.length/2; 
+// otherwise, returns the average of all of the values in scores 
+<div id="apHighlight"><pre>public double finalAverage()</pre></div> 
+
+
+</pre></div>
+
+
+
+</li> </ol>
+</div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+50 50 20 80 53  - 50.6
+20 50 50 53 80  - 61.0
+20 50 50 80  - 65.0
+
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,115 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Stack ADT</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+                        <li>5.1.6 Describe the characteristics and applications of a stack.</li>				
+						<li>5.1.7 Construct algorithms using the access methods of a stack.</li>
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Stack ADT</h1>
+<p>A <strong>stack</strong> is a linear collection in which access is completely restricted to just one end, called the top. The classical example is the stack of food trays found in every cafeteria. 
+   Whenever a tray is needed, it is removed from the top of the stack, and whenever clean ones come back from being washed, they are again placed on the top. No one ever takes a tray from the middle of the stack,
+   and it is even possible that trays near the bottom are never used. Stacks are said to adhere to a Last-In, First-Out protocol (LIFO). The last tray added to the stack is the first one taken.</p>
+   
+<p>The illustration below demonstrates the functionality of a stack.</p>
+
+ <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Stack/Slide1.PNG"></li>
+          <li><img src="images/Stack/Slide2.PNG"></li>
+          <li><img src="images/Stack/Slide3.PNG"></li>
+		  <li><img src="images/Stack/Slide4.PNG"></li>
+		  <li><img src="images/Stack/Slide5.PNG"></li>
+		  <li><img src="images/Stack/Slide6.PNG"></li>
+		  <li><img src="images/Stack/Slide7.PNG"></li>
+		  <li><img src="images/Stack/Slide8.PNG"></li>
+		  <li><img src="images/Stack/Slide9.PNG"></li>
+		  <li><img src="images/Stack/Slide10.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+<h1>Applications of Stacks</h1>
+<div id="csList">
+<p>Applications of stacks in computer science are numerous. Following are just a few examples:
+<ul>
+<li>Parsing expressions in compilers</li>
+<li>Translating infix expressions to postfix form and evaluating postfix expressions</li>
+<li>Backtracking algorithms</li>
+<li>Managing computer memory in support of method calls</li>
+<li>Supporting the "undo" feature in text editors, word processors, spreadsheet programs, etc.</li>
+<li>Maintaining a history of the links visited by a Web browswer</li>
+</ul></p></div>
+
+<h1>Java Collection Framework(JCF)</h1>
+
+<p>The JCF includes a Stack class. The methods used to manipulate a stack are shown below. The operations for putting items on and removing items from a stack are called push and pop, respectively.</p>
+
+<p><strong>class java.util.Stack&ltE&gt (partial)</strong></p>
+<table id="csTable">
+<tr>
+   <td width="150px">E push(E item)</td>
+   <td>pushes item onto the top of the stack; returns item</td>
+</tr>
+<tr>
+   <td>E pop()</td>
+   <td>removes and returns the element at the top of the stack</td>
+</tr>
+<tr>
+   <td>E peek()</td>
+   <td>returns the element at the top of the stack without removing it</td>
+</tr>
+<tr>
+   <td>boolean isEmpty()</td>
+   <td>returns true if stack is empty; false otherwise</td>
+</tr>
+</table> 
+
+* Note: The Stack class provided by the JCF is a subclass of another class called Vector (similar to an ArrayList). An unfortunate side effect of this implementation is that clients
+  can treat stacks as vectors by inserting, replacing, or removing an element at any position, thus violating the spirit of a stack which only allows manipulation from the top.
+
+<h1>Using a Stack</h1>
+
+<p><strong>Creating a Stack Object</strong></p>
+<div id="csCode"><pre>
+Stack&ltInteger&gt myStack = new Stack&lt;&gt;();
+</pre></div>
+<p>or</p>
+<div id="csCode"><pre>
+List&ltInteger&gt myStack = new Stack&lt;&gt;();
+</pre></div>
+
+<p><strong>Adding an Object to a Stack</strong></p>
+<div id="csCode"><pre>
+myStack.push(57);
+</pre></div>
+
+<p><strong>Removing an Object from a Stack</strong></p>
+<div id="csCode"><pre>
+int num = myStack.pop();
+</pre></div>
+<p><strong>Viewing the Top of a Stack</strong></p>
+<div id="csCode"><pre>
+int num = myStack.peek();  // does not remove the item
+</pre></div>
+<p><strong>Traversing a Stack</strong></p>
+<div id="csCode"><pre>
+while(!myStack.isEmpty())
+{
+   System.out.println(myStack.pop());
+}
+</pre></div>
+	
+<br>
+</div>	

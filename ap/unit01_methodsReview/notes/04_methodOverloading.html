@@ -1,0 +1,196 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Method Overloading</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is method overloading.</li>
+						<li>What is polymorphism.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+
+<h1>Method Overloading</h1>
+<p>In Java it is possible to define two or more methods, within the same class, that share the same
+   name, as long as their parameter declarations are different. Notice
+   in the example below that three print methods have been defined.</p>
+
+<div id="csCode"><pre>
+public void <div id="csHighlight"><pre>print</pre></div>(String name)
+{                                   
+    System.out.println(name);
+}
+
+public void <div id="csHighlight"><pre>print</pre></div>(String name, String id)
+{
+    System.out.println(name + " " + id);
+}
+
+public void <div id="csHighlight"><pre>print</pre></div>(String name, String id, String classification)
+{
+    System.out.println(name + " " + id + " " + classification);
+}
+</pre></div>
+ 
+<p>When this is the case, the methods are said to be overloaded, and the process is referred to as
+   <strong>method overloading</strong>. Method overloading is one of the ways that Java implements <strong>polymorphism</strong>.
+   In object-oriented programming, polymorphism (from the Greek meaning "having multiple forms") is the
+   characteristic of being able to assign a different meaning or usage to something in different
+   contexts - specifically, to allow an entity such as a method to have more than one form. In
+   the example above, from a user's point of view, there is one print method but has three different
+   forms.</p>
+
+   <p>Method overloading is one of Java's most useful features. When an overloaded method is invoked,
+      Java uses the type and/or number of arguments as its guide to determine which version of the
+	  overloaded method to actually call. Thus, overloaded methods must differ in the type and/or
+	  number of their parameters. While overloaded methods may have different return types, the
+	  return type alone is insufficient to distinguish two versions of a method. When Java 
+	  encounters a call to an overloaded method, it simply executes the version of the method whose
+	  parameters match the arguments used in the call. Here is a simple example that illustrates method
+	  overloading.</p>
+
+<div id="csCode"><pre>
+class Shape
+{
+    // calculates area of rectangle
+    public double <div id="csHighlight"><pre>area</pre></div>(double length, double width)
+    {
+        return length * width;
+    }
+	
+    // calculates area of circle
+    public double <div id="csHighlight"><pre>area</pre></div>(double radius)
+    {
+         return Math.PI * radius * radius;
+    }
+}
+
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Shape rectangle = new Shape();
+        System.out.println("Area of Rectangle = " + rectangle.area(10, 20);
+
+        Shape circle = new Shape();
+        System.out.println("Area of Circle = " + circle.area(5);
+    }
+}
+</pre></div>
+
+<p>The Shape class defines two methods both with the name area. The first method calculates the area
+   of rectangle and has two parameters representing its length and width.</p>
+<div id="csCode"><pre>
+public double area(double length, double width)
+{
+   return length * width;
+}
+</pre></div>
+ 
+<p>The second method calculates the area of circle and has one parameter representing its radius.</p>
+<div id="csCode"><pre>
+public double area(double radius)
+{
+   return Math.PI * radius * radius;
+}
+</pre></div>
+ 
+<h1>Constructors</h1>
+<p>A common application for method overloading is in the defining of class constructors.
+  Recall that a constructor is a special method for initializing a new instance of a class.
+  The constructor methods for a class have the same name as the class. Look at the following example.</p>
+<div id="csCode"><pre>
+class Dog
+{
+    // instance variables
+    private String breed;
+    private String name;
+    private int age;
+
+    public <div id="csHighlight"><pre>Dog</pre></div>()
+    {
+        breed = "";
+        name = "";
+        age = 0;
+    }
+
+    public <div id="csHighlight"><pre>Dog</pre></div>(String b)
+    {
+        breed = b;
+        name = "";
+        age = 0;
+    }
+
+    public <div id="csHighlight"><pre>Dog</pre></div>(String b, String n)
+    {
+        breed = b;
+        name = n;
+        age = 0;
+    }
+
+    public <div id="csHighlight"><pre>Dog</pre></div>(String b, String n, int a)
+    {
+        breed = b;
+        name = n;
+        age = a;
+    }
+}
+
+public class MyProgram
+{
+    public static void main(String [] args)
+    {
+        Dog dog1 = new Dog();
+        Dog dog2 = new Dog("Golden Retriever");
+        Dog dog3 = new Dog("Collie", "Lassie");
+        Dog dog4 = new Dog("German Shepherd", "Max", 3);
+    }
+}
+</pre></div>
+ 
+<p>The Dog class defines four constructors. Each constructor contains a different number of
+   parameters. Java determines which constructor to use when instantiating a Dog object by
+   looking at the type and/or number of parameters.</p>
+
+<h3>JButton Class</h3>
+  <p>Many classes defined in Java provide more than one constructor. This allows 
+    programmers more control over the initial state of their objects. As an example, 
+    the table below lists all of the constructors defined for the JButton class 
+    that is part of Java's Swing widget toolkit.</p>
+
+
+<table id="csTable">
+  <tr>
+     <td>JButton()</td>
+     <td>Creates a button with no set text or icon. </td>
+  </tr>
+    <tr>
+     <td>JButton(Action a)</td>
+     <td>Creates a button where properties are taken from the Action supplied. </td>
+  </tr>
+    <tr>
+     <td>JButton(Icon icon)</td>
+     <td>Creates a button with an icon. </td>
+  </tr>
+    <tr>
+     <td>JButton(String text)</td>
+     <td>Creates a button with text. </td>
+  </tr>
+    <tr>
+     <td>JButton(String text, Icon icon)</td>
+     <td>Creates a button with initial text and an icon.</td>
+  </tr>
+</table> 
+   
+<p>The JButton class provides five different constructors for creating buttons.</p>
+
+
+<br>
+</div>	
+

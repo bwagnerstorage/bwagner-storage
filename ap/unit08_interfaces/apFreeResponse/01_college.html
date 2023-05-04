@@ -1,0 +1,153 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR College</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/CollegeNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >College</a></h1>
+
+<h1>Directions</h1>
+<p>Information about a College includes its name, its tuition, and the region in which it is located. The following interface declaration will be used to store and retrieve information about a college.
+
+<div id="apCode"><pre>
+public interface College 
+{ 
+   <div id="apHighlight"><pre>String getName();</pre></div>
+   <div id="apHighlight"><pre>String getRegion();</pre></div>
+   <div id="apHighlight"><pre>int getTuition();</pre></div>
+   <div id="apHighlight"><pre>void setTuition(int newTuition);</pre></div>
+}
+</pre></div>
+<p>The following class declaration will be used to store information about
+   a group of colleges.</p>
+<div id="apCode"><pre>
+public class CollegeGroup 
+{ 
+   private ArrayList &ltCollege&gt myColleges;   
+
+   // precondition:   collegeName exists in this CollegeGroup 
+   // postcondition: tuition for collegeName is changed to newTuition 
+   <div id="apHighlight"><pre>public void updateTuition(String collegeName, int newTuition)</pre></div>
+   { 
+      /* implemented in part(a) */
+   }
+
+   // precondition:   low <= high 
+   // postcondition: returns an ArrayList of colleges in region 
+   // where low <= tuition <= high;
+   <div id="apHighlight"><pre>public ArrayList &ltCollege&gt getCollegeList(String region, int low, int high)</pre></div>
+   { 
+       /* implemented in part(b) */
+   }
+
+   // constructors, other methods and instance variables not shown
+}
+</pre></div>
+<p>The following chart shows an example of colleges that could appear in an
+   object of type CollegeGroup.</p>
+
+ <table width="50%" id="csTable">
+        <tr> 
+          <th>Name</th>
+          <th>Region</th>
+          <th>Tuition</th>
+        </tr>
+        <tr> 
+          <td>Colgate University</td>
+          <td> Northeast</td>
+          <td>$27,025</td>
+        </tr>
+        <tr> 
+          <td>Duke University</td>
+          <td>Southeast</td>
+          <td>$26,000</td>
+        </tr>
+        <tr> 
+          <td>Kalamazoo College</td>
+          <td>Midwest</td>
+          <td>$19,764</td>
+        </tr>
+        <tr> 
+          <td>Stanford University</td>
+          <td>West</td>
+          <td>$25,917</td>
+        </tr>
+        <tr> 
+          <td>Florida International University</td>
+          <td>Southeast</td>
+          <td>$10,800</td>
+        </tr>
+        <tr> 
+          <td>Dartmouth College</td>
+          <td>Northeast</td>
+          <td>$27,764</td>
+        </tr>
+        <tr> 
+          <td>Spelman College</td>
+          <td>Southeast</td>
+          <td>$11,455</td>
+        </tr>
+      </table>
+<div id="csList2">
+<ol>
+<li>
+<p>Write method <strong>updateTuition.</strong>
+   updateTuition changes the tuition of the college whose name is passed as a parameter.</p>
+<p>For example, if the object colleges is of type CollegeGroup and contains the entries
+   shown in the chart above, the call colleges.updateTuition("Colgate University", 27500)
+   would change the tuition of Colgate University to $27,500.</p> 
+
+<p>Complete method <strong>updateTuition</strong> below.</p> 
+<div id="apCode"><pre>
+// precondition:   collegeName exists in this CollegeGroup 
+// postcondition:  the tuition for collegeName is changed to newTuition 
+<div id="apHighlight"><pre>public void updateTuition(String collegeName, int newTuition)</pre></div> 
+
+
+
+</pre></div>
+</li>
+<li>
+<p>Write method <strong>getCollegeList</strong>. getCollegeList returns an ArrayList of
+   colleges that are located in the specified region and whose tuition is in the range between
+   low and high, inclusive. The size of the ArrayList should be equal to the number of colleges
+   that meet the criteria of region and tuition range.</p> 
+<p>For example, if the object colleges is of type CollegeGroup and contains the entries shown
+   in the chart above, the call colleges.getCollegeList("Southeast", 10000, 20000) should return
+   an ArrayList of size two containing Florida International University and Spelman College
+   (note that Duke University is not included because its tuition is not in the specified range
+   and Kalamazoo College is not included because it is not in the specified region).</p> 
+
+<p>Complete method <strong>getCollegeList</strong> below.</p>
+
+<div id="apCode"><pre>
+// precondition:   low <= high 
+// postcondition: returns array of colleges in region 
+//	where low <= tuition <= high;
+//	the size of the array returned is equal to the number
+//	of colleges that meet the criteria
+<div id="apHighlight"><pre>public ArrayList &ltCollege&gt getCollegeList(String region, int low, int high)</pre></div> 
+
+
+
+</pre></div>
+</li>
+</ol>
+</div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Colgate University                 Northeast $ 27500
+Duke University                    East      $ 26000
+Kalamazoo College                  Midwest   $ 19764
+Stanford University                West      $ 25917
+Florida International University   Southeast $ 10800
+Dartmouth College                  Northeast $ 27764
+Spelman College                    Southeast $ 11455
+
+Florida International University   Southeast $ 10800
+Spelman College                    Southeast $ 11455
+</pre>
+</div>
+	<br>
+</div>	
+

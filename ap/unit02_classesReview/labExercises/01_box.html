@@ -1,0 +1,137 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Box</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+  <p>Complete the class Box that calculates the area and volume of a cardboard box.</p>
+  
+  <p>Recall that programmers often use preconditions and postconditions when describing the
+     behavior of a method.</p>
+<div id="csList">
+<ul>
+<li><strong>Precondition</strong> - is a requirement that a user of a method must meet inorder for the method
+    to work properly. For example, in a banking class a deposit method might have a precondition that a deposit
+	can't be a negative number. If the deposit method is called with a negative number the method would not
+	give correct results. 
+	</li>
+<li><strong>Postcondition</strong> - is a statement that indicates what will be true when the method finishes its work.
+It is a description of what the method does. If the precondition is met the method promises that its 
+postcondition would also be met.</li>
+</ul>
+</div>
+  <p>Copy the following code into a source file named Box.java.</p>
+
+<div id="csCode">
+<pre>
+public class Box
+{
+   // Instance Variables
+
+   // Constructors
+   
+   // Methods
+    
+   /** precondition: none
+    *  postcondition: calculates and returns the area of
+    *     the box (A = 6 * side * side)
+    *  @return the area of the box
+    */
+   public int calculateArea()
+   {
+        
+   }
+    
+   /** precondition: none
+    *  postcondition: calculates and returns the volume of 
+    *     the box (V = side * side * side)
+    *  @return the volume of the box
+    */
+   public int calculateVolume()
+   {
+       
+   }
+}
+</pre></div>
+<p>Copy the testing class into a source file named BoxTester.</p>
+<div id="csCode">
+<pre>
+public class BoxTester
+{
+    public static void main(String[] args)
+    {
+        Box box1 = new Box(4);   // instantiate box object
+        
+        System.out.println("  Box 1");
+        System.out.println("=========");
+        System.out.println("Area = " + box1.calculateArea());
+        System.out.println("Volume = " + box1.calculateVolume());
+        
+        Box box2 = new Box(10);
+        
+        System.out.println("\n  Box 2");
+        System.out.println("=========");
+        System.out.println("Area = " + box2.calculateArea());
+        System.out.println("Volume = " + box2.calculateVolume());
+        
+        Box box3 = new Box(150);
+        
+        System.out.println("\n  Box 3");
+        System.out.println("=========");
+        System.out.println("Area = " + box3.calculateArea());
+        System.out.println("Volume = " + box3.calculateVolume());
+        
+    }
+}
+</pre></div>
+<h1>Modifications</h1>
+
+<h3>Instance Variables</h3>
+<div id="csList">
+<ol>
+<li>Create an instance variable of type int named <strong>side</strong>.</li>
+</ol>
+</div>
+<h3>Constructors</h3>
+<div id="csList">
+<ol start="2">
+<li>Create a one parameter constructor that initializes side to the value specified in its parameter list.
+</li>
+</ol>
+</div>
+<h3>Methods</h3>
+<div id="csList">
+<ol start="3">
+<li>Complete the method <strong>calculateArea</strong> according to the specifications outlined in its pre and post 
+    conditions.</li>
+<li>Complete the method <strong>calculateVolume</strong> according to the specifications outlined in its pre and post conditions.</li>
+</ol>
+</li>
+</ol>
+</div>
+<h1>Source File</h1>
+<p>Box.java</p>
+<p>BoxTester.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+  Box 1
+=========
+Area = 96
+Volume = 64
+
+  Box 2
+=========
+Area = 600
+Volume = 1000
+
+  Box 3
+=========
+Area = 135000
+Volume = 3375000
+</pre>
+</div>
+	<br>
+
+</div>	
+

@@ -1,0 +1,62 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">12-2 CSS Icon</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_icons.asp" target="_blank" style="color:blue">CSS Icon</a></p></li>
+<li><p><a href="https://fontawesome.com/" target="_blank" style="color:blue">FontAwesome</a></p></li>
+<li><p><a href="https://www.w3schools.com/icons/fontawesome5_intro.asp" 
+          target="_blank" style="color:blue">FontAwesome 5 Intro</a></p></li>
+
+<li><p><a href="https://material.io/resources/icons/?style=baseline" target="_blank" style="color:blue">Google Material Design Icons</a></p></li>
+<li><p><a href="https://www.w3schools.com/icons/google_icons_intro.asp" target="_blank" style="color:blue">Google Icons Intro</a></p></li>
+
+<h1>Introduction</h1>
+
+<h1>Lab Exercise</h1>
+  <ol id="csList">
+    <li><p>Open VS Code and create a new document named <strong>12_2_icon.html</strong> 
+           and save it to your CSS folder.</p></li>
+    <li><p>Give the document the title: <strong>12_2_icon</strong>.</p></li>
+    <li><p>Add the following starter code to the html document.</p>
+    <div id="csHTML"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+      &lt;title&gt;Icon2&lt;/title&gt;
+      &lt;script src="https://kit.fontawesome.com/ce5f59b212.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+      &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"&gt;
+      &lt;style&gt;
+         body {
+            margin: 20px; 
+         }
+         #b1 {
+            font-size: 4.0em;
+            color:red;
+            border: 5px solid black;
+            border-radius: 20px;
+            padding: 10px;
+         }
+         #b1:hover {
+            cursor: pointer;
+            background-color: blue;
+         }
+      &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;button id="b1" onclick="window.open('https://www.texashealth.org/denton/','_blank');"&gt;
+      &lt;i class="fas fa-ambulance"&gt;&lt;/i&gt;&lt;/button&gt;
+   
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+
+<li><p>Display the html document in a browser. Hover the mouse over the ambulance icon and then click the mouse button. As you can see, one of the fun uses of icons is to create your own custom buttons.</p></li>
+<li><p>Using the html and css for the ambulance button create your own button next to the ambulance button with an icon selected from one of the icon libraries.</p></li>
+<li><p>Your button should be similar to the ambulance button, but also should have your own custom styling, such as different colors, border-size, padding, and margins.</p></li>
+<li><p>Create a button tag in the body section of the html with the id "b2".</p></li>
+<li><p>Link the button to a website so that when a user clicks on the button the site will appear in a new tab.</p></li>
+	<br>
+</div>	

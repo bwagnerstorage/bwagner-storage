@@ -1,0 +1,172 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR DepartmentStore</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/DepartmentStoreNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >DepartmentStore</a></h1>
+
+<h1>Directions</h1>
+<p>Consider a program that keeps track of transactions in a large department store. 
+   Two classes are used to handle the two types of transactions that can occur during 
+   the sale of an item. The class hierarchy is shown in the following diagram.</p>
+
+<div align="center"><img src="images/departmentStore.gif"></div>
+<p>The <strong>Transaction</strong> class is defined below:</p>
+<div id="apCode">
+<pre>
+public class Transaction
+{
+    public static final double TAX_RATE = 0.0825;
+	
+    // instance variables
+    private String myDescription;  // description of item being sold
+    private int myNumItems;        // quanitity of item being sold
+    private double myItemCost;     // unit cost of item being sold
+    
+    // constructor
+    <div id="apHighlight"><pre>public Transaction(String description, int numItems, double itemCost)</pre></div>
+    {
+        myDescription = description;
+        myNumItems = numItems;
+        myItemCost = itemCost;
+    }
+    
+    // accessor methods
+    <div id="apHighlight"><pre>public String getDescription()</pre></div>
+    {
+        return myDescription;
+    }
+    
+    <div id="apHighlight"><pre>public int getNumItems()</pre></div>
+    {
+        return myNumItems;
+    }
+    
+    <div id="apHighlight"><pre>public double getItemCost()</pre></div>
+    {
+        return myItemCost;
+    }
+    
+    // postcondition: calculates the total sale price of an item
+    //                including tax.
+    <div id="apHighlight"><pre>public double getTotal()</pre></div>
+    {
+        double cost = myNumItems * myItemCost;
+        double tax = cost * TAX_RATE;
+        return cost + tax;
+    }
+    
+    <div id="apHighlight"><pre>public String toString()</pre></div>
+    {
+        String str = "";
+        str = "Description      : " + myDescription + "\n" +
+              "Quantity         : " + myNumItems  + "\n" +
+              "Cost             : " + myItemCost  + "\n" +
+              "Total Cost       : " + getTotal();
+        return str;
+    }
+}
+</pre>
+</div>
+<p>The <strong>Transaction</strong> class represents a general transaction. A general transaction consists of a
+   description of the item, the quantity being purchased, the unit cost of the item, and the total
+   cost of the item. The total cost is calculated in three steps. The first step is to calculate a 
+   subtotal by multiplying the unit cost by quantity being purchased. In the second step the subtotal
+   is multiplied by the tax rate to get the total amount of tax. And in the last step the subtotal
+   is added to the tax to get the total cost of the item.</p>
+
+<p>The <strong>toString</strong> method represents information about the transaction.</p>
+
+<p>The <strong>Sale</strong> class represents a sale transaction. A sale transaction is a general 
+  transaction with an added discount. The discount is calculated as percentage of the
+  total cost of the item before taxes.</p>
+
+<p>The table below lists several transactions.</p>
+
+ <table width="77%" id="csTable">
+        <tr> 
+          <th>Class</td>
+          <th>Description</td>
+          <th>Quanitity</td>
+          <th>Cost</td>
+          <th>Discount %</td>
+          <th>Discount</td>
+          <th>Total Cost</td>
+        </tr>
+        <tr> 
+          <td><div align="center">Transaction</div></td>
+          <td><div align="center">shoes</div></td>
+          <td><div align="center">1</div></td>
+          <td><div align="center">70.00</div></td>
+          <td><div align="center"></div></td>
+          <td><div align="center"></div></td>
+          <td><div align="center">75.775</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">Transaction</div></td>
+          <td><div align="center">robe</div></td>
+          <td><div align="center">2</div></td>
+          <td><div align="center">40.00</div></td>
+          <td><div align="center"></div></td>
+          <td><div align="center"></div></td>
+          <td><div align="center">86.60</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">Sale</div></td>
+          <td><div align="center">shirt</div></td>
+          <td><div align="center">3</div></td>
+          <td><div align="center">20.00</div></td>
+          <td><div align="center">20%</div></td>
+          <td><div align="center">12.00</div></td>
+          <td><div align="center">51.96</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">Sale</div></td>
+          <td><div align="center">pants</div></td>
+          <td><div align="center">1</div></td>
+          <td><div align="center">20.00</div></td>
+          <td><div align="center">40%</div></td>
+          <td><div align="center">8.00</div></td>
+          <td><div align="center">12.99</div></td>
+        </tr>
+      </table>
+<div id="csList2">
+<ol>
+<li><p>Write the complete class declaration for the class <strong>Sale</strong>. Include all necessary
+  instance variables and implementations of its constructor and method(s). This includes overriding
+  any methods that need to be updated to reflect the behavior of the Sale class. The constructor
+  should take four parameters that indicate the description of the item, the quanitity, the cost,
+  and the percentage of the discount (stored as a double).</p></li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Description      : shoes
+Quantity         : 1
+Cost             : 70.0
+Total Cost       : 75.775
+
+Description      : robe
+Quantity         : 2
+Cost             : 40.0
+Total Cost       : 86.6
+
+Description      : shirt
+Quantity         : 3
+Cost             : 20.0
+Total Cost       : 51.96
+Discount Savings : 12.0
+
+Description      : pants
+Quantity         : 1
+Cost             : 20.0
+Total Cost       : 12.99
+Discount Savings : 8.0
+
+</pre>
+</div>
+	<br>
+</div>	
+

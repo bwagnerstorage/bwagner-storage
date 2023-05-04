@@ -1,0 +1,147 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">First Java Program</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Fundamental features common to all Java programs</li>
+						<li>What is a programming language</li>
+						<li>What is a program</li>
+						<li>What is a keyword</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>First Java Program</h1>
+  <p>A <strong>programming language</strong> is used to give instructions to a computer. These instructions consist of
+     words and symbols that have been assigned special meaning. In the Java programming language
+	 there are around 50 reserved words that have a predefined meaning in the language. A <strong>program</strong> is
+	 a computer file that contains programming instructions, also known as a <strong>source file</strong> or <strong>source code</strong>. 
+	 The program below contains some of the keywords and symbols of the Java language. Let's start our programming 
+	 journey by looking at some of the key features of this simple program. These features are important because
+	 they are fundamental to all Java programs.</p>
+<div id="csCode">
+<pre>
+public class HelloWorld
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hello World");
+   }
+}
+</pre>
+</div>
+  <h3>Feature 1: All Java programs are contained within one or more classes.</h3>
+<div id="csCode">
+    <pre>
+<div id="csHighlight"><pre>public class HelloWorld</pre></div>
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hello World");
+   }
+}
+</pre>
+</div>
+<p>Classes are a very important part of the Java language. You will learn more about classes in future
+   lessons. The important point here is that every program you write will have a class. The name of
+   the class in this program is <strong>HelloWorld</strong>. A class name can be virtual any thing as long as it begins with a letter
+   (not a number or symbol) and it contains no spaces. By convention, Java programmers capitalize the
+   first letter of each word within the name. Convention means that it is not a rule that has to be
+   followed; instead it is just something that most programmers have adopted to provide some consistence 
+   among Java programs. If you were to look at another persons program and saw a word capitalized you
+   could assume, because of the convention, that it was the name of a class.</p>
+   
+  <h3>Feature 2: Curly braces are used to mark the beginning and end of a class.</h3>
+<div id="csCode">
+    <pre>
+public class HelloWorld
+<font color="#FF0000">{</font>
+   public static void main(String[] args)
+   {
+      System.out.println("Hello World");
+   }
+<font color="#FF0000">}</font>
+</pre>
+</div>
+<p>The curly braces will always occur in pairs. The open curly brace marks the beginning of the class and
+   the close curly brace marks the end. Curly braces are also used to mark other blocks of code within 
+   Java programs.</p>
+   
+   <h3>Feature 3: Every Java program will contain a main method.</h3>
+<div id="csCode">
+    <pre>
+public class HelloWorld
+{
+   <div id="csHighlight"><pre>public static void main(String[] args)</pre></div>
+   {
+      System.out.println("Hello World");
+   }
+}
+</pre>
+</div>
+<p>The main method is the entry point for the computer into your program. When your program is executed
+   the computer will execute the code starting at the main method. The main method contains
+   several keywords and symbols. The meaning of these words and symbols will become apparent in future lessons. 
+   For now all you need to know is that your programs must have a main method and it needs to look exactly
+   like the main method in this program. Notice that the beginning and end of the main method is also
+   marked by curly braces.</p>
+   
+      <h3>Feature 4: The main method will contain one or more Java statements.</h3>
+<div id="csCode">
+    <pre>
+public class HelloWorld
+{
+   public static void main(String[] args)
+   {
+      <div id="csHighlight"><pre>System.out.println("Hello World");</pre></div>
+   }
+}
+</pre>
+</div>
+<p>A program is a set of instructions. These instructions are called <strong>statements</strong> in Java. 
+   Statements can be anything from a single line of code to a complex mathematical equation. This program
+   contains one statement that instructs the computer to display the phrase "Hello World" onto the
+   terminal window.</p>
+   
+      <h3>Feature 5: All Java statements must end with a semicolon.</h3>
+<div id="csCode">
+    <pre>
+public class HelloWorld
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Hello World")<font color="#FF0000">;</font>
+   }
+}
+</pre>
+</div>
+<p>Semicolons are used to mark the end of Java statements; not spacing, tabbing, indenting, or 
+   carriage returns. All of the spacing you see in the program is removed when the program is compiled.
+   The spacing is there to make it easier for us humans to read the code. With proper use of
+   semicolons the entire program could be written on one line.</p>
+<p>Since curly braces are also used to mark the beginning and end of Java statements you
+   never put a semicolon before an open curly brace. Notice again in the program that there
+   is not a semicolon after the class definition or the main method.</p>
+<div id="csCode">
+    <pre>
+public class HelloWorld<font color="#FF0000"><-- no semicolon here</font>
+{
+   public static void main(String[] args)<font color="#FF0000"><-- no semicolon here</font>
+   {
+      System.out.println("Hello World");
+   }
+}
+</pre></div>
+      <h3>Feature 6: Java is case-sensitive.</h3>
+<p>All keywords in Java should be declared using lower-case letters. There is a difference
+   between public and Public.</p>
+   <br>
+</div>	
+

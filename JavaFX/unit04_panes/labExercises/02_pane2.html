@@ -1,0 +1,61 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 4.2</div>
+
+<div id="csContent"> 
+<h1>BorderPane</h1>
+<p>The BorderPane layout pane provides five regions in which to place nodes: top, bottom, left, right, and center. 
+   The regions can be any size. If your application does not need one of the regions, you do not need to define it
+   and no space is allocated for it.</p>
+   <div style="display: flex">
+   <img src="JavaFX/images/JavaFXExercise6_4.png" width="70%" style="margin:auto">
+  </div>
+   <p>A border pane is useful for the classic look of a tool bar at the top, a status bar at the bottom, a navigation
+      panel on the left, additional information on the right, and a working area in the center. If the window is larger
+      than the space needed for the contents of each region, the extra space is given to the center region by default.
+  </p>
+  <br>
+<hr>
+<br>
+
+<h1>Lab Exercise</h1>
+  <p>In this exercise, we will use a BorderPane as our base layout, then we will add other panes to the different regions of the 
+     BorderPane to better refine the placement of the UI controls. When complete your GUI window should look like the following:</p>
+     <div style="display: flex">
+        <img src="JavaFX/images/JavaFXExercise6_5.png" width="70%" style="margin:auto">
+     </div>
+  <br><br><br><br>
+  <ol id="csList">
+     
+     <li><P>In the project JavaFxExercise, double-click on the file FXML_BorderPane.fxml to open it in Scene Builder.</P></li>
+     <li><p>Notice that the scene graph hierarchy already contains an <strong>BorderPane</strong> at its root level.</p></li>
+      <li><p>From the Controls panel, drag-and-drop a <strong>MenuBar</strong> control onto the Top region of the BorderPane. By default, the menubar comes
+             with three menus included.</p></li>       
+      <li><p>From the Preview menu select Show Preview in Window. Resize the window. Notice that the menubar expands horizontally
+             to fill the extra space.</p></li>
+      <li><p>From the Containers panel, drag-and-drop a <strong>ScrollPane (empty)</strong> onto the Left Region of the BorderPane. 
+             A ScrollPane provides both horizontal and vertical scroll bars for data that cannot be viewed within the current
+             window size.</p></li>
+      <li><p>In the Layout panel for the ScrollPane, make the following changes:</p>
+          <ul id="csList2">
+            <li><p>Set Min Height value to 80.</p></li>
+            <li><p>Set Pref Width value to 150.</p></li>
+            <li><p>Set Pref Height value to 245.</p></li>
+          </ul>
+      </li>
+      <li><p>From the Containers panel, drag-and-drop an <strong>Accordion</strong> pane on top of the ScrollPane.</p></li>
+      <li><p>From the Preview menu select Show Preview in Window. Click on one of accordion toggles to expand it. Resize the window vertically
+             until a vertical scroll bar appears.</p></li>
+      <li><p>From the Containers panel, drag-and-drop a <strong>TabsPane</strong> onto the Center Region of the BorderPane.</p></li>
+      <li><p>From the Containers panel, drag-and-drop a <strong>BorderPane</strong> onto the Bottom Region of the main BorderPane.  
+      <li><p>From the Controls panel, drag-and-drop a <strong>Button</strong> control onto the Left region of this second BorderPane. </p></li>  
+      <li><p>From the Controls panel, drag-and-drop a <strong>Button</strong> control onto the Right region of this second BorderPane. </p></li> 
+      <li><p>From the Controls panel, drag-and-drop a <strong>Label</strong> control onto the Left region of this second BorderPane. Change
+             the text of this label to "Status Bar" and change its font size to System 18px.</p></li> 
+      <li><p>From the Preview menu select Show Preview in Window. Resize the window and notice how the different layout panes respond.</p></li>
+
+
+
+  <br>
+</div>	
+

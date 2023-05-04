@@ -1,0 +1,215 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Arithmetic Operators</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Arithmetic Operators (+,-,*,/)</li>
+						<li>Remainder Operator (%)</li>
+						<li>Integer Division vs Floating Point Division</li>
+						<li>Operator Precedence</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Arithmetic Operators</h1>
+  <p>An <strong>expression</strong> is a combination of operators and operands, like a mathematical
+    expression. The operands might be literals, variables, or constants. Expressions usually do
+    a calculation such as addition or division. The way expressions are used is basic to programming.</p>
+  <p>In Java, you can form arithmetic expressions involving addition(+), subtraction(-), multiplication(*),
+     and division (/) in basically the same way that you would form them in ordinary arithmetic or algebra.
+	 Look at the following examples,</p>
+   <table id="csTable">
+      <tr>
+	     <th>Arithmetic Expression</th>
+		 <th>Result</th>
+	  </tr>
+	  <tr>
+	     <td><div align="center">15 + 28</div></td>
+		 <td><div align="center">43</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">6 - 20</div></td>
+		 <td><div align="center">-14</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">8 * 7</div></td>
+		 <td><div align="center">56</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">81 / 9</div></td>
+		 <td><div align="center">9</div></td>
+	  </tr>
+   </table>
+   <p>The following program demonstrates variables being used in expressions.</p>
+   <div id="csCode">
+    <pre>
+public class SampleProgram
+{
+   public static void main(String[] args)
+   {
+      <div id="csComment"><pre>// declare and initialize variables</pre></div>
+      int num1 = 20;
+      int num2 = 5;
+      int num3 = 2;
+      int result1 = 0;
+      int result2 = 0;
+      int result3 = 0;
+      int result4 = 0;
+	  
+      <div id="csComment"><pre>// do calculations</pre></div>
+      result1 = num1 + num2 + num3;
+      result2 = num1 * num2 / num3;
+      result3 = (num1 + num3) / 11;
+      result4 = (num1 - num2) * num3;
+	  
+      <div id="csComment"><pre>// print results</pre></div>
+      System.out.println("Result 1 = " + result1);
+      System.out.println("Result 2 = " + result2);
+      System.out.println("Result 3 = " + result3);
+      System.out.println("Result 4 = " + result4);
+   }
+}  
+</pre>   
+   </div>
+   <div id="csOutput">
+   <pre>
+Result 1 = 27
+Result 2 = 50
+Result 3 = 2
+Result 4 = 30</pre>
+   </div>
+   <h1>Remainder Operator (%)</h1>
+   <p>Java also has another arithmetic operation: the <strong>remainder operator (%)</strong> also called the
+      <strong>modulus operator</strong>. The remainder operator returns the remainder after dividing the 
+	  second operand into the first. For example,</p>
+    <table id="csTable">
+      <tr>
+	     <th>Expression</th>
+		 <th>Result</th>
+		 <th>Explanation</th>
+	  </tr>
+	  <tr>
+	     <td><div align="center">17 % 4</div></td>
+		 <td><div align="center">1</div></td>
+		 <td><div align="center">17 divided by 4 equals 4 with a remainder of 1.</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">50 % 2</div></td>
+		 <td><div align="center">0</div></td>
+		 <td><div align="center">50 divided by 2 equals 25 with a remainder of 0.</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">9.3 % 5.1</div></td>
+		 <td><div align="center">4.2</div></td>
+		 <td><div align="center">9.3 divided by 5.1 equals 1 with a remainder of 4.2</div></td>
+	  </tr>
+   </table>
+   <h1>Division Operator (/)</h1>
+   <p>As you might expect, if either or both operands to any numeric operator are floating point
+      values, the result is a floating point value. However, the division operator produces results
+	  that are somewhat more complicated. If both operands are integers, the / operator performs
+	  <strong>integer division</strong>, meaning that any fractional part of the result is discarded. If one or the
+	  other or both operands are floating point values, the / operator performs <strong>floating point 
+	  division</strong>, and the fractional part of the result is kept. For example,</p>
+	<table id="csTable">
+      <tr>
+	     <th>Expression</th>
+		 <th>Result</th>
+		 <th>Type of Division Performed</th>
+		 <th>Explanation</th>
+	  </tr>
+	  <tr>
+	     <td><div align="center">10 / 4</div></td>
+		 <td><div align="center">2</div></td>
+		 <td><div align="center">Integer Division</div></td>
+		 <td><div align="center">4 goes into 10 2.5 times, but the fractional part (.5) is discarded so the answer is 2, an integer.</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">10.0 / 4</div></td>
+		 <td><div align="center">2.5</div></td>
+		 <td><div align="center">Floating Point Division</div></td>
+		 <td><div align="center">First operand is a floating point number. Answer is 2.5, a floating point number.</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">10 / 4.0</div></td>
+		 <td><div align="center">2.5</div></td>
+		 <td><div align="center">Floating Point Division</div></td>
+		 <td><div align="center">Second operand is a floating point number. Answer is 2.5, a floating point number.</div></td>
+	  </tr>
+	   <tr>
+	     <td><div align="center">10.0 / 4.0</div></td>
+		 <td><div align="center">2.5</div></td>
+		 <td><div align="center">Floating Point Division</div></td>
+		 <td><div align="center">Both operands are floating point numbers. Answer is 2.5, a floating point number.</div></td>
+	  </tr>
+   </table>
+   <h1>Operator Precedence</h1>
+   <p>Operators can be combined to create more complicated expressions. For example, consider the 
+      following assignment statement:</p>
+   <div id="csCode">
+    <pre>
+result = 14 + 8 / 2;</pre>   
+   </div>
+   <p>The entire right-hand side of the assignment is solved, and the answer is stored in the 
+      variable result. But what is the answer? It is 11 if the addition is done first, or it is
+	  18 if the division is done first. The order makes a big difference. In this case, the division
+	  is done before the addition, so the answer is 18. You should note that in this and other 
+	  examples literal values are used rather than variables to keep the expression simple. 
+	  The order of operations is the same no matter what the operands are.</p>
+   <p>All expressions are solved according to the same order of operations used in mathematics and
+      algebra. In the case of arithmetic operators, multiplication, division, and the remainder
+	  operator are all performed before addition and subtraction. Otherwise, arithmetic operators
+	  are done left to right.</p>
+   <p>You can change the order, however, by using parentheses. For instance, if we really wanted the
+      addition to be performed first, we could write the expression as follows:</p>
+   <div id="csCode">
+    <pre>
+result = (14 + 8) / 2;</pre>   
+   </div>
+   <p>Any expression in parentheses is done first.</p>
+   <p>After the arithmetic operations are complete, the answer is stored in the variable on the 
+      left-hand side of assignment operator (=) , in this case the variable result.</p>
+   <p>The table below shows the order of the arithmetic operators, parentheses, and the assignment
+      operator.</p>
+   <table id="csTable">
+      <tr>
+	     <th>Precedence Level</th>
+		 <th>Operator</th>
+		 <th>Operation</th>
+		 <th>Association</th>
+	  </tr>
+	  <tr>
+	     <td><div align="center">1</div></td>
+		 <td><div align="center">()</div></td>
+		 <td><div align="center">grouping</div></td>
+		 <td><div align="center">not applicable</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">2</div></td>
+		 <td><div align="center">*<br>/<br>%</div></td>
+		 <td><div align="center">multiplication<br>division<br>remainder</div></td>
+		 <td><div align="center">left to right</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">3</div></td>
+		 <td><div align="center">+<br>-</div></td>
+		 <td><div align="center">addition<br>subtraction</div></td>
+		 <td><div align="center">left to right</div></td>
+	  </tr>
+	   <tr>
+	     <td><div align="center">4</div></td>
+		 <td><div align="center">=</div></td>
+		 <td><div align="center">assignment</div></td>
+		 <td><div align="center">right to left</div></td>
+	  </tr>
+   </table>
+	<br>
+</div>	
+

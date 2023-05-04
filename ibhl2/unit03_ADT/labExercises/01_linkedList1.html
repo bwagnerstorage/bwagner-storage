@@ -1,0 +1,304 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">LinkedList1</div>
+
+<div id="csContent">
+    <h1>Helpful Information</h1>
+
+    <p>In section 2 of the notes on lists you learned that both the ArrayList class and the LinkedList class implement the List Interface and therefore have the following methods in common:
+        <ul id="csList">
+            <li style="font-family: Consolas; font-size: 1.2em">size()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">boolean add(E e) // append to end of list</li>
+            <li style="font-family: Consolas; font-size: 1.2em">add(int index, E e) // insert at position index within list</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E get()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E set(int index, E e)</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E remove(int index)</li>
+            <li style="font-family: Consolas; font-size: 1.2em">Iterator &lt;E&gt; interator()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">ListIterator &lt;E&gt; listIterator()</li>
+        </ul>
+    </p>
+
+    <p>If you look at the method signature for Java's LinkedList class you will notice something interesting. Java classes can implement more than one interface.</p>
+
+    <div id="csCode"><pre>public class LinkedList&lt;E&gt; implements List&lt;E&gt;, Deque&lt;E&gt;  
+// other interfaces not shown</pre></div>
+
+    <p>These interfaces require the LinkedList class to provide more functionality. The Deque&lt;E&gt; interface provides additional functionality for the LinkedList class that the IB curriculum expects IB students to be able to use in solving programming
+        problems involving the LinkedList class. These methods include the following:
+        <ul id="csList2">
+            <li style="font-family: Consolas; font-size: 1.2em">addFirst(E e)</li>
+            <li style="font-family: Consolas; font-size: 1.2em">addLast(E e)</li>
+            <li style="font-family: Consolas; font-size: 1.2em">clear()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">element()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E getFirst()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E getLast()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E remove()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E removeFirst()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">E removeLast()</li>
+            <li style="font-family: Consolas; font-size: 1.2em">boolean isEmpty()</li>
+        </ul>
+    </p>
+
+    <p>Below is a complete list of all the methods in the <a href="IB Jets.pdf">IB Java Examination Tool Subset (Jets).</a></p>
+    <table id="csTable">
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>add(E e)</td>
+            <td>Appends the specified element to the end of this list.</td>
+        </tr>
+        <tr>
+            <td>add(int index, E element)</td>
+            <td>Appends the specified element to the end of this list.</td>
+        </tr>
+        <tr>
+            <td>addFirst(E element)</td>
+            <td>Inserts the specified element at the front of this list.</td>
+        </tr>
+        <tr>
+            <td>addLast(E element)</td>
+            <td>Inserts the specified element at the end of this list.</td>
+        </tr>
+        <tr>
+            <td>clear()</td>
+            <td>Removes all of the elements from this list.</td>
+        </tr>
+        <tr>
+            <td>E element()</td>
+            <td>Retrieves, but does not remove, the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E get(int index)</td>
+            <td>Returns the element at the specified position in this list.</td>
+        </tr>
+        <tr>
+            <td>E getFirst()</td>
+            <td>Retrieves, but does not remove, the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E getLast()</td>
+            <td>Retrieves, but does not remove, the last element of this list.</td>
+        </tr>
+        <tr>
+            <td>boolean isEmpty</td>
+            <td>Returns true if this list contains no elements.</td>
+        </tr>
+        <tr>
+            <td>Iterator iterator()</td>
+            <td>Returns an iterator over the elements in this list in proper sequence.</td>
+        </tr>
+        <tr>
+            <td>ListIterator listIterator()</td>
+            <td>Returns a list iterator over the elements in this list in proper sequence.</td>
+        </tr>
+        <tr>
+            <td>E remove()</td>
+            <td>Retrieves and removes the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E remove(int index)</td>
+            <td>Removes the element at the specified position in this list.</td>
+        </tr>
+
+        <tr>
+            <td>E removeFirst()</td>
+            <td>Retrieves and removes the first element of this list.</td>
+        </tr>
+        <tr>
+            <td>E removeLast()</td>
+            <td>Retrieves and removes the last element of this list.</td>
+        </tr>
+        <tr>
+            <td>int size()</td>
+            <td>Returns the number of elements in this list.</td>
+        </tr>
+    </table>
+
+    <h1>Directions</h1>
+
+    <p>Copy the following code to a java file named LinkedList1.</p>
+    <div id="csCode"><pre>import java.util.*;
+        
+public class LinkedList1
+{
+   public LinkedList1()  // constructor
+   {
+      System.out.println("LinkedList1");
+      System.out.println("-----------");
+      linkedList1();
+      System.out.println("LinkedList2");
+      System.out.println("-----------");
+      linkedList2();
+      System.out.println("LinkedList3");
+      System.out.println("-----------");
+      linkedList3();
+   }
+        
+   public void linkedList1()
+   {
+                
+   }
+        
+   public void linkedList2()
+   {
+
+   }
+        
+   public void linkedList3()
+   {
+
+   }
+        
+   public static void main(String[] args)
+   {
+       LinkedList1 app = new LinkedList1();
+   }
+}</pre></div>
+
+    <p>Copy the following code to a java file named Location.</p>
+    <div id="csCode"><pre>public class Location
+{
+   // instance variables
+   private int x;
+   private int y;
+            
+   // constructor
+   public Location(int x, int y)
+   {
+      this.x = x;
+      this.y = y;
+   }
+            
+   // accessor methods (getters)
+   public int getX()
+   {
+      return x;
+   }
+            
+   public int getY()
+   {
+      return y;
+   }
+            
+   // mutator methods (setters)
+   public void setX(int x)
+   {
+      this.x = x;
+   }
+            
+   public void setY(int y)
+   {
+      this.y = y;
+   }
+            
+   // toString method
+   public String toString()
+   {
+      return "(" + getX() + "," + getY() + ")";
+   }
+}</pre></div>
+
+    <h2>Method linkedList1</h2>
+    <p>Complete method <strong>linkedList1</strong> using the following instructions.</p>
+    <ol id="csList">
+        <li>Create a LinkedList object using the following code:<br>
+            <div id="csCode" style="width:400px;"><pre>LinkedList&lt;Integer&gt;list = new LinkedList&lt;&gt;();</pre></div>
+        </li>
+        <li>Use the <strong>add</strong> method to append the number 10 and the number 20 to the end of list.</li>
+        <li>Use the <strong>add</strong> method to insert the number 5 at index 0 of list.</li>
+        <li>Use the <strong>add</strong> method to insert the number 15 at index 2 of list.</li>
+        <li>Use the <strong>get</strong> method to retrieve the first element in list and display it using the following format:
+            <div id="apCode"><pre>first = &lt;number&gt;</pre></div>
+        </li>
+        <li>Use the <strong>get</strong> method and the <strong>size</strong> method to retrieve the last element in list and display it using the following format:
+            <div id="apCode"><pre>last  = &lt;number&gt;</pre></div>
+        </li>
+        <li>Use an <strong>enhanced for loop</strong> to display the elements in list horizontally with a space between each one.</li>
+        <li>Use the <strong>remove </strong> method to remove the second element in list.</li>
+        <li>Use another <strong>enhanced for loop</strong> to display the remaining elements in list horizontally with a space between each one.</li>
+    </ol>
+    <h2>Method linkedList2</h2>
+    <p>Complete method <strong>linkedList2</strong> using the following instructions.</p>
+    <ol id="csList">
+        <li>Create a LinkedList object using the following code:<br>
+            <div id="csCode" style="width:400px;"><pre>LinkedList&lt;String&gt;list = new LinkedList&lt;&gt;();</pre></div>
+        </li>
+        <li>Use the <strong>addFirst</strong> method to add the string "elephant" to the beginning of list.</li>
+        <li>Use the <strong>addLast</strong> method to add the string "lion" to the end of list.</li>
+        <li>Use the <strong>addFirst</strong> method to add the string "cheetah" to the beginning of list.</li>
+        <li>Use the <strong>addLast</strong> method to add the string "chimpanzee" to the end of list.</li>
+        <li>Use the <strong>addFirst</strong> method to add the string "giraffe" to the beginning of list.</li>
+        <li>Use the <strong>getFirst</strong> method to retrieve the first element in list and display it using the following format:
+            <div id="apCode"><pre>first = &lt;string&gt;</pre></div>
+        </li>
+        <li>Use the <strong>getLast</strong> method to retrieve the last element in list and display it using the following format:
+            <div id="apCode"><pre>last  = &lt;string&gt;</pre></div>
+        </li>
+        <li>Use the following code to access the Iterator object in list:
+            <div id="csCode" style="width:400px;"><pre>Iterator iter = list.iterator();</pre></div>
+        </li>
+        <li>Use the Iterator methods <strong>hasNext</strong> and <strong>next</strong> along with a while loop to display all of the elements in list horizontally with a space between each one.</li>
+        <li>Use the method <strong>removeFirst</strong> to remove the first element in list.</li>
+        <li>Use the method <strong>removeLast</strong> to remove the last element in list.</li>
+        <li>Use the Iterator methods <strong>hasNext</strong> and <strong>next</strong> along with a while loop to display the remaining elements in list horizontally with a space between each one.</li>
+        <li>Use the <strong>element</strong> method to retrieve the first element in list and display it using the following format:
+            <div id="apCode"><pre>first = &lt;string&gt;</pre></div>
+        </li>
+        <li>Use the method <strong>clear</strong> to remove all of the elements in list.</li>
+        <li>Use the method <strong>isEmpty</strong> to display the string "List is empty" if list contains no elements; otherwise display the string "List is not empty".
+        </li>
+    </ol>
+
+    <h2>Method linkedList3</h2>
+    <p>Complete method <strong>linkedList3</strong> using the following instructions.</p>
+    <ol id="csList">
+        <li>Create a LinkedList of Location objects using the following code:<br>
+            <div id="csCode" style="width:400px;"><pre>LinkedList&lt;Location&gt;list = new LinkedList&lt;&gt;();</pre></div>
+        </li>
+        <li>Use the <strong>addLast</strong> method to add the location (1,1) to the end of list.</li>
+        <li>Use the <strong>addLast</strong> method to add the location (2,2) to the end of list.</li>
+        <li>Use the <strong>addLast</strong> method to add the location (3,3) to the end of list.</li>
+        <li>Use the <strong>addFirst</strong> method to add the location (0,0) to the beginnning of list.</li>
+        <li>Use the <strong>getFirst</strong> method to retrieve a Location object from the beginning of list and store its reference in a Location variable name <strong>loc</strong>.</li>
+        <li>Use the Location class methods <strong>setX</strong> and <strong>setY</strong> to modify the Location object reference by <strong>loc</strong> so that its x and y values are set to 100.</li>
+        <li>Use the Location class <strong>toString</strong> method, the Deque interface methods <strong>isEmpty</strong> and <strong>removeFirst</strong>, and a while loop to remove and display all of the elements in list.</li>
+    </ol>
+
+    <h1>Source File</h1>
+    <p>LinkedList1.java</p>
+    <h1>Sample Run</h1>
+    <div id="csSampleRun">
+        <pre>LinkedList1
+-----------
+first = 5
+last  = 20
+            
+5 10 15 20
+            
+5 15 20
+            
+LinkedList2
+-----------
+first = giraffe
+last  = chimpanzee
+            
+giraffe cheetah elephant lion chimpanzee
+            
+cheetah elephant lion
+            
+first = cheetah
+            
+List is empty
+            
+LinkedList3
+-----------
+x = 100
+y = 100
+            
+(100,100) (1,1) (2,2) (3,3)
+        </pre>
+    </div>
+    <br>
+</div>

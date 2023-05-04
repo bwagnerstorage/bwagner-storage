@@ -1,0 +1,220 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Why Use Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is method decomposition</li>
+						<li>What is code reuse</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+
+<h1>Why Write Methods?</h1>
+<p>There are two main reasons for defining methods within a class.</p>
+<div id="csList">
+<ol>
+<li>Methods are commonly used to break a problem down into small manageable pieces. This is called 
+    <strong>method decomposition</strong>.
+<li>Methods simplify programs. If a specific task is performed in several places in the program,
+    a method can be written once to perform that task, and then be executed anytime it is needed.
+    This is known as <strong>code reuse</strong>.</p>
+</ol></div>
+<h1>Method Decomposition</h1>
+<p>To demonstrate method decomposition I have two versions of a program that calculates a student's
+   semester average. In the first version all of the code is contained within one method and does not utilize
+   method decomposition. The second version breaks the program up into three methods using method decomposition.</p>
+
+<h3>Version 1 - no Method Decomposition</h3>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class SemesterAvg
+{
+    public static void main(String[] args)
+    {
+        int s1 = 0;
+        int s2 = 0;
+        int s3 = 0;
+        int exam = 0;
+        double semesterAvg = 0;
+
+        Scanner keyboard = new Scanner(System.in);
+
+        // Get Grades
+
+        System.out.print("Enter Six Weeks Avg -->");
+        s1 = keyboard.nextInt();
+
+        System.out.print("Enter Six Weeks Avg -->");
+        s2 = keyboard.nextInt();
+
+        System.out.print("Enter Six Weeks Avg -->");
+        s3 = keyboard.nextInt();
+
+        System.out.print("Enter Semester Exam -->");
+        exam = keyboard.nextInt();
+
+        // Calculate Semester Average
+        // Six Weeks Grades = 80%, Semester Exam 20%
+
+        semesterAvg = (int)Math.round((s1 + s2 + s3)/3 * .8 + exam * .2);
+
+        // Print Semester Average
+
+        System.out.println();
+        System.out.println("Semester Average = " + semesterAvg);
+        System.out.println();
+    }
+}
+</pre></div> 
+
+<h3>Version 2 - with Method Decomposition</h3>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class SemesterAvg
+{
+    private int s1;
+    private int s2;
+    private int s3;
+    private int exam;
+    private int semesterAvg;
+
+    public void getGrades()
+    {
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print("Enter Six Weeks Avg -->");
+        s1 = keyboard.nextInt();
+
+        System.out.print("Enter Six Weeks Avg -->");
+        s2 = keyboard.nextInt();
+
+        System.out.print("Enter Six Weeks Avg -->");
+        s3 = keyboard.nextInt();
+
+        System.out.print("Enter Semester Exam -->");
+        exam = keyboard.nextInt();
+    }
+
+    public void calcSemesterAvg()
+    {
+        // Six Weeks Grades = 80%, Semester Exam 20%
+        semesterAvg = (int)Math.round((s1 + s2 + s3)/3 * .8 + exam * .2);
+    }
+
+    public void printSemesterAvg()
+    {
+        System.out.println();
+        System.out.println("Semester Average = " + semesterAvg);
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        SemesterAvg app = new SemesterAvg();
+
+        app.getGrades();          // call getGrades
+        app.calcSemesterAvg();    // call calcSemesterAvg
+        app.printSemesterAvg();   // call printSemesterAvg
+    }
+}
+</pre></div> 
+
+<p>Notice that version 2 contains three additional methods: getGrades, calcSemesterAvg, and 
+   printSemesterAvg. Each method has a specific task. By using method decomposition
+   the program becomes more manageable and easier to follow. This was a simple example, as problems
+   increase in complexity this approach becomes even more valuable.</p>
+
+<h1>Code Reuse</h1>
+<p>Look again at the getGrades method from version 2.</p> 
+<div id="csCode"><pre>
+public void getGrades()
+{
+    Scanner keyboard = new Scanner(System.in);
+
+    System.out.print("Enter Six Weeks Avg -->");
+    s1 = keyboard.nextInt();
+
+    System.out.print("Enter Six Weeks Avg -->");
+    s2 = keyboard.nextInt();
+
+    System.out.print("Enter Six Weeks Avg -->");
+    s3 = keyboard.nextInt();
+
+    System.out.print("Enter Semester Exam -->");
+    exam = keyboard.nextInt();
+}
+</pre></div> 
+ 
+<p>Notice the similarity of the code and how it is repeated multiple times. To demonstrate code
+   reuse I am going to modify the getGrades method by making use of another method named input.
+   This method will contain the code that was being repeated in getGrades.</p>
+<div id="csCode"><pre>
+import java.util.*;
+
+public class SemesterAvg
+{
+    private int s1;
+    private int s2;
+    private int s3;
+    private int exam;
+    private int semesterAvg;
+
+    public void getGrades()
+    {
+        s1 = <div id="csHighlight"><pre>input</pre></div> ("Enter 1st Six Weeks Avg -->");
+        s2 = <div id="csHighlight"><pre>input</pre></div> ("Enter 2nd Six Weeks Avg -->");
+        s3 = <div id="csHighlight"><pre>input</pre></div> ("Enter 3rd Six Weeks Avg -->");
+        exam = <div id="csHighlight"><pre>input</pre></div> ("Enter Semester Exam -->");
+    }
+
+    public int input(String prompt)
+    {
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print(prompt);
+        return keyboard.nextInt();
+    }
+
+    public void calcSemesterAvg()
+    {
+        // Six Weeks Grades = 80%, Semester Exam 20%
+        semesterAvg = (int)Math.round((s1 + s2 + s3)/3 * .8 + exam * .2);
+    }
+
+    public void printSemesterAvg()
+    {
+        System.out.println();
+        System.out.println("Semester Average = " + semesterAvg);
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        SemesterAvg app = new SemesterAvg();
+
+        app.getGrades();          // call getGrades
+        app.calcSemesterAvg();    // call calcSemesterAvg
+        app.printSemesterAvg();   // call printSemesterAvg
+    }
+}
+</pre></div>  
+
+<p>The method input actually reads the data from the user and passes it on to getGrades. The code
+   reuse occurs when the input method is called four times by getGrades.</p>
+<p>Again this was a simple example but hopefully you can see the benefit of code reuse. When you 
+   have the same code being repeated multiple times within a program you can create a method and
+   place the repeating code in that method. Then the code can be executed anytime it is needed simply
+   by calling the method.</p>
+
+<br>
+</div>	
+

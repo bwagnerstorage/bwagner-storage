@@ -1,0 +1,349 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Linked List</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>
+					    <li>D.4.9 Construct algorithms using a static implementation of a list.</li>		
+          				<li>D.4.10 Construct list algorithms using object references.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Linear Collections</h1>
+<p>You learned in a previous unit that linear collections can be implemented as either a <strong>static data structure(array)</strong> or a <strong>dynamic data structure</strong>. In the JCF
+   Java implements the ArrayList collection as a static data structure and the LinkedList collection as a dynamic data structure. You are already familiar
+   with the function of an array, so in this unit we look at the implementation of a dynamic data structure.
+
+<h1>Linked List</h1>
+<p>A <strong>linked list</strong> is a collection of elements called nodes. Each node contains a data portion and a pointer or reference to another node. The pointer in a given node contains the
+   location of the node that follows the given node in the linear ordering of the list. The entire list is referenced by a separate head pointer to the first element in the list.</p>
+   
+<div align="center"><img src="images/LL1.png"></div>
+
+<h1>ListNode Class</h1>
+<p>In OOP programming nodes are objects. Below is the implementation of a class named <strong>ListNode</strong>. This is the class
+   we will be using to create node objects. It contains two instance variables. One represents the data for the node and the other stores the reference to the next node in the list. The class also defines
+   accessor and mutator methods for the two variables.</p>
+   
+<div id="csCode"><pre>
+public class ListNode
+{  
+   // Instance Variables
+   private Object value;
+   private ListNode next;
+  
+   // Constructor
+   public ListNode(Object initValue, ListNode initNext)
+   { 
+      value = initValue; 
+      next = initNext; 
+   }
+
+   // Accessor Methods
+   public Object getValue() 
+   { 
+      return value; 
+   }
+  
+   public ListNode getNext() 
+   { 
+      return next; 
+   }
+
+   // Mutator Methods
+   public void setValue(Object theNewValue)
+   { 
+      value = theNewValue; 
+   }
+  
+   public void setNext(ListNode theNewNext)
+   { 
+      next = theNewNext;
+   }
+}</pre></div>
+
+<h3>ListNode Instance Variables</h3>
+<p>The <strong>value</strong> data field is of type Object, which means that primitive types like int cannot be placed directly into a ListNode.They must first be wrapped in a wrapper class like Integer or Double.</p>
+<p>The ListNode class is said to be self-referential, since it has an instance variable <strong>next</strong> that refers to itself. Self-referential objects can be linked together
+   to form objects like lists, trees, stacks, and so on. Thus the variable next is called a link or pointer.</p>
+
+
+<h3>ListNode Constructor</h3>
+<p>The ListNode constructor, with initValue and initNext parameters, allows a single statement to assign the value and next fields to a ListNode.</p>
+
+<strong>Examples</strong>
+<div id="csCode"><pre>
+int num = 20;
+ListNode node = new ListNode(num, null);
+</pre></div>
+<div align="center"><img src="images/LL2.png"></div>
+
+<p>(<strong>null</strong> refers to a reference that does not point to another node)</p>
+<p>To link two nodes together using a constructor you do the following</p>
+<div id="csCode"><pre>
+ListNode node = new ListNode(20, null);   // create a node
+ListNode head = new ListNode(10, <div id="csHighlight"><pre>node</pre></div>);  // create 2nd node and link to 1st node
+</pre></div>
+<div align="center"><img src="images/LL3.png"></div>
+
+<h3>ListNode Accessor Methods</h3>
+<p>To access the data of a node use getValue</p>
+<div id="csCode"><pre>
+ListNode node = new ListNode("hello", null);
+String str = <div id="csHighlight"><pre>(String)</pre></div>node.getValue();
+</pre></div>
+<p>A node stores its data as a generic Object. In this example, since the actual data stored in the node is a string, a cast is required to store the data in
+   the String variable str.</p>
+<p>To access a node's reference use getNext</p>
+<div id="csCode"><pre>
+ListNode node = new ListNode("hello", null);
+ListNode other = node.getNext();
+</pre></div>
+
+<p>You can use getNext twice to access a node two positions away from the current node.</p>
+<div id="csCode"><pre>
+ListNode other = node.getNext().getNext();
+</pre></div>
+
+<h3>ListNode Mutator Methods</h3>
+<p>To change/update the data in a node use setValue</p>
+<div id="csCode"><pre>
+ListNode node = new ListNode("hello", null);
+node.setValue("goodbye");
+</pre></div>
+<p>To change the reference of a node use setNext</p>
+<div id="csCode"><pre>
+ListNode node = new ListNode("A", null);
+ListNode other = new ListNode("B", null);
+node.setNext(other);
+</pre></div>
+<br>
+<h1>Common Linked List Operations</h1>
+<p>There are many operations that can be performed on a linked list. Three of the most common operations are listed below.</p>
+<div id="csList">
+<li><strong>Add</strong>  - this operation can add a new node in the first, last or interior of the list.</li>
+
+<li><strong>Remove</strong>  - this operation can delete a node in the first, last or interior of the list.</li>
+
+<li><strong>Retrieve</strong>  - this operation is used to search for a node containing a particular value in the list.</li>
+</ul></div>
+<p>To perform these operations, several nodes in the list must be marked in some way. <strong>head</strong> is the name of the pointer that programmers often use to refer to the first node in the list,
+   <strong>tail</strong> is used to refer to the last node in the list, <strong>cur</strong> is used to refer to the current node referenced in the list, and <strong>prev</strong> is used to refer to the node that precedes cur in the list.
+   In a linked list diagram a slash in the reference/link/pointer field of the last node denotes the termination point for a list(terminal node). These names are only suggestions, not requirements.</p>
+<div align="center"><img src="images/LL4.png"></div>
+
+<p>Let's look at these operations in more detail.</p>
+
+<h1>Add Node to Linked List</h1>
+<p>Adding a new node to a linked list can take place anywhere -- the first, last, or interior of the linked list.</p>
+
+<p>To demonstrate the addition process I will implement two methods: <strong>addFirst</strong> and <strong>addLast</strong>. Method addFirst inserts a new node at the beginning of a list
+ and method addLast inserts a new node at the end of a list.</p>
+
+<h3>Method addFirst</h3>
+
+<p>The following figures show the method step by step.</p>
+
+<p><strong>Step 1</strong> : create a new node that is referenced by the pointer variable newNode.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL5.png"></div>   
+
+<p><strong>Step 2</strong> : link the new node to the first node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL6.png"></div> 
+
+<p><strong>Step 3</strong> :  update the head pointer so that it points to the new node. The new node becomes the first node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL7.png"></div> 
+
+<br>
+<strong>Implementation</strong>
+<div id="csCode"><pre>
+public void addFirst(String data)
+{
+   ListNode newNode = new ListNode(data, null);
+   if(head == null)         // if list does not exist, create it
+   {
+       head = newNode;
+   }
+   else                     // else add new node to beginning of list
+   {
+       newNode.setNext(head);
+       head = newNode;         
+   }    
+}
+</pre></div>
+<br>
+<h3>Method addLast</h3>
+
+<p><strong>Step 1</strong> : create the new node. Initialize pointer cur so that it points to the first node in the list; pointer prev has a value of null.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL8.png"></div> 
+
+<p><strong>Step 2</strong> : traverse the entire list until pointer cur reaches the terminal node (the terminal node is the null that marks the end of the list). Pointer prev points to the last node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL9.png"></div>
+
+<p><strong>Step 3</strong> : link the node referenced by prev to the new node. The new node becomes the last node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL10.png"></div> 
+
+<br>
+<strong>Implementation</strong>
+<div id="csCode"><pre>
+public void addLast(String data)
+{
+    ListNode newNode = new ListNode(data, null);
+    cur = head;               // get start of list
+    while(cur != null)        // advance to the end of the list
+    {
+        prev = cur;
+        cur = cur.getNext();
+    }
+    prev.setNext(newNode);    // append new node to the end of the list
+}
+</pre></div>
+<br>
+
+<h1>Remove Node from Linked List</h1>
+
+<p>Deletion is another common operation performed on a linked list. You can remove the first node, the last node, or a node containing particular value in the linked list. 
+To demonstrate the deletion process I will implement three methods: <strong>deleteFirst</strong>, <strong>deleteLast</strong>, and <strong>deleteAnyWhere</strong>.</p>
+
+<div id="csNote">The nodes within our linked list are objects instantiated by the ListNode class. To remove a node from the list all we have to do is stop referencing it (pointing to it). 
+  The JVM (Java Virtual Machine) knows if an object is in use by keeping track of whether or not there are any variables referencing it. Because unreferenced objects cannot by used,
+  Java assumes that its okay to delete them from memory. Java does this during a process called <strong>garbage collection</strong>. In constrast, C++ programmers have the onerous responsibility of deleting objects explicitly. Forgetting to delete unneeded objects can cause programs to crash. In large programs, these mistakes are easy to make and difficult to find. Fortunately, Java programmers do not have to worry about this problem.
+</div>
+
+<h3>Method deleteFirst</h3> 
+<p><strong>Step 1</strong> : advance head so that it points to next node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL11.png"></div> 
+
+<br>
+<strong>Implementation</strong>
+<div id="csCode"><pre>
+public void deleteFirst()
+{
+   head = head.getNext();
+}
+</pre></div>
+
+<h3>Method deleteLast</h3> 
+<p><strong>Step 1</strong> : initialize pointer cur so that it points to the first node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL12.png"></div> 
+
+<p><strong>Step 2</strong> : traverse the entire list until the pointer cur points to the last node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL13.png"></div> 
+
+<p><strong>Step 3</strong> :  assign the next portion of the node that is referenced by prev to null.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL14.png"></div> 
+
+<br>
+<strong>Implementation</strong>
+<div id="csCode"><pre>
+public void deleteLast()
+{
+   cur = head;                      // get start of list
+   while(cur.getNext() != null)     // advance to last node
+   {
+       prev = cur;
+       cur = cur.getNext();
+   }
+   prev.setNext(null);             // remove reference to last node
+}
+</pre></div>
+<br>
+
+<h3>Method deleteAnyWhere</h3> 
+<p><strong>Step 1</strong> : initialize pointer cur so that it points to the first node in the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL12.png"></div> 
+
+<p><strong>Step 2</strong> : traverse the entire list until the pointer cur points to the node that contains the "key" value or it reaches the end of the list. Pointer prev points to the previous node pointed to by cur. </p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL15.png"></div> 
+
+<p><strong>Step 3</strong> : link the next portion of the pointer prev to cur next.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL16.png"></div> 
+
+<br>
+<strong>Implementation</strong>
+<div id="csCode"><pre>
+public void deleteAnyWhere(String key)
+{
+    cur = head;
+    while(cur != null && !cur.getValue().equals(key))
+    {
+       prev = cur;
+       cur = cur.getNext();
+    }    
+    if(cur == head && cur.getValue().equals(key))    // check to see if node
+    {                                                // to delete is first node
+       head = head.getNext();
+    }
+    else if(cur != null)
+       prev.setNext(cur.getNext());
+}
+</pre></div>
+<br>
+
+<h1>Search for Node in Linked List</h1>
+
+<p>There are numerous ways to implement a search method. The method can return true if the search item is found in the list or the method can return the search item itself. 
+   The implementation of the method below returns true if the search item is found within the list; false otherwise.</p>
+
+<p>The following figures show the method step by step.</p>
+
+<p><strong>Step 1</strong> : initialize pointer cur so that it points to the first node of the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL12.png"></div> 
+
+<p><strong>Step 2</strong> : advance cur to the node containing the "key" value or until it reaches the end of the list.</p>
+
+<div align="left" style="margin-left:20px"><img src="images/LL17.png"></div> 
+
+
+<br>
+<strong>Implementation</strong>
+<div id="csCode"><pre>
+public boolean search(String key)
+{
+   cur = head;                  // get start of list
+   while(cur != null)           // advance to end of list
+   {
+      if(cur.getValue().equals(key))
+         return true;
+      cur = cur.getNext();
+   }    
+   return false;
+}
+</pre></div>
+<br>
+
+<h1>Dummy Headers</h1>
+
+<p>One of the problems in dealing with pointer based ordered lists is writing code to take care of special cases. For example, if we wish to insert a node in a linked list,
+   we must take care of the special case of inserting a node in the beginning of the list. This is a special case because if a node is inserted into the beginning of the list,
+   the pointer indicating the beginning of the list, head, must be changed. Similarly, if we wish to delete a particular node, we must again also write code to handle the special
+   case of deleting the first node in the list.</p>
+
+<p>To avoid the special case problems involved in inserting and deleting nodes, programmers often use a dummy node in the list. A <strong>dummy header node</strong> is a node that always points
+   to the beginning of the list or has a null pointer field if the list is empty. This node is called a dummy node since it does not contain data included in the list. This node is
+   permanent (is never deleted) and always points to the first node in the list.</p>
+<br>
+<div align="left" style="margin-left:20px"><img src="images/LL18.png"></div> 
+<br>
+<br>
+</div>	
+

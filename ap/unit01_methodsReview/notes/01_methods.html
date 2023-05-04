@@ -1,0 +1,396 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Review void methods</li>
+						<li>Review non-void methods</li>
+						<li>Review formal parameters</li>
+						<li>Review actual parameters</li>
+						<li>Review local variables</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Anatomy of a Class</h1>
+<p>Recall that Java classes are made up of two main sections: <strong>variable declaration</strong> section and <strong>method 
+   declaration</strong> section. The variable declaration section defines an object's data requirements 
+   (instance variables) and the method declaration section defines an object's behavior in response
+   to messages. Both variables and methods are <strong>members</strong> of the class. The combining of data and 
+   behavior into a single package (i.e. class) is called <strong>encapsulation</strong>.</p>
+<div align="center"><img src="images/classDecomposition5.png"></div>
+<p>The code below defines a class named Die that represents a six-sided die. Notice the variable
+   declaration section is at the beginning of the class and the method declaration section is at 
+   the end. The ordering of the two sections does not matter. Most programmers prefer to locate the
+   variables section at the beginning of the class.</p>
+<div id="csCode">
+<pre>
+public class Die
+{
+    <div id="csHighlight"><pre>// variable declarations (instance variables)</pre></div>
+    private int faceValue;
+    
+    <div id="csHighlight"><pre>// method declarations</pre></div>
+    public void roll()
+    {
+        faceValue = (int)(Math.random() * 6) + 1;
+    }
+    
+    public int getFaceValue()
+    {
+        return faceValue;
+    }
+}
+</pre>
+</div>
+<h1>Methods</h1>
+<p>A <strong>method</strong> is a group of programming language statements that is given a name. Every method in a
+  Java program must be defined within a particular class. To create a method you must have a method
+  declaration which consists of two parts: a <strong>method header</strong> and a <strong>method body</strong>. Here are two method
+  declarations, roll and getFaceValue, defined in the Die class.</p>
+<div id="csCode">
+<pre>
+// method declarations
+public void <div id="csHighlight"><pre>roll</pre></div>()
+{
+   faceValue = (int)(Math.random() * 6) + 1;
+}
+  
+public int <div id="csHighlight"><pre>getFaceValue</pre></div>()
+{
+   return faceValue;
+}
+</pre>
+</div>
+<p>When a method is invoked(called), the statements of that method are executed. When that method is done,
+   control returns to the location where the call was made and execution continues.</p>
+<p>A method that is called might be part of the same class as the method that called it, or it might
+   be part of a different class. If the called method is part of the same class, only the method name 
+   is needed to call it.</p>
+<div id="csCode">
+<pre>
+doSomething();
+</pre>
+</div>
+<p>If the method is a member of a different class, it is invoked through an object created by that
+   class. The call is made using dot notation which includes the object name, followed by a dot, and
+   ending with the method name.</p>
+<div id="csCode">
+<pre>
+myClass myObject = new myClass();   // instantiate object
+myObject.doSomething();
+</pre>
+</div>
+
+<h1>Method Header</h1>
+<p>The method header, which appears at the beginning of a method definition, lists several important
+   things about the method, including the method's name, an access modifier, the type of the return
+   value, and a list of parameters that the method accepts. The method body is a collection of
+   statements that are performed when the method is executed. The body is defined in a block inside braces.</p>
+<div align="center"><img src="images/methodDeclaration.gif"></div>
+
+<h1>Access Modifiers</h1>
+<p>The access to classes, constructors, methods and fields(instance variables) are regulated using
+   access modifiers. These modifiers allow a class control over what information and methods can be 
+   accessible by other classes.</p>
+<p>Java provides four access modifiers to help you set the level of access you want for the fields, 
+   methods, and constructors in your classes. The four access modifiers are</p>
+<div id="csList">
+<ul>
+<li>public</li> 
+<li>private</li> 
+<li>protected</li> 
+<li>default</li>
+</ul></div>
+
+<h3>public access modifier</h3>
+<p>Methods declared public within a class are visible to any class in the
+Java program, whether these classes are in the same package or in another package. This means that
+any variable or method declared public can be accessed freely by any other class.</p>
+
+<h3>private access modifier</h3>
+<p>Methods declared private are strictly controlled, which means they cannot be accessed outside the 
+   enclosing class.</p>
+
+<h3>protected access modifier</h3>
+<p>Methods declared protected in a superclass can be accessed only by subclasses in other packages.
+   Classes in the same package can also access protected fields, methods and constructors as well,
+   even if they are not a subclass of the protected member's class. (The protected access modifier
+   is not currently part of AP Java subset and therefore will not be tested on the AP exam.)</p>
+
+<h3>default access modifier</h3>
+<p>Java provides a default specifier which is used when no access modifier is present. Any method
+   that has no declared access modifier is accessible only by classes in the same package.</p>
+<div style="padding-left:25px">
+<p>A Java <strong>package</strong> is a set of classes which are grouped together. To use a class contained within
+   a package, you must either import the package or use the fully qualified class name each time
+   you use the class.</p>
+
+<div id="csCode" style="width:620px">
+<pre>
+import java.util.Scanner;  // imported Scanner class from java.util package 
+
+Scanner keyboard = new Scanner(System.in);
+int num = keyboard.nextInt();
+</pre></div> 
+
+<p>or</p>
+<div id="csCode" style="width:620px">
+<pre>
+// did not import Scanner class therefore must use the
+// fully qualified class name each time Scanner class is referenced
+
+java.util.Scanner keyboard = new java.util.Scanner(System.in);
+int num = keyboard.nextInt();
+</pre></div> 
+</div>
+<br>
+<h1>The return statement</h1>
+<p>The return type in the method header can be a primitive type, class name, or the reserved word
+   void. When a method does not return any value, void is used as the return type, as is always done
+   with the main method. The roll method is an example of a method void of a return value</p>
+<div id="csCode">
+<pre>
+public void roll()
+{
+   faceValue = (int)(Math.random() * 6) + 1;
+}
+</pre></div> 
+ 
+<p>This type of method is often referred to as a <strong>void</strong> method.</p>
+
+<p>A method that returns a value must have a return statement. After a return statement is executed,
+  control is immediately returned to the statement in the calling method, and processing continues
+  there. A return statement is the reserved word return followed by an expression that dictates the
+  value to be returned. The value returned by the method is often a calculation performed by the 
+  method. The value returned must match the return type specified in the method header.</p>
+
+<p>The getFaceValue method is an example of a method that has a return value</p>
+<div id="csCode">
+<pre>
+public int getFaceValue()
+{
+   return faceValue;       // faceValue is of type int
+}
+</pre></div> 
+ 
+<p>A method that does not return a value does not usually need a return statement because it
+   automatically returns to the calling method when it is done. A method with a void return type may,
+   however, have a return statement without an expression.</p>
+<div id="csCode">
+<pre>
+public void myMethod(int num)
+{
+   if(num < 0)
+     return;         // method is terminated, but it does not return anything
+   else
+     < do something >
+}
+</pre></div>
+<br>
+<h1>Invoking void Methods</h1>
+<p>A void method is invoked from another method by making a reference to its name followed by its
+   parameter list.</p>
+<div id="csCode">
+<pre>
+public void roll()
+{
+   faceValue = (int)(Math.random() * 6) + 1;
+}
+
+public void anotherMethod()
+{
+    roll();    // method call
+}
+</pre></div>
+<br>
+<h1>Invoking non-void Methods (Functions)</h1>
+
+<p>When invoking a non-void method (a method that returns a value) it is called from within another
+   statement. Look at the following example.</p>
+<div id="csCode">
+<pre>
+public int getFaceValue()
+{
+   return faceValue;       // faceValue is of type int
+}
+
+public void anotherMethod()
+{
+    int value = getFaceValue();  // getFaceValue is called from within
+                                 // an assignment statement(=)
+}
+</pre></div>
+ 
+<p>Since the method getFaceValue is returning a value, the calling method anotherMethod needs to do
+   something with the value that is being returned. In this example, it is storing the return value 
+   in a variable named value. Look at another example.</p>
+<div id="csCode">
+<pre>
+public int getFaceValue()
+{
+   return faceValue;       // faceValue is of type int
+}
+
+public void anotherMethod()
+{
+    System.out.println(getFaceValue()); // getFaceValue is called from
+                                        // within a println statement
+}
+</pre></div>
+ 
+
+<p>In this example, the call to the method getFaceValue is embedded in a println statement.
+   When the getFaceValue method is called its return value is passed on to the println method 
+   which then becomes an actual parameter for the println method. Let's look at one more example. </p>
+<div id="csCode">
+<pre>
+public int getFaceValue()
+{
+   return faceValue;       // faceValue is of type int
+}
+
+public void anotherMethod()
+{
+    if(getFaceValue() > 6)  // getFaceValue is called from within an if statement
+    {
+	    System.out.println("invalid number");
+    }
+}
+</pre></div>
+ 
+<p>In this example, the call to the getFaceValue method is embedded in an if statement. The if
+   statement uses the return value of the method as the first operand of its boolean expression.</p>
+<br>
+<h1>Parameters</h1>
+<p>A <strong>parameter</strong> is a value that is passed into a method when it is invoked.</p>
+<p>The parameters in the header of the method declaration are called <strong>formal parameters</strong>.
+  The values passed into a method are called <strong>actual parameters</strong> or <strong>arguments</strong>.
+  The parameter list is always in parentheses after the method name. If there are no parameters, the
+  parentheses are empty.</p>
+  <div align="center"><img src="images/methodParameters.gif"></div>
+  
+  <p>The formal parameters are identifiers that act as variables inside the method. Their initial
+     values come from the actual parameters in the invocation. When a method is called, the value
+	 in each actual parameter is copied and stored in the matching formal parameter. In the example
+	 above, the actual parameter value 5 is copied into the formal parameter count. Giving the
+	 variable count an initial value of 5.</p>
+
+<p>The actual parameter can be a literal value, like the value 5 above, or it can be a variable.
+   Look at the following example.</p>
+<div id="csCode">
+<pre>
+public void instructions(int count)
+{
+    System.out.println("Follow all instructions.");
+    System.out.println("Use not more than " + count + " turns.");
+}
+
+public void anotherMethod()
+{
+    int numTurns = 7;
+    instructions(numTurns);
+}
+</pre></div>
+ 
+<p>The variable numTurns is the actual parameter. It contains a value of 7 which is copied into the 
+   formal parameter count when the instructions method is called.</p>
+
+<p>Actual parameters can be expressions. If an expression is used as an actual parameter, it is
+   fully evaluated before the method call and the result is passed the parameter. Look at the
+   following example.</p>
+<div id="csCode">
+<pre>
+public void instructions(int count)
+{
+    System.out.println("Follow all instructions.");
+    System.out.println("Use not more than " + count + " turns.");
+}
+
+public void anotherMethod()
+{
+    instructions(20/5 + 2*3);
+}
+</pre></div>
+ 
+<p>In this example the actual parameter is the expression 20/5 + 2 * 3. When the instructions method 
+   is called the expression is evaluated to a value of 10. The value 10 becomes the actual parameter
+   which is then copied into the formal parameter count.</p>
+
+<p>A method can have an number of formal parameters in its parameter lists. Each parameter must be
+   separated by a comma. Look at the method below that declares four parameters representing three 
+   six weeks averages and a semester exam.</p>
+<div id="csCode">
+<pre>
+public double calculateSemesterAvg(int s1, int s2, int s3, int exam)
+{
+    return (s1 + s2 + s3) * .8 + exam * .2;
+}
+</pre></div>
+
+<p>The method can be invoked using actual parameters like the following code</p>
+<div id="csCode">
+<pre>
+double semesterAvg = calculateSemesterAvg(80, 90, 95, 88);
+</pre></div> 
+
+<p>or with actual parameters that are variables</p>
+<div id="csCode">
+<pre>
+double semesterAvg = calculateSemesterAvg(sixWeeks1, sixWeeks2, sixWeeks3, exam);
+</pre></div>
+
+<p>If the method calculateSemesterAvg belongs to another class named myObject the method
+   invocation would look like the following</p>
+<div id="csCode">
+<pre>
+double semesterAvg = myObject.calculateSemesterAvg(80, 90, 95, 88);
+</pre></div> 
+<p>or</p> 
+<div id="csCode">
+<pre>
+double semesterAvg = myObject.calculateSemesterAvg(sixWeeks1, sixWeeks2, sixWeeks3, exam);
+</pre></div>
+<p>The parameter list in the invocation and the method declaration must match up. That is, the
+   value of the first actual parameter is copied into the first formal parameter, the second actual
+   parameter into the second formal parameter, and so on. The types of the actual parameter must
+   match the types of the formal parameters.</p>
+<br>
+<h1>Local Data</h1>
+<p>Recall that the scope of a variable (or constant) is the part of a program where a valid reference
+   to that variable can be made. A variable can be declared inside a method, making it local data as 
+   opposed to instance data. An instance variable is declared in a class but not inside any particular
+   method. A local variable has scope limited to only the method where it is declared. A local variable 
+   simply does not exist outside of the method in which it is declared. Instance data, declared at the
+   class level, has a scope of the entire class; any method of the class can refer to it.</p>
+<div id="csCode">
+<pre>
+public void myMethod()
+{
+   int num = 0;    // local variable
+
+   < do something >
+}
+</pre></div>
+ 
+<p>The formal parameter names in a method header serve as local data for that method. They don't
+   exist until the method is called, and they stop existing when the method ends.</p>
+
+<div id="csCode">
+<pre>
+public void myMethod(double size)   // size is created here, 
+{                                   // its value comes from the actual parameter
+   < do something >
+}   
+// size no longer exists, it was only a temporary (local) variable
+</pre></div>
+
+<br>
+</div>	
+

@@ -1,0 +1,568 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+ 
+<div id="csHeader">Java Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to create a Java method</li>
+						<li>What is Problem Decomposition</li>
+						<li>How to decompose a problem using Java methods</li>
+						<li>Why are stub programs important in program development</li>
+						<li>How to call methods from within the main method</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Jeroo Methods Review</h1>
+  <p>Recall that a <strong>method</strong> is a collection of statements that are written in
+	 a programming language to describe a specific behavior. Creating a method in Jeroo was a two-step 
+	 process.</p> 
+	 <div id="csList">
+	    <ol>
+		   <li>Define and name the new behavior (give the method a name).</li>
+		   <li>Write the source code for the method.</li>
+		</ol>
+	 </div>
+   <p>Here is the definition of one of the Jeroo methods we created.</p>
+   <div id="csCode">
+   <pre>
+method turnAround()
+{
+   turn(RIGHT);
+   turn(RIGHT);
+}</pre>
+   </div>
+<p>To use this new Jeroo behavior in your program you used code like the following.</p>
+   <div id="csCode">
+    <pre>
+method main()
+{
+   Jeroo bob = new Jeroo();
+   bob.<div id="csHighlight"><pre>turnAround</pre></div>();
+}</pre>
+   </div>
+<p>In this lesson, we look at how methods are created and used in Java. Java, being a general-purpose
+   language, has a higher level of complexity than Jeroo when it comes to method creation and use.
+   It will, therefore, take us several units to cover this topic thoroughly.</p>
+<h1>Java Methods</h1>
+<p>The Java programs we have seen up until now have all been fairly small. When you try to develop
+   much larger programs, you will soon realize that the difficulty of doing this becomes much
+   greater - mostly because there seems to be so much to remember, or to have to think about at each
+   stage.</p>
+   
+   <p>The human mind is often not very good at being able to deal with a large number of 
+   concepts or problems at any one instant. (Think about it: How easy is it for you to read a list
+   of only three numbers and remember them all? How easy is it to read a list of sixty random
+   numbers and remember them all?) The human mind is, however, very good at being able to see 
+   patterns in large structures, and to use these patterns to help manage complexity. (Think about
+   it: Suppose you were given a list of three thousand consecutive odd numbers and asked to remember
+   them all. You would be able to achieve this easily, not by brute force, but from remembering a
+   very simple pattern and only two numbers - the first and the last).</p>
+  
+   <p>For this reason - namely, that humans need to exploit patterns and smaller structures to be
+   able to handle potentially enormous problems - large programs are conveniently developed, not as
+   one single, long, algorithm, but as a collection of smaller pieces which we call <strong>methods</strong>.
+   
+   <p>In fact, we have been using this idea all along, except that we have made use only of predefined
+      library methods. These form part of a system that is supplied with any programming language's
+	  compiler, which in Java is often described by an API or application programming interface. 
+	  These methods make it easy to perform commonly required tasks like "read an integer value"
+	  or "generate a random number". Here are some the methods we have used so far.</p>
+	<div id="csCode">
+	<pre>
+keyboard.nextInt()
+keyboard.nextDouble()
+Math.sqrt(81)
+Math.random()
+str1.equals(str2)
+str.length()</pre>
+	</div>
+	
+  <h1>Create Java Methods</h1>
+  <p>Creating a method in Java is similar to the process we used to create a method in Jeroo. To 
+     create a Java method, you must write a definition, which consists of a header and a body.
+     The <strong>method header</strong>, which appears at the beginning of a method definition, lists several
+	 important things about the method, including the method's name.
+     The <strong>method body</strong> is a collection of statements that are performed when the method is executed.
+ </p>
+  <p>Look at the following illustration that describes the different parts of a Java method.</p>
+	 
+    <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Methods1/Slide1.PNG"></li>
+          <li><img src="images/Methods1/Slide2.PNG"></li>
+          <li><img src="images/Methods1/Slide3.PNG"></li>
+		  <li><img src="images/Methods1/Slide4.PNG"></li>
+		  <li><img src="images/Methods1/Slide5.PNG"></li>
+		  <li><img src="images/Methods1/Slide6.PNG"></li>
+		  <li><img src="images/Methods1/Slide7.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	<h1>Problem Decomposition</h1>
+	<p>Problem Decomposition (also know as Top-down Design or Step-wise Refinement) is a problem solving strategy used to decrease the complexity
+	    a programming task by breaking it down into smaller subtasks. Each subtask is sub-divided until a manageable level is achieved.</p>
+	 <p>Once a problem has been satisfactorily decomposed a program can be written whose structure
+	    reflects the sub-problem hierarchy. In Java, this structure is achieved through the constructing
+		of <strong>classes</strong> and <strong>methods</strong>.</p>
+	 <h3>Class Decomposition</h3>
+	 <p>Classes represent the highest level of decomposition. You are already familiar with classes
+		since all the Java code we have written so far was contained in a class. You have also used
+		some of Java's standard library classes such as String, Scanner, and Math. Applying Class Decomposition
+		involves breaking a problem up into multiple classes where each class has a specific task
+		in solving the problem. We will look more closely at classes and how they can be used to
+		decompose a problem in another unit. </p>
+	 <h3>Method Decomposition</h3>	
+	 <p>Methods represent a lower level of decomposition because each subtask of the problem can
+	    typically be coded as a single method. The following example will demonstrate this
+		process.</p>
+	 <br>
+	 <h1>Program - Calculate Slope of a Line</h1>
+	 <h3>Problem Description</h3>
+	 <p>Steve is taking Algebra 1 this year and his class is currently doing a unit on linear
+	    equations. Steve is also taking Computer Science this year and has some 
+		experience programming in Java. The lesson they are doing in Algebra right now involves
+		calculating the slope of line given two points on the line. Steve has decided to write
+		a program that will calculate the slope for him. He knows the formula for calculating
+		slope is m = (y<sub>2</sub> - y<sub>1</sub>) / (x<sub>2</sub> - x<sub>1</sub>).</p>
+	 <h3>Structure Chart</h3>
+	 <p>A <strong>structure chart</strong> (hierarchy chart) is a graphic depiction of the
+	   decomposition of a problem. Below is a structure chart for Steve's problem.</p>
+	 <div align="center"><img src="images/calculateSlope.png"></div>
+	 <p>Steve has decomposed his problem into three subtasks. The first task is to get the (x,y) values
+	    for the two points from the keyboard. The second task is to calculate the slope using slope formula.
+		The third task is to print the results of the calculation.</p>
+	 <h3>Method Decomposition</h3>
+	 <p>Following the structure of his chart, Steve's program will have one class named SlopeCalculator and the
+	    class will contain three methods named <strong>getPoints</strong>, <strong>calculateSlope</strong>,
+	    and <strong>printResults</strong>.</p>
+	<br>
+	<h1>Write Program</h1>
+	<h3>Step 1 - Create Stub Program</h3>
+	<p>A <strong>stub program</strong> is a program that contains small pieces of code, called stubs, 
+	   used to form the skeleton of a program. A stub is often a method declaration with no code inside
+	   or simple code that includes print statements used to identify each method when the program is executed.
+	   Stubs allow a programmer to create the basic structure of a program without worrying about
+	   the details of the algorithms that will eventually be part of the program.</p>
+	 <p>Steve starts by creating a stub program for the problem including the class SlopeCalculator and
+	    the three methods getPoints, calculateSlope, and printResults. He includes println statements
+		in each method so he can check the flow of the program when it is executed. He can remove the
+		println statements later if he chooses.</p>
+	<div id="csCode">
+	   
+    <pre>
+import java.util.*;
+
+public class SlopeCalculator
+{
+    // Precondition: none
+    // Postcondition: values of two points have been
+    //     retrieved from keyboard
+    public void <div id="csHighlight"><pre>getPoints</pre></div>()
+    {
+        System.out.println("/********************/");
+        System.out.println("     getPoints");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    // Precondition: none
+    // Postcondition: slope has been calculated
+    public void <div id="csHighlight"><pre>calculateSlope</pre></div>()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("   calculateSlope");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    // Precondition: none
+    // Postcondition: displayed slope
+    public void <div id="csHighlight"><pre>printResults</pre></div>()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("    printResults");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        SlopeCalculator app = new SlopeCalculator();
+        app.getPoints();
+        app.calculateSlope();
+        app.printResults();
+    }
+}	   
+	   </pre>
+	</div>
+<p>Here is the output for the stub program. The output allows Steve to 
+   verify that the flow of the program is as expected.</p>
+   <div id="csOutput">
+   <pre>
+/********************/
+     getPoints
+/********************/  
+
+/********************/
+   calculateSlope
+/********************/
+
+/********************/
+    printResults
+/********************/
+</pre>
+   </div>
+   <h3>main Method</h3>
+   <p>The code for all of the programs we done so far has been written entirely in the main method, 
+      which is perfectly acceptable for small programs.  However, as the programs increase in size and
+	  complexity, they become much more difficult to read, write, and maintain if all of the code
+	  is contained within the main method.</p>
+   <p>Let's look more closely at the stub program's main method.</p>
+   <div id="csCode">
+   <pre>
+public static void main(String[] args)
+{
+   SlopeCalculator app = new SlopeCalculator();
+   app.getPoints();
+   app.calculateSlope();
+   app.printResults();
+}   
+   </pre>
+   </div>
+   <p>Notice that the main method has a different look now because its job has changed to be more of a
+      manager or facilitator. Its new purpose is to simply call the other methods of the class. This is accomplished
+	  by creating an object of the class the main method belongs. In Steve's program the main
+	  method is a member of the SlopeCalculator class, therefore Steve instantiates an object
+	  of this class.</p>
+     <div id="csCode">
+    <pre>SlopeCalculator <div id="csHighlight"><pre>app</pre></div> = new SlopeCalculator();</pre>
+   </div>
+   <p>Once the object has been instantiated dot notation can be used to access the other methods
+      of the class.</p>
+   <div id="csCode">
+    <pre>app.<div id="csHighlight"><pre>getPoints</pre></div>();
+app.<div id="csHighlight"><pre>calculateSlope</pre></div>();
+app.<div id="csHighlight"><pre>printResults</pre></div>(); </pre>
+   </div>
+  <p>The methods will execute in the order they are called. When a method's code has been 
+     completed, the program will return to the main method and execution will continue with the next method call.</p>
+  <p>The illustration below demonstrates the flow of execution for stub program.</p> 
+    <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/Methods2/Slide1.PNG"></li>
+          <li><img src="images/Methods2/Slide2.PNG"></li>
+          <li><img src="images/Methods2/Slide3.PNG"></li>
+		  <li><img src="images/Methods2/Slide4.PNG"></li>
+		  <li><img src="images/Methods2/Slide5.PNG"></li>
+		  <li><img src="images/Methods2/Slide6.PNG"></li>
+		  <li><img src="images/Methods2/Slide7.PNG"></li>
+		  <li><img src="images/Methods2/Slide8.PNG"></li>
+		  <li><img src="images/Methods2/Slide9.PNG"></li>
+		  <li><img src="images/Methods2/Slide10.PNG"></li>
+		  <li><img src="images/Methods2/Slide11.PNG"></li>
+		  <li><img src="images/Methods2/Slide12.PNG"></li>
+		  <li><img src="images/Methods2/Slide13.PNG"></li>
+		  <li><img src="images/Methods2/Slide14.PNG"></li>
+		  <li><img src="images/Methods2/Slide15.PNG"></li>
+        </ul>
+    </div>
+	<br><br>
+  <h3>Step 2 - Create Variables</h3>
+  <p>Steve creates six variables for his program. The first variable will store the Scanner object
+     needed to get keyboard input. The second variable will store the result of the slope
+	 calculation. The rest of the variables will store the values for the (x, y) coordinates of
+	 the two points.</p>
+	 <div id="csCode">
+	   <pre>
+private Scanner keyboard = new Scanner(System.in);
+private double slope = 0;
+private int x1 = 0;
+private int y1 = 0;	 
+private int x2 = 0;	 
+private int y2 = 0;</pre>
+	 </div>
+<p>Notice the use of the keyword <strong>private</strong> in front of each variable's data type. This is the variable's
+   access modifier. The private modifier means that the variable cannot be used or seen outside the
+   class it was defined in. Although the variables will still work without declaring them private,
+   it is a good programming habit. The reason we declare variables private will become more apparent
+   in another unit.</p>
+   
+   <p>Here is the stub program with the variable declarations included.</p>
+
+	 <div id="csCode">
+	   
+    <pre>
+import java.util.*;
+
+public class SlopeCalculator
+{
+    // instance variables
+    <div id="csHighlight"><pre>private Scanner keyboard = new Scanner(System.in);
+    private double slope = 0;
+    private int x1 = 0;
+    private int y1 = 0;
+    private int x2 = 0;
+    private int y2 = 0;</pre></div>
+	
+    // Precondition: none
+    // Postcondition: values of two points have been
+    //     retrieved from keyboard
+    public void getPoints()
+    {
+        System.out.println("/********************/");
+        System.out.println("     getPoints");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    // Precondition: none
+    // Postcondition: slope has been calculated
+    public void calculateSlope()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("   calculateSlope");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    // Precondition: none
+    // Postcondition: displayed slope
+    public void printResults()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("    printResults");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        SlopeCalculator app = new SlopeCalculator();
+        app.getPoints();
+        app.calculateSlope();
+        app.printResults();
+    }
+}</pre>
+	 </div>
+  <p>Notice that Steve declared his variables at the top of the class, not in the 
+    main method. If you declare a variable in a method it can only be used in 
+    that method. By declaring them at the top of the class they are made available 
+    to any of the methods within the class. The places a variable can be used 
+    is referred to as <strong>variable scope</strong>. We will look more closely 
+    at variable scope in the next lesson.</p>
+  <h3>Step 3 - Code Methods</h3>
+  <p>Since Steve started coding by writing a stub program he can now write the code for each 
+     method separately; testing them one at a time. He starts by coding the method getPoints.
+	 He compiles and executes the program to verify that getPoints is correct before coding
+	 the other two methods.</p>
+	 <h3>Build 1</h3>
+    <div id="csCode">
+	   
+    <pre>
+import java.util.*;
+
+public class SlopeCalculator
+{
+    // instance variables
+    private Scanner keyboard = new Scanner(System.in);
+    private double slope = 0;
+    private int x1 = 0;
+    private int y1 = 0;
+    private int x2 = 0;
+    private int y2 = 0;
+
+    // Precondition: none
+    // Postcondition: values of two points have been
+    //     retrieved from keyboard
+    public void <div id="csHighlight"><pre>getPoints</pre></div>()
+    {
+        System.out.println("/********************/");
+        System.out.println("     getPoints");
+        System.out.println("/********************/");
+        System.out.println();
+
+        System.out.print("Enter x1 --> ");
+        x1 = keyboard.nextInt();
+
+        System.out.print("Enter y1 --> ");
+        y1 = keyboard.nextInt();
+
+        System.out.print("Enter x2 --> ");
+        x2 = keyboard.nextInt();
+
+        System.out.print("Enter y2 --> ");
+        y2 = keyboard.nextInt();
+    }
+
+    // Precondition: none
+    // Postcondition: slope has been calculated
+    public void calculateSlope()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("   calculateSlope");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    // Precondition: none
+    // Postcondition: displayed slope
+    public void printResults()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("    printResults");
+        System.out.println("/********************/");
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        SlopeCalculator app = new SlopeCalculator();
+        app.getPoints();
+        app.calculateSlope();
+        app.printResults();
+    }
+}
+       </pre>
+	 </div>
+<p>Here is the output from this run.</p>
+   <div id="csOutput">
+   <pre>
+/********************/
+     getPoints
+/********************/
+
+Enter x1 --> 2
+Enter x2 --> 4
+Enter y1 --> 3
+Enter y2 --> 5
+
+/********************/
+   calculateSlope
+/********************/
+
+
+/********************/
+    printResults
+/********************/</pre>
+   </div>
+   <h3>Build 2</h3>
+   <p>Steve's program now includes the implementation of the other two methods. He goes ahead
+      and codes both of them since the printing that occurs in printResults will help him
+	  determine the correctness of calculateSlope.</p>
+	<div id="csCode"> 
+    <pre>
+import java.util.*;
+
+public class SlopeCalculator
+{
+    // instance variables
+    private Scanner keyboard = new Scanner(System.in);
+    private double slope = 0;
+    private int x1 = 0;
+    private int y1 = 0;
+    private int x2 = 0;
+    private int y2 = 0;
+
+    // Precondition: none
+    // Postcondition: values of two points have been
+    //     retrieved from keyboard
+    public void getPoints()
+    {
+        System.out.println("/********************/");
+        System.out.println("     getPoints");
+        System.out.println("/********************/");
+        System.out.println();
+
+        System.out.print("Enter x1 --> ");
+        x1 = keyboard.nextInt();
+
+        System.out.print("Enter x2 --> ");
+        y1 = keyboard.nextInt();
+
+        System.out.print("Enter y1 --> ");
+        x2 = keyboard.nextInt();
+
+        System.out.print("Enter y2 --> ");
+        y2 = keyboard.nextInt();
+    }
+
+    // Precondition: none
+    // Postcondition: slope has been calculated
+    public void <div id="csHighlight"><pre>calculateSlope</pre></div>()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("   calculateSlope");
+        System.out.println("/********************/");
+        System.out.println();
+
+        slope = (double)(y2 - y1) / (x2 - x1);
+    }
+
+    // Precondition: none
+    // Postcondition: displayed slope
+    public void <div id="csHighlight"><pre>printResults</pre></div>()
+    {
+        System.out.println();
+        System.out.println("/********************/");
+        System.out.println("    printResults");
+        System.out.println("/********************/");
+        System.out.println();
+
+        System.out.print("Slope of points ("+ x1 + "," + y1 + ") and (" );
+        System.out.println(x2 + "," + y2 + ") is " + slope);
+    }
+
+    public static void main(String[] args)
+    {
+        SlopeCalculator app = new SlopeCalculator();
+        app.getPoints();
+        app.calculateSlope();
+        app.printResults();
+    }
+}	
+	</pre>
+	</div>
+	<div id="csOutput">
+   <pre>
+/********************/
+     getPoints
+/********************/
+
+Enter x1 --> 2
+Enter x2 --> 4
+Enter y1 --> 3
+Enter y2 --> 5
+
+/********************/
+   calculateSlope
+/********************/
+
+
+/********************/
+    printResults
+/********************/
+
+Slope of points (2,3) and (4,5) is 1.0
+</pre>
+   </div>
+<p>After several test runs Steve determines that his program works correctly. He	 
+   can now remove the println statements he added when creating his stub program.</p>
+   <br>
+  </div>	
+

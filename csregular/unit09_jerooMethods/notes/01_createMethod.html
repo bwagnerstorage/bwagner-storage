@@ -1,0 +1,57 @@
+<div id="csHeader">Creating and Using Jeroo Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to create a programmer-defined Jeroo method</li>
+						<li>How to use a programmer-defined Jeroo method</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Creating and Using a Jeroo Method</h1>
+  <p>The Jeroo language contains a set of fundamental methods that define the basic behaviors of
+     every Jeroo. These include the basic actions and the sensor methods. Some problems are such
+	 that it would be convenient if we could extend the basic behaviors of the Jeroos. The Jeroo
+	 language allows us to write <strong>programmer-defined</strong> Jeroo methods that extend the behavior of every
+	 Jeroo.</p>
+  <p>A behavior is an action that an object can take or a task that it can perform in response to a
+     request from an external source. A <strong>method</strong> is a collection of statements that are written in
+	 some programming language to describe a specific behavior. These definitions imply that the
+	 creation of a method is a two-part process. First, we need to define and name the new behavior.
+	 Second, we need to write the source code for the method.</p>
+ <h3>Defining a Behavior</h3>
+  <p>A Jeroo method contains the source code that describes what an arbitrary Jeroo needs to do to
+     carry out the corresponding behavior. The form of a Jeroo method is shown in figure below for
+	 Jeroo's Java style language. The method_identifier on the first line (the header line) is a name
+	 that the programmer chooses for the method. The name should indicate the corresponding behavior.
+	 As with the main method, we should indent every line between the opening and closing braces in 
+	 every Jeroo method.</p>
+	 
+	 <img src="images/Jeroo/method1.gif">
+	 
+  <p>There is one important difference between a Jeroo method and the main method. Since a Jeroo
+     method defines a behavior that applies to every Jeroo, we cannot instantiate a Jeroo in a Jeroo
+	 method, and we do not specify which Jeroo is to perform the steps.</p>
+	 
+	 <img src="images/Jeroo/method2.gif">
+	 
+  <p>It is possible for one Jeroo method to use another, or even itself.</p>
+  
+     <img src="images/Jeroo/method3.gif">
+  
+   <h3>Using a Jeroo Method</h3>
+   <p>A Jeroo method is used just like any other method. In the main method, we send a message to a
+      specific Jeroo object, requesting that it perform the task associated with the method.</p>
+	  
+    <img src="images/Jeroo/method4.gif">
+	
+	
+	<br>
+</div>	
+

@@ -1,0 +1,60 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Rock</div>
+
+<div id="csContent"> 
+<div id="csOutput"><pre>
+public Rock() 
+public Rock(Color rockColor) 
+public void act()
+</pre></div>
+
+<hr>
+
+<div id="apCode">
+<pre>
+package info.gridworld.actor;
+
+import java.awt.Color;
+
+/**
+ * A Rock is an actor that does nothing. It is commonly used to
+ * block other actors from moving. 
+
+ * The API of this class is testable on the AP CS A exam.
+ */
+
+public class Rock extends Actor
+{
+    private static final Color DEFAULT_COLOR = Color.BLACK;
+
+    /**
+     * Constructs a black rock.
+     */
+    <div id="apHighlight"><pre>public Rock()</pre></div>
+    {
+        setColor(DEFAULT_COLOR);
+    }
+
+    /**
+     * Constructs a rock of a given color.
+     * @param rockColor the color of this rock
+     */
+    <div id="apHighlight"><pre>public Rock(Color rockColor)</pre></div>
+    {
+        setColor(rockColor);
+    }
+
+    /**
+     * Overrides the act method in the Actor class
+     * to do nothing.
+     */
+    <div id="apHighlight"><pre>public void act()</pre></div>
+    {
+    }
+}
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,125 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR GridChecker</div>
+
+<div id="csContent"> 
+<h1>Workspace: <a href="apFreeResponse/GridChecker.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >GridChecker</a></h1>
+
+<h1>Directions</h1>
+<p>This question involves reasoning about the GridWorld case study. Reference materials are provided in the
+Appendix.</p>
+
+<p>In this question, you will write two unrelated methods of the GridChecker class that will process a
+BoundedGrid&ltActor&gt object. Recall that the BoundedGrid class implements the Grid interface.
+Also note that the methods in the Grid interface that return an array list will return an empty array list when
+no objects meet the return criteria.</p>
+
+<p>The declaration of the <strong>GridChecker</strong> class is shown below.</p> 
+<div id="apCode"><pre>
+public class GridChecker
+{
+   /** The grid to check; guaranteed never to be null */
+   private BoundedGrid gr;
+
+   /** @return an Actor in the grid gr with the most neighbors;
+    *  null if no actors in the grid.
+    */
+   <div id="apHighlight"><pre>public Actor actorWithMostNeighbors()</pre></div>
+   { /* to be implemented in part (a) */ }
+   
+   
+   /** Returns a list of all occupied locations in the grid gr that are
+    *  within 2 rows and 2 columns of loc. The object references in the
+    *  returned list may appear in any order.
+    *  @param loc a valid location in the grid gr
+    *  @return a list of all occupied locations in the grid gr that are 
+    *  within 2 rows and 2 columns of loc.
+    */
+   <div id="apHighlight"><pre>public List getOccupiedWithinTwo(Location loc)</pre></div>
+   { /* to be implemented in part (b) */ }
+
+
+    // There may be instance variables, constructors, and methods 
+    // that are not shown.
+}
+</pre></div>
+<div id="csList2">
+<ol>
+<li>
+<p>The method <strong>actorWithMostNeighbors</strong> returns an Actor in the grid gr that has the most
+neighbors. A neighbor of a given actor is another actor that occupies any of the given actor's 8 adjacent
+locations. Consider the following examples.</p>
+<div align="center"><img src="images/GridChecker1.gif"></div>
+
+
+<p>In Example 1, the method actorWithMostNeighbors will return the Actor (in this case a bug) in
+location (2, 2). In Example 2, there are three Actor objects that have the same largest number of
+neighbors—the rock in location (1, 1), the critter in location (2, 1), and the bug in location (2, 2). In this
+case, any one of those three Actor objects may be returned. Similarly, either of the Actor objects
+shown in Example 3 could be returned. If there are no Actor objects in the grid, the method returns
+null.</p>
+
+<p>Complete method <strong>actorWithMostNeighbors</strong> below.</p>
+<div id="apCode"><pre>
+/** @return an Actor in the grid gr with the most neighbors;
+ *  null if no actors in the grid.
+ */
+<div id="apHighlight"><pre>public Actor actorWithMostNeighbors()</pre></div>
+
+
+</pre></div>
+</li>
+<li>
+<p>The method <strong>getOccupiedWithinTwo</strong> returns a list containing all occupied locations in the grid gr
+that are within 2 rows and 2 columns of the parameter loc. The location loc is not included in the
+returned list, even if that location is occupied. The object references in the returned list may appear in any
+order. The shaded area in the following diagram shows the group of locations that are within 2 rows and 2
+columns of the location labeled X.</p>
+
+<img src="images/GridChecker2.gif">
+<p>For example, consider the following grid.</p>
+<img src="images/GridChecker3.gif">
+
+<p>The table below shows the results of several calls to the method getOccupiedWithinTwo.</p>
+<img src="images/GridChecker4.gif">
+
+<p>Complete method <strong>getOccupiedWithinTwo</strong> below.</p>
+<div id="apCode"><pre>
+/** Returns a list of all occupied locations in the grid gr that are 
+* within 2 rows and 2 columns of loc. The object references in the 
+* returned list may appear in any order.
+* @param loc a valid location in the grid gr
+* @return a list of all occupied locations in the grid gr that are 
+* within 2 rows and 2 columns of loc.
+*/
+<div id="apHighlight"><pre>public List getOccupiedWithinTwo(Location loc)</pre></div>
+
+
+</pre></div>
+
+</li>
+</ol>
+</div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Test actorWithMostNeighbors
+---------------------------
+info.gridworld.actor.Rock[location=(4, 8),direction=0,color=java.awt.Color[r=0,g
+=0,b=0]]
+
+Test getOccupiedWithinTwo
+-------------------------
+Occupied Locations around Location(4, 3) :
+(2, 5)
+(3, 2)
+(4, 5)
+(5, 3)
+(6, 1)
+(6, 5)
+
+</pre>
+</div>
+	<br>
+</div>	
+

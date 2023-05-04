@@ -1,0 +1,93 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Conditions Using Sensor Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Sensor Method</li>
+					    <li>How to create a condition using Sensor Method</li>
+					    <li>List of Jeroo's Sensor Methods</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Sensor Methods</h1>
+  <p>The <strong>sensor methods</strong> are used to ask a Jeroo something about its immediate surroundings. 
+     Each sensor method has either a true or a false result. Any method that produces either true
+	 or false as a result is called a Boolean method. More generally, any expression that is either
+	 true or false is called a <strong>Boolean expression</strong>. This means that the conditions that are used in
+	 various control structures are, in fact, Boolean expressions</p>
+  <p>In the Jeroo language, the sensor methods are the basic building blocks for creating conditions. 
+     The simplest way to create a condition is to invoke a sensor method. Table 6.3 lists all of the
+	 sensor methods in the Jeroo language. These methods can only be used to construct conditions.
+	 Since they are methods, they are invoked by sending a message to a Jeroo object.</p>
+	 
+<table id="csTable">
+   <tr>
+      <th style="width:200px">Method</th>
+      <th>Purpose</th>
+      <th>Example</th>
+   </tr>
+      <tr>
+      <td>hasFlower()</td>
+      <td>Does this Jeroo have any flowers.</td>
+      <td>bob.hasFlower()</td>
+   </tr>
+      <tr>
+      <td>isClear(relativeDirection)</td>
+      <td>Is there a clear space in the indicated direction? A clear space contains no flower, no
+	      net, no water, adn no Jeroo.<br>[isClear(HERE) is meaningless]</td>
+      <td>bob.isClear(LEFT)<br>
+          bob.isClear(AHEAD)<br>
+          bob.isClear(RIGHT)
+	  </td>
+   </tr>
+      <tr>
+      <td>isFacing(compass Direction)</td>
+      <td>Is this Jeroo facing in the indicated direction?</td>
+      <td>bob.isFacing(NORTH)<br>
+bob.isFacing(EAST)<br>
+bob.isFacing(SOUTH)<br>
+bob.isFacing(WEST)</td>
+   </tr>
+      <tr>
+      <td>isFlower(relativeDirection)</td>
+      <td>Is there a flower in the indicated direction?</td>
+      <td>bob.isFlower(HERE)<br>
+bob.isFlower(LEFT)<br>
+bob.isFlower(AHEAD)<br>
+bob.isFlower(RIGHT)</td>
+   </tr>
+      <tr>
+      <td>isJeroo(relativeDirection)</td>
+      <td>Is there another Jeroo in the indicated direction?<br>
+          [isJeroo(HERE) is meaningless]</td>
+      <td>bob.isJeroo(LEFT)<br>
+bob.isJeroo(RIGHT)<br>
+bob.isJeroo(AHEAD)</td>
+   </tr>
+      <tr>
+      <td>isNet(relativeDirection)</td>
+      <td>Is there a net in the indicated direction?<br>
+          [isNet(HERE) are meaningless]</td>
+      <td>bob.isNet(LEFT)<br>
+bob.isNet(RIGHT)<br>
+bob.isNet(AHEAD)</td>
+   </tr>
+      <tr>
+      <td>isWater(relativeDirection)</td>
+      <td>Is there water in the indicated direction?<br>
+          [isWater(HERE) is meaningless ]</td>
+      <td></td>
+   </tr>
+</table>
+
+<br>
+</div>	
+

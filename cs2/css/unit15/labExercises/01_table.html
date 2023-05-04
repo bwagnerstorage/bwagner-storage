@@ -1,0 +1,86 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">15-1 CSS Tables</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_table.asp" target="_blank" style="color:blue">CSS Tables</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>15_1_table.html</strong> and save it to your CSS folder.</p></li>
+<li><p>Give the document the title: <strong>15_1_table</strong>.</p></li>
+<li><p>In VS Code create a file named <strong>15_1_table.css</strong> and save it to your CSS folder.</p></li>
+<li><p>Add the following starter code to your html document:</p>
+<div id="csHTML"><pre>&lt;!DOCTYPE html&gt;
+   &lt;html&gt;
+   &lt;head&gt;
+       &lt;title&gt;Table&lt;/title&gt;
+       &lt;style&gt;
+          
+       &lt;/style&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;table&gt;
+         &lt;caption&gt;US Presidents 1977 - Present&lt;/caption&gt;
+         &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Term&lt;/th&gt;&lt;th&gt;Party&lt;/th&gt;&lt;th&gt;Home State&lt;/th&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Jimmy Carter&lt;/td&gt;&lt;td&gt;1977-1981&lt;/td&gt;&lt;td&gt;Democratic&lt;/td&gt;&lt;td&gt;Georgia&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Ronald Reagan&lt;/td&gt;&lt;td&gt;1981-1989&lt;/td&gt;&lt;td&gt;Republican&lt;/td&gt;&lt;td&gt;California&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;George H.W. Bush&lt;/td&gt;&lt;td&gt;1989-1993&lt;/td&gt;&lt;td&gt;Republican&lt;/td&gt;&lt;td&gt;Texas&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;William Clinton&lt;/td&gt;&lt;td&gt;1993-2001&lt;/td&gt;&lt;td&gt;Democratic&lt;/td&gt;&lt;td&gt;Arkansas&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;George W. Bush&lt;/td&gt;&lt;td&gt;2001-2009&lt;/td&gt;&lt;td&gt;Republican&lt;/td&gt;&lt;td&gt;Texas&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Barack Obama&lt;/td&gt;&lt;td&gt;2009-2017&lt;/td&gt;&lt;td&gt;Democratic&lt;/td&gt;&lt;td&gt;Illinois&lt;/td&gt;
+         &lt;/tr&gt;
+         &lt;tr&gt;
+            &lt;td&gt;Donald Trump&lt;/td&gt;&lt;td&gt;2017-present&lt;/td&gt;&lt;td&gt;Republican&lt;/td&gt;&lt;td&gt;New York&lt;/td&gt;
+         &lt;/tr&gt;
+      &lt;/table&gt;
+   &lt;/body&gt;
+   &lt;/html&gt;</pre></div>
+</li>
+<li><p>Apply the following styling to the table:</p>
+<ul>
+   <li><p>Set the <strong>font-size</strong> property of the table's <strong>caption</strong> to 1.2em.</p></li>
+   <li><p>Set the <strong>border</strong> property of the <strong>table</strong>, <strong>th</strong>, <strong>td</strong> elements to a size of 1px, border-style of solid, and color black.</p></li>
+   <li><p>Set the <strong>border-collapse</strong> property of the <strong>table</strong> to collapse.</p></li>
+   <li><p>Set the <strong>font-size</strong> property of the <strong>table</strong> to 1.2em.</p></li>
+   <li><p>Set the <strong>height</strong> property of the <strong>th</strong> element to 40px.</p></li>
+   <li><p>Set the <strong>font-size</strong> property of the <strong>th</strong> element to 1.4em.</p></li>
+   <li><p>Set the <strong>text-align</strong> property of the <strong>th</strong> element to center.</p></li>
+   <li><p>Set the <strong>vertical-align</strong> property of the <strong>th</strong> element to middle.</p></li>
+   <li><p>Set the <strong>color</strong> property of the <strong>th</strong> element to white.</p></li>
+   <li><p>Set the <strong>background-color</strong> property of the <strong>th</strong> element to rgb(12,12,68).</p></li>
+   <li><p>Set the <strong>padding </strong>property of the <strong>th</strong> and <strong>td</strong> elements to 15px.</p></li>
+   <li><p>Use the <strong>nth-child</strong> selector to create a zebra style table that changes the background color of all of the even rows in the table to the following color: #dddddd.</p>
+  <li><p>Use the <strong>hover</strong> selector on the <strong>tr</strong> element so that the background color of a row in the table will change colors when the mouse hovers over it. Use the following color: rgb(129,175,206).</p>
+</ul>
+</li>
+
+<li><p>Center the table horizontally within the document by adding the following code to the table element's styling.
+<div id="csHTML" style="width:300px"><pre>
+margin-left: auto; 
+margin-right: auto;
+</pre></div>
+</li>
+</ol>
+
+<br><hr><br>
+<div style="margin-left: auto; margin-right:auto; text-align: center;">
+<img src="images/CS2/CSS/table01.png" >
+</div>
+	<br>
+</div>	

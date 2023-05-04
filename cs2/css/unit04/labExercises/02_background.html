@@ -1,0 +1,173 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">4-2 CSS Background</div>
+
+<div id="csContent">
+    <h1>Resources</h1>
+    <ul id="csList">
+        <li>
+            <p><a href="https://www.w3schools.com/css/css_background.asp" target="_blank" style="color:blue">CSS Backgrounds</a></p>
+        </li>
+        <li>
+            <p><a href="https://www.awwwards.com/background-patterns-designs-and-resources-for-websites.html" target="_blank" style="color:blue">Background Pattern Designs And Resources For Websites</a></p>
+        </li>
+        <li>
+            <p><a href="https://www.csstextures.com/" target="_blank" style="color:blue">Free CSS Textures & Patterns for Your Website Backgrounds</a></p>
+        </li>
+        <li>
+            <p><a href="http://bgrepeat.com/" target="_blank" style="color:blue">Free Repeating Backgrounds Place</a></p>
+        </li>
+        <li>
+            <p><a href="https://superdevresources.com/free-seamless-patterns/" target="_blank" style="color:blue">500+ Free Seamless Patterns for Website Backgrounds</a></p>
+        </li>
+    </ul>
+    <h1>CSS Multiple Background</h1>
+    <p>In this lesson, you will be examining a few more of the background image properties and see how
+       they can be used to combine two images together to form a background. Here again, is a list of background image properties.</p>
+    <ul id="csList">
+     <li><p>background-image</p></li>  
+     <li><p>background-repeat</p></li>
+     <li><p>background-attachment</p></li>
+     <li><p>background-position</p></li>  
+     <li><p>background-cover</p></li>                  
+    </ul>
+    <p>Here is a link to a page that covers the majority of the background properties.
+         <a style="color:blue;" target=_blank href="https://www.w3schools.com/cssref/pr_background-image.asp">CSS background-image Property</a>.</p>
+    <h1>Lab Exercise</h1>
+    <ol id="csList">
+        <li>
+            <p>Open VS Code and create a new document named <strong>4_2_background.html</strong> and save it to your CSS folder.</p>
+        </li>
+        <li>
+            <p>Add the following html to your document:</p>
+<div id="csHTML" style="width:640px"><pre>
+&lt;!DOCTYPE html&gt;
+   &lt;html&gt;
+      &lt;head&gt;
+         &lt;title&gt;Background 2&lt;/title&gt;
+         &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+         &lt;style&gt;
+        
+         &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+                
+      &lt;/body&gt;
+&lt;/html&gt;        
+</pre></div>
+</li>
+<li><p>In VS Code's Explorer and a new folder inside the your CSS folder named <strong>images</strong>.</p></li>
+<li><p>Right-click on the following images, select <strong>Save Image As..</strong>, and save them to your <strong>images</strong> folder.</p>
+<img src="cs2/css/unit04/labExercises/sandstone.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="cs2/css/unit04/labExercises/texas_flag.png">
+</li>
+<li><p>Using internal styling, add the following CSS code to the style section of your html document.</p>
+<div id="csHtml" style="width:640px"><pre>
+* {
+    margin:0;
+    padding:0;
+}
+body {
+
+}
+h1 {
+    text-align:center;
+    font-size:4.0em;
+    color:darkblue;
+}
+p {
+    font-size:2.0em;
+    padding:15px;
+    margin-left:25px;
+    margin-right:25px;
+}
+</pre></div>
+</li>
+<h3>Multiple Background Images</h3>
+<li><p><strong>background.image</strong> - Add the following CSS code to the body section of the internal 
+styling:</p>
+<div id="csHTML" style="width:640px"><pre>
+background-image:url(images/texas_flag.png), url(images/sandstone.jpg);
+</pre></div>
+<p>This code assigns two images as the background of the documents body element. When multiple images are
+    assignment to a background the images are stacked on top of each other. The image listed first is the
+    image that will be on the top of the stack of images and therefore will be displayed on top of the other images. 
+</p></li>
+<li><p><strong>background-position</strong> - Add the following css code to the body section of the internal styling:</p>
+<div id="csHTML" style="width:640px"><pre>
+background-position: top right, top left;
+</pre></div>
+<p>This code positions the images within the body. The first pair of words, <strong>top</strong> and 
+   <strong>right</strong> instruct the browser to position the image at the top right corner of the body.</p>
+   The second pair of words, <strong>top</strong> and <strong>left</strong> instruct the browser to position the image at the top left corner of the body.</p></li>
+<li><p><strong>background-repeat</strong> - Add the following css code to the body section of the internal styling:</p>
+<div id="csHTML" style="width:640px"><pre>
+background-repeat:no-repeat, repeat;
+</pre></div>
+    <p>This code determines whether or not the image will be repeated to cover the entire window. The flag will not be repeated but the sandstone image will.</p>
+</li>
+<li><p><strong>background-attachment</strong> - Add the following css code to the body section of the internal styling:</p>
+<div id="csHTML" style="width:640px"><pre>
+background-attachment:fixed, scroll;
+</pre></div>
+<p>This code determines whether an image will be in a fixed position on the screen or will move when
+   the document is scrolled. The code is currently set to fix the flag image at its location so that it 
+   will not move during scrolling and the sandstone image is set to scroll so it will move as the
+   window is scrolled.</p>
+</li>
+<li><p>In order to test the background-attachment property some text needs to be added to the page. Click on the following link: <a href="https://loremipsum.io/" style="color:blue" target="_blank">loremipsum generator</a>. Create 5 paragraphs of text, then copy and paste the text inside the <strong>body</strong> tag of your document. Wrap a paragraph tag &lt;p&gt; around each of the 5 paragraphs.</p>
+<p>View the document in your browser. Notice how the text scrolls over the top of the 
+   background images. Since the sandstone image is set to repeat. When the page is scrolled new sandstone
+   images are added to the window so that the background is always covered with the image.</p>
+</li>
+<li><p>Change the flag's attachment property from <strong>fixed</strong> to <strong>scroll</strong> and view the page again.</p></li>
+</ol>
+<h1>Modifications</h1>
+<p>In this section, the texas_flag image is going to be moved to the center of the browser window. It is also going to be stretched to cover the window's entire background. Finally, the image's opacity is going to be modified by applying one of the blend-mode options to the two backgrounds.</p>
+<ol id="csList">
+<li><p>Change the flag's attachment property back to <strong>fixed</strong>.</p></li>
+<li><p>Change the background-position property to the following:</p>
+<div id="csHTML" style="width:640px"><pre>
+background-position: center center, top left;
+</pre></div>
+<p>This code changes the flag image's position so that it is located in the center of the window.</p>
+</li>
+<li><p><strong>background-size</strong> - Add the following css code to the body section of the internal styling:</p>
+<div id="csHTML" style="width:640px"><pre>
+background-size: cover;
+</pre></div>
+    <p>This code stretches the two images so that they completely cover the body's background.</p>
+</li>
+
+<li><p><strong>background-size</strong> - Add the following css code to the body section of the internal styling:</p>
+<div id="csHtml" style="width:640px"><pre>
+background-blend-mode: soft-light;
+</pre></div>
+    <p>This code determines how an element's background images should blend with each other and with the element's background color. </p>
+</li>
+<li><p><p>View the document in your browser.</p></li>
+<li><p>Here is the list of available blending modes:</p></li>
+<ul id="csList2">
+<li><p>normal</p></li>
+<li><p>multiply</p></li>
+<li><p>screen</p></li>
+<li><p>overlay</p></li>
+<li><p>darken</p></li>
+<li><p>lighten</p></li>
+<li><p>color-dodge</p></li>
+<li><p>color-burn</p></li>
+<li><p>hard-light</p></li>
+<li><p>soft-light </p></li>
+<li><p>difference</p></li>
+<li><p>exclusion</p></li>
+<li><p>hue</p></li>
+<li><p>saturation</p></li>
+<li><p>color</p></li>
+<li><p>luminosity</p></li>
+</ul>
+</li>
+<li><p>Try some of them.</p></li>
+</ol>
+    <br>
+    <hr><br>
+    <br>
+</div>

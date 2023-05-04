@@ -1,0 +1,102 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">ScaredCritter</div>
+
+<div id="csContent">
+<p>A <strong>Critter</strong> is an Actor. A Critter is more advanced than a Bug in that it has the ability to interact with
+   other actors in the grid. This is accomplished by redefining its act method.</p>
+
+<p>Below is the Critter class's implementation of the act method.</p>
+
+<div id="csCode">
+<pre>
+public void act()
+{
+     if (getGrid() == null)
+         return;
+     ArrayList&ltActor&gt actors = <div id="csHighlight"><pre>getActors()</pre></div>;
+     <div id="csHighlight"><pre>processActors(actors)</pre></div>;
+     ArrayList&ltLocation&gt moveLocs = <div id="csHighlight"><pre>getMoveLocations()</pre></div>;
+     Location loc = <div id="csHighlight"><pre>selectMoveLocation(moveLocs)</pre></div>;
+     <div id="csHighlight"><pre>makeMove(loc)</pre></div>;
+}
+</pre></div>
+<p>A Critter acts by calling the following methods</p>
+<div id="csList">
+<ul>
+<li><strong>getActors</strong> - this method gets a list of actors occupying the locations in the 8 compass directions surrounding the Critter.</li>
+<li><strong>processActors</strong> - this method is where the Critter processes (interacts with) the actors returned by getActors. A Critter processes actors be eating any actor that is not a rock or another Critter.</li>
+<li><strong>getMoveLocations</strong> - this method gets a list of unoccupied locations in the 8 compass directions surrounding the Critter.</li>
+<li><strong>selectMoveLocations</strong> - this method selects at random one of the locations returned by getMoveLocations.</li>
+<li><strong>makeMove</strong> - this method moves the Critter to the selected location returned by selectMoveLocation.</li>
+</ul>
+</div>
+<br><hr>
+<h1>Directions</h1>
+<p>A <strong>ScaredCritter</strong> is a Critter. A ScaredCritter maintains a courage attribute of type int which is initialized by a parameter in the constructor.
+   The courage attribute determines when a ScaredCritter is frightened. A ScaredCritter has an expanded neighborhood which consists of all of the neighbors within
+   two steps of its current location. (For a ScaredCritter not near an edge, this includes 24 locations). A ScaredCritter counts the number of critters in those
+   locations. If the number of critters exceeds the amount of his courage he gets scared and turns <strong>yellow</strong>. If the number of critters is less than or equal to his
+   courage then his color is <strong>red</strong>. The ScaredCritter should be assigned the color red in its constructor.</p>
+
+<h1>Implementation Hints</h1>
+
+<p>One way to look for actors in the 24 locations surrounding the ScaredCritter is to use nested for loops. The outer for loop starts 2 rows above the critter's
+    current row position and ends 2 rows after its current row position. The inner loop starts 2 columns to the left of the critter's current column position and ends
+   2 columns to the right of its current column position.</p>
+<div align="center"><img src="images/ScaredCritter1.gif"></div>
+
+<p>At each iteration through the loops create a new Location object using the code below</p>
+<div id="csCode" style="width:400px"><pre>
+Location newLoc = new Location(r, c); 
+</pre></div>
+<p>where are r and c are the loop control variables of the two nested loops.</p>
+
+<p>After creating the new Location object you can then test the location to make sure that it meets the criteria outlined above:</p>
+<div id="csList">
+<ul>
+<li>the location is a valid location (getGrid().isValid(newLoc))</li>
+<li>the location is not the location of the ScaredCritter (!newLoc.equals(getLocation()))</li>
+<li>the location contains an object (getGrid().get(newLoc) != null)</li>
+</ul>
+</div>
+<p>If all three criteria have been met then add the actor at newLoc to the list of actors.</p>
+<br>
+<p>Implement the ScaredCritter class then use the ScaredCritterRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>ScaredCritterRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class ScaredCritterRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        world.add(new Location(5, 5), new ScaredCritter(3));
+        world.add(new Actor());
+        world.add(new Actor());
+        world.add(new Actor());
+        world.add(new Actor());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
+        world.show();
+    }
+}
+</pre>
+  </div>
+<h1>Source Files</h1>
+<p>ScaredCritter.java</p>
+<p>ScaredCritterRunner.java</p>
+
+	<br>
+</div>	
+
+	
+

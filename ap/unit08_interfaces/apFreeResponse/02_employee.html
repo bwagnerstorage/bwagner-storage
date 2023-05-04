@@ -1,0 +1,123 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Employee</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/EmployeeNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Employee</a></h1>
+
+<h1>Directions</h1>
+<p>Periodically, a company processes the retirement of some of its employees. In this question, you will write methods to help the company determine whether
+   an employee is eligible to retire and to process the retirement of all eligible employees.</p>
+
+<p>The <strong>Employee</strong> interface is declared as follows.</p>
+
+<div id="apCode"><pre>
+public interface Employee 
+{ 
+   <div id="apHighlight"><pre>int getAge();</pre></div> 
+   <div id="apHighlight"><pre>int getYearsOnJob();</pre></div> 
+   <div id="apHighlight"><pre>double getSalary();</pre></div> 
+   <div id="apHighlight"><pre>int getID();</pre></div> 
+}
+</pre></div>
+<p>The <strong>Company</strong> class is declared as follows.</p>
+<div id="apCode"><pre>
+public class Company 
+{ 
+   private ArrayList &ltEmployee&gt empList;    // all employees in this company
+   private int retireAge;        // minimum age to retire
+   private int retireYears;      // minimum years on job to retire
+   private int retireSalary;     // minimum salary to retire
+   private double salaryBudget;
+
+   // postcondition: all retirement-eligible employees have been 
+   // removed from empList;
+   // empList remains sorted by employee ID;
+   // salaryBudget has been updated to reflect remaining
+   // employees
+   <div id="apHighlight"><pre>public void processRetirements()</pre></div>
+   {  /* implemented in part(a)  */  }
+   
+   // postcondition: returns true if emp is eligible to retire;
+   // otherwise, returns false
+   <div id="apHighlight"><pre>private boolean employeeIsEligible(Employee emp)</pre></div>
+   {  /* implemented in part(b)  */  }
+
+   // constructors and other methods not shown
+}
+</pre></div>
+<p>The data member <strong>empList</strong> is sorted in ascending order by employee ID. The total of all salaries
+   is maintained in the data member <strong>salaryBudget</strong>.</p>
+<div id="csList2">
+<ol>
+<li>
+<p>An employee is eligible for retirement if (s)he meets at least two of the following requirements:</p>
+<div id="csList2">
+<p>1. The employee is at least retireAge years old.</p>
+<p>2. The employee has worked for at least retireYears.</p>
+<p>3. The employee's salary is at least retireSalary.</p>
+</div>
+<p>Write the method <strong>employeeIsEligible</strong>. employeeIsEligible returns a boolean value that
+   indicates whether Employee emp is eligible for retirement, using the rules described above.</p>
+
+<p>Complete method <strong>employeeIsEligible</strong> below.</p>
+
+<div id="apCode"><pre>
+// postcondition: returns true if emp is eligible to retire; 
+//	otherwise, returns false
+<div id="apHighlight"><pre>public boolean employeeIsEligible(Employee emp)</pre></div> 
+
+
+</pre></div>
+</li>
+<li>
+<p>Write method <strong>processRetirements</strong>. processRetirements removes all retirement-eligible employees
+   from the empList array, resizes (shrinks) empList as appropriate (maintaining its order by employee ID), and 
+   decreases salaryBudget to reflect the salary of the remaining employees.</p>
+<p>In writing processRetirements, you may call <strong>employeeIsEligible</strong>, specified in part(a). 
+   Assume that employeeIsEligible works as specified, regardless of what you wrote in part(a).</p>
+
+<p>Complete method <strong>processRetirements</strong> below.</p> 
+
+<div id="apCode"><pre>
+// postcondition: all retirement-eligible employees have been 
+//	removed from empList; empList has been resized
+//	to reflect retirements;
+//	empList remains sorted by employee ID;
+//	salaryBudget has been updated to reflect remaining
+//	employees
+<div id="apHighlight"><pre>public void processRetirements()</pre></div> 
+
+
+</pre></div>
+</li>
+</ol>
+</div>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Employee List
+=============
+100  70   35   100000.00
+200  60   40    80000.00
+300  62   25    50000.00
+400  68   37    64000.00
+500  75   20   200000.00
+600  66   27    52000.00
+700  50   15    38000.00
+
+Salary Budget = 584000.0
+
+Process Retirement List
+=======================
+700  50   15    38000.00
+
+Salary Budget = 38000.00
+
+</pre>
+</div>
+	<br>
+</div>	
+
+	
+

@@ -1,0 +1,139 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Data Conversion</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+                        <li>Widening Conversion vs Narrowing Conversion</li>				
+						<li>Assignment Conversion</li>
+					    <li>Arithmetic Conversion</li>
+					    <li>Casting</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Data Conversion</h1>
+  <p>Because Java is a strongly typed language, each data value is associated with a particular type.
+     It is sometimes helpful or necessary to convert a data value of one type to another type, but 
+	 we must be careful that we don't lose important information in the process. For example, suppose
+	 a double variable that holds the number 23.45 is converted to an int value. Because an int cannot
+	 store the fractional part of a number, some information would be lost in the conversion, and the
+	 number represented in the int would not keep its original value.</p>
+  <p>A conversion between one primitive type and another falls into one of two categories: <strong>widening
+     conversions</strong> and <strong>narrowing conversions</strong>. Widening conversions are the safest because they usually
+     do not lose information. Converting from an int to a double is a widening conversion.</p>
+  <p>Narrowing conversions are more likely to lose information than widening conversions. Therefore,
+     in general, they should be avoided. Converting from a double to an int is a narrowing conversion.</p>
+  <p>Note the boolean values are not mentioned in either widening or narrowing conversions. A boolean
+     value (true or false) cannot be converted to any other primitive type and vice versa.</p>
+  <p>In Java, conversions can occur in three ways:</p>
+  <div id="csList">
+  <ul>
+    <li>assignment conversion</li>
+    <li>arithmetic conversion</li>
+    <li>casting</li>
+  </ul></div>
+  <h1>Assignment Conversion</h1>
+  <p>Assignment conversion happens when a value of one type is assigned to a variable of another 
+     type and the value is converted to the new type. Only widening conversions can be done this
+	 way. For example, if money is a double variable and dollars is an int variable, then the 
+	 following assignment statement automatically converts the value in dollars to a double:</p>
+   <div id="csCode">
+   <pre>
+double money = 0.0;
+int dollars = 25;
+
+money = dollars;</pre>
+</div>
+   <p>So, if dollars contains the value 25, after the assignment, money contains the value 25.0.
+      However, if we try to go the other way around and assign money to dollars, the compiler will
+	  send an error message saying that a narrowing conversion could lose information. If you really
+	  want to do this assignment, you can do something called casting, which we'll get to in a minute.</p>
+    <h1>Arithmetic Conversion</h1>
+	<p>Arithmetic promotion happens automatically when certain arithmetic operators need to change
+	   their operands in order to perform the operation. For example, when a floating point value
+	   called sum is divided by an integer value called count, the value of count becomes a floating
+	   point value automatically, before the division takes place, producing a floating point result:</p>
+	  <div id="csCode">
+   <pre>
+double sum = 30;
+int count = 3;
+double result = sum / count;     <div id="csComment"><pre>// count is cast to double</pre></div></pre> </div>
+    <h1>Casting</h1>
+	<p>Casting is the most general form of conversion in Java. If a conversion can be done at all
+	   in a Java program, it can be done using a cast. A <strong>cast</strong> is a type name in parentheses, placed
+	   in front of the value to be converted. For example, to convert money to an integer value, we
+	   could put a cast in front of it:</p>
+	 <div id="csCode">
+    <pre>
+double money = 84.69;
+int dollars = 0;
+
+dollars = <div id="csHighlight"><pre>(int)</pre></div>money;</pre>
+     </div>
+	<p>The cast returns the value in money, cutting off a fractional part. If money contained the
+	   value 84.69, then after the assignment, dollars would contain the value 84. Note, however, 
+	   that the cast does not change the value in money. After the assignment operation is complete,
+	   money still contains the value 84.69.</p>
+	<p>Casts are helpful when a value needs to be treated as another type. For example, if we want
+	   to divide the integer value total by the integer value count and get a floating point, we
+	   could do it as follows:</p>
+	 <div id="csCode">
+    <pre>
+result = <div id="csHighlight"><pre>(double)</pre></div>total / count;</pre>
+     </div>
+   <p>First, the cast operator returns a floating point version of the value in total. This operation
+      does not change the value in total. Then, count is treated as a floating point value by arithmetic
+	  promotion. Now the division operator will do floating point division. If the cast had not been
+	  included, the operation would have done integer division and cut the fraction off before assigning
+	  it to result. Also note that because the cast operator has a higher precedence than the division<br>
+      operator, the cast operates on the value of total, not on the result of the division.</p>
+    <p>The table below shows a modified version of the order of operations with the cast operator included.</p>
+	
+	<table id="csTable">
+      <tr>
+	     <th>Precedence Level</th>
+		 <th>Operator</th>
+		 <th>Operation</th>
+		 <th>Association</th>
+	  </tr>
+	  <tr>
+	     <td><div align="center">1</div></td>
+		 <td><div align="center">()</div></td>
+		 <td><div align="center">grouping</div></td>
+		 <td><div align="center">not applicable</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">2</div></td>
+		 <td><div align="center">(int)<br>(double)</div></td>
+		 <td><div align="center">cast</div></td>
+		 <td><div align="center">right to left</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">3</div></td>
+		 <td><div align="center">*<br>/<br>%</div></td>
+		 <td><div align="center">multiplication<br>division<br>remainder</div></td>
+		 <td><div align="center">left to right</div></td>
+	  </tr>
+	  <tr>
+	     <td><div align="center">4</div></td>
+		 <td><div align="center">+<br>-</div></td>
+		 <td><div align="center">addition<br>subtraction</div></td>
+		 <td><div align="center">left to right</div></td>
+	  </tr>
+	   <tr>
+	     <td><div align="center">5</div></td>
+		 <td><div align="center">=</div></td>
+		 <td><div align="center">assignment</div></td>
+		 <td><div align="center">right to left</div></td>
+	  </tr>
+   </table>
+<br>
+</div>	
+

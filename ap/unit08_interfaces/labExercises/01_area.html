@@ -1,0 +1,121 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Area</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A set of classes is used to calculate the area of various geometric shapes. The Rectangle class
+   calculates the area of a rectangle and the Circle class calculates the area of a circle. To provide
+   a standard functionality between the two classes, both classes implement the <strong>Shape</strong> interface.</p>
+<p>Copy the following code into a file named <strong>Shape.java</strong></p>
+<div id="csCode">
+<pre>
+public interface Shape
+{
+    double getArea();
+}
+</pre>
+</div>  
+
+<div id="csList2">
+<ol>
+<li>
+<p>Write the complete class declaration for the class <strong>Rectangle.</strong>
+<p>Copy the following code into a file named <strong>Rectangle.java</strong>.</p>
+<div id="csCode" style="width:550px">
+<pre>
+public class Rectangle implements Shape
+{
+
+}
+</pre>
+</div>
+<div id="csList">
+<p>- Create an instance variable of type double named <strong>length</strong>.</p>
+<p>- Create an instance variable of type double named <strong>width</strong>.</p> 
+<p>- Implement the method <strong>getArea</strong> using the following mathematical formula:   area = length x width</p> 
+<p>- Implement a <strong>constructor</strong> that takes two parameters that indicate the length and width of
+   the rectangle.</p>
+</li>
+<li>
+<p>Write the complete class declaration for the class <strong>Circle.</strong>
+<p>Copy the following code into a file named <strong>Circle.java</strong>.</p>
+<div id="csCode" style="width:550px">
+<pre>
+public class Circle implements Shape
+{
+
+}
+</pre>
+</div>
+<div id="csList">
+
+<p>- Create an instance variable of type double named <strong>radius</strong>.</p> 
+<p>- Implement the method <strong>getArea</strong> using the following mathematical formula:  area = pi x radius<sup>2</sup></p>
+<p>- Implement a <strong>constructor</strong> that takes a parameter that indicates the radius of the circle.</p> 
+</li>
+<li>
+<p>Implement the method <strong>printArea</strong> in the CalculateArea class.</p>
+<p>Copy the following code into a file named <strong>CalculateArea.java</strong>.</p>
+<div id="csCode" style="width:600px">
+<pre>
+public class CalculateArea
+{
+    public CalculateArea()
+    {
+        Shape rectangle = new Rectangle(10, 20);
+        Shape circle = new Circle(5);
+        
+        System.out.println("Rectangle");
+        System.out.println("----------");
+        printArea(rectangle);
+        System.out.println("Circle");
+        System.out.println("------");
+        printArea(circle);    
+    }
+    
+    // prints the area of the given shape
+    public void <div id="csHighlight"><pre>printArea</pre></div>(Shape shape)
+    {
+
+    }
+    
+    public static void main(String[] args)
+    {
+        CalculateArea app = new CalculateArea();
+    }
+}
+</pre>
+</div>  
+
+<p>This method should print the area of the parameter shape in the following format</p>
+<div id="csOutput" style="width:400px"><pre>
+Area = 57.5
+</pre></div>
+<p>Optional: use printf to round area to one decimal place.</p>
+</li> 
+</ol>
+</div>
+
+ 
+<h1>Source Files</h1>
+<p>Shape.java</p>
+<p>Rectangle.java</p>
+<p>Circle.java</p>
+<p>CalculateArea.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Rectangle
+----------
+Area = 200.0
+
+Circle
+------
+Area = 78.5
+
+</pre>
+</div>
+	<br>
+</div>	
+

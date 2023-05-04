@@ -1,0 +1,247 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Abstract Classes</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is an abstract class</li>
+						<li>What is the purpose of an abstract class</li>
+						<li>Polymorphism and abstract classes</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Abstract Classes</h1>
+<p>An <strong>abstract class</strong> is a kind of ghost class. It can pass along methods and variables but it can't ever be
+   instantiated itself. That is, we can never create an object of an abstract class.</p>
+
+<p>A class is declared abstract by including the abstract modifier in the class header. Any class that contains one or more
+   abstract methods must be declared as abstract. In abstract classes the abstract modifier must be applied to each abstract
+   method. A class declared as abstract does not have to contain abstract methods.</p>
+   
+<div id="csCode" style="width:400px">
+<pre>
+public <div id="csHighlight"><pre>abstract</pre></div> class MyClass
+{
+
+}
+</pre>
+</div>
+
+<p>The purpose of abstract classes is to act as placeholders in a class hierarchy. For example, an abstract class may contain a partial
+  description that is inherited by all of its descendants in the class hierarchy. Its children, which are more specific,
+  fill the gaps.</p>
+
+<p>Consider the class hierachy shown below.</p><br>
+<div align="center"><img src="images/vehicle.gif"></div><br>
+
+<p>The <strong>Vehicle</strong> class at the top of the hierarchy may be too general to be used by the application,
+   so we implement it as an <strong>abstract</strong> class. Still, general ideas that apply to all vehicles can be represented
+   in the Vehicle class and are inherited by its child classes. That way, each of its child classes doesn't have to define the
+   same idea. For example, we may say that all vehicles have a particular speed. Therefore we declare a speed variable in the
+   Vehicle class, and all the cars and boats and planes automatically have that variable because of inheritance. Any change
+   we make to the speed in the abstract class Vehicle automatically show up in all the child classes. Or we may declare an
+   abstract method called fuelConsumption, which we're going to use to calculate mileage. The details of the fuelConsumption
+   method will be different for each type of vehicle, but the Vehicle class establishes that all vehicles consume fuel and
+   it gives us a consistent way to calculate mileage.</p>
+
+<p>Some things don't apply to all vehicles, so we wouldn't represent them at the Vehicle level. For instance, we wouldn't
+   include a variable called numberOfWheels in the Vehicle class, because boats don't have wheels. The child classes that have
+   wheels can add that at the appropriate level in the hierarchy.</p>
+
+<p>Usually, a child of an abstract class will have a specific definition for an abstract method inherited from its parent.
+   Note that this is just a case of <strong>overriding</strong> a method, giving a different definition that the one the parent
+   provides. If a child of an abstract class does not give a definition for every abstract method that it inherits from its
+   parent, the child class is also considered abstract.</p>
+ 
+<h1>Example</h1>
+
+<p>This example contains three classes. The diagram below showns the class hierachy.</p>
+   <br><div align="center"><img src="images/pet.gif"></div><br>
+<p>The <strong>Pet</strong> class is at the top of the hierarchy and it is declared abstract. The <strong>Dog</strong> and <strong>Snake</strong> classes are derived from the Pet class.</p>
+<p>Pet contains two abstract methods named <strong>speak</strong> and <strong>move</strong>. Since all pets can speak and move, but in
+   different ways. It does not make sense to implement these methods in the Pet class. Instead deferring the implementation to
+   subclasses allows them to be given meaning that is specific to the type of pet.</p>
+
+<h3>Pet Class</h3>
+<div id="csCode">
+<pre>
+public <div id="csHighlight"><pre>abstract</pre></div> class Pet
+{
+    private String name;
+    
+    public Pet(String petName)
+    {
+        name = petName;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public String toString()
+    {
+        return "pet " + name;
+    }
+    
+    ///////////////////////////////
+    //      abstract methods     //
+    ///////////////////////////////
+    <div id="csHighlight"><pre>abstract</pre></div> public String speak();
+    
+    <div id="csHighlight"><pre>abstract</pre></div> public String move();   
+}
+</pre>
+</div>
+<h3>Dog Class</h3>
+<div id="csCode">
+<pre>
+public class Dog extends Pet
+{
+    private int weight;
+    
+    public Dog(String dogName, int dogWeight)
+    {
+        super(dogName);      // call superclass's constructor to initialize name
+        weight = dogWeight;
+    }
+    
+    public int getWeight()
+    {
+        return weight;
+    }
+    
+    public String toString()
+    {
+        return super.toString() + " is a dog, weighing " + weight + " pounds";
+    }
+    
+    public String <div id="csHighlight"><pre>speak</pre></div>()
+    {
+        return "woof";
+    }
+    
+    public String <div id="csHighlight"><pre>move</pre></div>()
+    {
+        return "run";
+    }   
+}
+</pre>
+</div>
+<h3>Snake Class</h3>
+<div id="csCode">
+<pre>
+public class Snake extends Pet
+{
+   private int length;
+	
+   public Snake(String snakeName, int snakeLength)
+   {
+      super(snakeName);     // call superclass's constructor to initialize name
+      length = snakeLength;
+   }
+
+   public int getLength()
+   {
+      return length;
+   }
+	
+   public String toString()
+   {
+      return super.toString() + " is a snake, " + length + " inches long";
+   }
+	
+   public String <div id="csHighlight"><pre>speak</pre></div>()
+   {
+      return "hiss";
+   }
+	
+   public String <div id="csHighlight"><pre>move</pre></div>()
+   {
+      return "slither";
+   }
+}
+</pre>
+</div>
+<br><br>
+<h3>Client Code</h3>
+<p>Here is a class named MyPets that tests the functionality of these three classes.</p>
+<div id="csCode">
+<pre>
+public class MyPets
+{
+    public static void main(String[] args)
+    {
+        Pet maddie = new Dog("Maddie", 45);
+        Pet sam = new Snake("Sam", 30);
+        
+        System.out.println(maddie);
+        System.out.println(maddie.getName() + " says " + maddie.speak());
+        System.out.println(maddie.move() + " " + maddie.getName() + " " + maddie.move());
+        System.out.println(((Dog)maddie).getWeight());
+        
+        System.out.println();
+        System.out.println(sam);
+        System.out.println(sam.getName() + " says " + sam.speak());
+        System.out.println(sam.move() + " " + sam.getName() + " " + sam.move());
+        System.out.println(((Snake)sam).getLength());
+    }
+}
+</pre>
+</div>
+<h3>Output</h3>
+<div id="csOutput">
+<pre>
+pet Maddie is a dog, weighing 45 pounds
+Maddie says woof
+run Maddie run
+
+pet Sam is a snake, 30 inches long
+Sam says hiss
+slither Sam slither
+</pre>
+</div><br>
+<H1>Polymorphism</H1>
+<p>Abstract classes can also utilize polymorphism. Look at the code that instantiates a new Dog and Snake object.</p>
+<div id="csCode" style="width:550px">
+<pre>
+<div id="csHighlight"><pre>Pet</pre></div> maddie = new Dog("Maddie", 45);
+<div id="csHighlight"><pre>Pet</pre></div> sam = new Snake("Sam", 30);
+</pre>
+</div>
+<p>Notice the two objects are stored in Pet variables. A Pet variable can store either a dog or a snake. This is polymorphism.</p>
+<p>Since methods getName, speak, and move were declared in the Pet class a cast is not needed inorder to 
+   call them.</p>
+<div id="csCode">
+<pre>
+System.out.println(maddie.getName() + " says " + maddie.speak());
+System.out.println(maddie.move() + " " + maddie.getName() + " " + maddie.move());
+</pre>
+</div>
+<p>However, the methods getWeight and getLength are defined specificly in the Dog and Snake classes, therefore a cast is required
+   in order to call these methods using a Pet variable.</p>
+<div id="csCode" style="width:550px">
+<pre>
+System.out.println((<div id="csHighlight"><pre>(Dog)</pre></div>maddie).getWeight());
+System.out.println((<div id="csHighlight"><pre>(Snake)</pre></div>sam).getLength());
+</pre>
+</div>
+<p>Of course the variable maddie must actually contain a Dog object in order to perform a cast to a dog.</p>
+<p>Also if maddie was declared using a Dog variable(no polymorphism) then a cast would not be necessary.</p>
+<div id="csCode">
+<pre>
+<div id="csHighlight"><pre>Dog</pre></div> maddie = new Dog("Maddie", 45);
+System.out.println(maddie.getName() + " says " + maddie.speak());
+System.out.println(maddie.move() + " " + maddie.getName() + " " + maddie.move());
+System.out.println(maddie.getWeight()); <div id="csHighlight"><pre> // cast not needed</pre></div>
+</pre>
+</div>
+<br>
+</div>	
+

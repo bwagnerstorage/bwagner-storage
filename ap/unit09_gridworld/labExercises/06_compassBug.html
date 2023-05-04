@@ -1,0 +1,46 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">CompassBug</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>CompassBug</strong> is a special BoxBug. A CompassBug behaves like a BoxBug in every way, except that it changes color with each major compass direction.
+   As the bug moves NORTH it becomes RED, going EAST is becomes GREEN, going SOUTH it becomes BLUE and going WEST it becomes BLACK. The CompassBug
+   accomplishes this by overriding the <strong>act</strong> method.</p>
+<div id="csList">
+<p>Use the Location class's directional constants in your implementation.<br>
+<strong>Example:</strong> Location.NORTH</p>
+</div>
+<p>Implement the CompassBug class then use the CompassBugRunner class below to test your new class.</p>
+
+<div id="csCode">
+<pre>
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
+import java.awt.Color;
+import java.util.*;
+
+public class CompassBugRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+		
+        CompassBug bug1 = new CompassBug(6);		
+        CompassBug bug2 = new CompassBug(3);
+		
+        world.add(new Location(8, 2), bug1);
+        world.add(new Location(6, 5), bug2);
+        world.show();
+    }
+}
+</pre>
+</div>
+ 
+<h1>Source Files</h1>
+<p>CompassBug.java</p>
+<p>CompassBugRunner.java</p>
+
+	<br>
+</div>	
+

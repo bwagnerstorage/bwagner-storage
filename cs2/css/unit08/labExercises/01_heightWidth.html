@@ -1,0 +1,91 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">8-1 CSS Height/Width</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+<li><p><a href="https://www.w3schools.com/css/css_dimension.asp" target="_blank" style="color:blue">CSS Height/Width</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+
+<li><p>Open VS Code and create a new document named <strong>8_1_heightWidth.html</strong> and save it to your CSS folder.</p></li>
+<li><p>Give the document the title: <strong>8_1_heightWidth.html</strong>.</p></li>
+<li><p>Add the following starter code to the html file.</p></li>
+<div id="csHTML"><pre>
+&lt;!DOCTYPE html>
+   &lt;html&gt;
+      &lt;head&gt;
+         &lt;title&gt;Height/Width&lt;/title&gt;
+         &lt;style&gt;
+              body {
+                 display: flex;
+                 flex-direction: column;
+                 margin: 0;
+                 background-color: black
+              }
+              .allDivs {
+                 border: 0px solid white;
+                 padding: 0;
+                 margin:  0 0 25px 0;
+              }
+    
+              #red {
+                    
+              }
+           
+              #green {
+
+              }
+                
+              #blue {
+ 
+              }
+                
+              #yellow {
+
+              }
+                
+              #purple {
+
+              }
+                
+              #orange {
+ 
+              }
+           &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div id="red" class="allDivs"&gt;&lt;/div&gt;
+            &lt;div id="green" class="allDivs"&gt;&lt;/div&gt;
+            &lt;div id="blue" class="allDivs"&gt;&lt;/div&gt;
+            &lt;div id="yellow" class="allDivs"&gt;&lt;/div&gt;
+            &lt;div id="purple" class="allDivs"&gt;&lt;/div&gt;
+            &lt;div id="orange" class="allDivs"&gt;&lt;/div&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+</pre></div>
+<h3>Height and Width Properties</h3>
+<p>The <strong>height</strong> and <strong>width</strong> properties are used to set the height and width of an element.</p>
+<p>The height and width properties <strong>do not</strong> include padding, borders, or margins. It sets the height/width of the area inside the padding, border, and margin of the element.</p>
+<li><p>Set the background color of the <strong>red</strong> div to red. Set the <strong>width</strong> property to 500px and its <strong>height</strong> property to 100px. View the page in a browser.</p></li>
+<li><p>Set the background color of the <strong>green</strong> div to green. Set the <strong>width</strong> to 100px and its <strong>height</strong> property to 250px. View the page in a browser.</p></li>
+<li><p>Set the background color of the <strong>blue</strong> div to blue. Set both the <strong>width</strong> and <strong>height</strong> properties to 40px. View the page in a browser.</p></li>
+<li><p>Set the background color of the <strong>yellow</strong> div to yellow. Set the <strong>width</strong> to 100% and the <strong>height</strong> property to 60px. View the page in a browser.</p></li>
+<li><p>Set the background color of the <strong>purple</strong> div to purple. Set the <strong>width</strong> to 50% and the <strong>height</strong> property to 60px. View the page in a browser.</p></li>
+<li><p>For this next coding exercise the previous examples need to be temporarily disable so that the orange div can occupy the entire browser window. To disable the other divs add comment symbols (&lt;!--, --&gt;) around the code to be disabled. Refer to image below to see where the symbols should placed inside the body of the html document.</p>
+<img src="images/CS2/CSS/heightWidth01.png"><br>
+</li>
+<li><p>Set the background color of the <strong>orange</strong> div to orange. Set the <strong>width</strong> to 100vw and the <strong>height</strong> property to 100vh. View the page in a browser.</p>
+<p>The word <strong>viewport</strong> refers to the browser window size. The unit of measurement, <strong>vw</strong>, stands for viewport width and is equal to 1% of the width of the viewport or browser window. Therefore, 10vw is equal to 10% of the width of the viewport and 100vw is equal to 100% of the width of the viewport. The unit of measurement, <strong>vh</strong>, is equal to 1% of the height of the viewport or browser window. Therefore, 10vh is equal to 10% of the height of the viewport and 100vh is equal to 100% of the height of the viewport. </p>
+</li><p>One last step, in the css for the class <strong>AllDivs</strong> the bottom margin is set to 25px. 
+Change its value to 0.</p></li>
+</ol>
+
+<br><hr><br>
+<div>
+   <img src="images/CS2/CSS/heightWidth02.png" style="width:99%" >
+</div> 
+	<br>
+</div>	

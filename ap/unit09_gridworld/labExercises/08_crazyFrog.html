@@ -1,0 +1,47 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">CrazyFrog</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A <strong>CrazyFrog</strong> is a Frog. A CrazyFrog behaves like a Frog in every way, except that it when it jumps
+ over a rock it changes its color to a random color. If a CrazyFrog cannot move like a CrazyFrog it should move like 
+ a Frog. If a CrazyFrog cannot move like a Frog it should move like a Bug.</p>
+
+<p>Redefine the <strong>canMove</strong> method so that it will return true if it encounters an empty cell or a flower or a <strong>Rock</strong>
+    directly in front of its current location. This will ensure that the move method will be called in the act method if the CrazyFrog runs into a rock.</p>
+
+  <p>Implement the CrazyFrog class then use the CrazyFrogRunner class below to test your new class.</p>
+  <p>Copy the following code into a file named <strong>CrazyFrogRunner.java</strong>.</p>
+  <div id="csCode">
+  <pre>
+import info.gridworld.grid.*;
+import info.gridworld.actor.*;
+import java.awt.Color;
+
+public class CrazyFrogRunner
+{
+    public static void main(String[] args)
+    {
+        ActorWorld world = new ActorWorld();
+
+        CrazyFrog frog = new CrazyFrog();
+
+        world.add(new Location(7,5), frog);
+        world.add(new Location(6,5), new Rock());
+        world.add(new Location(2,5), new Rock());
+        world.add(new Location(0,7), new Rock());
+
+        world.show();
+    }
+}
+</pre>
+  </div>
+ 
+<h1>Source Files</h1>
+<p>CrazyFrog.java</p>
+<p>CrazyFrogRunner.java</p>
+
+	<br>
+</div>	
+

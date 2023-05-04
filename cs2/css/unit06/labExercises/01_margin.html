@@ -1,0 +1,86 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">6-1 CSS Margin</div>
+
+<div id="csContent"> 
+<h1>Chapters</h1>
+<ul id="csList">
+<li><p><a href="http://www.w3schools.com/css/css_margin.asp" target="_blank" style="color:blue">CSS Margin</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>6_1_margin.html</strong> and save it to your CSS folder.</p></li>
+<li><p>Give the document the title: <strong>6_1_margin.html</strong>.</p></li>
+<li><p>Add the following starter code to the html file.</p></li>
+<div id="csHTML"><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;Margins&lt;/title&gt;
+   &lt;style&gt;
+      body {
+         display: flex;
+         flex-direction: column;
+         
+      }
+      .allDivs {
+         width: 300px;
+         height: 75px;
+         margin: 20px;
+         background-color: lightgray;
+         border: 6px solid blue;
+         font-size: 3.0em;
+         text-align:center;
+         line-height: 75px;
+    }
+    /* style left margin only */
+    #d1 {
+       
+    }
+    /* style top and bottom margins only */
+    #d2 {
+       
+    }
+    /* style all four margins using margin property */
+    #d3 {
+       
+    }
+    /*  style all four margins using margin property */
+    #d4 {
+       
+    }
+    /* style top and bottom margins using margin property*/
+    #d5 {
+       
+    }
+    /* style margins using auto attribute */
+    #d6 {
+      
+    }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="d1" class="allDivs"&gt;d1&lt;/div&gt;
+    &lt;div id="d2" class="allDivs"&gt;d2&lt;/div&gt;
+    &lt;div id="d3" class="allDivs"&gt;d3&lt;/div&gt;
+    &lt;div id="d4" class="allDivs"&gt;d4&lt;/div&gt;
+    &lt;div id="d5" class="allDivs"&gt;d5&lt;/div&gt;
+    &lt;div id="d6" class="allDivs"&gt;d6&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+<p>This html document contains 6 div boxes that have similar styling because they all use the styling provided by the allDivs class. The allDivs class specifies that each div's top, right, bottom, and left margins all have a distance of 20px. In this lesson, you are going to use the id property to customize the margins of each of the 6 boxes.</p>
+<li><p><strong>d1</strong>: Change the left margin's value to 100px.</p></li>
+<li><p><strong>d2</strong>: Change the top margin's value to 50px and the bottom margin's value to 100.</p></li>
+<li><p><strong>d3</strong>: Use the <strong>margin</strong> property to change all four margin's (top, right, bottom left) to a value of zero. Notice that although the left margin of the d3 box is zero there is still a gap between the left side of the div and left edge of the browser window. The reason for this gap is that the body element has default margin sizes. In the body tags styling section set all of its margins to zero. This should remove the gap between the div and left edge of window.</p></li>
+<li><p><strong>d4</strong>: Use the <strong>margin</strong> property to set the top, right, and bottom margins to 10px and set the left margin to 400px.</p></li>
+<li><p><strong>d5</strong>:  Use the <strong>margin</strong> property to set both the top and bottom margins to 5px.
+<li><p><strong>d6</strong>:  Use the <strong>margin</strong> property to set the margins to <strong>auto</strong>. The auto property will center an element horizontally within its container. The element will then take up the specified width, and the remaining space will be split equally between the left and right margins. This means that in order for the auto property to work the element must be given a width using the <strong>width</strong> property.
+</ol>
+
+<br><hr><br>
+<div>
+   <img src="images/CS2/CSS/margins01.png" style="width:99%">
+</div> 
+	<br>
+</div>	

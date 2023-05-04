@@ -1,0 +1,73 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Representing Audio Data</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+	  <ul>
+          <li>How audio is represented in the computer</li>
+		  <li>How a CD stores audio information</li>
+          <li>Popular audio formats</li>
+        </ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 
+  <h1>Representing Audio</h1>
+<p>We perceive sound when a series of air compressions vibrate a membrane in our ear,
+   which sends signals to our brain. Thus a sound is defined in nature by the wave
+   of air that interacts with our eardrum. To represent a sound, we must somehow 
+   represent the appropriate sound wave.</p>
+<p>A stereo sends an electrical signal to a speaker to produce sound. This signal is
+   an analog representation of the sound wave. The voltage in the signal varies in
+   direct proportion to the sound wave. The speaker receives the signal and causes
+   a membrane to vibrate, which in turn vibrates the air(creating a sound wave), 
+   which in turn vibrates the eardrum. The created sound wave should ideally be
+   identical to the one that was captured initially, or at least good enough to 
+   please the listener.</p>
+<p>To represent audio data on a computer, we must digitize the sound wave, somehow
+   breaking it into discrete, manageable pieces. One way to accomplish this task
+   is to actually digitize the analog representation of the sound. That is, we
+   can take the electrical signal that represents the sound wave and represent it
+   as a series of discrete numeric values.</p>
+<p>An analog signal varies in voltage continously. To digitize the signal, we
+   periodically measure the voltage of the signal and record the appropriate numeric
+   value. The process is called <strong>sampling</strong>. Instead of a continuous
+   signal, we end up with a series of numbers representing distinct voltage levels.</p>
+<div align="center"><img src="images/audio1.jpg"></div>
+<p>To reproduce the sound wave, we use the stored voltage values to create a new
+   continuous electrical signal. The assumption is that the voltage levels in the
+   original signal changed evenly between one stored voltage value and the next. If
+   we take enough samples in a short period of time, that assumption is reasonable.
+   But certainly the process of samplings can lose information.</p>
+<p>In general a sampling rate of around 40,000 times per second is enough to create
+   a reasonable sound reproduction. If the sampling rate is much lower than that,
+   the human ear begins to hear distortions. As higher sampling rate produces
+   better-quality sound, but after a certain point the extra data is irrelevant
+   because the human ear can't hear the difference. The overall result is affected
+   by many factors, including the quality of the equipment, the type of sound, and
+   the human listener.</p>
+<p>A compact disc (CD) stores audio information digitally. On the surface of the CD
+   are microscopic pits that represent binary digits. A low-intensity laser is pointed
+   at the disc. The laser light reflects strongly if the surface is smooth and
+   reflects poorly if the surface is pitted. A receptor analyzes the reflection and
+   produces the appropriate string of binary data, which represents the numeric
+   voltage values that were stored when the signal was digitized. The signal is 
+   reproduced and sent to the speaker.</p>
+<div align="center"><img src="images/audio2.gif"></div>
+<h1>Audio Formats</h1>
+<p>Over the past few years, several formats for audio data have become popular,
+   including WAV, AU, AIFF, VQF, and MP3. All of these formats as based on the storage
+   of voltage values sampled from analog signals, but all recognize the details
+   of the data in different ways and all use various compression techniques to
+   one extent or another.</p>
+<p>Currently, the dominant format for compressing audio data is MP3. The popularity
+   of MP3 resulted mostly because it offered a stronger compression ratio than other
+   formats available at the time. Other formats may prove more efficient in the future,
+   but for now MP3 is the general favorite.</p>
+
+</div>	
+

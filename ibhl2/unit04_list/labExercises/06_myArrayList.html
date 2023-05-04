@@ -1,0 +1,121 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">MyArrayList</div>
+
+<div id="csContent">
+<h1>NetBeans Workspace: <a href="apFreeResponse/MyArrayListNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >MyArrayList</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/MyArrayList.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >MyArrayList</a></h1>
+
+<h1>Directions</h1>
+  <p>The Java Collection Framework(JCF) provides two linear collection classes named ArrayList and LinkedList. The ArrayList class is implemented as a static data structure using an array and
+     the LinkedList class is implemented as a dynamic data structure using object references. In this assignment you are going to complete the implementation of your own ArrayList class named <strong>MyArrayList</strong>. Your class
+	 will also be implemented as a static data structure with the functionality specified in the interface <strong>MyList</strong> shown below.</p>
+<div id="csCode">
+<pre>
+public interface MyList&ltE&gt
+{
+	// appends an item to the end of a list
+	public void add(E item);
+
+	// inserts an item into a list at position index
+	public void add(int index, E item);
+
+	// removes an item from a list at position index
+	public void remove(int index);
+
+	// retrieves an item from a list at position index
+	public E get(int index);
+
+	// updates an item in a list at position index
+	public void set(int index, E item);
+
+	// returns the logical size of a list
+	public int size();
+}
+</pre>
+</div>
+<h3>Method resize</h3>
+<p>The following resize method has been implemented in your MyArrayList class.</p>
+ <div id="csCode">
+<pre>
+public void resize()
+{
+    E[] array2 = (E[])new Object[array.length + 5];  // increase length by 5
+
+    for(int i = 0; i < array.length; i++)
+    {
+        array2[i] = array[i];
+    }
+
+    array = array2; // replace original array with new array
+}
+</pre>
+</div>
+<p>This method creates a second array 5 elements larger than the array that stores the data for the class. It then transfers the data from the original array to this new array and
+throws the old array away. This is the same technique used by the Arraylist class to provide the capability of unlimited size. You will call this method in your <strong>add</strong> methods
+ when your class's internal array needs to be resized.</p><br>
+ <h3>Pseudocode for add Methods</h3> 
+ <p>The first add method has a fairly straight forward implementation. It checks to make sure the array is not full. If it is not, it appends the 
+    new data to the end of the array. If the array is full it resizes the array then appends the data to the end of the array. The last step it performs is to
+	update the logical size of the array.</p>
+<p>The second array performs the same size check as the first method. It then pushes all the data in the array down one unit starting at the 
+   insertion point to make room for the new data. It finishes by inserting the new data into the array at the insertion point and updates the array's logical size.</p>
+ <p><strong>add(append) method</strong></p>
+ <div id="csOutput"><pre>
+if SIZE = ARRAY.length then
+   resize()
+end if
+ARRAY[SIZE] = ITEM
+SIZE = SIZE + 1
+</pre></div>
+<p><strong>add(insert) method</strong></p>
+<div id="csOutput"><pre>
+if SIZE = ARRAY.length then
+   resize()
+end if
+loop I from SIZE+1 downto INDEX
+   ARRAY[I+1] = ARRAY[I]
+end loop
+ARRAY[INDEX] = ITEM;
+SIZE = SIZE + 1
+</pre></div>
+ 
+ 
+ <br>
+<h3>Generic Programming</h3>
+<p><strong>Generics</strong> is a Java programming language feature that allows a programmer to design a class where the user of the class is able to specify the type of data that it will contain. For example,
+   a user of the ArrayList class instantiates an object using the following format:</p>
+    <div id="csCode">
+<pre>
+ArrayList <div id="csHighlight"><pre>&ltInteger&gt</pre></div> list = new ArrayList();
+</pre>
+</div>
+<p>By using the notation &ltInteger&gt the user is able to specify the type of data the ArrayList will contain. This is generics.</p>
+<p>Your MyArrayList class also incorporates generics. The generic code has already been added to the MyList interface and MyArrayList class so
+   no other generic code is necessary. The E in the code means any object.</p>
+
+   
+
+ 
+<h1>Source File</h1>
+<p>MyArrayList.java</p>
+<p>MyList.java</p>
+<p>Demo.java</p>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+5 10 15 20 25 
+5 10 100 15 20 25 
+200 5 10 100 15 20 25 
+200 5 10 100 15 20 25 300 
+200 5 10 15 20 25 300 
+5 10 15 20 25 300 
+5 10 15 20 25 
+
+5 10 15 20 25 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 500 
+</pre>
+</div>
+	<br>
+</div>	
+

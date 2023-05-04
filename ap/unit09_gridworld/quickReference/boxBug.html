@@ -1,0 +1,59 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">BoxBug</div>
+
+<div id="csContent"> 
+<div id="csOutput"><pre>
+public BoxBug(int n) 
+public void act()
+</pre></div>
+
+<hr>
+
+<div id="apCode">
+<pre>
+import info.gridworld.actor.Bug;
+
+/**
+ * A BoxBug traces out a square "box" of a given size. 
+
+ * The implementation of this class is testable on the AP CS A exam.
+ */
+public class BoxBug extends Bug
+{
+    private int steps;
+    private int sideLength;
+
+    /**
+     * Constructs a box bug that traces a square of a given side length
+     * @param length the side length
+     */
+    <div id="apHighlight"><pre>public BoxBug(int length)</pre></div>
+    {
+        steps = 0;
+        sideLength = length;
+    }
+
+    /**
+     * Moves to the next location of the square.
+     */
+    <div id="apHighlight"><pre>public void act()</pre></div>
+    {
+        if (steps < sideLength && canMove())
+        {
+            move();
+            steps++;
+        }
+        else
+        {
+            turn();
+            turn();
+            steps = 0;
+        }
+    }
+}
+</pre>
+</div>
+	<br>
+</div>	
+

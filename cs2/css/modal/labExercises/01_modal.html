@@ -1,0 +1,200 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">28-1 CSS Modal Dialog</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="http://www.w3schools.com/cssref/sel_target.asp" target="_blank" style="color:blue">CSS Modal Dialog</a></p></li>
+
+</ul>
+<h1>Lab Exercise</h1>
+  <ol id="csList">
+    <li> 
+      <p>Open VS Code and create a new document named <strong>28_1_modal.html</strong> 
+        and save it to your CSS folder.</p>
+    </li>
+    <li> 
+      <p>Give the document the title: <strong>28_1_modal</strong>.</p>
+    </li>
+    <li> 
+      <p>In VS Code create a file named <strong>28_1_modal.css</strong> and save 
+        it to your CSS folder.</p>
+    </li></p></li>
+    <li> 
+      <p>Use external styling to create the document shown below.</p>
+    </li>
+    <li> 
+      <p>A <strong>modal dialog</strong> is a window that forces the user to interact 
+        with it before they can go back to using the parent application. A good 
+        example of this would be a prompt for saving, or the "open file" dialog. 
+        They are often used when a user is forced to make an important decision.</p>
+    </li>
+    <li> 
+      <p>Create a document that displays a modal window like the one show below.</p>
+    </li>
+    <li> 
+      <p>Click on the following link: <a href="images/css3_Bronco.png" style="color:blue" target="_blank">Bronco 
+        Background Image</a> and save the image to your css folder.</p>
+    </li>
+    <li> 
+      <p>Create a div element with the id <strong>background</strong>.</p>
+    </li>
+    <li> 
+      <p>Use the following styling with the div:</p>
+      <div id="csOutput" style="width: 630px"> 
+        <pre>
+#background {
+    background-image: url("Bronco.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:contain;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -1;
+}
+</pre>
+      </div>
+      <P>This styling will make the Bronco image the background for the document. 
+        Notice I did not set the background image by styling the body element. 
+        The reason I used a div is because you cannot change the opacity of a 
+        background assigned to the body element. </P>
+    </li>
+    <li> 
+      <p>Create an anchor tag(hyperlink) below the background div that will display 
+        a modal dialog when selected. To do this use the following code:</p>
+      <div id="csOutput"> 
+        <pre>
+&lt;a href="#showModal"&gt;Display Modal&lt;/a&gt;
+</pre>
+      </div>
+    </li>
+    <li> 
+      <p>To create a modal follow these steps:</p>
+      <ul id="csList">
+        <li> 
+          <p>Create a div below the anchor tag and assign it the id name <strong>showModal</strong> 
+            and the class name <strong>modal</strong>.</p>
+        </li>
+        <li> 
+          <p>Style the div using its class name so that it covers the entire document 
+            window.</p>
+        </li>
+        <li> 
+          <p>Have the modal div start invisible by setting its <strong>display</strong> 
+            property to <strong>none.</strong></p>
+        </li>
+      </ul>
+    </li>
+    <li> 
+      <p>Change the modal div's property attributes when the user clicks on the 
+        link created in step 10 by following these steps:</p>
+      <ul id="csList">
+        <li> 
+          <p>Add the following code to your styling:</p>
+          <div id="csOutput"> 
+            <pre>
+.modal:target {
+
+}</pre>
+          </div>
+          <p>The div's <strong>target</strong> selector is activated when the 
+            user clicks on the link that references the div.</p>
+        </li>
+        <li> 
+          <p>Inside the target selector set the <strong>display</strong> property 
+            to <strong>block</strong> so that the modal div will become visible 
+            when the link is selected.</p>
+        </li>
+        <li> 
+          <p>Change the modal's background color <a href="http://www.w3schools.com/cssref/css_colors_legal.asp" style="color:blue" target="_blank">transparency</a> 
+            so that it will look like it is graying out the document window.</p>
+        </li>
+      </ul>
+    </li>
+    <li> 
+      <p>Create another div element inside the modal div and assign it the class 
+        name <strong>modalDialog</strong>.This div will be a small dialog window 
+        that will appear on top of the modal div.</p>
+    </li>
+    <li> 
+      <p>Animate the modalDialog div so that it appears above the top of the modal 
+        div's window and moves down until it reaches the center of the div. To 
+        accomplish this add the following styling:</p>
+      <div id="csOutput" style="width: 630px"> 
+        <pre>
+.modalDialog {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    top: 200px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px #000;
+
+    background: -moz-linear-gradient(#1A001A, #DA70D6);
+	background: -webkit-linear-gradient(#1A001A, #DA70D6);
+	background: -o-linear-gradient(#1A001A, #DA70D6);
+    background: linear-gradient(#1A001A, #DA70D6);
+
+        /* Add animation */
+   -webkit-animation-name: movedown; /* Chrome, Safari, Opera */
+   -webkit-animation-duration: 0.9s; /* Chrome, Safari, Opera */
+   -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+
+    animation-name: movedown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+</pre>
+      </div>
+    </li>
+    <p>Add an anchor tag to the modalDialog div and assign it the class name <strong>close</strong>. 
+      Place an X as the text for the anchor tag.</p>
+    <p>Add the following styling: 
+    <div id="csOutput" style="width: 630px"> 
+      <pre>
+.close {
+    background: #000000;
+    color: #ffffff;
+    line-height: 32px;
+    position: absolute;
+    font-family: "Consolas", sans-serif;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 32px;
+    text-decoration: none;
+    font-weight: bold;
+	
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+	
+    -moz-box-shadow: 2px 2px 4px #000;
+    -webkit-box-shadow: 2px 2px 4px #000;
+    box-shadow: 2px 2px 4px #000;
+}
+
+.close:hover { background: #FFCC00; }
+</pre>
+    </div></li>
+    <li> 
+      <p>Style the modalDialog div however you like. I used a purple <a href="http://www.w3schools.com/css/css3_gradients.asp" style="color: blue" target="_blank">gradient</a> 
+        for the background color. For the text I used <a href="http://www.w3schools.com/css/css3_shadows.asp" style="color:blue" target="_blank">text-shadowing</a>.</p>
+    </li>
+  </ol>
+
+<br><hr><br>
+<div style="margin-left: auto; margin-right:auto; text-align: center;">
+<img src="images/css3_modal.png">
+</div> 
+	<br>
+</div>	

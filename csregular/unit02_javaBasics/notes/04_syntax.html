@@ -1,0 +1,61 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Syntax</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is syntax</li>
+						<li>What is a syntax error</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Syntax</h1>
+  <p>Every spoken language has a general set of rules for how words and sentences should be structured. 
+     These rules are collectively known as the language <strong>syntax</strong>. In computer programming, syntax serves 
+	 the same purpose, defining how the program should be structed. </p>
+  <p>A program's source code must have correct syntax in order to compile correctly and be made into a program. 
+     In fact, it must have perfect syntax, or the program will fail to compile and produce a <strong>syntax error</strong>. 
+	 A syntax error can be as simple as a missing curly brace or a forgotten semicolon at the end of a statement. 
+	 Even these small errors will keep the source code from compiling.</p>
+  <p>The program below contains three syntax errors can you identify them?</p>
+<div id="csCode">
+<pre>
+public class HelloWorld
+{
+   public static poid main(String[] args)
+   {
+      System.out.println("Hello World")
+   }
+
+</pre>
+</div>
+<div id="csList">
+<ul>
+<li>Error 1: The keyword void is misspelled.</li>
+<li>Error 2: Missing semicolon at end of println statement.</li>
+<li>Error 3: Missing closing curly brace to mark end of class.</li>
+</ul>
+</div>
+<div id="csCode">
+    <pre>
+public class HelloWorld
+{
+   public static <font color="#FF0000">void</font> main(String[] args)
+   {
+      System.out.println("Hello World")<font color="#FF0000">;</font>
+   }
+<font color="#FF0000">}</font>
+</pre>
+</div>
+<p>In order for this program to compile and then execute these syntax errors would need to corrected.
+   A program must be error free.</p>
+   <br>
+</div>	
+

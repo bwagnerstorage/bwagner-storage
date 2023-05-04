@@ -1,0 +1,86 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR RouteCipher</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/RouteCipherNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >RouteCipher</a></h1>
+
+
+<h1>Directions</h1>
+  <p>In this question you will write one method for a class <strong>RouteCipher</strong> 
+    that encrypts (puts into a coded form) a message by changing the order of 
+    the characters in the message. The route cipher fills a two-dimensional array 
+    with single-character substrings of the original message in row-major order, 
+    encrypting the message by retrieving the single-character substrings in column-major 
+    order.</p>
+<p>For example, the word "Surprise" can be encrypted using a 2-row, 4-column array as follows.</p>
+<div align="center"><img src="images/RouteCipher1.png"></div>
+
+<p>An incomplete implementation of the RouteCipher class is shown below.</p>
+<img src="images/RouteCipher2.png">
+
+<div id="csList2">
+<ol>
+<li><p>Write the method <strong>fillBlock</strong> that fills the two-dimensional array letterBlock with one-character
+strings from the string passed as parameter str.</p>
+<p>The array must be filled in row-major order - the first row is filled from left to right, then the second row is
+filled from left to right, and so on, until all rows are filled.</p>
+<p>If the length of the parameter str is smaller than the number of elements of the array, the string "A" is
+placed in each of the unfilled cells. If the length of str is larger than the number of elements in the array,
+the trailing characters are ignored.</p>
+<p>For example, if letterBlock has 3 rows and 5 columns and str is the string "Meet at noon",
+the resulting contents of letterBlock would be as shown in the following table.</p>
+<div align="center"><img src="images/RouteCipher3.png"></div>
+
+<p>If letterBlock has 3 rows and 5 columns and str is the string "Meet at midnight", the
+resulting contents of letterBlock would be as shown in the following table.</p>
+<div align="center"><img src="images/RouteCipher4.png"></div>
+
+<p>The following expression may be used to obtain a single-character string at position k of the string str.<br><br>
+&nbsp;&nbsp;&nbsp;str.substring(k, k + 1)</p><br>
+<p>Complete method <strong>fillBlock</strong> below.</p>
+
+<div id="apCode" style="width:550px">
+<pre>
+/** Places a string into letterBlock in row-major order.
+ * @param str the string to be processed
+ * Postcondition:
+ * if str.length() < numRows * numCols, "A" is 
+ *   placed in each unfilled cell
+ * if str.length() > numRows * numCols, trailing 
+ *   characters are ignored
+ */
+<div id="apHighlight"><pre>private void fillBlock(String str)</pre></div> 
+
+
+
+
+</pre>
+</div>
+</li>
+
+</li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+fillBlock
+----------
+M e e t
+a t   n o
+o n A A A
+
+fillBlock
+----------
+M e e t
+a t   m i
+d n i g h
+
+
+</pre>
+</div>
+	<br>
+</div>	
+

@@ -1,0 +1,173 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Scheduler</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A Date class is defined with the following attributes and behaviors. Copy the following code
+   into a source file named <strong>Date.java</strong>.</p>
+
+<div id="csCode"><pre>
+public class Date
+{
+    // instance variables
+    private int month;
+    private int day;
+    private int year;
+    
+    public Date()
+    {
+        month = 0;
+        day = 0;
+        year = 0;
+    }
+    
+    public Date(int m, int d, int y)
+    {
+        month = m;
+        day = d;
+        year = y;
+    }   
+    
+    public int getMonth()
+    {
+        return month;
+    }
+    
+    public int getDay()
+    {
+        return day;
+    }
+    
+    public int getYear()
+    {
+        return year;
+    }
+    
+    public String toString()
+    {
+        return month + "/" + day + "/" + year;
+    }
+}
+</pre></div>
+
+<p>Define an Appointment class with all of the attributes of the Date class but with
+  an additional attribute that describes the purpose of the appointment. The diagram
+  below illustrates this relationship.</p>
+   
+   <div align="center"><img src="images/scheduler.gif"></div>
+
+<h1>Inheritance Rules</h1>
+<div id="csList">
+<ul>
+<li>A subclass can add new private instance variables.</li> 
+<li>A subclass can add new public or private methods.</li> 
+<li>A subclass can override (redefine) inherited methods.</li> 
+<li>A subclass must define its own constructors.</li> 
+<li>A subclass cannot access the private members of its superclass.</li> 
+</ul></div>
+<br>
+<p>Copy the following code into a source file named <strong>Appointment.java</strong></p>
+<div id="csCode"><pre>
+public class Appointment <div id="csHighlight"><pre>extends</pre></div> Date
+{
+    // instance variables
+    
+    
+    // default constructor
+    // use super to initialize variables inherited from Date
+    public Appointment()
+    {
+        
+    }
+    
+    // second constructor
+    // use super to initialize variables inherited from Date
+    public Appointment(int m, int d, int y, String t)
+    {
+        
+    }
+    
+    // accessor method
+    public String getText()
+    {
+        
+    }
+    
+    // toString method
+    // use super to include the toString method from Date
+    public String toString()
+    {
+        
+    }
+}</pre></div>
+
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<p>Make the following additions and modifications to the Appointment class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type String named <strong>text</strong>.</p></li>
+
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- Add an accessor method named <strong>getText</strong>.</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>toString</strong> method.
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>default constructor</strong>. <br>
+- Add a <strong>second constructor</strong> which includes 4 parameters to initialize the instance variables month, day, year, and text. 
+</p></li>
+  
+<li><p><strong>Rule :</strong> A subclass cannot access the private members of its superclass.</p></li>
+
+</ol>
+</div> 
+<h1>Test Class</h1>
+<p>To test the functionality of your classes copy the following code into a source file
+   named <strong>Scheduler.java</strong>.</p>
+<div id="csCode"><pre>
+public class Scheduler
+{
+    public Scheduler()
+    {
+        Date app1 = new Appointment(12,22,2013, "Christmas Party - 7:00pm");
+        System.out.println(app1);
+        System.out.println();
+        Date app2 = new Appointment(1,27,2014, "Dentist - 9:00am");
+        System.out.println(app2);
+        System.out.println();
+        Date app3 = new Appointment(3,27,2014, "Job Interview - 8:30am");
+        System.out.println(app3);
+        System.out.println();
+    }
+    
+    public static void main(String[] args)
+    {
+        Scheduler app = new Scheduler();
+    }
+}
+</pre></div>
+<h1>Source File</h1>
+<p>Date.java</p>
+<p>Appointment.java</p>
+<p>Scheduler.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+12/22/2013 Christmas Party - 7:00pm
+
+1/27/2014 Dentist - 9:00am
+
+3/27/2014 Job Interview - 8:30am
+
+
+</pre>
+</div>
+	<br>
+</div>	
+
+

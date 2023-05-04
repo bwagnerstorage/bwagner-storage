@@ -1,0 +1,79 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">25-1 CSS Animations</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="http://www.w3schools.com/css/css3_animations.asp" target="_blank" style="color:blue">CSS Animations</a></p></li>
+</ul>
+<h1>Lab Exercise</h1>
+<ol id="csList">
+<li><p>Open VS Code and create a new document named <strong>25_1_animations.html</strong> and save it to your CSS folder.</p></li>
+<li><p>In VS Code create a file named <strong>25_1_animations.css</strong> and save it to your CSS folder.</p></li></p></li>
+<li><p>Copy the following internal styling:</p>
+<div id="csOutput" style="width: 620px";><pre>
+body {
+   overflow:hidden;
+}
+
+.wrapper {
+     position: absolute;
+     left: 135px;
+     top: 0px;
+     width:  270px;
+     height: 135px;
+     animation: move 6s ease-in-out 0s infinite alternate;
+     -webkit-animation: move 6s ease-in-out 0s infinite alternate;
+}
+img {
+    position: absolute;
+    left: -135px;
+    top: 0px;
+}
+
+@keyframes move {
+    0%   {left: 135px}
+    100% {left: 100%} 
+}
+</pre></div>
+
+</li>
+<li><p>Add the following code to your HTML document:</p>
+<div id="csOutput" style="width: 620px";><pre>
+&lt!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;25_1_animations&lt;/title&gt;
+   &lt;link rel="stylesheet" href="25_1_animations.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div class="wrapper"&gt;
+       &lt;img src="spongeBob.png"&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</li>
+<li><p>Copy the following image to your HTML images folder:</p>
+<img src="images/spongebob.png">
+</li>
+<li><p>View the document in a browser. The Spongebob image should be animated so that it moves back and forth across the entire width of 
+   the window.</p></li>
+<li> 
+  <p>Modify the styling so that the image rotates 720 degrees as it moves across 
+    the screen from left to right. To do this you will need to add the following 
+    keyframe declaration:</p>
+<div id="csOutput" style="width: 620px";><pre>@-webkit-keyframes rotate {
+   from {-webkit-transform: rotate(0deg); transform: rotate(0deg);}
+   to   {-webkit-transform: rotate(720deg); transform: rotate(720deg);} 
+}
+</pre></div>
+  <p>You will also need to update the <strong>img</strong> tag's styling with the following:</p>
+  <div id="csOutput" style="width: 620px";><pre>animation: rotate 6s linear 0s infinite alternate;
+-webkit-animation: rotate 6s linear 0s infinite alternate;</pre></div>
+</li>
+<br><hr><br>
+
+	<br>

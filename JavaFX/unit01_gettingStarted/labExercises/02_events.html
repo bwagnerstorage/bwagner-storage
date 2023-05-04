@@ -1,0 +1,192 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">JavaFX Lab Exercise 1.2</div>
+
+<div id="csContent"> 
+<h1>JavaFX Event Handling</h1>
+<p>In JavaFX applications, <strong>events</strong> are notifications that something has happened. As a user clicks a button, 
+   presses a key, moves a mouse, or performs other actions, events are dispatched. To respond to a particular event the application
+   registers an <strong>event handler</strong> with the event. In Java, an event handler is a method that is invoked when 
+   the application is notified by the operating system that the event has occurred, therefore giving the application the opportunity to
+   respond to the event. Lets look at our Hello World program from the previous exercise to see how this process works.
+
+   <p>The following code is the start method from the Hello World program. Recall that the start method is called automatically when a JavaFX 
+	  application is executed. The event handling code is highlighted in red.
+   </p>
+
+<div id="csCode"><pre>@Override
+public void start(Stage primaryStage) {
+   Button btn = new Button();
+   btn.setText("Say 'Hello World'");
+   btn.setOnAction(<div id="csHighlight"><pre>new EventHandler&lt;ActionEvent&gt;() { 
+      @Override
+      public void handle(ActionEvent event) {
+         System.out.println("Hello World!");
+   }
+});
+</pre></div>
+</pre></div>
+<p>The event that the program wants to respond to is a button press. To accomplish this
+   the program registers an event handler with the button. This is done by calling the Button class's <strong>setOnAction</strong> method
+   which takes an EventHandler as an argument.</p>
+<p>EventHandler is an interface that includes only one method named <strong>handle</strong>.</p>
+<div id="csCode"><pre>public interface EventHandler&lt;T extends Event&gt; extends EventListener
+{
+   void handle(T event)   // T is the type of event that occurred
+}
+</pre></div>
+<p>It is this <strong>handle</strong> method that becomes the event handler for the button press event. This method will be called every time 
+   the button is pressed so any code placed inside this method will be executed when the event occurs. In the Hello World program the
+   responding code is simply a <code>System.out.println</code> statement.</p>
+
+<h1>Anonymous Inner Class</h1>
+<p>The event handling code shown above does something usual. Probably something you might not have seen before. It is using an 
+	<strong>Anonymous Inner Class</strong> to register the <code>handle</code> method as the event handler for the button. What the heck is an 
+	anonymous inner class? To answer this question lets first define <strong>inner class</strong>. An inner class is a class defined within 
+	another class. Lets look at a simple example.</p>
+<div id="csCode"><pre>
+public class Outer 
+{
+   private int outerVariable = 5;
+   private Inner obj = new Inner();
+			
+   class Inner
+   {
+      public void change()
+      {
+         outerVariable = 100;  // can access directly
+      }
+   }
+}
+</pre></div>
+<p>In our example, Inner class is a member of Outer class, therefore it has direct access to any private variables or methods defined
+   within the Outer class.</p>
+<p>As the name implies, an <strong>anonymous inner class</strong> is an inner class that is not given a name.</p>
+<p>Here are a few rules for declaring an inner class.</p>
+<ul id="csList">
+	<li>An anonymous inner class must extend another class or implement an interface but it cannot do both.</li>
+	<li>An anonymous inner class can override a super class method.</li>
+	<li>An anonymous inner class cannot have constructors.</li>
+	<li>An anonymous inner class can add other fields(instance variables) and methods.</li>
+	<li>An anonymous inner class can only create one object.</li>
+</ul>
+
+<div id="csCode"><pre>
+btn.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+					
+   @Override
+   public void handle(ActionEvent event) {
+      System.out.println("Hello World!");
+   }
+});
+</pre></div>
+<p>Looking at the event handler code again you can see that the anonymous class being defined implements the EventHandler interface which
+	requires the class to implement the <code>handle</code> method. The keyword <strong>new</strong> is used in Java to instantiate objects. Therefore
+	this code is both defining a class and creating an object of the class at the same time. The object created becomes the argument needed
+	by the Button class's <code>setOnAction</code> method.
+</p>
+
+<p>JavaFX does not require you to use inner classes. Below I have modified the start method so that it does not use an anonymous inner class.
+   First, I define a new class named <strong>MyButtonHandler</strong> that implements the <code>EventHandler</code> interface, I then override the <code>handle</code> method, and finally I modify the 
+   <code>start</code> method so that the <code>Button</code> class's <code>setOnAction</code> method takes a <code>MyButtonHandler</code> object as its argument.
+</p>
+
+<div id="csCode"><pre>
+class MyButtonHandler implements EventHandler&lt;ActionEvent&gt;
+{       
+   @Override
+   public void handle(ActionEvent event) 
+   {
+      System.out.println("Hello World!");
+   }
+} 
+</pre></div>
+<div id="csCode"><pre>
+@Override
+public void start(Stage primaryStage) {
+   Button btn = new Button();
+   btn.setText("Say 'Hello World'");
+   btn.setOnAction(<span id="csHighlight"><pre>new MyButtonHandler()</pre></span>);
+}
+</pre></div>
+<h3>When should you use Anonymous Inner Classes?</h3>
+<p>If you have a program that needs one object of a class and that class does not declare a constructor and it
+	does not implement very many methods then it is a good candidate for an anonymous inner class. The benefit of using an inner class is 
+	the class has access to all the fields and methods of the outer class eliminating the need for parameter passing. The program also
+	becomes smaller in size because the class does not need to be defined in the traditional way.
+</p>
+<h1>Lambda Expressions in Java 8</h1>
+<p>With the release of Java 8, Java developers introduced a shortcut for writing anonymous inner classes called <strong>lambda expressions</strong>.
+   Lambda expressions are used to create instances of <strong>functional interfaces</strong>. A functional interface is an interface
+   that only contains <strong>one</strong> abstract method. Some examples of functional interfaces included Comparable, Runnable, and of course
+   EventHandler, the one we have been using in this exercise. The object created by the lambda function implements
+   and executes a functional interface's single abstract method. In essence, lambda expressions create methods that do not belong to any class.</p>
+   <img src="JavaFX/images/Lambda1.png" width="80%" class="center">
+
+<p>Let's convert our code that uses an anonymous inner class to an lambda expression. Here is the code again using the anonymous inner class.</p>
+
+<div id="csCode"><pre>@Override
+public void start(Stage primaryStage) {
+   Button btn = new Button();
+   btn.setText("Say 'Hello World'");
+   btn.setOnAction(<div id="csHighlight"><pre>new EventHandler&lt;ActionEvent&gt;() {     
+      @Override
+      public void handle(ActionEvent event) {
+         System.out.println("Hello World!");
+      }</pre></div>
+   });
+
+   . . .
+}
+
+</pre></div>
+
+      <p>Now here is the code using a lambda expression. Remember the only reason we can use a lambda expression here is because the 
+         EventHandler interface is a functional interface which means it only has one abstract method named handle.
+      </p>
+
+<div id="csCode"><pre>@Override
+public void start(Stage primaryStage) {
+   Button btn = new Button();
+   btn.setText("Say 'Hello World'");
+   btn.setOnAction(<div id="csHighlight"><pre>(ActionEvent event) -> System.out.println("Hello World!");</pre></div>);
+
+   . . .
+}
+</pre></div>
+<P>Notice that the lambda expression does not even need to know the name of the method it is implementing, in this case, handle. This is because the EventHandler
+   interface only has one method so the compiler is able to determine which method it is implementing.</P>
+
+<p>To learn more about lambda expressions try the following links:</p>
+<p><a href="http://tutorials.jenkov.com/java/lambda-expressions.html" style="color:blue" target="_blank">Jenko.com</a></p>
+<p><a href="https://www.geeksforgeeks.org/lambda-expressions-java-8/" style="color:blue" target="_blank">GeeksforGeeks</a></p>
+
+<br>
+<hr>
+<h1>Lab Exercise</h1>
+<p>Modify the Hello World program so that it includes the following changes:</p>
+   <ol id="csList">
+     <li><p>Change the name displayed on the button to "Random".</p></li>
+     <li><p>Modify the code in the <strong>handle</strong> method so that generates and displays a random number between 1 and 1000 each time it is pressed.</p></li>
+     <li><p>Change the line of code</p>
+        <div id="csCode" style="width:300px"><pre>StackPane root = new StackPane();</pre></div>
+           <p>to the following</p>
+           <div id="csCode" style="width:300px"><pre>VBox root = new VBox();</pre></div>
+           <p>VBox is a layout pane that positions controls vertically within the window.</p>
+    </li>
+    <li><p>Create a second button that displays the name "Count".</p></li>
+    <li><p>Use an anonymous inner class to provide event handling for the button. Make sure to use the Button class's <strong>setOnAction</strong>
+           method to register the event handler with the button.</p></li>
+    <li><p>Add code to its <strong>handle</strong> method so that when the button is pressed it will display a counter variable's value on the console window.
+               For example, the first time the button is pressed it will display the number 1, the second time the button is pressed it will display
+               the number 2, the third time is it pressed it will display the number 3, and so on.
+    </p></li>
+    <li><p>Modify the event handlers of both buttons so that they use a lambda expression instead of an anonymous inner class.</p></li>
+
+   </ol>
+   <br>
+
+
+	<br>
+</div>	
+

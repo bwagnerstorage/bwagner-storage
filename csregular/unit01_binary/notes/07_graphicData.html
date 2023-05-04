@@ -1,0 +1,99 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Representing Images and Graphics</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+	  <ul>
+          <li>How color is represented in the computer</li>
+          <li>What is an RGB value</li>
+	      <li>Raster graphics vs Vector graphics</li>
+		  <li>Popular graphic file formats</li>
+        </ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 
+  <h1>Representing Color</h1>
+  <p>Color is our perception of the various frequencies of light that reach the retinas of
+     ours eyes. Our retinas have three types of color photoreceptor cone cells that respond
+	 to different sets of frequencies. These photoreceptor categories correspond to the
+	 colors of red, green, and blue. All other colors perceptible by the human eye can be
+	 made by combining various amounts of these three colors.</p>
+  <p>In a computer, color is often expressed as an RGB (Red-Green-Blue) value, which is
+     actually three numbers that indicate the relative contribution of each of these
+	 primary colors. If each number in the triple is given on a scale of 0 to 255, then
+	 0 means no contribution of that color and 255 means full contribution of that color.
+	 For example, an RGB value of (255, 255, 0) maximizes the contribution of red and green
+	 and minimizes the contribution of blue, which results in a bright yellow.</p>
+  <p>The app below demonstrates how RGB values are used to create colors on your screen.
+     Use the sliders to change the contribution of each color. </p>
+   
+   <center>
+	<div id="colorBox"></div>
+        <div id="sliderBox">
+            <div class="colorLabel"><b>R</b></div>
+           <input id="redSlider" class="colorSlider" type="range" min="0" max="255" value="128" onchange="updateColor(this.id,this.value)"
+                  oninput="updateColor(this.id,this.value)"/>
+           <div class="colorLabel"><b>G</b></div>
+           <input id="greenSlider" class="colorSlider" type="range" min="0" max="255" value="128" onchange="updateColor(this.id,this.value)"
+                  oninput="updateColor(this.id,this.value)"/>
+           <div class="colorLabel"><b>B</b></div>
+           <input id="blueSlider" class="colorSlider" type="range" min="0" max="255" value="128" onchange="updateColor(this.id,this.value)"
+                  oninput="updateColor(this.id,this.value)"/>
+        </div>
+   </center>
+	
+	
+  <p>The amount of data that is used to represent a color is called the <strong>color depth.</strong>
+     Most modern computers use a color depth of 24 bits called TrueColor. With this scheme, each number
+	 in an RGB value gets 8 bits, which gives the range of 0 to 255 for each. This results
+	 in the ability to represent more than 16.7 million unique colors.</p>
+  <p>No one really knows exactly how many colors the human eye can see. Researches have 
+     estimated it to by around 10 million, therefore the 24 bit scheme actually provides
+	 more colors than the human eye can distinguish.</p>
+  <h1>Digitized Images and Graphics</h1>
+  <p>A photograph is an analog representation of an image. It is continuous across its surface,
+     with shades of one color blending into another. Digitizing a picture is the act of 
+	 representing it as a collection of individual dots called <strong>pixels</strong>. 
+	 Each pixel is composed of a single color. The number of pixels used to represent a picture is 
+	 called the <strong>resolution.</strong> If enough pixels are used (high resolution), and are 
+	 then presented in the proper order side by side, the human eye can be fooled into thinking it's
+	 viewing a continuous picture.</p>
+	<center><img src="images/raster1.jpg"></center> 
+  <p>The storage of image information on a pixel-by-pixel basis is called a <strong>raster-graphics format.</strong>
+     Several popular raster-graphics file formats are currently in use, including bitmap(BMP),
+	 GIF, PNG, and JPEG.</p>
+  <p>The BMP file format contains the pixel color values of the image from left to right and
+     from top to bottom. A bitmap file supports 24-bit TrueColor, although usually the color
+	 depth can be specified to reduce the file size.</p>
+  <p>The GIF format limits the number of available colors in the image to 256. That is, a GIF image
+     can be made up of only 256 colors, but each GIF image can be made up of different set of
+	 256 colors. This technique, called <strong>indexed color</strong>, results in smaller
+	 file sizes because there are fewer colors to reference. GIF files are best used for graphics
+	 and images with few colors, and are therefore considered optimal for line art.</p>
+  <p>The PNG (pronounded "ping") format was designed to improve upon, and ultimately replace,
+     the GIF format. PNG images can usually achieve a greater compression than GIF's, while
+	 offering a much wider range of color depths.</p>
+  <p>The JPEG format is designed to exploit the nature of our eyes. Humans are more sensitive to
+     gradual changes of brightness and color over distance than we are to rapid changes.
+	 Therefore, the data that the JPEG format stores averages out the color hues over short
+	 distances. This format is considered superior for photographic color images. A fairly
+	 complicated compression scheme can significantly reduce the resulting file sizes.</p>
+  <h1>Vector Representation of Graphics</h1>
+  <p><strong>Vector graphics</strong> is another technique for representing images. Instead
+     of assigning colors to pixels as we do in raster graphics, a vector-graphics format
+	 describes an image in terms of lines and geometric shapes. A vector graphic is a series
+	 of commands that describe a line's direction, thickness, and color. The file sizes
+	 produced with these formats tend to by small because every pixel does not have to be
+	 accounted for. The complexity of the image, such as the number of items in the picture,
+	 determines the file size.</p>
+  <p>Vector graphics is not good for representing real-world images. JPEG images are far superior
+     in that regard, but vector graphics is good for line art and cartoon-style drawings. The most
+	 popular vector-graphics format used on the Web today is called <strong>Flash</strong>.</p>
+	 <div align="center"><img src="images/vector1.jpg"></div>
+</div>	
+

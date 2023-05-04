@@ -1,0 +1,81 @@
+<div id="csHeader">Preconditions and Postconditions</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Precondition</li>
+					    <li>What is a Postcondition</li>
+					    <li>How to write Preconditions and Postconditions for a method</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Preconditions and Postconditions</h1>
+  <p>We should always define a behavior carefully before we write the code for the corresponding
+     method. A complete definition for a behavior must include a statement of the preconditions and
+	 the postconditions.</p>
+  <p>A <strong>precondition</strong> for a method is something that is assumed to be true before the method is
+     invoked. The portion of the code that invokes the method is responsible for ensuring that all
+	 preconditions are satisfied before the method is invoked.</p>
+  <p>A <strong>postcondition</strong> for a method is something that is true after the method has been executed.
+     The code within the method is responsible for ensuring that all postconditions are met.</p>
+  <p>The process of determining good preconditions and postconditions can be difficult, but it is
+     easier if we remember a few characteristics of objects and methods.</p>
+  <div id="csList">
+    <ol>
+      <li>All work is done by sending messages to objects.</li>
+	  <li>Exactly one object executes a method in response to a message.</li>
+	  <li>A method can modify the attributes of the object that executes the method, but cannot directly modify the attributes of any other object.</li>
+	  <li>One method can send messages to several different objects, and those messages can lead to modifications in their receivers.</li>
+    </ol>
+  </div>
+  <p>Using the previous list of characteristics as a guide, we can use the following questions as a
+     basis for writing preconditions and postconditions. When we are working with the Jeroo language,
+	 we only have to consider two classes of objects, Jeroos and Island cells. We need to consider
+	 how a method can change the attributes of the Jeroo object that executes the method. The Island
+	 cells are less evident because we cannot send them messages, but the Jeroo actions pick and
+	 plant can change the contents of a cell. Behind the scenes, the pick and plant methods send
+	 appropriate messages to the island cells.</p>
+  <table id="csTable">
+     <tr>
+	    <th>Precondition Questions</th>
+		<th>Postcondition Questions</th>
+	 </tr>
+	 <tr>
+	    <td>Do any of the attributes of the receiving<br> object need to have specific values?
+     <div id="csList">
+	    <ul>
+		  <li>Location</li>
+          <li>Direction</li>
+          <li>Flowers</li>
+		</ul>
+	 </div> 
+	   </td>
+		<td>How does this method affect the attributes<br> of the receiving object?
+      <div id="csList">
+	    <ul>
+		  <li>Location</li>
+          <li>Direction</li>
+          <li>Flowers</li>
+		</ul>
+	 </div> 
+	   </td>
+	 </tr>
+	 <tr>
+	    <td>Are the contents of certain island cells important?</td>
+		<td>Have the contents of any island cells changed?</td>
+	 </tr>
+  </table>
+  <p>The preconditions and postconditions can be created rather informally, but the final versions
+     should be stated in a comment block at the beginning of the source code for the method.</p>
+   <img src="images/Jeroo/method5.gif">
+   
+   
+<br>
+</div>	
+

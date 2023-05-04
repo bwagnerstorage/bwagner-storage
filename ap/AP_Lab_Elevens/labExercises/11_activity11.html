@@ -1,0 +1,128 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Elevens - Activity 11</div>
+
+<div id="csContent"> 
+<h1>Simulation of Elevens</h1>
+<p>We have implemented two different solitaire games that we can play, Elevens and Thirteens. That is
+perfect if we want to entertain ourselves playing them. But what if we want to answer questions about the
+games? For example, what percentage of Elevens games can be won? You probably already have some idea
+about the answer to this question, but you might have to play thousands of games to have any real
+confidence in your answer. That's where simulation comes in.</p>
+
+<h1>Exploration</h1>
+<p>A common computing application is the <strong>simulation</strong> of some process; in other words, writing a program
+that imitates the process in some way. The behaviors and state in the program represent key features of,
+and are said to provide a model for, the process. An example is a simulation of a household robot vacuum
+cleaner. Internally, the simulation program is keeping track of its environment, the battery level, and the
+amount of dust in its dust container, and is perhaps displaying them on a computer console. Program
+methods plot the robot's course through rooms in the "house" and determine when it is finished.</p>
+
+<p>A simulation is useful when the process being simulated is too complicated, too slow, too dangerous, or
+too expensive to observe in the real world. Also, understanding the program helps one understand the
+process being simulated. For example, the producers of the robot vacuum cleaner would have used a
+simulation to debug its algorithms before starting to manufacture the actual robots.</p>
+
+<p>A program is called <strong>probabilistic</strong> when its state change is affected by chance. One example is a traffic
+simulation, which has to account for cars unpredictably entering the traffic zone and driving at varying
+speeds. A more obvious example is a simulation of a game based on dice or spinners. In Elevens, the
+probabilistic element is the shuffling of the deck of cards.</p>
+
+<p>To model random events, we use a <strong>pseudo-random number</strong> generator (the "pseudo" is usually omitted).
+In the Deck shuffle method, we used the Math.random method to generate our random
+numbers. This reliance on chance significantly complicates the task of verifying that a simulation is
+behaving correctly. The programmer needs to have a good idea of what output to expect. Also, a small
+number of outcomes of the chance events may produce misleading behavior. For example, four flips of a
+coin may produce all heads, but it would be a mistake to assume that this behavior would happen often.
+Ten thousand flips would produce the more reasonable outcome of around 50 percent heads and
+50 percent tails. The typical probabilistic simulation involves a large number of calls to the random
+number generator to increase the likelihood that the output reflects expected behavior.</p>
+
+<p>To simulate Elevens, we will need to model the "playing" of the game using program state and behavior.
+Let's see how the real world relates to the code:</p>
+
+<div align="center"><img src="images/Elevens5.png"></div>
+
+<p>We have most of this code already written. We have already taken care of all the state requirements.
+The deck of cards is modeled by the cards list in the Deck class. And the cards on the board are
+represented by the cards array in the Board class. We have also written methods for most of the
+necessary behaviors. In fact, we only need to model the additional things you do when you are playing the
+game yourself!</p>
+<p>In the exercises, you will use an ElevensSimulation class, which will play games of Elevens. It will
+need access to methods that mimic the actions you make when you play the game. What do you do when
+you play the game and why do you do it? Answer these questions:</p>
+<div id="csList"><ul>
+<li><p>What do you do repeatedly to play a game?</p></li>
+<li><p>As you are scanning the cards on the board, what are you trying to find?</p></li>
+<li><p>Why do you decide to click on a group of cards?</p></li>
+<li><p>What happens when you click the Replace button?</p></li>
+</ul></div>
+<p>We will model these behaviors with three new methods in the ElevensBoard class:</p>
+<div id="csList"><ul>
+<li><p><strong>playIfPossible</strong> - Looks for a legal play and makes the play (if found). This is the only
+new method that ElevensSimulation needs to call directly. We could put all of our new
+code into this method, but it's helpful to divide it up using two new private helper methods.</p></li>
+<li><p><strong>playPairSum11IfPossible</strong> - Looks for an 11-pair and replaces it (if found).</p></li>
+<li><p><strong>playJQKIfPossible</strong> - Looks for a JQK-triplet and replaces it (if found).</p></li>
+</ul></div>
+
+<p>Next we consider the implementation of playPairSum11IfPossible. This method needs to first
+determine if the board contains an 11-pair. Then, if it finds one, it needs to remove it. Of course,
+playPairSum11IfPossible could call containsPairSum11 to see if there is an 11-pair on
+the board. But containsPairSum11 doesn't return any information about the indexes of the two
+cards that make up the 11-pair. So, playPairSum11IfPossible would have to find the pair again
+before removing it. To avoid having to find the pair twice, we would need to copy the code from
+containsPairSum11 into playPairSum11IfPossible. Thankfully, there's a better way.</p>
+
+<p>What if we change the containsPairSum11 method into a findPairSum11 method? In other
+words, instead of having a "contains" method that returns a boolean value, we have a "find" method
+that returns a list of the indexes of the two cards in the pair. If there is no 11-pair on the board, it will
+return an empty list. Now, playPairSum11IfPossible will be able to call findPairSum11,
+and if there is an 11-pair, it will already have the list of indexes needed to call the
+replaceSelectedCards method. This design eliminates both the duplicated code and the double
+work! We will need to make a similar modification to change the containsJQK method into a
+findJQK method for the playJQKIfPossible method to call.</p>
+
+<p>Note that it's usually not possible to foresee everything during the initial design of a program. For
+example, in the GUI version of Elevens, there was no need for "find" methods. The person playing the
+game had that task. However, the "find" methods became useful when we got into the details of the
+simulation. So, program designs can and do change.</p>
+
+<p>Of course, when we do an initial program design, we try to accommodate all the needs of the problem as
+we understand them. But we also try to keep the design flexible, so that we can accommodate future
+needs. One rule of program design is that methods should be private, unless there is a good reason
+for another class to call those methods. Because we initially made containsPairSum11 private,
+we know that no other class uses it. Therefore, it's safe to rename and change it.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>First, examine the completed ElevensSimulation class in the Activity11 Project.
+This simulation creates an ElevensBoard object, and uses it to play GAMES_TO_PLAY games
+of Elevens. Note that the only new ElevensBoard method used is <strong>playIfPossible</strong>.</p></li>
+<li><p>Now make the necessary changes to the ElevensBoard class. Change <strong>containsPairSum11</strong>
+into <strong>findPairSum11</strong>. You will need to change both the method heading and the method body.
+Note that the method's comment block has already been changed for you.
+Change the <strong>isLegal</strong> and <strong>anotherPlayIsPossible</strong> methods to use <strong>findPairSum11</strong>
+instead of <strong>containsPairSum11</strong>. Note that the board contains an 11-pair if and only if
+findPairSum11(cIndexes).size() > 0 .</p></li>
+<li><p>Change <strong>containsJQK</strong> to <strong>findJQK</strong> in a similar fashion to the <strong>containsPairSum11</strong> to
+<strong>findPairSum11</strong> conversion you did in exercise 2 above. Again, the method's comment block has
+already been changed for you.</p></li>
+<li><p>Change the <strong>isLegal</strong> and <strong>anotherPlayIsPossible</strong> methods to use <strong>findJQK</strong> instead of
+<strong>containsJQK</strong>. At this point, the Elevens GUI program should work just as it did before.</p></li>
+<li><p>It's time to complete the ElevensBoard methods required by the ElevensSimulation
+class. First complete the public <strong>playIfPossible</strong> method, which is called from the
+ElevensSimulation class. This method will use the private
+<strong>playPairSum11IfPossible</strong> and <strong>playJQKIfPossible</strong> helper methods. Note that you
+will have to replace the return statement in the stubbed out method.</p></li>
+<li><p>Complete the private <strong>playPairSum11IfPossible</strong> and <strong>playJQKIfPossible</strong> helper
+methods. Note that you will have to replace the return statements in the stubbed out methods.</p></li>
+<li><p>Now it's time to test your simulation-related changes. Make sure that GAMES_TO_PLAY and
+I_AM_DEBUGGING are initialized to 1 and true respectively in ElevensSimulation.
+Also make sure that I_AM_DEBUGGING is initialized to true in ElevensBoard. Run the
+ElevensSimulation program a few times and examine the output. You should be able to see
+both 11-pairs and JQK-triplets being correctly identified and removed.</p></li>
+</ol></div>
+	<br>
+</div>	
+

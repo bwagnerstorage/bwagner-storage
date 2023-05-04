@@ -1,0 +1,134 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Abstract Data Type(ADT)</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>D.4.7 Identify the features of the abstract data type (ADT) list.</li>
+						<li>D.4.13 Explain the advantages of using library collections.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent">
+<div id="ib">D.4.7 Identify the features of the abstract data type (ADT) list.</div>	
+<h3>Abstract Data Type(ADT)</h3>
+<p>One of the essential features of a computer is its ability to store and manipulate data. Computer programs often need to store large amounts of data 
+   and one way to accomplish this is to use an array.
+   An array is very useful, however, it has many deficiencies, one of which is its requirement of a fixed size. For this reason, computer scientists have developed
+   other ways to store data in programs called Abstract Data Types.</p>
+<p>An <strong>Abstract Data Type(ADT)</strong> is a description for a collection of data and a set of operations that act on the data. These data types are <strong>abstract</strong> because they only
+   describe what can be done to the data not how it is done. The actual implementation of these ADTs is done through the construction of data structures. A <strong>data structure</strong> is 
+   the physical implementation of an ADT. In Java, these data structures are implemented as classes.</p>
+   
+    <div id="csNote">An <strong>ADT</strong> describes the common actions/methods of a data structure but the implementation details are not known. That is left to the implementing data structure or class.</div>
+	
+<strong>Common Operations</strong>
+<p>There are three common operations that all ADTs share. They include:</p>
+   <div id="csList">
+   <ul>
+   <li><strong>Add</strong> - add a data item to a collection.</li>
+   <li><strong>Remove</strong> - remove a data item from a collection.</li>
+   <li><strong>Retrieve</strong> - get a data item from a collection.</li>
+   
+   </ul>
+   </div>
+<p>How theses are operations are performed by the different ADTs depends on their implementation.</p>
+   <p>Below is a list of some of the most common ADTs:</p>
+   <div id="csList">
+   <ul>
+      <li>List</li>
+	  <li>Bag</li>
+	  <li>Set</li>
+	  <li>Stack</li>
+	  <li>Queue</li>
+	  <li>Priority Queue</li>
+	  <li>Tree</li>
+	  <li>Heap</li>
+	  <li>Hash</li>
+	  <li>Map</li>
+	  <li>Graph</li>
+   </ul>
+   </div>
+ <p>For example, the List ADT describes a data structure that contains an ordered collection of values, where the same value may occur more than once.
+    In Java, ADTs are represented through interfaces. Below is the partial specification for Java's List interface:</p>
+ <div id="csCode">
+ <pre>
+public interface List
+{
+    int size()
+    boolean add(E obj)
+    void add(int i, E obj)
+    E get(int i)
+    E set(int i)
+    E remove(int i)
+}
+</pre></div>
+<p>This interface fullfills the specification for a List ADT by requiring any class that implements this interface to have an order collection of data that can be added, removed, retrieved, 
+   and updated. Two of the classes(data structures) that implement the List interface are ArrayList and LinkedList. Both classes provide the operations
+   specified in the List interface but how they store the data in the class and carry out the operations is done in two completely different ways.</p>
+ <table id="csTable" width="500px">
+ <tr>
+   <th>ADT</th>
+   <th>Data Structure(class)</th>
+ </tr>
+  <tr>
+   <td>describe what can be done to data</td>
+   <td>implement how it is done</td>
+ </tr>
+   <tr>
+   <td>Logical(Abstract)</td>
+   <td>Physical(Concrete)</td>
+ </tr>
+ <tr>
+   <td>List interface</td>
+   <td>ArrayList class and LinkedList class</td>
+ </tr>
+ </table>
+
+<h3>Collection</h3>
+ <p>A <strong>collection</strong> is a group of items forming a conceptual unit. In computer science collections are ADTs that have been grouped together. These ADTs are implemented through data structures.
+    A collection is essentially a collection of ADTs.</p>
+ <p>Below is a list of common collection categories. These categories describe how the data is organized in the collections:</p>
+    <div id="csList">
+   <ul>
+      <li><strong>Linear:</strong> Arrays, Lists, Stacks, Queues, ...</li>
+	  <li><strong>Hierarchical:</strong> Heaps, Trees, Hashes, ...</li>
+	  <li><strong>Connected:</strong> Graphs</li>
+	  <li><strong>Unordered:</strong> Sets, Bags, Maps, ...</li>
+   </ul>
+   </div>
+   <p>Collection classes play an important role in almost every non-trivial program written today. For this reason most high-level languages provide collections through class libraries
+      including the Java Collection Framework(JCF), C++ Standard Library, and .NET Framework.</p>
+<div id="csNote">Libraries provide convenient and reliable implementations of common programming tasks.</div>
+	<p>The Java Collection Framework(JCF) provides a set of classes and interfaces that implement the most commonly used ADTs. The diagram below shows the interfaces of the Collections Framework
+	   and some of their implementations:</p>
+	<div align="center"><img src="images/jcf.png" width="650px"></div>
+<div id="ib">D.4.13 Explain the advantages of using library collections.</div>
+<h3>Benefits of the Java Collections Framework</h3>
+<p>The Java Collections Framework provides the following benefits:</p>
+<div id="csList">
+<ul>
+<li><strong>Reduces programming effort:</strong> By providing useful data structures and algorithms, the Collections Framework frees you to concentrate on the important parts of your program
+   rather than on the low-level "plumbing" required to make it work.</li>
+<li><strong>Increases program speed and quality:</strong> This Collections Framework provides high-performance, high-quality implementations of useful data structures and algorithms.</li>
+<Li><strong>Reduces effort to learn and to use new APIs:</strong>The standard collection interfaces provide consistency throughout the framework so it takes less time to learn.</Li>
+<li><strong>Fosters software reuse:</strong> New data structures that conform to the standard collection interfaces are by nature reusable. 
+   The same goes for new algorithms that operate on objects that implement these interfaces.</li>
+</ul></div>
+<p>In this unit we will only be focusing on four ADTs through the Java Collection Framework:</p>
+   <div id="csList">
+   <ul>
+      <li>List</li>
+	  <li>Stack</li>
+	  <li>Queue</li>
+	  <li>Tree</li>
+   </ul>
+   </div>
+<br>
+</div>	
+

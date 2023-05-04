@@ -1,0 +1,124 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Traversals</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/TraversalsNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Traversals</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/Traversals.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Traversals</a></h1>
+
+  <p>A common operation performed on a tree is a traversal. A tree traversal is the process of visiting (examining and/or updating) each node in a tree.</p>
+  <p>View the following illustration that demonstrates three traversals: preorder, inorder, and postorder.</p>
+  
+  <div class = "slider" id="slider3">
+       <ul class="bjqs">
+          <li><img src="images/Tree3/Slide1.PNG"></li>
+          <li><img src="images/Tree3/Slide2.PNG"></li>
+          <li><img src="images/Tree3/Slide3.PNG"></li>
+		  <li><img src="images/Tree3/Slide4.PNG"></li>
+		  <li><img src="images/Tree3/Slide5.PNG"></li>
+		  <li><img src="images/Tree3/Slide6.PNG"></li>
+		  <li><img src="images/Tree3/Slide7.PNG"></li>
+		  <li><img src="images/Tree3/Slide8.PNG"></li>
+		  <li><img src="images/Tree3/Slide9.PNG"></li>
+		  <li><img src="images/Tree3/Slide10.PNG"></li>
+		  <li><img src="images/Tree3/Slide11.PNG"></li>
+		  <li><img src="images/Tree3/Slide12.PNG"></li>
+		  <li><img src="images/Tree3/Slide13.PNG"></li>
+		  <li><img src="images/Tree3/Slide14.PNG"></li>
+		  <li><img src="images/Tree3/Slide15.PNG"></li>
+		  <li><img src="images/Tree3/Slide16.PNG"></li>
+		  <li><img src="images/Tree3/Slide17.PNG"></li>
+		  <li><img src="images/Tree3/Slide18.PNG"></li>
+		  <li><img src="images/Tree3/Slide19.PNG"></li>
+          <li><img src="images/Tree3/Slide20.PNG"></li>
+          <li><img src="images/Tree3/Slide21.PNG"></li>
+		  <li><img src="images/Tree3/Slide22.PNG"></li>
+		  <li><img src="images/Tree3/Slide23.PNG"></li>
+		  <li><img src="images/Tree3/Slide24.PNG"></li>
+		  <li><img src="images/Tree3/Slide25.PNG"></li>
+		  <li><img src="images/Tree3/Slide26.PNG"></li>
+		  <li><img src="images/Tree3/Slide27.PNG"></li>
+		  <li><img src="images/Tree3/Slide28.PNG"></li>
+		  <li><img src="images/Tree3/Slide29.PNG"></li>
+		  <li><img src="images/Tree3/Slide30.PNG"></li>
+		  <li><img src="images/Tree3/Slide31.PNG"></li>
+		  <li><img src="images/Tree3/Slide32.PNG"></li>
+		  <li><img src="images/Tree3/Slide33.PNG"></li>
+		  <li><img src="images/Tree3/Slide34.PNG"></li>
+		  <li><img src="images/Tree3/Slide35.PNG"></li>
+		  <li><img src="images/Tree3/Slide36.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+<p>Below is the pseudocode for a preorder traversal:</p>
+<div id="csOutput"><pre>
+if NODE != null then
+  process NODE
+  visit NODE'S left subtree
+  visit NODE'S right subtree
+end if
+</pre></div>
+
+<p>The two methods below implement a preorder traversal recursively. The processing that occurs in the methods
+   is to add each node's value to an ArrayList.</p>
+   
+<div id="csCode"><pre>
+<div id="csHighlight"><pre>// preorder traversal : root-left-right</pre></div>
+public List&ltObject&gt preOrderTraversal()
+{
+   List&ltObject&gt list = new ArrayList&lt;&gt;();
+   preOrderTraversal(root, list);
+   return list;
+}
+   
+private void preOrderTraversal(TreeNode tree, List&lt;Object&gt; list)
+{
+   if( tree!= null)
+   {
+      list.add(tree.getValue());
+      preOrderTraversal(tree.getLeft(), list);
+      preOrderTraversal(tree.getRight(), list);
+   }
+}
+</pre></div>
+
+<h1>Directions</h1>
+<p>In this assignment you are going to complete the implementation of an inorder traversal and a postorder traversal.</p>
+<h1>Source Files</h1>
+<p>BinaryTree.java</p>
+<p>TreeNode.java</p>
+<p>Traversals.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Tree Structure
+==============
+
+    G
+  F
+    E
+D
+    C
+  B
+    A
+
+Preorder Traversal
+==================
+[D, B, A, C, F, E, G]
+
+Inorder Traversal
+=================
+[A, B, C, D, E, F, G]
+
+Postorder Traversal
+===================
+[A, C, B, E, G, F, D]
+
+</pre>
+</div>
+	<br>
+</div>	
+

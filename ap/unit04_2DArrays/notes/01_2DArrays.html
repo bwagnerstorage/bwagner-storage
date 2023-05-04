@@ -1,0 +1,115 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Two-Dimensional Arrays</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a two-dimensional array</li>
+						<li>How to declare a 2D array</li>
+						<li>How to assign values to 2D array</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1></h1>
+<p>View the following illustration that introduces two-dimensional arrays.</p>
+
+<div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/2DArray1/Slide1.PNG"></li>
+          <li><img src="images/2DArray1/Slide2.PNG"></li>
+          <li><img src="images/2DArray1/Slide3.PNG"></li>
+		  <li><img src="images/2DArray1/Slide4.PNG"></li>
+		  <li><img src="images/2DArray1/Slide5.PNG"></li>
+		  <li><img src="images/2DArray1/Slide6.PNG"></li>
+		  <li><img src="images/2DArray1/Slide7.PNG"></li>
+		  <li><img src="images/2DArray1/Slide8.PNG"></li>
+		  <li><img src="images/2DArray1/Slide9.PNG"></li>
+		  <li><img src="images/2DArray1/Slide10.PNG"></li>
+		  <li><img src="images/2DArray1/Slide11.PNG"></li>
+		  <li><img src="images/2DArray1/Slide12.PNG"></li>
+		  <li><img src="images/2DArray1/Slide13.PNG"></li>
+		  <li><img src="images/2DArray1/Slide14.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+
+<p>View the following illustration that demonstrates how to define a two-dimensional array
+   and assign values to its elements.</p>
+   
+   <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/2DArray2/Slide1.PNG"></li>
+          <li><img src="images/2DArray2/Slide2.PNG"></li>
+          <li><img src="images/2DArray2/Slide3.PNG"></li>
+		  <li><img src="images/2DArray2/Slide4.PNG"></li>
+		  <li><img src="images/2DArray2/Slide5.PNG"></li>
+		  <li><img src="images/2DArray2/Slide6.PNG"></li>
+		  <li><img src="images/2DArray2/Slide7.PNG"></li>
+		  <li><img src="images/2DArray2/Slide8.PNG"></li>
+		  <li><img src="images/2DArray2/Slide9.PNG"></li>
+		  <li><img src="images/2DArray2/Slide10.PNG"></li>
+		  <li><img src="images/2DArray2/Slide11.PNG"></li>
+		  <li><img src="images/2DArray2/Slide12.PNG"></li>
+		  <li><img src="images/2DArray2/Slide13.PNG"></li>
+		  <li><img src="images/2DArray2/Slide14.PNG"></li>
+        </ul>
+    </div>
+
+<h1>Declare and Instantiate</h1>
+<p>Declaring and instantiating two-dimensional arrays is accomplished by extending the processes used for one-dimensional arrays:</p>
+<div id="csCode">
+<pre>
+int[][] table;            // declare array variable
+table = new int[4][5];    // Instantiate array with 4 rows, 5 columns
+</pre>
+</div>
+<p>or</p>
+<div id="csCode">
+<pre>
+int[][] table = new int[4][5];
+</pre>
+</div>
+<h1>Assignment</h1>
+<p>To assign values to the elements of a two-dimensional array you use two index values 
+   representing the row and column. Refer to the following examples.</p>
+   <div id="csCode">
+<pre>
+table[2][3] = 75;       // assign 75 to (row 2, column 3) of the array
+
+matrix[0][0] = "Nero";  // assign "Nero" to (row 0, column 0) of the array
+</pre>
+</div>
+<h1>Initializer Lists</h1>
+<p>Initializer lists can be used with two-dimensional arrays. This requires a list of lists. The number of inner lists 
+   determines the number of rows, and the size of each inner list determines the size of the corresponding row.</p>
+
+<div id="csCode">
+<pre>
+int[][] table = {{ 0, 1, 2, 3, 4},         // row 0
+                 {10, 11, 12,13, 14},      // row 1
+                 {20, 21, 22, 23, 24},     // row 2
+                 {30, 31, 32, 33, 34}};    // row 3
+ 
+</pre>
+</div>
+<br>
+<h3>Two things you need to remember:</h3>
+<div id="csList">
+<ul>
+<li>All the elements of a two-dimensional array must be the same type (int, double, char, etc.) </li>
+<li>The first index always represents the row the second index represents the column, 
+table[R][C] (To help me remember I think about RC Cola. Does anyone still drink this stuff?)</li> 
+</ul>
+</div> 
+<br>
+<br>
+</div>	
+

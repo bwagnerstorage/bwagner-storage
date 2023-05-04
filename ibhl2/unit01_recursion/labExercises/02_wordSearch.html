@@ -1,0 +1,61 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">WordSearch</div>
+
+<div id="csContent"> 
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/WordSearchNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >WordSearch</a></h1>
+
+<h1>Directions</h1>
+<p>Open the NetBeans project provided and complete two methods of the WordSearch class named
+   <strong>searchPuzzle</strong> and <strong>findWord</strong>. Your implementation needs to include
+   a recursive solution.</p>
+<h3>Method searchPuzzle</h3>
+<p>This method, given a String parameter, searches a 2D array of characters looking for series of letters
+   that match the given word. If a match is found the method returns a value of true; otherwise it returns
+   false. This method should utilize the method <strong>findWord</strong> in its implementation.
+</p>
+<div style="text-align: center"><img src="images/wordSearch1.png" style="width:40%"></div>
+<h3>Method findWord</h3>
+<p>This method recursively searches the 2D array looking for letters that are organized either horizontally, vertically, or match the the letters of keyword.
+   The letters can be layed out in regular order or reverse order. The method has four parameters. The first parameter, word, contains the string for which the method is searching.
+   The second and third parameters contain the row and column of the 2D array where the method begins its search. 
+   The last parameter, index, contains the index of the letter in <strong>word</strong> that the method is currently searching. Utilize method <strong>inBounds</strong> in your implementation.
+</p>
+
+<h3>Need Help</h3>
+<p>If you are having trouble with this one here is a link to the pseudocode, however try to do it yourself before looking at the pseudocode.</p>
+<a href="ibhl2/unit01_recursion/labExercises/wordSearchPseudo.html" style="color:#00F; font-size:1.2em; font-weight:600;" target="blank_">Click--> WordSearch PseudoCode</a>
+
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+t c i s a b m u 
+j r u b y b d l 
+w a d a t p o a 
+t e v i h b a c 
+l f x a o p n s 
+i r i c n x h a 
+s e o w l r e p 
+p j f a s j a y
+
+
+ada is in the puzzle
+java is in the puzzle
+fortran is not in the puzzle
+basic is in the puzzle
+perl is in the puzzle
+lisp is in the puzzle
+algol is not in the puzzle
+pascal is in the puzzle
+ruby is in the puzzle
+javascript is not in the puzzle
+swift is in the puzzle
+cobol is in the puzzle
+assembly is not in the puzzle
+</pre>
+</div>
+	<br>
+</div>	
+

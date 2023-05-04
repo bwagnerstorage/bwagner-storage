@@ -1,0 +1,191 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">RaceHorse</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>A Horse class is defined with the following attributes and behaviors. Copy the following code
+   into a source file named <strong>Horse.java</strong>.</p>
+
+<div id="csCode"><pre>
+public class Horse
+{
+    // instance variables
+    private String owner;  // owner of horse
+    private int age;       // age of horse
+    private double value;  // value of horse
+    
+    public Horse()
+    {
+        owner = "";
+        age = 0;
+        value = 0;
+    }
+    
+    public Horse(String o, int a, double v)
+    {
+        owner = o;
+        age = a;
+        value = v;
+    }
+    
+    public String toString()
+    {
+        String str;
+        str = "Owner = " + owner + "\n" +
+              "Age   = " + age   + "\n" +
+              "Value = $" + value;
+        return str;
+    }
+}
+</pre></div>
+<p>The method <strong>toString</strong> returns a string representation of the values stored in a horse object's 
+   instance variables.</p>
+<p>Define a RaceHorse class with all of the attributes of the Horse class but
+   with an additional attribute for the number of races a horse has <strong>won</strong>.
+   Since a race horse <strong>is-a</strong> type of horse this relationship can be
+   represented in Java using inheritance. The diagram below illustrates this relationship.</p>
+   
+   <div align="center"><img src="images/racehorse.gif"></div>
+
+<h1>Inheritance Rules</h1>
+<div id="csList">
+<ul>
+<li>A subclass can add new private instance variables.</li> 
+<li>A subclass can add new public or private methods.</li> 
+<li>A subclass can override (redefine) inherited methods.</li> 
+<li>A subclass must define its own constructors.</li> 
+<li>A subclass cannot access the private members of its superclass.</li> 
+</ul></div>
+<br>
+<p>Copy the following code into a source file named <strong>RaceHorse.java</strong></p>
+<div id="csCode"><pre>
+public class RaceHorse <div id="csHighlight"><pre>extends</pre></div> Horse
+{
+    // instance variables
+    
+    
+    
+    // Default constructor
+    // Use the keyword super to call the Horse class's default
+    //   constructor so that the instance variables inherited
+    //   from this class can be initialized.
+    // Initialize the instance variable numRacesWon to zero.
+    public RaceHorse()
+    {
+
+    }
+    
+    // Second constructor
+    // Use the keyword super to call the Horse class's second 
+    //   constructor so that the instance variables inherited
+    //   from this class can be initialized to values specified
+    //   in the parameter list.
+    // Initialize the instance variable numRacesWon to the value
+    //   specified in the parameter list.
+    public RaceHorse(String owner, int age, double value, int races)
+    {
+
+    }
+    
+    // Accessor Method - getRacesWon
+    // Return the number of races won by this horse
+    public int getRacesWon() 
+    {  
+       
+    }
+    
+    // Mutator Method - wonRace
+    // Increment the number of races won attribute
+    public void wonRace()
+    {  
+        
+    }
+    
+    // toString method
+    // Build and return a string representation of the instance
+    // variables from both the Horse class and the RaceHorse class.
+    // Use the keyword super to call the toString method of
+    //   the Horse class then concatenate the numRacesWon attribute
+    //   to the end to produce the output shown in the Sample
+    //   Run. 
+    public String toString()
+    {
+
+    }
+
+}
+</pre></div>
+
+<h1>Modifications</h1>
+<div id="csList">
+<ol>
+<p>Make the following additions and modifications to the RaceHorse class:</p>
+
+<li><p><strong>Rule :</strong> A subclass can add new private instance variables.<br>
+- Add an instance variable of type int named <strong>numRacesWon</strong>.</p></li>
+
+
+<li><p><strong>Rule :</strong> A subclass can add new public or private methods.<br>
+- Implement the accessor method <strong>getRacesWon</strong>. <br>
+- Implement the mutator method <strong>wonRace</strong>.</p></li>
+
+<li><p><strong>Rule :</strong> A subclass can override (redefine) inherited methods.<br>
+- Override the <strong>toString</strong> method so that it includes the numRacesWon attribute.
+
+<li><p><strong>Rule :</strong> A subclass must define its own constructors.<br>
+- Add a <strong>default constructor</strong> <br>
+- Add a <strong>second constructor</strong> which includes 4 parameters to initialize the
+  instance variables owner, age, value, and numRacesWon.</p></li>
+  
+<li><p><strong>Rule :</strong> A subclass cannot access the private members of its superclass.</p></li>
+
+</ol>
+</div> 
+<h1>Test Class</h1>
+<p>To test the functionality of your classes copy the following code into a source file
+   named <strong>RaceHorseTest.java</strong>.</p>
+<div id="csCode"><pre>
+public class RaceHorseTest
+{
+    public RaceHorseTest()
+    {
+        RaceHorse horse1 = new RaceHorse("John Wayne", 3, 250000, 2);
+        System.out.println(horse1);
+
+        System.out.println();
+
+        RaceHorse horse2 = new RaceHorse("Jimmy Stewart", 4, 325000, 8);
+        System.out.println(horse2);
+
+        System.out.println();
+    }
+	
+    public static void main(String[] args)
+    {
+        RaceHorseTest app = new RaceHorseTest();
+    }
+}
+</pre></div>
+<h1>Source File</h1>
+<p>Horse.java</p>
+<p>RaceHorse.java</p>
+<p>RaceHorseTest.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Sample Run
+Owner = John Wayne
+Age   = 3
+Value = $250000.0
+Races won = 2
+
+Owner = Jimmy Stewart
+Age   = 4
+Value = $325000.0
+Races won = 8
+</pre>
+</div>
+	<br>
+</div>	
+

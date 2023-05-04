@@ -1,0 +1,141 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Static Methods</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a static method</li>
+						<li>How to define and use static methods</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<p>It is often necessary in our Java programs to perform some type of mathematical calculation.
+  Java provides a <strong>Math</strong> class that contains many methods that can perform these operations.
+  To access these methods within a program you would use code like the following</p>
+<div id="csCode">
+<pre>
+double squareRoot = Math.sqrt(16);
+int minimum = Math.min(10, 20);
+int maximum = Math.max(10, 20);
+int absoluteValue = Math.abs(-25);
+</pre></div> 
+
+<p>If you have used the Math class before you may have wondered why the Math class name is used
+  when referencing one of its methods.</p>
+<div id="csCode">
+<pre>
+double squareRoot = <div id="csHighlight"><pre>Math</pre></div>.sqrt(16);
+</pre></div> 
+ 
+<p>Instead of the more standard way, which is to create an object and use the object name to access
+   the methods.</p>
+<div id="csCode">
+<pre>
+Math m = new Math();                 // instantiate Math object
+double squareRoot = <div id="csHighlight"><pre>m</pre></div>.sqrt(16);      // use object name to access methods
+</pre></div>
+<p>The reason the Math class name is used to activate its methods is because the Math class declares
+  all of its methods to be <strong>static</strong>. In fact, because of the way the Math class is
+  designed if you attempted to create a Math object you would get a compiling error.</p>
+
+<h1>Static Methods</h1>
+<p>A <strong>static method</strong> is a method that belongs to a class rather than an object of a class. In fact,
+  static methods are often referred to as <strong>class methods</strong>. A static method is created by adding the
+  keyword static to a method's header after the access modifier. Look at the header for the Math
+  class's sqrt method.</p>
+<div id="csCode">
+<pre>
+public <div id="csHighlight"><pre>static</pre></div> double sqrt(double a)
+</pre></div> 
+
+<p>The sqrt method is static therefore to access it you use the Math class name instead of an object.</p>
+<div id="csCode">
+<pre>
+System.out.println(<div id="csHighlight"><pre>Math</pre></div>.sqrt(16));
+</pre></div>  
+
+<p>Since an object is not required to call a static method, a static method cannot make reference to 
+   instance variables within its body. The following example would cause a compiling error.</p>
+<div id="csCode">
+<pre>
+public class myClass
+{
+   private int num;      // instance variable
+
+   public static void myMethod()
+   {
+      System.out.println(num);   // <div id="csHighlight"><pre>error</pre></div>, instance variables are 
+                                 // not allowed here
+   }
+}
+</pre></div>  
+
+<p>An instance method is a method that is not static. Instance methods cannot be called from within
+   a static method. A common mistake beginning programmers make is to make a call to an instance
+   method from within a Java program's main method. The following example would also cause a compiling
+   error.</p>
+<div id="csCode">
+<pre>
+public class myClass
+{
+   public void print()    // instance method
+   {
+      System.out.println("Hello");
+   }
+   
+   public static void main(String[] args)
+   {
+       print();    // <div id="csHighlight"><pre>error</pre></div>, instance methods cannot be called
+                   // by static methods.
+   }
+}
+</pre></div>  
+
+<p>However, if the print method was declared static the code would execute without error.</p>
+<div id="csCode">
+<pre>
+public class myClass
+{
+   public static void print()   // static (class) method
+   {
+      System.out.println("Hello");
+   }
+   
+   public static void main(String[] args)
+   {
+       print();    // calls print method
+   }
+}
+</pre></div>  
+
+<p>Futhermore, since the print method is declared static it can be called from within another class
+   without the need for an object. To do this simply use dot notation including the class name where
+   the method was defined, a dot, then the method name with parameter list.</p>
+<div id="csCode">
+<pre>
+public class myClass
+{
+   public static void print()   // static (class) method
+   {
+      System.out.println("Hello");
+   }
+}
+
+public class myOtherClass
+{
+   public static void main(String[] args)
+   {
+       myClass.print();    // calls print method using class name
+   }
+
+}
+</pre></div>  
+<br>
+</div>	
+

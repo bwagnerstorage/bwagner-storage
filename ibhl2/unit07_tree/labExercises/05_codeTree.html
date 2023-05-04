@@ -1,0 +1,212 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">CodeTree</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/CodeTreeNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >CodeTree</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/CodeTree.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >CodeTree</a></h1>
+
+<h1>Directions</h1>
+  <p>Consider the problem of encoding words as a string of 0's and 1's using a codetree. A codetree is a binary tree containing letters in its leaves.
+   The encoding of a letter is represented by the root-to-leaf path for the letter. The same codetree is used for encoding and decoding.</p>
+
+<p>The following properties hold for every codetree.</p>
+<div id="csList"><ul>
+<li><p>Every node is either a leaf or has exactly 2 children.</p></li>
+<li><p>Letters appear only at the leaves of the codetree.</p></li>
+<li><p>There are at least 2 letters in the codetree.</p></li>
+<li><p>Each letter appears at most once in the codetree; thus there is a unique root-to-leaf path encoding
+        for each letter.</p></li>
+</ul></div>
+<p>For example, consider the following codetree, C. </p>
+<div align="center"><img src="images/codeTree1.gif"></div>
+<p>The code for each letter is a string formed by appending a '0' when taking a left branch and a '1' for a
+right branch when traversing the root-to-leaf path. In the codetree above, the code for 'u' is "010" (left,
+right, left), the code for 's' is "00", and the code for 'n' is "10". A word is encoded by appending the codes
+ for letters in the word together. For example, the code for "sun" is "0001010", which is formed by appending the codes for 's', 'u', and 'n'.</p>
+
+<p>Consider the following declarations for a tree node and a class that represents the codetree.</p> 
+
+<div id="csCode"><pre>
+public class TreeNode
+{
+    // Instance Variables
+    private Object value;
+    private TreeNode left;
+    private TreeNode right;
+    
+    // Constructors
+    public TreeNode(Object initValue)
+    { 
+        value = initValue; 
+        left = null; 
+        right = null; 
+    }
+    
+    public TreeNode(Object initValue, TreeNode initLeft, TreeNode initRight)
+    { 
+        value = initValue;
+        left = initLeft;
+        right = initRight;
+    }
+    
+    // Accessor Methods
+    public Object getValue()
+    {
+        return value;
+    }
+    public TreeNode getLeft() 
+    { 
+        return left; 
+    }
+    public TreeNode getRight()
+    { 
+         return right; 
+    }
+    
+    // Mutator Methods
+    public void setValue(Object theNewValue)
+    { 
+         value = theNewValue; 
+    }
+    public void setLeft(TreeNode theNewLeft)
+    { 
+         left = theNewLeft;
+    }
+    public void setRight(TreeNode theNewRight)
+    { 
+         right = theNewRight;
+    }
+}
+
+class CodeTree 
+{ 
+   private TreeNode root;
+ 
+   public void setRoot(TreeNode node)
+   {
+      root = node;
+   }  
+   
+   // precondition: code is a string of 0's and 1's representing 
+   //   a valid encoded word
+   // postcondition: returns decoded word for code 
+   public String bitsToWord(String code)
+   {
+       /* to be implemented in part (a) */
+   } 
+
+   // precondition: each character in word is in a leaf 
+   //   of the codetree
+   // postcondition: returns the code for word 
+   public String wordToBits(String word)
+   {
+      String bits="";
+      for(int k = 0; k < word.length(); k++)
+      {
+        bits += charToBitsHelper(word.charAt(k), root, "");
+      }
+      return bits;
+   }
+   
+   // postcondition: if ch is in subtree T, returns code for ch 
+   private String charToBitsHelper(char ch, TreeNode t, String pathSoFar)
+   {
+       /* to be implemented in part (b) */
+   } 
+}
+</pre></div>
+
+<div id="csList2"><ol>
+<li><p> You will write the CodeTree member method bitsToWord, which is described as follows. bitsToWord is given a coded word (a string of 0's and 1's)
+   and returns the decoded word. Each character of code represents a branch in the codetree, where '0' represents a left branch and '1' represents a
+   right branch. To decode the word represented by code, begin at the root and follow a branch for each '0' or '1' character in code. When a leaf is
+   reached, one letter in the decoded word has been found. The decoding process begins again at the root of the codetree with the next '0' or '1'
+   character in code. </p>
+   
+   <div align="center"><img src="images/codeTree1.gif"></div>
+   
+   <p>For example, using the CodeTree C as shown, if code is "1110", the call C.bitsToWord(code) returns the word "in". This result is obtained as follows.
+      The path starts at the root and goes right for the first '1', right again for the second '1', and a leaf is reached, meaning the decoded word begins with 'i'.
+	  Starting back at the root of the codetree and with the next '1' in code, the path goes right for '1' and left for '0', reaching the leaf with the letter 'n'.
+	  The decoded word is now "in", and since all characters in code have been processed, "in" is returned. Similarly, C.bitsToWord("000101010011") returns the word "sunny".</p>
+
+<p>Complete method <strong>bitsToWord</strong> below. </p>
+
+<div id="csCode" style="width:580px"><pre>
+// precondition: code is a string of 0's and 1's representing 
+//   a valid encoded word
+// postcondition: returns decoded word for code 
+public String bitsToWord(String code)
+{
+
+
+}
+</pre></div></li>
+<li>
+<p>The implementation of wordToBits given below forms the code for word by appending the result of calling the private
+   member method charToBitsHelper once for each character in the parameter word.</p>
+<div id="csCode" style="width:580px"><pre>
+// precondition: each character in word is in a leaf 
+//   of the codetree
+// postcondition: returns the code for word 
+public String wordToBits(String word)
+{
+   String bits="";
+   for(int k = 0; k < word.length(); k++)
+   {
+     bits += charToBitsHelper(word.charAt(k), root, "");
+   }
+   return bits;
+}
+</pre></div>
+<p>You will write the CodeTree private member method charToBitsHelper. charToBitsHelper has a third parameter, pathSoFar, 
+   that can be used to keep track of the current path from myRoot to T, should you choose to do so. For this reason, the
+   value of pathSoFar in the call from wordToBits is "". </p>
+   <div align="center"><img src="images/codeTree1.gif"></div>
+   
+<p>Using CodeTree C as shown, charToBitsHelper('y', myRoot, "") would return the string "011" and charToBitsHelper('n',myRoot, "") would return "10".</p>
+
+<p>Complete method <strong>charToBitsHelper</strong> below.</p> 
+
+<div id="csCode" style="width:580px"><pre>
+// postcondition: if ch is in subtree T, returns code for ch 
+private String charToBitsHelper(char ch, TreeNode t, String pathSoFar)
+{
+
+
+} 
+</pre></div>  
+</li>
+</ol></div> 
+<h1>Source Files</h1>
+<p>CodeTree.java</p>
+<p>TreeNode.java</p>
+<p>Tester.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+  l
+  *
+    n
+*
+      y
+    *
+      u
+  *
+    s
+
+
+bitsToWord
+----------
+sunny
+null
+
+wordToBits
+----------
+000101010011
+100101111
+</pre>
+</div>
+	<br>
+</div>	

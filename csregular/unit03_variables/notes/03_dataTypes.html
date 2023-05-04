@@ -1,0 +1,177 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Data Types</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>Integer Types</li>
+					    <li>Floating-Point Types</li>
+						<li>Character Type</li>
+					    <li>Boolean Type</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Integer Types</h1>
+  <p>There are four types of variables that you can use to store integer data. 
+     All of these are signed, that is they can store both negative and positive values. 
+	 The four integer types differ in the range of values they can store, so the choice
+	 of type for a variable depends on the range of data values you are likely to need.</p>
+	 
+ <table id="csTable" width="80% align="center">
+        <tr> 
+          <th width="9%" class="notes">Type</th>
+          <th width="28%" class="notes">Memory Requirements</th>
+          <th width="63%" class="notes">Range of Values</th>
+        </tr>
+		<tr> 
+          <td class="notes"><div align="center">byte</div></td>
+          <td class="notes"> <div align="center">1 byte</div></td>
+		  <td class="notes"> <div align="center">-128 to 127</div></td>
+        </tr>
+		<tr> 
+          <td class="notes"><div align="center">short</div></td>
+          <td class="notes"> <div align="center">2 bytes</div></td>
+		  <td class="notes"> <div align="center">-32,768 to 32,767</div></td>
+        </tr>
+        <tr> 
+          <td class="notes"> <div align="center"><font color="FF0000">int </font></div></td>
+          <td class="notes"> <div align="center">4 bytes </div></td>
+		  <td class="notes"> <div align="center">-2,147,483,648 to 2,147,483,647 (just over 2 billion)</div></td>
+        </tr>
+        <tr> 
+          <td class="notes"><div align="center"><font color="FF0000">long</font></div></td>
+          <td class="notes"> <div align="center">8 bytes</div></td>
+		  <td class="notes"> <div align="center">-9,223,372,036,854,775,808L to 
+              9,223,372,036,854,775,807L</div></td>
+        </tr>
+      </table>
+<p>*The data types highlighted in red are the ones we will be using in the course. </p>
+<p>In most situations, the <strong>int</strong> type is the most practical. If you want to represent the
+   number of inhabitants of our planet, you'll need to resort to a long. The byte and 
+   short types are mainly intended for specialized applications and we will not be using
+   them in the programs we write.</p>
+<h3>Integer Values</h3>
+<p>An integer variable stores an integer value, so before we get to use integer variables
+   we need to investigate how we write various integer values. First we need to define a
+   new term. <strong>Literals</strong> are items in a program whose values do not change. A value of any 
+   kind in Java is referred to as a literal. So 2, 10.5 and "This is text" are all examples
+   of literals.</p>
+<p>Any integer literal that you specify is of type <strong>int</strong> by default. 
+   Thus 4, -9999, 123456789 are all literals of type int. If you want to define an integer
+   of type long, and the value that you assign to the variable is bigger than an int, you 
+   need to append an L to the value. The values 1L, -9999L and 123456789L are all of type long.
+   Below is an example.</p>
+   <div id="csCode">
+    <pre>
+public class SampleProgram
+{
+   public static void main(String[] args)
+   {
+      long num1 = 500;  <div id="csComment"><pre>// 500 is smaller than 2,147,483,647 so L not required</pre></div>
+      long num2 = 5000000000<div id="csHighlight"><pre>L</pre></div>; <div id="csComment"><pre>// 5 billion is larger than 2,147,483,647 
+	                       // so L is required</pre></div>
+	  
+   }
+}
+<div id="csComment"><pre>// 500 and 5000000000 are both integer literals by default. 
+// Since 500 does not excede  the maximum size of an integer
+// value (2,147, 483, 647) it needs no modifications.
+// However since 5000000000 is larger than the maximum integer
+// value it must by convert to a long value by appending the
+// letter L to the end.</pre></div>
+</pre>
+  </div>
+<h1> Floating-Point Values</h1>
+<p>Numeric values which are not integral (integers) are stored as floating point numbers.
+   There are two basic floating point types in Java, float and double. These give you a
+   choice in the number of digits precision available to represent your data values, and
+   thus, in the range of values that can be accommodated:</p>
+   <table id="csTable" width="80% align="center">
+        <tr> 
+          <th width="9%" class="notes">Type</th>
+          <th width="25%" class="notes">Memory Requirements</th>
+          <th width="66%" class="notes">Range of Values</th>
+        </tr>
+		<tr> 
+          <td class="notes"><div align="center">float</div></td>
+          <td class="notes"> <div align="center">4 bytes</div></td>
+		  <td class="notes"> <div align="center">approximately &plusmn;3.402823 E +38<br> (7 significant decimal digits) </div></td>
+        </tr>
+		<tr> 
+          <td class="notes"><div align="center"><font color="#FF0000">double</font></div></td>
+          <td class="notes"> <div align="center">8 bytes</div></td>
+		  <td class="notes"> <div align="center">approximately &plusmn;1.79769313486232 E +308 <br>(15 significant decimal digits)</div></td>
+        </tr>
+        </tr>
+      </table>
+	<p>*The data type highlighted in red is the one we will be using in the course.</p>
+	<p>The name <strong>double</strong> refers to the fact that these numbers have twice the precision of the
+	   float type. Here, the type to choose in most applications is double. The limited precision
+	   of float is simply not sufficient for many situations. Seven significant (decimal) digits
+	   may be enough to precisely express the money in your savings account in dollars and cents,
+	   but it won't be enough for someone like Bill Gates. The only reason to use float is in the
+	   rare situations in which the slightly faster processing of single-precision numbers is 
+	   important, or when you need to store a large number of them.</p>
+	<p>When you need to write very large or very small floating point values, you will usually 
+	   want to write them with an exponent - that is, as a decimal value multiplied by a power
+	   of 10. You can do this in Java by writing the number as decimal value followed by an E,
+	   or e, preceding the power of 10 that you require. For example, the distance of the earth
+	   to the sun is approximately 149,600,000 kilometers, more conveniently written as 1.496E8.
+	   At the opposite end of the scale, the mass of an electron is around 0.000000000000000000009
+	   grams. This is much more convenient, not to say more readable, when it is written as 9.0E-28
+	   grams.</p>
+	<h3>Declaring Floating Point Variables</h3>
+    <p>You declare floating point variables in a similiar way to that we've already
+	   used for integers. We can declare and intialize a variable of type double with
+	   the statement:</p>
+<div id="csCode">
+    <pre>
+double sunDistance = 149600000;</pre>
+</div>
+<p>or</p>
+<div id="csCode">
+    <pre>
+double sunDistance = 1.496E8;</pre>
+</div>
+<h1>Character Type</h1>
+<p>The <strong>char</strong> data type is used to represent Unicode character values. Character literal values are contained
+   within single quotes. Examples: 'a', 'B', ':', '5'. This is in contrast to string literals which are contained within
+   double quotes. Examples: "a", "dog", "1234", "Have a nice day!". The difference between character data and string
+   data is that character data can only be a single character whereas string data can be single or multiple characters.
+   A string is a "string of characters".</p>
+   <p>You can define a char variable, called ch, with the statement:</p>
+<div id="csCode">
+    <pre>
+char ch = 'm';</pre>
+</div>
+<h1>Boolean Type</h1>
+<p>Variables that can only have one of two values, true or false, are of type boolean,
+   and the values true and false are Boolean literals. You can define a boolean variable,
+   called state, with the statement:</p>
+<div id="csCode">
+    <pre>
+boolean state = true;</pre>
+</div>
+<p>This statement also initializes the variable state with the value true. You can also set
+   a boolean variable in an assignment statement. For example, the statement,
+<div id="csCode">
+    <pre>
+state = false;</pre>
+</div>
+ 
+<p>sets the value of the variable state to false.</p>
+<p>At this point we can't do much with a <strong>boolean</strong> variable, other than to set its value to
+   true or false, but, as you will see later, Boolean variables become much more useful in
+   the context of decision making in a program, particularly when we can use expressions 
+   that produce a boolean result.</p>
+
+<br>
+</div>	
+

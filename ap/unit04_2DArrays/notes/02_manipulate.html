@@ -1,0 +1,59 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Manipulating Two-Dimensional Arrays</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use nested for loops to manipulate a 2D array</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Manipulating 2D Arrays</h1>
+<p>The easiest way to manipulate a two-dimensional array is to use <strong>nested for loops</strong>. For instance, the following code
+   sums all the numbers in the array table. The outer loop iterates four times and moves down the rows. Each time through the outer loop,
+   the inner loop iterates five times and moves across the columns of the current row.</p>
+
+<div id="csCode"><pre>
+int sum = 0;
+
+for(int r = 0; r < 4; r++)      // There are four rows r = 0, 1, 2, 3
+{ 
+   for(int c=0; c < 5; c++)     // There are five columns c = 0, 1, 2, 3, 4
+   {
+      sum += table[<div id="csHighlight"><pre>r</pre></div>][<div id="csHighlight"><pre>c</pre></div>];
+   }
+}
+</pre></div>
+<p>This segment of code can be rewritten without using the numbers 4 and 5. The value <strong>table.length</strong> equals the number of rows,
+    and <strong>table[r].length</strong> is the number of columns in row r.</p>
+<div id="csCode"><pre>
+int sum = 0;
+
+for(int r = 0; r < <div id="csHighlight"><pre>table.length</pre></div>; r++)       
+{ 
+   for(int c=0; c < <div id="csHighlight"><pre>table[r].length</pre></div>; c++)   
+   {
+      sum += table[r][c];
+   }
+}
+</pre></div>
+<h1>Applet</h1>
+<p>The following applet demonstrates how two nested for loops can be used to manipulate a two-dimensional array. Use the Step button
+to advance one line of code. To start over press the Reset button. Watch, study, and learn!!!</p>
+
+<center> <applet
+           code	= "Array2D.class"
+		   archive = "Array2D.jar"
+		   codebase = "applets"
+           width	= "650"
+           height	= "400">
+     </applet></center>
+<br>
+</div>	
+

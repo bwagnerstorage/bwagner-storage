@@ -1,0 +1,113 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Polymorphism</div>
+<div id="obj">
+    <table>
+        <tr>
+            <th>What You Will Learn</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>What is polymorphism</li>
+                    <li>How is polymorphism used in Java</li>
+                    <li>Overloading vs Overriding</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="csContent">
+    <h1>Polymorphism</h1>
+    <p>In Java, polymorphism manifests itself in two forms. The first form, <strong>method overloading</strong>, we have already explored. Method overloading is when more than one method is defined within a single class with the same name. The add methods
+        in the ArrayList class are an example of method overloading.
+        <div id="csCode" style="width:400px"><pre>
+list.add("friend");        // append
+list.add(5, "friend");     // insert
+</pre></div>
+        <p>The second use of polymorphism in Java is best explained through an example.</p>
+        <p>I start by defining a class named Pet. For simplication, its variables and methods are not shown.</p>
+        <div id="csCode" style="width:400px"><pre>
+class Pet
+{
+
+}
+</pre></div>
+        <p>Next I define two classes that are subclasses of Pet named Dog and Cat. Again their variables and methods are not shown.</p>
+        <div id="csCode" style="width:400px"><pre>
+class Dog extends Pet
+{
+
+}
+
+class Cat extends Pet
+{
+
+}
+</pre></div>
+        <p>Now here comes the polyporphism. I create some client code that uses all three classes.</p>
+        <div id="csCode" style="width:400px"><pre>
+Pet pet;
+pet = new Dog();
+pet = new Cat(); 
+</pre></div>
+        <p>I declared a variable of type Pet. Notice that I can assign both a Dog object and a Cat object to variable pet. This is polyporphism. The pet variable can reference any object of a class that is a subclass of Pet.</p>
+        <p>Here is another example.</p>
+        <div id="csCode" style="width:500px"><pre>
+public method print(Pet pet)
+{
+   System.out.println(pet);   // call toString method
+}
+</pre></div>
+        <P>I have defined a method named print that is passed a parameter of type Pet. What type of Pet can I print in this method? You guessed it. A Dog and a Cat or any other object of a class that is a subclass of Pet. That's Polymorphism!</P>
+        <h1>Required Cast When Using Polymorphism</h1>
+        <p>Suppose in our Pet class I define an instance variable, a constructor, and a method.</p>
+        <div id="csCode" style="width:400px"><pre>
+class Pet
+{
+    private String petName;
+	
+    public Pet(String name)
+    {
+        petName = name;
+    }
+	
+    public String getName()
+    {
+       return petName;
+    }
+}
+</pre></div>
+        <p>In the Dog class I define a constructor and a method.</p>
+        <div id="csCode" style="width:400px"><pre>
+class Dog extends Pet
+{
+   public Dog(String name)
+   {
+      super(name);
+   }
+   
+   public void speak()
+   {
+      System.out.println("ruff ruff");
+   }
+}
+</pre></div>
+        <p>In the client, I call the print method and pass it a dog object with the following code.</p>
+        <div id="csCode" style="width:500px"><pre>
+Dog dog = new Dog("Maddie");
+print(dog);
+</pre></div>
+        <p>I modify the print method by adding the following code.</p>
+        <div id="csCode" style="width:500px"><pre>
+public method print(Pet pet)
+{
+   System.out.println(pet.getName());
+   <div id="csHighlight"><pre>((Dog) pet)</pre></div>.speak(); }
+        </pre>
+</div>
+<p>Even though the object passed to the print method is a Dog the pet variable can only access Pet methods, therefore the call to the getName method works fine, but the call to the method speak requires the pet variable be <strong>cast</strong> to a Dog
+    before the call is made. Subclass methods can only be seen by superclass variables with a cast. Of course casting a pet variable to Dog when it actually stores a Cat would cause an exception.</p>
+
+<br>
+</div>

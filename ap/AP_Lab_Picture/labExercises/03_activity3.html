@@ -1,0 +1,67 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Picture Lab - Activity 3</div>
+
+<div id="csContent"> 
+<h1>Exploring a Picture</h1>
+<p>Run the <strong>main</strong> method in <strong>PictureExplorer.java. </strong>This will load a picture of a beach from a
+file, make a copy of that picture in memory, and show it in the explorer tool (Figure 3). It makes a copy
+of the picture to make it easier to explore a picture both before and after any changes. You can use the
+explorer tool to explore the pixels in a picture. Click any location (pixel) in the picture and it will display
+the row index, column index, and red, green, and blue values for that location. The location will be
+highlighted with yellow crosshairs. You can click on the arrow keys or even type in values and hit the
+enter button to update the display. You can also use the menu to change the zoom level.</p>
+
+<div align="center"><img src="images/PictureLab4.png"></div>
+<div align="center"><p>Figure 3: The Picture Explorer</p></div>
+
+<h1>Questions</h1>
+<p><strong>Directions:</strong> Answer the following questions on a separate sheet of paper (Use the one from Activities 1 and 2).</p>
+<div id="csList"><ol>
+<li><p>What is the row index for the top left corner of the picture?</p></li>
+<li><p>What is the column index for the top left corner of the picture?</p></li>
+<li><p>The width of this picture is 640. What is the right most column index?</p></li>
+<li><p>The height of this picture is 480. What is the bottom most row index?</p></li>
+<li><p>Does the row index increase from left to right or top to bottom?</p></li>
+<li><p>Does the column index increase from left to right or top to bottom?</p></li>
+<li><p>Set the zoom to 500%. Can you see squares of color? This is called pixelation. Pixelation means
+displaying a picture so magnified that the individual pixels look like small squares.</p></li>
+</ol></div>
+
+<h1>Creating and exploring other pictures</h1>
+<p>Here is the <strong>main</strong> method in the class <strong>PictureExplorer</strong>. Every class in Java can have a main
+method, and it is where execution starts when you execute the command java ClassName.</p>
+
+<div id="apCode"><pre>
+public static void main( String args[])
+{
+   Picture pix = new Picture("beach.jpg");
+   pix.explore();
+}
+</pre></div>
+<p>The body of the main method declares a reference to a Picture object named pix and sets
+that variable to refer to a Picture object created from the data stored in a JPEG file named
+"beach.jpg" in the images folder. A JPEG file is one that follows an international standard for
+storing picture data using lossy compression. <strong>Lossy compression</strong> means that the amount of data that is
+stored is much smaller than the available data, but the part that is not stored is data we won't miss.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>Modify the <strong>main</strong> method in the <strong>PictureExplorer</strong> class to create and explore a different
+picture from the images folder.</p></li>
+<li><p>Add a picture to the images folder(in Picture Workspace folder) and then create and explore that picture in the main
+method. If the picture is very large (for instance, one from a digital camera), you can scale it
+using the scale method in the Picture class.</p>
+<p>For example, you can make a new picture ("smallMyPicture.jpg" in the images
+folder) one-fourth the size of the original ("myPicture.jpg") using:
+<div id="apCode"><pre>
+Picture p = new Picture("myPicture.jpg");
+Picture smallP = p.scale(0.25,0.25);
+smallP.write("smallMyPicture.jpg");
+</pre></div>
+
+</p></li>
+</ol></div>
+	<br>
+</div>	
+

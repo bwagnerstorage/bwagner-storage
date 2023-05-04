@@ -1,0 +1,167 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">2-1 VS Code Demo</div>
+
+<div id="csContent"> 
+<h1>Resources</h1>
+<ul id="csList">
+<li><p><a href="https://code.visualstudio.com/" target="_blank" style="color:blue">Visual Studio Code</a></p></li>
+</ul>
+<h1>Lesson</h1>
+<p>In this lesson you are going to open your <strong>MyCS2</strong> folder within VS Code (Visual Studio Code) and create and save a
+   html document in your <strong>MyHTML</strong> folder.
+</p>
+<h3>Open a Folder in VS Code</h3>
+<ol id="csList">
+   <li><p>Click on the VS Code shortcut to launch the VS Code program.</p></li>
+   <li><p>Click on the <strong>File</strong> menu and select the item <strong>Open Folder...</strong></p></li>
+   <li><p>In the Open Folder window, locate and select the OneDrive icon by scrolling the Navigation Pane </p></li>
+          on the left side of the window.</p></li>
+         <img src="images/CS2/Editors/editors5.png" width="90%" style="border: 2px solid gray">
+   <li><p>Double-click on the <strong>MyCS2</strong> icon to open its window.</p></li>
+   <li><p>Click the <strong>Select Folder</strong> button to open the MyCS2 folder inside VS Code.</p></li>
+         <img src="images/CS2/Editors/editors6.png" width="90%" style="border: 2px solid gray">
+   <li><p>Ignoring the color theme, your VS Code environment should look like the following:<br>
+          Note: I closed the Welcome window.</p></li>
+         <img src="images/CS2/Editors/editors7.png" width="90%" style="border: 2px solid gray">
+      <p>The section highlighted in red is called the <strong>Explorer</strong>. The Explorer displays the
+         contents of the selected folder. In this case, it is the <strong>MyCS2</strong> folder. If you hover the mouse
+         over the Explorer window you will see buttons appear for adding files and folders to the
+         active folder.</p>
+         <img src="images/CS2/Editors/editors10.png" width="30%">
+       <p>Right-clicking the mouse in the Explorer window will display a context menu that
+         has other options like renaming or deleting a file.</p>
+      <p>You can toggle the Explorer's visibility by clicking on the Explorer icon located
+         on the Activity Bar to its left.</p><img src="images/CS2/Editors/editors8.png" width="6%"></li>
+</ol>
+<br>
+<h3>Create a New HTML File</h3>
+<p>All of the files you create this year for the HTML lessons should be placed in your <strong>MyHTML</strong> folder.
+   Follow these steps to create a new html file in this folder. </p>
+<ol id="csList">
+   <li><p>In the Explorer, click on the MyHTML folder to highlight it.</p></li>
+   <img src="images/CS2/Editors/editors9.png" width="40%">
+   <li><p>Click on the new File button and type <strong>MyFirstHTML.html</strong> in the textbox
+      that appears. This will create a new html file in your MyHTML folder with the name MyFirstHTML.html.</p></li>
+   <img src="images/CS2/Editors/editors11.png" width="40%">
+   <li><p>When you create a new file, VS Code automatically opens an editor window for that file. 
+          This is where you type your html code.
+   </p></li>
+   <li><p>Since you have not started coding yet, copy this code into the editor window.</p></li>
+   <pre><code>&lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+      &lt;head&gt;
+          &lt;title&gt;VS Code Demo&lt;/title&gt;
+          &lt;style&gt;
+             #move {
+                font-size: 6.0em;
+                color:blue;
+                width: 275px;
+                text-shadow: 2px 2px 8px darkblue;
+                position: relative;
+                animation-name: a;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+             }
+      
+             #rotation {
+                font-size: 6.0em;
+                color:red;
+                width: 170px;
+                text-shadow: 2px 2px 8px darkred;
+                position: relative;
+                animation-name: b;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+             }
+      
+             #blink {
+                font-size: 6.0em;
+                color: green;
+                width: 390px;
+                text-shadow: 2px 2px 8px darkgreen;
+                position: relative;
+                animation-name: c;
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+             }
+      
+             @keyframes a {
+                 from   {left:0px; top:0px;}
+                 to     {left:400px; top:0px;}
+             }
+      
+             @keyframes b {
+                 from {left:0px; top:0px; transform:rotate(0deg);}
+                 to   {left:400px; top:0px; transform:rotate(359deg);}
+             }
+      
+             @keyframes c {
+                 from {left:0px; top:0px; opacity:1;}
+                 to   {left:400px; top:0px; opacity:0.1;}
+             }
+
+          &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;h1 style="text-align:center"&gt;VS Code Demo&lt;/h1&gt;
+          &lt;p&gt;This is how easy it is to create a web page. When 
+          you learn &lt;strong&gt;HTML&lt;/strong&gt;, &lt;strong&gt;
+          CSS&lt;/strong&gt;, and &lt;strong&gt;Javascript&lt;/strong&gt; 
+          you will be amazed by the things you will be able to do.&lt;/p&gt;
+      
+          &lt;div id="move"&gt;HTML&lt;/div&gt;&lt;br&gt;
+          &lt;div id="rotation"&gt;CSS&lt;/div&gt;&lt;br&gt;
+          &lt;div id="blink"&gt;Javascript&lt;/div&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+      </code></pre>
+      <li><p>Under the <strong>File</strong> menu, select <strong>Save</strong>.
+      <strong>Note:</strong> If you select the File menu option 
+      <strong>Auto Save</strong>, then VS Code will automatically save
+      your files.</li>
+   </ol>
+   <br>
+   <h3>Displaying a Web Page in a Browser Window</h3>
+   <p>Normally the goal of writing a webpage is to display it on the
+      Internet, however when first designing and coding a website your testing should 
+      be done locally on your computer. There are two ways that a webpage can be
+      displayed locally:</p>
+      <ol id="csList">
+         <li><p>Navigate to the folder on your local computer where the webpage is
+                saved and double-click on the <strong>HTML</strong> file to launch the webpage
+                in a browser window. 
+         </p></li>
+         <li><p>
+               Install a web server on your local computer then launch the web server 
+               and have it send the webpage to the browser where it is then displayed.  
+         </p></li>
+         <div id="csNote">A <strong>web server</strong> is program or computer that stores 
+               websites on the Internet and delivers web pages to
+               viewers upon request. This service is referred to as 
+               <strong>web hosting</strong>. Every web server has a unique address, called an Internet Protocol address, that tells other computers connected to the Internet where to find the server on the vast network.</div>
+         <p>When you install a web server program locally on your computer,
+            you can assign it the IP address 127.0.0.1, also known as <strong>localhost</strong>. This
+            IP address will allow you to use the webserver without connecting it to the Internet. All data requested from this server will be
+            sent to your local browser. If you would like more information on this topic
+            click on the following link: <a href="https://whatismyipaddress.com/localhost" style="color:blue">WhatIsMyIPAddress.com</a>.
+         </p>
+      </ol>
+      <br>
+   <p>In this lesson, you will use option 1. Follow these steps to view the webpage MyFirstHTML.html.</p>
+   <ul id="csList">
+      <li><p>Minimize VS Code so you can see the computer's desktop.</p></li>
+      <li><p>Double-click on the <strong>OneDrive</strong> icon located either 
+             on the desktop or taskbar to open its window.</p></li>
+      <li><p>Double-click on your <strong>MyCS2</strong> folder to open it.</p></li>
+      <li><p>Double-click on your <strong>MyHTML</strong> folder to open it.</p></li>
+      <li><p>Double-click on the html file <strong>MyFirstHTML.html</strong> 
+             to display it in a browser window.</p></li>
+   </ul>
+<br>
+<br>
+<p>Reference: <a href="https://www.wisegeek.com/what-is-a-web-server.htm" style="color:blue">www.wisegeek.com</a>
+</div>	

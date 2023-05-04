@@ -1,0 +1,110 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Control Structures</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>What is a Control Structure</li>
+						<li>What is a Selection Structure</li>
+						<li>What is a Repetition Structure</li>
+						<li>What is a condition</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+<h1>Generic Control Structures</h1>
+<p>The methods that we have written thus far have a common characteristic - sequential execution.
+   Sequential execution means that the statements are executed one after another in the order that
+   they appear in the source code. In this unit, we will learn how to create a block of statements
+   that can be executed several times in succession, how to create an optional block of statements,
+   and how to create alternative blocks of statements.</p>
+<p>A <strong>control structure</strong> is a feature of a programming language that determines the order in which
+   statements will be executed. There are three categories of control structures: (1) sequential
+   structure, (2) repetition structures (also called loops), and (3) selection structures.</p>
+<p>The sequential structure is the default structure that is used by all programming languages. 
+   Unless we indicate otherwise, the statements will be executed in the order that they appear in
+   the source code, and each statement will be executed exactly once each time a method is called.
+   Every program that we have seen thus far uses nothing but the sequential structure.</p>
+<p>A condition is a crucial part of the repetition structures and the selection structures. 
+   A <strong>condition</strong> is any expression that can be either true or false.</p>
+<p>Every <strong>repetition structure (or loop)</strong> allows a group of statements to be executed several times
+   in succession. There are two important selection structures: a loop that is controlled by the
+   state of the objects in the program, and a loop that is controlled by a counter. The Jeroo
+   language supports just one kind of loop, one that is controlled by the state of the objects in
+   the program. The Jeroo language does not support a counter-controlled loop because Jeroos can't
+   count.</p>
+<p>Every selection structure defines alternate paths through the source code. There are three
+   important selection structures: an if structure, an if-else structure, and a multi-way branching
+   structure. An <strong>if structure</strong> (sometimes called an if-then structure) defines an optional block of
+   statements. An <strong>if-else structure</strong> (sometimes called an if-then-else structure) defines two 
+   different blocks of statements, only one of which will be executed. A <strong>multi-way branching
+   structure</strong> defines several different blocks of statements, only one of which will be executed.
+   Some programming languages have an explicit statement such as switch or case to create a 
+   multi-way branching structure. Jeroo's Java style language has both an if structure and an
+   if-else structure, and it supports a common technique for building a multi-way branching 
+   structure.</p>
+<h1>Generic Repetition Structures</h1>
+<p>There are two major parts to every repetition structure, the <strong>body</strong> and the <strong>controlling condition</strong>.
+   These two parts provide a way to classify loops.</p>
+<p>The block of statements that can be executed repeatedly is called the body of the loop. Each time
+   that the statements in the body are executed is called a trip (or iteration) through the loop, 
+   and the number of times the body is executed is called the trip count.</p>
+<p>The controlling condition is a condition that is checked to determine whether to make a trip 
+   through the body or terminate the loop. The controlling condition is rechecked after each trip
+   through the body of the loop.</p>
+<p>One criterion for classifying loops is based on when the controlling condition is checked
+   relative to the first trip through the body. In a pretest loop, the controlling condition is
+   always checked before the body can be executed for the first time. In a posttest loop, the
+   controlling condition is not checked until after the first trip through the body. In either case,
+   the condition is checked after each trip through the body to determine whether or not to make 
+   another trip.</p>
+<p>A second criterion for classifying loops is based on whether a true condition or a false 
+   condition leads to a trip through the body. In a while loop, a true condition leads to a trip
+   through the body, but a false condition terminates the loop. In an until loop, a true condition
+   terminates the loop, but a false condition leads to a trip through the body. The difference
+   between the while and until loops is summarized in table below.</p>
+   
+   <div align="center"><img src="images/Jeroo/control1.gif"></div>
+   
+<p>Combining these two criteria, we can define four broad categories of loops: pretest while,
+   pretest until, posttest while, and posttest until. The table below shows the relationship 
+   between these categories and some popular programming languages.</p>
+   
+   <div align="center"><img src="images/Jeroo/control2.gif"></div>
+   
+<p>Since the Jeroo language only contains one repetition structure, we will take a closer look at
+   the pretest while loop. The figure below shows a generic pretest while loop and uses arrows to
+   show the order in which statements are executed and the condition is checked.</p>
+   
+   <div align="center"><img src="images/Jeroo/control3.gif"></div>
+
+<h1>Generic Selection Structures</h1>
+<p>An <strong>if structure</strong> (sometimes called an if-then structure) defines an optional block of statements.
+   There are two parts to an if structure, the selection condition and the true branch. The true 
+   branch contains a block of statements that will only be executed whenever the selection condition
+   is true.</p>
+<p>The figure below shows a generic if structure, and uses arrows to show the order in which 
+   statements will be executed. There are some similarities with the while loop, but there is one
+   important difference. The if structure (NOT "if loop") defines optional code, and that code is
+   either skipped or executed just once. There is no repetition.</p>
+   
+   <div align="center"><img src="images/Jeroo/control4.gif"></div>
+   
+<p>An <strong>if-else structure</strong> (sometimes called an if-then-else structure) defines two different blocks
+   of statements, only one of which will be executed. An if-else structure consists of three parts,
+   the selection condition, the true branch, and the false branch. The true branch contains a block
+   of statements that will be executed whenever the selection condition is true. The false branch
+   contains a block of statements that will be executed whenever the selection condition is false.</p>
+   
+   <div align="center"><img src="images/Jeroo/control5.gif"></div>
+   
+   
+<br>
+</div>	
+

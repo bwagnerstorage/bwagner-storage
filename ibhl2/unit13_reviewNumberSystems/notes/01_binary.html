@@ -1,0 +1,464 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Number Systems</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How the Base-10 (Decimal) Number System Works</li>
+						<li>How the Base-2 (Binary) Number System Works</li>
+						<li>How the Base-8 (Octal) Number System Works</li>
+						<li>How the Base-16 (Hexadecimal) Number System Works</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>Number Systems</h1>
+  <p>Simply put a number system is a way to represent numbers. The numbers that 
+    make up a number system can be used for counting, measuring, and doing arithmetic. 
+    In this unit we will explore several number systems that are particularly 
+    useful in computing. We will start our discussion with the number system that 
+    we humans use, the base-10 number system.</p>
+  <h1>Decimal Number System (Base-10)</h1>
+
+  <p> We use the <strong>base-10</strong> number system, which is also called 
+    <strong>decimal</strong>. It is called base-10 because it uses 10 symbols 
+    to represent all the numbers in the system. These symbols are called the Arabic 
+    numerals and come from a modified version of the Hindu numeral system developed 
+    in India.</p>
+  <h2>&nbsp;&nbsp;0&nbsp;1&nbsp;2&nbsp;3&nbsp;4&nbsp;5&nbsp;6&nbsp;7&nbsp;8&nbsp;9</h2>
+  <p>To form the base 10 numbers from 0 to 9 using the Arabic numerals you just 
+    use the appropriate symbol, but how do you form numbers bigger than nine? 
+    Since there are only 10 symbols you have to start combining the symbols together.</p>
+  <h3>&nbsp;&nbsp;0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 
+    24 25. . .</h3>
+  <p>What we call the number ten in base 10 is a combination of a numeral 1 and 
+    a numeral 0. What we call the number eleven is a combination of two numeral 
+    1's, and so forth. This combining of numerals can be used to form any number.</p>
+  <p> To make reading and working with large numbers easier we use what is called 
+    <strong>positional notation</strong>. If I ask you to read the number 27,965 
+    you would probably say twenty-seven thousand nine hundred and sixty five. 
+    If you read the number correctly you have an understanding of positional notation 
+    and place values. But how are these place values formed? Place values are 
+    formed by taking the base, in this case 10, and writing it as increasing powers 
+    starting with zero. Look at the table below.</p>
+  <table id="csTable" width="60%">
+    <tr> 
+      <th width="20%">Power</th>
+      <th width="20%">Value</th>
+      <th width="60%">Place Value</th>
+    </tr>
+    <tr> 
+      <td>10<sup>0</sup></td>
+      <td>1</td>
+      <td>one's position</td>
+    </tr>
+    <tr> 
+      <td>10<sup>1</sup></td>
+      <td>10</td>
+      <td>ten's position</td>
+    </tr>
+    <tr> 
+      <td>10<sup>2</sup></td>
+      <td>100</td>
+      <td>hundred's position</td>
+    </tr>
+    <tr> 
+      <td>10<sup>3</sup></td>
+      <td>1000</td>
+      <td>thousand's position</td>
+    </tr>
+    <tr> 
+      <td>10<sup>4</sup></td>
+      <td>10,000</td>
+      <td>ten thousand's position</td>
+    </tr>
+    <tr> 
+      <td>10<sup>5</sup></td>
+      <td>100,000</td>
+      <td>hundred thousand's position</td>
+    </tr>
+    <tr>
+      <td>10<sup>6</sup></td>
+      <td>1,000,000</td>
+      <td>million's position</td>
+    </tr>
+  </table>
+  <p>Let's look at the number 27,965 more closely. The illustration below demonstrates 
+    how positional notation is used to form the number 27,965.</p>
+  
+     <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Number Systems 1/Slide1.PNG"></li>
+          <li><img src="images/Number Systems 1/Slide2.PNG"></li>
+          <li><img src="images/Number Systems 1/Slide3.PNG"></li>
+		  <li><img src="images/Number Systems 1/Slide4.PNG"></li>
+		  <li><img src="images/Number Systems 1/Slide5.PNG"></li>
+		  <li><img src="images/Number Systems 1/Slide6.PNG"></li>
+		  <li><img src="images/Number Systems 1/Slide7.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+  
+  
+  <p> Did that look familiar? It should have you learned it during your days in elementary school. 
+     The reason I am showing it to you again is that this positional notation that is so familiar to 
+    you is also used to form numbers of other bases, so let's start by looking 
+    at how positional notation is used in the binary number system.</p>
+  <h1>Binary Number System (Base-2)</h1>
+  <p>The binary number system is based on only to digits: 0 and 1. All numbers 
+    must be formed using these two numerals. Just like in base-10 to form large 
+    numbers the digits 0 and 1 must be combined together. Look at the table below 
+    that shows the first 22 numbers in the binary number system and their corresponding 
+    base-10 equivalent.</p>
+  <table id="csTable">
+    <tr> 
+      <th>Binary Number</th>
+      <th>Decimal Number</th>
+      <th>Binary Number</th>
+      <th>Decimal Number</th>
+    </tr>
+    <tr> 
+      <td>0</td>
+      <td>0</td>
+      <td>1011</td>
+      <td>11</td>
+    </tr>
+    <tr> 
+      <td>1</td>
+      <td>1</td>
+      <td>1100</td>
+      <td>12</td>
+    </tr>
+    <tr> 
+      <td>10</td>
+      <td>2</td>
+      <td>1101</td>
+      <td>13</td>
+    </tr>
+    <tr> 
+      <td>11</td>
+      <td>3</td>
+      <td>1110</td>
+      <td>14</td>
+    </tr>
+    <tr> 
+      <td>100</td>
+      <td>4</td>
+      <td>1111</td>
+      <td>15</td>
+    </tr>
+    <tr> 
+      <td>101</td>
+      <td>5</td>
+      <td>10000</td>
+      <td>16</td>
+    </tr>
+    <tr> 
+      <td>110</td>
+      <td>6</td>
+      <td>10001</td>
+      <td>17</td>
+    </tr>
+    <tr> 
+      <td>111</td>
+      <td>7</td>
+      <td>10010</td>
+      <td>18</td>
+    </tr>
+    <tr> 
+      <td>1000</td>
+      <td>8</td>
+      <td>10011</td>
+      <td>19</td>
+    </tr>
+    <tr> 
+      <td>1001</td>
+      <td>9</td>
+      <td>10100</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>1010</td>
+      <td>10</td>
+      <td>10101</td>
+      <td>21</td>
+    </tr>
+  </table>
+	
+  <p>Working with binary numbers is difficult for us as humans particularly as the numbers get
+     larger, so we again turn to positional notation to make it easier. Base-2 positional notation 
+     forms binary numbers by writing place values with increasing powers of 2 starting 
+     at 0. The table below lists the first seven place values of the binary number 
+     system.</p>
+  
+  <table id="csTable" width="60%">
+    <tr> 
+      <th width="20%">Power</th>
+      <th width="20%">Value</th>
+      <th width="60%">Place Value</th>
+    </tr>
+    <tr> 
+      <td>2<sup>0</sup></td>
+      <td>1</td>
+      <td>one's position</td>
+    </tr>
+    <tr> 
+      <td>2<sup>1</sup></td>
+      <td>2</td>
+      <td>two's position</td>
+    </tr>
+    <tr> 
+      <td>2<sup>2</sup></td>
+      <td>4</td>
+      <td>four's position</td>
+    </tr>
+    <tr> 
+      <td>2<sup>3</sup></td>
+      <td>8</td>
+      <td>eight's position</td>
+    </tr>
+    <tr> 
+      <td>2<sup>4</sup></td>
+      <td>16</td>
+      <td>sixteen's position</td>
+    </tr>
+    <tr> 
+      <td>2<sup>5</sup></td>
+      <td>32</td>
+      <td>thirty second's position</td>
+    </tr>
+    <tr>
+      <td>2<sup>6</sup></td>
+      <td>64</td>
+      <td>sixty four's position</td>
+    </tr>
+  </table>
+  
+    <p>Look at the illustration below that demonstrates base-2 positional notation.</p>
+	
+     <div class = "slider" id="slider2">
+       <ul class="bjqs">
+          <li><img src="images/Number Systems 2/Slide1.PNG"></li>
+          <li><img src="images/Number Systems 2/Slide2.PNG"></li>
+          <li><img src="images/Number Systems 2/Slide3.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide4.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide5.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide6.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide7.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide8.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide9.PNG"></li>
+		  <li><img src="images/Number Systems 2/Slide10.PNG"></li>
+        </ul>
+    </div>
+	<h1>Octal Number System (Base-8)</h1>
+	<p>The octal number system is used in computer science as a way of representing binary numbers in a more condensed format. For example, 
+	   the binary number 101011010100011 can be represented in octal as the number 542243. Before we 
+	   look in to how this conversion takes place let's first look at how octal numbers are formed.</p>
+	   <p>The octal number system is based on 8 symbols or numerals.</p>
+	   <h3>0&nbsp;1&nbsp;2&nbsp;3&nbsp;4&nbsp;5&nbsp;6&nbsp;7</h3>
+	   
+  <p>As with other bases, to form numbers larger than 7 the numerals must be combined 
+    together. Look at the table below that shows the first 22 numbers in the octal 
+    number system and their corresponding base-10 equivalent.</p>
+  <table id="csTable">
+    <tr> 
+      <th>Octal Number</th>
+      <th>Decimal Number</th>
+      <th>Octal Number</th>
+      <th>Decimal Number</th>
+    </tr>
+    <tr> 
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>11</td>
+    </tr>
+    <tr> 
+      <td>1</td>
+      <td>1</td>
+      <td>14</td>
+      <td>12</td>
+    </tr>
+    <tr> 
+      <td>2</td>
+      <td>2</td>
+      <td>15</td>
+      <td>13</td>
+    </tr>
+    <tr> 
+      <td>3</td>
+      <td>3</td>
+      <td>16</td>
+      <td>14</td>
+    </tr>
+    <tr> 
+      <td>4</td>
+      <td>4</td>
+      <td>17</td>
+      <td>15</td>
+    </tr>
+    <tr> 
+      <td>5</td>
+      <td>5</td>
+      <td>20</td>
+      <td>16</td>
+    </tr>
+    <tr> 
+      <td>6</td>
+      <td>6</td>
+      <td>21</td>
+      <td>17</td>
+    </tr>
+    <tr> 
+      <td>7</td>
+      <td>7</td>
+      <td>22</td>
+      <td>18</td>
+    </tr>
+    <tr> 
+      <td>10</td>
+      <td>8</td>
+      <td>23</td>
+      <td>19</td>
+    </tr>
+    <tr> 
+      <td>11</td>
+      <td>9</td>
+      <td>24</td>
+      <td>20</td>
+    </tr>
+    <tr> 
+      <td>12</td>
+      <td>10</td>
+      <td>25</td>
+      <td>21</td>
+    </tr>
+  </table>
+<p>Look at the illustration below that demonstrates base-8 positional notation.</p>
+<div class = "slider" id="slider3">
+       
+    <ul class="bjqs">
+      <li><img src="images/Number Systems 3/Slide1.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide2.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide3.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide4.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide5.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide6.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide7.PNG"></li>
+      <li><img src="images/Number Systems 3/Slide8.PNG"></li>
+	  <li><img src="images/Number Systems 3/Slide9.PNG"></li>
+    </ul>
+</div>
+    <h1>Hexadecimal Number System (Base-16)</h1>
+    <p>Like octal, the hexadecimal number system is also commonly used in computer 
+      science as a way of representing binary numbers in a more condensed format. 
+      In fact, it is actually used more often than octal. For example, the binary 
+      number 111011010100011 can be represented in hexadecimal (hex for short) 
+      as the number E6A3. </p>
+    <p>The hexadecimal number system is based on 16 symbols or numerals.</p>
+    <h3>0&nbsp;1&nbsp;2&nbsp;3&nbsp;4&nbsp;5&nbsp;6&nbsp;7&nbsp;8&nbsp;9&nbsp;A&nbsp;B&nbsp;C&nbsp;D&nbsp;E&nbsp;F</h3>
+    <p>Notice that the letters A - F are used in hex to represent the digits 10 
+      - 15.</p>
+    <p>As with other bases, to form numbers larger than 15 the numerals must be 
+      combined together. Look at the table below that shows the first 22 numbers 
+      in the hexadecimal number system and their corresponding base-10 equivalent.</p>
+    <table id="csTable">
+      <tr> 
+        <th>Hex Number</th>
+        <th>Decimal Number</th>
+        <th>Hex Number</th>
+        <th>Decimal Number</th>
+      </tr>
+      <tr> 
+        <td>0</td>
+        <td>0</td>
+        <td>B</td>
+        <td>11</td>
+      </tr>
+      <tr> 
+        <td>1</td>
+        <td>1</td>
+        <td>C</td>
+        <td>12</td>
+      </tr>
+      <tr> 
+        <td>2</td>
+        <td>2</td>
+        <td>D</td>
+        <td>13</td>
+      </tr>
+      <tr> 
+        <td>3</td>
+        <td>3</td>
+        <td>E</td>
+        <td>14</td>
+      </tr>
+      <tr> 
+        <td>4</td>
+        <td>4</td>
+        <td>F</td>
+        <td>15</td>
+      </tr>
+      <tr> 
+        <td>5</td>
+        <td>5</td>
+        <td>10</td>
+        <td>16</td>
+      </tr>
+      <tr> 
+        <td>6</td>
+        <td>6</td>
+        <td>11</td>
+        <td>17</td>
+      </tr>
+      <tr> 
+        <td>7</td>
+        <td>7</td>
+        <td>12</td>
+        <td>18</td>
+      </tr>
+      <tr> 
+        <td>8</td>
+        <td>8</td>
+        <td>13</td>
+        <td>19</td>
+      </tr>
+      <tr> 
+        <td>9</td>
+        <td>9</td>
+        <td>14</td>
+        <td>20</td>
+      </tr>
+      <tr> 
+        <td>A</td>
+        <td>10</td>
+        <td>15</td>
+        <td>21</td>
+      </tr>
+    </table>
+    <p>Look at the illustration below that demonstrates base-16 positional notation.</p>
+    <div class = "slider" id="slider4"> 
+      <ul class="bjqs">
+        <li><img src="images/Number Systems 4/Slide1.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide2.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide3.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide4.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide5.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide6.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide7.PNG"></li>
+        <li><img src="images/Number Systems 4/Slide8.PNG"></li>
+		<li><img src="images/Number Systems 4/Slide9.PNG"></li>
+      </ul>
+    </div>
+    <p>&nbsp;</p>
+
+</div>	
+

@@ -1,0 +1,100 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR DepartmentStore</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/PetNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Pet</a></h1>
+
+<h1>Directions</h1>
+<p>Consider the hierarchy of classes shown in the following diagram</p>
+
+<div align="center"><img src="images/pet2.gif"></div>
+
+<p>Note that a Cat "is-a" Pet, a Dog "is-a" Pet, and a LoudDog "is-a" Dog. The class <strong>Pet</strong> is
+   specified as an abstract class as shown in the following declaration. Each Pet has a name that is specified when
+   it is constructed.</p>
+
+<div id="apCode"><pre>
+public abstract class Pet 
+{ 
+   private String myName; 
+
+   <div id="apHighlight"><pre>public Pet(String name)</pre></div>
+   {   myName = name;	}
+
+   <div id="apHighlight"><pre>public String getName()</pre></div>
+   {   return myName;	}
+
+   <div id="apHighlight"><pre>public abstract String speak();</pre></div>
+}
+</pre></div>
+<p>The subclass Dog has the partial class declaration shown below</p>
+<div id="apCode"><pre>
+public class Dog extends Pet 
+{ 
+   <div id="apHighlight"><pre>public Dog(String name)</pre></div> 
+   {  /* implementation not shown */  }
+ 
+   <div id="apHighlight"><pre>public String speak()</pre></div> 
+   {   /* implementation not shown */  }
+} 
+</pre></div>
+<div id="csList2">
+<ol>
+<li><p>Given the class hierarchy shown above, write a complete class declaration for the class <strong>Cat</strong>,
+    including implementations of its constructor and method(s). The Cat method speak returns "meow" when it is invoked.</p>
+
+</li>
+<li><p>Assume that class Dog has been declared as shown at the beginning of the question. If the String dog-sound
+    is returned by the Dog method speak, then the LoudDog method speak returns a String containing dog-sound repeated two times.
+	Given the class hierarchy shown previously, write a complete class declaration for the class <strong>LoudDog</strong>, including 
+	implementations of its constructor and method(s).</p>
+</li>
+<li>
+    <p>Consider the following partial declaration of class Kennel.</p>
+<div id="apCode" style="width:600px"><pre>
+public class Kennel 
+{ 
+   private ArrayList &lt;Pet&gt; petList;   // all elements are references
+                                      // to Pet objects
+
+   // postcondition: for each Pet in the kennel, its name followed
+   // by the result of a call to its speak method
+   // has been printed, one line per Pet
+   <div id="apHighlight"><pre>public void allSpeak()</pre></div> 
+   {   /* to be implemented in this part */  }
+
+
+   // ... constructor and other methods not shown
+}
+</pre></div>
+<p>Write the Kennel method <strong>allSpeak</strong>. For each Pet in the kennel, allSpeak prints a line with the name of the
+    Pet followed by the result of a call to its speak method.</p>
+<p>In writing allSpeak, you may use any of the methods defined for any of the classes specified for
+   this problem. Assume that these methods work as specified, regardless of what you wrote in parts (a) and (b). 
+   Solutions that reimplement functionality provided by these methods, rather than invoking these methods, will
+   not receive full credit.</p>
+
+<p>Complete method <strong>allSpeak</strong> below.</p>
+<div id="apCode" style="width:600px"><pre>
+// postcondition: for each Pet in the kennel, its name followed 
+// by the result of a call to its speak method
+// has been printed, one line per Pet
+<div id="apHighlight"><pre>public void allSpeak()</pre></div>
+
+
+</pre></div>
+</li></ol></div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Maddie bow
+Tommy meow
+Barker bowbow
+
+</pre>
+</div>
+	<br>
+</div>	
+

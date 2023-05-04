@@ -1,0 +1,81 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Picture Lab - Activity 8</div>
+
+<div id="csContent"> 
+<h1>Creating a Collage</h1>
+<p>You can copy one picture to another by copying the color from the pixels in one picture to the pixels in
+the other picture. To do this you will need to keep track of the row and column information for both the
+picture you are copying from and the picture you are copying to, as shown in the following copy
+method. The easiest way to do this is to declare and initialize both a fromRow and toRow in the
+outer for loop and increment them both at the end of the loop. A for loop can have more than
+one variable declaration and initialization and/or modification. Just separate the items with commas.
+Note that the inner loop has both a fromCol and a toCol declared, initialized, and incremented.</p>
+
+<div id="apCode"><pre>
+public void copy(Picture fromPic, int startRow, int startCol)
+{
+   Pixel fromPixel = null;
+   Pixel toPixel = null;
+   Pixel[][] toPixels = this.getPixels2D();
+   Pixel[][] fromPixels = fromPic.getPixels2D();
+   for (int fromRow = 0, toRow = startRow;
+        fromRow < fromPixels.length && toRow &lt; toPixels.length;
+        fromRow++, toRow++)
+   {
+      for (int fromCol = 0, toCol = startCol;
+           fromCol < fromPixels[0].length && toCol < toPixels[0].length;
+           fromCol++, toCol++)
+      {
+         fromPixel = fromPixels[fromRow][fromCol];
+         toPixel = toPixels[toRow][toCol];
+         toPixel.setColor(fromPixel.getColor());
+      }
+   }
+}
+</pre></div>
+<p>You can create a collage by copying several small pictures onto a larger picture. You can do some picture
+manipulations like zero blue before you copy the picture as well. You can even mirror the result to get a
+nice artistic effect (Figure 11).</p>
+
+<div align="center"><img src="images/PictureLab16.png"></div>
+
+<p>The following method shows how to create a simple collage using the <strong>copy</strong> method.</p>
+
+<div id="apCode"><pre>
+public void createCollage()
+{
+   Picture flower1 = new Picture("flower1.jpg");
+   Picture flower2 = new Picture("flower2.jpg");
+   this.copy(flower1,0,0);
+   this.copy(flower2,100,0);
+   this.copy(flower1,200,0);
+   Picture flowerNoBlue = new Picture(flower2);
+   flowerNoBlue.zeroBlue();
+   this.copy(flowerNoBlue,300,0);
+   this.copy(flower1,400,0);
+   this.copy(flower2,500,0);
+   this.mirrorVertical();
+   this.write("collage.jpg");
+}
+</pre></div>
+<p>Notice that the <strong>Picture</strong> method <strong>write</strong> can be used to save a copy of the final collage to your disk
+as a JPEG picture file. You can also specify the full path name of where to write the picture
+("c:\temp\collage.jpg"). Be sure to include the extension (.jpg) as well so that your
+computer knows the file type.</p>
+<p>You can test this with the <strong>testCollage</strong>method in <strong>PictureTester</strong>.</p>
+
+<h1>Exercises</h1>
+<div id="csList"><ol>
+<li><p>Create a second <strong>copy</strong> method that adds parameters to allow you to copy just part of the
+fromPic. You will need to add parameters that specify the start row, end row, start column,
+and end column to copy from. Write a class (static) test method in PictureTester to test
+this new method and call it in the main method.</p></li>
+<li><p>Create a <strong>myCollage</strong> method that has at least three pictures (can be the same picture) copied
+three times with three different picture manipulations and at least one mirroring. Write a class
+(static) test method in PictureTester to test this new method and call it in the main
+method.</p></li>
+</ol></div>
+	<br>
+</div>	
+

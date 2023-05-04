@@ -1,0 +1,183 @@
+<?php
+   session_start();
+   if($_SESSION['username'] != 'CompSci_Student') 
+       header("Location: /index.html");
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #container {
+        font-size: 1.3em;
+      }
+      ol li {
+        padding-bottom: 5px;
+      }
+      h2 {
+        background-color: lightgray;
+      }
+
+      #completedCode1 {
+        display: none;
+      }
+
+      #completedCode2 {
+        display: none;
+      }
+
+      #completedCode3 {
+        display: none;
+      }
+
+      #completedCode4 {
+        display: none;
+      }
+
+      img {
+        width: 550px;
+      }
+      #csSampleRun
+      {
+        color: white;
+        background-color: black;
+        width: 600px;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      a
+      {
+        text-decoration: none;
+        text-align: center;
+        background-color: lightgray;
+        color: black;
+        border: 2px solid darkgray;
+        border-radius: 25px;
+        width: 143px;
+        height: 35px;
+        font-size: 1.3rem;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 7px;
+        margin-bottom: 10px;
+      }
+      a:link {
+        text-decoration: none;
+      }
+      a:visited {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+      }
+
+      .solutionContainer {
+        display:flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+
+<body>
+<div id = "container"> 
+    <h1 style="text-align:center">Acronym Solution</h1>
+<h2>Add Starter Code</h2>
+<p>Add the following starter code to the <strong>Acronym.java</strong> file.</p>
+<img src="/csregular/unit08_string/solutions/images/acronym01.png"><br>
+<h2>Step 1 - Create Variables</h2>
+  <ol>
+      <li>Create a Scanner object and assign it the name <strong>keyboard</strong>.</li>
+      <li>Create a variable of type <strong>String</strong> named <strong>word1</strong> and assign it the empty string "".</li>
+      <li>Create a variable of type <strong>String</strong> named <strong>word2</strong> and assign it the empty string "".</li>
+      <li>Create a variable of type <strong>String</strong> named <strong>word3</strong> and assign it the empty string "".</li>
+      <li>Create a variable of type <strong>String</strong> named <strong>w1</strong> and assign it the empty string "".</li>
+      <li>Create a variable of type <strong>String</strong> named <strong>w2</strong> and assign it the empty string "".</li>
+      <li>Create a variable of type <strong>String</strong> named <strong>w3</strong> and assign it the empty string "".</li>
+  <li>Create a variable of type <strong>String</strong> named <strong>acronym</strong> and assign it the empty string "".</li>
+</ol>
+  <div class="solutionContainer">
+      <a href="#!" onclick="makeVisible('completedCode1')" id="completedCode1a">Show Code</a>
+      <img id="completedCode1" src="/csregular/unit08_string/solutions/images/acronym02.png">
+  </div>
+  <h2>Step 2 - Get User Input</h2>
+  <ol>
+      <li>Display a user prompt that says: <span style="font-family: Consolas">"Enter 3 words -->"</span></li>
+      <li>Use the Scanner class's <strong>next</strong> method to allow the user
+          to input three string from the keyboard. Use the next method three times so that each
+          word can be stored in its own variable. The first word should be assigned to the 
+          variable <strong>word1</strong>, the second to <strong>word2</strong>, 
+          and the third to <strong>word3</strong>.</li>
+     
+  </ol>
+
+  <div class="solutionContainer">
+      <a href="#!" onclick="makeVisible('completedCode2')" id="completedCode2a">Show Code</a>
+      <img id="completedCode2" src="/csregular/unit08_string/solutions/images/acronym03.png">
+  </div>
+  <h2>Step 3 - Do Processing (Perform Calculations)</h2>
+  <ol>
+        <li>Use the String class's <strong>substring</strong> method to extract the first letter
+            from each of the three words and store them in the variables <strong>w1</strong>, 
+            <strong>w2</strong>, and <strong>w3</strong>.</li> 
+        <li>Use the concatenation operator "+"
+            to merge all three letters together and store the newly formed string in the 
+            variable <strong>acronym</strong>.</li>
+  </ol>
+
+  <div class="solutionContainer">
+      <a href="#!" onclick="makeVisible('completedCode3')" id="completedCode3a">Show Code</a>
+      <img id="completedCode3" src="/csregular/unit08_string/solutions/images/acronym04.png">
+  </div>
+  <h2>Step 4 - Display Output (Results of Processing)</h2>
+  <ol>
+      <li>Display the label "New word = " followed by the string stored in the variable <strong>acronym</strong>.</li>
+  </ol>
+  
+  <div class="solutionContainer">
+      <a href="#!" onclick="makeVisible('completedCode4')" id="completedCode4a">Show Code</a>
+      <img id="completedCode4"  style="width:800px;" src="/csregular/unit08_string/solutions/images/acronym05.png">
+  </div>
+  <h2>Sample Run 1</h2>
+  <div id="csSampleRun"> 
+    <pre>
+Enter 3 words --> Random Access Memory
+
+New word = RAM
+   </pre>
+  </div>
+  <h2>Sample Run 2</h2>
+  <div id="csSampleRun"> 
+    <pre>
+Enter 3 words --> International Business Machine
+
+New word = IBM
+   </pre>
+  </div>
+  <br>
+</div>
+<script>
+function makeVisible(id)
+{
+    let element = document.getElementById(id);
+    let display = element.currentStyle ? element.currentStyle.display :
+        getComputedStyle(element, null).display;
+
+    if(display === "none")
+    {
+      element.style.display = "block";
+      let anchor = id+"a";
+      document.getElementById(anchor).innerHTML = "Hide Code";
+    }
+    else
+    {
+      element.style.display = "none";
+      let anchor = id+"a";
+      document.getElementById(anchor).innerHTML = "Show Code";
+    }
+}
+</script>
+</body>	
+</html>

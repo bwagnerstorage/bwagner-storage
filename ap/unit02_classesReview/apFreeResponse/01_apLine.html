@@ -1,0 +1,82 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR APLine</div>
+
+<div id="csContent"> 
+
+<h1>NetBeans  Project: <a href="apFreeResponse/APLineNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >APLine</a></h1>
+
+<div id="csList">
+<ol>
+<li>Click on the link above.</li>
+<li>Open the zip file.</li>
+<li>Copy the folder to your home directory.</li>
+<li>Open the NetBeans Project.</li>
+</ol>
+</div>
+<h1>Directions</h1>
+<p>An <strong>APLine</strong> is a line defined by the equation ax + by + c = 0 , where a is not equal to zero,
+   b is not equal to zero, and a, b, and c are all integers. The slope of an APLine is defined 
+   to be the double value -a / b . A point (represented by integers x and y) is on an APLine if
+   the equation of the APLine is satisfied when those x and y values are substituted into the
+    equation. That is, a point represented by x and y is on the line if ax + by + c is equal to
+   0. Examples of two APLine equations are shown in the following table</p>
+   
+   <table id="csTable">
+        <tr> 
+          <th>Equation</th>
+          <th>Slope (&#8211;a / b)</th>
+          <th>Is point (5, -2) on the line?</th>
+        </tr>
+        <tr> 
+          <td>5x + 4y - 17 = 0</td>
+          <td>-5 / 4 = -1.25</td>
+          <td>Yes, because 5(5) + 4(-2) + (-17) = 0</td>
+        </tr>
+        <tr> 
+          <td>-25x + 40y + 30 = 0</td>
+          <td>25 / 40 = 0.625</td>
+          <td>No, because -25(5) + 40(-2) + 30 ? 0</td>
+        </tr>
+      </table>
+
+<p>Assume that the following code segment appears in a class other than APLine. The code segment shows an
+example of using the APLine class to represent the two equations shown in the table.</p>
+
+<div id="apCode" style="width:670px">
+<pre>
+APLine line1 = new APLine(5, 4, -17);
+double slope1 = line1.getSlope(); // slope1 is assigned -1.25
+boolean onLine1 = line1.isOnLine(5, -2); // true because 5(5) + 4(-2) + (-17) = 0
+
+APLine line2 = new APLine(-25, 40, 30);
+double slope2 = line2.getSlope(); // slope2 is assigned 0.625
+boolean onLine2 = line2.isOnLine(5, -2); // false because -25(5) + 40(-2) + 30 != 0
+</pre>
+</div>
+
+<p>Write the <strong>APLine</strong> class. Your implementation must include a constructor that
+   has three integer parameters that represent a, b, and c, in that order. You may assume that 
+   the values of the parameters representing a and b are not zero. It must also include a method 
+   getSlope that calculates and returns the slope of the line, and a method isOnLine that returns
+   true if the point represented by its two parameters (x and y, in that order) is on the APLine
+   and returns false otherwise. Your class must produce the indicated results when invoked by
+   the code segment given above. You may ignore any issues related to integer overflow.</p>
+
+ 
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Line 1 : 5x + 4y - 17 = 0
+Slope = -1.25
+Point (5, -2) on line : true
+
+Line 2 : -25x + 40y + 30 = 0
+Slope = 0.625
+Point (5, -2) on line : false
+
+</pre>
+</div>
+	<br>
+</div>	
+

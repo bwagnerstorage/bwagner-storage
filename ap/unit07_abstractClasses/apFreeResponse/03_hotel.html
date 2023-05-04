@@ -1,0 +1,118 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">AP FR Hotel</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/HotelNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >Hotel</a></h1>
+
+<h1>Directions</h1>
+<p>A set of classes is used to represent the type of rooms that are available at a certain hotel. The class hierarchy is shown in the following diagram.</p>
+
+<div align="center"><img src="images/hotel.gif"></div>
+<p>All rooms have a room number, room rate, and type of bed (double, queen, king). The class <strong>Suite</strong> is specified as an abstract
+   class as shown in the following declaration</p>
+<div id="apCode">
+<pre>
+public abstract class Suite
+{
+    private int roomNumber;      // room number
+
+    <div id="apHighlight"><pre>public Suite(int room)</pre></div>
+    {
+        roomNumber = room;
+    }
+
+    // returns the room rate for this suite
+    <div id="apHighlight"><pre>public abstract double getRoomRate();</pre></div>
+
+    // returns the bed type for this suite
+    <div id="apHighlight"><pre>public abstract String getBedType();</pre></div>
+
+    // returns a string with information about the suite
+    <div id="apHighlight"><pre>public String toString()</pre></div>
+    {
+        return "Room number: " + roomNumber + "\n" +
+               "Room rate  : " + getRoomRate() + "\n" +
+               "Bed type   : " + getBedType();
+    }
+}
+</pre>
+</div>
+<p>Each room is assigned a room number through the parameter list of the constructor. For all suite classes,
+   the toString method returns a string containing information for that suite. Three additional classes are
+   used to represent the different types of suites and are described in the table below.</p>
+
+
+<table id="csTable">
+        <tr> 
+          <th>Class</th>
+          <th>Description</th>
+          <th>Sample toString Output</th>
+        </tr>
+   <tr>
+    <td>StandardSuite</td>
+	<td>These suites have a room rate of $80 per night. The bed type is queen.</td>    
+	<td>Room number: 101 <br>
+        Room rate      :  80<br>
+		Bed type         : queen</td>
+<tr>
+    <td>DeluxeSuite</td>
+	<td>These suites have a room rate of $100 per night. The bed type is king.</td>    
+	<td>Room number:  205<br>
+        Room rate      :  100<br>
+        Bed type         :  king</td>
+</tr>
+<tr>
+    <td>HoneymoonSuite</td>    
+	<td>These suites are a type of DeluxeSuite. <br> Their room rate is the DeluxeSuite room rate + $25.00.<br>
+	    The bed type is the DeluxeSuite bed type.</td>    
+	<td>Room number: 320<br>
+        Room rate      : 125<br>
+        Bed type         : king<br>
+        Honeymoon Suite includes:<br>
+        -  2 white terrycloth robes<br>
+        -  free room service</td>
+  </tr>
+  </table>
+
+<p>Using the class hierarchy and specifications given above, you will write
+   complete class declarations for the <strong>DeluxeSuite</strong> and  <strong>HoneymoonSuite</strong> classes.</p>
+
+<div id="csList2">
+<ol>
+<li><p>Write the complete class declaration for the class <strong>DeluxeSuite</strong>. Include all necessary instance variables
+   and implementations of its constructor and method(s). The constructor should take a parameter that indicates
+   the room number for the suite being reserved. The cost of a suite is $100.00 per night and it includes a king size bed.</p></li>
+<li><p>Write the complete class declaration for the class <strong>HoneymoonSuite</strong>. Include all necessary instance variables
+    and implementations of its constructor and method(s). The constructor should take a parameter that indicates
+    the room number for the suite being reserved. The toString method should include a notation that the HoneymoonSuite
+    includes two white terrycloth robes and free room service. A HoneymoonSuite room rate is the DeluxeSuite room rate
+    plus $25.00. If the room rate for the DeluxeSuite changes, the HoneymoonSuite room rate should continue to be computed
+   correctly with no code modifications to the HoneymoonSuite. The HoneymoonSuite bed type is the same as the DeluxeSuite.</p></li>
+</ol>
+</div>
+
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Room number : 1
+Room rate   : 80.0
+Bed type    : Queen
+
+Room number : 2
+Room rate   : 100.0
+Bed type    : King
+
+Room number : 3
+Room rate   : 125.0
+Bed type    : King
+Honeymoon Package includes:
+ - 2 white terrycloth robes
+ - free room service
+ 
+
+</pre>
+</div>
+	<br>
+</div>	
+

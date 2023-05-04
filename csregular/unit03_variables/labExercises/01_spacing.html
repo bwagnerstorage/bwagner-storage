@@ -1,0 +1,135 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Spacing</div>
+
+<div id="csContent"> 
+
+<p>In this lesson you are going learn about the concatenation operator "+" and how
+   it can be used to enhance a programs output.
+</p>
+<h2>Exercise 1</h2>
+<p><strong style="color:blue">Task - </strong> Add a new Java file to your NetBeans project named "Spacing.java", then add the following
+   starter code to the file.</p>
+<div id="csCode" style="width:500px"><pre>public class Spacing
+{
+   public static void main(String[] args)
+   {
+      // Exercise 1
+      System.out.println("Exercise 1");
+      System.out.println("----------");
+      int num1 = 25;
+
+
+      // Exercise 2
+      System.out.println("\nExercise 2");
+      System.out.println("----------");
+
+
+      // Exercise 3
+      System.out.println("\nExercise 3");
+      System.out.println("----------");
+
+      // Exercise 4
+      System.out.println("\nExercise 4");
+      System.out.println("----------");
+      int a1 = 10;
+      int a2 = 20;
+      int a3 = a1 + a2;
+
+
+   }
+}
+</pre></div>
+
+<p>Recall that a <strong>string literal</strong> consists of characters placed inside a pair double quotes.
+   Here are a few examples of string literals: "dog", "horse", "Sam ran fast.", "375", "5 + 7", "H", "Answer = ".
+   The concatenation operator "+" is used in conjunct with strings to allow printing
+   of data of multiple types.</p>
+ <p><strong style="color:blue">Task - </strong> Add the following code to the <strong>Exercise 1</strong> section, then execute the program.</p>
+
+   <div id="csCode" style="width:300px"><pre>System.out.println("Answer = " + 25);</pre></div>
+
+   <p>In the parentheses of the println statement are two different types of data.
+      "Answer = " is a string and 25 is an integer. Without the plus sign "+" (concatenation operator)
+      printing these values in the same println statement would not be possible unless
+      you place the number 25 inside the quotes of the string. </p>
+   <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 1</strong> section, then execute the program.</p>
+      <div id="csCode" style="width:300px"><pre>System.out.println("Answer = 25");</pre></div>
+   <p>Although this code works, it is not always possible to combine the values in this manner.</p>
+   <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 1</strong> section, then execute the program.</p>
+   <div id="csCode" style="width:350px"><pre>System.out.println("Answer = " + num1);</pre></div>
+   <p>Notice the string and variable are separated by the concatenation operator (+).</p>
+   <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 1</strong> section, then execute the program.</p>
+   <div id="csCode" style="width:300px"><pre>System.out.println("Answer = num1");</pre></div>
+   <p>Notice that the variable num1 cannot be inside the quotes. It will cause the variable to become part of the string and therefore it's contents will not be displayed.</p>
+<br>
+
+
+
+<h2>Exercise 2</h2>
+<p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 2</strong> section, then execute the program.</p>
+      <div id="csCode" style="width:400px"><pre>System.out.println(1 + 2 + 3 + 4 + 5);</pre></div>
+ <p>This line of code calculates the sum of 1 + 2 + 3 + 4 + 5</p>
+
+ <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 2</strong> section, then execute the program.</p>
+      <div id="csCode" style="width:400px"><pre>System.out.println("Sum = " + 1 + 2 + 3 + 4 + 5);</pre></div>
+ <p>Did it print what you expected? Since the println statement begins with the string
+    "Sum = " the plus signs after the string no longer do addition, instead they perform
+     concatenation which merges all the numbers into one string "12345". </p>
+     <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 2</strong> section, then execute the program.</p>
+     <div id="csCode" style="width:400px"><pre>System.out.println(1 + 2 + 3 + " " + 4 + 5);</pre></div>
+ <p>This time the a string was placed between the 3 and 4, therefore the three plus
+    signs leading up to the string are plus signs and do arithmetic. However, the two
+    plus signs after the string are converted to concatenation operators which turns the two
+    numbers into strings and merges them together with the sum calculated by the first
+    three numbers.
+ </p>
+
+ <h2>Exercise 3</h2>
+ <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 3</strong> section, then execute the program.</p>
+       <div id="csCode" style="width:600px"><pre>System.out.println(10 + " + " + 20 + " + " + 30 + " = " + (10+20+30));</pre></div>
+  <p>This line of code displays an arithmetic problem along with the computer calculated result. 
+     The computer uses the order of operations or PEMDAS to determine the order the arithmetic expressions are evaluated.
+     Since the last three numbers are wrapped inside parentheses the order of operations determines that they
+     should be evaluated first so the plus signs are not converted to concatenation operators and the sum of the
+     three numbers is calculated.
+  </p>
+  <p><strong style="color:blue">Task - </strong>Add the following code to the <strong>Exercise 3</strong> section, then execute the program.</p>
+  <div id="csCode" style="width:600px"><pre>System.out.println(10 + " + " + 20 + " + " + 30 + " = " + 10+20+30);</pre></div>
+<p>This time the last three numbers do not include parentheses, therefore there plus signs
+   become concatenation operators and the numbers are merged together.</p>
+ 
+
+   <h2>Exercise 4</h2>
+   <p>Write a line of code in the <strong>Exercise 4</strong> section that will display the variables a1, a2, and a3 in
+      the following format.
+   </p>
+   <div id="csHTML"><pre><strong>10 + 20 = 30</strong></pre></div>
+   <h1>Source File</h1>
+   <p>Spacing.java</p>
+   <h1>Sample Run</h1>
+   <div id="csSampleRun"><pre>Exercise 1
+----------
+Answer = 25
+Answer = 25
+Answer = 25
+Answer = num1
+
+Exercise 2
+----------
+15
+Sum = 12345
+6 45
+
+Exercise 3
+----------
+10 + 20 + 30 = 60
+10 + 20 + 30 = 102030
+
+Exercise 4
+----------
+10 + 20 = 30
+</pre></div>
+
+   <br>
+</div>

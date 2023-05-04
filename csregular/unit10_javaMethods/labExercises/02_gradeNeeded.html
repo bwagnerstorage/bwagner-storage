@@ -1,0 +1,79 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Grade Needed</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a program that given a student's three six weeks averages will calculate the grade the student
+   needs to make on his/her semester exam to earn the desired semester average.</p>
+<p>For example, Zack wants to earn at least a 90 for the semester. If his three six weeks averages
+   are 92, 86, and 88 he would need to make at least a 95 on his semester exam to achieve his goal.</p>
+<p>The table below shows other examples.</p>
+<table id="csTable" style="margin: 15px">
+<tr>
+   <th>Goal</th>
+   <th>Six Weeks Avgs</th>
+   <th>Grade Needed</th>
+</tr>
+<tr>
+   <td align="center">80</td>
+   <td align="center">86,78,62</td>
+   <td align="center">98.7</td>
+</tr>
+<tr>
+   <td align="center">70</td>
+   <td align="center">75,65,60</td>
+   <td align="center" >83.3</td>
+</tr>
+<tr>
+   <td align="center">90</td>
+   <td align="center">99,100,99</td>
+   <td align="center">52.7</td>
+</tr>
+</table>
+<p>Here is the formula for calculating the grade needed on the semester exam:</p>
+  <p style="font-family: consolas,  Inconsolata, courier new, mono">gradeNeeded = (semesterAvgGoal - (0.8 * (sixWeeks1 + sixWeeks2 + sixWeeks3) / 3)) / 0.2</p>
+  <br>
+  <h3>Problem Decomposition</h3>
+<p>Decompose the problem using the following structure chart.</p>
+   <div align="center"><img src="images/gradeNeeded1.png"></div>
+<h3>Stub Program</h3>
+  <p>Start by creating a stub program that includes the following three methods: 
+    <strong>getData</strong>, <strong>calculateGradeNeeded</strong>, and <strong>printResults</strong>. 
+    Include println statements within each method that print the name of the method 
+    when it is executed. Refer to sample run below.</p>
+<h1>Source File</h1>
+<p>GradeNeeded.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+-----------------
+   getData
+-----------------
+
+Enter desired semester average -->90
+Enter 1st six weeks average -->92
+Enter 2nd six weeks average -->86
+Enter 3rd six weeks average -->88
+
+----------------------
+ calculateGradeNeeded
+----------------------
+
+
+-----------------
+  printResults
+-----------------
+
+Semester Average Goal = 90
+Grade Needed to Achieve Goal = 95.33333333333331
+</pre>
+</div>
+
+<br><br><br>
+<img src="images/empty.gif" onload="getSolution('/csregular/unit10_javaMethods/solutions/02_gradeNeededSolution.php'); this.parentNode.removeChild(this);" />
+<div><a href="/php/show_login.html" target="_blank" style="color:blue; font-size:1.5rem">Solution</a></div>
+
+	<br>
+</div>	
+

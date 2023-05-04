@@ -1,0 +1,70 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">LinkedPractice2</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/LinkedPractice2.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >LinkedPractice2</a></h1>
+
+<h1>Directions</h1>
+<p>In this assignment you are going to complete 5 methods named removeFirstNode, removeLastNode, addFirstNode, addLastNode, and insertNode. Each method is passed a reference to a ListNode object in their parameter list named <strong>head</strong>. After the linked list is modified in the each method the variable head is returned so that the changes are preserved. The creation and display of the linked list is done for you in the main method.
+</p>
+<h3>Method removeFirstNode</h3>
+<p>Removes the first node in head and then returns head. (<strong>Note:</strong> When I say "head", I actually mean the "linked list referenced by variable head"). </p>
+
+<h3>Method removeLastNode</h3>
+<p>Removes the last node in head and then returns head.</p>
+
+<h3>Method addFirstNode</h3>
+<p>Creates a new ListNode object and assigns it the value of num. Adds this new node at the beginning of head and assigns the new node's reference to head which makes the new node the head of the list.
+</p>
+
+<h3>Method addLastNode</h3>
+<p>Creates a new ListNode object and assigns it the value of num. Appends this new node to the end of head.</p>
+
+<h3>Method insertNode</h3>
+<p>Creates a new ListNode object and assigns it the value of num. Inserts this new node at the <strong>nth</strong> position in the linked list. For example, if head contained the following nodes<br><br>   head --> 2 --> 4 --> 6 --> 8 --> null<br><br>
+and insertNode was called with the following arguments <strong>insertNode(10, null)</strong>, then the new node would be inserted into head between  4 and 6. <br><br>
+head --> 2 --> 4 --> 10 --> 6 --> 8 --> null<br>
+</p>
+
+ 
+<h1>Source File</h1>
+<p>LinkedPractice2.java</p>
+<p>ListNode.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+   -----------------------
+   removeFirstNode
+-----------------------
+List: 31 50 37 16 1 46 8 16 46 22 15 18 24 50 17 7 11 6 29 6 
+List: 50 37 16 1 46 8 16 46 22 15 18 24 50 17 7 11 6 29 6 
+
+-----------------------
+   removeLastNode
+-----------------------
+List: 6 40 40 34 46 31 20 48 19 13 2 37 44 47 48 38 44 33 20 27 
+List: 6 40 40 34 46 31 20 48 19 13 2 37 44 47 48 38 44 33 20 
+
+-----------------------
+    addFirstNode
+-----------------------
+List: 38 38 47 4 12 28 42 33 18 39 21 22 6 13 15 47 26 30 8 29 
+List: 1000 38 38 47 4 12 28 42 33 18 39 21 22 6 13 15 47 26 30 8 29 
+
+-----------------------
+     addLastNode
+-----------------------
+List: 32 35 4 47 22 32 49 46 20 9 29 34 22 4 18 26 47 28 31 12 
+List: 32 35 4 47 22 32 49 46 20 9 29 34 22 4 18 26 47 28 31 12 1000 
+
+-----------------------
+      insertNode
+-----------------------
+List: 3 4 8 3 18 12 20 48 49 33 50 19 9 48 20 31 33 31 6 44 
+List: 3 4 8 3 18 12 20 48 49 33 1000 50 19 9 48 20 31 33 31 6 44 
+</pre>
+</div>
+	<br>
+</div>	
+
