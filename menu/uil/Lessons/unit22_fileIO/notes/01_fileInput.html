@@ -1,0 +1,262 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">File Input</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>how to use Scanner class to read data from a file</li>
+						<li>what is a token</li>
+						<li>what is FileNotFound Exception</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 
+<h1>Scanner Class</h1>
+      <p>We have used the <strong>Scanner</strong> class to read user input from 
+        the keyboard. The <em>Scanner</em> class can also be used to read input 
+        from a file on an external storage device such as a hard disk or flash 
+        drive. Conveniently the same methods used to retrieve information from 
+        the keyboard can also be used to retrieve information from a file. Here 
+        is a list of the <em>Scanner</em> methods we have used with some additional 
+        methods that are more commonly used when reading from a file:</p>
+      <table id = "csTable" width="598">
+        <tr> 
+          <th width="140" class = "notes"> <div align="center">Method</div></th>
+          <th width="195" class = "notes"> <div align="center">Example</div></th>
+          <th class = "notes"><div align="center">Description</div></th>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">int nextInt()</td>
+          <td class = "notes" width="183">int n = scan.nextInt();</td>
+          <td class = "notes" >Returns the next token as an int. If the next token 
+            is not an integer, InputMismatchException is thrown.</td>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">double nextDouble()</td>
+          <td class = "notes" width="183">double n = scan.nextDouble();</td>
+          <td class = "notes">Returns the next token as a long. If the next token 
+            is not a float or is out of range, InputMismatchException is thrown.</td>
+        </tr>
+        <tr> 
+          <td class = "notes"width="183">String next()</td>
+          <td class = "notes"width="183">String s = scan.next();</td>
+          <td class = "notes">Finds and returns the next complete token from this 
+            scanner and returns it as a string; a token is usually ended by whitespace 
+            such as a blank or line break. If a token does not exist, NoSuchElementException 
+            is thrown.</td>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">String nextLine()</td>
+          <td class = "notes" width="183">String s = scan.nextLine();</td>
+          <td class = "notes" >Returns the rest of the current line, excluding 
+            any line separator at the end.</td>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">boolean hasNextInt()</td>
+          <td class = "notes" width="183">if(scan.hasNextInt())</td>
+          <td class = "notes">Returns true if the next token in the scanner can 
+            be interpreted as an int value.</td>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">boolean hasNextDouble()</td>
+          <td class = "notes" width="183">if(scan.hasNextDouble())</td>
+          <td class = "notes" >Returns true if the next token in the scanner can 
+            be interpreted as a double value.</td>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">boolean hasNextLine()</td>
+          <td class = "notes" width="183">while(scan.hasNextLine())</td>
+          <td class = "notes" >Returns true if the scanner has another line in 
+            its input; false otherwise.</td>
+        </tr>
+        <tr> 
+          <td class = "notes" width="183">boolean hasNext()</td>
+          <td class = "notes"width="183">while(scan.hasNext())</td>
+          <td class = "notes">Returns true if the scanner has another token in 
+            its input.</td>
+        </tr>
+      </table>
+      <br>
+      <h3>What is a Token</h3>
+      <p> A <strong>token</strong> is a series of characters that ends with whitespace. 
+        Whitespace includes one of the following: a blank space, a tab character, 
+        a carriage return, or an end of the file marker. The scanner looks for 
+        these tokens when it is reading from the input data and is able to segregate 
+        them from each other. As an example, if we read a line that has a series 
+        of numbers separated by blanks (whitespace), the scanner will read each 
+        number as a separate token.</p>
+<br>
+      <h1>Reading from a File</h1>
+      <p>To read information from a file you will need to do the following:</p>
+      <h3>1) Step 1 - Import the Scanner and File classes</h3>
+      <div id="csCode">
+          <pre>import java.util.*;  <font color="#0000FF">// needed for Scanner</font>
+import java.io.*;    <font color="#0000FF">// needed for File and FileNotFoundException</font>
+</pre>
+      </div>
+      <h3>2) Step 2 - Instantiate a Scanner Object for File Input</h3>
+      <div id="csCode">
+    <pre>Scanner scan = new Scanner(new File(&quot;myFile.txt&quot;));
+</pre>
+</div>
+      <p>Inorder to read from a file you must first tell the <em>Scanner</em> 
+        object where the file is located. This is done by creating a <strong>File</strong> 
+        object and including the name of the file as a parameter. In the example 
+        above, the file is named &quot;myFile.txt&quot;. Since the <em>Scanner</em> 
+        class only reads text files the file extension<strong> .txt</strong> is 
+        often used as the file's extension name. Another common extension is <strong>.dat</strong>.</p>
+      <div id="csNote">The data file must be located in the same folder 
+              as the class file of the program that is reading the file. If you 
+              want the file to be in another folder you can include a path in 
+              the filename:
+            <p><font face="Courier New, Courier, mono">new File(&quot;c:\myFolder\myFile.txt&quot;);</font></p></td>
+      </div>
+      <h3>3) Step 3 - Include Error Checking</h3>
+      <p>One of the main differences between reading from the keyboard and reading 
+        from a file is that when you read from a file you must include error checking 
+        or what Java refers to as <strong>Exception Handling</strong>. When reading 
+        from a file there is the possiblility that the file being read does not 
+        exist, is not located in the designated folder, or has been corrupted 
+        and cannot be read. These situations are referred to as exceptions and 
+        they must be handled or dealt with in your program or you will get a compiling 
+        error. </p>
+      <h3>FileNotFoundException</h3>
+      <p>When reading from a file the <em>Scanner</em> class throws a <strong>FileNotFoundException</strong> 
+        if the file to be read from does not exist. Your program must handle this 
+        exception in one of two ways. The first method is to place the Scanner 
+        code within a <strong>try/catch</strong> block. The try-catch block is used to trap run-time errors so
+		that you can deal with them instead allowing the program to terminate. The second method (the one we will be using) 
+        is to place the following code on the line that includes your <em>main</em> 
+        method declaration:</p>
+      <div id="csCode">
+        <pre>public static void main(String[] args) <font color="#FF0000">throws IOException</font></pre>
+    </div>
+      <p>This code tells the compiler that you are not going to deal with the 
+        exception yourself, but instead are going to pass it up one level to the 
+        method that invoked your method. In the case of the <em>main</em> method, 
+        we are passing the exception to the JVM itself so that it can handle an 
+        error if it occurs. The JVM is then responsible for handling the error 
+        and displaying an error message if the specified file could not be read.</p>
+      <h3>4) Step 4 - Use the Scanner methods to Read from the File</h3>
+      <p>If you have done the first three steps correctly then your program is 
+        now ready to read the information from the designated file. The method 
+        used to retrieve the information depends upon how the data is going to 
+        be used in your program. If the data being read is needed to perform a 
+        calculation or do some type of arithmetic then you will need to read the 
+        information as an integer or double; otherwise, the information can simply 
+        be read as a string or strings.</p>
+
+      <h1>Integer Input Examples</h1>
+      <p><strong>Method 1 - Read individual Input</strong></p>
+      <p>This method is used when the file contains a small number of integer 
+        values. They are read one at a time just like if you were reading from 
+        the keyboard. </p>
+      <div id="csCode">
+         <pre>int n1 = scan.nextInt();   <font color="#0000FF">// reads 1st integer from file</font>
+int n2 = scan.nextInt();   <font color="#0000FF">// reads 2nd integer from file</font>
+int n3 = scan.nextInt();   <font color="#0000FF">// reads 3rd integer from file</font>
+int n4 = scan.nextInt();   <font color="#0000FF">// reads 4th integer from file</font>
+int n5 = scan.nextInt();   <font color="#0000FF">// reads 5th integer from file</font>
+</pre>
+      </div>
+      <p><strong>Sample File</strong></p>
+      <div id=csOutput>10 20 30 40 50</font>
+    </div>
+      <p><strong>Method 2 &#8211; Read all Input</strong></p>
+      <p>This method is used when file contains a large number of integer values 
+        or the actually number of values is not known. The <strong>hasNextInt</strong> 
+        method returns <em>true</em> as long as there is an integer value in the 
+        file that has not been read. The <em>hasNextInt</em> method is combined 
+        with a <em>while</em> loop to read the entire file one integer at a time.</p>
+      <div id="csCode">
+       <pre>int n=0;
+while(scan.hasNextInt())   <font color="#0000FF">// reads all the integers from the file</font>
+{
+   n = scan.nextInt();
+}</pre>
+        </div>
+      <p><strong>Sample File</strong></p>
+      <div id="csOutput">10 35 44 67 213 31 95 574 34 11 9 12 454 323 2331 84 43 30 40 50 87 
+      986 382 21 7 5312 3 213 9877 76 674 26 19 32 12 291 100 32 77 218 
+      32 283 1 382 238 922 3 43 87 29 23 99 173</div>
+      <h1>Double Input Examples</h1>
+      <p><strong>Method 1 - Read individual Input</strong></p>
+      <div id="csCode"><pre>Scanner scan = new Scanner(new File(&quot;myFile.txt&quot;));
+double d1 = scan.nextDouble();   <font color="#0000FF">// reads a double from file</font>
+double d2 = scan.nextDouble();
+double d3 = scan.nextDouble();
+double d4 = scan.nextDouble();
+double d5 = scan.nextDouble();</pre></div>
+
+      <p><strong>Sample File</strong></p>
+      <div id="csOutput">9.5 23.7 98.6 10 216.45
+      </div>
+      <p><strong>Method 2 &#8211; Read all Input</strong></p>
+      <div id="csCode">
+<pre>double d=0;
+while(scan.hasNextDouble())  <font color="#0000FF"> // reads all the doubles from file</font>
+{
+   d = scan.nextDouble();
+}</pre>
+ </div>
+      <p><strong>Sample File</strong></p>
+      <div id="csOutput">8.8 
+              54.2 8.0 21.89 73.33 8.76 765.32 873.2 9.3 9.5 23.7 98.6 10.2 216.45 
+              23.2 12.2 84.23 982.2 12.02 23.98 2.19
+</div>
+      <h2>&nbsp;</h2>
+      <h2>String Input Examples</h2>
+      <p><strong>Method 1 - Read individual Input</strong></p>
+      <p>This method is used when you need to a small number of strings that are 
+        separated by either spaces or carriage returns (&lt;EOLN&gt; end-of-line 
+        markers).</p>
+      <div id="csCode"><pre>Scanner scan = new Scanner(new File(&quot;myFile.txt&quot;));
+String s1 = scan.next();   <font color="#0000FF">// reads one string from file</font>
+String s2 = scan.next();
+String s3 = scan.next();
+String s4 = scan.next();
+String s5 = scan.next();</pre>
+       </div>
+      <p><strong>Sample File</strong></p>
+      <div id="csOutput">dog cat mouse horse chicken</div>
+      <p>&nbsp;</p>
+      <p><strong>Method 2 &#8211; Read all Input</strong></p>
+      <p>This method is used when you need to read a large number of strings or 
+        the actually number of strings is not known. The strings are disguised 
+        by spaces or end-of-line markers.</p>
+      <div id="csCode"><pre>String s;
+while(scan.hasNext())  <font color="#0000FF">// reads all the strings from the file</font>
+{
+   s = scan.next();
+}</pre>
+</div>
+      <p><strong>Sample File</strong></p>
+      <div id="csOutput">Mary had a little lamb <br>
+its fleece was <br>
+white as snow. <br>
+Everywhere that Mary went <br>
+the lamb was sure to go.</div>
+      <p><strong>Method 3&#8211; Read all Input Lines</strong></p>
+      <p>This method is different from method 2 in that it reads an entire line 
+        as one string. It disguises the strings by end-of-line marker only.</p>
+      <div id="csCode"><pre>String s;
+while(scan.hasNextLine())
+{
+   s = scan.nextLine();
+}
+</pre></div>
+      <p>The first time through the while loop the entire line &quot;Mary had 
+        a little lamb&quot; is read and stored in the String variable s.</p>
+      <p><strong>Sample File</strong></p>
+      <div id="csOutput">Mary had a little lamb <br>
+its fleece was <br>
+white as snow. <br>
+Everywhere that Mary went <br>
+the lamb was sure to go.</div>
+  <br>
+</div>

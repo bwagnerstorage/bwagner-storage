@@ -1,0 +1,303 @@
+What is output by the code to the right?
+$
+int u = 5;
+double v = 5.5;
+if( v > u )
+  System. out. print ( 1 );
+if( (int)v > u )
+  System. out. print ( 2 );
+else
+  System.out.print( 3 );
+$
+2
+$
+12
+$
+123
+$
+13
+$
+3
+$
+D
+$
+What is output by the code to the right?
+$
+String n = "kuipers";
+if( Character.isLetter(n.charAt(l) ) )
+System.out.print( 1 );
+else if ( n.length() > 4 )
+System.out.print( 2 );
+if ( n != null )
+System. out. print ( 3 );
+$
+23
+$
+1
+$
+123
+$
+2
+$
+13
+$
+E
+$
+What is output by the code to the right?
+$
+double m = 1.5;
+double n = 2.5;
+
+if( m > n )
+  n *= 2;
+else
+  m *= 2;
+
+if( m > 2 )
+  System.out.print( 1 );
+else
+  System.out.print( 2 );
+$
+12
+$
+2
+$
+1
+$
+21
+$
+212
+$
+C
+$
+What is output by the code to the right?
+$
+int x = 8;
+int y = 4 * 2;
+if( x == y ){
+  if( x % 2 == 0 )
+    x--;
+  else
+    y++;
+}
+
+System.out.print( x + " " + y );
+$
+8 8
+$
+8 9
+$
+7 7
+$
+7 9
+$
+7 8
+$
+E
+$
+What are the possible outputs for 
+the code to the right?
+
+I. 0
+II. 1
+III. 2
+
+$
+int x, y;
+// code to initialize x, y
+String result = "";
+if ( x > 10 )
+  result += "a";
+if( y > 10 )
+  result += "a";
+System.out.println( result.length() );
+$
+I only
+$
+II only
+$
+III only
+$
+II and III
+$
+I, II, and III
+$
+E
+$
+What is output by the code to the right?
+$
+String home = "";
+if( home == null )
+  System.out.print( 1 );
+else
+  System.out.print( 2 );
+if( home.length() != 0 )
+  System.out.print( 3 );
+$
+3
+$
+23
+$
+13
+$
+1
+$
+2
+$
+E
+$
+What is output by the code to the right?
+$
+int x = 5;
+if( x < 5 )
+  System.out.print( "yes" );
+else
+  System.out.print( "no" );
+$
+yesno
+$
+noyes
+$
+yes
+$
+no
+$
+There is no output
+$
+D
+$
+What is output by the code to the right?
+$
+double a = 2.5;
+double b = 15.7;
+if( a < b )
+  System.out.print( 1 );
+if( b > 10 )
+  System.out.print( 2 );
+$
+21
+$
+2
+$
+1
+$
+12
+$
+There is no output
+$
+D
+$
+What is output by the code to the right?
+$
+if( j < 10){
+  if( 12 > j )
+    System.out.print("y");
+  else
+    System.out.print("n");
+}
+else
+  System.out.print("o");
+$
+yno
+$
+yn
+$
+y
+$
+yo
+$
+o
+$
+E
+$
+What is output by the code to the right?
+$
+int z = 3;
+if( z <= 3 )
+  z++;
+if( z > 3 )
+  z++;
+else
+  z--;
+System.out.print( z );
+$
+3
+$
+4
+$
+2
+$
+6
+$
+5
+$
+E
+$
+What is output by the code to the right?
+$
+double c = 2.5;
+if( c > 1.5 ){
+  if( c > 3 )
+    c = c * 2;
+  else
+    c = c + 1;
+}
+System.out.print( c );
+$
+5.0
+$
+3.5
+$
+6.0
+$
+4.0
+$
+2.5
+$
+B
+$
+What is output by the code to the right?
+$
+int r = 3, s = 6;
+if( s > r && r > 0 ){
+  r++;
+  if( s > 5 )
+    r++;
+}
+else
+   r--;
+System.out.print( r );
+$
+5
+$
+4
+$
+3
+$
+2
+$
+1
+$
+A
+$
+What is output by the code to the right?
+$
+String ans = "ABBAACDC";
+if( ans.equals( "ABBA" ) )
+  System.out.println( 1 );
+if( ans.length() > 4 )
+  System.out.println( 2 );
+else
+  System.out.println( 3 );
+$
+12
+$
+13
+$
+1
+$
+2
+$
+3
+$
+D

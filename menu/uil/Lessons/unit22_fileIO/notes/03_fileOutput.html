@@ -1,0 +1,166 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">File Output</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>how to write data to a file using PrintWriter</li>
+						<li>what is a buffer</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>PrintWriter</h1>
+  <p>Java provides a class named <strong>PrintWriter</strong> that can be used to write data to a file.</p>
+  <p>Here is a list of the commonly used methods.</p>
+  <table id="csTable">
+  <tr>
+    <th>Method</th>
+	<th width="140">Example</th>
+	<th>Description</th>
+  </tr>
+  <tr>
+    <td>print</td>
+	<td>writer.print(num);</td>
+	<td>Writes the variable num to the file.</td>
+  </tr>
+  <tr>
+    <td>println</td>
+	<td>writer.println(str);</td>
+	<td>Writes the variable str to the file then terminates the line(adds newline marker to the file).</td>
+  </tr>
+  <tr>
+    <td>flush</td>
+	<td>writer.flush();</td>
+	<td>Empties the stream buffer. This causes any data left in stream buffer to be written
+	    to the file.</td>
+  </tr>
+  <tr>
+    <td>close</td>
+	<td>writer.close();</td>
+	<td>Closes the stream and releases any system resources associated with it.</td>
+  </tr>
+  </table>
+  <p>The following example writes a person's address to a file named <strong>outfile.dat</strong>.</p>
+<div id="csCode">
+    <pre>
+import java.io.*;  <font color="#FF00FF">// Step 1: import PrintWriter</font>
+
+public class PrintWriterDemo1
+{
+    private PrintWriter writer;   <font color="#FF00FF">// Step 2: declare PrintWriter variable</font>
+
+    public PrintWriterDemo1()
+    {
+        <font color="#FF00FF">// Step 3: Need try-catch block to trap I/O errors</font>
+        try
+        {
+            <font color="#FF00FF">// Step 4: instantiate PrinterWriter object; parameter is
+                        //             a File object which includes the name of data file</font>
+            writer = new PrintWriter(new File("outFile.dat"));
+        }
+        catch(IOException e)
+        {
+            System.out.println("File I/O Error");
+        }
+
+        <font color="#FF00FF">// Step 5: write data to file using println method</font>
+        writer.println("John Wayne");
+        writer.println("216 South 2nd Street");
+        writer.println("Winterset, Iowa");
+
+        System.out.println("Data written to file ...");
+        writer.flush();   <font color="#FF00FF">// Step 6: flush stream buffer</font>
+        writer.close();   <font color="#FF00FF">// Step 7: close PrintWriter</font>
+
+<font color="#FF00FF">        // *** Note ***
+        // If file does not exist it will be created
+        // If file does exist data will be erased before new data is add</font>
+    }
+
+    public static void main(String[] args)
+    {
+        new PrintWriterDemo1();
+    }
+}</pre>
+   </div>
+<p>Let's look at each step used to write the data to a file.</p>
+   <h3>Step 1 - import PrintWriter class</h3>
+   <div id="csCode">
+   <pre>
+import java.io.*;</pre>
+   </div>
+   
+ <h3>Step 2 - declare PrintWriter object variable</h3>
+   <div id="csCode">
+   <pre>
+private PrintWriter writer;</pre>
+   </div>
+   
+    <h3>Step 3 - use try-catch block to trap I/O errors</h3>
+   <div id="csCode">
+   <pre>
+try
+{
+
+}
+catch(IOException e)
+{
+   System.out.println("File I/O Error");
+}</pre>
+   </div>
+   <p>The try-catch block allows you to deal with run-time errors that occur
+      instead of allowing the computer to terminate your program. In the try section you place
+	  code that could possible cause a run-time error
+	  (Ex. file cannot be created). If an error does occur in the try section then your program
+	  will then execute the catch section. The parameter of the catch section is an
+	  object that contains details about the type of error that occurred. Typically in the
+	  catch section you include code that displays a message on the screen notifying the user
+	  that an error occurred.</p>
+	<h1>Step 4 - Instantiate PrinterWriter object</h1>
+	   <div id="csCode">
+     <pre>
+writer = new PrintWriter(new File("outFile.dat"));
+</pre>
+   </div>
+<p>When instantiating a PrintWriter object you include a File object that takes as a 
+   parameter the name of the data file. This code must be placed inside the try section
+   of a try-catch block.</p>
+   	<h1>Step 5 - Write the data to the file</h1>
+	   <div id="csCode">
+     <pre>
+writer.println("John Wayne");
+writer.println("216 South 2nd Street");
+writer.println("Winterset, Iowa");
+</pre>
+   </div>
+   <p>Write the data to the file using one of the PrintWriter methods.</p>
+      	<h1>Step 6 - Flush the output stream buffer</h1>
+	   <div id="csCode">
+     <pre>
+writer.flush(); 
+</pre>
+   </div>
+   <p>Data that is to written to a file is not sent directly to the file, instead the data is sent to
+      a temporary memory location called a <strong>buffer</strong>. The buffer then sends the data to
+	  the file in larger chunks. This makes writing to the file more efficient sents the program does not
+	  have to access the file as often.</p>
+   <p>The flush method empties the buffer sending any data remaining on the buffer to the file. This method
+    should always be called before you close the stream.</p>
+      	<h1>Step 7 - Close the PrintWriter</h1>
+	   <div id="csCode">
+     <pre>
+writer.close(); 
+</pre>
+
+   </div>
+<p>This method closes the stream and releases any system resources associated with it (Ex.
+   destroys the buffer).</p>
+<br>
+</div>	

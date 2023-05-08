@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<h1 align="left">Stable Sort</h1>
+<p align="left">A <strong>stable</strong> sort is one where the initial order 
+  of equal items is preserved. Some sorting algorithms are naturally stable, some 
+  are unstable, and some can be made stable with care. Stability is important 
+  when we want to sort by multiple fields--for example, sorting a list of task 
+  assignments first by priority and then by assignee (in other words, assignments 
+  of equal priority are sorted by assignee). One easy way to do this is to sort 
+  by assignee first, then take the resulting sorted list and sort that by priority. 
+  This only works if the sorting algorithm is stable--otherwise, the sortedness-by-assignee 
+  of equal-priority items is not preserved. </p>
+<p align="left">For example, if we sort the words &quot;apple&quot;, &quot;tree&quot; 
+  and &quot;pink&quot; by length, then &quot;tree&quot;, &quot;pink&quot;, &quot;apple&quot; 
+  is a stable sort but &quot;pink&quot;, &quot;tree&quot;, apple&quot; is not. 
+</p>
+<p align="left"><strong>MergeSort</strong> is a very common choice of stable sorts, 
+  achieved by favoring the leftmost item in each merge step (only if item_right 
+  &lt; item_left put item_right first). <strong>RadixSort</strong> is another 
+  of the stable SortingAlgorithms. </p>
+<h1 align="left">Radix Sort</h1>
+<p><strong>Radix sort</strong> is an algorithm that sorts a list of fixed-size 
+  numbers of length k in O(n &middot; k) time by treating them as bit strings. 
+  We first sort the list by the least significant bit while preserving their relative 
+  order using a stable sort. Then we sort them by the next bit, and so on from 
+  right to left, and the list will end up sorted. </p>
+<p>Two classifications of radix sorts are <strong>least significant digit (LSD)</strong> 
+  radix sorts and <strong>most significant digit (MSD)</strong> radix sorts. LSD 
+  radix sorts process the integer representations starting from the least significant 
+  digit and move towards the most significant digit. MSD radix sorts work the 
+  other way around. A least significant digit (LSD) radix sort is a fast stable 
+  sorting algorithm which can be used to sort keys in integer representation order. 
+  Keys may be a string of characters, or numerical digits in a given 'radix'. 
+  MSD radix sorts use lexicographic order, which is suitable for sorting strings, 
+  such as words, or fixed-length integer representations.</p>
+<p><strong>Radix Sort </strong>is a selection-based sorting algorithm that sorts 
+  integers by processing each digits. This is different from comparison-based 
+  sorting algorithms like the Quick Sort and Merge Sort. </p>
+<p>Following example shows how Radix sort operates on seven 3-digits number.</p>
+<table width="38%" border="0">
+  <tr> 
+    <td><div align="center"><strong>INPUT</strong></div></td>
+    <td><div align="center"><strong>1st pass</strong></div></td>
+    <td><div align="center"><strong>2nd pass</strong></div></td>
+    <td><div align="center"><strong>3rd pass</strong></div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">329</div></td>
+    <td><div align="center">72<font color="#FF0000">0</font></div></td>
+    <td><div align="center">7<font color="#FF0000">2</font>0</div></td>
+    <td><div align="center"><font color="#FF0000">3</font>29 </div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">457</div></td>
+    <td><div align="center">35<font color="#FF0000">5</font></div></td>
+    <td><div align="center">3<font color="#FF0000">2</font>9</div></td>
+    <td><div align="center"><font color="#FF0000">3</font>55 </div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">657</div></td>
+    <td><div align="center">43<font color="#FF0000">6</font></div></td>
+    <td><div align="center">4<font color="#FF0000">3</font>6</div></td>
+    <td><div align="center"><font color="#FF0000">4</font>36 </div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">839</div></td>
+    <td><div align="center">45<font color="#FF0000">7</font></div></td>
+    <td><div align="center">8<font color="#FF0000">3</font>9</div></td>
+    <td><div align="center"><font color="#FF0000">4</font>57 </div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">436</div></td>
+    <td><div align="center">65<font color="#FF0000">7</font></div></td>
+    <td><div align="center">3<font color="#FF0000">5</font>5</div></td>
+    <td><div align="center"><font color="#FF0000">6</font>57</div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">720</div></td>
+    <td><div align="center">32<font color="#FF0000">9</font></div></td>
+    <td><div align="center">4<font color="#FF0000">5</font>7</div></td>
+    <td><div align="center"><font color="#FF0000">7</font>20 </div></td>
+  </tr>
+  <tr> 
+    <td><div align="center">355</div></td>
+    <td><div align="center">83<font color="#FF0000">9</font></div></td>
+    <td><div align="center">6<font color="#FF0000">5</font>7</div></td>
+    <td><div align="center"><font color="#FF0000">8</font>39 </div></td>
+  </tr>
+</table>
+<h2>Demo</h2>
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/RadixSort.html">https://www.cs.usfca.edu/~galles/visualization/RadixSort.html</a></p>
+<h2>Big O</h2>
+<p>O(n * k) where <em>n</em> is the length of list and <em>k</em> is size of the 
+  fixed-length digits. BigO notation reduces it to O(n).<br>
+  Thus, Radix Sort is O(n) or <strong>linear time</strong>.</p>
+<p>In practice, <strong>Radix Sort</strong> is not really as fast as it might 
+  seem.<br>
+</p>
+<ul>
+  <li> There is a hidden logarithm. The number of passes required is equal<br>
+    to the length of a string, which is something like the logarithm of<br>
+    the number of possible values.</li>
+  <li>If we consider Radix Sort applied to a list in which all the values<br>
+    might be <strong>different</strong>, then it is in the same efficiency class 
+    as normal<br>
+    sorting algorithms (Quick, Merge, etc).</li>
+  <li>However, in certain special cases (e.g., big lists of small numbers)<br>
+    Radix Sort can be a useful technique. Example: 100 million records sorted 
+    by Zip Code.</li>
+</ul>
+<h2>Discussion</h2>
+<p>Most sorting algorithms are general-purpose. Given a comparison function, they 
+  work on anything, and algorithms like Quicksort and Heapsort will sort with 
+  O(1) extra memory.</p>
+<p>Radix sorting is more specialized. You need a specific key that's in lexicographic 
+  order. You need one bucket for each possible symbol in the key, and the buckets 
+  need to hold a lot of records. (Alternately, you need one big array of buckets 
+  that will hold every possible key value.) You're likely to require a lot more 
+  memory to do radix sort, and you're going to use it randomly. Neither of this 
+  is good for modern computers, since you're likely to get page faults like Quicksort 
+  will get cache misses.</p>
+<p>Finally, people don't in general write their own sort algorithms any more. 
+  Most languages have library facilities to sort, and the right thing to do is 
+  normally to use them. Since radix sort isn't universally applicable, typically 
+  has to be tailored to the actual use, and uses lots of extra memory, it's hard 
+  to put it into a library function or template. <br>
+</p>
+Unlike radix sort, quicksort is universal, while radix sort is only useful for 
+fix length integer keys. 
+<p>Also you have to understand, that O(f(n)) really means in order of K*f(n), 
+  where K is some arbitrary constant. For radix sort this K happens to be quite 
+  big (at least order of number of bits in the integers sorted), on the other 
+  hand quicksort has one of the lowest K among all sorting algorithms and average 
+  complexity of n*log(n). Thus in real life scenario quicksort will be very often 
+  faster than radix sort. <br>
+</p>
+<p>&nbsp;</p>
+<h3>Java Implementation of Radix Sort</h3>
+<table class="code" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><pre>import java.util.Arrays;
+
+public class RadixSortDemo
+{
+    <font color="#006600">// Method takes an array and the number of bits used as the key in each iteration.</font>
+    public static void radixSort(int[] a, int bits)
+    {
+        int[] b = new int[a.length];  <font color="#006600">//array same size as the original array used to store the result of each iteration.</font>
+        int[] b_orig = b;
+        
+        int rshift = 0;
+        
+        <font color="#006600">// mask is the bitmask used to extract the sort key. 
+        // Start with the bits least significant bits and left-shift it the same amount at each iteration.
+        // Done when all the bits are shifted out of the word.</font>
+        for (int mask = ~(-1 << bits); mask != 0; mask <<= bits, rshift += bits) 
+        {
+            
+           int[] cntarray = new int[1 << bits]; <font color="#006600">// array stores the count for each key value. 
+</font>
+           <font color="#006600">// count each key value</font>
+           for (int p = 0; p < a.length; ++p) 
+           {
+                int key = (a[p] & mask) >> rshift;
+                ++cntarray[key];
+           }
+           
+           <font color="#006600">// sum up how many elements there are with lower key values, for each key.</font> 
+           for (int i = 1; i < cntarray.length; ++i)
+               cntarray[i] += cntarray[i-1];
+           
+  <font color="#006600">         // The values in cntarray are used as indexes for storing the values in b. 
+           // b will then be completely sorted on this iteration's key. 
+           // Elements with the same key value are stored in their original internal order.</font>
+           for (int p = a.length-1; p >= 0; --p) 
+           {
+                int key = (a[p] & mask) >> rshift;
+                --cntarray[key];
+                b[cntarray[key]] = a[p];
+           }
+           
+           <font color="#006600">// swap the a and b references, so that the next iteration works on the current b, 
+           // which is now partially sorted. </font>
+           int[] temp = b; b = a; a = temp;
+        }
+        
+        <font color="#006600">// If the completely sorted array is in the locally created array,
+        // copy it to the array provided by the user.</font>
+        if (a == b_orig)
+            System.arraycopy(a, 0, b, 0, a.length);
+    }
+
+
+    public static void main(String[] args)
+    {
+        int[] a = {
+            123,432,654,3123,654,2123,543,131,653,123,
+            533,1141,532,213,2241,824,1124,42,134,411,
+            491,341,1234,527,388,245,1992,654,243,987};
+    
+        System.out.println("Before radix sort:");
+        System.out.println(Arrays.toString(a));
+    
+        radixSort(a, 4);
+    
+        System.out.println("After radix sort:");
+        System.out.println(Arrays.toString(a));
+    }
+}</pre></td>
+  </tr>
+</table>
+<p>&nbsp; </p>

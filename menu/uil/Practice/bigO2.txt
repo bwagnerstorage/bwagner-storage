@@ -1,0 +1,439 @@
+<HTML><font face="Consolas">If N equals <strong>rds.length</strong> what is the Big O <br>
+of method process? Pick the most restrictive <br>
+correct answer.</font></HTML>
+$
+public int process(int[] rds) {
+  int total = 0;
+  int lim = rds.length;
+  for(int i = 0; i < lim; i++) (
+    for(int j = 1; j < lim; j *= 2)
+      total += rds[i] * rdsEj];
+    for(int j = i; j < lim; j++)
+      total += rds[i] + rds[j];
+  }
+  return total;
+}
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N!)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>logN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)</font></HTML>
+$
+C
+$
+<HTML><font face="Consolas">What is the Big O of method range? <br>
+The LinkedList data contains N <br>
+distinct Integers. Pick the most <br>
+restrictive correct answer.</font></HTML>
+$
+public int range(LinkedList<Integer> data){
+  Collections.sort( data );
+  int min = data.getFirst();
+  int max = data.getLast();
+  return max - min + 1;
+}
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3/2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>logN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+A
+$
+<HTML><font face="Consolas">What is the running time of method<br> 
+show given a LinkedList with N <br>
+elements? Assume the print method  <br>
+is O(1). Choose the most restrictive <br>
+correct answer.</font></HTML>
+$
+public void show(LinkedList<Integer> list){
+  Iterator<Integer> it = list.iterator();
+  while( it.hasNext() )
+    System.out.print( it.next() );
+}
+
+public void build(int n){
+  LinkedList<Integer> list = new
+                       LinkedList<Integer>();
+  for(int i = 0; i < n; i++)
+    list.add( i );
+    
+  show(list);
+}
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(1)</font></HTML>
+$
+<HTML><font face="Consolas">O(logN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)</font></HTML>
+$
+A
+$
+<HTML><font face="Consolas">Given an array that contains N <br>
+elements what is the expected <br>
+running time of method find? <br>
+Choose the most restrictive <br>
+correct answer.</font></HTML>
+$
+/* pre: data != null, elements of data are
+sorted in ascending order.
+*/
+public static int find(int tgt, int[] data){
+  int en = data.length - 1;
+  return help(0, en, tgt, data);
+}
+
+private static int help(int st, int en,
+int tgt, int[] data){
+  int result = -1;
+  int md, val;
+  if( st <= en ){
+    md = (st + en) / 2;
+    val = data[ md ];
+    if( val == tgt )
+      result = md;
+    else if( tgt < val )
+      result = help(st, md - 1, tgt, data);
+    else
+      result = help(md + 1, en, tgt, data);
+  }
+  return result;
+}
+
+public static void first(){
+  int[] data = {0, 5, 19, 100};
+  System.out.print( find(5, data) );
+}
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(1)</font></HTML>
+$
+<HTML><font face="Consolas">O(logN)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(sqrt(N))</font></HTML>
+$
+C
+$
+<HTML><font face="Consolas">In the code to the right assume the <br>
+Collection col contains N elements. <br>
+What kind of Collection must col be <br>
+so that each operation in method <br>
+demo has an expected running time <br>
+of O(1)?</font></HTML>
+$
+// precondition: col does not contain 1000
+public void demo(Collection<Integer> col){
+  col.add( 1000 );
+  boolean here = col.contains( 1000 );
+  col.remove(1000);
+}
+$
+<HTML><font face="Consolas">ArrayList</font></HTML>
+$
+<HTML><font face="Consolas">TreeSet</font></HTML>
+$
+<HTML><font face="Consolas">HashSet</font></HTML>
+$
+<HTML><font face="Consolas">LinkedList</font></HTML>
+$
+<HTML><font face="Consolas">ArrayMap</font></HTML>
+$
+C
+$
+<HTML><font face="Consolas">What is the running time of method <br>
+sample? Assume N equals x. Choose <br>
+the most restrictive correct <br>
+answer.</font></HTML>
+$
+public static int sample(int x){
+  int total = 0;
+  for(int i = 1; i <= x; i++){
+    for(int j = 1; j <= x; j *= 2){
+      total++;
+    }
+  }
+  return total;
+}
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(1)</font></HTML>
+$
+<HTML><font face="Consolas">O(N!)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(logN)</font></HTML>
+$
+D
+$
+<HTML><font face="Consolas">What is the running time of method <br>
+process? Assume N equals data.length. <br>
+Choose the most restrictive <br>
+correct answer.</font></HTML>
+$
+public static void process(int[] data,
+                           int min,
+                           int max){
+  int result = 0;
+  for( int val : data )
+    if( val >= min && val <= max )
+      result++;
+    else
+      result--;
+      
+  for(int i = 0; i < data.length; i++)
+     data[i] += result;
+}
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>logN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+E
+$
+<HTML><font face="Consolas">If the ArrayList nums contains N <br>
+items what is the running time of <br>
+method removeAll? Choose the most <br>
+restrictive correct answer.</font></HTML>
+$
+public static void removeAll
+                    (ArrayList<Integer> nums){
+  int i;
+  for(i = nums.size() - 1; i >= 0; i--){
+    nums.remove(i);
+  }
+}
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>1/2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+A
+$
+<HTML><font face="Consolas">If N equals values.length what is  <br>
+the Big O of method fill when res <br>
+is an ArrayList and when res is a <br>
+LinkedList? Pick the most <br>
+restrictive correct set of answers.
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;ArrayList&nbsp;&nbsp;&nbsp;&nbsp;LinkedList
+</font></HTML>
+$
+// pre: res.size() == 0
+public static void fill(List<Integer> res,
+                        int[] values){
+  for(int element : values)
+     res.add( 0, element );
+}
+$
+<HTML><font face="Consolas">O(N)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(N)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O(N<sup>2</sup>)</font></HTML>
+$
+D
+$
+<HTML><font face="Consolas">What is the expected running time of <br>
+method sort on an array containing N <br>
+items? Choose the most restrictive <br>
+correct answer.</font></HTML>
+$
+public void move(int[] data, int i, int j){
+  int t = data[i];
+  data[i] = data[j];
+  data[j] = t;
+}
+
+public void sort(int[] d){
+  int m;
+  for(int i = 0; i < d.length; i++){
+    m = i;
+    for(int j = i + 1; j < d.length; j++){
+      if( d[m] < d[j] )
+      m = j;
+    }
+    move(d, m, i);
+  }
+}
+
+public void show(){
+  int[] data = {6, -4, 0, 1, 6, 3};
+  sort(data);
+  for(int i : data)
+    System.out.print( i );
+}
+$
+<HTML><font face="Consolas">O(1)</font></HTML>
+$
+<HTML><font face="Consolas">O(logN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+E
+$
+<HTML><font face="Consolas">If the value of the parameter b is <br>
+false, what is the expected running <br>
+time of method sort on an array <br>
+containing N unique items in <br>
+descending order? Choose the most <br>
+restrictive correct answer.</font></HTML>
+$
+public void swap(int[] data, int i, int j){
+  int t = data[i];
+  data[i] = data[j];
+  data[j] = t;
+}
+
+public void sort(int[] list, boolean b){
+  int temp, j;
+  for(int i = 1; i < list.length; i++){
+    temp = list[i];
+    j = i;
+    while( j > 0 && temp < list[j - 1]){
+      swap(list, j, j - 1);
+      j--;
+    }
+    if( b && i == 4 ){
+      for(int k : list){
+         System.out.print(k);
+      }
+    }
+  }
+}
+
+public void go(){
+  int[] data = {13, 12, 5, 8, 0, 7};
+  sort(data, true);
+}
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(logN)</font></HTML>
+$
+A
+$
+<HTML><font face="Consolas">What is the running time of method <br>
+max for a LinkedList containing N <br>
+items? Choose the most restrictive <br>
+correct answer.</font></HTML>
+$
+//pre: data.size() > 0
+public int max(LinkedList<Integer> data){
+  int result = data.getFirst();
+  for(int i = 1; i < data.size(); i++){
+    int val = data.get(i);
+    if( val > result )
+      result = val;
+  }
+  return result;
+}
+$
+<HTML><font face="Consolas">O(1)</font></HTML>
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3</sup>)</font></HTML>
+$
+D
+$
+<HTML><font face="Consolas">Given an array of N unique integers <br>
+in random order, what is the running <br>
+time of method sort? Assume the print <br>
+method is O(1). Choose the most <br>
+restrictive correct answer.</font></HTML>
+$
+public static void swap( int[] a,
+                         int i, int j) {
+  int tmp = a[i];
+  a[i] = a[j];
+  a[j] = tmp;
+}
+
+public static void sort( int[] list,
+                  int start, int stop ){
+  if(start >= stop)
+    <*1>;
+  int p = (start + stop) / 2;
+  swap(list, p, start);
+  int pVal = list[start];
+  int i, j = start;
+  for(i = start + 1; i <= stop; i++ ){
+    if( list[i] <= pVal){
+      j++;
+      swap(list, i, j);
+    }
+  }
+  if(start == 0 && stop == list.length - 1)
+    for(int v : list)
+      System.out.print(v);
+  swap(list, start, j);
+  sort( list, start, j - 1 );
+  sort( list, j + 1, stop );
+}
+
+public static void sample(){
+  int[] data = {6, 0, 3, 4, 7, 8, -1};
+  sort(data, 0, 6);
+}
+$
+<HTML><font face="Consolas">O(N)</font></HTML>
+$
+<HTML><font face="Consolas">O(NlogN)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>3/2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N<sup>2</sup>)</font></HTML>
+$
+<HTML><font face="Consolas">O(N!)</font></HTML>
+$
+B
+

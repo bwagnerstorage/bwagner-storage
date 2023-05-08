@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+
+  <tr>
+    <th width="99%" class="main"> Queue Samples</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2">
+<h3>interface java.util.Queue&lt;E&gt;</h3>
+      <table width="60%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">enqueues obj at the end of the queue; returns 
+            true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>()</font></td>
+          <td><font color="#000000">dequeues and returns the element at the front 
+            of the queue</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the element at the front of the queue; 
+            null if the queue is empty</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">&nbsp;</font></td>
+        </tr>
+      </table>
+      <h3>class java.util.LinkedList &lt;E&gt; implements java.util.List&lt;E&gt;, 
+        java.util.Queue&lt;E&gt; </h3>
+      <br>
+      <hr>
+      <h3><strong>Example 1 - Creating a Linked List Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>LinkedList &lt;Integer&gt; queue = new LinkedList &lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <p><strong>or</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List &lt;Integer&gt; queue = new LinkedList &lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h3>Example 2 - Adding Items to Rear of Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   queue.add(i);<br>}</pre></td>
+        </tr>
+      </table>
+      <h3>Example 3 - Removing Items from Front of Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   int item = queue.remove();
+   . . .<br>}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h3><strong>Example 4 - Traversing a Queue</strong></h3>
+      <p><strong>for-each</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>while(!queue.isEmpty())<br>{<br>   System.out.print(queue.remove + &quot; &quot;);<br>}<br>System.out.println();</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>

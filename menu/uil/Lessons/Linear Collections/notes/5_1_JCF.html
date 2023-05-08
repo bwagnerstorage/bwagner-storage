@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 6.1 JCF (Java Collections Framework)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Introduction to Collections</h2>
+      <p>A <strong>collection</strong> &#8212; sometimes called a container &#8212; 
+        is simply an object that groups multiple elements into a single unit. 
+        Collections are used to store, retrieve, manipulate, and communicate a 
+        set of data. Typically, they represent data items that form a natural 
+        group, such as a poker hand (a collection of cards), a mail folder (a 
+        collection of letters), or a telephone directory (a mapping of names to 
+        phone numbers). </p>
+      <p><strong>What Is a Collections Framework?</strong><br>
+        <br>
+        A collections framework is a unified architecture for representing and 
+        manipulating collections. All collections frameworks contain the following: 
+      <ul>
+        <strong>Interfaces</strong>: These are abstract data types that represent 
+        collections. Interfaces allow collections to be manipulated independently 
+        of the details of their representation. In object-oriented languages, 
+        interfaces generally form a hierarchy. <br>
+        <strong>Implementations</strong>: These are the concrete implementations 
+        of the collection interfaces. In essence, they are reusable data structures. 
+        <br>
+        <strong>Algorithms</strong>: These are the methods that perform useful 
+        computations, such as searching and sorting, on objects that implement 
+        collection interfaces. The algorithms are said to be polymorphic: that 
+        is, the same method can be used on many different implementations of the 
+        appropriate collection interface. In essence, algorithms are reusable 
+        functionality. </p> 
+      </ul>
+      <h2>Benefits of the Java Collections Framework</h2>
+      The Java Collections Framework provides the following benefits:
+      <ul>
+        <li><strong>Reduces programming effort</strong>: By providing useful data 
+          structures and algorithms, the Collections Framework frees you to concentrate 
+          on the important parts of your program rather than on the low-level 
+          &quot;plumbing&quot; required to make it work. </li>
+        <li><strong>Increases program speed and quality</strong>: This Collections 
+          Framework provides high-performance, high-quality implementations of 
+          useful data structures and algorithms. The various implementations of 
+          each interface are interchangeable, so programs can be easily tuned 
+          by switching collection implementations. Because you're freed from the 
+          drudgery of writing your own data structures, you'll have more time 
+          to devote to improving programs' quality and performance. </li>
+        <li><strong>Reduces effort to learn and to use new APIs</strong>: Many 
+          APIs naturally take collections on input and furnish them as output. 
+          In the past, each such API had a small sub-API devoted to manipulating 
+          its collections. There was little consistency among these ad hoc collections 
+          sub-APIs, so you had to learn each one from scratch, and it was easy 
+          to make mistakes when using them. With the advent of standard collection 
+          interfaces, the problem went away. </li>
+        <li><strong>Reduces effort to design new APIs</strong>: This is the flip 
+          side of the previous advantage. Designers and implementers don't have 
+          to reinvent the wheel each time they create an API that relies on collections; 
+          instead, they can use standard collection interfaces. </li>
+        <li><strong>Fosters software reuse</strong>: New data structures that 
+          conform to the standard collection interfaces are by nature reusable. 
+          The same goes for new algorithms that operate on objects that implement 
+          these interfaces.</li>
+      </ul>
+      <h2>Interfaces</h2>
+      <p>The core collection interfaces encapsulate different types of collections, 
+        which are shown in the figure below. These interfaces allow collections 
+        to be manipulated independently of the details of their representation. 
+        Core collection interfaces are the foundation of the Java Collections 
+        Framework. As you can see in the following figure, the core collection 
+        interfaces form a hierarchy. </p>
+      <p><img src="http://bwagner.org/menu/uil/Lessons/Linear%20Collections/img/colls-coreInterfaces.gif" width="438" height="129"></p>
+      <p>The core collection interfaces.</p>
+      <p>A <em>Set</em> is a special kind of <em>Collection</em>, a <em>SortedSet</em> 
+        is a special kind of <em>Set</em>, and so forth. Note also that the hierarchy 
+        consists of two distinct trees &#8212; a <em>Map</em> is not a true <em>Collection</em>. 
+        <br>
+        Note that all the core collection interfaces are generic. For example, 
+        this is the declaration of the <em>Collection</em> interface. </p>
+      <p><strong>public interface Collection&lt;E&gt;...</strong></p>
+      <p>The &lt;E&gt; syntax tells you that the interface is generic. When you 
+        declare a <em>Collection</em> instance you can and should specify the 
+        type of object contained in the collection. Specifying the type allows 
+        the compiler to verify (at compile-time) that the type of object you put 
+        into the collection is correct, thus reducing errors at runtime. </p>
+      <p>When you understand how to use these interfaces, you will know most of 
+        what there is to know about the <strong>Java Collections Framework</strong>. 
+        This unit discusses general guidelines for effective use of the interfaces, 
+        including when to use which interface.</p>
+      <p>To keep the number of core collection interfaces manageable, the Java 
+        platform doesn't provide separate interfaces for each variant of each 
+        collection type. (Such variants might include immutable, fixed-size, and 
+        append-only.) Instead, the modification operations in each interface are 
+        designated optional &#8212; a given implementation may elect not to support 
+        all operations. If an unsupported operation is invoked, a collection throws 
+        an <em>UnsupportedOperationException</em>. Implementations are responsible 
+        for documenting which of the optional operations they support. All of 
+        the Java platform's general-purpose implementations support all of the 
+        optional operations. </p>
+      <p>The following list describes the core collection interfaces: </p>
+      <p><strong>Collection</strong> &#8212; the root of the collection hierarchy. 
+        A collection represents a group of objects known as its elements. The 
+        Collection interface is the least common denominator that all collections 
+        implement and is used to pass collections around and to manipulate them 
+        when maximum generality is desired. Some types of collections allow duplicate 
+        elements, and others do not. Some are ordered and others are unordered. 
+        The Java platform doesn't provide any direct implementations of this interface 
+        but provides implementations of more specific subinterfaces, such as Set 
+        and List.</p>
+      <p><strong>List</strong> &#8212; an ordered collection (sometimes called 
+        a sequence). Lists can contain duplicate elements. The user of a List 
+        generally has precise control over where in the list each element is inserted 
+        and can access elements by their integer index (position).</p>
+      <p><strong>Queue</strong> &#8212; a collection used to hold multiple elements 
+        prior to processing. Besides basic Collection operations, a Queue provides 
+        additional insertion, extraction, and inspection operations. <br>
+        Queues typically, but do not necessarily, order elements in a FIFO (first-in, 
+        first-out) manner. Among the exceptions are priority queues, which order 
+        elements according to a supplied comparator or the elements' natural ordering. 
+        Whatever the ordering used, the head of the queue is the element that 
+        would be removed by a call to remove or poll. In a FIFO queue, all new 
+        elements are inserted at the tail of the queue. Other kinds of queues 
+        may use different placement rules. Every Queue implementation must specify 
+        its ordering properties.</p>
+      <p><strong>Set</strong> &#8212; a collection that cannot contain duplicate 
+        elements. This interface models the mathematical set abstraction and is 
+        used to represent sets, such as the cards comprising a poker hand, the 
+        courses making up a student's schedule, or the processes running on a 
+        machine.</p>
+      <p><br>
+        <strong>Map</strong> &#8212; an object that maps keys to values. A Map 
+        cannot contain duplicate keys; each key can map to at most one value. 
+        If you've used Hashtable, you're already familiar with the basics of Map.<br>
+        <br>
+        The last two core collection interfaces are merely sorted versions of 
+        <em>Set</em> and <em>Map</em>: </p>
+      <p><strong>SortedSet</strong> &#8212; a Set that maintains its elements 
+        in ascending order. Several additional operations are provided to take 
+        advantage of the ordering. Sorted sets are used for naturally ordered 
+        sets, such as word lists and membership rolls.</p>
+      <p><strong>SortedMap</strong> &#8212; a <em>Map</em> that maintains its 
+        mappings in ascending key order. This is the <em>Map</em> analog of <em>SortedSet</em>. 
+        Sorted maps are used for naturally ordered collections of key/value pairs, 
+        such as dictionaries and telephone directories.</p>
+      <p>For further information see the following <a href="http://java.sun.com/docs/books/tutorial/collections/index.html" target="_blank">link</a></p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>

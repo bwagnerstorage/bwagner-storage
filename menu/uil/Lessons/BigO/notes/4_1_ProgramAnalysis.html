@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 4.1 Program Analysis</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Program Correctness</h2>
+      <p>Testing that a program works does not prove that the program is correct. 
+        After all, you can hardly expect to test programs for every conceivable 
+        set of input data. Computer scientists have developed mathematical techniques 
+        to prove correctness in certain cases, but these are beyond the scope 
+        of the APCS course. Nevertheless, you are expected to be able to make 
+        assertions about the state of a program at various points during its execution.</p>
+      <h2>Assertions</h2>
+      <p>An <strong>assertion</strong> is a precise statement about a program 
+        at any given point. The idea is that if an assertion is proved to be true, 
+        then the program is working correctly at that point. </p>
+      <p>An informal step on the way to writing correct algorithms is to be able 
+        to make three kinds of assertions about your code.</p>
+      <blockquote> 
+        <h3>Precondition</h3>
+        <p>The <strong>precondition</strong> of any piece of code, whether it 
+          is a method, loop, or block, is a statement of what is true immediately 
+          before execution of that code.</p>
+        <h3>Postcondition</h3>
+        <p>The <strong>postcondition</strong> for any piece of code is a statement 
+          of what is true immediately after execution of that code.</p>
+        <h3>Loop invariant</h3>
+        <p>A <strong>loop invariant</strong> applies only to a loop. It is a precise 
+          statement, in terms of the loop variables, of what is true before and 
+          after each iteration of the loop. It includes an assertion about the 
+          range of the loop variable. Informally, it describes how much of the 
+          loop's task has been completed at each stage.</p>
+        <p><img src="http://bwagner.org/menu/uil/Lessons/BigO/img/LoopInvariant.gif" width="494" height="314"></p>
+        <p><strong>Example</strong></p>
+        <table width="73%" border="1">
+          <tr> 
+            <td bgcolor="#FFF7E6"> <pre><font color="#006600">// method to generate n!</font><font color="#0000FF">
+public  static int factorial(int n)
+<font color="#006600">// precondition:  n>=0</font>
+<font color="#006600">// postcondition: n! has been returned</font>
+{
+    int product = 1;
+    int i = 0;
+    while(i < n)
+    {
+        i++;
+        product *= i;
+    }
+    return product;
+}</font></pre></td>
+          </tr>
+        </table>
+        <br>
+        <table width="52%" border="0" bordercolor="#FFFFFF">
+          <tr bgcolor="#FFFFFF"> 
+            <td width="47%">After initialization</td>
+            <td width="19%"> <div align="center">i = 0</div></td>
+            <td width="34%"> <div align="center">product = 1</div></td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td>After first pass</td>
+            <td> <div align="center">i = 1</div></td>
+            <td> <div align="center">product = 1</div></td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td>After second pass</td>
+            <td> <div align="center">i = 2</div></td>
+            <td><div align="center">product = 2</div></td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td>...</td>
+            <td> <div align="center"></div></td>
+            <td> <div align="center"></div></td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td>After kth pass</td>
+            <td> <div align="center">i = k</div></td>
+            <td><div align="center">product = k!</div></td>
+          </tr>
+        </table>
+        <p>The loop invariant for the <em>while</em> loop is</p>
+        <blockquote> 
+          <p><font face="Courier New, Courier, mono"><strong>product = i! or 1 
+            x 2 x 3 ... n-2 x n-1 x n,</strong></font></p>
+          <p><font face="Courier New, Courier, mono"><strong> 0 &lt;= i &lt;= 
+            n</strong></font></p>
+        </blockquote>
+        <p>Here is an alternative method body for this method. (Assume the same 
+          method header, comment, and pre- and postconditions.)</p>
+        <table width="60%" border="1">
+          <tr> 
+            <td bgcolor="#FFF7E6"> <pre>{
+<font color="#0000FF">    int product = 1;
+    for(int i=1; i <=n; i++)
+        product *= i;
+    return product;</font>
+}</pre></td>
+          </tr>
+        </table>
+        <p>The loop invariant for the <em>for</em> loop is</p>
+        <blockquote> 
+          <p><font face="Courier New, Courier, mono"><strong>product = (i-1)!, 
+            1 &lt;= i &lt;= n+1</strong></font></p>
+        </blockquote>
+        <p>Here (i-1)! (rather than i!) is correct because i is incremented at 
+          the end of each iteration of the loop. Also, n+1 is needed in the second 
+          part of the loop invariant because i has a value of n+1 after the final 
+          exit from the loop. Remember, the invariant must also be true after 
+          the final exit.</p>
+        <h2>Efficiency</h2>
+        <p>An efficient algorithm is one that is economical in the use of</p>
+        <ul>
+          <li><strong>CPU time</strong>. This refers to the number of machine 
+            operations required to carry out the algorithm (arithmetic operations, 
+            comparisons, data movements, etc.).</li>
+          <li><strong>Memory</strong>. This refers to the number and complexity 
+            of the variables used.</li>
+        </ul>
+        <p>Some factors that affect run-time efficiency include unnecessary tests, 
+          excessive movement of data elements, and redundant computations, especially 
+          in loops.</p>
+        <p>Always aim for early detection of output conditions: your sorting algorithm 
+          should halt when the list is sorted; your search should stop if the 
+          key element has been found.</p>
+        <p>In discussing efficiency of an algorithm, we refer to the <strong>best 
+          case</strong>, <strong>worst case</strong>, and <strong>average case</strong>. 
+          The best case is a configuration of the data that causes the algorithm 
+          to run in the least possible amount of time. The worst case is a configuration 
+          that leads to the greatest possible run time. Typical configurations 
+          (i.e. not specially chosen data) give the average case. It is possible 
+          that best, worst, and average cases don't differ much in their run times.</p>
+        <p>For example, suppose that a list of distinct random numbers must be 
+          searched for a given key value. The algorithm used is a sequential search 
+          starting at the beginning of the list. In the best case, the key will 
+          be found in the first position examined. In the worst case, it will 
+          be in the last position or not in the list at all. On average, the key 
+          will be somewhere in the middle of the list.</p>
+      </blockquote>
+</td>
+  </tr>
+</table>

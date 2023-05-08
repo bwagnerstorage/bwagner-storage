@@ -1,0 +1,349 @@
+What is output by the code to the right?
+$
+int x = 5;
+int y = x + 2;
+x++;
+System.out.println( y );
+$
+5
+$
+7
+$
+8
+$
+-3
+$
+6
+$
+B
+$
+What is the output if the initial 
+value of int x is 5?
+$
+if(x < 5)
+x++;
+else
+x--;
+x+=2;
+out.println(x);
+$
+6
+$
+5
+$
+4
+$
+8
+$
+7
+$
+A
+$
+What is output by the code to the right?
+$
+double a = 2.5;
+double b = 2.0;
+a *= b + 2;
+System.out.println( a );
+$
+10.0
+$
+7.0
+$
+2.5
+$
+9.0
+$
+8.0
+$
+A
+$
+What is output by the code to the right?
+$
+int accum = 0;
+for(int i = 0; i <= 6; i++){
+  accum++;
+  accum++;
+}
+System.out.print( accum );
+$
+7
+$
+18
+$
+14
+$
+6
+$
+12
+$
+C
+$
+What is output by the code to the right?
+$
+int total = 0;
+for(int i = 0; i <= 5; i++){
+  total += 2;
+}
+System.out.println( total );
+$
+10
+$
+5
+$
+0
+$
+6
+$
+12
+$
+E
+$
+What is output by the code to the right?
+$
+int x = 1, y = 2, z = 3;
+++x;
+--y;
+z *= (x + y);
+System.out.print(z);
+$
+12
+$
+9
+$
+6
+$
+3
+$
+0
+$
+B
+$
+What is output by the code to the right?
+$
+int x = 21, y = 16, z;
+z = x%y > 5 ? x/5 : y/5;
+out.println(z);
+$
+3
+$
+4
+$
+2
+$
+5
+$
+0
+$
+A
+$
+What is returned by f(11) ?
+$
+public int f(int x){
+  return (x % 2 == 0 ) ? 
+     (x % 3 == 0 ) ? 1 : 2 : 3;
+}
+$
+1
+$
+2
+$
+3
+$
+4
+$
+5
+$
+C
+$
+What replaces <*1> in the code to the
+right to add one to i?
+$
+for (int i = 0; i < 10; <*1>) {
+  // code not shown
+}
+$
+i++
+$
++i+
+$
+++i
+$
+Either A or C
+$
+A, B, or C
+$
+D
+$
+Which of these adds 1 to int x and 
+returns the new value?
+$
+
+$
+x++
+$
+++x
+$
+x + 1
+$
+1 + x
+$
+Both A and C
+$
+B
+$
+What is output by the code to the right?
+$
+double b = 15 % 6;
+double a = --b * 5;
+System.out.println(a+" "+b);
+$
+1.0 5.0
+$
+5.0 2.0
+$
+10.0 3.0
+$
+3.0 10.0
+$
+10.0 2.0
+$
+E
+$
+What it output by the code to the right?
+$
+int a = 5;
+int b = ++a + a++;
+System.out.println(b);
+$
+13
+$
+12
+$
+11
+$
+10
+$
+no output due to compiler error
+$
+B
+$
+What is output by the code to the right?
+$
+int quick = 9;
+quick++;
+++quick;
+quick=quick++;
+out.println(++quick);
+$
+13
+$
+12
+$
+11
+$
+10
+$
+9
+$
+B
+$
+What is output by the code to the right?
+$
+int[] a = {1, 2, 3, 4, 5};
+int i = 0;
+int j = i++;
+System.out.print(""+a[++i]+a[j++]);
+$
+22
+$
+31
+$
+23
+$
+4
+$
+Nothing
+$
+B
+$
+What is output by the code to the right?
+$
+int x = 8;
+x &= 15;
+out.println(x);
+$
+7
+$
+15
+$
+8
+$
+10
+$
+25
+$
+C
+$
+What is output by the code to the right?
+$
+String[] langs = new String[10];
+boolean isObject;
+isObject = langs[2] instanceof Object;
+System.out.print( isObject );
+$
+null
+$
+true
+$
+false
+$
+There is no output due 
+to a syntax error.
+$
+There is no output due to a
+NullPointerException.
+$
+C
+$
+What is output by the code to the right?
+$
+String r = "falcons";
+boolean obj = r instanceof Object;
+boolean str = r instanceof String;
+if( obj && str )
+r = "runners";
+System.out.print( r );
+$
+runners
+$
+falcons
+$
+true
+$
+false
+$
+There is no output.
+$
+A
+$
+What replaces <*1> in the code to the
+right so that "true" is printed for
+any class MyClass?
+$
+// Assume MyClass has a default constructor
+MyClass m = new MyClass();
+if (m instanceof <*1>)
+  System.out.print("true");
+$
+Superclass
+$
+super
+$
+Object
+$
+this
+$
+null
+$
+C

@@ -1,0 +1,73 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">StudentSet</div>
+
+<div id="csContent"> 
+  <h1>Description</h1>
+      <p>Write a class named <strong>Student</strong> that contains the following 
+        attributes: first name, last name, and current GPA. Write another class 
+        named <strong>School</strong> that creates Student objects from 
+        information entered from the keyboard and stores the objects 
+        in a TreeSet collection. The School class should be 
+        able to retrieve Student objects from the set in ascending order 
+        by the GPA. Since the Student objects will be stored in a TreeSet, 
+        the Student class needs to implement the Comparable
+        interface. </p>
+      <h3>Comparable Interface</h3>
+      <p>The <em>Comparable</em> interface declares only one method named <strong>compareTo</strong>(Object 
+        obj). This method compares two objects A and B and returns one of three 
+        values. It returns a positive number if A is greater than B, it returns 
+        a negative number if A is less than B, and it returns zero if they are 
+        equal.</p>
+      <p>In your implementation of the <em>compareTo</em> method the ordering 
+        of Student objects should be determined by their GPAs.</p>
+      <p>Write a menu driven test program like the one shown below<u>.</u></p>
+      <h2>&nbsp;</h2>
+      <p></p>
+      <h2>Sample Run</h2>
+      <div id="csSampleRun">
+<pre>1) Add   2) Print   3) Exit
+1
+Enter first name -->John
+Enter last name -->Wayne
+Enter GPA -->3.2
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Jimmy
+Enter last name -->Stewart
+Enter GPA -->2.8
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Henry
+Enter last name -->Fonda
+Enter GPA -->4.3
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Richard
+Enter last name -->Widmark
+Enter GPA -->2.1
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Glenn
+Enter last name -->Ford
+Enter GPA -->5.0
+
+1) Add   2) Print   3) Exit
+2
+
+2.1  Richard  Widmark
+2.8  Jimmy  Stewart
+3.2  John  Wayne
+4.3  Henry  Fonda
+5.0  Glenn  Ford
+
+1) Add   2) Print   3) Exit
+3
+
+</pre>
+</div>
+<br>

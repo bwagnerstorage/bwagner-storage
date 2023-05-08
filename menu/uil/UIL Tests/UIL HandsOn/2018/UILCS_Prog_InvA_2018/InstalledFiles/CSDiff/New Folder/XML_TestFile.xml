@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<XML_DIZ_INFO>
+<MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>1.15</MASTER_PAD_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+</MASTER_PAD_VERSION_INFO>
+<Company_Info>
+        <Company_Name>ComponentSoftware Inc.</Company_Name>
+        <Address_1>4809 Avenue N, Suite 280</Address_1>
+        <Address_2 />
+        <City_Town>Brooklyn</City_Town>
+        <State_Province>NY</State_Province>
+        <Zip_Postal_Code>11234</Zip_Postal_Code>
+        <Country>USA</Country>
+        <Company_WebSite_URL>http://www.componentsoftware.com</Company_WebSite_URL>
+<Contact_Info>
+        <Author_First_Name />
+        <Author_Last_Name />
+        <Author_Email>author@componentsoftware.com</Author_Email>
+        <Contact_First_Name />
+        <Contact_Last_Name />
+        <Contact_Email>info@componentsoftware.com</Contact_Email>
+    </Contact_Info>
+<Support_Info>
+        <Sales_Email />
+        <Support_Email />
+        <General_Email />
+        <Sales_Phone />
+        <Support_Phone />
+        <General_Phone />
+        <Fax_Phone>(800) 886-3724</Fax_Phone>
+    </Support_Info>
+</Company_Info>
+<Program_Info>
+        <Program_Name>CS-RCS Pro</Program_Name>
+        <Program_Version>2.0</Program_Version>
+        <Program_Release_Month>03</Program_Release_Month>
+        <Program_Release_Day>18</Program_Release_Day>
+        <Program_Release_Year>2002</Program_Release_Year>
+        <Program_Cost_Dollars>145</Program_Cost_Dollars>
+        <Program_Cost_Other_Code />
+        <Program_Cost_Other />
+        <Program_Type>Shareware</Program_Type>
+        <Program_Release_Status>Major Update</Program_Release_Status>
+        <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+        <Program_OS_Support>Win95,Win98,WinME,WinNT 3.x,WinNT 4.x,WinXP,Windows2000</Program_OS_Support>
+        <Program_Language>English</Program_Language>
+<File_Info>
+        <Filename_Versioned>csrcsp20.zip</Filename_Versioned>
+        <Filename_Previous>csrcsp12.zip</Filename_Previous>
+        <Filename_Generic>csrcsp.zip</Filename_Generic>
+        <Filename_Long />
+        <File_Size_Bytes>2681828</File_Size_Bytes>
+        <File_Size_K>2600</File_Size_K>
+        <File_Size_MB>2.55</File_Size_MB>
+    </File_Info>
+<Expire_Info>
+        <Has_Expire_Info>Y</Has_Expire_Info>
+        <Expire_Count>30</Expire_Count>
+        <Expire_Based_On>Days</Expire_Based_On>
+        <Expire_Other_Info />
+        <Expire_Month />
+        <Expire_Day />
+        <Expire_Year />
+    </Expire_Info>
+        <Program_Change_Info>See http://www.componentsoftware.com/Products/RCS/news.htm</Program_Change_Info>
+        <Program_Specific_Category>Development Tools</Program_Specific_Category>
+        <Program_Categories>Programming,Version Control, Revision Control, File Utilities, File Management</Program_Categories>
+        <Program_System_Requirements>10 MB disk space</Program_System_Requirements>
+        <Includes_JAVA_VM>N</Includes_JAVA_VM>
+        <Includes_VB_Runtime>N</Includes_VB_Runtime>
+        <Includes_DirectX>N</Includes_DirectX>
+</Program_Info>
+<Program_Descriptions>
+<English>
+        <Keywords>version control,revision control system,software configuration management,programming tools,inexpensive case tool,source change control,program problem tracking,</Keywords>
+        <Char_Desc_45>ComponentSoftware RCS (CS-RCS)</Char_Desc_45>
+        <Char_Desc_80>ComponentSoftware RCS (CS-RCS) - Version Control System</Char_Desc_80>
+        <Char_Desc_250>CS-RCS Pro - The Ultimate Windows Revision Management Solutions !</Char_Desc_250>
+        <Char_Desc_450>ComponentSoftware RCS (CS-RCS) is a powerful, inexpensive revision control system for Windows. Based on the widely used GNU RCS, it is fully integrated with the Windows Explorer, providing the most intuitive and easy-to-use configuration management and change control solution in the market. CS-RCS supports multi- platform workgroups, making it the ideal solution for sites that share common files on UNIX and Windows platforms.</Char_Desc_450>
+        <Char_Desc_2000>ComponentSoftware RCS (CS-RCS) is a powerful, inexpensive revision control system for Windows. Based on the widely used GNU RCS, it is fully integrated with the windows explorer, providing the most intuitive and easy-to-use configuration management and change control solution in the market. CS-RCS supports multi- platform workgroups, making it the ideal solution for sites that share common files on UNIX and Windows platforms.
+
+CS-RCS handles all types of documents including program files, project files, resource files, HTML documents, MS-Word documents, pictures and drawings.
+
+CS-RCS can use any file server or local drive to store the archive repository. Network connection to the archive repository can be LAN, corporate wide-area network (WAN), dial-in connection (RAS) and the Internet. 
+
+The basic edition of CS-RCS is used for general-purpose document revision management as well as for entry-level software configuration management. CS-RCS Pro includes advanced features needed for complex software and web development projects.
+
+The basic edition of CS-RCS includes a FREE personal 
+revision manager! ($75 value, No tricks, Unlimited and free!)</Char_Desc_2000>
+</English>
+</Program_Descriptions>
+<Web_Info>
+<Application_URLs>
+        <Application_Info_URL>http://www.componentsoftware.com/Products/rcs</Application_Info_URL>
+        <Application_Order_URL>http://www.componentsoftware.com/Products/RCS/order.htm</Application_Order_URL>
+        <Application_Screenshot_URL>http://www.componentsoftware.com/ftp/DocExplorer.gif</Application_Screenshot_URL>
+        <Application_Icon_URL>http://www.componentsoftware.com/ftp/csrcs.ico.gif</Application_Icon_URL>
+        <Application_XML_File_URL>http://www.componentsoftware.com/ftp/csrcsp.xml</Application_XML_File_URL>
+    </Application_URLs>
+<Download_URLs>
+        <Primary_Download_URL>http://www.componentsoftware.com/pftp/csrcsp.zip</Primary_Download_URL>
+        <Secondary_Download_URL>http://www.rcspro.com/ftp/csrcsp.zip</Secondary_Download_URL>
+        <Additional_Download_URL_1>http://www.componentsoftware.com/sftp/csrcsp.zip</Additional_Download_URL_1>
+        <Additional_Download_URL_2 />
+    </Download_URLs>
+</Web_Info>
+<Permissions>
+        <Distribution_Permissions>You are hereby licensed to make as many copies of the complete and unmodified package of this product
+and distribute it by any means. However, you may not distribute the registration key by any means. 
+There is no charge for this right.</Distribution_Permissions>
+        <EULA>CS-RCS Pro Version 2.0
+Copyright (C) 2002 ComponentSoftware, Inc.
+All Rights Reserved
+
+License Agreement
+
+This license applies to the software product identified above, including all associated media and printable, electronic or on-line documentation.
+You should carefully read the following terms and conditions before using this software. 
+Your downloading, accessing, copying or use of this software indicates your acceptance of this license agreement and disclaimer of warranty.
+
+Disclaimer of Warranty
+
+   THIS SOFTWARE AND ASSOCIATED DOCUMENTATION ARE SOLD &quot;AS IS&quot;
+AND WITHOUT WARRANTIES AS TO PERFORMANCE, NON-INFRINGEMENT
+OR MERCHANTABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED
+OR IMPLIED. BECAUSE OF THE VARIOUS HARDWARE AND SOFTWARE
+ENVIRONMENTS INTO WHICH THIS PROGRAM MAY BE PUT, NO WARRANTY
+OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED. GOOD DATA
+PROCESSING PROCEDURE DICTATES THAT ANY PROGRAM BE THOROUGHLY
+TESTED WITH NON-CRITICAL DATA BEFORE RELYING ON IT. THE USER
+MUST ASSUME THE ENTIRE RISK OF USING THE PROGRAM. ANY
+LIABILITY OF THE SELLER WILL BE LIMITED EXCLUSIVELY TO
+PRODUCT REPLACEMENT OR REFUND OF PURCHASE PRICE. IN NO EVENT
+SHALL LICENSOR BE LIABLE TO USER AND/OR TO ANY THIRD PARTY
+FOR DAMAGES OF ANY KIND, INCLUDING: (A) SPECIAL, INCIDENTAL
+OR CONSEQUENTIAL DAMAGES OR ANY INDIRECT DAMAGES SUCH AS,
+BUT NOT LIMITED TO, DAMAGES RESULTING FROM EQUIPMENT DOWNTIME
+OR LOSS OF DATA, SUBSTITUTIONS, LOST PROFITS OR REVENUE OR
+EXEMPLARY OR PUNITIVE DAMAGES ARISING OUT OF ANY CLAIM,
+INCLUDING A CLAIM OF PATENT, COPYRIGHT OR TRADEMARK
+INFRINGEMENT, WHETHER OR NOT FORESEEABLE AND EVEN IF LICENSOR
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE; OR
+B) DAMAGES WHICH EXCEED THE AMOUNTS PAID TO LICENSOR WITH
+RESPECT TO THE LICENSE OF THE SOFTWARE.
+
+Evaluation and Registration
+
+You are hereby licensed to use this software for evaluation purpose without charge for a period of 30 days.  If you would like to use this software after the evaluation period, a registration fee is required. See the file ORDER.TXT for ordering information and registration benefits.
+Unregistered use of the product after the 30-day evaluation period is in violation of U.S. and international copyright laws.
+
+License Information
+
+You must purchase a license for the actual number of users using the product. You may not rent, lease or lend this software.
+
+Software Distribution
+
+You are hereby licensed to make as many copies of the complete and unmodified package of this product and distribute it by any means. However, you may not distribute the registration key by any means. There is no charge for this right.
+
+Reverse-Engineering
+
+You may not reverse engineer, decompile, disassemble or alter this software product in any manner.
+
+Separation of Components
+
+This software product is licensed as a single product. Its component parts may not be separated for any use or distribution. Each component may have its own license agreement (&quot;Component Agreement&quot;). In the event of inconsistencies between this agreement and any Component Agreement, the terms of the Component Agreement shall control. (For instance, see GNU.TXT for components distributed under the GNU GENERAL PUBLIC LICENSE.)
+
+Governing Law
+
+This license agreement shall be governed by the laws of the State of Delaware.</EULA>
+</Permissions>
+</XML_DIZ_INFO>

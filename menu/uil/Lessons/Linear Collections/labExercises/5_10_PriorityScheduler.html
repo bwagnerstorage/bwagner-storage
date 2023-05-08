@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr> 
+    <th width="99%" class="main">6.10 PriorityScheduler</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Description</h2>
+      <p>Your assignment is to write a Java program that simulates a computer 
+        operating system performing event scheduling. When an application makes 
+        a request to the operating system, the requested task or job is assigned 
+        a priority level (some tasks are more urgent than others) and placed in 
+        a scheduling queue to wait its turn to be processed. The job with the 
+        highest priority is executed first, then the job with the second highest 
+        priority is executed second, and so on. If a new job is added to the event 
+        queue then it will executed according to its priority level.</p>
+      <p>Your program should do the following:</p>
+      <ul>
+        <li><strong>Step 1</strong>:<strong> Create priority queue (job queue) 
+          </strong> 
+          <ul>
+            <li>Create a priority queue and add 10 jobs. In the simulation a job 
+              is represented by a random number in the range of 1 to 100. The 
+              smaller the number the higher the priority.</li>
+          </ul>
+        </li>
+        <li><strong>Step 2</strong>: <strong>Run scheduling cycle </strong> 
+          <ul>
+            <li>The program simulates the scheduling cycle of the operating system 
+              by dispatching the highest priority jobs while the random number 
+              generator continues generating numbers and creating new jobs. </li>
+            <li> Each time through the scheduling cycle the program should print 
+              the dispatched job, the newly created job, and the jobs still remaining 
+              in the queue.</li>
+          </ul>
+        </li>
+        <li><strong>Step 3</strong>: <strong>Empty queue </strong>
+          <ul>
+            <li>The scheduling cycle should stop after 20 cycles and then dispatch 
+              the remaining jobs still in the queue.</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>class java.util.PriorityQueue&lt;E&gt;</h3>
+      <table width="60%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">adds obj to the priority queue; returns true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>()</font></td>
+          <td><font color="#000000">removes and returns the minimal element from 
+            the priority queue</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the minimal element from the priority 
+            queue </font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">&nbsp;</font></td>
+        </tr>
+      </table>
+      <h2>Sample Run</h2>
+      <table width="88%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">Initial Job Queue
+-----------------</font><font color="#FFFFFF">
+21 22 31 26 38 59 46 39 69 93
+
+Dispatch Jobs and Add New Jobs
+------------------------------
+>The current dispatched job is 21
+>The new assigned job is 83
+>The jobs still in queue are 22 26 31 39 38 59 46 93 69 83
+
+>The current dispatched job is 22
+>The new assigned job is 18
+>The jobs still in queue are 18 26 31 39 38 59 46 93 69 83
+
+>The current dispatched job is 18
+>The new assigned job is 6
+>The jobs still in queue are 6 26 31 39 38 59 46 93 69 83
+
+>The current dispatched job is 6
+>The new assigned job is 85
+>The jobs still in queue are 26 38 31 39 83 59 46 93 69 85
+
+>The current dispatched job is 26
+>The new assigned job is 58
+>The jobs still in queue are 31 38 46 39 58 59 85 93 69 83
+
+>The current dispatched job is 31
+>The new assigned job is 88
+>The jobs still in queue are 38 39 46 69 58 59 85 93 83 88
+
+>The current dispatched job is 38
+>The new assigned job is 12
+>The jobs still in queue are 12 39 46 69 58 59 85 93 83 88
+
+>The current dispatched job is 12
+>The new assigned job is 7
+>The jobs still in queue are 7 39 46 69 58 59 85 93 83 88
+
+>The current dispatched job is 7
+>The new assigned job is 48
+>The jobs still in queue are 39 48 46 69 58 59 85 93 83 88
+
+>The current dispatched job is 39
+>The new assigned job is 51
+>The jobs still in queue are 46 48 59 69 51 88 85 93 83 58
+
+>The current dispatched job is 46
+>The new assigned job is 25
+>The jobs still in queue are 25 48 59 69 51 88 85 93 83 58
+
+>The current dispatched job is 25
+>The new assigned job is 6
+>The jobs still in queue are 6 48 59 69 51 88 85 93 83 58
+
+>The current dispatched job is 6
+>The new assigned job is 40
+>The jobs still in queue are 40 48 59 69 51 88 85 93 83 58
+
+>The current dispatched job is 40
+>The new assigned job is 88
+>The jobs still in queue are 48 51 59 69 58 88 85 93 83 88
+
+>The current dispatched job is 48
+>The new assigned job is 82
+>The jobs still in queue are 51 58 59 69 82 88 85 93 83 88
+
+>The current dispatched job is 51
+>The new assigned job is 92
+>The jobs still in queue are 58 69 59 83 82 88 85 93 88 92
+
+>The current dispatched job is 58
+>The new assigned job is 83
+>The jobs still in queue are 59 69 85 83 82 88 92 93 88 83
+
+>The current dispatched job is 59
+>The new assigned job is 72
+>The jobs still in queue are 69 72 85 83 82 88 92 93 88 83
+
+>The current dispatched job is 69
+>The new assigned job is 46
+>The jobs still in queue are 46 72 85 83 82 88 92 93 88 83
+
+>The current dispatched job is 46
+>The new assigned job is 88
+>The jobs still in queue are 72 82 85 83 83 88 92 93 88 88
+
+Complete Jobs Still in Queue
+----------------------------
+>The current dispatched job is 72
+>The jobs still in queue are 82 83 85 88 83 88 92 93 88
+
+>The current dispatched job is 82
+>The jobs still in queue are 83 83 85 88 88 88 92 93
+
+>The current dispatched job is 83
+>The jobs still in queue are 83 88 85 93 88 88 92
+
+>The current dispatched job is 83
+>The jobs still in queue are 85 88 88 93 88 92
+
+>The current dispatched job is 85
+>The jobs still in queue are 88 88 88 93 92
+
+>The current dispatched job is 88
+>The jobs still in queue are 88 92 88 93
+
+>The current dispatched job is 88
+>The jobs still in queue are 88 92 93
+
+>The current dispatched job is 88
+>The jobs still in queue are 92 93
+
+>The current dispatched job is 92
+>The jobs still in queue are 93
+
+>The current dispatched job is 93
+>The jobs still in queue are
+
+Queue is Empty!
+
+Press any key to continue....</font></pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td class="main" colspan="2">&nbsp;</td>
+  </tr>
+</table>

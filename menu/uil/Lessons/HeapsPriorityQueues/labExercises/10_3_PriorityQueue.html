@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 10.3 Priority Queue</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h3>Source Code: <a href="http://bwagner.org/menu/uil/Lessons/HeapsPriorityQueues/labExercises/HeapPriorityQueue.zip">PriorityQueue</a></h3>
+      <hr>
+      <h2>Description</h2>
+      <p>A priority queue is an abstract data type that supports the following 
+        operations:</p>
+      <ul>
+        <li>add an item to the queue with an associated priority </li>
+        <li>remove the item from the queue that has the highest priority</li>
+        <li> peek at the item with highest priority without removing it (optional)</li>
+      </ul>
+      <p>There are many ways to implement a priority queue. One way is to keep 
+        a list of items in a linked list and search through the list for the highest 
+        priority item. This implementation takes O(1) time to insert an element, 
+        and O(n) time to perform the search for the highest priority item. There 
+        are many more efficient implementations available for implementing a priority 
+        queue including using a heap. With a heap both the process of adding an 
+        item to the queue and removing the highest priority item take O(log n).</p>
+      <h2>Directions</h2>
+      <p>Implement a <strong>HeapPriorityQueue</strong> class that implements 
+        the following interface.</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>public interface Queue
+{
+    <font color="#009900">// adds item to queue and assigns priority</font>
+<font color="#009900">    // the smaller the priority number the higher the priority.
+    // (1 = highest priority, 2 = next highest, ...)</font>
+    public void add(Object obj, int priority);
+    
+    <font color="#009900">// view item with highest priority</font>
+    public Object peek();
+    
+    <font color="#009900">// remove item with highest priority</font>
+    public Object remove();
+    
+    <font color="#009900">// returns number of items in queue</font>
+    public int size();
+    
+  <font color="#009900">  // returns true if queue is empty;
+    // otherwise returns false</font>
+    public boolean isEmpty();
+    
+}</pre></td>
+        </tr>
+      </table>
+      <p>Items should be added to the heap using the following class:</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>public class HeapNode
+{
+   <font color="#009900">// instance variables</font>
+   private Object data;
+   private int priority;
+
+   <font color="#009900">// constructor</font>
+   public HeapNode(Object d, int p)
+   {
+      data = d;
+      priority = p;
+   }
+   
+   <font color="#009900">// accessor methods</font>
+   public Object getData()
+   {
+      return data;
+   }
+   
+   public int getPriority()
+   {
+     return priority;
+   }
+   
+   <font color="#009900">// mutator methods</font>
+   public void setData(Object d)
+   {
+      data = d;
+   }
+   
+   public void setPriority(int p)
+   {
+      priority = p;
+   }
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h2>Sample Run</h2>
+      <table width="68%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF"> 
+            <pre>
+Test peek
+---------
+Tami
+
+
+Test remove
+-----------
+Tami
+Kendall
+Bill
+Mark
+Jamie
+Sarah
+
+
+
+
+Press any key to continue...</pre>
+            </font></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>

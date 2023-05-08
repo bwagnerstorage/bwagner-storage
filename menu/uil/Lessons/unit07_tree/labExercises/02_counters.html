@@ -1,0 +1,82 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Counters</div>
+
+<div id="csContent">
+    <h1>NetBeans Workspace: <a href="apFreeResponse/CountersNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;">Counters</a></h1>
+    <h1>JCreator Workspace: <a href="apFreeResponse/Counters.zip" style="color:#00F; font-size:1.0em; font-weight:600;">Counters</a></h1>
+
+    <p>The method shown below counts the number of nodes in binary tree.</p>
+
+    <div id="csCode">
+        <pre>
+ <div id="csHighlight"><pre>// counts and returns the number of nodes in tree</pre></div>
+    public int numNodes() 
+    { 
+       return numNodes(root);
+    }
+    
+    public int numNodes(TreeNode node) 
+    { 
+       if(node == null) 
+       { 
+          return 0; 
+       } 
+       else 
+       { 
+          return 1 + numNodes(node.getLeft()) + numNode(node.getRight()); 
+       } 
+    }
+    </pre>
+</div>
+
+<h1>Directions</h1>
+<p>In this assignment you are going to write two methods: <strong>numLeaves</strong> and <strong>numParents</strong>. numLeaves should count the number of leaf nodes in a binary tree and numParents should count the number of parent nodes in a binary tree.
+    Leaf nodes do not have any children and parent nodes have at least one child.</p>
+
+<h1>Source Files</h1>
+<p>BinarySearchTree.java</p>
+<p>TreeNode.java</p>
+<p>Counters.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+    <pre>
+Tree Structure
+==============
+
+    G
+  F
+    E
+D
+    C
+  B
+    A
+
+
+Number of nodes = 7
+Number of leaves = 4
+Number of parents = 3
+
+
+Tree Structure
+==============
+
+      Y
+    W
+  R
+      Q
+    P
+M
+    H
+  E
+    C
+      A
+
+
+Number of nodes = 10
+Number of leaves = 4
+Number of parents = 6
+</pre>
+</div>
+<br>
+</div>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    </td>
+  </tr>
+  <tr>
+    <th width="99%" class="main"> Java Operator Precedence</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2">
+<h1 align="center">Java Operator Precedence Table<b
+style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p></o:p></span></b></h1>
+      <p>Java has well-defined rules for specifying the order in which the operators 
+        in an expression are evaluated when the expression has several operators. 
+        For example, multiplication and division have a higher precedence than 
+        addition and subtraction. Precedence rules can be overridden by explicit 
+        parentheses. 
+      <p>
+      <h2>Precedence Order.</h2>
+      When two operators share an operand the operator with the higher <em>precedence</em> 
+      goes first. For example, 1 + 2 * 3 is treated as 1 + (2 * 3), whereas 1 
+      * 2 + 3 is treated as (1 * 2) + 3 since multiplication has a higher precedence 
+      than addition. 
+      <p>
+      <h2>Associativity.</h2>
+      When two operators with the same precendence the expression is evaluated 
+      according to its <em>associativity</em>. For example <tt>x = y = z = 17</tt> 
+      is treated as <tt>x = (y = (z = 17))</tt>, leaving all three variables with 
+      the value 17, since the <tt>=</tt> operator has right-to-left associativty 
+      (and an assignment statement evaluates to the value on the right hand side). 
+      On the other hand, <tt>72 / 2 / 3</tt> is treated as <tt>(72 / 2) / 3</tt> 
+      since the <tt>/</tt> operator has left-to-right associativity. 
+      <p>
+      <h2>Precedence and associativity of Java operators.</h2>
+      <p>The table below shows all Java operators from highest to lowest precedence, 
+        along with their associativity. Most programmers do not memorize them 
+        all, and even those that do still use parentheses for clarity.</p>
+      <center>
+        <table cellspacing="1" cellpadding="5" border="0">
+          <tr align = center bgcolor = "#666666"> 
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Level</th>
+            <th>Associativity</th>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt>[]</tt><br> <tt> .</tt><br> <tt>()</tt><br> <tt>++</tt><br> 
+              <tt>--</tt> </td>
+            <td> access array element<br>
+              access object member<br>
+              invoke a method<br>
+              post-increment<br>
+              post-decrement </td>
+            <td>1</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt>++</tt><br> <tt>--</tt><br> <tt>+</tt><br> <tt>-</tt><br> 
+              <tt>!</tt><br> <tt>~</tt> </td>
+            <td> pre-increment<br>
+              pre-decrement<br>
+              unary plus<br>
+              unary minus<br>
+              logical NOT<br>
+              bitwise NOT </td>
+            <td>2</td>
+            <td>right to left</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt>()</tt><br> <tt>new</tt> </td>
+            <td> cast<br>
+              object creation </td>
+            <td>3</td>
+            <td>right to left</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt>*</tt><br> <tt>/</tt><br> <tt>%</tt> </td>
+            <td> multiplicative </td>
+            <td>4</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt>+ -</tt><br> <tt>+</tt> </td>
+            <td> additive<br>
+              string concatenation </td>
+            <td>5</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt><< >></tt><br> <tt>>>></tt> </td>
+            <td> shift </td>
+            <td>6</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <pre>
+<  <=
+>  >=
+</pre> <tt>instanceof</tt> </td>
+            <td> relational<br>
+              type comparison </td>
+            <td>7</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <tt>==</tt><br> <tt>!=</tt> </td>
+            <td> equality </td>
+            <td>8</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td><tt>&</tt></td>
+            <td>bitwise AND</td>
+            <td>9</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td><tt>^</tt></td>
+            <td>bitwise XOR</td>
+            <td>10</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td><tt>|</tt></td>
+            <td>bitwise OR</td>
+            <td>11</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td><tt>&&</tt></td>
+            <td>conditional AND</td>
+            <td>12</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td><tt>||</tt></td>
+            <td>conditional OR</td>
+            <td>13</td>
+            <td>left to right</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td><tt>?:</tt></td>
+            <td>conditional</td>
+            <td>14</td>
+            <td>right to left</td>
+          </tr>
+          <tr align = center bgcolor = "#ebebeb"> 
+            <td> <pre>
+  =   +=   -=
+ *=   /=   %=
+ &=   ^=   |=
+<<=  >>= >>>=
+</pre> </td>
+            <td align> assignment </td>
+            <td>15</td>
+            <td>right to left</td>
+          </tr>
+        </table>
+      </center>
+      </td>
+  </tr>
+</table>

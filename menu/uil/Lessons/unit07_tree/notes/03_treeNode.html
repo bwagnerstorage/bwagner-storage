@@ -1,0 +1,107 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Binary Tree</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to implement a binary tree</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Binary Tree</h1>
+
+<p>A <strong>binary tree</strong> can be implemented using either a dynamic(linked) approach, similiar to the way that linked lists are implemented, or using an static(array) approach.
+  The linked approach is often used when implementing either a binary search tree or an expression tree, and the array approach is used when implementing a heap.</p>
+  
+<h1>TreeNode class</h1> 
+<p>Using the linked approach requires the use of a class to create the tree nodes that will make up the tree. This class is similiar to the class that was used to create linear nodes
+   except that it has two reference variables for a tree node's left and right subtrees.</p>
+
+<div id="csCode"><pre>
+public class TreeNode
+{
+    // Instance Variables
+    private Object value;
+    <div id="csHighlight"><pre>private TreeNode left</pre></div>;     // left subtree
+    <div id="csHighlight"><pre>private TreeNode right</pre></div>;    // right subtree
+    
+    // Constructors
+    public TreeNode(Object initValue)
+    { 
+        value = initValue; 
+        left = null; 
+        right = null; 
+    }
+    
+    public TreeNode(Object initValue, TreeNode initLeft, TreeNode initRight)
+    { 
+        value = initValue;
+        left = initLeft;
+        right = initRight;
+    }
+    
+    // Accessor Methods
+    public Object getValue()
+    {
+        return value;
+    }
+    public TreeNode getLeft() 
+    { 
+        return left; 
+    }
+    public TreeNode getRight()
+    { 
+         return right; 
+    }
+    
+    // Mutator Methods
+    public void setValue(Object theNewValue)
+    { 
+         value = theNewValue; 
+    }
+    public void setLeft(TreeNode theNewLeft)
+    { 
+         left = theNewLeft;
+    }
+    public void setRight(TreeNode theNewRight)
+    { 
+         right = theNewRight;
+    }
+}</pre></div>
+  
+<p>The diagram below illustrates the structure of a binary tree using the TreeNode class.</p>
+<div align="center"><img src="images/treestructure.gif"></div>
+
+<h1>Recursive Tree Algorithms</h1>
+
+<p>Most algorithms that involve binary trees are recursive because the trees themselves are recursive structures. Many of these algorithms traverse
+   the tree and then report some result about the tree. Some change the contents of the nodes without altering the structure of the tree (ie., no nodes are added or removed). 
+   Other algorithms change the structure of the tree.</p>
+
+<p>A typical recursive method has this scheme (in pseudo-code):</p>
+
+<div id="csOutput" style="width:600px"><pre>
+doTreeStuff
+   if ROOT != null then                // base case
+   
+      process ROOT                     // process current node
+	  
+      doTreeStuff to left subtree      // recursive call
+
+      doTreeStuff to right subtree     // recursive call
+	  
+    end if
+end method
+</pre></div>
+<p>This is a general scheme for a preorder traversal. Often visiting the root postorder or inorder leads to the same correct result. Sometimes order is important; it depends on the actual application.</p>
+  
+  
+<br>
+</div>	
+

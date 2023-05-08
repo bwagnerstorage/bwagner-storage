@@ -1,0 +1,247 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Linear Probing</div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>Write a Java program that demonstrates the Linear Probing collision resolution strategy.</p>
+
+<p>Your program needs to do the following:</p>
+<div id="csList"><ol>
+<li><p>Create an integer array (hash table) size 12.</p></li>
+
+<li><p>Insert random numbers in the range of 10 to 99 into the array using the following hash function:</p>
+<div id="csCode" style="width:580px"><pre>
+public int hash(int data)
+{
+   return data % table.length;    // table is the name of the array
+}
+</pre></div></li>
+<li><p>When a collision occurs use linear probing to resolve the collision.
+    Include the following code in your implementation:</p>
+<div id="csCode" style="width:580px"><pre>
+while(table[index] > 0)  // while not an empty cell
+{
+   index = (index + 1) % table.length;  // advance to next cell, 
+                                        // includes wrap around
+}
+table[index] = num;  // new insertion point found, insert data
+</pre></div></li>
+<li><p>Display the entire table every time a number is added to the table. Pause the program between insertions.</p>
+<div id="csCode" style="width:580px"><pre>
+keyboard.nextLine();  // pause
+</pre></div></li>
+<li><p>Include a message that shows which index each number is inserted in. If a collision occurs display a message that informs 
+  the user that linear probing was activated to resolve the collision. (Refer to the sample output below)</p></li>
+
+<li><p>Add numbers to the table until the table is full.</p></li>
+
+<li><p>Once the table is full, perform searches looking for certain numbers within the table. When a number is found display the
+  array index where the number was found. If the number was not found display a message indicating that the number is not in the list.</p></li>
+</ol></div>
+
+
+<h1>Source Files</h1>
+<p>LinearProbing.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Insert 77 at index 5
+[0] =  0
+[1] =  0
+[2] =  0
+[3] =  0
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  0
+[8] =  0
+[9] =  0
+[10] = 0
+[11] = 0
+
+
+Insert 39 at index 3
+[0] =  0
+[1] =  0
+[2] =  0
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  0
+[8] =  0
+[9] =  0
+[10] = 0
+[11] = 0
+
+
+Insert 93 at index 9
+[0] =  0
+[1] =  0
+[2] =  0
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  0
+[8] =  0
+[9] =  93
+[10] = 0
+[11] = 0
+
+
+Insert 99 at index 8
+[0] =  0
+[1] =  0
+[2] =  0
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  0
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 0
+
+
+Insert 74 at index 2
+[0] =  0
+[1] =  0
+[2] =  74
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  0
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 0
+
+
+Insert 23 at index 11
+[0] =  0
+[1] =  0
+[2] =  74
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  0
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 23
+
+
+Insert 67 at index 7
+[0] =  0
+[1] =  0
+[2] =  74
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  67
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 23
+
+
+Collision at index 11 - insert 35 at index 0
+[0] =  35
+[1] =  0
+[2] =  74
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  67
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 23
+
+
+Collision at index 11 - insert 35 at index 1
+[0] =  35
+[1] =  35
+[2] =  74
+[3] =  39
+[4] =  0
+[5] =  77
+[6] =  0
+[7] =  67
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 23
+
+
+Collision at index 1 - insert 61 at index 4
+[0] =  35
+[1] =  35
+[2] =  74
+[3] =  39
+[4] =  61
+[5] =  77
+[6] =  0
+[7] =  67
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 23
+
+
+Collision at index 5 - insert 53 at index 6
+[0] =  35
+[1] =  35
+[2] =  74
+[3] =  39
+[4] =  61
+[5] =  77
+[6] =  53
+[7] =  67
+[8] =  99
+[9] =  93
+[10] = 0
+[11] = 23
+
+
+Collision at index 7 - insert 55 at index 10
+[0] =  35
+[1] =  35
+[2] =  74
+[3] =  39
+[4] =  61
+[5] =  77
+[6] =  53
+[7] =  67
+[8] =  99
+[9] =  93
+[10] = 55
+[11] = 23
+
+
+Enter search key -->99
+104 found at index 8
+Enter search key -->35
+35 found at index 0
+Enter search key -->23
+23 found at index 11
+Enter search key -->22
+22 not in list
+Enter search key -->1
+1 not in list
+Enter search key -->67
+67 found at index 7
+Enter search key -->
+
+</pre>
+</div>
+	<br>
+</div>	
+

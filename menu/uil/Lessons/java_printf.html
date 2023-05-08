@@ -1,0 +1,512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" class="main" cellspacing ="0">
+  <tr>
+    <th width="791" class="main"> Java printf</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h3>The printf Method</h3>
+      <p>The purpose of the <strong>printf</strong> method is provide formatted 
+        output. </p>
+      <p>For example, look at a line of code that uses the <em>println</em> method 
+        to print the value of PI.</p>
+      <table class ="code" width="44%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class ="code">System.out.println(Math.PI);</td>
+        </tr>
+      </table>
+      <p>Here is the result:</p>
+      <table width="44%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000"><font color="#FFFFFF">3.141592653589793</font></td>
+        </tr>
+      </table>
+      <p>The println method does not provide any formatting options.</p>
+      <hr>
+      <p>This time I am going to print the value of PI rounded to 2 decimal places 
+        using the <em>printf</em> method.</p>
+      <table class ="code" width="44%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class ="code">System.out.printf(&quot;%.2f&quot;, Math.PI);</td>
+        </tr>
+      </table>
+      <p>Here is the result:</p>
+      <table width="44%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">3.14</font></td>
+        </tr>
+      </table>
+      <p>The first argument to <em>printf()</em> is a String, known as a <strong>format 
+        string</strong>. The remaining arguments are called <strong>'format</strong> 
+        <strong>specifiers'</strong>. This is easier to explain by way of example. 
+        Look at the code below, then compare each line to its output.</p>
+      <table class ="code" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="code"><pre>public class printfDemo
+{
+    public static void main(String[] args)
+    {
+        int num1 = 58;
+        double num2 = 343.75;
+        String s = "computer";
+        char ch = 'A';
+        
+        <font color="#0000FF">// Integer formatting</font>
+        System.out.printf("Line 1 = %d \n", num1);          <font color="#0000FF">// d = decimal(integer)</font>
+        System.out.printf("Line 2 = %8d yards \n", num1);
+        System.out.printf("Line 3 = %-8d yards \n", num1);
+        
+        <font color="#0000FF">// Floating-point formatting</font>
+        System.out.printf("Line 4 = %f \n", num2);          <font color="#0000FF">// f = float</font>
+        System.out.printf("Line 5 = %.2f yards \n", num2);
+        System.out.printf("Line 6 = %2.4f yards \n", num2);
+        System.out.printf("Line 7 = %-8.2f yards \n", num2);
+        System.out.printf("Line 8 = %.0f yards \n", num2);
+        System.out.printf("Line 9 = %e yards \n", num2);    <font color="#0000FF">// e = scientific notation</font>
+        
+        
+        <font color="#0000FF">// String formatting </font>
+        System.out.printf("Line 10 = %s \n", s);           <font color="#0000FF">// s = string</font>
+        System.out.printf("Line 11 = %10s \n", s);
+        System.out.printf("Line 12 = %-10s \n", s);
+        
+        <font color="#0000FF">// Character formatting</font>
+        System.out.printf("Line 13 = %c \n", ch);      <font color="#0000FF">    // c = char</font>
+        
+        <font color="#0000FF">// Number Systems</font>
+        System.out.printf("Line 14 = %o \n", num1);        <font color="#0000FF">// o = octal</font>
+        System.out.printf("Line 15   = %x \n", num1);      <font color="#0000FF">// x = hex</font>
+        
+
+
+
+        <font color="#0000FF">// Multiple</font> 
+        int a = 5, b = 10, c = 15;
+        System.out.printf("Line 16 = %d  %d  %d \n", a, b, c);       
+        
+        int x = 25;
+        double y = 5.9;
+        double ans = x + y;
+        System.out.printf("Line 17 = %d + %f =  %.2f \n", x, y, ans);
+        
+    }
+}</pre></td>
+        </tr>
+      </table>
+      <h3>Sample Output</h3>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">Line 1 = 58
+Line 2 =       58 yards
+Line 3 = 58       yards
+Line 4 = 343.750000
+Line 5 = 343.75 yards
+Line 6 = 343.7500 yards
+Line 7 = 343.75   yards
+Line 8 = 344 yards
+Line 9 = 3.437500e+02 yards
+Line 10 = computer
+Line 11 =   computer
+Line 12 = computer
+Line 13 = A
+Line 14 = 72
+Line 15 = 3a
+Line 16 = 5  10  15
+Line 17 = 25 + 5.900000 =  30.90
+
+Press any key to continue...</font></pre> </td>
+        </tr>
+      </table>
+      <h2><p></p>1. format specifiers</h2>
+
+<p>A format specifier has the following syntax:</p>
+
+<blockquote>
+	<code>%</code>[<var>flags</var>][<var>width</var>][<code>.</code><var>precision</var>][<var>input_size</var>]<var>conversion_type</var>
+</blockquote>
+
+<p>The percent character ('%') always signals the beginning of a format 
+specifier.  The conversion type character is always present and marks the end of 
+the format specifier.  The flags, width, precision, and input size are optional, 
+but if they are present, they must appear between the percent character and 
+conversion type character, in the order given above.</p>
+
+      <h2>2. input conversion types</h2>
+
+<p>The <b>conversion type character</b> indicates the type of input data to be 
+stringified and formatted.  There are several input conversion types, one output 
+conversion type, and two escape conversion types.  An <b>input conversion 
+type</b> consumes at least one element from the data vector and generates 
+formatted data based on the input value.  The complete list of input conversion 
+types is shown below.  For convenience, the flags permitted are also shown, 
+though these are not discussed until later.</p>
+
+<table border>
+	<tr>
+		<th>conversion type character</th>
+		<th>default input type</th>
+		<th>stringified as</th>
+		<th>flags permitted</th>
+	</tr>
+	<tr>
+		<td><code>%c</code></td>
+		<td><code>char</code></td>
+		<td>Character, possibly encoded.</td>
+		  <td> '<code>-</code>', '<code>#</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%d</code></td>
+		<td><code>int</code></td>
+		<td>Signed decimal integer.</td>
+		  <td> '<code>-</code>','<code>0</code>', '<code>+</code>', '<code>&nbsp;</code>' 
+          </td>
+	</tr>
+	<tr>
+		<td><code>%e</code>, <code>%E</code></td>
+		<td><code>float</code></td>
+		<td>
+			Real number, scientific notation (lowercase or uppercase exponent 
+			marker).
+		</td>
+		  <td> '<code>-</code>', '<code>#</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%f</code></td>
+		<td><code>float</code></td>
+		<td>Real number, standard notation.</td>
+		  <td> '<code>-</code>', '<code>0</code>', '<code>+</code>', '<code>&nbsp;</code>', 
+            '<code>#</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%g</code>, <code>%G</code></td>
+		<td><code>float</code></td>
+		<td>
+			Same as <code>%f</code> or <code>%e</code>, depending on value.  
+			Scientific notation is used only if the exponent is greater than the 
+			precision or less than -4.
+		</td>
+		  <td> '<code>-</code>', '<code>0</code>', '<code>#</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%o</code></td>
+		<td><code>int</code></td>
+		<td>Unsigned octal integer.</td>
+		  <td> '<code>-</code>'', '<code>0</code>', '<code>#</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%p</code></td>
+		<td><code>Object</code></td>
+		<td>
+			Object identity hash code (i.e., the object's address), in unsigned 
+			hexadecimal.
+		</td>
+		  <td> '<code>-</code>', '<code>0</code>', </td>
+	</tr>
+	<tr>
+		<td><code>%s</code></td>
+		<td><code>String</code></td>
+		<td>String.</td>
+		  <td> '<code>-</code>', '<code>#</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%u</code></td>
+		<td><code>int</code></td>
+		<td>Unsigned decimal integer.</td>
+		  <td> '<code>-</code>'', '<code>0</code>' </td>
+	</tr>
+	<tr>
+		<td><code>%x</code> or <code>%X</code></td>
+		<td><code>int</code></td>
+		<td>Unsigned hexadecimal integer, lowercase or uppercase.</td>
+		  <td> '<code>-</code>', '<code>0</code>', '<code>#</code>' </td>
+	</tr>
+	<tr class="new">
+		<td>
+			<code>%z[</code><var>n</var><code>]</code> or 
+			<code>%Z[</code><var>n</var><code>]</code>
+		</td>
+		<td><code>int</code></td>
+		<td>
+			Unsigned integer in base <var>n</var> (decimal), lowercase or 
+			uppercase.  (The square brackets are part of the specifier.)
+		</td>
+		  <td> '<code>-</code>', '<code>0</code>', </td>
+	</tr>
+</table>
+
+<p>The other conversion types are described later.</p>
+
+      <h2>3. input size modifiers</h2>
+
+<p>Input conversion type specifiers can be preceded by an input size modifier to 
+override the default input type.  All supported input size modifications are 
+listed below:</p>
+
+<table border>
+	<tr>
+		<th>default input type</th>
+		<th>input size modifier</th>
+		<th>modified data type</th>
+	</tr>
+	<tr>
+		<td rowspan=5><code>int</code></td>
+		<td><i>(none)</i></td>
+		<td><code>int</code></td>
+	</tr>
+	<tr class="new">
+		<td><code>b</code></td>
+		<td><code>byte</code></font></td>
+	</tr>
+	<tr class="new">
+		<td><code>B</code></td>
+		<td><code>BigInteger</code></td>
+	</tr>
+	<tr>
+		<td><code>h</code></td>
+		<td><code>short</code></td>
+	</tr>
+	<tr>
+		<td><code>l</code></td>
+		<td><code>long</code></td>
+	</tr>
+	<tr>
+		<td rowspan=3><code>float</code></td>
+		<td><i>(none)</i></td>
+		<td><code>float</code></td>
+	</tr>
+	<tr class="new">
+		<td><code>B</code></td>
+		<td><code>BigDecimal</code></td>
+	</tr>
+	<tr>
+		<td><code>l</code></td>
+		<td><code>double</code></td>
+	</tr>
+</table>
+
+      <h2>4. output field width specifiers</h2>
+
+<p>An optional output field width specifier, if present, specifies the minimum 
+output field width, or the minimum number of characters that the formatted data 
+will span in the output.  If the stringified value does not fill the whole 
+field, then the field will be padded.  The default behavior, in this case, is to 
+right-<wbr>align the output in the field by left-<wbr>padding it with 
+spaces.</p>
+
+<p>On the other hand, if the formatted value <em>exceeds</em> the minimum length 
+of the field, the output will not be truncated, and the field will be widened as 
+necessary to display the entire result.  When no output width is specified, 
+there is no minimum field width.  In this case, the field will only be as wide 
+as necessary to display the result.</p>
+
+<p><b>Example:</b></p>
+
+<blockquote>
+
+	<p>The code</p>
+	
+	<blockquote>
+		<code>System.out.printf.("%6d",52);</code>
+	</blockquote>
+	
+	<p>will output</p>
+	
+	<blockquote>
+		"<tt>&nbsp;&nbsp;&nbsp;&nbsp;52</tt>"
+	</blockquote>
+	
+	<p>(with four spaces on the left).</p>
+
+</blockquote>
+
+      <h2>5. precision specifiers</h2>
+
+<p>A precision specifier, if present, controls the precision with which the 
+input data will be converted.  The effect of setting a precision on a value 
+depends on the conversion type.  The effects of precision for each input type, 
+along with the default precision values, are given below:</p>
+
+<table border>
+	<tr>
+		<th>conversion type</th>
+		<th>effect of precision</th>
+		<th>default precision</th>
+	</tr>
+	<tr>
+		<td>
+			<nobr>Integer conversion:</nobr>
+			<ul>
+				<li><code>%d</code></li>
+				<li><code>%o</code></li>
+				<li><code>%u</code></li>
+				<li><code>%x</code>, <code>%X</code></li>
+				<li class="new">
+					<code>%z[</code><var>n</var><code>]</code>,
+					<code>%Z[</code><var>n</var><code>]</code>
+				</li>
+			</ul>
+		</td>
+		<td>
+			Precision controls the minimum number of digits.  The converted 
+			value will be prepended with zeros if necessary.  If the precision 
+			is 0 and the input value is zero, then:
+			<ul>
+				<li>If no output width is specified, nothing will be 
+					output.</li>
+				<li>If an output width is specified, the entire field will be 
+					nothing but padding.</li>
+			</ul>
+		</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>
+			Real conversion:
+			<ul>
+				<li><code>%f</code></li>
+				<li><code>%e</code>, <code>%E</code></li>
+				<li><code>%g</code>, <code>%G</code></li>
+			</ul>
+		</td>
+		<td>
+			Precision controls the number of fractional digits after the decimal 
+			point.  The converted value will be rounded if necessary.
+		</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>
+			String conversion:
+			<ul>
+				<li><code>%s</code></li>
+			</ul>
+		</td>
+		<td>
+			Precision controls the maximum number of characters from the input 
+			that will be displayed.  If the string is longer than the precision, 
+			it will be truncated.
+		</td>
+		<td>infinity</td>
+	</tr>
+</table>
+
+<p>Precision cannot be specified for types not listed in the table above.  If no 
+precision is specified, then the default precision will be used.</p>
+
+      <h2>6. variable width and precision</h2>
+
+<p>Field widths and field precisions can be specified with an asterisk 
+('<tt>*</tt>') to indicate that these values should be obtained from the data 
+vector.  Each asterisk in a format specifier consumes an <code>int</code> from 
+the data vector, in the same order as it appears in the format specifier.  The 
+actual data to be converted is consumed last.</p>
+
+<p><b>Example:</b></p>
+
+<blockquote>
+	If the format specifier is "<code>%*hd</code>", then there must be two 
+	elements in the data array corresponding to this format specifier.  The 
+	first element is an <code>int</code> specifying the field width, and the 
+	second element is a <code>short</code> that will be rendered as a signed 
+	decimal string.
+</blockquote>
+
+      <h2>7. flags</h2>
+
+<p>Flags are single characters that indicate exceptions to the conversion type's 
+default formatting behavior.  A format specifier may have multiple flags, but 
+some flags are mutually exclusive.  Multiple flags can appear in any order.  The 
+following table lists all of the formatting flags supported by Printf for 
+Java:</p>
+
+      <table border>
+        <tr> 
+          <th>flag</th>
+          <th>effect</th>
+          <th>applicable conversion types</th>
+        <tr> 
+          <td>'<code>-</code>'</td>
+          <td> Output will be left-<wbr>aligned in field. This flag is meaningless 
+            if no field width is specified. </td>
+          <td> <code>%c</code>, <code>%d</code>, <code>%e</code>, <code>%E</code>, 
+            <code>%f</code>, <code>%g</code>, <code>%G</code>, <code>%o</code>, 
+            <code>%p</code>, <code>%s</code>, <code>%u</code>, <code>%x</code>, 
+            <code>%X</code>, <span class="new"><code>%z[</code><var>n</var><code>]</code></span>, 
+            <span class="new"><code>%Z[</code><var>n</var><code>]</code></span>, 
+          </td>
+        </tr>
+        <tr> 
+          <td>'('</td>
+          <td>The result will enclose negative numbers in parentheses.</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>','</td>
+          <td>The result will include locale-specific grouping separators</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>'<code>0</code>'</td>
+          <td> Field will be padded with leading zeros, inserted between sign 
+            character, if any, and value. </td>
+          <td> <code>%d</code>, <code>%e</code>, <code>%E</code>, <code>%f</code>, 
+            <code>%g</code>, <code>%G</code>, <code>%o</code>, <code>%p</code>, 
+            <code>%u</code>, <code>%x</code>, <code>%X</code>, <span class="new"><code>%z[</code><var>n</var><code>]</code></span>, 
+            <span class="new"><code>%Z[</code><var>n</var><code>]</code></span> 
+          </td>
+        </tr>
+        <tr> 
+          <td>'<code>+</code>'</td>
+          <td> Non-negative values will begin with a plus character ('<tt>+</tt>'). 
+          </td>
+          <td rowspan=2> <code>%d</code>, <code>%f</code></td>
+        </tr>
+        <tr> 
+          <td>'<code>&nbsp;</code>'</td>
+          <td> Non-negative values will begin with a space character ('<tt>&nbsp;</tt>'). 
+          </td>
+        </tr>
+        <tr> 
+          <td rowspan=6>'<code>#</code>'</td>
+          <td colspan=2> Data will be represented in an "alternate form." This 
+            depends on the conversion type: </td>
+        </tr>
+        <tr> 
+          <td> Non-negative octal values will begin with a zero ('<tt>0</tt>'). 
+          </td>
+          <td><code>%o</code></td>
+        </tr>
+        <tr> 
+          <td> Hexadecimal values will begin with "<tt>0x</tt>" or "<tt>0X</tt>" 
+            (depending on case of conversion type character). </td>
+          <td><code>%x</code>, <code>%X</code></td>
+        </tr>
+        <tr> 
+          <td> The integer portion of the result will end with a decimal point 
+            ('<tt>.</tt>'), even if the fractional portion is zero. </td>
+          <td> <code>%e</code>, <code>%E</code>, <code>%f</code> </td>
+        </tr>
+        <tr> 
+          <td>The fractional portion always appears, even if it is zero.</td>
+          <td><code>%g</code>, <code>%G</code></td>
+        </tr>
+        <tr class="new"> 
+          <td> If the character is special or unprintable, it will be output in 
+            escaped form. The output can be surrounded by single quotes to form 
+            a syntactically valid Java character literal. </td>
+          <td><code>%c</code></td>
+        </tr>
+      </table>
+
+</td>
+  </tr>
+
+</table>

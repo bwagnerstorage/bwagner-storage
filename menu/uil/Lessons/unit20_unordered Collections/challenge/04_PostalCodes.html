@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 7.4 Postal Codes(05-2)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>AP AB Free Response</h2>
+      <h3 align="left">Name: Postal Codes<br>
+        Topic: HashMap<br>
+        Source Code: <a href="http://bwagner.org/menu/uil/Lessons/Unordered%20Collections/ap%20free%20response/6_4_PostalCodes(05-2).doc">Postal 
+        Codes</a></h3>
+      <hr size=2 width="100%" align=center> <p>Consider the design of a class 
+        to store cities and postal codes. A city, such as Miami, Florida, may 
+        have several postal codes, such as 33199 and 33174. A postal code may 
+        occasionally represent more than one city; for example, the postal code 
+        95324 is used for both Hilmar, California, and Irwin, California. Postal 
+        codes may include letters as well as digits, such as postal code H3C5T7 
+        used for Montreal, Quebec.</p>
+      <p> The class <em>PostalCodeDB</em> stores information about cities and 
+        postal codes. The initial version of the class is shown below. Cities 
+        and postal codes are represented as strings in this class. </p>
+      <pre>public class PostalCodeDB
+{
+   <font color="#0000FF">private Map&lt;String, String&gt; codeToCityMap;</font>    // each key is a postal code, its
+                                                 // associated value is a set of cities
+   
+   // constructs an empty database
+   <font color="#000000">public PostalCodeDB()</font>
+   {
+       codeToCityMap = new HashMap&lt;String, String&gt;();
+   }
+
+
+   // returns the set of cities associated with postalCode if that
+   // code is in the database, otherwise returns null
+   public Set&lt;String&gt; getCitiesForCode(String code)
+   {
+      return codeToCityMap.get(code);
+   }
+      
+   // adds a new city, postalCode pair to this database
+   public void addCityCodePair(String code, String city)
+   {
+       Set&lt;String&gt; citySet = getCitiesForCode(code); 
+       if (citySet == null)
+       {
+          citySet = new HashSet&lt;String&gt;();
+          codeToCityMap.put(code, citySet);
+       }
+       citySet.add(city);
+   }
+} 
+	</pre>
+      <p>(a) For the implementation shown above, give the expected Big-Oh running 
+        time for the <em>PostalCodeDB</em> <br>
+        methods <em>getCitiesForCode</em> and <em>addCityCodePair</em>. Express 
+        your answers in terms of N, where N is the number of city-code pairs that 
+        have been added to the <em>PostalCodeDB</em>. </p>
+      <table width="400" border="0" align="center">
+        <tr> 
+          <td><div align="center"><strong>Method</strong></div></td>
+          <td><div align="center"><strong>Expected Big-Oh Running Time</strong></div></td>
+        </tr>
+        <tr> 
+          <td>getCitiesForCode</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>addCityCodePair</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <p>(b) The <em>PostalCodeDB</em> class is to be modified to provide two 
+        additional operations. 
+      <ol>
+        <li>A new method, <em>getCodesForCity</em>, should return a set of all 
+          postal codes for a city. This method must run in time O(log N) or better, 
+          where N is the number of pairs that have been added to this <em>PostalCodeDB</em>.</li>
+        <li>A new method, <em>printAllCities</em>, should print an alphabetical 
+          list of all cities. This method must run in time O(N) or better.</li>
+      </ol>
+      <p>In the spaces provided below, describe your modifications to the design 
+        of the <em>PostalCodeDB</em> class to support the new functionality listed 
+        above. </p>
+      <ul>
+        <li> Declare any additional instance variables that are required in the 
+          <em>PostalCodeDB</em> class.<br>
+        </li>
+      </ul>
+      <p> Show the initialization of these variables in the <em>PostalCodeDB</em> 
+        constructor. </p>
+      <pre>// additional instance variable(s)
+
+
+
+
+
+
+
+
+// constructs an empty database
+public PostalCodeDB()
+{
+   codeToCityMap = new HashMap&lt;String, String&gt;();
+        
+   // initialization of additional instance variable(s) 
+
+
+
+} </pre></p>
+      <p>(a) Explain how the <em>PostalCodeDB</em> class will use these variables 
+        to organize the data. <br>
+      </p>
+      <p><br>
+        <br>
+        (b) Describe any changes that are needed in the method <em>addCityCodePair</em> 
+        to update these variables. </p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p>(c) Justify how <em>PostalCodeDB</em> method <em>getCodesForCity</em> 
+        can meet the required running time of O(log N) or better. </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>(d) Write the <em>PostalCodeDB</em> method printAllCities, which prints 
+        an alphabetical list of all the cities in the <em>PostalCodeDB</em>. This 
+        operation must run in time O(N) or better, where N is the number of city-code 
+        pairs that have been added to the <em>PostalCodeDB</em>.</p>
+      <p>Complete method <strong>printAllCities</strong> below. </p>
+      <pre>// prints an alphabetical list of all cities in this database
+// postcondition: the state of the data structure is not changed
+public void <strong>printAllCities</strong>() </pre>
+      </p>
+      <p>&nbsp; </p>
+      <p></p>
+      <p></p>
+      <p><br>
+      </p>
+      <p></p></td>
+  </tr>
+</table>

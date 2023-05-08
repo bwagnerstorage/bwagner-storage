@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 7.2 StudentSet</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Description</h2>
+      <p>Write a class named <strong>Student</strong> that contains the following 
+        attributes: first name, last name, and current GPA. Write another class 
+        named <strong>School</strong> that creates <em>Student</em> objects from 
+        information entered from the keyboard and stores the<em> </em> objects 
+        in a <em>TreeSet</em> collection. The <em>School</em> class should be 
+        able to retrieve <em>Student</em> objects from the set in ascending order 
+        by the GPA. Since the <em>Student</em> objects will be stored in a <em>TreeSet</em>, 
+        the <em>Student</em> class needs to implement the <em>Comparable</em> 
+        interface. </p>
+      <h3>Comparable Interface</h3>
+      <p>The <em>Comparable</em> interface declares only one method named <strong>compareTo</strong>(Object 
+        obj). This method compares two objects A and B and returns one of three 
+        values. It returns a positive number if A is greater than B, it returns 
+        a negative number if A is less than B, and it returns zero if they are 
+        equal.</p>
+      <p>In your implementation of the <em>compareTo</em> method the ordering 
+        of <em>Student</em> objects should be determined by their GPAs.</p>
+      <p>Write a menu driven test program like the one shown below<u>.</u></p>
+<h2>Sample Run</h2>
+      <table width="88%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000"><font color="#FFFFFF">
+            <pre><font color="#FFFFFF">1) Add   2) Print   3) Exit
+1
+Enter first name -->John
+Enter last name -->Wayne
+Enter GPA -->3.2
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Jimmy
+Enter last name -->Stewart
+Enter GPA -->2.8
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Henry
+Enter last name -->Fonda
+Enter GPA -->4.3
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Richard
+Enter last name -->Widmark
+Enter GPA -->2.1
+
+1) Add   2) Print   3) Exit
+1
+Enter first name -->Glenn
+Enter last name -->Ford
+Enter GPA -->5.0
+
+1) Add   2) Print   3) Exit
+2
+
+2.1  Richard  Widmark
+2.8  Jimmy  Stewart
+3.2  John  Wayne
+4.3  Henry  Fonda
+5.0  Glenn  Ford
+
+1) Add   2) Print   3) Exit
+3
+
+Press any key to continue...</font>
+           </pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>

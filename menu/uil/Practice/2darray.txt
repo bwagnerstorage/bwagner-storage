@@ -1,0 +1,249 @@
+What is output by the code
+to the right?
+$
+int[][] mat = {{2,7,5},
+               {2,1,3},
+               {8,4,2}};
+int tot = 0;
+for(int r = 0; r < mat.length; r++)
+  for(int c = r; c < mat[0].length; c++)
+    tot += mat[r][c];
+System.out.print(tot);
+$
+34
+$
+19
+$
+20
+$
+14
+$
+12
+$
+C
+$
+What is output by the code
+to the right?
+$
+int[][] mat1 = new int[4][4];
+for(int i = 0; i < 4; i++)
+  for(int j = 0; j < 4; j++)
+    mat1[j][i] = i - j;
+
+for(int i = 0; i < 4; i++)
+  System.out.print( mat1[2][i]);
+$
+210-1
+$
+-1012
+$
+2-101
+$
+-101
+$
+2345
+$
+C
+$
+What is output by the code
+to the right?
+$
+int[][] mat1 = {{3,4,1,2},
+                {4,1,6,7},
+                {2,2,13,10}};
+for(int i = 0; i < 3; i++)
+  System.out.print( mat1[i][1] );
+$
+416
+$
+412
+$
+341
+$
+342
+$
+4167
+$
+B
+$
+What is output by the code
+to the right?
+$
+char[][] table = new char[10][5];
+System.out.print( table[8].length );
+$
+5
+$
+10
+$
+9
+$
+There is no output due
+to a syntax error.
+$
+There is no output due to an
+ArrayIndexOutOfBoundsException.
+$
+A
+$
+What replaces <*1> in the code
+to the right to set the variable
+cs equal to the number of 
+columns in the two dimensional
+array of ints named t?
+$
+public int handle(int[][] t){
+  int tot = 0;
+  int rs = t.length;
+  int cs = <*1>;
+  int start = Math.min(rs, cs) - 1;
+  int m = start / 2;
+  for(int i = start; i >= 0; i--){
+    tot += t[i][m];
+    tot += t[m][i];
+  }
+  return tot;
+}
+$
+t[0].length
+$
+t.0.length
+$
+t->length
+$
+t->length
+$
+t[0][0].length
+$
+A
+$
+Assume <*1> is filled in correctly.
+
+What is returned by method handle
+if t is the matrix shown below?
+
+ 1   4   0   2   1   6
+ 0  -1   5   4   0  -4
+ 2   2   7   1  13   2
+11   5  13  13   4  20
+
+$
+public int handle(int[][] t){
+  int tot = 0;
+  int rs = t.length;
+  int cs = <*1>;
+  int start = Math.min(rs, cs) - 1;
+  int m = start / 2;
+  for(int i = start; i >= 0; i--){
+    tot += t[i][m];
+    tot += t[m][i];
+  }
+  return tot;
+}
+$
+15
+$
+18
+$
+19
+$
+14
+$
+16
+$
+B
+$
+What is output by the code 
+to the right?
+$
+int count = 2;
+int[][] mat = new int[3][4];
+for(int r = 0; r < mat.length; r++){
+  for(int c = 0; c < mat[0].length; c++){
+    mat[r][c] = count;
+    count++;
+  }
+}
+
+System.out.print( mat[2][2] );
+
+$
+8
+$
+6
+$
+13
+$
+12
+$
+11
+$
+D
+$
+What is output by the statement
+marked line 1 when method demo
+is called?
+$
+public static int sum(int[][] mat,
+                      int row, int col){
+  if( row == -1 || col == mat[0].length )
+    return 0;
+  int tot1 = sum(mat, row - 1, col);
+  int tot2 = sum(mat, row - 1, col + 1);
+  return tot1 + tot2 + mat[row][col];
+}
+
+public static void demo(){
+  int[][] t = { {1, 2, 2, 0, 8},
+                {5, 1, 0, 1, 2},
+                {4, 2, 3, 2, 1}};
+  System.out.println( t.length ); // line 1
+  int x = sum( t, 2, 1 );
+  System.out.println( x ); // line 2
+}
+$
+0
+$
+5
+$
+3
+$
+1
+$
+12208
+$
+C
+$
+What is output by the statement 
+marked line 2 when method demo
+is called?
+$
+public static int sum(int[][] mat,
+                      int row, int col){
+  if( row == -1 || col == mat[0].length )
+    return 0;
+  int tot1 = sum(mat, row - 1, col);
+  int tot2 = sum(mat, row - 1, col + 1);
+  return tot1 + tot2 + mat[row][col];
+}
+
+public static void demo(){
+  int[][] t = { {1, 2, 2, 0, 8},
+                {5, 1, 0, 1, 2},
+                {4, 2, 3, 2, 1}};
+  System.out.println( t.length ); // line 1
+  int x = sum( t, 2, 1 );
+  System.out.println( x ); // line 2
+}
+$
+24
+$
+9
+$
+5
+$
+7
+$
+15
+$
+B

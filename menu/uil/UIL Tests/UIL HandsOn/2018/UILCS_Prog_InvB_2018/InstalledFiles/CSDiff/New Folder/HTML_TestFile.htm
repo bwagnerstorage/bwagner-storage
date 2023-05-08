@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>This file demonstrates the HtmlDiff analysis</title>
+</head>
+
+<body>
+
+<p align="center"><font size="5"><b>This file demonstrates the HtmlDiff analysis</b></font></p>
+<p align="left"><b><a name="smp #1"></a>Line added sample:<br>
+</b>Line #1<br>
+Line #2<br>
+Line #2a is added here<br>
+Line #3<br>
+<br>
+<b>Line removed sample:<br>
+</b>Line #1<br>
+Line #3<br>
+<br>
+<b>Line changed sample:<br>
+</b>Line #1<br>
+Line #2 initial text is here: This is a long line with few changes. It is used
+to demonstrate the smart multiple-changes detection of HtmlDiff. Please note
+that HtmlDiff is able to detect word boundary changes as well.<br>
+Line #3<br>
+<br>
+<b>White-space changed sample:<br>
+</b>Line #1<br>
+Line  #2<br>
+Line#3<br>
+<br>
+<b>Letter-case changed sample:<br>
+</b>Line #1<br>
+line #2<br>
+Line #3</p>
+<p align="left"><b><a name="smp #6"></a>Typeface changed sample:<br>
+</b>Normal<b> </b>changed to Bold + Underline:<b> <u>Line #1</u>
+</b><br>
+Normal<b> </b>changed to Italics: <i>Line #2</i><br>
+Italics<b> </b>changed to Arial black: <font face="Arial Black" size="2">Line #3</font></p>
+<p align="center"><b>Alignment changed sample:<br>
+</b>Line #1<br>
+Line #2<br>
+Line #3</p>
+<p align="left"><b>Image removed sample:</b></p>
+<p align="left"><b>Image changed sample:</b></p>
+<p align="left"><b><img border="0" src="EVTMGMT.GIF" width="154" height="138"><br>
+</b></p>
+<p align="left"><b>Image added sample:</b></p>
+<p align="left"><img border="0" src="UNDERCON.GIF" width="40" height="38"></p>
+<p align="left"><b>Table changed sample:</b></p>
+<p align="left"><i>Changed data:</i></p>
+<table border="1" width="100%" height="75">
+  <tr>
+    <td width="25%" align="center" height="19"><b>Date</b></td>
+    <td width="25%" align="center" height="19"><b>User1</b></td>
+    <td width="25%" align="center" height="19"><b>User2</b></td>
+    <td width="25%" align="center" height="19"><b>User3</b></td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">1/1/01</td>
+    <td width="25%" height="19">User1 Data</td>
+    <td width="25%" height="19">User2&nbsp; Changed Data</td>
+    <td width="25%" height="19">&nbsp;User3 Data</td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">12/01/01</td>
+    <td width="25%" height="19">User1 Data2</td>
+    <td width="25%" height="19">User2&nbsp; New Data2</td>
+    <td width="25%" height="19"></td>
+  </tr>
+</table>
+<p align="left"><i>Removed column:</i></p>
+<table border="2" width="100%" height="75">
+  <tr>
+    <td width="25%" align="center" height="19"><b>Date</b></td>
+    <td width="25%" align="center" height="19"><b>User1</b></td>
+    <td width="25%" align="center" height="19"><b>User2</b></td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">1/1/01</td>
+    <td width="25%" height="19">User1 Data</td>
+    <td width="25%" height="19">User2&nbsp; Data</td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">12/01/01</td>
+    <td width="25%" height="19">User1 Data2</td>
+    <td width="25%" height="19"></td>
+  </tr>
+</table>
+<p><i>Added column:</i></p>
+<table border="3" width="100%" height="75">
+  <tr>
+    <td width="25%" align="center" height="19"><b>Date</b></td>
+    <td width="25%" align="center" height="19"><b>User1</b></td>
+    <td width="25%" align="center" height="19"><b>User2</b></td>
+    <td width="25%" align="center" height="19"><b>User3</b></td>
+    <td width="25%" align="center" height="19"><b>User4</b></td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">1/1/01</td>
+    <td width="25%" height="19">User1 Data</td>
+    <td width="25%" height="19">User2&nbsp; Data</td>
+    <td width="25%" height="19">&nbsp;User3 Data</td>
+    <td width="25%" height="19">User4 Data</td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">12/01/01</td>
+    <td width="25%" height="19">User1 Data2</td>
+    <td width="25%" height="19"></td>
+    <td width="25%" height="19">User3 Data2</td>
+    <td width="25%" height="19"></td>
+  </tr>
+</table>
+<p><i>Removed line:</i></p>
+<table border="4" width="100%" height="75">
+  <tr>
+    <td width="25%" align="center" height="19"><b>Date</b></td>
+    <td width="25%" align="center" height="19"><b>User1</b></td>
+    <td width="25%" align="center" height="19"><b>User2</b></td>
+    <td width="25%" align="center" height="19"><b>User3</b></td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">12/01/01</td>
+    <td width="25%" height="19">User1 Data2</td>
+    <td width="25%" height="19"></td>
+    <td width="25%" height="19">User3 Data2</td>
+  </tr>
+</table>
+<p><i>Added line:</i></p>
+<table border="5" width="100%" height="75">
+  <tr>
+    <td width="25%" align="center" height="19"><b>Date</b></td>
+    <td width="25%" align="center" height="19"><b>User1</b></td>
+    <td width="25%" align="center" height="19"><b>User2</b></td>
+    <td width="25%" align="center" height="19"><b>User3</b></td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">1/1/01</td>
+    <td width="25%" height="19">User1 Data</td>
+    <td width="25%" height="19">User2&nbsp; Data</td>
+    <td width="25%" height="19">&nbsp;User3 Data</td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">8/01/01</td>
+    <td width="25%" height="19">New raw data</td>
+    <td width="25%" height="19"></td>
+    <td width="25%" height="19"></td>
+  </tr>
+  <tr>
+    <td width="25%" height="19">12/01/01</td>
+    <td width="25%" height="19">User1 Data2</td>
+    <td width="25%" height="19"></td>
+    <td width="25%" height="19">User3 Data2</td>
+  </tr>
+</table>
+
+<p align="left"><b>Hyperlink changed sample:</b></p>
+<p align="left">Line 1: Click <a href="#smp #6">here</a> to jump (forgot link &amp; hyperlink)</p>
+<p align="left">Line 2: Click <a href="#smp #6">here</a> to jump (forgot hyperlink)</p>
+<p align="left">Line 3: Click to jump (will remove link &amp; hyperlink)</p>
+<p align="left">Line 4: Click here to jump (will remove hyperlink)</p>
+<p align="left">Line 5: Click <a href="#smp #6">here</a> to jump (will change hyperlink)</p>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 4.2 Big-O</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Introduction</h2>
+      <p>Big-O Notation is a method of classifying search and sort algorithms 
+        so there run-time efficiency can be determined and compared without having 
+        to execute them. This method is independent of both the programming language 
+        and the computer used.</p>
+      <p>When comparing algorithms computer scientists are concerned with three 
+        Scenarios. The worst-case, the best-case, and the average case of the algorithm. 
+        The worst-case is the slowest possible time required for the algorithm 
+        to complete its execution. The best-case is an algorithms fastest possible 
+        execution time. Average case is the average efficiency of an algorithm. 
+        It must be noted that some algorithms worst-case, best-case, and average 
+        case are the same. This means that the algorithm will always execute the 
+        same way regardless of the data being worked on. When using Big-O notation 
+        computer scientists often refer to an algorithms average execution time.</p>
+      <h2>Big-O Notation</h2>
+      <p>Big-O is taken from the term &quot;on the order of&quot;.</p>
+      <p>Example: Suppose you want to classify a searching algorithm that executes 
+        on average:</p>
+      <p><img src="http://bwagner.org/menu/uil/Lessons/BigO/img/Example1.gif" width="400" height="100"></p>
+      <p>Using Big-O notation you are only concerned with the highest order term 
+        of the algorithm. You ignore all low order terms and all constants. In 
+        other words, you are only concerned with the part of the algorithm that 
+        will <strong>most</strong> affect (dominate) the speed of the algorithm 
+        as <em>n</em> becomes very large. This term is n<sup>2</sup></sup>. Therefore, 
+        this algorithm works &quot;on the order of &quot; n<sup>2</sup></sup> 
+        . In <strong>Big-O notation</strong> it is written as: <strong>O(n<sup>2</sup></sup>)</strong>. 
+      </p>
+      <p>Therefore, in Big-O notation we classify an algorithm according to the 
+        highest order of <em>n</em> that appears in its expression, called the 
+        order of magnitude, or simply the order of that expression. We express 
+        this order by putting the highest order term in parentheses with a capital 
+        O in front. For example O(1) is constant time; O(N) is linear time; O(n<sup>2</sup>) 
+        is quadratic time; O(n<sup>3</sup>) is cubic time; and O(log<sub>2</sub> 
+        N) is logarithmic time.</p>
+      <p>The table below gives a graphical representation of the most common algorithm 
+        run times.</p>
+      <p><img src="http://bwagner.org/menu/uil/Lessons/BigO/img/runtime.gif" width="400" height="357"></p>
+      <p>Determining the orders of different algorithms allows us to compare the 
+        work they require without having to program and execute them. For example, 
+        if you have an O(n<sup>2</sup>) algorithm and a linear algorithm O(n) 
+        that performs the same task, you probably would choose the linear algorithm. 
+        I say probably because an O(n<suP>2</suP>) algorithm actually may execute 
+        fewer steps than an O(n) algorithm for small values of <em>n</em>. <strong>Note</strong>: 
+        if <em>n</em> is small, the constants and lower order terms in the expression 
+        must be considered.</p>
+      <p>&nbsp;</p>
+      <p>&nbsp; </p></td>
+  </tr>
+</table>

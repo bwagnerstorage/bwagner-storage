@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr> 
+    <td width="800" height="24" bgcolor="#000000" > <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script> </td>
+  </tr>
+  <tr> 
+    <th width="99%" class="main"> 6.3 Dictionary</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Description</h2>
+      <p>Write a dictionary program. The program should contain the following 
+        capabilities:</p>
+      <ul>
+        <li>add words and their definitions into the dictionary </li>
+        <li>remove words from the dictionary </li>
+        <li>print a list of words in the dictionary </li>
+        <li>search for a word's definition and display it on the screen.</li>
+      </UL>
+      <h2>Implementation</h2>
+      <p>Your implementation should include the following classes: </ul> </p>
+      <p><strong>Entry class<br>
+        Dictionary class<br>
+        Manager class<br>
+        Driver class</strong></p>
+      <h3> </h3>
+      <h3><font color="#DC8501">Entry Class</font></h3>
+      <p>This class represents a single entry into the dictionary. The class should 
+        contain two attributes: a <strong>word</strong> and its <strong>definition</strong>. 
+      </p>
+      <p>This class should also include the following behaviors: </p>
+      <ul>
+        <li><strong>Three constructors</strong> - a default constructor, a constructor 
+          that sets both the <em>word</em> and <em>definition</em> attributes 
+          to values specified in its parameter list, and a constructor that sets 
+          only the <em>word</em> attributes to a value specified in its parameter 
+          list The <em>definition</em> should be set to its default value. </li>
+        <li><strong>Accessor methods</strong> - need an accessor method for each 
+          instance variable. </li>
+        <li><strong>Mutator methods</strong> - need a mutator method for each 
+          instance variable. </li>
+        <li><strong>Override Object class's equals method</strong>. Override the 
+          <em>equals</em> method so that it compares the word attribute of the 
+          class with a <em>String</em> value given in the parameter list. If they 
+          are equal it should return true; otherwise it should return false. 
+          <blockquote> <strong>Example</strong> <br>
+            <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td class="code">
+				
+				<pre>public boolean equals(Object o)
+{
+   String arg = (String)o;
+   return word.equals(arg);
+}</pre></td>
+              </tr>
+            </table>
+            
+          </blockquote>
+        </li>
+        <li><strong>Override toString method </strong>- returns a <em>String</em> 
+          representation of both the <em>word</em> and <em>definition</em> attributes.</li>
+      </ul>
+      <h3><font color="#DC8501">Dictionary Class</font></h3>
+      <p> This class is responsible for creating and maintaining the list of <em>Entries</em>. 
+        It should implement this list as a <strong>LinkedList</strong> of <em>Entry</em> 
+        objects. It should include the follow behaviors: 
+      <ul>
+        <li><strong>Default constructor</strong> - initializes the LinkedList. 
+        </li>
+        <li><strong>Accessor methods </strong><br>
+          <strong>getEntry</strong>- given an <em>Entry</em> object, it performs 
+          a linear search on the list of entries looking for a specified word. 
+          If the word is found in the list it returns its corresponding <em>Entry</em> 
+          object, otherwise it returns null. <br>
+          <strong>getWordList</strong> - this method creates and returns an <em>ArrayList</em> 
+          containing the word attribute of each <em>Entry</em> in the list. (It 
+          returns the list of words in the list). <br>
+        </li>
+        <li><strong>Mutator methods</strong> <br>
+          <strong>addEntry</strong> - given an <em>Entry</em> object, this method 
+          adds the object to the <em>LinkedList</em>. <br>
+          <strong>removeEntry</strong>- given an <em>Entry</em> object, this method 
+          removes the object from the <em>LinkedList</em>. <br>
+        </li>
+        <li><strong>Helper method </strong><br>
+          <strong>linearSearch</strong> - given an <em>Entry</em> object, this 
+          method should perform a linear search through the list looking for the 
+          specified <em>Entry</em> object (identified by its word). This method 
+          should utilize an <em>Iterator</em> when traversing the list.</li>
+      </ul>
+      <h3><font color="#DC8501">Manager class</font></h3>
+      <p>This class is the &quot;manager&quot; for the program. It is responsible 
+        for displaying and managing the program's menu system and instaniating 
+        the <em>Dictionary</em> object.</p>
+      <p>This class should contain the following methods (behavior):</p>
+      <ul>
+        <li><strong>Default Constructor</strong> - the constructor should instaniate 
+          the <em>Dictionary</em> object and an <em>Scanner</em> object. It should 
+          also call the method <em>MainMenu</em> to start the menu system. </li>
+        <li><strong>MainMenu method</strong> - this method is responsible for 
+          displaying the main menu for the program. </li>
+        <li><strong>addWord method</strong> - prompts the user for a word and 
+          its definition, creates an <em>Entry</em> object, and then adds the 
+          entry to the dictionary. </li>
+        <li><strong>removeWord method</strong> - prompts the user for a word, 
+          creates an <em>Entry</em> object, searches the dictionary for the specified 
+          word. If it is found, it removes it from the list. If the word is not 
+          in the dictionary, it should print the message &quot;Word not in dictionary&quot;. 
+        </li>
+        <li> <strong>getDefinition method</strong> - prompots the user for a word, 
+          creates an <em>Entry</em> object, searches the dictionary for the specified 
+          word. If the word is found, it prints its definition. If the word is 
+          not found, it should print the message &quot;Word not in dictionary&quot;. 
+        </li>
+        <li><strong>viewWordList method</strong> - This method should display 
+          a list of all the words in the dictionary.</li>
+      </ul>
+      <h3><font color="#DC8501">Driver Class</font></h3>
+      <p> This method contains the programs <em>main</em> method. It initiates 
+        the program by instaniating a <em>Manager</em> object.</p>
+      <p></p>
+      <h2>Sample Run</h2>
+      <table width="88%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 1
+
+==============================
+     Add Word to Dictionary
+==============================
+
+Enter word-->RAM
+Enter definition-->Random Access Memory
+
+==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 1
+
+==============================
+     Add Word to Dictionary
+==============================
+
+Enter word-->ROM
+Enter definition-->Read Only Memory
+
+==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 3
+
+==============================
+       View a Definition
+==============================
+
+Enter word-->RAM
+RAM - Random Access Memory
+
+==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 4
+
+==============================
+          Word List
+==============================
+
+RAM
+ROM
+
+==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 2
+
+==============================
+     Remove Word from Dictionary
+==============================
+
+Enter word-->ROM
+
+==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 4
+
+==============================
+          Word List
+==============================
+
+RAM
+
+==============================
+          Main Menu
+==============================
+
+1. Add Word
+2. Remove Word
+3. Get a Definition
+4. View Word List
+5. Exit
+Make Selection: 5</font>
+Press any key to continue...</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td class="main" colspan="2">&nbsp;</td>
+  </tr>
+</table>

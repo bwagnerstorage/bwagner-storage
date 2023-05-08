@@ -1,0 +1,45 @@
+least degree       0.33 A
+greatest degree    1.00 B
+least closeness    0.60 A
+greatest closeness 1.00 B
+---
+least degree       0.14 AH
+greatest degree    0.29 BCDEFG
+least closeness    0.25 AH
+greatest closeness 0.44 DE
+---
+least degree       0.40 ACDEF
+greatest degree    0.80 B
+least closeness    0.50 C
+greatest closeness 0.83 B
+---
+least degree       0.20 AC
+greatest degree    0.80 D
+least closeness    0.42 A
+greatest closeness 0.83 D
+---
+least degree       0.25 CE
+greatest degree    1.00 D
+least closeness    0.57 CE
+greatest closeness 1.00 D
+---
+least degree       0.33 AEG
+greatest degree    0.50 BCDF
+least closeness    0.55 AEG
+greatest closeness 0.67 BCF
+---
+least degree       0.13 ADFGHI
+greatest degree    0.25 BCE
+least closeness    1.33 AD
+greatest closeness 8.00 GH
+---
+least degree       0.09 FHL
+greatest degree    0.45 B
+least closeness    0.24 F
+greatest closeness 0.52 BK
+---
+least degree       0.04 MNOPQRSTUVWXY
+greatest degree    0.25 B
+least closeness    0.18 S
+greatest closeness 0.43 BK
+---

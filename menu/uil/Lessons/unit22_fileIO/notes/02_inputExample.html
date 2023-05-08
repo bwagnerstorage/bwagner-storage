@@ -1,0 +1,100 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">File Input Examples</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>how to use Scanner class to read data from a file</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 
+<h1>Sample 1 - Read Integers</h1>
+      <div id="csCode"><pre>
+import java.util.*;  <font color="#0000FF">// needed for Scanner</font>
+import java.io.*;    <font color="#0000FF">// needed for File</font>
+
+public class Sample1
+{
+    public static void main(String[] args) throws <font color="#FF0000">IOException</font>
+    {
+        int num = 0;
+        Scanner scan = new Scanner(new File("Sample1.dat"));
+        
+        while(scan.hasNextInt())
+        {
+            num = scan.nextInt();
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        
+    }
+}</pre>
+      </div>
+      <p><strong>Data File - Sample1.dat</strong></p>
+      <div id="csOutput">
+23 83 12 98 77 64 53 87 93 39 90 69 32 31 87 3 24 8 21 19 72 36 23 11 9 72 80 26 50 5 13 88
+</div>
+      <p><strong>Sample Output</strong></p>
+      <div id="csOutput">23 83 12 98 77 64 53 87 93 39 90 69 32 31 87 3 24 8 21 19 72 36 23 11 9 72 80 26
+ 50 5 13 88
+      </div>
+      <p>&nbsp;</p>
+      <h2>Sample 2 - Read Strings</h2>
+      <div id="csCode"><pre>
+import java.util.*;  <font color="#0000FF">// needed for Scanner</font>
+import java.io.*;   <font color="#0000FF"> // needed for File</font>
+
+public class Sample2
+{
+    public static void main(String[] args) throws <font color="#FF0000">IOException</font>
+    {
+        String str = "";
+        Scanner scan = new Scanner(new File("Sample2.dat"));
+        
+        while(scan.hasNext())
+        {
+            str = scan.next();
+            System.out.println(str);
+        }
+        System.out.println();
+        
+    }
+}</pre></div>
+      <p><strong>Data File - Sample2.dat</strong></p>
+      <div id="csOutput">dog cat mouse chicken pig <br>
+            horse cow roster goat hog <br>
+            duck goose donkey mule steer<br>
+            bull crow mare stallion calf</div>
+		
+      <p><strong>Sample Output</strong></p>
+      <div id="csOutput">
+	        dog<br>
+            cat<br>
+            mouse<br>
+            chicken<br>
+            pig<br>
+            horse<br>
+            cow<br>
+            roster<br>
+            goat<br>
+            hog<br>
+            duck<br>
+            goose<br>
+            donkey<br>
+            mule<br>
+            steer<br>
+            bull<br>
+            crow<br>
+            mare<br>
+            stallion<br>
+            calf 
+           </div>
+
+  <br>
+</div>

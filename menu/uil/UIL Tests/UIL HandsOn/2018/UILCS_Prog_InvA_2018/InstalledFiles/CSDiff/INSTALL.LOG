@@ -1,0 +1,171 @@
+[Strings]
+AppID={F9C3B51C-DCCC-4916-B08D-A6820D914AC0}
+AdminRights=
+1=Uninstall CSDiff
+2=Installation package not found in selected folder.
+3=You need to have administrative rights on this computer to uninstall or repair this application.
+10=Removing file %s
+11=Removing registry entry %s
+12=Removing registry key %s
+13=Removing ini parameter from file %s
+14=Removing shortcut %s
+15=Removing folder %s
+16=Unregistering server %s
+17=Unregistering font %s
+18=Checking shared file %s
+19=Removing assembly %s
+20=Removing environment variable %s
+
+[Display]
+Charset=0
+ForceRemoveDataFiles=
+DialogFont=
+TitleFont=
+SubtitleFont=
+ProgressColor=
+ShowTitle=
+ShowSubtitle=
+
+[Dialog.DLG_START]
+Caption=Uninstall Program for CSDiff
+101=< Back
+102=Next >
+103=Cancel
+104=Ghost Installer Maintenance mode
+105=Please select one of the following options below.
+106=Uninstall CSDiff
+107=Repair CSDiff
+109=Select this option to remove CSDiff and all its components from your computer.
+110=Select this option to repair CSDiff. This option will reinstall the program with exactly the same components that were installed first time.
+
+[Dialog.DLG_BEFOREUNINSTALL]
+Caption=Uninstall Program for CSDiff
+Title=Uninstall for CSDiff
+Subtitle=This program will remove CSDiff and all its components from this computer.
+101=< Back
+102=Next >
+103=Cancel
+104=Are you sure you want to completely remove the CSDiff and all its components from your computer?||||To confirm the removal process press Next button.||||WARNING!  Be careful the uninstaller may also delete CSDiff settings and data directories. Please backup the data which is stored in subdirectories of CSDiff.
+105=Remove data files and folders created by CSDiff
+
+[Dialog.DLG_UNINSTALL]
+Caption=Uninstall Program for CSDiff
+Title=Uninstall Progress
+Subtitle=
+101=< Back
+102=Next >
+103=Cancel
+104=Uninstall actions proceeded:
+200=Preparing uninstall
+201=Uninstalling shortcuts
+202=Uninstalling registry entries
+203=Unregistering fonts
+204=Unregistering COM servers
+205=Removing files and folders
+206=Finishing uninstall
+
+[Dialog.DLG_UNINSTALLSUCCEEDED]
+Caption=Uninstall Program for CSDiff
+Title=Uninstall Succeeded
+Subtitle=
+102=Finish
+104=Ghost Installer successfully removed CSDiff and all its components from your computer.||||||Click on the Finish dialog button to exit the uninstallation process.
+
+[Dialog.DLG_BEFOREREPAIR]
+Caption=Uninstall Program for CSDiff
+Title=Repair for CSDiff
+Subtitle=This program will try to repair CSDiff.
+101=< Back
+102=Next >
+103=Cancel
+104=To confirm the repair process press Next button.||||ATTENTION!  Be careful the repair process may also reset CSDiff settings. Please backup the data which is stored in subdirectories of CSDiff.
+
+[Dialog.DLG_BROWSEFORSETUP]
+Caption=Uninstall Program for CSDiff
+Title=Browse for Packages
+Subtitle=
+101=< Back
+102=Next >
+103=Cancel
+104=Ghost Installer Maintenance could not locate installation package for CSDiff. This package is required to repair your application. Please specify a location for this package.
+105=Search for package in:
+107=Browse...
+200=Browse for Packages
+201=Select folder with installation package.
+
+[Dialog.DLG_DELSHARED]
+Caption=Remove shared file?
+101=The system indicates that the following shared file is no longer used by any programs.  If any programs are still using this file and it is removed, those programs may not function.  Are you sure you want to remove the shared file?||||Leaving this file will not harm your system.  If you are not sure what to do, it is suggested that you choose not to remove this shared component.
+103=File name:
+105=Located in:
+107=Yes
+108=Yes to all
+109=No
+110=No to all
+
+[Dialog.DLG_REBOOT]
+Caption=Uninstall Program for CSDiff
+Title=Computer Restart
+Subtitle=Uninstallation procedure needs to restart your system to remove application completely.
+101=< Back
+102=Next >
+103=Cancel
+104=Some components were not removed completely. For finishing uninstallation it is necessary to reboot your computer.
+105=Yes, reboot my computer now
+106=No, I'll reboot my computer later
+
+[SharedFiles]
+C:\WINDOWS\system32\msvcrt.dll=
+C:\WINDOWS\system32\mfc42.dll=
+C:\Program Files\ComponentSoftware\CSDiff\Uninstall.exe=
+
+[CreateKeys]
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{F9C3B51C-DCCC-4916-B08D-A6820D914AC0}=
+HKCU\Software\ComponentSoftware=
+HKCU\Software\ComponentSoftware\CSDiff=
+HKCU\Software\ComponentSoftware\CSDiff\HistoryCombo=
+
+[CreateDirs]
+C:\Program Files\ComponentSoftware\CSDiff=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder=
+C:\Documents and Settings\Compaq_Owner\Start Menu\Programs\ComponentSoftware=
+C:\Documents and Settings\Compaq_Owner\Start Menu\Programs\ComponentSoftware\CSDiff=
+
+[CopyFiles]
+C:\Program Files\ComponentSoftware\CSDiff\Base.txt=
+C:\Program Files\ComponentSoftware\CSDiff\CSDiff.exe=
+C:\Program Files\ComponentSoftware\CSDiff\NewFile.txt=
+C:\Program Files\ComponentSoftware\CSDiff\README.TXT=
+C:\Program Files\ComponentSoftware\CSDiff\License.TXT=
+C:\Program Files\ComponentSoftware\CSDiff\cswinlib.dll=
+C:\Program Files\ComponentSoftware\CSDiff\cshelp.dll=
+C:\Program Files\ComponentSoftware\CSDiff\csdiff.chm=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder\DOC_TestFile.doc=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder\EVTMGMT.GIF=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder\HTML_TestFile.htm=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder\TEXT_TestFile.txt=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder\UNDERCON.GIF=
+C:\Program Files\ComponentSoftware\CSDiff\Base Folder\XML_TestFile.xml=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder\DOC_TestFile.doc=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder\EVTMGMT.GIF=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder\HTML_TestFile.htm=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder\TEXT_TestFile.txt=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder\UNDERCON.GIF=
+C:\Program Files\ComponentSoftware\CSDiff\New Folder\XML_TestFile.xml=
+
+[AddReg]
+HKCU\Software\ComponentSoftware\CSDiff\'CSDiffPath'=
+HKCU\Software\ComponentSoftware\CSDiff\HistoryCombo\'CSDiffBaseFile'=
+HKCU\Software\ComponentSoftware\CSDiff\HistoryCombo\'CSDiffComparedFile'=
+HKCU\Software\ComponentSoftware\CSDiff\HistoryCombo\'CSDiffBaseFolder'=
+HKCU\Software\ComponentSoftware\CSDiff\HistoryCombo\'CSDiffComparedFolder'=
+
+[Shortcuts]
+C:\Documents and Settings\Compaq_Owner\SendTo\CSDiff.lnk=
+C:\Documents and Settings\Compaq_Owner\Start Menu\CSDiff.lnk=
+C:\Documents and Settings\Compaq_Owner\Desktop\CSDiff.lnk=
+C:\Documents and Settings\Compaq_Owner\Start Menu\Programs\ComponentSoftware\CSDiff\CSDiff Help.lnk=
+C:\Documents and Settings\Compaq_Owner\Start Menu\Programs\ComponentSoftware\CSDiff\CSDiff.lnk=
+C:\Documents and Settings\Compaq_Owner\Start Menu\Programs\ComponentSoftware\CSDiff\Uninstall CSDiff.lnk=
+

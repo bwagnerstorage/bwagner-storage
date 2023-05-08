@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 7.5 AnagramGrouper(08-1)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>AP AB Free Response</h2>
+      <h3 align="left">Name: AnagramGrouper<br>
+        Topic: HashSet, HashMap<br>
+        Source Code: <a href="http://bwagner.org/menu/uil/Lessons/Unordered%20Collections/ap%20free%20response/AnagramGrouper.zip">AnagramGrouper</a></h3>
+      <hr size=2 width="100%" align=center> 
+      <p>A key string for a word is the string obtained when the letters in the 
+        word are arranged in alphabetical order. For example, the words "poodle" 
+        and "looped" both have the key string "deloop". A set of words form an 
+        anagram set if all words in the set have the same key string. Some examples 
+        of anagram sets include {"poodle", "looped"}, {"nastier", "retains", "retinas"}, 
+        and {"discounter", "introduces", "reductions"}. </p>
+      <p>Consider the problem of creating a group of anagram sets from a list 
+        of words. A word with no anagrams in the list will be contained in a singleton 
+        set. The example below shows a list of words and the anagram sets that 
+        are produced from that list. </p>
+      <p align="center"><u><strong>Original list of words</strong></u><br>
+        [ant, introduces, poodle, tan, looped, discounter, nastier, polled, retains, 
+        retinas, reductions] </p>
+      <p align="center"><strong><u>Anagram sets from the list of words </u></strong><br>
+        {tan, ant} <br>
+        {introduces, reductions, discounter}<br>
+        {poodle, looped} <br>
+        {retains, retinas, nastier} <br>
+        {polled}</p>
+      <p align="left">The anagram sets will be organized as a map in which each 
+        key is a key string and the associated value is the set<br>
+        of words that each have that key string. The following diagram shows a 
+        map with the key strings and associated<br>
+        anagram sets that would be created from the list in the previous example.</p>
+      <p align="center"><img src="http://bwagner.org/menu/uil/Lessons/Unordered%20Collections/ap%20free%20response/Anagram1.gif" width="448" height="383"><br>
+      </p>
+      <p align="left">A partial declaration of the <em>AnagramGrouper</em> class 
+        is as follows: You will implement two methods in the<br>
+        <em>AnagramGrouper</em> class. The class contains a private helper method 
+        that can be used to create a key string<br>
+        from a word.</p>
+      <pre>public class AnagramGrouper
+{
+    // Maps a key string to a corresponding anagram set
+    private HashMap &lt;String, HashSet&lt;String&gt;&gt; groups;
+    
+    /** Constructs a map from words in which the keys are key strings and the
+     *   value associated with a key string is the set of anagrams having that key string.
+     *   Postcondition: each entry of words is contained in an anagram set
+     *   @param words a list of strings to be grouped into anagram sets
+     *          Precondition: words.size() > 0
+     */
+    <font color="#0000FF">public AnagramGrouper(List<String> words)</font>
+    { /* to be implemented in part (a) */ }
+    
+    /** @return a set of all anagram sets of largest size in this AnagramGrouper
+     */
+    <font color="#0000FF">public HashSet &lt;HashSet&lt;String&gt;&gt;findLargestSets()</font>
+    { /* to be implemented in part (b) */ }
+    
+    /** @param s a word
+     *  @return a string with the same letters as s, arranged in alphabetical order
+     */
+    <font color="#0000FF">private String createKeyString(String s)</font>
+    { /* implementation not shown */ }
+    
+    
+    // There may be instance variables, constructors, and methods that are not shown.
+}</pre>
+<p></p>
+      <ol>
+        <li type="a"> Write the <em>AnagramGrouper</em> constructor. The constructor 
+          takes a list of words and constructs a map in<br>
+          which each key is a key string and the associated value is the set of 
+          words that each have that key string. The<br>
+          map should contain all the anagram sets that are generated from the 
+          list of words.<br>
+          <br>
+          Complete the <em>AnagramGrouper</em> constructor below.<br>
+          <pre>    /** Constructs a map from words in which the keys are key strings and the
+     *   value associated with a key string is the set of anagrams having that key string.
+     *   Postcondition: each entry of words is contained in an anagram set
+     *   @param words a list of strings to be grouped into anagram sets
+     *          Precondition: words.size() > 0
+     */
+    <font color="#0000FF">public AnagramGrouper(List<String> words)</font>
+    {
+
+
+
+
+    }</pre>
+        </li>
+        <li type="a">Write the <em>AnagramGrouper</em> method <em>findLargestSets</em>. 
+          This method analyzes the instance<br>
+          variable groups and returns a set containing the largest anagram set(s); 
+          that is, the set(s) with the most<br>
+          elements. In the example shown at the beginning of the question, the 
+          method would return a set containing<br>
+          the sets {introduces, reductions, discounter} and {retains, retinas, 
+          nastier}.<br>
+          <br>
+          Complete method <em>findLargestSets</em> below.<br>
+          <pre>/** @return a set of all anagram sets of largest size in this AnagramGrouper
+ */
+<font color="#0000FF"> public HashSet &lt;HashSet&lt;String&gt;&gt;findLargestSets()</font>
+ { 
+
+
+
+
+
+
+ }</pre>
+        </li>
+      </ol>
+      <h2>Sample Output</h2>
+      <table width="625" border="0">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">cdeinorstu - {reductions, discounter, introduces}
+dellop - {polled}
+aeinrst - {nastier, retains, retinas}
+deloop - {looped, poodle}
+ant - {ant, tan}
+
+
+findLargestSets Test
+--------------------
+{nastier, retains, retinas}
+{reductions, discounter, introduces}
+
+
+Press any key to continue...</font></pre></td>
+        </tr>
+      </table>
+      <p></p></td>
+  </tr>
+</table>

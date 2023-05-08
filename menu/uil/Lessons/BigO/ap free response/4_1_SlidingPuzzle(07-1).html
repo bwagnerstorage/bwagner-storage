@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+
+<script type="text/javascript" language="javascript"><!--
+function ChgText1()
+{
+   var MyElement = document.getElementById("MyTextBox1");
+   MyElement.value = "0(n^2)";
+
+   return true;
+}
+function ChgText2()
+{
+   var MyElement = document.getElementById("MyTextBox2");
+   MyElement.value = "0(n)";
+
+   return true;
+}
+//--></script>
+
+
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <td width="800" height="24" bgcolor="#000000" >
+        <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script>
+    </td>
+  </tr>
+  <tr>
+    <th width="99%" class="main"> 5.1 SlidingPuzzle (07-1)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>AP AB Free Response</h2>
+      <h3 align="left">Name: SlidingPuzzle<br>
+        Topic: BigO, 2D Array, ArrayList<br>
+        Reference: 2007 Question 1<br>
+        Source Code: <a href="http://bwagner.org/menu/uil/Lesson/BigO/ap%20free%20response/Sliding%20Puzzle.zip">SlidingPuzzle</a></h3>
+      <hr size=2 width="100%" align=center> 
+      <p>The sliding puzzle is a popular puzzle toy and can be represented as 
+        a square grid in which all but one location contains a numbered tile. 
+        For example, the following diagram shows a 4 x 4 puzzle containing tiles 
+        numbered 1 through 15 and a single &quot;hole.&quot;</p>
+      <table width="32%" height="135" border="1" align="center">
+        <tr> 
+          <td><div align="center">1</div></td>
+          <td><div align="center">4</div></td>
+          <td><div align="center">3</div></td>
+          <td><div align="center">12</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">11</div></td>
+          <td><div align="center">&nbsp;</div></td>
+          <td><div align="center">5</div></td>
+          <td><div align="center">7</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">13</div></td>
+          <td><div align="center">14</div></td>
+          <td><div align="center">6</div></td>
+          <td><div align="center">2</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">10</div></td>
+          <td><div align="center">8</div></td>
+          <td><div align="center">15</div></td>
+          <td><div align="center">9</div></td>
+        </tr>
+      </table>
+      <p>The puzzle is solved by sliding tiles until all numbers are arranged 
+        in numerical sequence when traversed in row-major order, as shown in the 
+        following diagram. Note that the hole may be in any position.</p>
+      <table width="32%" height="135" border="1" align="center">
+        <tr> 
+          <td><div align="center">1</div></td>
+          <td><div align="center">2</div></td>
+          <td><div align="center">3</div></td>
+          <td><div align="center">4</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">5</div></td>
+          <td><div align="center">6</div></td>
+          <td><div align="center">7</div></td>
+          <td><div align="center">&nbsp;</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">8</div></td>
+          <td><div align="center">9</div></td>
+          <td><div align="center">10</div></td>
+          <td><div align="center">11</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">12</div></td>
+          <td><div align="center">13</div></td>
+          <td><div align="center">14</div></td>
+          <td><div align="center">15</div></td>
+        </tr>
+      </table>
+      <p>The puzzle is represented by the SlidingPuzzle class shown below. In 
+        this question, you will implement two methods of this class.</p>
+      <pre>public class SlidingPuzzle
+{
+    private int side;         // the side length of the puzzle grid
+    private int[][] values;   // the tile values with the hole represented by 0
+    
+    /** @param sideLength the side length of the square grid
+     *         Precondition: sideLength>0
+     */
+    <font color="#0000FF">public SlidingPuzzle(int sideLength)</font>
+    {
+        side = sideLength;
+        values = new int[side][side];
+        initialize();
+    }
+    
+    /** Precondition: the puzzle grid contains the distinct values 0 through side^2 -1
+     *  @ return true if the tiles in the puzzle are all arranged in increasing order
+     *                (the hole value 0 may be in any position);
+     *           false otherwise
+     */
+   <font color="#0000FF"> public boolean isDone()</font>
+    {  /* to be implemented in part(a) */ }
+    
+    
+    /** Initializes the puzzle by placing numbers 0 through side^2 - 1 into random locations
+     */
+    <font color="#0000FF">public void initialize()</font>
+    {  /* to be implemented in part(b) */ }
+    
+    
+    // There may be fields, constructors, and methods that are not shown.
+
+}</pre>
+      <ol>
+        <li type="a"> Write the <em>SlidingPuzzle</em> method <em>isDone</em>. 
+          Method <em>isDone</em> returns true if the values in the puzzle appear 
+          in increasing order when traversed in row-major order; otherwise, it 
+          returns false. The value 0 (denoting the hole) may appear anywhere within 
+          the puzzle.<br>
+          <br>
+          Complete method <em>isDone</em> below.<br>
+          <pre> /** Precondition: the puzzle grid contains the distinct values 0 through side^2 -1
+  *  @ return true if the tiles in the puzzle are all arranged in increasing order
+  *                (the hole value 0 may be in any position);
+  *           false otherwise
+  */
+ <font color="#0000FF">public boolean isDone()</font>
+ {  
+
+
+
+
+ }</pre>
+        </li>
+        <li type="a">Write the <em>SlidingPuzzle</em> method <em>initialize</em>. 
+          Method initialize fills the side x side values grid with random integers 
+          0 through side<sup>2</sup> - 1, without repeating numbers.<br>
+          <br>
+          <strong>Your implementation must use the following algorithm.</strong><br>
+          <ol>
+            <li>Initialize an <em>ArrayList&lt;Integer&gt;</em> named <em>temp</em> 
+              with values 0 through n = side<sup>2</sup> -1.<br>
+              The code for this step is provided.<br>
+              <br>
+              Starting with the first element of the grid values, repeat steps 
+              2 and 3 until the grid has been filled.<br>
+            </li>
+            <li>Pick a random element from <em>temp</em> and place that element 
+              into the next empty grid location.</li>
+            <li>Remove that element from <em>temp</em> by calling the <em>ArrayList</em> 
+              <em>remove</em> method on its index.</li>
+          </ol>
+          <p>Complete method <em>initialize</em> below. The method has been started 
+            for your convenience. <br>
+            <br>
+            /** Initializes the puzzle by placing numbers 0 through side<sup>2</sup> 
+            - 1 into random locations<br>
+            */ 
+          <pre>
+ <font color="#0000FF">public void initialize()</font>
+ {  
+    ArrayList&lt;Integer&gt; temp = new ArrayList&lt;Integer&gt;();
+    for(int j=0; j &lt; side * side; j++)
+       temp.add(new Integer(j));
+
+    // Write you solution below.
+
+
+
+
+ }
+
+
+</pre>
+        </li>
+        <li type="a">What is the expected big-Oh running time of the initialization 
+          algorithm described in part (b),<u> in terms of n, the number of tiles</u>?<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <FORM>
+            <INPUT TYPE="button" VALUE="Click Here to See Answer" onClick="ChgText1()" >
+            <input type="text" name="Answer" id="MyTextBox1" >
+          </FORM>
+          <br>
+        </li>
+        <li type="a">Consider a variation of the algorithm described in part(b) 
+          in which Step 3 is changed.<br>
+          <ol>
+            <li>Initialize an <em>ArrayList&lt;Integer&gt;</em> named <em>temp</em> 
+              with values 0 through n = side<sup>2</sup> -1.<br>
+              <br>
+              Starting with the first element of the grid values, repeat steps 
+              2 and 3 until the grid has been filled.<br>
+            </li>
+            <li>Pick a random element from <em>temp</em> and place that element 
+              into the next empty grid location.</li>
+            <li>Replace that element with the element in the last index of temp, 
+              then remove the last element from temp. (Note: removing the last 
+              item of an ArrayList is a constant time operation.)<br>
+            </li>
+          </ol>
+          <p>What is the expected big-Oh running time of this variation <u>in 
+            terms of n, the number of tiles</u>?</p>
+          <br>
+          <FORM>
+            <INPUT TYPE="button" VALUE="Click Here to See Answer" onClick="ChgText2()" >
+            <input type="text" name="Answer" id="MyTextBox2" >
+          </FORM>
+          <br>
+          <br>
+          <br>
+        </li>
+      </ol>
+      <h2>Sample Output</h2>
+      <table width="600" border="2" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000"><pre><font color="#FFFFFF">Test - initialize method
+------------------------
+   3  10   7   2
+   8  15   5   4
+  12  14   0  13
+   1   9  11   6
+
+Test - isDone method
+--------------------
+   3  10   7   2
+   8  15   5   4
+  12  14   0  13
+   1   9  11   6
+puzzle1.isDone() = false
+
+   1   2   3   4
+   5   6   0   7
+   8   9  10  11
+  12  13  14  15
+puzzle2.isDone() = true
+
+
+</font>
+Press any key to continue...</pre></td>
+        </tr>
+      </table>
+      <p></p></td>
+  </tr>
+</table>

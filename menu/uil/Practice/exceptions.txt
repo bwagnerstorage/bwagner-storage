@@ -1,0 +1,276 @@
+What is output by the code 
+to the right?
+$
+String[] courses = new String[5];
+System.out.print( courses[4].length() );
+$
+0
+$
+null
+$
+1
+$
+There is no output due to 
+a syntax error.
+$
+There is no output due to a
+NullPointerException.
+$
+E
+$
+What replaces <*1> in the code to 
+the right so method numVowels 
+generates an exception and ends
+if the precondition is not met?
+$
+// pre: s != null, s.length() > 0
+public boolean same (String s) {
+  if ( s == null I I s .length() <= 0 )
+    <*1> new IllegalArgumentException();
+  int last = s.length() - 1; .
+  return s.charAt(O) == s.charAt(last);
+$
+return
+$
+catch
+$
+end
+$
+throw
+$
+assert
+$
+D
+$
+What replaces <*1> in the code to the
+right to indicate method count will 
+pass along any FileNotFoundExceptions
+it may generate instead of handling
+them locally?
+$
+public int count(String filename) <*1> {
+
+  Scanner sc;
+
+  // The next line of code can result in
+  // a FileNotFoundException.
+  sc = new Scanner( new File(filename) );
+
+  int count = 0;
+
+  // rest of method not shown
+ 
+  return count;
+}
+$
+throws FileNotFoundException
+$
+finally FileNotFoundException
+$
+throws new FileNotFoundException()
+$
+throw new FileNotFoundException
+$
+catch FileNotFoundException
+$
+A
+$
+What can replace <*1> in the code 
+to the right so that the code 
+segment compiles without error.
+$
+try{
+  int[] passnums = {31, 2, 45, 4, 97};
+  int i1 = passnums[2];
+  int i2 = passnums[3];
+  System.out.print( passnums[i1] );
+  System.out.print( passnums[i2] );
+}
+catch(NullPointerException <*1>){
+  System.out.print( "e1" );
+}
+catch(ArrayIndexOutOfBoundsException <*1>){
+  System.out.print( "e2" );
+}
+$
+Any valid identifier that is not
+already in scope.
+$
+Only the identifier e.
+$
+Only the identifier this.Exception.
+$
+Any single digit.
+$
+One or more &'s.
+$
+A
+$
+Assume <*1> is filled in correctly.
+
+What is output by the code to the right?
+$
+try{
+  int[] passnums = {31, 2, 45, 4, 97};
+  int i1 = passnums[2];
+  int i2 = passnums[3];
+  System.out.print( passnums[i1] );
+  System.out.print( passnums[i2] );
+}
+catch(NullPointerException <*1>){
+  System.out.print( "e1" );
+}
+catch(ArrayIndexOutOfBoundsException <*1>){
+  System.out.print( "e2" );
+}
+$
+e2
+$
+454
+$
+e297
+$
+e1
+$
+e1e2
+$
+A
+$
+What replaces <*1> in the code to 
+the right to generate an
+Exception if data is null?
+$
+public static boolean evenLen(int[] data){
+if( data == null )
+  <*1>;
+return data.length % 2 == 0;
+}
+$
+catch new IllegalArgumentException()
+$
+throw new IllegalArgumentException()
+$
+try new Error
+$
+try new IllegalArgumentException()
+$
+throws IllegalArgumentException()
+$
+B
+$
+What is output by the code 
+to the right?
+$
+String res = "";
+try{
+  String col = "A&M";
+  for(int i = 2; i < 6; i++)
+  res += col.charAt(i);
+  System.out.print(col);
+  System.out.print(res);
+}
+catch(Exception e){
+  System.out.print(res.length());
+}
+finally{
+  System.out.print(res);
+}
+$
+A&MM1M
+$
+1
+$
+A&M
+$
+1M
+$
+M
+$
+D
+$
+What replaces <*1> in the code to the
+right to throw anIllegalArgumentException
+if the precondition of method acc is not met?
+$
+//pre: ln <= data.length
+public void acc(int ln, int[] data){
+  <*1>
+  // rest of method not shown
+}
+$
+if( ln == data.length )
+  throw new IllegalArgumentException();
+$
+if( ln <= data.length )
+  throw new Exception();
+$
+if( !( ln > data.length ) )
+  throw new IllegalArgumentException();
+$
+if( !( ln <= data.length ) )
+  throw new IllegalArgumentException();
+$
+More than one of these.
+$
+D
+$
+What replaces <*1> in the code to the right
+to throw an IllegalArgumentException when the
+value passed to the constructor is not positive?
+$
+public class Circle {
+ 
+  public Circle(double r) {
+    if (r>0) radius = r;
+    else <*1>;
+  }
+
+  public double area() {
+    return <*2>;
+  }
+
+  private double radius;
+}
+$
+throw Exception(IllegalArgument)
+$
+throw IllegalArgumentException
+$
+throw new Exception(IllegalArgument)
+$
+throw new IllegalArgumentException()
+$
+Either A or B
+$
+D
+$
+What replaces <*2> in the code to the 
+right to return the product of the 
+mathematical constant pi and the 
+square of the data member radius?
+$
+public class Circle {
+ 
+  public Circle(double r) {
+    if (r>0) radius = r;
+    else <*1>;
+  }
+
+  public double area() {
+    return <*2>;
+  }
+
+  private double radius;
+}
+$
+Math.PI * this.radius * this.radius
+$
+Math.PI * this.radius^2
+$
+Math.PI * radius * radius
+$
+Math.PI * radius^2
+$
+Either A or C
+$
+E

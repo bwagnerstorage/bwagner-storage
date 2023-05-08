@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <td width="691" height="24" bgcolor="#000000" >
+        <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script>
+    </td>
+  </tr>
+  <tr>
+    <th width="691" class="main"> 11.3 Bounded Types</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Bounded Types</h2>
+      <p> Wildcard types don't solve all of our problems. They allow us to generalize 
+        method definitions so that they can work with collections of objects of 
+        various types, rather than just a single type. However, they do not allow 
+        us to restrict the types that are allowed as type parameters in a generic 
+        class or method definition. Bounded types exist for this purpose.</p>
+      <p>We start with a small, not very realistic example. Suppose that you would 
+        like to create groups of GUI components using a generic class named <em>ComponentGroup</em>. 
+        For example, the parameterized type <em>ComponentGroup</em>&lt;JButton&gt; 
+        would represent a group of <em>JButtons</em>, while <em>ComponentGroup</em>&lt;<em>JPanel</em>&gt; 
+        would represent a group of <em>JPanels</em>. The class will include methods 
+        that can be called to apply certain operations to all components in the 
+        group at once. For example, there will be a instance method of the form</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public void repaintAll() 
+{
+        .
+        . // Call the repaint() method of every component in the group.
+        .
+}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        The problem is that the <em>repaint</em>() method is defined in any <em>JComponent</em> 
+        object, but not for objects of arbitrary type. It wouldn't make sense 
+        to allow types such as <em>ComponentGroup</em>&lt;<em>String</em>&gt; 
+        or <em>ComponentGroup</em>&lt;<em>Integer</em>&gt;, since <em>Strings</em> 
+        and <em>Integers</em> don't have <em>repaint</em>() methods. We need some 
+        way to restrict the type parameter E in <em>ComponentGroup</em>&lt;E&gt; 
+        so that only <em>JComponent</em> and subclasses of <em>JComponent</em> 
+        are allowed as actual type parameters. We can do this by using the bounded 
+        type E extends <em>JComponent</em> instead of a plain E in the definition 
+        of the class: </p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public class ComponentGroup&lt;<font color="#FF0000">E extends JComponent</font>&gt; 
+{
+     private ArrayList&lt;E&gt; components; // For storing the components in this group.
+       
+     public void repaintAll() 
+     {
+        for ( JComponent c : components )
+           if (c != null)
+             c.repaint();
+     }
+     
+     public void setAllEnabled( boolean enable )
+     {
+        for ( JComponent c : components )
+           if (c != null)
+             c.setEnabled(enable);
+     }
+
+     public void add( E c )
+     { 
+          // Add a value c, of type E, to the group.
+          components.add(c);
+     }
+
+     .
+     .  // Additional methods and constructors
+     .
+}</pre></td>
+        </tr>
+      </table>
+      <p>The restriction &quot;extends <em>JComponent</em>&quot; on E makes it 
+        illegal to create the parameterized types <em>ComponentGroup</em>&lt;<em>String</em>&gt; 
+        and <em>ComponentGroup</em>&lt;<em>Integer</em>&gt;, since the actual 
+        type parameter that replaces E is required to be either <em>JComponent</em> 
+        itself or a subclass of <em>JComponent</em>. With this restriction, we 
+        know -- and, more important, the compiler knows -- that the objects in 
+        the group are of type <em>JComponent</em> and the operations c.repaint() 
+        and c.setEnabled() are defined for any c in the group.</p>
+      <p>In general, a bounded type parameter &quot;E extends SomeType&quot; means 
+        roughly &quot;a type, E, that is either equal to SomeType or is a subclass 
+        of SomeType&quot;, and the upshot is that any object of type E is also 
+        of type SomeType, and any operation that is defined for objects of type 
+        SomeType is defined for objects of type E. The type SomeType doesn't have 
+        to be the name of a class. It can be anything that represents an actual 
+        type. For example, it can be an interface or even a parameterized type.</p>
+      <p>Bounded types and wildcard types are clearly related. They are, however, 
+        used in very different ways. A bounded type can be used only as a formal 
+        type parameter in the definition of a generic method, class, or interface. 
+        A wildcard type is used most often to declare the type of a formal parameter 
+        in a method and cannot be used as a formal type parameter. One other difference, 
+        by the way, is that, in contrast to wildcard types, bounded type parameters 
+        can only use &quot;extends&quot;, never &quot;super&quot;.</p>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>

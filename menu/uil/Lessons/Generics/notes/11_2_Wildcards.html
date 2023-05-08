@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <td width="691" height="24" bgcolor="#000000" >
+        <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script>
+    </td>
+  </tr>
+  <tr>
+    <th width="691" class="main"> 11.2 Wildcard Types</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> 
+      <h2>Type Wildcards</h2>
+      <p>There is a limitation on the sort of generic classes and methods that 
+        we have looked at so far: The type parameter in our examples, usually 
+        named E, can be any type at all. This is OK in many cases, but it means 
+        that the only things that you can do with E are things that can be done 
+        with every type, and the only things that you can do with objects of type 
+        E are things that you can do with every object. With the techniques that 
+        we have covered so far, you can't, for example, write a generic method 
+        that compares objects with the <em>compareTo</em>() method, since that 
+        method is not defined for all objects. The <em>compareTo</em>() method 
+        is defined in the <em>Comparable</em> interface. What we need is a way 
+        of specifying that a generic class or method only applies to objects of 
+        type <em>Comparable</em> and not to arbitrary objects. With that restriction, 
+        we should be free to use <em>compareTo</em>() in the definition of the 
+        generic class or method.</p>
+      <p>There are two different but related syntaxes for putting restrictions 
+        on the types that are used in generic programming. One of these is bounded 
+        type parameters, which are used as formal type parameters in generic class 
+        and method definitions; a bounded type parameter would be used in place 
+        of the simple type parameter E in class GenericClass&lt;E&gt; ... or in 
+        public static &lt;E&gt; void genericMethod(.... The second syntax is wildcard 
+        types, which are used as type parameters in the declarations of variables 
+        and of formal method parameters; a wildcard type could be used in place 
+        of the type parameter <em>String</em> in the declaration statement List&lt;<em>String</em>&gt; 
+        list; or in the formal parameter list void max(Collection&lt;<em>String</em>&gt; 
+        c). We will look at wildcard types first, and we will return to the topic 
+        of bounded types later in this section.</p>
+      <p>Let's start with a simple example in which a wildcard type is useful. 
+        Suppose that <em>Shape</em> is a class that defines a method public void 
+        <em>draw</em>(), and suppose that <em>Shape</em> has subclasses such as 
+        <em>Rect</em> and Oval. Suppose that we want a method that can draw all 
+        the shapes in a collection of <em>Shapes</em>. We might try:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public static void drawAll(Collection&lt;Shape&gt; shapes)
+{
+    for ( Shape s : shapes )
+        s.draw();
+}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        This method works fine if we apply it to a variable of type <em>Collection</em>&lt;<em>Shape</em>&gt;, 
+        or <em>ArrayList</em>&lt;<em>Shape</em>&gt;, or any other collection class 
+        with type parameter <em>Shape</em>. Suppose, however, that you have list 
+        of <em>Rects</em> stored in a variable named rectangles of type <em>Collection</em>&lt;<em>Rect</em>&gt;. 
+        Since <em>Rects</em> are <em>Shapes</em>, you might expect to be able 
+        to call <em>drawAll</em>(rectangles). Unfortunately, this will not work; 
+        a collection of <em>Rects</em> is not considered to be a collection of 
+        <em>Shapes</em>! The variable rectangles cannot be assigned to the formal 
+        parameter shapes. The solution is to replace the type parameter <em>Shape</em> 
+        in the declaration of shapes with the wildcard type &quot;? extends Shape&quot;: 
+      </p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public static void drawAll(Collection&lt;<font color="#FF0000">? extends Shape</font>&gt; shapes) 
+{
+   for ( Shape s : shapes )
+      s.draw();
+}
+</pre></td>
+        </tr>
+      </table>
+      <p>The wildcard type &quot;? extends <em>Shape</em>&quot; means roughly 
+        &quot;any type that is either equal to <em>Shape</em> or that is a subclass 
+        of <em>Shape</em>&quot;. When the parameter shapes is declared to be of 
+        type <em>Collection</em>&lt;? extends <em>Shape</em>&gt;, it becomes possible 
+        to call the <em>drawAll</em> method with an actual parameter of type <em>Collection</em>&lt;<em>Rect</em>&gt; 
+        since <em>Rect</em> is a subclass of <em>Shape</em> and therefore matches 
+        the wildcard &quot;? extends <em>Shape</em>&quot;. We could also pass 
+        actual parameters to <em>drawAll</em> of type <em>ArrayList</em>&lt;<em>Rect</em>&gt; 
+        or <em>Set</em>&lt;<em>Oval</em>&gt; or <em>List</em>&lt;<em>Oval</em>&gt;. 
+        And we can still pass variables of type <em>Collection</em>&lt;<em>Shape</em>&gt; 
+        or <em>ArrayList</em>&lt;<em>Shape</em>&gt;, since the class <em>Shape</em> 
+        itself matches &quot;? extends Shape&quot;. We have greatly increased 
+        the usefulness of the method by using the wildcard type.</p>
+      </td>
+  </tr>
+</table>

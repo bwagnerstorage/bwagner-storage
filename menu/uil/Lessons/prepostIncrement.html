@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<h1 align="center">Pre and Post Increment</h1>
+<h3><strong>Problem 1</strong></h3>
+<table class="code" width="53%" border="0">
+  <tr>
+    <td><pre>int a = 5;
+int b = 0;
+        
+b = ++a + a++ + ++a + a++;
+System.out.println(a + " " + b);</pre></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table class="code" width="53%" border="0">
+  <tr> 
+    <td><pre>int a = 5;
+int b = 0;
+
+
+  <font color="#FF0000">   1     2     3     4</font>
+b = ++a + a++ + ++a + a++;
+System.out.println(a + " " + b);</pre></td>
+  </tr>
+</table>
+<p><strong>Execution Results</strong></p>
+<table class="code" width="53%" border="0">
+  <tr> 
+    <td><pre>int a = 5;
+int b = 0;
+
+
+  <font color="#FF0000">   1     2     3     4</font>
+<font color="#006600">     6     6     8     8</font>
+b = ++a + a++ + ++a + a++;
+System.out.println(a + " " + b);  <font color="#006600">// 9  28</font></pre></td>
+  </tr>
+</table>
+<p><font face="Courier New, Courier, mono"><strong>The output would be <font color="#FF0000">9 
+  28</font></strong></font></p>
+<p>The value of a is calculated by summing the total number of increments (both 
+  pre and post) and adding the sum to 5.</p>
+<p>The value of b is calculated as follows:</p>
+<p>1 : step &quot;<font color="#FF0000">1</font>&quot; variable a is incremented 
+  to 6 (pre-increment) and then a value of 6 is stored for future addition.<br>
+  2 : step &quot;<font color="#FF0000">2</font>&quot; a value of 6 is stored for 
+  future addition and then variable a is increment to 7 (post-increment).<br>
+  3 : step &quot;<font color="#FF0000">3</font>&quot; variable a is incremented 
+  to 8 (pre-increment) and then a value of 8 is stored for future addition.<br>
+  4 : step &quot;<font color="#FF0000">4</font>&quot; a value of 8 is stored for 
+  future addition and then variable a is increment to 9 (post-increment).<br>
+  5 : Addition is executed from left to right with the values 6 + 6 + 8 + 8 which 
+  equals <strong>28</strong>.</p>
+<h3>&nbsp;</h3>
+<h3>Problem 2</h3>
+<p>What is the output?</p>
+<table class="code" width="53%" border="0">
+  <tr> 
+    <td><pre>int a = 5;
+int b = 0;
+
+
+b = a++ + a++ + ++a;
+System.out.println(a + " " + b);</pre></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Answer = <font color="#FF0000"><strong>8 19 </strong></font></p>
+<p>&nbsp;</p>

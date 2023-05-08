@@ -1,0 +1,20 @@
+What is output by the code to the right?
+$
+int[] list = {12,6,5,-2,8,-3,2}; 
+int x = 0; 
+while(list[x] > 0) 
+   list[x++]=(int)Math.pow(list[6],2);
+for(int y : list) 
+   System.out.print(y + " ");
+$
+12 6 5 -2 8 -3 2
+$
+4 4 4 -2 8 -3 2
+$
+12 6 5 -2 8 -3 4
+$
+12 6 5 -2 8 -3 196
+$
+2 4 16 -2 8 -3 2
+$
+B

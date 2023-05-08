@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">  <tr> 
+    <th width="99%" class="main">6.4 Stack1</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Description</h2>
+      <p>Write a program that inputs a line of text and uses a stack to print 
+        the words within the line in reverse order. Use the String class's <strong>split</strong> 
+        method in your implementation.</p>
+      <h3>String split method</h3>
+      <p>A <em>token</em> is a substring of a string. The following example illustrates 
+        how the <strong>split</strong> method can be used to break up a string 
+        into its basic tokens: </p>
+      <table width="500" border="1" class="code">
+        <tr> 
+          <td> <pre>String sentence = &quot;this is a test&quot;;
+String[] result = sentence.split(&quot; &quot;);  <font color="#0000FF">// a space is used to determine the beginning and end of token</font></font><br>
+for (int x=0; x &lt; result.length; x++)  
+   System.out.println(result[x]);
+
+</pre></td>
+        </tr>
+      </table>
+      <p>prints the following output: </p>
+      <table width="500" border="1">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">this<br>is<br>a<br>test</font></pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+<h2>Sample Run</h2>
+      <table width="88%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">Enter a sentence -->
+I Pledge Allegiance to the Flag
+Flag the to Allegiance Pledge I
+
+Press any key to continue...</font></pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td class="main" colspan="2">&nbsp;</td>
+  </tr>
+</table>

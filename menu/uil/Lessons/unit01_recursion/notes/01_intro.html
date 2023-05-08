@@ -1,0 +1,71 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">Recursive Thinking</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+						<li>5.1.1 Identify a situation that requires the use of recursive thinking.</li>
+						<li>5.1.2 Identify recursive thinking in a specified problem solution.</li>
+						<li>D.4.1 Define the term recursion.</li>
+						<li>D.4.2 Describe the application of recursive algorithms.</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+<h1>Recursive Thinking</h1>
+<div id="ib">D.4.1 Define the term recursion.</div>
+<p>Recursive thinking is a different way of thinking about problems. Sometimes problems are too difficult or too complex to solve because they are too big. 
+With recursive thinking you take a large problem and continually break it into smaller versions of itself until you reach a smaller version that can be solved easily. 
+Then you build up to a solution to the entire problem by combining all of the smaller versions together.</p>
+ 
+<div id="csNote"><strong>Recursion</strong> is the process of breaking down a problem into smaller pieces which you either already know the answer to, 
+ or can solve by applying the same process to each piece, and then combining the results.</div>
+
+<p>A classic example of the recursive process is the Towers of Hanoi problem. Here is a link to a video that discusses this problem: <a style="color:#00f"; href="http://video.mit.edu/watch/blossoms-the-towers-of-hanoi-experiential-recursive-thinking-10237/" target="_blank">Towers of Hanoi</a>.</p>
+
+<p>To helps us better understand the recursive process we are going to look at three simple problems.</p>
+<h3>Enchanted Rock</h3>
+<p>Johnny's family takes a road trip to visit Enchanted Rock in the Texas Hill Country. When they arrive at their destination the family discovers that Enchanted Rock is a huge,
+   pink granite boulder that rises 425 feet above ground. The family decides to climb to the top. Upon seeing the huge rock Johnny's sister Suzy exclaims, "I can't climb that rock it is to big!".  
+   Johnny, a computer science student, decides to employ some recursive thinking. He says to Suzy, "Don't think about the huge rock, just take a single step." Suzy says, "OK", and cautiously takes a step.
+   Johnny, knowing that Suzy has reduced the size of the problem and is now one step closer to reaching her goal, asks Suzy to take another step. Suzy complies. Johnny repeats his request until Suzy reaches the top.
+   This is recursion. The big problem, climbing to the top of the rock, is divided into one step increments until the goal is achieved. The problem is solved when a single step
+   is no longer necessary. Recursion is a repetitive process. With the Enchanted Rock problem at any point along the path to the top the problem can be described as one step plus the remaining distance.</p>
+   <div align="center"><img src="images/enchantedRock.jpg"></div>
+<h3>Crush a Rock</h3>
+<p>Suppose you are building a fence in your backyard and there is a big rock in the fence's path. The rock is to big to move so you decide to remove the rock by hitting it with a sledge hammer
+   until the rock pieces are small enough to move. When you pound the rock with the hammer your problem, the big rock, is now a bunch of smaller problems.  Each of these smaller problems(rocks) may
+   be solved by applying the hammer to them. You stop applying the hammer when each sub-problem (rock) is small enough to move. The process of destroying the rock is done recursively. You
+   apply the hammer to each new smaller rock until thay are small enough to be moved. </p>
+   
+<div align="center"> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="277" height="260">
+          <param name="movie" value="/cs_apa/unit12_recursion/img/Recursion%20-%20Hammer.swf">
+    <param name="quality" value="high">
+    <embed src="applets/Hammer.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="277" height="260"></embed></object>
+</div>
+<h3>Dividing a Line</h3>
+<p>Suppose you want to divide a line into 16 equal pieces using a recursive process.</p>
+<div align="center"><img src="images/line01.jpg"></div>
+<p>First you divide the line in half.</p>
+<div align="center"><img src="images/line02.jpg"></div>
+<p>The problem "divide the line into 16 equal pieces" has been transformed into two smaller problems: "divide each of two lines into 8 equal pieces.
+To solve the smaller problems apply the same process to them.</p>
+
+<p>The two halves of the original line are divided into two, which results in four lines:</p>
+<div align="center"><img src="images/line04.jpg"></div>
+<p>You don't have the required 16 equal divisions, so the process is applied to each of the quarter-sized lines:</p>
+<div align="center"><img src="images/line08.jpg"></div>
+<p>Now there are 8 equal size pieces. Apply the process to each of those pieces to get</p>
+<div align="center"><img src="images/line16.jpg"></div>
+<p>The process is completed when there are 16 pieces.</p>
+
+
+<br>
+</div>	
+

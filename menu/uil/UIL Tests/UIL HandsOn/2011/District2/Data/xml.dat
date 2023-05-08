@@ -1,0 +1,44 @@
+5
+4
+<student>
+<name>
+John Doe
+</student>
+2
+<gpa>
+</gpa>
+8
+<address>
+<street>
+123 Any Street
+</street>
+<city>
+Any Town
+</city>
+</address>
+8
+<address>
+<street>
+123 Any Street
+</street>
+<city>
+Any Town
+</address>
+</city>
+16
+<book>
+<title>
+Alice's Adventures in Wonderland
+</title>
+<author>
+<first_name>
+Lewis
+</first_name>
+<last_name>
+Carroll
+</last_name>
+</author>
+<publisher>
+Tribeca Books
+</publisher>
+</book>

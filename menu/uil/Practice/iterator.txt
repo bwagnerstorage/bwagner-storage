@@ -1,0 +1,219 @@
+Which of the following best describes
+the purpose of an Iterator object?
+$
+
+$
+Provide a way to insert elements into a data structure.
+$
+Provide access to the private instance variables of
+a data structure and a way to change their capacity.
+$
+Provide a standard way to access the elements of a data
+structure one element at a time.
+$
+Provide a way for data structures to hold
+any type of object.
+$
+Provide a way to sort all the elements
+of a data structure.
+$
+C
+$
+Which of the following correctly
+declares and initializes an iterator
+for list that can be used to both to
+add and remove items from the list?
+$
+LinkedList<String> list =
+                     new LinkedList<String>();
+
+// code to initialize list not shown
+
+$
+ListIterator<String> iter =
+          list.iterator();
+$
+ListIterator<String> iter =
+          list.listIterator();
+$
+Iterator<String> iter =
+          list.listIterator();
+$
+Either B or C
+$
+A, B, or C
+$
+D
+$
+What is output by the code
+to the right?
+$
+int[] stuff = {1, 2, 3, 4, 5, 6};
+Iterator<Integer> it;
+it = stuff.iterator();
+it.next();
+System.out.println( it.next() );
+$
+1
+$
+2
+$
+3
+$
+4
+$
+There is no output due 
+to a syntax error.
+$
+C
+$
+What replaces <*1> and <*2> in the
+code to the right so that it compiles
+with no syntax errors?
+
+       <*1>             <*2>
+
+$
+public void check(ArrayList<String>
+  <*l><String> it;
+  it= arr.<*2> () ;
+  String temp;
+  while( it.hasNext() ){
+    temp = it.next();
+    if( temp.length() > 5 )
+    it.set( temp.toUpperCase() );
+  }
+}
+$
+  ListIterator     iterator
+$
+  iterator         iterator
+$
+  ListIterator     listIterator
+$
+  Iterator         listIterator
+$
+None of these are correct.
+$
+C
+$
+What is output by the code
+to the right?
+$
+int[] sample = {2, 4, 6};
+Iterator<Integer> it = sample.iterator();
+it.next();
+it.next();
+System.out.println( it.next() );
+$
+2
+$
+4
+$
+6
+$
+There is no output due to 
+a syntax error.
+$
+There is no output due to a
+NoSuchElementException.
+$
+D
+$
+What is output by the code
+to the right?
+$
+ArrayList<Integer> nums;
+nums = new ArrayList<Integer>();
+
+for(int i = 0; i < 10; i++)
+  nums.add(i);
+
+Iterator<Integer> it = nums.iterator();
+int count = 0;
+while( it.hasNext() )
+  count++;
+
+System.out.println( count );
+$
+0
+$
+10
+$
+45
+$
+There is no output due 
+to a syntax error.
+$
+There is no output due to
+an infinite loop that occurs
+when the code is run.
+$
+E
+$
+What is output by the code to
+the right when the method call
+build(5) is made?
+$
+public void show(LinkedList<Integer> list){
+  Iterator<Integer> it = list.iterator();
+  while( it.hasNext() )
+    System.out.print( it.next() );
+}
+
+public void build(int n){
+  LinkedList<Integer> list = new
+                      LinkedList<Integer>();
+
+  for(int i = 0; i < n; i++)
+    list.add( i );
+
+  show(list);
+$
+543210
+$
+43210
+$
+01234
+$
+1234
+$
+4321
+$
+C
+$
+Which of these loops removes all
+copies of the string "TEST" from
+the list myList?
+$
+List<String> myList;
+
+// code to construct and initialize myList
+// not shown
+ListIterator<String> iter =
+                     myList.listIterator();
+$
+while (iter.next()) {
+  if (iter.equals("TEST"))
+  iter.remove();
+}
+$
+while (iter.hasNext()) {
+  String s = iter.next();
+  if (s.equals("TEST")) {
+    iter.previous();
+    iter.remove();
+  }
+}
+$
+while (iter.hasNext()) {
+  String s = iter.next();
+  if (s.equals("TEST"))
+  iter.remove();
+}
+$
+Either A or C
+$
+Either B or C
+$
+E

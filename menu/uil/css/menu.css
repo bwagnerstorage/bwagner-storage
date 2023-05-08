@@ -1,0 +1,50 @@
+/* MyStyle - root level; text properties for states: normal, click */
+.TM2i0 {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+/* MyStyle - root level; box properties for states: normal */
+.TM2o0 {
+	background: #000000;
+	border: 1px solid #575E6B;
+	padding: 4px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+/* MyStyle - root level; text properties for states: hover */
+.TM2i1 {
+	font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;;
+	color: #000000;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+/* MyStyle - root level; box properties for states: hover */
+.TM2o1 {
+	background: #FFFF99;
+	border: 1px solid #E8DCC1;
+	padding: 4px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+/* MyStyle - root level; box properties for states: click */
+.TM2o2 {
+	background: #EAEAEA;
+	border: 1px solid #E3E0DD;
+	padding: 4px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+

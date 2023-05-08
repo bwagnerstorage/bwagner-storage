@@ -1,0 +1,211 @@
+How many lines of output does the 
+code to the right produce?
+$
+System.out.println("ABBA\nStar");
+System.out.println("Roll\nBe");
+$
+5
+$
+4
+$
+6
+$
+1
+$
+2
+$
+B
+$
+What is output by the code to the right?
+$
+String name = "Alan\nKay";
+System.out.print( name );
+$
+AlanKay
+$
+AlannKay
+$
+AlanKAY
+$
+Alan
+Kay
+$
+Alan Kay
+$
+D
+$
+What is output by the code to the right?
+$
+String prob = "10\\\\5=";
+int ans = 2;
+System.out.print( prob + ans );
+$
+105=2
+$
+10\\5=2
+$
+10\\\5=2
+$
+10\5=2
+$
+10\\\\5=2
+$
+B
+$
+What is output by the code to the right?
+$
+System.out.print("A \"GREAT\" film");
+$
+A
+GREAT
+FILM
+$
+A \
+$
+A "GREAT" film
+$
+A \"GREAT\" film
+$
+A GREAT FILM
+$
+C
+$
+What is output by the code to the right?
+$
+System.out.print("\\word");
+$
+word
+$
+"word"
+$
+\\word
+$
+\word
+$
+\ord
+$
+D
+$
+What is output by the code to the right?
+$
+System.out.print("\"hard class");
+$
+"hard class"
+$
+hard class
+$
+"hard class
+$
+"hard" class
+$
+hard class
+$
+C
+$
+What is output by the code to the right?
+$
+System.out.print("\\Easy");
+$
+\Easy
+$
+"easy"
+$
+Easy
+$
+"Easy
+$
+\\Easy
+$
+A
+$
+What is output by the code to the right?
+$
+String ch = "ed\nlaz";
+System.out.print( ch );
+$
+ed
+laz
+$
+ed laz
+$
+ed
+$
+"ed\nlaz"
+$
+ed\nlaz
+$
+A
+$
+What is output by the code to the right?
+$
+System.out.print( "line\n" );
+System.out.println( "line" );
+System.out.print( "line" );
+$
+linelineline
+$
+lineline
+line
+$
+line
+lineline
+$
+line/nlineline
+$
+line
+line
+line
+$
+E
+$
+What is output by the code to the right?
+$
+int x = 2, t = 3, y = 0; 
+out.println("x\t\\n*y");
+$
+x     \n*y
+$
+xt\n*y
+$
+x     \\n*y
+$
+x\t\\n*t
+$
+x     \
+*y
+$
+A
+$
+What is output by the code to the right?
+$
+System.out.print("2345\r890");
+$
+8905
+$
+2345
+$
+\r890
+$
+2340
+$
+There is no output due to
+a syntax error.
+$
+A
+$
+What is output by the code to the right?
+$
+String d = "5\\\\6";
+System.out.print(d);
+$
+5\\\\6
+$
+5\6
+$
+5\\6
+$
+56
+$
+0
+$
+C

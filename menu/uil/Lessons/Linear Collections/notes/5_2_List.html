@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 6.1 Linear Collection: List</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"><strong>Linear Collection: </strong>List</p> 
+      <p><strong>Interfaces: </strong>List<strong>, </strong>Queue 
+      <p><strong>Implementing Classes: </strong>ArrayList, LinkedList</p>
+      <hr>
+      <p>A <strong>linear collection</strong> is a collection that is ordered 
+        by position. Each item except the first has a unique predecessor, and 
+        each item except the last has a unique successor.</p>
+      <p><img src="http://bwagner.org/menu/uil/Lessons/Linear Collections/img/linearCollection.gif" width="400" height="100"></p>
+      <p>You are already familiar with two linear collections: array and <em>ArrayList</em>. 
+        In this unit, we introduce another linear collection called a <strong>LinkedList</strong>.</p>
+      <p>Both the <em>ArrayList</em> and the <em>LinkedList</em> utilize the <strong>List</strong> 
+        interface that extends the <em>Collection</em> interface. The <em>List 
+        </em>interface adds position-oriented operations, including the ability 
+        to insert an element, get an element, as well as remove or change an element. 
+      </p>
+      <h2>List Interface (AP Subset)</h2>
+      <h3>interface java.util.List&lt;E&gt;</h3>
+      <table class="notes" width="100%" border="1">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="50%"><font color="#000000" face="Courier New, Courier, mono">int 
+            <strong>size</strong>()</font></td>
+          <td width="50%">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">appends obj to end of list; returns true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">void <strong>add</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">inserts obj at position index</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>get</strong>(int 
+            index)</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>set</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">replaces the element at position index with 
+            obj; returns the element formerly at the specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>(int 
+            index)</font></td>
+          <td><font color="#000000">removes element from position index, moving 
+            elements at position index + 1 and higher to the left (subtracts from 
+            their indices) and adjusts size; returns the element formerly at the 
+            specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">Iterator 
+            &lt;E&gt; <strong>iterator</strong>()</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">ListIterator 
+            &lt;E&gt; <strong>listIterator</strong>()</font></td>
+          <td bgcolor="#FFFFE8">&nbsp;</td>
+        </tr>
+      </table>
+      <p>In addition to the methods introduced through the <em>List</em> interface 
+        the <em>LinkedList</em> class also implements the following methods that 
+        provide additional operations for working with the beginning and end of 
+        a list.</p>
+      <h2>Additonal LinkedList methods</h2>
+      <table width="40%" border="1" class="notes">
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">void <strong>addFirst</strong>( 
+            E obj)</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td height="25" bgcolor="#FFFFE8"><font color="#000000">void <strong>addLast</strong>(E 
+            obj)</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>getFirst</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>getLast</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>removeFirst</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>removeLast</strong>()</font></td>
+        </tr>
+      </table>
+      <p>Since both the <em>ArrayList</em> and <em>LinkedList</em> implement the 
+        <em>List</em> interface their behavior is similar.</p>
+      <h3><strong>Creating a Linked List Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>LinkedList &lt;Integer&gt; list = new LinkedList &lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <p><strong>or</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List &lt;Integer&gt; list = new LinkedList &lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <br> <h3>Adding an Object to a LinkedList</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   list.add(new Integer(i));<br>}</pre></td>
+        </tr>
+      </table>
+      <p><strong>or</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   list.add(i);  <font color="#009933"> // autoboxing</font><br>}</pre></td>
+        </tr>
+      </table>
+      <p>*For more examples refer to the samples section.</p>
+      <h2><br>
+        Iterators</h2>
+      <p>Java provides two methods or techniques for traversing the contents of 
+        a list. The first approach is to use methods from the <em>List</em> interface 
+        such as <em>size</em> and <em>get</em>. The second and more functional 
+        approach is to use a mechanism called an iterator.</p>
+      <p>An <strong>iterator</strong> is an object associated with a collection 
+        that makes it possible to traverse the collection (that is, to visit each 
+        of the items in the collection in turn). To provide consistence between 
+        all of the collections in the Java Collections Framework (JCF), code written 
+        using iterators will work for any type of collection (ArrayList, LinkedList, 
+        TreeSet, and HashSet)..</p>
+      <p>An iterator's current position is always in one of three places:</p>
+      <ol>
+        <li>Just before the first item</li>
+        <li>Between two adjacent items</li>
+        <li>Just after the last item</li>
+      </ol>
+      <p>Initially, when an iterator is first instantiated, the position is immediately 
+        before the first item in the list. From this position the user can either 
+        navigate to another position or modify the list in some way. For lists, 
+        java.util provides two types of iterators, a <strong>simple iterator</strong> 
+        and a <strong>list iterator</strong>. </p>
+      <h3>Simple Iterator</h3>
+      <p>In Java, a simple iterator is an object that responds to messages specified 
+        in the interface java.util.Iterator.</p>
+      <p><strong>java.util.Iterator&lt;E&gt;</strong></p>
+      <table width="80%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>hasNext()</strong> </font></td>
+          <td width="69%"><font color="#000000">returns true if there are any items following 
+            the current position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>next()</strong></font></td>
+          <td><font color="#000000"><strong>Precondition</strong>: <em>hasNext</em> 
+            returns true.<br>
+            Throws a <em>NoSuchElementException</em> if <em>hasNext</em> returns 
+            false<br>
+            Returns the next item and advances the position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">void <strong>remove()</strong></font></td>
+          <td><p><font color="#000000"><strong>Precondition</strong>: next has 
+              recently been called.<br>
+              Throws an <em>IllegalStateException</em> if the next method has 
+              not yet been called or if the remove method has already been called 
+              after the last call to the <em>next</em> method</font><br>
+              Removes the item returned by the most recent call of <em>next</em></p>
+            </td>
+        </tr>
+      </table>
+      <p>You create an iterator object by sending the message <strong>iterator</strong> 
+        to list as show in the following code segment:</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List &lt;String&gt; myList = new LinkedList &lt;String&gt; ();<br>
+...<br>
+Iterator&lt;String&gt; iter = myList.iterator();   <font color="#006600">// get iterator from list</font></pre></td>
+        </tr>
+      </table>
+      <p>*The method <em>iterator</em> is provided through the <em>List</em> interface.</p>
+      <p>Once an iterator object has been retrieved from a list the methods <strong>hasNext</strong> 
+        and <strong>next</strong> are used for navigating the list. The method 
+        <strong>remove</strong> will mutate the underlying list.</p>
+      <p>The code segment below demonstrates a traversal of a list to display 
+        its contents using an iterator:</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>while(iter.hasNext())
+{
+   System.out.println(iter.next());
+}</pre></td>
+        </tr>
+      </table>
+      <p>The <strong>enhanced for loop</strong> introduced with Java 5 is simply 
+        a condensed version of an iterator block. Refer to the samples below.</p>
+      <p><strong>Iterator version</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>
+Iterator&lt;String&gt; iter = myList.iterator();
+while(iter.hasNext())
+{
+   String str = iter.next();  <font color="#006600">// casting not necessary because of generics</font>
+   <font color="#006600">// Process element</font>
+}</pre></td>
+        </tr>
+      </table>
+      <p><strong>Enhanced for loop version</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(String str : myList)
+{
+   <font color="#006600">// Process element</font>
+}</pre></td>
+        </tr>
+      </table>
+      <br>
+      <p>Note that simple iterators are not restricted to lists but can be used 
+        with any other Java collections, although the method <em>remove</em> might 
+        not be supported by some implementations.</p>
+      <h3>ListIterator</h3>
+      <p>The <strong>ListIterator</strong> interface extends the <em>Iterator</em> 
+        interface to support adding or changing elements in the underlying collection. 
+        The java.util.ListIterator&lt;E&gt; provides two-way traversal of a list 
+        (traverse list in reverse order) but this behavior is not currently part 
+        of the AP Subset.</p>
+      <p><strong>java.util.ListIterator&lt;E&gt; extends java.util.Iterator&lt;E&gt; 
+        (AP subset)</strong></p>
+      <table width="80%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">void 
+            <strong>add</strong>(E obj)</font></td>
+          <td width="69%"><font color="#000000">adds obj before the element that 
+            will by returned by next</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">void <strong>set</strong>(E 
+            obj) </font></td>
+          <td>replaces the last element returned by next with obj</td>
+        </tr>
+      </table>
+      <p>The following source code demonstrates the use of a <em>ListIterator</em>:</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>ListIterator&lt;String&gt; iterator = list.listIterator();<br>...
+while (iterator.hasNext()) 
+{<br>    String element = iterator.next();<br>    if(element.equals(&quot;Elizabeth Smith&quot;))
+        element.set(&quot;Elizabeth Bailey&quot;);  <font color="#006600">// modify element</font><br>}</pre></td>
+        </tr>
+      </table>
+      <h2><br>
+        Comparison of ArrayList and LinkedList classes</h2>
+      <p>As stated previously there are two general-purpose <em>List</em> implementations 
+        in the Collections Framework: <strong>ArrayList</strong> and <strong>LinkedList</strong>. 
+        Which of the two <em>List</em> implementations you use depends on your 
+        specific needs. If you need to support random access, without inserting 
+        or removing elements from any place other than the end, then <em>ArrayList</em> 
+        offers the optimal collection. If, however, you need to frequently add 
+        and remove elements from the middle of the list and only access the list 
+        elements sequentially, then <em>LinkedList</em> offers the better implementation.</p>
+      <h2>&nbsp;</h2>
+      </td>
+  </tr>
+</table>

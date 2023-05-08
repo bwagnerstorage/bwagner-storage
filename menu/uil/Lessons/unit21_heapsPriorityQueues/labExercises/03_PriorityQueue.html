@@ -1,0 +1,104 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">Priority Queue</div>
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/HeapPriorityQueue.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >GroceryList</a></h1>
+
+<div id="csContent">
+      <h2>Description</h2>
+      <p>A priority queue is an abstract data type that supports the following 
+        operations:</p>
+      <ul id="csList">
+        <li><p>add an item to the queue with an associated priority</p></li>
+        <li><p>remove the item from the queue that has the highest priority</p></li>
+        <li><p>peek at the item with highest priority without removing it (optional)</p></li>
+      </ul>
+      <p>There are many ways to implement a priority queue. One way is to keep 
+        a list of items in a linked list and search through the list for the highest 
+        priority item. This implementation takes O(1) time to insert an element, 
+        and O(n) time to perform the search for the highest priority item. There 
+        are many more efficient implementations available for implementing a priority 
+        queue including using a heap. With a heap both the process of adding an 
+        item to the queue and removing the highest priority item take O(log n).</p>
+      <h2>Directions</h2>
+      <p>Implement a <strong>HeapPriorityQueue</strong> class that implements 
+        the following interface.</p>
+      <div id="csCode"><pre>public interface Queue
+{
+    <font color="#009900">// adds item to queue and assigns priority</font>
+<font color="#009900">       // the smaller the priority number the higher the priority.
+       // (1 = highest priority, 2 = next highest, ...)</font>
+    public void add(Object obj, int priority);
+    
+    <font color="#009900">// view item with highest priority</font>
+    public Object peek();
+    
+    <font color="#009900">// remove item with highest priority</font>
+    public Object remove();
+    
+    <font color="#009900">// returns number of items in queue</font>
+    public int size();
+    
+  <font color="#009900">    // returns true if queue is empty;
+        // otherwise returns false</font>
+    public boolean isEmpty();
+    
+}</pre></div>
+      <p>Items should be added to the heap using the following class:</p>
+      <div id="csCode"><pre>public class HeapNode
+{
+   <font color="#009900">// instance variables</font>
+   private Object data;
+   private int priority;
+
+   <font color="#009900">// constructor</font>
+   public HeapNode(Object d, int p)
+   {
+      data = d;
+      priority = p;
+   }
+   
+   <font color="#009900">// accessor methods</font>
+   public Object getData()
+   {
+      return data;
+   }
+   
+   public int getPriority()
+   {
+     return priority;
+   }
+   
+   <font color="#009900">// mutator methods</font>
+   public void setData(Object d)
+   {
+      data = d;
+   }
+   
+   public void setPriority(int p)
+   {
+      priority = p;
+   }
+}</pre></div>
+
+      <h2>&nbsp;</h2>
+      <p></p>
+      <h2>Sample Run</h2>
+      <div id="csSampleRun">
+<pre>
+Test peek
+---------
+Tami
+
+
+Test remove
+-----------
+Tami
+Kendall
+Bill
+Mark
+Jamie
+Sarah
+</pre>
+</div>
+<br>

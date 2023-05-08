@@ -1,0 +1,2351 @@
+What replaces <*1> in the code to
+the right to make that block of code
+the default constructor for the 
+Structure class?
+$
+public class Node {
+  public Object data;
+  public Node next;
+}
+
+public class Structure {
+  private Node start;
+
+  public <*1> {
+    start = new Node();
+  }
+
+  public void add (Object obj) {
+    Node temp = start;
+    while( temp. next != null)
+      temp = temp.next;
+    temp.next = new Node();
+    temp.next.data = obj;
+  }
+
+  public Object get(int pos) {
+    Node temp = start.next;
+    for(int i = 0; i < pos; i++)
+       temp = temp.next;
+    return temp. data;
+  }
+
+  public void remove (int pos) {
+    Node temp = start;
+    for(int i = 0; i < pos; i++)
+      temp = temp.next;
+    temp.next = temp.next.next;
+  }
+}
+$
+Structure ()
+$
+new Structure ()
+$
+()
+$
+Structure
+$
+void Structure ()
+$
+A
+$
+Assume <*1> is filled in correctly.
+
+What is output by the following client code?
+
+Structure s = new Structure();
+s.add("A") ;
+System.out.println( s.get(O) );
+$
+public class Node {
+  public Object data;
+  public Node next;
+}
+
+public class Structure {
+  private Node start;
+
+  public <*1> {
+    start = new Node();
+  }
+
+  public void add (Object obj) {
+    Node temp = start;
+    while( temp. next != null)
+      temp = temp.next;
+    temp.next = new Node();
+    temp.next.data = obj;
+  }
+
+  public Object get(int pos) {
+    Node temp = start.next;
+    for(int i = 0; i < pos; i++)
+       temp = temp.next;
+    return temp. data;
+  }
+
+  public void remove (int pos) {
+    Node temp = start;
+    for(int i = 0; i < pos; i++)
+      temp = temp.next;
+    temp.next = temp.next.next;
+  }
+}
+$
+A
+$
+null
+$
+start
+$
+temp
+$
+There is no output due to a
+NullPointerException.
+$
+A
+$
+What type of data structure do the Node
+and Structure classes implement?
+$
+public class Node {
+  public Object data;
+  public Node next;
+}
+
+public class Structure {
+  private Node start;
+
+  public <*1> {
+    start = new Node();
+  }
+
+  public void add (Object obj) {
+    Node temp = start;
+    while( temp. next != null)
+      temp = temp.next;
+    temp.next = new Node();
+    temp.next.data = obj;
+  }
+
+  public Object get(int pos) {
+    Node temp = start.next;
+    for(int i = 0; i < pos; i++)
+       temp = temp.next;
+    return temp. data;
+  }
+
+  public void remove (int pos) {
+    Node temp = start;
+    for(int i = 0; i < pos; i++)
+      temp = temp.next;
+    temp.next = temp.next.next;
+  }
+}
+$
+A linked list
+$
+A binary tree
+$
+A min heap
+$
+A hash table
+$
+A max heap
+$
+A
+$
+What is output by the following 
+client code?
+
+Structure sl = new Structure();
+System.out.print( sl.isEmpty() );
+$
+public class Structure {
+  public static final int CAP = 10;
+
+  private Object[] con;
+  private int f;
+  private int b;
+  private int size;
+
+  public Structure() {
+    con = new Object[CAP];
+    b = -1;
+  }
+
+  public void add (Object obj) {
+    size++;
+    if( size == con. length )
+      resize();
+    b = (b + 1) % con.length;
+    con[b] = obj;
+  }
+
+  public Object get() {
+    return con[f];
+  }
+
+  public Object remove() {
+    size--;
+    Object result = con[f];
+    f = (f + 1) % con.length;
+    return result;
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  private void resize() {
+    Object[] temp = new Object[size * 2];
+    int org = f;
+    for(int i = 0; i < size; i++) {
+      temp[i] = con[org];
+      org = (org + 1) % con.length;
+    }
+    f = 0;
+    b = size - 1;
+    con = temp;
+  }
+}
+$
+false
+$
+true
+$
+0
+$
+1
+$
+The output cannot be determined 
+until runtime.
+$
+B
+$
+What is output by the following 
+client code?
+
+Structure s2 = new Structure();
+s2.add(2);
+s2.add(7);
+s2.add(5);
+while ( !s2.isEmpty() )
+  System.out.print( s2.remove() + " " );
+$
+public class Structure {
+  public static final int CAP = 10;
+
+  private Object[] con;
+  private int f;
+  private int b;
+  private int size;
+
+  public Structure() {
+    con = new Object[CAP];
+    b = -1;
+  }
+
+  public void add (Object obj) {
+    size++;
+    if( size == con. length )
+      resize();
+    b = (b + 1) % con.length;
+    con[b] = obj;
+  }
+
+  public Object get() {
+    return con[f];
+  }
+
+  public Object remove() {
+    size--;
+    Object result = con[f];
+    f = (f + 1) % con.length;
+    return result;
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  private void resize() {
+    Object[] temp = new Object[size * 2];
+    int org = f;
+    for(int i = 0; i < size; i++) {
+      temp[i] = con[org];
+      org = (org + 1) % con.length;
+    }
+    f = 0;
+    b = size - 1;
+    con = temp;
+  }
+}
+$
+2 5 7
+$
+7 5 2
+$
+2 7 5
+$
+5 7 2
+$
+7 2 5
+$
+C
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Structure {
+  public static final int CAP = 10;
+
+  private Object[] con;
+  private int f;
+  private int b;
+  private int size;
+
+  public Structure() {
+    con = new Object[CAP];
+    b = -1;
+  }
+
+  public void add (Object obj) {
+    size++;
+    if( size == con. length )
+      resize();
+    b = (b + 1) % con.length;
+    con[b] = obj;
+  }
+
+  public Object get() {
+    return con[f];
+  }
+
+  public Object remove() {
+    size--;
+    Object result = con[f];
+    f = (f + 1) % con.length;
+    return result;
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  private void resize() {
+    Object[] temp = new Object[size * 2];
+    int org = f;
+    for(int i = 0; i < size; i++) {
+      temp[i] = con[org];
+      org = (org + 1) % con.length;
+    }
+    f = 0;
+    b = size - 1;
+    con = temp;
+  }
+}
+$
+A list
+$
+A queue
+$
+A stack
+$
+A max heap
+$
+A priority queue
+$
+B
+$
+What is output by the client code
+to the right?
+$
+public class Structure<E>{
+  
+  LinkedList<E> con;
+
+  public Structure(){
+    con = new LinkedList<E>();
+  }
+
+  public void add(E obj){
+    con.addFirst(obj);
+  }
+
+  public E access(){
+    return con.getFirst();
+  }
+
+  public E remove(){
+    return con.removeFirst();
+  }
+
+  public boolean isEmpty(){
+    return con.size() == 0;
+  }
+}
+
+// client code
+Structure<Character> st;
+st = new Structure<Character>();
+String cartoon = "smurf";
+
+for(int i = 0; i < cartoon.length(); i++)
+st.add( cartoon.charAt(i) );
+
+while( !st.isEmpty() )
+System.out.print( st.remove() );
+$
+frums
+$
+fmrsu
+$
+usrmf
+$
+fffff
+$
+smurf
+$
+A
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Structure<E>{
+  
+  LinkedList<E> con;
+
+  public Structure(){
+    con = new LinkedList<E>();
+  }
+
+  public void add(E obj){
+    con.addFirst(obj);
+  }
+
+  public E access(){
+    return con.getFirst();
+  }
+
+  public E remove(){
+    return con.removeFirst();
+  }
+
+  public boolean isEmpty(){
+    return con.size() == 0;
+  }
+}
+
+// client code
+Structure<Character> st;
+st = new Structure<Character>();
+String cartoon = "smurf";
+
+for(int i = 0; i < cartoon.length(); i++)
+st.add( cartoon.charAt(i) );
+
+while( !st.isEmpty() )
+System.out.print( st.remove() );
+$
+A binary search tree
+$
+A stack
+$
+A priority queue
+$
+A queue
+$
+A linked list
+$
+B
+$
+What replaces <*1> in the code
+to the right to allocate a new
+array of the proper type with
+cap elements?
+$
+public class Structure<E>{
+
+  private int size;
+  private E[] con;
+
+  public Structure(){ con = getCon(10); }
+
+  public void add(E obj){
+    if( size == con.length )
+    con = getCon( size * 2 );
+    con[size++] = obj;
+  }
+
+  public E get(int pos){
+    return con[pos];
+  }
+
+  public void remove(int pos){
+    size--;
+    for(int i = pos; i < size; i++)
+      con[i] = con[i + 1];
+  }
+
+  public int size(){ return size; }
+
+  private E[] getCon(int cap){
+    E[] temp = <*1>;
+    for(int i = 0; i < size; i++)
+      temp[i] = con[i];
+    return temp;
+  }
+}
+$
+new E
+$
+(E[])(new Object[cap])
+$
+E[cap]
+$
+(E)(new Object[])
+$
+new E[cap]
+$
+B
+$
+Assume <*1> is filled in correctly.
+
+What type of data structure does 
+the Structure class implement?
+$
+public class Structure<E>{
+
+  private int size;
+  private E[] con;
+
+  public Structure(){ con = getCon(10); }
+
+  public void add(E obj){
+    if( size == con.length )
+    con = getCon( size * 2 );
+    con[size++] = obj;
+  }
+
+  public E get(int pos){
+    return con[pos];
+  }
+
+  public void remove(int pos){
+    size--;
+    for(int i = pos; i < size; i++)
+      con[i] = con[i + 1];
+  }
+
+  public int size(){ return size; }
+
+  private E[] getCon(int cap){
+    E[] temp = <*1>;
+    for(int i = 0; i < size; i++)
+      temp[i] = con[i];
+    return temp;
+  }
+}
+$
+A list
+$
+A stack
+$
+A queue
+$
+A binary search tree
+$
+A hash table
+$
+A
+$
+Consider the Structure class to 
+the right. What is output by the
+following client code?
+
+Structure s = new Structure();
+s.add("dog");
+s.add("dad");
+s.add("cab");
+s.add("add");
+s.add("dad");
+s.showAll();
+$
+public class Structure{
+
+  private LinkedList[] con;
+
+  public Structure(){
+    con = new LinkedList[100];
+    for(int i = 0; i < con.length; i++)
+      con[i] = new LinkedList();
+  }
+
+  public void add(String obj){
+    int val = getValue(obj);
+    if( !con[val].contains(obj) )
+    con[val].add(obj);
+  }
+
+  public boolean isPresent(String obj){
+    int val = getValue(obj);
+    return con[val].contains(obj);
+  }
+
+  public boolean remove(String obj){
+    int val = getValue(obj);
+    return con[val].remove(obj);
+  }
+
+  public void showAll(){
+    for( LinkedList<String> i : con )
+    for( String st : i )
+      System.out.print( st + " " );
+  }
+
+  private int getValue(String obj){
+    int val = 0;
+    obj = obj.toLowerCase();
+    for(int i = 0; i < obj.length(); i++){
+      char ch = obj.charAt(i);
+      if( Character.isLetter( ch ) )
+        val += ch - 'a';
+    }
+    return val % con.length;
+  }
+}
+$
+dog dad cab add dad
+$
+dog dad cab
+$
+add cab dad dog
+$
+cab add dad dog
+$
+cab dad add dog
+$
+E
+$
+What type of data structure does
+the Structure class implement
+$
+public class Structure{
+
+  private LinkedList[] con;
+
+  public Structure(){
+    con = new LinkedList[100];
+    for(int i = 0; i < con.length; i++)
+      con[i] = new LinkedList();
+  }
+
+  public void add(String obj){
+    int val = getValue(obj);
+    if( !con[val].contains(obj) )
+    con[val].add(obj);
+  }
+
+  public boolean isPresent(String obj){
+    int val = getValue(obj);
+    return con[val].contains(obj);
+  }
+
+  public boolean remove(String obj){
+    int val = getValue(obj);
+    return con[val].remove(obj);
+  }
+
+  public void showAll(){
+    for( LinkedList<String> i : con )
+    for( String st : i )
+      System.out.print( st + " " );
+  }
+
+  private int getValue(String obj){
+    int val = 0;
+    obj = obj.toLowerCase();
+    for(int i = 0; i < obj.length(); i++){
+      char ch = obj.charAt(i);
+      if( Character.isLetter( ch ) )
+        val += ch - 'a';
+    }
+    return val % con.length;
+  }
+}
+$
+A binary search tree
+$
+A hash table
+$
+A stack
+$
+A heap
+$
+A queue
+$
+B
+$
+What replaces <*1> in the code to
+the right to decrement the value
+stored inside the variable p?
+$
+public class Structure{
+
+  private ArrayList<Integer> ks;
+  private ArrayList<Object> vs;
+  
+  public Structure(){
+    ks = new ArrayList<Integer>();
+    vs = new ArrayList<Object>();
+  }
+
+  public void add(int k, Object v){
+    int p = ks.size();
+    while(p > 0 && k <= ks.get(p - 1) )
+      <*1>;
+    ks.add(p, k);
+    vs.add(p, v);
+  }
+
+  public boolean isEmpty(){
+    return ks.size() == 0;
+  }
+
+  public Object access(){
+    return vs.get( ks.size() - 1 );
+  }
+
+  public Object remove(){
+    ks.remove(ks.size() - 1);
+    return vs.remove( vs.size() - 1 );
+  }
+}
+
+//////////////////////////////////////////
+// client code
+
+Structure str = new Structure();
+
+str.add(10, "GG");
+str.add(12, "MM");
+str.add(12, "GG");
+str.add(5, "UU");
+
+System.out.print( str.access() );
+$
+p -= 1
+$
+p *= -1
+$
+p >> 2
+$
+p << 1
+$
+p++
+$
+A
+$
+Assume <*1> is filled in correctly.
+
+What is output by the client code
+to the right?
+$
+public class Structure{
+
+  private ArrayList<Integer> ks;
+  private ArrayList<Object> vs;
+  
+  public Structure(){
+    ks = new ArrayList<Integer>();
+    vs = new ArrayList<Object>();
+  }
+
+  public void add(int k, Object v){
+    int p = ks.size();
+    while(p > 0 && k <= ks.get(p - 1) )
+      <*1>;
+    ks.add(p, k);
+    vs.add(p, v);
+  }
+
+  public boolean isEmpty(){
+    return ks.size() == 0;
+  }
+
+  public Object access(){
+    return vs.get( ks.size() - 1 );
+  }
+
+  public Object remove(){
+    ks.remove(ks.size() - 1);
+    return vs.remove( vs.size() - 1 );
+  }
+}
+
+//////////////////////////////////////////
+// client code
+
+Structure str = new Structure();
+
+str.add(10, "GG");
+str.add(12, "MM");
+str.add(12, "GG");
+str.add(5, "UU");
+
+System.out.print( str.access() );
+$
+MM
+$
+UU GG MM GG
+$
+GG
+$
+12
+$
+UU
+$
+A
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Structure{
+
+  private ArrayList<Integer> ks;
+  private ArrayList<Object> vs;
+  
+  public Structure(){
+    ks = new ArrayList<Integer>();
+    vs = new ArrayList<Object>();
+  }
+
+  public void add(int k, Object v){
+    int p = ks.size();
+    while(p > 0 && k <= ks.get(p - 1) )
+      <*1>;
+    ks.add(p, k);
+    vs.add(p, v);
+  }
+
+  public boolean isEmpty(){
+    return ks.size() == 0;
+  }
+
+  public Object access(){
+    return vs.get( ks.size() - 1 );
+  }
+
+  public Object remove(){
+    ks.remove(ks.size() - 1);
+    return vs.remove( vs.size() - 1 );
+  }
+}
+
+//////////////////////////////////////////
+// client code
+
+Structure str = new Structure();
+
+str.add(10, "GG");
+str.add(12, "MM");
+str.add(12, "GG");
+str.add(5, "UU");
+
+System.out.print( str.access() );
+$
+a stack
+$
+a heap
+$
+a list
+$
+a binary search tree
+$
+a priority queue
+$
+E
+$
+Consider the Node and Structure 
+classes to the right. What is output
+by the following code?
+
+Structure s1 = new Structure();
+System.out.println( s1.find() );
+$
+public class Node{
+  public int val;
+  public Node lc;
+  public Node rc;
+}
+------------------------------------------
+public class Structure{
+
+  private Node myCon;
+
+  public void add(int v){
+    myCon = add(v, myCon);
+  }
+
+  private Node add(int v, Node n){
+    if( n == null ){
+      n = new Node();
+      n.val = v;
+    }
+    if( v < n.val )
+      n.lc = add(v, n.lc);
+    else if( v > n.val )
+      n.rc = add( v, n.rc);
+    return n;
+  }
+
+  public void show(){
+    show(myCon);
+  }
+
+  private void show(Node n){
+    if( n != null ){
+      System.out.print(n.val);
+      show(n.rc);
+      show(n.lc);
+    }
+  }
+
+  public int find(){
+    return find(myCon);
+  }
+
+  private int find(Node n){
+    if( n == null )
+      return -1;
+    return 1
+      + Math.max( find(n.lc), find(n.rc) );
+  }
+}
+$
+null
+$
+0
+$
+1
+$
+-1
+$
+There is no output due to
+a runtime error.
+$
+D
+$
+What is output by the following code?
+
+int[] values = {2, 1, -1, 2, 5};
+Structure s2 = new Structure();
+for(int i : values )
+  s2.add( i );
+s2.show();
+$
+public class Node{
+  public int val;
+  public Node lc;
+  public Node rc;
+}
+------------------------------------------
+public class Structure{
+
+  private Node myCon;
+
+  public void add(int v){
+    myCon = add(v, myCon);
+  }
+
+  private Node add(int v, Node n){
+    if( n == null ){
+      n = new Node();
+      n.val = v;
+    }
+    if( v < n.val )
+      n.lc = add(v, n.lc);
+    else if( v > n.val )
+      n.rc = add( v, n.rc);
+    return n;
+  }
+
+  public void show(){
+    show(myCon);
+  }
+
+  private void show(Node n){
+    if( n != null ){
+      System.out.print(n.val);
+      show(n.rc);
+      show(n.lc);
+    }
+  }
+
+  public int find(){
+    return find(myCon);
+  }
+
+  private int find(Node n){
+    if( n == null )
+      return -1;
+    return 1
+      + Math.max( find(n.lc), find(n.rc) );
+  }
+}
+$
+251-1
+$
+-1125
+$
+2251-1
+$
+-11225
+$
+21-15
+$
+A
+$
+What is output by the following code?
+
+int[] values3 = {2, 1, -1, 2, 5};
+Structure s3 = new Structure();
+for(int i : values3 )
+  s3.add( i );
+System.out.print( s3.find() );
+$
+public class Node{
+  public int val;
+  public Node lc;
+  public Node rc;
+}
+------------------------------------------
+public class Structure{
+
+  private Node myCon;
+
+  public void add(int v){
+    myCon = add(v, myCon);
+  }
+
+  private Node add(int v, Node n){
+    if( n == null ){
+      n = new Node();
+      n.val = v;
+    }
+    if( v < n.val )
+      n.lc = add(v, n.lc);
+    else if( v > n.val )
+      n.rc = add( v, n.rc);
+    return n;
+  }
+
+  public void show(){
+    show(myCon);
+  }
+
+  private void show(Node n){
+    if( n != null ){
+      System.out.print(n.val);
+      show(n.rc);
+      show(n.lc);
+    }
+  }
+
+  public int find(){
+    return find(myCon);
+  }
+
+  private int find(Node n){
+    if( n == null )
+      return -1;
+    return 1
+      + Math.max( find(n.lc), find(n.rc) );
+  }
+}
+$
+3
+$
+2
+$
+1
+$
+0
+$
+-1
+$
+B
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Node{
+  public int val;
+  public Node lc;
+  public Node rc;
+}
+------------------------------------------
+public class Structure{
+
+  private Node myCon;
+
+  public void add(int v){
+    myCon = add(v, myCon);
+  }
+
+  private Node add(int v, Node n){
+    if( n == null ){
+      n = new Node();
+      n.val = v;
+    }
+    if( v < n.val )
+      n.lc = add(v, n.lc);
+    else if( v > n.val )
+      n.rc = add( v, n.rc);
+    return n;
+  }
+
+  public void show(){
+    show(myCon);
+  }
+
+  private void show(Node n){
+    if( n != null ){
+      System.out.print(n.val);
+      show(n.rc);
+      show(n.lc);
+    }
+  }
+
+  public int find(){
+    return find(myCon);
+  }
+
+  private int find(Node n){
+    if( n == null )
+      return -1;
+    return 1
+      + Math.max( find(n.lc), find(n.rc) );
+  }
+}
+$
+A binary search tree.
+$
+A linked list.
+$
+A min heap.
+$
+A max heap.
+$
+A hash table.
+$
+A
+$
+What replaces <*1> in the code to 
+the right so that method isEmpty
+returns true if the ArrayList
+myCon contains 0 elements?
+$
+public class Structure<E>{
+
+  private ArrayList<E> myCon;
+
+  public Structure(){
+    myCon = new ArrayList<E>();
+  }
+
+  public void add(E obj){
+    myCon.add(obj);
+  }
+
+  public E peek(){
+    return myCon.get( myCon.size() - 1 );
+  }
+
+  public boolean isEmpty(){
+    <*1>;
+  }
+
+  public E remove(){
+    return myCon.remove(myCon.size() - 1);
+  }
+}
+///////// client code /////////
+
+public static void second(){
+  Structure<String> s
+             = new Structure<String>();
+  s.add( "A" );
+  s.add( "B" );
+  s.add( "C" );
+  while( !s.isEmpty() )
+    System.out.print( s.remove() );
+}
+$
+myCon.size() == 0 ? false : true
+$
+return size() > 0;
+$
+return super.size() == 0
+$
+return myCon.size() == 0
+$
+super.myCon.isEmpty();
+$
+D
+$
+Assume <*1> is filled in correctly.
+
+What is output by the code to the 
+right when method second is called?
+$
+public class Structure<E>{
+
+  private ArrayList<E> myCon;
+
+  public Structure(){
+    myCon = new ArrayList<E>();
+  }
+
+  public void add(E obj){
+    myCon.add(obj);
+  }
+
+  public E peek(){
+    return myCon.get( myCon.size() - 1 );
+  }
+
+  public boolean isEmpty(){
+    <*1>;
+  }
+
+  public E remove(){
+    return myCon.remove(myCon.size() - 1);
+  }
+}
+///////// client code /////////
+
+public static void second(){
+  Structure<String> s
+             = new Structure<String>();
+  s.add( "A" );
+  s.add( "B" );
+  s.add( "C" );
+  while( !s.isEmpty() )
+    System.out.print( s.remove() );
+}
+$
+CBA
+$
+ABC
+$
+CB
+$
+C
+$
+CCC
+$
+A
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Structure<E>{
+
+  private ArrayList<E> myCon;
+
+  public Structure(){
+    myCon = new ArrayList<E>();
+  }
+
+  public void add(E obj){
+    myCon.add(obj);
+  }
+
+  public E peek(){
+    return myCon.get( myCon.size() - 1 );
+  }
+
+  public boolean isEmpty(){
+    <*1>;
+  }
+
+  public E remove(){
+    return myCon.remove(myCon.size() - 1);
+  }
+}
+///////// client code /////////
+
+public static void second(){
+  Structure<String> s
+             = new Structure<String>();
+  s.add( "A" );
+  s.add( "B" );
+  s.add( "C" );
+  while( !s.isEmpty() )
+    System.out.print( s.remove() );
+}
+$
+List
+$
+Stack
+$
+Queue
+$
+Heap
+$
+Binary Search Tree
+$
+B
+$
+What is output by the code to the
+right when method structOne is called?
+$
+public class Structure<E>{
+
+  private Stack<E> first;
+  private Stack<E> second;
+
+  public Structure(){
+    first = new Stack<E>();
+    second = new Stack<E>();
+  }
+
+  public void add(E item){
+    first.push(item);
+  }
+ 
+  public E get(){
+    if( second.isEmpty() )
+    fill();
+    return second.peek();
+  }
+
+  public E remove(){
+    if( second.isEmpty() )
+    fill();
+    return second.pop();
+  }
+
+  public boolean isEmpty(){
+    return first.isEmpty() &&
+    second.isEmpty();
+  }
+
+  private void fill(){
+    while( !first.isEmpty() )
+    second.push( first.pop() );
+  }
+}
+
+///////// client code /////////
+
+public static void structOne(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  System.out.print( s.get() );
+}
+
+public static void structTwo(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  s.add(3);
+  s.add(1);
+  s.add(7);
+  s.add(3);
+  while( !s.isEmpty() ){
+    System.out.print( s.remove() );
+  }
+}
+$
+0
+$
+null
+$
+-1
+$
+There is no output due to a syntax
+error in method structOne.
+$
+There is no output due to 
+a runtime error.
+$
+E
+$
+What is output by the code to the
+right when method structTwo is called?
+$
+public class Structure<E>{
+
+  private Stack<E> first;
+  private Stack<E> second;
+
+  public Structure(){
+    first = new Stack<E>();
+    second = new Stack<E>();
+  }
+
+  public void add(E item){
+    first.push(item);
+  }
+ 
+  public E get(){
+    if( second.isEmpty() )
+    fill();
+    return second.peek();
+  }
+
+  public E remove(){
+    if( second.isEmpty() )
+    fill();
+    return second.pop();
+  }
+
+  public boolean isEmpty(){
+    return first.isEmpty() &&
+    second.isEmpty();
+  }
+
+  private void fill(){
+    while( !first.isEmpty() )
+    second.push( first.pop() );
+  }
+}
+
+///////// client code /////////
+
+public static void structOne(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  System.out.print( s.get() );
+}
+
+public static void structTwo(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  s.add(3);
+  s.add(1);
+  s.add(7);
+  s.add(3);
+  while( !s.isEmpty() ){
+    System.out.print( s.remove() );
+  }
+}
+$
+317
+$
+3713
+$
+3173
+$
+There is no output due to a syntax
+error in method structTwo.
+$
+There is no output due to 
+a runtime error.
+$
+C
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Structure<E>{
+
+  private Stack<E> first;
+  private Stack<E> second;
+
+  public Structure(){
+    first = new Stack<E>();
+    second = new Stack<E>();
+  }
+
+  public void add(E item){
+    first.push(item);
+  }
+ 
+  public E get(){
+    if( second.isEmpty() )
+    fill();
+    return second.peek();
+  }
+
+  public E remove(){
+    if( second.isEmpty() )
+    fill();
+    return second.pop();
+  }
+
+  public boolean isEmpty(){
+    return first.isEmpty() &&
+    second.isEmpty();
+  }
+
+  private void fill(){
+    while( !first.isEmpty() )
+    second.push( first.pop() );
+  }
+}
+
+///////// client code /////////
+
+public static void structOne(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  System.out.print( s.get() );
+}
+
+public static void structTwo(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  s.add(3);
+  s.add(1);
+  s.add(7);
+  s.add(3);
+  while( !s.isEmpty() ){
+    System.out.print( s.remove() );
+  }
+}
+$
+A stack
+$
+A max heap
+$
+A queue
+$
+A binary search tree
+$
+A min heap
+$
+C
+$
+What replaces <*1> in the code to 
+the right so that the variable con
+is made to refer to the same array
+as the variable temp?
+$
+public class Structure<E>{
+
+  private E[] con;
+  private int size;
+  
+  public Structure(){
+    size = 0;
+    resize(1);
+  }
+
+  public void add(E obj){
+    if( size == con.length )
+    resize( size * 2 );
+    con[size] = obj;
+    size++;
+  }
+
+  public E get(int pos){
+    return con[pos];
+  }
+
+  public int cap(){
+    return con.length;
+  }
+
+  private void resize(int len){
+    E[] temp = (E[])(new Object[len]);
+    for(int i = 0; i < size; i++)
+      temp[i] = con[i];
+    <*1>;
+  }
+}
+
+//////////////////////////////////////////
+// client code
+
+public static void structDemo(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  for(int i = 1; i <= 5; i++)
+    s.add( i );
+  System.out.print( s.cap() );
+}
+$
+con = temp
+$
+con.equals(temp)
+$
+con = new E[temp]
+$
+con = new Object[temp.length]
+$
+More than one of these.
+$
+A
+$
+Assume <*1> is filled in correctly.
+
+What is output by the code to the 
+right when method structDemo is called?
+$
+public class Structure<E>{
+
+  private E[] con;
+  private int size;
+  
+  public Structure(){
+    size = 0;
+    resize(1);
+  }
+
+  public void add(E obj){
+    if( size == con.length )
+    resize( size * 2 );
+    con[size] = obj;
+    size++;
+  }
+
+  public E get(int pos){
+    return con[pos];
+  }
+
+  public int cap(){
+    return con.length;
+  }
+
+  private void resize(int len){
+    E[] temp = (E[])(new Object[len]);
+    for(int i = 0; i < size; i++)
+      temp[i] = con[i];
+    <*1>;
+  }
+}
+
+//////////////////////////////////////////
+// client code
+
+public static void structDemo(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  for(int i = 1; i <= 5; i++)
+    s.add( i );
+  System.out.print( s.cap() );
+}
+$
+5
+$
+4
+$
+32
+$
+8
+$
+15
+$
+D
+$
+What type of data structure does
+the Structure class implement?
+$
+public class Structure<E>{
+
+  private E[] con;
+  private int size;
+  
+  public Structure(){
+    size = 0;
+    resize(1);
+  }
+
+  public void add(E obj){
+    if( size == con.length )
+    resize( size * 2 );
+    con[size] = obj;
+    size++;
+  }
+
+  public E get(int pos){
+    return con[pos];
+  }
+
+  public int cap(){
+    return con.length;
+  }
+
+  private void resize(int len){
+    E[] temp = (E[])(new Object[len]);
+    for(int i = 0; i < size; i++)
+      temp[i] = con[i];
+    <*1>;
+  }
+}
+
+//////////////////////////////////////////
+// client code
+
+public static void structDemo(){
+  Structure<Integer> s;
+  s = new Structure<Integer>();
+  for(int i = 1; i <= 5; i++)
+    s.add( i );
+  System.out.print( s.cap() );
+}
+$
+A binary search tree
+$
+A list
+$
+A set
+$
+A heap
+$
+A queue
+$
+B
+$
+What replaces <*1> in the code to
+the right to set the variable pos
+equal to the number of elements 
+in the ArrayList named con?
+$
+public class Structure
+               <E extends Comparable<E>>{
+  
+  private ArrayList<E> con;
+
+  public Structure(){
+    con = new ArrayList<E>();
+  }
+
+  public boolean isEmpty(){
+    return con.size() == 0;
+  }
+
+  public E get(){
+    return con.get(0);
+  }
+
+  public E remove(){
+    return con.remove(0);
+  }
+
+  public void add(E obj){
+    int pos = <*1>;
+    boolean done = false;
+    E temp;
+    while( pos > 0 && !done ){
+      temp = con.get( pos - 1 );
+      done = obj.compareTo( temp ) >= 0;
+      if( !done )
+        pos--;
+    }
+    con.add(pos, obj);
+  }
+
+  public String toString(){
+    return con.toString();
+  }
+}
+//////////////////////////////////////////
+// client code
+
+Structure<String> s;
+s = new Structure<String>();
+
+s.add("Z");
+s.add("A");
+s.add("Z");
+s.add("B");
+
+System.out.println(s);
+$
+con.size()
+$
+con.length()
+$
+con.size
+$
+super.size()
+$
+this.size()
+$
+A
+$
+Assume <*1> is filled in correctly.
+
+What is output by the client code
+to the right?
+$
+public class Structure
+               <E extends Comparable<E>>{
+  
+  private ArrayList<E> con;
+
+  public Structure(){
+    con = new ArrayList<E>();
+  }
+
+  public boolean isEmpty(){
+    return con.size() == 0;
+  }
+
+  public E get(){
+    return con.get(0);
+  }
+
+  public E remove(){
+    return con.remove(0);
+  }
+
+  public void add(E obj){
+    int pos = <*1>;
+    boolean done = false;
+    E temp;
+    while( pos > 0 && !done ){
+      temp = con.get( pos - 1 );
+      done = obj.compareTo( temp ) >= 0;
+      if( !done )
+        pos--;
+    }
+    con.add(pos, obj);
+  }
+
+  public String toString(){
+    return con.toString();
+  }
+}
+//////////////////////////////////////////
+// client code
+
+Structure<String> s;
+s = new Structure<String>();
+
+s.add("Z");
+s.add("A");
+s.add("Z");
+s.add("B");
+
+System.out.println(s);
+$
+[Z, Z, B, A]
+$
+[A, B, Z]
+$
+[A, B, Z, Z]
+$
+[Z, B, A]
+$
+[Z, A, Z, B]
+$
+C
+$
+What type of data structure does 
+the Structure class implement?
+$
+public class Structure
+               <E extends Comparable<E>>{
+  
+  private ArrayList<E> con;
+
+  public Structure(){
+    con = new ArrayList<E>();
+  }
+
+  public boolean isEmpty(){
+    return con.size() == 0;
+  }
+
+  public E get(){
+    return con.get(0);
+  }
+
+  public E remove(){
+    return con.remove(0);
+  }
+
+  public void add(E obj){
+    int pos = <*1>;
+    boolean done = false;
+    E temp;
+    while( pos > 0 && !done ){
+      temp = con.get( pos - 1 );
+      done = obj.compareTo( temp ) >= 0;
+      if( !done )
+        pos--;
+    }
+    con.add(pos, obj);
+  }
+
+  public String toString(){
+    return con.toString();
+  }
+}
+//////////////////////////////////////////
+// client code
+
+Structure<String> s;
+s = new Structure<String>();
+
+s.add("Z");
+s.add("A");
+s.add("Z");
+s.add("B");
+
+System.out.println(s);
+$
+A stack
+$
+A list
+$
+A priority queue
+$
+A set
+$
+A regular queue
+$
+C
+$
+Consider the following class that attempts
+to implement the Structure interface shown
+to the right.
+
+public class SimpleStructure
+                     implements Structure{
+
+  private Comparable comp;
+  
+  public Structure add(Comparable obj){
+    comp = obj;
+  }
+}
+
+Which of the following is true about the
+SimpleStructure class?
+$
+public interface Structure{
+  public Structure add(Comparable obj);
+  public String toString();
+}
+
+public class EmptyStructure
+                      implements Structure{
+
+  public Structure add(Comparable obj){
+    return new NEStructure( obj );
+  }
+ 
+  public String toString(){
+    return "";
+  }
+}
+
+public class NEStructure
+                      implements Structure{
+
+  private Comparable data;
+  private Structure left;
+  private Structure right;
+
+  public NEStructure(Comparable obj){
+    data = obj;
+    left = new EmptyStructure();
+    right = new EmptyStructure();
+  }
+
+  public Structure add(Comparable obj){
+    int val = obj.compareTo( data );
+    if( val < 0 )
+      left = left.add( obj );
+    else if( val > 0 )
+      right = right.add( obj );
+    return this;
+  }
+
+  public String toString(){
+    return right.toString() + data +
+           left.toString();
+  }
+}
+
+//////////////////////////////////////////
+// client code
+ 
+Structure s1 = new EmptyStructure();
+
+s1 = s1.add(7);
+s1 = s1.add(5);
+s1 = s1.add(0);
+s1 = s1.add(5);
+s1 = s1.add(6);
+
+System.out.println( s1 );
+$
+The class compiles with no errors.
+$
+The class does not compile because
+it does not implement the toString
+method.
+$
+The class does not compile because
+the add method does not return a 
+Structure.
+$
+The class does not compile because
+it does not have a constructor.
+$
+More than one of these.
+$
+C
+$
+What is output by the client code
+to the right?
+$
+public interface Structure{
+  public Structure add(Comparable obj);
+  public String toString();
+}
+
+public class EmptyStructure
+                      implements Structure{
+
+  public Structure add(Comparable obj){
+    return new NEStructure( obj );
+  }
+ 
+  public String toString(){
+    return "";
+  }
+}
+
+public class NEStructure
+                      implements Structure{
+
+  private Comparable data;
+  private Structure left;
+  private Structure right;
+
+  public NEStructure(Comparable obj){
+    data = obj;
+    left = new EmptyStructure();
+    right = new EmptyStructure();
+  }
+
+  public Structure add(Comparable obj){
+    int val = obj.compareTo( data );
+    if( val < 0 )
+      left = left.add( obj );
+    else if( val > 0 )
+      right = right.add( obj );
+    return this;
+  }
+
+  public String toString(){
+    return right.toString() + data +
+           left.toString();
+  }
+}
+
+//////////////////////////////////////////
+// client code
+ 
+Structure s1 = new EmptyStructure();
+
+s1 = s1.add(7);
+s1 = s1.add(5);
+s1 = s1.add(0);
+s1 = s1.add(5);
+s1 = s1.add(6);
+
+System.out.println( s1 );
+$
+75056
+$
+05567
+$
+7650
+$
+0567
+$
+There is no output.
+$
+C
+$
+What type of data structure does
+the NEStructure class implement?
+$
+public interface Structure{
+  public Structure add(Comparable obj);
+  public String toString();
+}
+
+public class EmptyStructure
+                      implements Structure{
+
+  public Structure add(Comparable obj){
+    return new NEStructure( obj );
+  }
+ 
+  public String toString(){
+    return "";
+  }
+}
+
+public class NEStructure
+                      implements Structure{
+
+  private Comparable data;
+  private Structure left;
+  private Structure right;
+
+  public NEStructure(Comparable obj){
+    data = obj;
+    left = new EmptyStructure();
+    right = new EmptyStructure();
+  }
+
+  public Structure add(Comparable obj){
+    int val = obj.compareTo( data );
+    if( val < 0 )
+      left = left.add( obj );
+    else if( val > 0 )
+      right = right.add( obj );
+    return this;
+  }
+
+  public String toString(){
+    return right.toString() + data +
+           left.toString();
+  }
+}
+
+//////////////////////////////////////////
+// client code
+ 
+Structure s1 = new EmptyStructure();
+
+s1 = s1.add(7);
+s1 = s1.add(5);
+s1 = s1.add(0);
+s1 = s1.add(5);
+s1 = s1.add(6);
+
+System.out.println( s1 );
+$
+A linked list
+$
+A binary search tree
+$
+A min heap
+$
+A max heap
+$
+A stack
+$
+B
+$
+What is output by the following 
+client code?
+
+int result = Structure.value( "cab" );
+System.out.print( result );
+$
+public class Structure{
+
+  private static final int LIM = 125;
+  private Object[] con;
+
+  public Structure(){
+    con = new Object[LIM];
+    for(int i = 0; i < LIM; i++)
+      con[i] = new ArrayList<String>();
+  }
+
+  public void add(String str){
+    int spot = value( str );
+    get( spot % LIM ).add( str );
+  }
+
+  public void showAll(){
+    for( Object temp : con ){
+      ArrayList<String> list =
+                 (ArrayList<String>)temp;
+      for( String str : list )
+        System.out.print( str + "_" );
+    }
+  }
+
+  public boolean contains(String str){
+    int spot = value( str ) % LIM;
+    return get( spot ).contains( str );
+  }
+
+  public boolean remove(String str){
+    int spot = value( str ) % LIM;
+    return get( spot ).remove( str );
+  }
+ 
+  private ArrayList<String> get(int p){
+    return (ArrayList<String>)con[p];
+  }
+
+  public static int value(String str){
+    int t = 0;
+    char c;
+    for(int i = 0; i < str.length(); i++){
+      c = str.charAt( i );
+      if( Character.isLetter(c) )
+      t += Character.toLowerCase(c) - 'a';
+    }
+    return t;
+  }
+}
+$
+2
+$
+3
+$
+6
+$
+0
+$
+294
+$
+B
+$
+What is output by the following
+client code?
+
+Structure ds = new Structure();
+ds.add( "cab" );
+ds.add( "aaa" );
+ds.add( "dead_e" );
+ds.add( "bac" );
+ds.add( "ACM" );
+ds.showAll();
+$
+public class Structure{
+
+  private static final int LIM = 125;
+  private Object[] con;
+
+  public Structure(){
+    con = new Object[LIM];
+    for(int i = 0; i < LIM; i++)
+      con[i] = new ArrayList<String>();
+  }
+
+  public void add(String str){
+    int spot = value( str );
+    get( spot % LIM ).add( str );
+  }
+
+  public void showAll(){
+    for( Object temp : con ){
+      ArrayList<String> list =
+                 (ArrayList<String>)temp;
+      for( String str : list )
+        System.out.print( str + "_" );
+    }
+  }
+
+  public boolean contains(String str){
+    int spot = value( str ) % LIM;
+    return get( spot ).contains( str );
+  }
+
+  public boolean remove(String str){
+    int spot = value( str ) % LIM;
+    return get( spot ).remove( str );
+  }
+ 
+  private ArrayList<String> get(int p){
+    return (ArrayList<String>)con[p];
+  }
+
+  public static int value(String str){
+    int t = 0;
+    char c;
+    for(int i = 0; i < str.length(); i++){
+      c = str.charAt( i );
+      if( Character.isLetter(c) )
+      t += Character.toLowerCase(c) - 'a';
+    }
+    return t;
+  }
+}
+$
+aaa_cab_bac_dead_e_ACM_
+$
+ACM_aaa_bac_cab_dead_e_
+$
+ACM_aaa_bac_cab_deade_
+$
+ACM_aaa_cab_bac_dead_e_
+$
+cab_aaa_ACM_bac_dead_e_
+$
+A
+$
+What type of data structure 
+does the Structure class implement?
+$
+public class Structure{
+
+  private static final int LIM = 125;
+  private Object[] con;
+
+  public Structure(){
+    con = new Object[LIM];
+    for(int i = 0; i < LIM; i++)
+      con[i] = new ArrayList<String>();
+  }
+
+  public void add(String str){
+    int spot = value( str );
+    get( spot % LIM ).add( str );
+  }
+
+  public void showAll(){
+    for( Object temp : con ){
+      ArrayList<String> list =
+                 (ArrayList<String>)temp;
+      for( String str : list )
+        System.out.print( str + "_" );
+    }
+  }
+
+  public boolean contains(String str){
+    int spot = value( str ) % LIM;
+    return get( spot ).contains( str );
+  }
+
+  public boolean remove(String str){
+    int spot = value( str ) % LIM;
+    return get( spot ).remove( str );
+  }
+ 
+  private ArrayList<String> get(int p){
+    return (ArrayList<String>)con[p];
+  }
+
+  public static int value(String str){
+    int t = 0;
+    char c;
+    for(int i = 0; i < str.length(); i++){
+      c = str.charAt( i );
+      if( Character.isLetter(c) )
+      t += Character.toLowerCase(c) - 'a';
+    }
+    return t;
+  }
+}
+$
+An array based list
+$
+A stack
+$
+A set
+$
+A hash table
+$
+A min heap
+$
+D

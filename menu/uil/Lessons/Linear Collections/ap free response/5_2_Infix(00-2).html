@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <td width="800" height="24" bgcolor="#000000" >
+        <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script>
+    </td>
+  </tr>
+  <tr>
+    <th width="99%" class="main"> 6.1 Compete (02-2)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2">
+<h2>AP AB Free Response</h2>
+        
+      <h3 align="left">Name: Infix<br>
+        Topic: Queue, Stack<br>
+          Reference: 2000 Question 2<br>
+        Source Code: <a href="/cs_apab/unit05_JCF_Linear%20Collections/ap%20free%20response/Infix.zip">Infix</a></h3>
+        <hr size=2 width="100%" align=center>
+      <p> An infix expression is an expression in which the operator is placed 
+        between the two operands, as in traditional <br>
+        algebraic notation. (For this problem, the only operations that we will 
+        consider are addition and multiplication.) <br>
+        Ambiguities in the expression are resolved by precedence rules (multiplication 
+        before addition) and left-to-right <br>
+        evaluation of operators of equal precedence. For example, in the following 
+        expression, the two multiplications <br>
+        would be evaluated first, then the additions would be evaluated from left 
+        to right.
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Courier New, Courier, mono">&nbsp;3 
+        * 4 + 5 * 2 + 8 </font></p>
+      <p>A postfix expression is a sequence of numbers and arithmetic operators 
+        (+, *) that is evaluated from left to right by applying each operator 
+        to the two subexpressions immediately preceding it. Postfix expressions 
+        are beneficial to computing because they do not require parentheses inorder 
+        to change the order of operations. For example, the following postfix 
+        expression is equivalent to the infix expression given above. 
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Courier New, Courier, mono">3 
+        4 * 5 2 * + 8 +</font></p>
+      <p>In this postfix expression,<br>
+        the first &quot;*&quot; applies to 3 and 4; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 
+        * 4 = 12<br>
+        the second &quot;*&quot; applies to 5 and 2; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 
+        * 2 = 10<br>
+        the first &quot;+&quot; applies to the results of these two subexpressions,	
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 
+        + 10 = 22<br>
+        and the last &quot;+&quot; applies to the last subexpression and the number	
+        8,<br>
+        resulting in the final evaluation. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22 
+        + 8 = 30</p>
+      <p>Numbers and operators in the expression are called tokens. A token is 
+        either an integer or one of the operators + or *. Consider the following 
+        class that represents a token</p>
+      <pre>public class Token<br>{<br>    public static final int PLUS = 0;<br>    public static final int TIMES = 1;<br>    public static final int NUMBER = 2;<br>    <br>    private int operator;        <font color="#009900">  // operator == NUMBER means token represents</font><br>    private int value;           <font color="#009900">  // a value; otherwise, value is undefined</font><br>    private boolean amIOperator;   <font color="#009900">// true if token represents an operator</font><br>    <br>    public Token(int o, int v)   <font color="#009900">// Token is a number</font><br>    {<br>        operator = o;<br>        value = v;<br>        amIOperator = false;<br>    }<br>    <br>    public Token(int o)          <font color="#009900">// Token is a symbol: PLUS or TIMES</font><br>    {<br>        operator = o;<br>        value = 0;               <font color="#009900">// value undefined</font><br>        amIOperator = true;<br>    }<br>    <br>    public boolean isOperator()<br>    {<br>        return amIOperator;<br>    }<br>    <br>    public int getOperator()<br>    {<br>        return operator;<br>    }<br>    <br>    public int getValue()<br>    {<br>        return value;<br>    }<br>}</pre>
+      <p>(a) Complete the method <strong>lessThanOrEqual</strong> below. If the 
+        precedence of the token lhs(left hand side) is less than the <br>
+        precedence of rhs(right hand side), then the method should return <em>true</em>. 
+        Tokens of type PLUS should have lower <br>
+        precedence than tokens of type TIMES, which should have lower precedence 
+        than tokens of type <br>
+        NUMBER. </p>
+      <p>Complete <strong>lessThanOrEqual</strong> below.</p>
+      <pre>// postconditon: If the precedence of the token lhs is less than
+//    the precedence of rhs, then the method should return true.
+//    Tokens of type PLUS should have lower precedence than
+//    tokens of type TIMES, which should have lower precedence
+//    than tokens of type NUMBER. 
+public boolean <strong>lessThanOrEqual</strong>(Token lhs, Token rhs)
+      </pre> 
+      <p><br>
+        <br>
+        <br>
+        (b) Complete method <em>infixToPostfix</em> below. <em>InfixToPostfix</em> 
+        should fill and return a queue of<br>
+        tokens with the postfix expression that is equivalent to the infix expression 
+        given in infixQ.<br>
+        The token at the front of infixQ represents the first token in the infix 
+        expression (3 in the example<br>
+        above), and the token at the back of the infixQ represents the last token 
+        in the expression (8 in the<br>
+        example above).</p>
+      <p>An infix expression can be translated to a postfix expression as follows. 
+        Use a stack to store operator tokens during processing. Process each token 
+        from the infix expression in turn.
+<ol>
+		<li>If a token is an operand (a number), then put it into the postfix expression.</li> 
+        <li>If a token is an operator and the stack is empty, then push the token 
+        on the stack.</li>
+        <li>If the stack is not empty and the precedence of the token is less than 
+        or equal to the precedence of the token on top of the stack, then pop 
+        the token off the stack and put it into the postfix expression. Do this 
+        until the stack is empty or the precedence of the operator is greater than the precedence of the operator 
+        on top of the stack. Then push the current operator onto the stack.</li>
+        <li>When the infix expression has been processed, put the operators remaining 
+          on the stack into the postfix expression.</li>
+	</ol>
+      <p>In writing <em>infixToPostfix</em>, you may call <em>lessThanOrEqual</em> 
+        as specified in part (a). Assume that <em>lessThanOrEqual</em> works as 
+        specified, regardless of what you wrote in part (a).</p>
+      <p> Complete method <strong>infixToPostfix</strong> below.</p>
+      <pre>// precondition: the sequence of tokens in infixQ represents a
+//    valid infix expression using +, *, and integers;
+// postcondition: returns a queue representing a
+//    valid postfix expression equivalent to the
+//    infix expression represented by infixQ 
+public Queue&lt;Token&gt;<strong>infixToPostfix</strong>(Queue&lt;Token&gt; infixQ)
+      </pre>
+      <p>
+        <br>
+        <br>
+        <br>
+        <br>
+      </p>
+      <p>(c) Complete the method displayQueue below. This method displays all 
+        of the tokens within the queue in turn. If a token represents a PLUS sign 
+        the method should display a &quot;+&quot;, if a token represents a TIMES 
+        sign the method should display a &quot;*&quot;, and if the token represents 
+        a NUMBER the method should display the token's value.</p>
+      <p>Complete method <strong>displayQueue</strong> below.</p>
+      <pre>// postcondition: displays each token within the queue.
+//    If the token represents the plus sign the method
+//    should display a &quot;+&quot;, if the token represents the
+//    times sign the method should display a &quot;*&quot;, and if
+//    the token represents a number the method should
+//    display the token's value. 
+public void <strong>displayQueue</strong>(Queue&lt;Token&gt; queue)</pre>
+      <br>
+	  <br>
+	  <br>
+	  <br>
+      <h2>Sample Output</h2>
+      <table width="625" border="0">
+        <tr>
+          <td bgcolor="#000000"><pre><font color="#FFFFFF">24*35*+</font>
+
+<font color="#FFFFFF">453*+6+</font>
+
+<font color="#FFFFFF">12+3+4+</font>
+           </pre>
+          </td>
+        </tr>
+      </table>
+      <p></p>
+</td>
+  </tr>
+</table>

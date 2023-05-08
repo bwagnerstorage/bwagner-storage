@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" class="main" cellspacing ="0">
+  <tr>
+    <th width="791" class="main"> Scanner Class</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2">
+	 <p>The <strong>Scanner</strong> class is a standard Java class that can be 
+        used to read values from the keyboard or a file. </p>
+<h2>
+  What is a Token</h2>
+      <p> A <strong>token</strong> is a series of characters that ends with whitespace. 
+        Whitespace includes one of the following: a blank space, a tab character, 
+        a carriage return, or an end of the file marker. The scanner looks for 
+        these tokens when it is reading from the input data and is able to segregate 
+        them from each other. As an example, if we read a line that has a series 
+        of numbers separated by blanks (whitespace), the scanner will read each 
+        number as a separate token.</p>
+<h2>Useful Methods</h2>
+<table class = "notes" width="752" border="0">
+  <tr> 
+    <th width="25%" class = "notes">
+<div align="center">Method</div></th>
+    <th width="25%" class = "notes">
+<div align="center">Example</div></th>
+    <th width="452" class = "notes"><div align="center">Description</div></th>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">int nextInt()</td>
+    <td class = "notes" width="25%">int n = scan.nextInt();</td>
+    <td class = "notes" >Returns the next token as an int. If the next token is not an integer, 
+      InputMismatchException is thrown.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">double nextDouble()</td>
+    <td class = "notes" width="25%">double n = scan.nextDouble();</td>
+    <td class = "notes">Returns the next token as a long. If the next token is not a float or 
+      is out of range, InputMismatchException is thrown.</td>
+  </tr>
+  <tr> 
+    <td class = "notes"width="25%" >long nextLong()</td>
+    <td class = "notes"width="25%">long n = scan.nextLong();</td>
+    <td class = "notes">Returns the next token as a long. If the next token is not an integer, 
+      InputMismatchException is thrown.</td>
+  </tr>
+  <tr> 
+    <td class = "notes"width="25%">String next()</td>
+    <td class = "notes"width="25%">String s = scan.next();</td>
+    <td class = "notes">Finds and returns the next complete token from this scanner 
+      and returns it as a string; a token is usually ended by whitespace such 
+      as a blank or line break. If a token does not exist, NoSuchElementException 
+      is thrown.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">String nextLine()</td>
+    <td class = "notes" width="25%">String s = scan.nextLine();</td>
+    <td class = "notes" >Returns the rest of the current line, excluding any line separator at 
+      the end.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">void close()</td>
+    <td class = "notes" width="25%">scan.close();</td>
+    <td class = "notes" >Closes the scanner.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">boolean hasNextInt()</td>
+    <td class = "notes" width="25%">if(scan.hasNextInt())</td>
+    <td class = "notes">Returns true if the next token in the scanner can be interpreted as an 
+      int value.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">boolean hasNextDouble()</td>
+    <td class = "notes" width="25%">if(scan.hasNextDouble())</td>
+    <td class = "notes" >Returns true if the next token in the scanner can be interpreted as a 
+      double value.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">boolean hasNextLine()</td>
+    <td class = "notes" width="25%">while(scan.hasNextLine())</td>
+    <td class = "notes" >Returns true if the scanner has another line in its input; false otherwise.</td>
+  </tr>
+  <tr> 
+    <td class = "notes" width="25%">boolean hasNext()</td>
+    <td class = "notes"width="25%">while(scan.hasNext())</td>
+    <td class = "notes">Returns true if the scanner has another token in its input.</td>
+  </tr>
+</table>
+<br>
+<hr>
+<h2>Imports for Keyboard Input</h2>
+<table class = "code" width="576" border="0">
+  <tr> 
+    <td width="568"><pre>import java.util.Scanner;    // needed for Scanner class</pre></td>
+  </tr>
+</table>
+<h2>Instantiating a Scanner Object for Keyboard Input</h2>
+<table class = "code" width="400" border="0">
+  <tr> 
+    <td><pre>Scanner scan = new Scanner(System.in);     // System.in is the keyboard</pre></td>
+  </tr>
+</table>
+<h2>Keyboard Input Examples</h2>
+<h3>Integer Input</h3>
+<p>Method 1 - Read</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>
+Scanner scan = new Scanner(System.in);
+int num1 = scan.nextInt();<br>int num2 = scan.nextInt();<br>int num3 = scan.nextInt();</pre></td>
+  </tr>
+</table>
+<p> Method 2 &#8211; Check for Bad Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>if(scan.hasNextInt())              // if there is an int to read, read it<br>     num1 = scan.nextInt();<br>else<br>     System.out.println(&quot;Input is not an integer&quot;);</pre></td>
+  </tr>
+</table>
+<h3>Double Input</h3>
+<p>Method 1 - Read</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>double d1 = scan.nextDouble();<br>double d2 = scan.nextDouble();<br>double d3 = scan.nextDouble();</pre></td>
+  </tr>
+</table>
+<p> Method 2 &#8211; Check for Bad Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>if(scan.hasNextDouble())         // if there is a double to read, read it<br>     d1 = scan.nextDouble();<br>else<br>     System.out.println(&quot;Input is not a double&quot;);</pre></td>
+  </tr>
+</table>
+<h3>String input</h3>
+<p>Method 1 - Read individual strings</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>String str1 = scan.next();<br>String str2 = scan.next();<br>String str3 = scan.next();</pre></td>
+  </tr>
+</table>
+<p> Method 2 &#8211; Read an entire line</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>str1 = scan.nextLine();         // reads the entire line up to the end of line marker (carriage return)<br></pre></td>
+  </tr>
+</table>
+<h3>Mixed Type input</h3>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>integer = scan.nextInt();          // read an int<br>real = scan.nextDouble();          // read a double<br>str = scan.next();                 // read a string<br></pre></td>
+  </tr>
+</table>
+      <h3>Removing the End of Line Marker (EOLN)</h3>
+      <p>When users of a program are typing from the keyboard they press the &lt;Enter&gt; 
+        key to signify the end of data entry. The <em>Scanner</em> methods <strong>nextInt, 
+        nextDouble, </strong>and<strong> next </strong> will read the data from 
+        the keyboard but they do not remove the end of line marker (EOLN) left 
+        when the &lt;Enter&gt; key was pressed after entering the value or values. 
+        Look at the following illustration:</p>
+      <p>Suppose a person is prompted to type an integer value from the keyboard 
+        and they type the number 57 and press the &lt;Enter&gt; key. The 57 and 
+        an EOLN marker are then placed in a temporary memory location called the 
+        input stream. This is denoted below by the symbol &lt;E&gt;.</p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">Enter an integer --&gt; 
+            57</font></td>
+        </tr>
+      </table>
+      <p><strong>Input Stream</strong></p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#9DD8FF">57&lt;E&gt;</td>
+        </tr>
+      </table>
+      <p>Assume that the code segment below prompted the user to enter the value 
+        from the keyboard. </p>
+      <table class = "code" width="507" border="0">
+        <tr> 
+          <td width="480"><pre>System.out.print(&quot;Enter an integer --&gt;&quot;);
+int n = scan.nextInt();          <br></pre></td>
+        </tr>
+      </table>
+      <p>The <strong>nextInt</strong> method will remove the value 57 from the 
+        Input Stream buffer and store the value in the variable <em>n</em>, but 
+        it <font color="#FF0000"><strong>will not</strong></font> read the EOLN 
+        marker. The EOLN marker is left on the Input Stream buffer.</p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#9DD8FF">&lt;E&gt;</td>
+        </tr>
+      </table>
+      <p>This Scenario can cause a problem in your programs when you follow a <strong>nextInt, 
+        nextDouble, </strong>or <strong>next </strong> method by a <strong>nextLine</strong> 
+        method. Refer to the following example:</p>
+      <p>Suppose that a person was prompted to type a person's age followed by 
+        their name. </p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><p><font color="#FFFFFF">Enter your age --&gt; 
+              16<br>
+              Enter your name --&gt; John</font></p>
+            </td>
+        </tr>
+      </table>
+      <p>Here is the code segment used to read the keyboard input.</p>
+      <table class = "code" width="507" border="0">
+        <tr> 
+          <td width="480"><pre>System.out.print(&quot;Enter your age --&gt;&quot;);
+int age = scan.nextInt(); 
+System.out.print(&quot;Enter your name --&gt;&quot;);
+String name = scan.nextLine();         <br></pre></td>
+        </tr>
+      </table>
+      <p>After the first line the Input Stream buffer contains::</p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#9DD8FF">16&lt;E&gt;</td>
+        </tr>
+      </table>
+      <p>After the second line the Input Stream buffer contains:</p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#9DD8FF">&lt;E&gt;</td>
+        </tr>
+      </table>
+      <p>After the third line the Input Stream buffer contains:</p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#9DD8FF">&lt;E&gt;John&lt;E&gt;</td>
+        </tr>
+      </table>
+      <p>After the fourth line the Input Stream buffer contains:</p>
+      <table width="61%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#9DD8FF">John&lt;E&gt;</td>
+        </tr>
+      </table>
+      <p>Notice that the name was <font color="#FF0000"><strong>not</strong></font> 
+        removed by the <strong>nextLine</strong> method. The reason for this is 
+        because the EOLN marker left by the <em>nextInt</em> was still on the 
+        Input Stream buffer and since it is a character value the <em>nextLine</em> 
+        method read it. Since the EOLN marker is also used to terminate the <em>nextLine</em> 
+        method, the String &quot;John&quot; is never read by the <em>nextLine</em> 
+        method.</p>
+      <p><strong>Dummy Reading</strong></p>
+      <p>Here is one way to fix this problem.</p>
+      <table class = "code" width="507" border="0">
+        <tr> 
+          <td width="480"><pre>System.out.print(&quot;Enter your age --&gt;&quot;);
+int age = scan.nextInt(); 
+<font color="#FF0000">String clearEOLN = scan.nextLine();</font>
+System.out.print(&quot;Enter your name --&gt;&quot;);
+String name = scan.nextLine();         <br></pre></td>
+        </tr>
+      </table>
+      <p>Insert a line of code into your program right after the <em>nextInt</em> 
+        method that can remove the EOLN marker.</p>
+      <p>&nbsp;</p>
+      <h2>Imports for File Input</h2>
+      <hr>
+      <table class = "code" width="576" border="0">
+  <tr> 
+    <td width="568"><pre>import java.util.*;  // needed for Scanner<br>import java.io.*;    // needed for File and FileNotFoundException</pre></td>
+  </tr>
+</table>
+<h2>Instantiating a Scanner Object for File Input</h2>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>Scanner scan = new Scanner(new File(&#8220;myFile.txt&#8221;));</pre></td>
+  </tr>
+</table>
+      <h2>FileNotFoundException</h2>
+      <p>When reading from a file the <em>Scanner</em> class throws a <strong>FileNotFoundException</strong> 
+        if the file to be read from does not exist. Your program must handle this 
+        exception in one of two ways. The first method is to place the Scanner 
+        code within a <strong>try/catch</strong> block (We will discuss this method 
+        later). The second method is to place the following code on the line with 
+        your main method declaration:</p>
+      <table class = "code" width="507" border="0">
+        <tr> 
+          <td width="480"><pre>public static void main(String[] args) <font color="#FF0000">throws IOException</font></pre></td>
+        </tr>
+      </table>
+      <p>This code tells the compiler that you are not going to deal with the 
+        exception yourself, but instead are going to pass it up one level to the 
+        method that invoked your method. In the case of the main method, we are 
+        passing the exception to the JVM itself so that it can handle an error 
+        if it occurs.</p>
+      <h2>File Input Examples</h2>
+<h3>Integer input</h3>
+<p>Method 1 - Read individual Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>Scanner scan = new Scanner(new File(&quot;myFile.txt&quot;));<br>        <br>int n1 = scan.nextInt();   // reads integer from file<br>int n2 = scan.nextInt();<br>int n3 = scan.nextInt();<br>int n4 = scan.nextInt();<br>int n5 = scan.nextInt();<br></pre></td>
+  </tr>
+</table>
+<p>Method 2 &#8211; Read all Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>int n=0;<br>while(scan.hasNextInt())<br>{<br>    n = scan.nextInt();<br>}<br></pre></td>
+  </tr>
+</table>
+<p><strong>MyFile.txt</strong> contains the following data</p>
+<table width="600" border="1">
+  <tr>
+    <td bgcolor="#000000"><p><font color="#FFFFFF" face="Courier New, Courier, mono">10 20 30 40 50</font></p></td>
+  </tr>
+</table>
+<h3>Double input</h3>
+<p>Method 1 - Read individual Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>Scanner scan = new Scanner(new File(&quot;myFile.txt&quot;));<br>        <br>double d1 = scan.nextDouble();   // reads double from file<br>double d2 = scan.nextDouble();<br>double d3 = scan.nextDouble();<br>double d4 = scan.nextDouble();<br>double d5 = scan.nextDouble();<br></pre></td>
+  </tr>
+</table>
+<p>Method 2 &#8211; Read all Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>double d=0;<br>while(scan.hasNextDouble())<br>{<br>    d = scan.nextDouble();<br>}<br></pre></td>
+  </tr>
+</table>
+<p><strong>MyFile.txt</strong> contains the following data</p>
+<table width="600" border="1">
+  <tr> 
+    <td bgcolor="#000000"><p><font color="#FFFFFF" face="Courier New, Courier, mono">9.5 23.7 98.6 10 216.45</font></p></td>
+  </tr>
+</table>
+<h3>String input</h3>
+<p>Method 1 - Read individual Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>Scanner scan = new Scanner(new File(&quot;myFile.txt&quot;));<br>        <br>String s1 = scan.next();   // reads a string from file<br>String s2 = scan.next();<br>String s3 = scan.next();<br>String s4 = scan.next();<br>String s5 = scan.next();<br></pre></td>
+  </tr>
+</table>
+<p>Method 2 &#8211; Read all Input</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>String s;<br>while(scan.hasNext())<br>{<br>    s = scan.next();<br>}<br></pre></td>
+  </tr>
+</table>
+<p><strong>MyFile.txt</strong> contains the following data</p>
+<table width="600" border="1">
+  <tr> 
+          <td bgcolor="#000000"><p><font color="#FFFFFF">dog cat mouse horse chicken</font></p></td>
+  </tr>
+</table>
+<p>Method 3&#8211; Read all Input Lines</p>
+<table class = "code" width="507" border="0">
+  <tr> 
+    <td width="480"><pre>String s;<br>while(scan.hasNextLine())<br>{<br>    s = scan.nextLine();<br>}<br></pre></td>
+  </tr>
+</table>
+<p><strong>MyFile.txt</strong> contains the following data</p>
+<table width="600" border="1">
+  <tr> 
+    <td bgcolor="#000000"><p><font color="#FFFFFF">Mary had a little lamb</font><br>
+        <font color="#FFFFFF">i</font><font color="#FFFFFF">ts fleece was white 
+        as snow.<br>
+        </font><font color="#FFFFFF">Everywhere that Mary went <br>
+        the lamb was sure to go.</font></p>
+      </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+    </td>
+  </tr>
+</table>

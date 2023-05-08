@@ -1,0 +1,258 @@
+What is returned by the method call rec(4)?
+$
+public static int rec(int x){
+  if(x <= 1)
+    return 1;
+  else
+    return x + rec(x - 1);
+$
+4
+$
+1
+$
+24
+$
+10
+$
+-1
+$
+D
+$
+What is returned by the method call two(7)?
+$
+public static int two(int x){
+  if( x <= 2 )
+    return 1;
+  else
+    return 1 + two( x - 2 );
+}
+$
+1
+$
+3
+$
+5
+$
+6
+$
+4
+$
+E
+$
+What is returned by the method
+call self(11)?
+$
+public static int self(int n){
+  if( n <= 0 )
+    return 0;
+  else
+    return 1 + self( n - 2 );
+}
+$
+5
+$
+11
+$
+6
+$
+1
+$
+0
+$
+C
+$
+What is returned by the method 
+call recurs(7)?
+$
+public int recurs(int n){
+  int result = 0;
+  if( n <= 3 )
+    result = 2;
+  else
+    result = recurs(n - 2) + (n - 2);
+  return result;
+}
+$
+10
+$
+2
+$
+4
+$
+7
+$
+20
+$
+A
+$
+What is returned by the method 
+call loopy("", 5) ?
+$
+public static String loopy(String s, int x){
+  if( x <= 0 )
+     return s;
+  else
+     return x + s + loopy(s, x - 2);
+}
+$
+531-1
+$
+531
+$
+-1135
+$
+135
+$
+135531
+$
+B
+$
+What is returned by the method
+call again(1)?
+$
+public static int again(int x){
+  int result = 0;
+  if( x <= 0 )
+    result = 2;
+  else
+    result = 2 + again( x - 1 );
+  return result;
+}
+$
+4
+$
+-1
+$
+2
+$
+0
+$
+1
+$
+A
+$
+What is returned by the following 
+method call?
+
+ways(new int[]{5, 3, 6, 3}, 15, 0 )
+
+$
+public static int ways(int[] ds,int g, int c){
+  int result = 0;
+  if( c == ds.length ){
+    if( g == 0 )
+      result = 1;
+  } else {
+    for(int i = 1; i <= ds[c]; i++)
+      result += ways(ds, g - i, c + 1);
+  }
+  return result;
+}
+$
+270
+$
+17
+$
+4
+$
+10
+$
+18
+$
+D
+$
+What is output by the method
+call change(11) ?
+$
+//pre: n >= 0
+public static void change(int n){
+  if( n <= 2 )
+    System.out.print( n );
+  else{
+    change( n / 3 );
+    System.out.print( n % 3 );
+  }
+}
+$
+11
+$
+100
+$
+1
+$
+102
+$
+201
+$
+D
+$
+Which of the following best describes 
+what will occur if the precondition 
+of method change is not met?
+$
+//pre: n >= 0
+public static void change(int n){
+  if( n <= 2 )
+    System.out.print( n );
+  else{
+    change( n / 3 );
+    System.out.print( n % 3 );
+  }
+}
+$
+An IllegalArgumentException will
+be thrown.
+$
+The method call will result in
+an infinite loop.
+$
+A stack overflow will 
+eventually occur.
+$
+A syntax error will occur.
+$
+The value of the parameter n
+will be printed out.
+$
+E
+$
+What is returned by f(0,4)?
+$
+public static int f(int x, int y) {
+  if (x==0) return 1+y;
+  if (y==0) return f(x-1,1);
+  return f(x-1, f(x,y-1));
+}
+$
+4
+$
+5
+$
+6
+$
+10
+$
+100
+$
+B
+$
+If x is a positive integer, 
+what is returned by f(2,x)?
+$
+public static int f(int x, int y) {
+  if (x==0) return 1+y;
+  if (y==0) return f(x-1,1);
+  return f(x-1, f(x,y-1));
+}
+$
+Three more than twice x
+$
+Two more than three times x
+$
+The square of x
+$
+Two more than the square of x
+$
+One less than the square of (x+1)
+$
+A

@@ -1,0 +1,281 @@
+Which of the following can replace <*1>
+in the code to the right without 
+causing a syntax error?
+$
+List<Integer> times;
+times = <*1>;
+$
+new HashSet<Integer>()
+$
+new List<Integer>()
+$
+new LinkedList<Integer>()
+$
+new int[10]
+$
+More than one of these
+are correct
+$
+C
+$
+What is output by the code
+to the right?
+$
+List<String> titles = new List<String>();
+System.out.print( titles.size() );
+$
+0
+$
+10
+$
+null
+$
+There is no output due 
+to a syntax error.
+$
+There is no output due
+to a runtime error.
+$
+D
+$
+What is output by the code
+to the right?
+$
+LinkedList<String> sample;
+sample = new LinkedList<String>();
+sample.addFirst("M");
+sample.add(0, "B");
+sample.addFirst("G");
+System.out.print( sample.toString() );
+$
+[M, G, B]
+$
+[G, M, B]
+$
+[B, M, G]
+$
+[B, G, M]
+$
+[G, B, M]
+$
+E
+$
+What is output by the code
+to the right?
+$
+ArrayList<String> f;
+f = new ArrayList<String>();
+List<String> s;
+s = new LinkedList<String>();
+
+System.out.print(f instanceof List);
+System.out.print(s instanceof LinkedList);
+$
+falsefalse
+$
+falsetrue
+$
+truefalse
+$
+truetrue
+$
+true
+$
+D
+$
+What is output by the code
+to the right when the method
+call build(5) is made?
+$
+public void show(LinkedList<Integer> list){
+  Iterator<Integer> it = list.iterator();
+  while( it.hasNext() )
+    System.out.print( it.next() );
+}
+
+public void build(int n){
+  LinkedList<Integer> list = new LinkedList<Integer>();
+
+  for(int i = 0; i < n; i++)
+    list.add( i );
+
+  show(list);
+}
+$
+543210
+$
+43210
+$
+01234
+$
+1234
+$
+4321
+$
+C
+$
+What can replace the lines of
+code marked line 1 and line 2
+in the code to the right 
+without altering the output?
+
+    line 1           line 2
+$
+LinkedList<Integer> li;
+li = new LinkedList<Integer>();
+li.add(1); // line 1
+li.add(0, 2); // line 2
+System.out.print( li );
+$
+li.addFirst(1);   li.add(2);
+$
+li.add(0,1);      li.addLast(2);
+$
+li.addLast(1);    li.addLast(2);
+$
+li.addLast(1);    li.addFirst(2);
+$
+li.addFirst(1);   li.set(0, 2);
+$
+D
+$
+What is output by the code
+to the right?
+$
+LinkedList<Integer> first;
+first = new LinkedList<Integer>();
+first.add( 12 );
+first.add( 16 );
+
+ArrayList<Integer> second;
+second = new ArrayList<Integer>();
+second.add( 12 );
+second.add( 16 );
+
+System.out.print( first.equals(second) );
+$
+true
+$
+false
+$
+The output cannot be 
+determined until runtime.
+$
+There is no output due
+to a syntax error.
+$
+There is no output due to
+ClassCastException.
+$
+A
+$
+What is output by the code
+to the right?
+$
+LinkedList<Integer> scores;
+scores = new LinkedList<Integer>();
+scores.addLast( 12 );
+scores.addFirst( 10 );
+scores.add( 8 );
+System.out.println( scores );
+$
+[8, 12, 10]
+$
+[8, 10, 12]
+$
+[12, 10, 8]
+$
+[10, 8]
+$
+[10, 12, 8]
+$
+E
+$
+What is output by the code
+to the right?
+$
+LinkedList<Character> list3 =
+                      new LinkedList<Character>();
+  String n = "UIL";
+  for(int i = 0; i < n.length(); i++){
+    list3.addFirst( n.charAt(i) );
+    list3.addLast( n.charAt(i) );
+  }
+ 
+  for( char ch : list3 )
+  System.out.print( ch );
+$
+There is no output due 
+to a syntax error.
+$
+There is no output due
+ to a runtime error.
+$
+LIUUIL
+$
+UILUIL
+$
+UILLIU
+$
+C
+$
+What is output by the line
+marked //1 in the code to
+the right?
+$
+LinkedList<Integer> x;
+x = new LinkedList<Integer>();
+x.add(41);
+x.add(1,31);
+x.add(0,24);
+x.add(3,32);
+x.remove(0);
+x.add(35);
+x.addFirst(26);
+out.println(x); //1
+for(Integer i: x)
+  x.add(i*10);
+out.println(x); //2
+$
+[41, 31, 24, 32, 35]
+$
+[26, 41, 31, 32, 24, 35]
+$
+[41, 1, 3, 0, 35]
+$
+[26, 41, 31, 32, 35]
+$
+[22, 24, 26, 31, 41]
+$
+D
+$
+What is output by the line
+marked //2 in the code to
+the right?
+$
+LinkedList<Integer> x;
+x = new LinkedList<Integer>();
+x.add(41);
+x.add(1,31);
+x.add(0,24);
+x.add(3,32);
+x.remove(0);
+x.add(35);
+x.addFirst(26);
+out.println(x); //1
+for(Integer i: x)
+  x.add(i*10);
+out.println(x); //2
+$
+[220, 240, 260, 310, 410]
+$
+[260, 410, 310, 320, 350]
+$
+[26, 41, 31, 32, 35]
+$
+[22, 24, 26, 31, 41, 220, 240, 260]
+$
+There is no output due
+to a runtime error.
+$
+E

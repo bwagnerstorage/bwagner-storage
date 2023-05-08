@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> Stack Samples</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h3>class java.util.Stack&lt;E&gt; (AP subset)</h3>
+      <table width="80%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">E 
+            <strong>push</strong>(E item)</font></td>
+          <td width="69%"><font color="#000000">pushes item onto the top of the 
+            stack; returns item</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>pop</strong>()</font></td>
+          <td><font color="#000000">removes and returns the element at the top 
+            of the stack</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the element at the top of the stack</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">throws an exception if the stack is empty</font></td>
+        </tr>
+      </table>
+      <br>
+      <hr>
+      <h3><strong>Example 1 - Creating a Stack Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>Stack&lt;Integer&gt; stack = new Stack&lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <h3>Example 2 - Pushing items onto Stack</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   stack.push(i);<br>}</pre></td>
+        </tr>
+      </table>
+      <h3>Example 3 - Popping items from Stack</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   int item = stack.pop(i);
+   . . .<br>}</pre></td>
+        </tr>
+      </table>
+      <h3><strong>Example 4 - Traversing a Stack</strong></h3>
+      <p><strong>for-each</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>while(!stack.isEmpty())<br>{<br>   System.out.print(stack.pop() + &quot; &quot;);<br>}<br>System.out.println();</pre></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>

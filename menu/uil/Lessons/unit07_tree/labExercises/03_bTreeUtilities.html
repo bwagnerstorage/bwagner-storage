@@ -1,0 +1,89 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">BTreeUtilities</div>
+
+<div id="csContent"> 
+<h1>NetBeans Workspace: <a href="apFreeResponse/BTreeUtilitiesNB.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >BTreeUtilities</a></h1>
+<h1>JCreator Workspace: <a href="apFreeResponse/BTreeUtilities.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >BTreeUtilities</a></h1>
+
+  <p>The method shown below returns true if all the values stored in a tree are less than the given value; otherwise it returns false.</p>
+ 
+   <div id="csCode">
+  <pre>
+// returns true if root is null or if all values stored in
+// tree represented by root are less than key;
+// otherwise returns false
+public boolean valsLess(int key)
+{
+   return valsLess(root, key);
+}
+
+private boolean valsLess(TreeNode root, int key)
+{
+   if(root == null)
+      return true;
+   
+   int value = (Integer)root.getValue();
+   return value < key && valsLess(root.getLeft(), key) && valsLess(root.getRight(), key);
+}
+</pre>
+  </div>
+<h1>Directions</h1>  
+<p>In this assignment you are going to write four binary tree methods: minValue, treeHeight, hasPathSum, and mirror.</p>
+<div id="csList">
+<ul>
+<li><p><strong>minValue</strong> - returns the minimum data value found in the tree. This method should be implemented non-recursively.</p></li>
+<li><p><strong>treeHeight</strong> - returns the number of nodes along the longest path from the root node down to the farthest leaf node.</p></li>
+<li><p><strong>hasPathSum</strong> - returns true if there is a path from the root down to a leaf, such that adding up all the values along the path equals the given sum.</p></li>
+<li><p><strong>mirror</strong> - changes a tree so that the roles of the left and right pointers are swapped at every node.</p></li>
+</ul></div> 
+<h1>Source Files</h1>
+<p>BinarySearchTree.java</p>
+<p>TreeNode.java</p>
+<p>BTreeUtilities.java</p>
+<h1>Sample Run</h1>
+<div id="csSampleRun">
+<pre>
+Tree Structure
+==============
+
+    88
+  75
+    62
+50
+      41
+    32
+  25
+    17
+      5
+
+
+Tree Utilities
+==============
+
+Values less than 90 = true
+Values less than 65 = false
+Min Value = 5
+Tree Height = 4
+Path has sum of 187 = true
+Path has sum of 97  = true
+Path has sum of 146  = false
+
+
+   Mirror
+============
+
+      5
+    17
+  25
+    32
+      41
+50
+    62
+  75
+    88
+
+</pre>
+</div>
+	<br>
+</div>	

@@ -1,0 +1,110 @@
+6
+5 5
+#####
+#...#
+#.#.#
+#.N.#
+#####
+10
+FORWARD 9
+TURN RIGHT
+FORWARD 3
+TURN LEFT
+FORWARD 2
+TURN LEFT
+FORWARD 1
+TURN LEFT
+ZAP
+FORWARD 1
+7 9
+###......
+.....##..
+....#..#.
+.E...##..
+....#..#.
+.....##..
+###......
+9
+FORWARD 4
+TURN LEFT
+ZAP
+TURN RIGHT
+ZAP
+TURN RIGHT
+ZAP
+TURN RIGHT
+FORWARD 3
+1 1
+N
+7
+TURN RIGHT
+ZAP
+TURN LEFT
+ZAP
+TURN LEFT
+TURN LEFT
+ZAP
+1 5
+S####
+9
+ZAP
+TURN LEFT
+ZAP
+FORWARD 1
+ZAP
+FORWARD 9
+ZAP
+ZAP
+FORWARD 9
+8 10
+####..####
+#...##...#
+#..#..#..#
+#..#E#####
+#...##...#
+#........#
+.........#
+..........
+19
+ZAP
+ZAP
+ZAP
+FORWARD 8
+TURN LEFT
+ZAP
+ZAP
+FORWARD 7
+TURN LEFT
+ZAP
+ZAP
+ZAP
+ZAP
+FORWARD 5
+TURN LEFT
+FORWARD 9
+TURN LEFT
+FORWARD 7
+ZAP
+5 6
+.#.#.#
+#.#.#.
+.#.#.#
+#.#.#.
+S#.#.#
+16
+ZAP
+TURN RIGHT
+TURN RIGHT
+TURN RIGHT
+ZAP
+ZAP
+FORWARD 2
+TURN LEFT
+ZAP
+ZAP
+FORWARD 2
+TURN RIGHT
+ZAP
+ZAP
+ZAP
+FORWARD 9

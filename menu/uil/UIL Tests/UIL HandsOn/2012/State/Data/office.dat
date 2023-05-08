@@ -1,0 +1,23 @@
+4
+4
+Mary 100 Ann Alex John
+Alex 75 Mary John
+Ann 80 Mary Alex John
+John 100 Ann Mary Alex
+5
+Roger 200 Aaron Amber Lloyd
+Drew 250 Aaron Roger Amber Lloyd
+Amber 100 Roger Drew Aaron
+Lloyd 150 Amber Drew Roger
+Aaron 0
+3
+Richard 100 Hal James
+Hal 100 Richard James
+James 100 Richard Hal
+6
+Rob 120 Nolte Tom Fred Dick
+Nolte 120 Rob William Tom Dick
+Fred 120 Dick Nolte William Tom Rob
+William 90 Fred Nolte Tom Dick
+Tom 100 William Dick Rob Fred
+Dick 130 Fred William Tom Nolte Rob

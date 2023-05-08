@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 7.3 Voter Ballots(04-2)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>AP AB Free Response</h2>
+      <h3 align="left">Name: Voter Ballots<br>
+        Topic: Map, Set<br>
+        Source Code: <a href="http://bwagner.org/menu/uil/Lessons/Unordered%20Collections/ap%20free%20response/VoterBallots.zip">Voter 
+        Ballots</a></h3>
+      <hr size=2 width="100%" align=center>
+      <p>In approval voting there are at least two candidates and there are many 
+        voters. Each voter votes by submitting a <br>
+        ballot that represents a set of candidates of whom the voter approves. 
+        The winner of the election is the candidate <br>
+        that is listed on the most ballots, that is, the candidate who is approved 
+        by the most voters. </p>
+      <p>For example, suppose there are four candidates: Chris, Jamie, Pat, and 
+        Sandy. Seven voters vote as follows (order is unimportant, each ballot 
+        represents the set of candidates chosen by that voter). </p>
+      <table width="42%" border="0" class="notes">
+        <tr> 
+          <td width="26%"><font color="#000000">Voter</font></td>
+          <td width="74%"><font color="#000000">Ballot</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">0</font></td>
+          <td><font color="#000000">Chris, Jamie</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">1</font></td>
+          <td><font color="#000000">Chris, Sandy</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">2</font></td>
+          <td><font color="#000000">Chris, Sandy, Pat, Jamie</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">3</font></td>
+          <td><font color="#000000">Pat</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">4</font></td>
+          <td><font color="#000000">Sandy, Jamie</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">5</font></td>
+          <td><font color="#000000">Sandy, Pat, Jamie</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">6</font></td>
+          <td><font color="#000000">Jamie, Chris</font></td>
+        </tr>
+      </table>
+      <p>The number of ballots on which each candidate was listed is as follows.</p>
+      <table width="41%" border="0" class="notes">
+        <tr> 
+          <td width="37%"><font color="#000000">Candidate</font></td>
+          <td width="63%"><font color="#000000">Number of ballots</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">Chris</font></td>
+          <td><font color="#000000">4</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">Jamie</font></td>
+          <td><font color="#000000">5</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">Pat</font></td>
+          <td><font color="#000000">3</font></td>
+        </tr>
+        <tr> 
+          <td><font color="#000000">Sandy</font></td>
+          <td><font color="#000000">4</font></td>
+        </tr>
+      </table>
+      <p>In this example, Jamie is the winner. If more than one candidate is tied 
+        with the most votes, then we consider the set of such candidates to be 
+        the winning set for this election. For example, if Chris appeared on voter 
+        3&#8217;s ballot along with Pat, then Chris would tie Jamie with five 
+        votes and the winning set would be {Chris, Jamie}. </p>
+      <p>We represent one voter&#8217;s ballot as a Set that contains the names 
+        (as Strings) of the candidates approved <br>
+        by that voter. We represent the set of ballots for all voters in the election 
+        by the following partial class <br>
+        declaration. </p>
+      <pre>public class VoterBallots
+{
+   <font color="#0000FF">private Map&lt;String, Integer&gt; voteCount; </font>// key is the candidate name, value is the
+                                           // number of votes received by that candidate
+
+   // precondition: each entry in ballotList is a Set representing
+   //    one voter's ballot
+   // postcondition: voteCount.get(candidate) is the total number of
+   //    times candidate appears on ballots in ballotList
+   <font color="#0000FF">public VoterBallots(List&lt;Set&gt; ballotList)</font>
+   { /* to be implemented in part (a) */ }
+
+
+
+
+   // postcondition: returns an integer value equal to the
+   //    maximum number of votes associated with any
+   //    key in the Map voteCount
+   <font color="#0000FF">private int maxVotes()</font>
+   { /* implementation not shown */ }
+   
+
+
+   // postcondition: returns a set containing the candidate(s)
+   //    with the most votes
+   <font color="#0000FF">public Set&lt;String&gt; candidatesWithMost()</font>
+   { /* to be implemented in part (b) */ }
+
+
+   // other methods not shown
+}
+      </pre>
+      <p>&nbsp;</p>
+      <p></p>
+      <p>(a) Write the <em>VoterBallots</em> constructor. The constructor creates 
+        the <em>Map</em> <em>voteCount</em> and initializes it <br>
+        to hold one entry for each candidate that appears on at least one ballot 
+        in <em>ballotList</em>. The associated <br>
+        value for each candidate is the total number of ballots on which that 
+        candidate appears. <br>
+        A solution that creates an unnecessary new instance of a <em>List</em> 
+        or <em>Set</em> will not receive full credit. </p>
+      <p>Complete the <strong>constructor</strong> below. </p>
+      <pre>// precondition: each entry in ballotList is a Set representing
+//     one voter's ballot
+// postcondition: voteCount.get(candidate) is the total number of
+//     times candidate appears on ballots in ballotList
+public <strong>VoterBallots</strong>(List&lt;Set&gt; ballotList) </pre>
+		<br>
+		<br>
+		<br>
+      <p>(b) Write the <em>VoterBallots</em> method <em>candidatesWithMost</em>. 
+        Method <em>candidatesWithMost</em> returns a <em>Set</em> of the name(s) 
+        of the candidate(s) in <em>voteCount</em> with the most votes. In writing 
+        method <em>candidatesWithMost</em>, you may call the private helper method 
+        <em>maxVotes</em>. Solutions that reimplement functionality provided by 
+        <em>maxVotes</em>, rather than invoking <em>maxVotes</em>, will not receive 
+        full credit. A solution that creates an unnecessary new instance of a 
+        <em>List</em> or <em>Set</em> will not receive full credit. </p>
+      <p>Complete method <strong>candidatesWithMost</strong> below. </p>
+      <pre>// postcondition: returns a set containing the candidate(s)
+// with the most votes
+public Set&lt;String&gt; <strong>candidatesWithMost</strong>() </pre>
+<br>
+<br>
+<br>
+      <p>(c) Assume that there are C candidates and V voters. What is the expected 
+        time complexity, in Big-Oh <br>
+        notation in terms of C and V, for your implementation of method candidatesWithMost 
+        ? </p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <br><br>
+<br>
+      <h2>Sample Output</h2>
+      <table width="625" border="0">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">Voting
+------
+{Jamie,Chris}
+
+{Sandy,Chris}
+
+{Sandy,Jamie,Pat,Chris}
+
+{Pat}
+
+{Sandy,Jamie}
+
+{Sandy,Jamie,Pat}
+
+{Jamie,Chris}
+
+Vote Tally
+----------
+Sandy - 4
+Pat - 3
+Jamie - 5
+Chris - 4
+
+Most Votes
+----------
+{Jamie}
+</font></pre></td>
+        </tr>
+      </table>
+      <p></p></td>
+  </tr>
+</table>

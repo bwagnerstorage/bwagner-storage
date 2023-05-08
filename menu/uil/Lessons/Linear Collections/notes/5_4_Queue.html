@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 6.1 Linear Collection: Queue and Priority Queue</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"><strong>Linear Collection: </strong>Queue, Priority 
+      Queue <p><strong>Interfaces: </strong>List, Queue <p><strong>Implementing 
+        Classes: </strong>LinkedList, PriorityQueue</p>
+      <hr> <h2>Queues</h2>
+      <p>Like stacks, <strong>queues</strong> are linear collections. However, 
+        insertions in a queue are restricted to one end, called the <strong>rear</strong>, 
+        and removals are restricted to the other end, called the <strong>front</strong>. 
+        A queue thus supports a first-in, first-out protocol (FIFO). Queues occur 
+        in everyday life from checkout lines in stores, to highway tollboth lines, 
+        and airport baggage check-in lines. A queue is used whenever people or 
+        things are lined up for processing on a first-come, first-serve basis.</p>
+      <p>Queues have two fundamental opertions: <strong>add</strong>, which adds 
+        an item to the rear of a queue, and <strong>remove</strong>, which removes 
+        an item from the front. (The traditional names of these operations are 
+        <em>enqueue</em> and <em>dequeue</em>)</p>
+      <h2>Priority Queues</h2>
+      <p>Related to queues is an ADT (Abstract Data Type) called a <strong>priority 
+        queue</strong>. A priority queue is essentially a list of items in which 
+        each item has associated with it a priority. In general, different items 
+        may have different priorities and we speak of one item having a higher 
+        priority than another. Given such a list we can determine which is the 
+        highest (or the lowest) priority item in the list. Items are inserted 
+        into a priority queue in any, arbitrary order. However, items are withdrawn 
+        from a priority queue in order of their priorities starting with the highest 
+        priority item first. </p>
+      <p>Most examples of queues in computer science involve scheduling access 
+        to shared resources, for instance, </p>
+      <ul>
+        <li>CPU access - Processes are queued for access to a shared CPU.</li>
+        <li>Disk access - Processes are queued for access to shared secondary 
+          storage device.</li>
+        <li>Printer access - Print jobs are queued for access to a shared printer.</li>
+      </ul>
+      <h2>Interfaces and Implementing Classes</h2>
+      <h3>interface java.util.Queue&lt;E&gt;</h3>
+      <table width="60%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">enqueues obj at the end of the queue; returns 
+            true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>()</font></td>
+          <td><font color="#000000">dequeues and returns the element at the front 
+            of the queue</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the element at the front of the queue; 
+            null if the queue is empty</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">&nbsp;</font></td>
+        </tr>
+      </table>
+      <h3>class java.util.LinkedList &lt;E&gt; implements java.util.List&lt;E&gt;, 
+        java.util.Queue&lt;E&gt;</h3>
+      <p><strong>Note</strong>: use <strong>LinkedList</strong> class to create 
+        a queue</p>
+      <p>&nbsp;</p>
+      <h3>class java.util.PriorityQueue&lt;E&gt;</h3>
+      <table width="60%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">adds obj to the priority queue; returns true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>()</font></td>
+          <td><font color="#000000">removes and returns the minimal element from 
+            the priority queue</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the minimal element from the priority 
+            queue </font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">&nbsp;</font></td>
+        </tr>
+      </table>
+      <p><strong>Note:</strong> <strong>E</strong> should implement <em>Comparable</em> 
+        interface<br>
+      </p>
+      <h2><br>
+        Using a Queue</h2>
+      <p>To create a queue use the <strong>LinkedList</strong> class which implements 
+        the <em>Queue</em> interface. </p>
+      <h3><strong>Creating a Linked List Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>LinkedList&lt;Integer&gt; queue = new LinkedList&lt;Integer&gt; (); <font color="#006600"> // create queue</font></pre></td>
+        </tr>
+      </table>
+      <p>or</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List&lt;Integer&gt; queue = new LinkedList&lt;Integer&gt; ();        <font color="#006600">// create queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Adding an Object to a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>queue.add(57);  <font color="#006600">// adds item to rear of queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Removing an Object from a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int num = queue.remove();  <font color="#006600">// removes item from front of queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Viewing the Top of a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int num = queue.peek();  <font color="#006600">// does not remove the item</font></pre></td>
+        </tr>
+      </table>
+      <h3>Traversing a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>while(!queue.isEmpty())
+{
+   System.out.println(queue.remove());
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h2>Using a Priority Queue</h2>
+      <p>To create a Priority Queue use the <strong>Priority Queue</strong> class.</p>
+      <h3><strong>Creating a Linked List Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>PriorityQueue&lt;Integer&gt; queue = new PriorityQueue&lt;Integer&gt; (); <font color="#006600"> // create priority queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Adding an Object to a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>queue.add(57);  <font color="#006600">// adds item to queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Removing an Object from a Queu</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int num = queue.remove();  <font color="#006600">// removes minimal value from queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Viewing the Top of a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int num = queue.peek();  <font color="#006600">// returns minimal value from queue</font></pre></td>
+        </tr>
+      </table>
+      <h3>Traversing a Queue</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>while(!queue.isEmpty())
+{
+   System.out.println(queue.remove());
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>

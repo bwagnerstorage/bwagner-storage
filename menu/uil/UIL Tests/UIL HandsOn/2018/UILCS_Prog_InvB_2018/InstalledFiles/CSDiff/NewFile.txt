@@ -1,0 +1,28 @@
+This file demonstrates the CSDiff analysis:
+===============================
+
+Line added sample:
+Line #1
+Line #2
+*** New line ***
+Line #3
+
+Line removed sample:
+Line #1
+Line #3
+
+Line changed sample:
+Line #1
+Line #2 original texts will follow
+Line #3
+
+White-space changed sample:
+Line #1
+Line      #2
+Line #3
+
+Letter-case changed sample:
+Line #1
+LINE #2
+Line #3
+

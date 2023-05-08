@@ -1,0 +1,663 @@
+What is output by the code 
+to the right?
+$
+double [] nums = {.7, -.7, 2.5, 0.0} ;
+Arrays.sort( nums );
+for( double d : nums )
+   System. out. print ( d + " " );
+$
+0.0 0.0 0.0 2.0
+$
+-0.7 0.0 0.7 2.5
+$
+0.0 0.0 0.0 0.0
+$
+2.5 0.7 0.0 -0.7
+$
+0.7 -0.7 2.5 0.0
+$
+B
+$
+Which sorting algorithm does 
+method sort implement?
+$
+// post: sort elements into desending order
+public void sort(ArrayList<Integer>data) {
+  int max, temp;
+  int lim = data.size() - 1;
+  for(int i = 0; i < lim; i++) {
+    max = i;
+    for(int j = i + 1; j < data.size(); j++)
+      if(data.get(j) > data.get (max) )
+        max = j;
+
+    if( i ! = max ) {
+      temp = data.remove(i);
+      data.add(i, data.remove(max-1);
+      data.add(max, temp);
+    }
+  }
+}
+$
+Quicksort
+$
+Insertion sort
+$
+Merge sort
+$
+Radix sort
+$
+Selection sort
+$
+E
+$
+Which sorting algorithm do
+methods swap and sort
+implement?
+$
+public void swap(int[] list, int i, int j) {
+  int temp = list[i];
+  list[i] = list[j];
+  list[j] = temp;
+}
+
+public void sort(int[] list,
+                 int st, int end) {
+  if( st >= end)
+    return;
+  int p = (st + end) / 2;
+  swap(list, p, st);
+  int j = st;
+  for(int i = st + 1; i <= end; i++) {
+    if( list[i] <= list[st] ){
+      j++;
+      swap (list, i, j);
+    }
+  }
+
+  swap (list, st, j);
+  sort (list, st, j - 1);
+  sort(list, j + 1, end);
+}
+$
+quicksort
+$
+insertion sort
+$
+bubble sort
+$
+merge sort
+$
+selection sort
+$
+A
+$
+Which sorting algorithm do 
+the two methods to the right
+named sort implement?
+$
+public void sort(int[] data){
+  int[] temp = new int[data.length];
+  sort(data, temp, 0, data.length - 1);
+}
+
+public void sort(int[] data,
+                 int[] temp, int i, int j){
+  if(i < j){
+    int mid = (i + j) / 2;
+    sort(data, temp, i, mid);
+    sort(data, temp, mid + 1, j);
+    int le = mid;
+    int tp = i;
+    int ne = j - i + 1;
+    while( (i <= le) && (mid + 1 <= j) ){
+      if( data[i] <= data[mid + 1] )
+        temp[tp] = data[i++];
+      else
+        temp[tp] = data[mid++ + 1];
+      tp++;
+    }
+
+    while( i <= le)
+      temp[tp++] = data[i++];
+
+    while( mid + 1 <= j)
+      temp[tp++] = data[mid++ + 1];
+
+    for(int k = 0; k < ne; k++){
+      data[j] = temp[j];
+      j--;
+    }
+  }
+}
+$
+merge sort
+$
+selection sort
+$
+bubble sort
+$
+quicksort
+$
+insertion sort
+$
+A
+$
+Which sorting algorithm does
+method sort implement?
+$
+/* If tgt is present in nums return the
+     index of an element equal to tgt
+   else return the index of where tgt should
+     be placed to maintain nums in sorted order.
+*/
+public int find(int[] nums,
+                int tgt, int high){
+  int low = 0;
+  int mid = (low + high) / 2;
+  boolean found = false;
+  while( !found && low <= high){
+    mid = (low + high) / 2;
+    if( nums[mid] < tgt )
+      low = mid + 1;
+    else if( nums[mid] > tgt )
+      high = mid - 1;
+    else
+      found = true;
+  }
+  return found ? mid : low;
+}
+
+public void sort(int[] nums){
+  for(int i = 1; i < nums.length; i++){
+    int tgt = find(nums, nums[i], i - 1);
+    int temp = nums[i];
+    for(int j = i; j > tgt; j--){
+      nums[j] = nums[j -1];
+    }
+  nums[tgt] = temp;
+  }
+}
+// client code
+int[] nums = {5, 1, -5, 0, 2};
+sort(nums);
+System.out.print( Arrays.toString(nums) );
+$
+a modified insertion sort
+$
+a modified radix sort
+$
+a modified selection sort
+$
+a modified quick sort
+$
+a modified merge sort
+$
+A
+$
+The Arrays.sort(int[] a) method calls a helper method 
+with the following header:
+
+  private static void sort1(int x[], int off, int len) {
+
+The parameters off and len specify a sub-array in x to 
+be sorted. len is the length of the sub-array.
+The implementation of the method sort1 is:
+
+  if( len < 7 )
+    // perform an insertion sort on the sub-array
+  else
+    // perform a quicksort on the sub-array
+
+Which of the following is the best reason the sort1 method 
+uses this hybrid (combination of quicksort and insertion sort)
+sorting algorithm?
+$
+
+$
+So that the sort will work on all primitive 
+integer types: byte, short, int and long.
+$
+Primitive ints do not have a compareTo method.
+$
+So that the sort will be stable, meaning the 
+relative order of equal items in the original
+array is unchanged.
+$
+So that an auxiliary linked list is not needed
+to complete the sort.
+$
+It is usually faster to sort a small array using
+the insertion sort algorithm rather than the
+quicksort algorithm.
+$
+E
+$
+What replaces <*1> in the code to 
+the right so that if the element at
+index j is less than the element at
+index temp according to their 
+natural ordering, the statement 
+temp = j; is executed?
+$
+public static void sort(Comparable[] data){
+  int temp;
+  int len = data.length;
+  for(int i = 0; i < len - 1; i++){
+    temp = i;
+    for(int j = i + 1; j < len; j++){
+      if( <*1> )
+        temp = j;
+    }
+    swap( data, i, temp);
+  }
+}
+
+public static void swap(Comparable[] data,
+                             int i, int j){
+   <*2>
+}
+
+$
+temp.compareTo( j ) <= 0
+$
+data[j] < data[temp]
+$
+data[j].compareTo( data[temp] ) == 0
+$
+j.compareTo( data[temp] ) > 0
+$
+data[j].compareTo( data[temp] ) < 0
+$
+E
+$
+Assume <*1> is filled in correctly.
+
+What replaces <*2> in the code to
+the right so that the elements 
+originally at indices i and j 
+in array data are swapped with
+each other?
+$
+public static void sort(Comparable[] data){
+  int temp;
+  int len = data.length;
+  for(int i = 0; i < len - 1; i++){
+    temp = i;
+    for(int j = i + 1; j < len; j++){
+      if( <*1> )
+        temp = j;
+    }
+    swap( data, i, temp);
+  }
+}
+
+public static void swap(Comparable[] data,
+                             int i, int j){
+   <*2>
+}
+
+$
+int t = i;
+i = j;
+j = t;
+$
+Comparable t = data[i];
+data[i] = data[j];
+data[j] = t;
+$
+data[i] = data[i] ^ data[j];
+data[j] = data[i] ^ data[j];
+data[i] = data[j] ^ data[i];
+$
+data[i] = data[j];
+data[j] = data[i];
+$
+More than one of these.
+$
+B
+$
+Assume <*1> and <*2> are 
+filled in correctly.
+
+What sorting algorithm is 
+implemented by methods sort
+and swap?
+$
+public static void sort(Comparable[] data){
+  int temp;
+  int len = data.length;
+  for(int i = 0; i < len - 1; i++){
+    temp = i;
+    for(int j = i + 1; j < len; j++){
+      if( <*1> )
+        temp = j;
+    }
+    swap( data, i, temp);
+  }
+}
+
+public static void swap(Comparable[] data,
+                             int i, int j){
+   <*2>
+}
+$
+Insertion sort
+$
+Quick Sort
+$
+Selection Sort
+$
+Shell Sort
+$
+Merge Sort
+$
+C
+$
+Which sorting algorithm involves splitting the
+unsorted data into smaller and smaller parts
+and then recombining the parts into larger and
+larger sorted lists?
+$
+
+$
+Quick sort
+$
+Selection sort
+$
+Insertion Sort
+$
+Shell Sort
+$
+Merge sort
+$
+E
+$
+Which sorting algorithm does
+the method sort implement?
+$
+public void swap(int[] data, int i, int j){
+  int t = data[i];
+  data[i] = data[j];
+  data[j] = t;
+}
+
+public void sort(int[] list){
+  int j;
+  int temp;
+  boolean done;
+  for(int i = 1; i < list.length; i++){
+    temp = list[i];
+    j = i;
+    done = temp <= list[j - 1];
+
+    // line A
+
+    while( !done ){
+      swap(list, j, j - 1);
+      j--;
+      done = j == 0 || temp <= list[j - 1];
+    }
+  }
+}
+$
+Insertion sort
+$
+Quick sort
+$
+Merge sort
+$
+Heap sort
+$
+Selection sort
+$
+A
+$
+Assume the array list initially
+contains these elements:
+
+[9, 4, 11, 7, 5, 13]
+
+What are the contents of the 
+array list at the point marked 
+//line A when the variable i 
+equals 4?
+$
+public void swap(int[] data, int i, int j){
+  int t = data[i];
+  data[i] = data[j];
+  data[j] = t;
+}
+
+public void sort(int[] list){
+  int j;
+  int temp;
+  boolean done;
+  for(int i = 1; i < list.length; i++){
+    temp = list[i];
+    j = i;
+    done = temp <= list[j - 1];
+
+    // line A
+
+    while( !done ){
+      swap(list, j, j - 1);
+      j--;
+      done = j == 0 || temp <= list[j - 1];
+    }
+  }
+}
+$
+[4, 7, 9, 11, 5, 13]
+$
+[5, 4, 7, 9, 11, 13]
+$
+[13, 11, 9, 7, 5, 4]
+$
+[11, 9, 7, 4, 5, 13]
+$
+[9, 4, 11, 7, 5, 13]
+$
+D
+$
+Method sort to the right attempts
+to implement the insertion sort 
+algorithm, but the method has one
+or more syntax errors. Which of the
+following best describes how to
+correct the syntax error(s)?
+$
+// sort into ascending value
+// using the insertion sort algorithm
+public static int sort(String[] vals){
+  int count = 0;
+  for(int i = 1; i < vals.length; i++){
+    int j = i - 1;
+    String cur = vals[i];
+    while( j >= 0 && cur < vals[j] ){
+      vals[j + 1] = vals[j--];
+      count++;
+    }
+
+    vals[j + 1] = cur;
+  }
+  return count;
+}
+$
+The int variable j and the
+String variable cur must both
+be declared before the for loop.
+$
+The statement
+  vals[j + 1] = vals[j--];
+must be replaced with the following
+statements:
+
+  vals[j + 1] = vals[j];
+  j--;
+
+$
+The statement String cur = vals[i];
+must be replaced with the following
+statement:
+
+String cur = new String( vals[i] );
+$
+The line
+   while( j >= 0 && cur < vals[j] ){
+must be replaced with the following:
+
+   while( j >= 0
+   && cur.compareTo( vals[j] ) < 0 ){
+
+$
+More than one of these.
+$
+D
+$
+Assume method sort has been corrected.
+
+What is returned by method sort if 
+vals initially contains the 
+following Strings?
+
+{"S", "O", "M", "K", "D", "B", "A"}
+
+$
+// sort into ascending value
+// using the insertion sort algorithm
+public static int sort(String[] vals){
+  int count = 0;
+  for(int i = 1; i < vals.length; i++){
+    int j = i - 1;
+    String cur = vals[i];
+    while( j >= 0 && cur < vals[j] ){
+      vals[j + 1] = vals[j--];
+      count++;
+    }
+
+    vals[j + 1] = cur;
+  }
+  return count;
+}
+$
+0
+$
+18
+$
+7
+$
+21
+$
+6
+$
+D
+$
+What replaces <*1> in the code 
+to the right so that the body of
+the if statement executes when
+the element at position i in the
+array d is less that or equal to 
+the variable guide according to 
+the natural ordering of the
+elements of d?
+$
+public static void sort(Comparable[] d){
+  int start, end;
+  Stack<Integer> sp = new Stack<Integer>();
+  sp.push( 0 );
+  sp.push( d.length - 1 );
+  while( !sp.isEmpty() ){
+    end = sp.pop();
+    start = sp.pop();
+    if(start < end){
+      int p = ( start + end ) / 2;
+      swap( d, p, start );
+      Comparable guide = d[start];
+      int i, j = start;
+      for(i = start + 1; i <= end; i++ ){
+        if( <*1> ){
+           j++;
+           swap( d, i, j );
+        }
+      }
+      swap( d, start, j );
+      sp.push( start );
+      sp.push( j - 1 );
+      sp.push( j + 1 );
+      sp.push( end );
+    }
+  }
+}
+
+public static void swap(Comparable[] d,
+                          int i, int j){
+  Comparable t = d[i];
+  d[i] = d[j];
+  d[j] = t;
+}
+
+$
+d[i].compareTo( guide ) >= 0
+$
+guide.compareTo( d[i] ) <= 0
+$
+!guide.equals( d[i] )
+$
+d[i] <= guide
+$
+d[i].compareTo( guide ) <= 0
+$
+E
+$
+Assume <*1> is filled in correctly.
+
+Which sorting algorithm do method
+sort and swap implement?
+$
+public static void sort(Comparable[] d){
+  int start, end;
+  Stack<Integer> sp = new Stack<Integer>();
+  sp.push( 0 );
+  sp.push( d.length - 1 );
+  while( !sp.isEmpty() ){
+    end = sp.pop();
+    start = sp.pop();
+    if(start < end){
+      int p = ( start + end ) / 2;
+      swap( d, p, start );
+      Comparable guide = d[start];
+      int i, j = start;
+      for(i = start + 1; i <= end; i++ ){
+        if( <*1> ){
+           j++;
+           swap( d, i, j );
+        }
+      }
+      swap( d, start, j );
+      sp.push( start );
+      sp.push( j - 1 );
+      sp.push( j + 1 );
+      sp.push( end );
+    }
+  }
+}
+
+public static void swap(Comparable[] d,
+                          int i, int j){
+  Comparable t = d[i];
+  d[i] = d[j];
+  d[j] = t;
+}
+$
+Merge sort
+$
+Insertion sort
+$
+Quicksort
+$
+Selection sort
+$
+Stack sort
+$
+C

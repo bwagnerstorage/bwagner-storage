@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> LinkedList Samples</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2">
+<h3>interface java.util.List&lt;E&gt;</h3>
+      <table class="notes" width="60%" border="1">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">int 
+            <strong>size</strong>()</font></td>
+          <td width="60%">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">appends obj to end of list; returns true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">void <strong>add</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">inserts obj at position index and higher to 
+            the right (adds 1 tgo their indices) and adjusts size</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>get</strong>(int 
+            index)</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>set</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">replaces the element at position index with 
+            obj; returns the element formerly at the specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>(int 
+            index)</font></td>
+          <td><font color="#000000">removes element from position index, moving 
+            elements at position index + 1 and higher to the left (subtracts from 
+            their indices) and adjusts size; returns the element formerly at the 
+            specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">Iterator 
+            &lt;E&gt; <strong>iterator</strong>()</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">ListIterator 
+            &lt;E&gt; <strong>listIterator</strong>()</font></td>
+          <td bgcolor="#FFFFE8">&nbsp;</td>
+        </tr>
+      </table>
+      <h3>interface java.util.Queue&lt;E&gt;</h3>
+      <table width="60%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">enqueues obj at the end of the queue; returns 
+            true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>()</font></td>
+          <td><font color="#000000">dequeues and returns the element at the front 
+            of the queue</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the element at the front of the queue; 
+            null if the queue is empty</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">&nbsp;</font></td>
+        </tr>
+      </table>
+      <h3>class java.util.LinkedList &lt;E&gt; implements java.util.List&lt;E&gt;, 
+        java.util.Queue&lt;E&gt; </h3>
+      <table width="40%" border="1" class="notes">
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">void <strong>addFirst</strong>( 
+            E obj)</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td height="25" bgcolor="#FFFFE8"><font color="#000000">void <strong>addLast</strong>(E 
+            obj)</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>getFirst</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>getLast</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>removeFirst</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>removeLast</strong>()</font></td>
+        </tr>
+      </table>
+      <br>
+      <hr>
+      <h3><strong>Example 1 - Creating a Linked List Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>LinkedList &lt;Integer&gt; list = new LinkedList &lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <p><strong>or</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List &lt;Integer&gt; list = new LinkedList &lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h3>Example 2 - Appending Items to Beginning of List</h3>
+      <p><strong>Queue method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   list.addFirst(i);<br>}</pre></td>
+        </tr>
+      </table>
+      <h3>Example 3 - Appending Items to End of List</h3>
+      <p><strong>List method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   list.add(i);<br>}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        <strong>Queue method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int i=0; i &lt; 10; i++)<br>{<br>   list.addLast(i);<br>}</pre></td>
+        </tr>
+      </table>
+      <p><strong>or</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List &lt;Integer&gt; list = new LinkedList &lt;Integer&gt; ();
+
+for(int i=0; i &lt; 10; i++)<br>{<br>   ((LinkedList)list).addLast(i);<br>}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h3><strong>Example 4 - Traversing a Linked List</strong></h3>
+      <p><strong>for-each</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(int n : list)<br>{<br>   System.out.print(n + &quot; &quot;);<br>}<br>System.out.println();</pre></td>
+        </tr>
+      </table>
+      <br>
+      <table width="67%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">0 1 2 3 4 5 6 7 8 9</font></td>
+        </tr>
+      </table>
+      <p><strong>iterator</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>Iterator it = list.iterator();   <font color="#009900">// get iterator from list</font><br>while(it.hasNext())<br>{<br>   System.out.print(it.next() + &quot; &quot;);<br>}<br>System.out.println();</pre></td>
+        </tr>
+      </table>
+      <br>
+      <table width="67%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">0 1 2 3 4 5 6 7 8 9</font></td>
+        </tr>
+      </table>
+      <br>
+      <h3><strong>Example 5 - Traversing a Linked List in Reverse Order</strong></h3>
+      <p><strong>listIterator</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>ListIterator lit = list.listIterator(list.size());  <font color="#009900">// get listIterator from list</font><br>while(lit.hasPrevious())<br>{<br>   System.out.print(lit.previous() + &quot; &quot;);<br>}<br>System.out.println();    </pre></td>
+        </tr>
+      </table>
+      <br>
+      <table width="67%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">0 8 7 6 5 4 3 2 1</font></td>
+        </tr>
+      </table>
+      <h3>&nbsp;</h3>
+      <h3>Example 6 - Inserting an Item into a List at a Specific Location</h3>
+      <p><strong>List method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int key = 5;  <font color="#006600">// insertion point</font><br>int i=0;<br>while(i &lt; list.size())<br>{<br>   int num = (Integer)list.get(i);<br>   if(num == key)<br>      list.add(i+1, 100);<br>   i++;<br>}</pre></td>
+        </tr>
+      </table>
+      <br>
+      <table width="67%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">0 1 2 3 4 5 100 6 7 8 9</font></td>
+        </tr>
+      </table> 
+      <p><strong>listIterator method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int key = 5;    <font color="#006600">// insertion point</font><br>lit = list.listIterator();<br>while(lit.hasNext())<br>{<br>   num = (Integer)lit.next();<br>   if(num == key)<br>       lit.add(100);<br>}<br></pre></td>
+        </tr>
+      </table>
+      <br>
+      <table width="67%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">0 1 2 3 4 5 100 6 7 8 9</font></td>
+        </tr>
+      </table>
+      <p><strong>for-each : <font color="#FF0000">Error do not use this method</font></strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int key=5;<br>int i=0;<br>for(int n : list)<br>{<br>   if(n == key)<br>       list.add(i+1, 100);<br>   i++;<br>}<br></pre></td>
+        </tr>
+      </table>
+      <br>
+      <table width="67%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF">Exception in thread &quot;main&quot; 
+            java.util.ConcurrentModificationException</font></td>
+        </tr>
+      </table>
+      <p>The for-each works by retrieving an iterator from the list. Attempting 
+        to call the <em>List</em> method <em>add</em> while there is an iterator 
+        open on the list will cause a <strong>ConcurrentModificationException

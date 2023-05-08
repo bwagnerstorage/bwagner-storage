@@ -1,0 +1,312 @@
+What is output by the code
+to the right?
+$
+String colors = "REDBLUE";
+Stack<Character> st;
+st = new Stack<Character>();
+
+for(int i = 0; i < colors.length(); i++)
+  st.push( colors.charAt(i) );
+
+while( !st.isEmpty() )
+  System.out.print( st.pop() );
+$
+ULBDER
+$
+EULB
+$
+EEEEEEE
+$
+REDBLUE
+$
+EULBDER
+$
+E
+$
+What is output by the code
+to the right?
+$
+// IntStack implements the traditional
+// stack operations for ints
+IntStack s = new IntStack();
+
+for(int i = 0; i < 10; i += 2)
+  s.push(i);
+
+while( !s.isEmpty() )
+  System.out.print( s.pop() );
+$
+86420
+$
+8642
+$
+1086420
+$
+97531
+$
+9876543210
+$
+A
+$
+Which of the following correctly
+replaces <*1> in the code to 
+the right?
+$
+Stack<Integer> x = <*1>;
+x.push(22);
+x.push(42);
+x.push(84);
+out.print(x.peek()+x.peek()); //2
+x.push(12);
+x.push(14);
+x.pop();
+x.pop();
+out.println(x.pop() + x.peek() + x.size()); //3
+$
+new Stack<Integer>();
+$
+new ArrayList<Integer>();
+$
+new LinkedList<Integer>();
+$
+B and C only.
+$
+A, B, and C.
+$
+A
+$
+What is output by line
+marked //2 in the code
+to the right?
+$
+Stack<Integer> x = <*1>;
+x.push(22);
+x.push(42);
+x.push(84);
+out.print(x.peek()+x.peek()); //2
+x.push(12);
+x.push(14);
+x.pop();
+x.pop();
+out.println(x.pop() + x.peek() + x.size()); //3
+$
+44
+$
+64
+$
+168
+$
+84
+$
+126
+$
+C
+$
+What is output by line 
+marked //3 in the code
+to the right?
+$
+Stack<Integer> x = <*1>;
+x.push(22);
+x.push(42);
+x.push(84);
+out.print(x.peek()+x.peek()); //2
+x.push(12);
+x.push(14);
+x.pop();
+x.pop();
+out.println(x.pop() + x.peek() + x.size()); //3
+$
+128
+$
+67
+$
+99
+$
+98
+$
+211
+$
+A
+$
+What is output by the code
+to the right?
+$
+Stack<Integer> s;
+s = new Stack<Integer>();
+
+for(int i = 5; i >= 0; i--)
+  s.push(i);
+
+while(s.size()>1)
+{
+  int sum = s.pop() + s.pop();
+
+  if( sum % 3 == 1)
+    continue;
+
+  s.push( sum );
+}
+System.out.println(s.pop());
+$
+10
+$
+14
+$
+17
+$
+19
+$
+20
+$
+B
+$
+What replaces <*1> in the code to
+the right to tell whether data
+member elements is empty?
+$
+public class Stack<E> {
+
+  private ArrayList<E> elements;
+
+  public Stack() {
+    elements = new ArrayList<E>();
+  }
+
+  public void push(E element) {
+    elements.add(element);
+  }
+
+  public E pop() {
+    return elements.remove(
+    elements.size()-1);
+  }
+
+  public boolean isEmpty() {
+    return <*1>;
+  }
+
+  public static void test() {
+    <*2>
+    s.push(15);
+    s.push(17);
+    s.push(35);
+    System.out.print(s.pop());
+    System.out.print(s.pop());
+    System.out.print(s.pop());
+  }
+
+}
+$
+elements
+$
+elements.empty()
+$
+elements.size()=0
+$
+elements.isEmpty()
+$
+elements != null
+$
+D
+$
+Which of these replaces <*2> in
+the code to the right as a valid
+declaration and initialization 
+of a stack of integer values?
+$
+public class Stack<E> {
+
+  private ArrayList<E> elements;
+
+  public Stack() {
+    elements = new ArrayList<E>();
+  }
+
+  public void push(E element) {
+    elements.add(element);
+  }
+
+  public E pop() {
+    return elements.remove(
+    elements.size()-1);
+  }
+
+  public boolean isEmpty() {
+    return <*1>;
+  }
+
+  public static void test() {
+    <*2>
+    s.push(15);
+    s.push(17);
+    s.push(35);
+    System.out.print(s.pop());
+    System.out.print(s.pop());
+    System.out.print(s.pop());
+  }
+
+}
+$
+Stack<Integer> s =
+         new Stack<Integer>();
+$
+Stack<Integer> s =
+         new Stack<Integer>;
+$
+Stack<int> s = new Stack<int>;
+$
+Stack<int> s = new Stack();
+$
+More than one of these
+$
+A
+$
+Assume <*1> and <*2> are filled 
+in correctly.What is output by
+the test() static method?
+$
+public class Stack<E> {
+
+  private ArrayList<E> elements;
+
+  public Stack() {
+    elements = new ArrayList<E>();
+  }
+
+  public void push(E element) {
+    elements.add(element);
+  }
+
+  public E pop() {
+    return elements.remove(
+    elements.size()-1);
+  }
+
+  public boolean isEmpty() {
+    return <*1>;
+  }
+
+  public static void test() {
+    <*2>
+    s.push(15);
+    s.push(17);
+    s.push(35);
+    System.out.print(s.pop());
+    System.out.print(s.pop());
+    System.out.print(s.pop());
+  }
+
+}
+$
+151735
+$
+351715
+$
+151515
+$
+353535
+$
+An exception is thrown
+$
+B

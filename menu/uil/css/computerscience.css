@@ -1,0 +1,341 @@
+
+p, li {
+   font-family: Georgia, Times New Roman, Times, serif;
+   font-size: 12px;
+   line-height: 16px;
+   color: #000000;
+}
+
+h1 {
+   font-family: Georgia, Times New Roman, Times, serif;
+   font-size: 24px;
+   line-height: 28px;
+   color: #000000;
+}
+
+h2 {
+   font-family: Georgia, Times New Roman, Times, serif;
+   font-size: 18px;
+   line-height: 22px;
+   color: #000000;
+}
+
+h3 {
+   font-family: Arial, Helvetica, sans-serif;;
+   font-size: 14px;
+   line-height: 28px;
+   color: #000000;
+}
+pre {
+   margin-bottom: 0;
+   margin-left: 1em; 
+}
+
+table.main {
+     font-size: 24px;
+	 table-layout: fixed; 
+}
+
+th.main {
+     color: #000000;
+	 background: #F0F0F0;
+	 text-align: center;
+	 cell-padding: 10px;
+	 white-space:nowrap;
+	 border: 2px solid;
+	 border-color: #C5C5C5;
+}
+
+td.main {
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 12px;
+	 line-height: 20px;
+	 color: #000000;
+     background: #FFFFFF;
+}
+
+table.schedule {
+     font-size: 24px;
+	 table-layout: fixed; 
+	 border: 1px;
+	 border-collapse:collapse; 
+	 border-style: solid;
+	 border-color: #000000;
+}
+
+th.schedule {
+     color: #FFFFFF;
+	 font-size: 14px;
+	 background: #000066;
+	 text-align: center;
+	 cell-padding: 10px;
+	 white-space:nowrap;
+	 border: 1px solid;
+	 border-color: #00000;
+}
+
+td.schedule{
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 12px;
+	 line-height: 20px;
+	 color: #000000;
+	 border: 1px solid;
+	 border-color: #00000;
+}
+
+table.notes{
+    font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	border: 2px;
+	border-collapse:collapse; 
+	border-style: solid;
+	border-color: #937C5E;
+	background: #EDEBE9;
+	color: #FFFFFF;
+}
+td.notes {
+    border: 2px;
+    border-color: #937C5E;
+	border-style: solid;
+    color: #000000;
+}
+
+th.notes {
+	font-size: 14px;
+	line-height: 20px;
+	background: #49493C;
+	color: #FFFFFF;
+	border: 2px;
+	border-color: #937C5E;
+	border-style: solid;
+}
+table.code {
+    font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	border: 1px;
+	border-collapse:collapse; 
+	border-style: solid;
+	border-color: #CC8A00;
+	background:#FFF2D7;
+	color: #00009B;
+}
+
+td.code {
+    border: 1px;
+    border-color: #CC8A00;
+	border-style: solid;
+}
+
+.csregular
+{
+position: relative;
+font-family: arial, helvetica, sans-serif;
+background: url(../img/csregular2.gif);
+white-space: nowrap;
+display: block;
+width: 120px;
+height: 23px;
+margin: 0;
+padding: 0;
+}
+
+.csregular a
+{
+display: block;
+color: #000000;
+font-size: 11px;
+width: 120px;
+height: 23px;
+display: block;
+float: left;
+color: black;
+text-decoration: none;
+}
+
+.csregular img
+{
+width: 120px;
+height: 23px;
+border: 0
+}
+
+* html a:hover
+{
+visibility:visible
+}
+
+.csregular a:hover img
+{
+visibility:hidden
+}
+
+.csregular span
+{
+position: absolute;
+left: 35px;
+top: 15px;
+margin: 0px;
+padding: 0px;
+cursor: pointer;
+} 
+
+
+.cspreap
+{
+position: relative;
+font-family: arial, helvetica, sans-serif;
+background: url(../img/cspreap2.gif);
+white-space: nowrap;
+display: block;
+width: 120px;
+height: 23px;
+margin: 0;
+padding: 0;
+}
+
+.cspreap a
+{
+display: block;
+color: #000000;
+font-size: 11px;
+width: 120px;
+height: 23px;
+display: block;
+float: left;
+color: black;
+text-decoration: none;
+}
+
+.cspreap img
+{
+width: 120px;
+height: 23px;
+border: 0
+}
+
+* html a:hover
+{
+visibility:visible
+}
+
+.cspreap a:hover img
+{
+visibility:hidden
+}
+
+.cspreap span
+{
+position: absolute;
+left: 35px;
+top: 15px;
+margin: 0px;
+padding: 0px;
+cursor: pointer;
+} 
+
+
+.csapa
+{
+position: relative;
+font-family: arial, helvetica, sans-serif;
+background: url(../img/csapa2.gif);
+white-space: nowrap;
+display: block;
+width: 120px;
+height: 23px;
+margin: 0;
+padding: 0;
+}
+
+.csapa a
+{
+display: block;
+color: #000000;
+font-size: 11px;
+width: 120px;
+height: 23px;
+display: block;
+float: left;
+color: black;
+text-decoration: none;
+}
+
+.csapa img
+{
+width: 120px;
+height: 23px;
+border: 0
+}
+
+* html a:hover
+{
+visibility:visible
+}
+
+.csapa a:hover img
+{
+visibility:hidden
+}
+
+.csapa span
+{
+position: absolute;
+left: 35px;
+top: 15px;
+margin: 0px;
+padding: 0px;
+cursor: pointer;
+} 
+
+.csapab
+{
+position: relative;
+font-family: arial, helvetica, sans-serif;
+background: url(../img/csapab2.gif);
+white-space: nowrap;
+display: block;
+width: 120px;
+height: 23px;
+margin: 0;
+padding: 0;
+}
+
+.csapab a
+{
+display: block;
+color: #000000;
+font-size: 11px;
+width: 120px;
+height: 23px;
+display: block;
+float: left;
+color: black;
+text-decoration: none;
+}
+
+.csapab img
+{
+width: 120px;
+height: 23px;
+border: 0
+}
+
+* html a:hover
+{
+visibility:visible
+}
+
+.csapab a:hover img
+{
+visibility:hidden
+}
+
+.csapab span
+{
+position: absolute;
+left: 35px;
+top: 15px;
+margin: 0px;
+padding: 0px;
+cursor: pointer;
+} 

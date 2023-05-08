@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> Map Samples</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h3>interface java.util.Map&lt;K,V&gt; (AP subset)</h3>
+      <table class="notes" width="60%" border="1">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">int 
+            <strong>size</strong>()</font></td>
+          <td width="60%"><p>returns the number of key/value mappings in the map</p></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>containsKey</strong>(Object key)</font></td>
+          <td><p>returns true if the map contains a mapping for key, false otherwise</p></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">V <strong>put</strong>(K 
+            key, V value)</font></td>
+          <td><p>Associates key with value<br>
+            returns the value formerly associated with key</p></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">V <strong>get</strong>(Object 
+            key) </font></td>
+          <td><p>returns the value associated with key or null if there is no associated 
+            value </p></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">V <strong>remove</strong>(Object 
+            key) </font></td>
+          <td><p>removes and returns the value associated with key</p></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font face="Courier New, Courier, mono">Set&lt;K&gt; <strong>keySet</strong>()</font></td>
+          <td><p>returns the set of keys contained in the map</p></td>
+        </tr>
+      </table>
+      <br>
+      <hr>
+      <h2>HashMap Example</h2>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>import java.util.*;
+
+public class MapDemo
+{
+    public static void main(String[] args)
+    {
+       <font color="#009900">// constructor</font>
+       HashMap&lt;Integer, String&gt; map = new HashMap&lt;Integer, String&gt;();
+       
+       <font color="#009900">// put method</font>
+       map.put(1, "dog");
+       map.put(2, "cat");
+       map.put(3, "bird");
+       
+       <font color="#009900">// get method</font>
+       String ans1 = map.get(1);
+       String ans2 = map.get(2);
+       String ans3 = map.get(3);
+       
+       System.out.println(ans1);
+       System.out.println(ans2);
+       System.out.println(ans3);
+       
+       <font color="#009900">// remove method</font>
+       String ans4 = map.remove(2);
+       System.out.println(ans4 + " has been removed");
+       
+       <font color="#009900">// size method</font>
+       System.out.println("Size = " + map.size());
+       
+       <font color="#009900">// containsKey method</font>
+       if(map.containsKey(1))
+       {
+          System.out.println("key is in map");
+       }
+       
+       <font color="#009900">// Iterate over map using set of keys</font>
+       Iterator iterator = map.keySet().iterator();
+       while(iterator.hasNext())
+       {
+          System.out.println(iterator.next());
+       }
+       
+    }
+}</pre></td>
+        </tr>
+      </table>
+      <h3>&nbsp;</h3>
+      <h2>TreeMap Example</h2>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>import java.util.*;
+
+public class MapDemo
+{
+    public static void main(String[] args)
+    {
+       <font color="#009900">// constructor</font>
+       TreeMap&lt;Integer, String&gt; map = new TreeMap&lt;Integer, String&gt;();
+       
+       <font color="#009900">// put method</font>
+       map.put(1, "dog");
+       map.put(2, "cat");
+       map.put(3, "bird");
+       
+       <font color="#009900">// get method</font>
+       String ans1 = map.get(1);
+       String ans2 = map.get(2);
+       String ans3 = map.get(3);
+       
+       System.out.println(ans1);
+       System.out.println(ans2);
+       System.out.println(ans3);
+       
+       <font color="#009900">// remove method</font>
+       String ans4 = map.remove(2);
+       System.out.println(ans4 + " has been removed");
+       
+       <font color="#009900">// size method</font>
+       System.out.println("Size = " + map.size());
+       
+       <font color="#009900">// containsKey method</font>
+       if(map.containsKey(1))
+       {
+          System.out.println("key is in map");
+       }
+       
+       <font color="#009900">// Iterate over map using set of keys</font>
+       Iterator iterator = map.keySet().iterator();
+       while(iterator.hasNext())
+       {
+          System.out.println(iterator.next());
+       }
+       
+    }
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>

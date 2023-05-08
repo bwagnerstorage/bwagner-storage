@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr> 
+    <td width="800" height="24" bgcolor="#000000" > <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script> </td>
+  </tr>
+  <tr> 
+    <th width="99%" class="main"> 6.3 RadixSort (01-3)</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>AP AB Free Response</h2>
+      <h3 align="left">Name: RadixSort<br>
+        Topic: Queue, ArrayList<br>
+        Reference: 2001 Question 3<br>
+        Source Code: <a href="/cs_apab/unit05_JCF_Linear%20Collections/ap%20free%20response/RadixSort.zip">RadixSort</a></h3>
+      <hr size=2 width="100%" align=center>
+      <p>Consider using a Radix Sort to order a list of positive integers. A Radix Sort makes as many passes through the
+      list as there are digits in the largest number to be sorted. For example, if the largest integer in the list were 492,
+      then the algorithm would make three passes through the list to sort it.</p>
+      <p>In each pass through the list, the Radix Sort algorithm sorts the numbers 
+        based on a different digit, working from the least to the most significant 
+        digit. To do this, it uses an intermediate data structure QA, which is 
+        an array of ten queues. Each number is placed into the queue corresponding 
+        to the value of the digit being examined. For example, in the first pass 
+        the digit in the ones&#8217; place is considered, so the number 345 would 
+        be enqueued into QA[5]. The number 260 would be enqueued into QA[0]. In 
+        each pass, the algorithm moves the numbers to be sorted from the list 
+        to the array of queues and then back to the list, as described below. 
+        After the last pass, the list is in sorted order, from smallest to largest.</p>
+   
+      <blockquote> 
+        <p><strong>Radix Sort Algorithm</strong>: In each pass through the list, 
+          do the following two steps. </p>
+        <p><strong><u>Step 1</u></strong></p>
+        <blockquote> 
+          <p>Taking each integer in the list in order, insert the integer into 
+            the queue corresponding to the value of <br>
+            the digit currently being examined. If the integer being examined 
+            does not have a digit at a given place value, 0 is assumed for that 
+            place value. For example, 95 has no digit in the hundreds&#8217; place, 
+            so when examining the hundreds&#8217; digit, the algorithm would assume 
+            that the value in the hundreds&#8217; place is 0 and enqueue 95 into 
+            QA[0]. </p>
+        </blockquote>
+        <p><strong><u>Step 2</u></strong> </p>
+        <blockquote>
+          <p> After all integers have been inserted into the appropriate queues, 
+            each queue is emptied in order back into the list, starting with QA[0].</p> 
+          </p>
+        </blockquote>
+      </blockquote>
+      <p>For example, assume that ArrayList L contains the list of integers 380, 
+        95, 345, 382, 260, 100, and 492. The sort will take three passes, because 
+        the largest integer in the list has 3 digits. The following diagram shows 
+        the sorting process. (For passes II and III, only the nonempty queues 
+        are shown in order to save space.) </p>
+      <p><img src="/cs_apab/unit06_JCF_Linear%20Collections/img/radixSort.gif" width="600" height="425"></p>
+      <p> (a) Write method <em>itemsToQueues</em>, as started below. <em>itemsToQueues</em> 
+        corresponds to step 1 of each pass of the Radix sort algorithm, creating 
+        the intermediate array of ten queues. Each integer in L is inserted into 
+        the queue corresponding to the value of the digit currently being examined. 
+        If an integer does not have a digit at the given place value, 0 is assumed 
+        for that place value.<br>
+        <br>
+        In writing <em>itemsToQueues</em>, you may call method <em>getDigit</em>, 
+        which returns the kth digit of its parameter, number. The least significant 
+        digit is indicated by a value of 0 for k. If k is greater than the number 
+        of digits in number, then <em>getDigit</em> returns 0. </p>
+      <pre>// precondition: number &gt;= 0; k &gt;= 0 <br>// postcondition: returns kth digit of number
+public int <strong>getDigit</strong>(int number, int k);<font face="Verdana, Arial, Helvetica, sans-serif"><br></font></pre>
+        <br>
+      The following table illustrates the results of several calls to <em>getDigit</em>. </p> 
+      <table width="40%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="22%"><div align="center"><strong>number</strong></div></td>
+          <td width="11%"><div align="center"><strong>k</strong></div></td>
+          <td width="67%"><div align="center"><strong>getDigit(number, k)</strong></div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">95</div></td>
+          <td><div align="center">0</div></td>
+          <td><div align="center">5</div></td>
+        </tr>
+        <tr> 
+          <td height="31"><div align="center">95</div></td>
+          <td><div align="center">1</div></td>
+          <td><div align="center">9</div></td>
+        </tr>
+        <tr> 
+          <td><div align="center">95</div></td>
+          <td><div align="center">2</div></td>
+          <td><div align="center">0</div></td>
+        </tr>
+      </table>
+      <p>You do not need to implement <em>getDigit</em>. <br>
+        <br>
+        Complete method<strong> itemsToQueues</strong> below. </p>
+      <pre>// precondition: all values in L are positive;
+//     k &gt;= 0
+// postcondition: Step 1 of the Radix sort algorithm for the digit
+//     at position k has been completed
+public ArrayList&lt;Queue&lt;Integer&gt;&gt; <strong>itemsToQueues</strong>(ArrayList&lt;Integer&gt; L, int k)
+      </pre>
+	  <br>
+	  <br>
+	  <br>
+      (b) Write method <em>queuesToArray</em>, as started below. <em>queuesToArray</em> 
+      corresponds to step 2 of each pass of the Radix sort algorithm, creating 
+      a new list from the values in the intermediate array of queues.<br>
+      <br>
+      Complete method <strong>queuesToArray</strong> below. </p> 
+      <pre>// precondition: QA.size() == 10; numVals is the total number of
+//    integers in all the queues in QA
+// postcondition: returns an ArrayList of length numVals that contains
+//    the integers from QA[0] through QA[9] in the order
+//    in which they were stored in the queues;
+//    the queues in QA are empty
+public ArrayList&lt;Integer&gt; <strong>queuesToArray</strong>(ArrayList&lt;Queue&lt;Integer&gt;&gt; QA, int numVals)
+      </pre>
+	  <br>
+	  <br>
+	  <br>
+      (c) Write method <em>radixSort</em>, as started below. In writing <em>radixSort</em>, 
+      you may call methods <em>itemsToQueues</em> and <em>queuesToArray</em> specified 
+      in parts (a) and (b). Assume that <em>itemsToQueues</em> and <em>queuesToArray</em> 
+      work as specified, regardless of what you wrote in parts (a) and (b).<br>
+      <br>
+      Complete method <strong>radixSort</strong> below. <br>
+      <pre>// precondition: L.length() &gt; 0; all values in L are positive; <br>//    the largest value in L has numDigits digits;
+// postcondition: returns an Arraylist of values, sorted in <br>//    nondecreasing order
+public ArrayList&lt;Integer&gt; <strong>radixSort</strong>(ArrayList&lt;Integer&gt; L, int numDigits)<br></p>
+      </pre>
+      <p><br>
+      </p>
+      <h2>Sample Output</h2>
+      <table width="625" border="0">
+        <tr> 
+          <td bgcolor="#000000"><pre><font color="#FFFFFF">20 47 13 88 52 71 97 5 35 64
+
+5 13 20 35 47 52 64 71 88 97</font>.</pre></td>
+        </tr>
+      </table>
+      <p></p></td>
+  </tr>
+  <tr>
+    <td class="main" colspan="2">&nbsp;</td>
+  </tr>
+</table>

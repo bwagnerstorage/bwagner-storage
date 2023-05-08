@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <td width="691" height="24" bgcolor="#000000" >
+        <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script>
+    </td>
+  </tr>
+  <tr>
+    <th width="691" class="main"> 11.1 Generics</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> So far, you have learned about using the generic 
+      classes and methods that are part of the Java Collection Framework. Now, 
+      it's time to learn how to write new generic classes and methods from scratch. 
+      Generic programming produces highly general and reusable code -- it's very 
+      useful for people who write reusable software libraries to know how to do 
+      generic programming, since it enables them to write code that can be used 
+      in many different situations. Not every programmer needs to write reusable 
+      software libraries, but every programmer should know at least a little about 
+      how to do it. 
+      <p>I will not cover every detail of generic programming, but the information 
+        presented here should be sufficient to cover the most common cases.</p>
+      <h2>Simple Generic Classes </h2>
+      <p> Let's start with an example that illustrates the motivation for generic 
+        programming. In a previous unit we discussed the how to implement a linked 
+        list. As an assignment you were asked to implement a linked list of <em>Strings</em> 
+        similar to the class <em>MyLinkedList</em> shown below.</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public class MyLinkedList<br>{<br>    private ListNode head;<br>    private ListNode cur;<br>    private ListNode prev;<br>    <br>    public void insertFirst(String data)<br>    {<br>        ListNode newNode = new ListNode(data, null);<br>        if(head == null)<br>        {<br>            head = newNode;<br>        }<br>        else<br>        {<br>            newNode.setNext(head);<br>            head = newNode;<br>        }<br>        <br>    }<br>    <br>    public void insertLast(String data)<br>    {<br>        ListNode newNode = new ListNode(data, null);<br>        cur = head;<br>        while(cur != null)<br>        {<br>            prev = cur;<br>            cur = cur.getNext();<br>        }<br>        prev.setNext(newNode);<br>        <br>    }<br>    <br>    public void deleteFirst()<br>    {<br>        head = head.getNext();<br>    }<br>    <br>    public void deleteLast()<br>    {<br>        cur = head;<br>        while(cur.getNext() != null)<br>        {<br>            prev = cur;<br>            cur = cur.getNext();<br>        }<br>        prev.setNext(null);<br>    }<br>    <br>    public void deleteInside(String key)<br>    {<br>       cur = head;<br>       while(cur != null &amp;&amp; !cur.getValue().equals(key))<br>       {<br>          prev = cur;<br>          cur = cur.getNext();<br>       }    <br>       if(cur == head &amp;&amp; cur.getValue().equals(key))<br>       {<br>          System.out.println(&quot;test&quot;);<br>          head = head.getNext();<br>       }<br>       else if(cur != null)<br>          prev.setNext(cur.getNext());<br>    }<br>    <br>    public boolean search(String key)<br>    {<br>       cur = head;<br>       while(cur != null)<br>       {<br>          if(cur.getValue().equals(key))<br>             return true;<br>          cur = cur.getNext();<br>       }    <br>       return false;<br>    }
+}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        This class is useful, however if we want a linked list of <em>Integers</em> 
+        or <em>Doubles</em> or any other type, then we will have to write a different 
+        class for each type. The code for all of these classes will be almost 
+        identical, which seems like a lot of redundant programming. To avoid the 
+        redundancy, we can write a generic Linked List class that can be used 
+        to define a linked list of any type of object.</p>
+      <p>The syntax for writing the generic class is straightforward: We replace 
+        the specific type <em>String</em> with a type parameter such as E, and 
+        we add the type parameter to the name of the class:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public class MyLinkedList&lt;<font color="#FF0000">E</font>&gt;<br>{<br>    private ListNode head;<br>    private ListNode cur;<br>    private ListNode prev;<br>    <br>    public void insertFirst(<font color="#FF0000">E</font> data)<br>    {<br>        ListNode newNode = new ListNode(data, null);<br>        if(head == null)<br>        {<br>            head = newNode;<br>        }<br>        else<br>        {<br>            newNode.setNext(head);<br>            head = newNode;<br>        }<br>        <br>    }<br>    <br>    public void insertLast(<font color="#FF0000">E</font> data)<br>    {<br>        ListNode newNode = new ListNode(data, null);<br>        cur = head;<br>        while(cur != null)<br>        {<br>            prev = cur;<br>            cur = cur.getNext();<br>        }<br>        prev.setNext(newNode);<br>        <br>    }<br>    <br>    public void deleteFirst()<br>    {<br>        head = head.getNext();<br>    }<br>    <br>    public void deleteLast()<br>    {<br>        cur = head;<br>        while(cur.getNext() != null)<br>        {<br>            prev = cur;<br>            cur = cur.getNext();<br>        }<br>        prev.setNext(null);<br>    }<br>    <br>    public void deleteInside(<font color="#FF0000">E</font> key)<br>    {<br>       cur = head;<br>       while(cur != null &amp;&amp; !cur.getValue().equals(key))<br>       {<br>          prev = cur;<br>          cur = cur.getNext();<br>       }    <br>       if(cur == head &amp;&amp; cur.getValue().equals(key))<br>       {<br>          System.out.println(&quot;test&quot;);<br>          head = head.getNext();<br>       }<br>       else if(cur != null)<br>          prev.setNext(cur.getNext());<br>    }<br>    <br>    public boolean search(<font color="#FF0000">E</font> key)<br>    {<br>       cur = head;<br>       while(cur != null)<br>       {<br>          if(cur.getValue().equals(key))<br>             return true;<br>          cur = cur.getNext();<br>       }    <br>       return false;<br>    }</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        Note that within the class, the type parameter E is used just like any 
+        regular type name. It's used to declare the return type and parameter 
+        type for the different methods. Given this class definition, we can use 
+        parameterized types such as <em>MyLinkedList</em>&lt;<em>String</em>&gt; 
+        and <em>MyLinkedList</em>&lt;<em>Integer</em>&gt;. That is, the <em>MyLinkedList</em> 
+        class is used in exactly the same way as built-in generic classes like 
+        <em>HashSet</em> and <em>HashMap</em>.</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>    public static void main(String[] args)<br>    {<br>        MyLinkedList&lt;String&gt; list = new MyLinkedList&lt;String&gt;();<br>        list.insertFirst(&quot;tiger&quot;);<br>        list.insertFirst(&quot;lion&quot;);<br>    }</pre></td>
+        </tr>
+      </table>
+      <p>Note that you don't have to use &quot;E&quot; as the name of the type 
+        parameter in the definition of the generic class. Type parameters are 
+        like formal parameters in subroutines. You can make up any name you like 
+        in the definition of the class. The name in the definition will be replaced 
+        by an actual type name when the class is used to declare variables or 
+        create objects. If you prefer to use a more meaningful name for the type 
+        parameter, you might define the <em>MyLinkedList</em> class as:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public class MyLinkedList&lt;<font color="#FF0000">ItemType</font>&gt;<br>{<br>    private ListNode head;<br>    private ListNode cur;<br>    private ListNode prev;<br>    <br>    public void insertFirst(<font color="#FF0000">ItemType</font> data)<br>    {<br>        ListNode newNode = new ListNode(data, null);<br>        if(head == null)<br>        {<br>            head = newNode;<br>        }<br>        else<br>        {<br>            newNode.setNext(head);<br>            head = newNode;<br>        }<br>        <br>    }<br>    <br>    public void insertLast(<font color="#FF0000">ItemType</font> data)<br>    {<br>        ListNode newNode = new ListNode(data, null);<br>        cur = head;<br>        while(cur != null)<br>        {<br>            prev = cur;<br>            cur = cur.getNext();<br>        }<br>        prev.setNext(newNode);<br>        <br>    }<br>    <br>    public void deleteFirst()<br>    {<br>        head = head.getNext();<br>    }<br>    <br>    public void deleteLast()<br>    {<br>        cur = head;<br>        while(cur.getNext() != null)<br>        {<br>            prev = cur;<br>            cur = cur.getNext();<br>        }<br>        prev.setNext(null);<br>    }<br>    <br>    public void deleteInside(<font color="#FF0000">ItemType</font> key)<br>    {<br>       cur = head;<br>       while(cur != null &amp;&amp; !cur.getValue().equals(key))<br>       {<br>          prev = cur;<br>          cur = cur.getNext();<br>       }    <br>       if(cur == head &amp;&amp; cur.getValue().equals(key))<br>       {<br>          System.out.println(&quot;test&quot;);<br>          head = head.getNext();<br>       }<br>       else if(cur != null)<br>          prev.setNext(cur.getNext());<br>    }<br>    <br>    public boolean search(<font color="#FF0000">ItemType</font> key)<br>    {<br>       cur = head;<br>       while(cur != null)<br>       {<br>          if(cur.getValue().equals(key))<br>             return true;<br>          cur = cur.getNext();<br>       }    <br>       return false;<br>    }</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        Changing the name from &quot;E&quot; to &quot;ItemType&quot; has absolutely 
+        no effect on the meaning of the class definition or on the way that <em>MyLinkedList</em> 
+        is used.</p>
+      <p>Generic interfaces can be defined in a similar way. It's also easy to 
+        define generic classes and interfaces that have two or more type parameters, 
+        as is done with the standard interface <em>Map</em>&lt;T,S&gt;. A typical 
+        example is the definition of a &quot;Pair&quot; that contains two objects, 
+        possibly of different types. A simple version of such a class can be defined 
+        as:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>class Pair&lt;T,S&gt; 
+{
+   private T first;<br>   private S second
+
+   public Pair(T a, S b)
+   {<br>      first = a;
+      second = b;<br>   }
+   
+   public T getFirst()
+   {
+      return first;
+   }
+   
+   public S getSecond()
+   {
+      return second;
+   }<br>}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        This class can be used to declare variables and create objects such as:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>Pair&lt;String,Color&gt; colorName = new Pair&lt;String,Color&gt;(&quot;Red&quot;, Color.RED);<br>Pair&lt;Double,Double&gt; coordinates = new Pair&lt;Double,Double&gt;(17.3,42.8); </pre></td>
+        </tr>
+      </table>
+      <p><br>
+        Note that in the definition of the constructor in this class, the name 
+        <em>Pair</em> does not have type parameters. You might have expected <em>Pair</em>&lt;T,S&gt;. 
+        However, the name of the class is <em>Pair</em>, not <em>Pair</em>&lt;T,S&gt;, 
+        and within the definition of the class, T and S are used as if they are 
+        the names of specific, actual types. Note in any case that type parameters 
+        are never added to the names of methods or constructors, only to the names 
+        of classes and interfaces.</p>
+      <h2>Simple Generic Methods</h2>
+      <p>In addition to generic classes, Java also has generic methods. An example 
+        is the method <em>Collections</em>.<em>sort</em>(), which can sort collections 
+        of objects of any type. To see how to write generic methods, let's start 
+        with a non-generic method for counting the number of times that a given 
+        string occurs in an array of strings:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>/**<br>* Returns the number of times that itemToCount occurs in list. Items in the<br>* list are tested for equality using itemToCount.equals(), except in the
+* special case where itemToCount is null.<br>**/<br>
+public static int countOccurrences(String[] list, String itemToCount) 
+{
+     int count = 0;
+     if (itemToCount == null)
+     {<br>        for ( String listItem : list )
+           if (listItem == null)
+              count++;
+     }
+     else
+     {
+        for ( String listItem : list )
+           if (itemToCount.equals(listItem))       
+              count++;
+     }
+     return count;<br>}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        Once again, we have some code that works for type <em>String</em>, and 
+        we can imagine writing almost identical code to work with other types 
+        of objects. By writing a generic method, we get to write a single method 
+        definition that will work for objects of any type. We need to replace 
+        the specific type <em>String</em> in the definition of the method with 
+        a the name of a type parameter, such as E. However, if that's the only 
+        change we make, the compiler will think that E is the name of an actual 
+        type, and it will mark it as an undeclared identifier. We need some way 
+        of telling the compiler that E is a type parameter. That's what the &lt;E&gt; 
+        does in the definition of the generic class <em>MyLinkedList</em>&lt;E&gt;. 
+        For a generic method, the &lt;E&gt; goes just before the name of the return 
+        type of the method:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public static &lt;<font color="#FF0000">E</font>&gt; int countOccurrences(<font color="#FF0000">E</font>[] list, <font color="#FF0000">E</font> itemToCount) 
+{
+    int count = 0;
+    if (itemToCount == null)
+    {
+        for ( <font color="#FF0000">E</font> listItem : list )
+           if (listItem == null)
+              count++;
+    }
+    else
+    {
+        for ( <font color="#FF0000">E</font> listItem : list )
+           if (itemToCount.equals(listItem))
+              count++;
+    }
+    return count;
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p>The &lt;E&gt; marks the method as being generic and specifies the name 
+        of the type parameter that will be used in the definition. Of course, 
+        the name of the type parameter doesn't have to be E; it can be anything.</p>
+      <p>Given the generic method definition, we can apply it to objects of any 
+        type. If wordList is a variable of type <em>String</em>[] and word is 
+        a variable of type <em>String</em>, then</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>int ct = countOccurrences( wordList, word );</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        will count the number of times that word occurs in wordList. If palette 
+        is a variable of type <em>Color</em>[] and color is a variable of type 
+        <em>Color</em>, then</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>int ct = countOccurrences( palette, color );</pre></td>
+        </tr>
+      </table>
+      <p>will count the number of times that color occurs in palette. If numbers 
+        is a variable of type <em>Integer</em>[], then</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>int ct = countOccurrences( numbers, 17 ); </pre></td>
+        </tr>
+      </table>
+      <p>will count the number of times that 17 occurs in numbers. This last example 
+        uses autoboxing; the 17 is automatically converted to a value of type 
+        <em>Integer</em>, as if we had said <em>countOccurrences</em>( numbers, 
+        new <em>Integer</em>(17) ). Note that, since generic programming in Java 
+        applies only to objects, we cannot use <em>countOccurrences</em> to count 
+        the number of occurrences of 17 in an array of type int[].</p>
+      <p>A generic method can have one or more type parameters, such as the E 
+        in <em>countOccurrences</em>. Note that when a generic method is used, 
+        as in the method call <em>countOccurrences</em>(wordlist, word), there 
+        is no explicit mention of the type that is substituted for the type parameter. 
+        The compiler deduces the type from the types of the actual parameters 
+        in the method call. Since <em>wordlist</em> is of type <em>String</em>[], 
+        the compiler can tell that in <em>countOccurrences</em>(wordlist, word), 
+        the type that replaces T is <em>String</em>. This contrasts with the use 
+        of generic classes, as in new <em>MyLinkedList</em>&lt;<em>String</em>&gt;(), 
+        where the type parameter is specified explicitly.</p>
+      <p>The <em>countOccurrences</em> method operates on an array. We could also 
+        write a similar method to count occurrences of an object in any collection:</p>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td class = "code"><pre>public static &lt;E&gt; int countOccurrences(Collection&lt;E&gt; collection, E itemToCount)
+{
+    int count = 0;
+    if (itemToCount == null)
+    {
+        for ( E item : collection )
+           if (item == null)
+             count++;
+    }
+    else
+    {
+        for ( E item : collection )
+           if (itemToCount.equals(item))
+             count++;
+    }
+    return count;
+}</pre></td>
+        </tr>
+      </table>
+      <p><br>
+        Since <em>Collection</em>&lt;E&gt; is itself a generic type, this method 
+        is very general. It can operate on an <em>ArrayList</em> of <em>Integers</em>, 
+        a <em>TreeSet</em> of <em>Strings</em>, a <em>LinkedList</em> of <em>JButtons</em>, 
+        etc.</p>
+      <h2>&nbsp;</h2>
+      </td>
+  </tr>
+</table>

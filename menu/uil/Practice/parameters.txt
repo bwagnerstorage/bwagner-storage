@@ -1,0 +1,271 @@
+What is returned by the method
+call basic (3)?
+$
+public int basic(int x) {
+  x = x * x;
+  x++;
+  return x;
+}
+$
+3
+$
+16
+$
+0
+$
+10
+$
+34
+$
+D
+$
+What is returned by the method
+call myst (4, 2)?
+$
+public int myst(int x, int y) {
+  x++;
+  y--;
+  X -= y;
+  return x;
+}
+$
+3
+$
+2
+$
+-1
+$
+5
+$
+4
+$
+E
+$
+What is returned by the method
+call process(-2)?
+$
+public int process(int z){
+  final int LOCAL = z * 2;
+  z++;
+  z = z + LOCAL;
+  return z;
+}
+$
+-5
+$
+3
+$
+-3
+$
+5
+$
+-2
+$
+A
+$
+What is returned by the method 
+call joy(-3)?
+$
+public int joy(int w){
+  w = w * w;
+  w -= w;
+  w--;
+  return w;
+}
+$
+11
+$
+-1
+$
+-3
+$
+5
+$
+-13
+$
+B
+$
+What is returned by the method 
+call adjust(1.7)?
+$
+public double adjust(double a){
+  a++;
+  a *= 2;
+  return a;
+}
+$
+3.0
+$
+1.7
+$
+3.6
+$
+4.0
+$
+5.4
+$
+E
+$
+What is returned by the method call
+happy( happy(2, 3), happy(3, 2) )?
+$
+public int happy(int x, int y){
+  x--;
+  ++y;
+  return x * y;
+}
+$
+10
+$
+9
+$
+21
+$
+7
+$
+18
+$
+C
+$
+What is returned by the method
+call sample(-5)?
+$
+public static int sample(int x){
+  return x - x;
+}
+$
+0
+$
+-10
+$
+-5
+$
+25
+$
+-25
+$
+A
+$
+What is returned by the method
+call simple(3)?
+$
+public static int simple(int x){
+  x++;
+  return x + x;
+}
+$
+6
+$
+3
+$
+10
+$
+8
+$
+0
+$
+D
+$
+What is returned by the method
+call toy(3)?
+$
+public static int toy(int value){
+  value++;
+  value += 1;
+  return value;
+}
+$
+3
+$
+5
+$
+4
+$
+7
+$
+9
+$
+B
+$
+What is returned by the method
+call example(2)?
+$
+public static int example(int x){
+  x++;
+  return x + x - 1;
+}
+$
+5
+$
+1
+$
+2
+$
+4
+$
+3
+$
+A
+$
+What is returned by the method
+call sample(3)?
+$
+public static int sample(int y){
+  y--;
+  return y * y;
+}
+$
+3
+$
+1
+$
+4
+$
+16
+$
+6
+$
+C
+$
+What is returned by the method
+call example(3, 8)?
+$
+public static int example(int x, int y){
+  y -= x;
+  x--;
+  return y++;
+}
+$
+-5
+$
+-6
+$
+6
+$
+4
+$
+5
+$
+E
+$
+What is returned by the method call
+change( change(8) ) ?
+$
+public static int change(int x){
+int y = x;
+y = y - 2;
+x /= 2;
+return x + y;
+}
+$
+10
+$
+6
+$
+13
+$
+4
+$
+8
+$
+C

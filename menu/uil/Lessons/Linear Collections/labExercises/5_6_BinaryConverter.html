@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr> 
+    <th width="99%" class="main">6.6 Binary Converter</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Description</h2>
+      <p>&nbsp;</p>
+      <p>Complete the implementation of the program <strong>BinaryConverter</strong>. 
+        This program utilizes a <em>Stack</em> data structure to convert a decimal 
+        number (base 10) into its binary representation (base 2). Each node of 
+        the <em>Stack </em>will contain one binary digit (0 or 1).</p>
+      <h3><u>Implementation</u></h3>
+      <p>Implement the two methods as defined in their pre and post conditions.</p>
+      <blockquote> 
+        <p><strong>public Stack&lt;Integer&gt; decimalToBinary(int dividend)<br>
+          public void printBinary(Stack&lt;Integer&gt; stack)</strong></p>
+      </blockquote>
+      <table class="code" width="100%" border="1">
+        <tr> 
+          <td> <pre>import java.util.*;
+
+public class BinaryConverter
+{
+    public static void main(String[] args)
+    {
+        BinaryConverter converter = new BinaryConverter();
+        
+        int num = converter.getInteger();
+        
+        Stack&lt;Integer&gt; binaryNumber = converter.decimalToBinary(num);
+        
+        converter.printBinary(binaryNumber);
+    }
+    
+    <font color="#006600">// Precondition:  none
+    // Postcondition: prompts the user to enter a decimal number(base ten).
+    //                if the number enter is a valid integer value then the
+    //                method returns the number, otherwise it displays an
+    //                error message and asks the user to enter number again.</font>
+    public int getInteger()
+    {
+
+       Scanner keyboard = new Scanner(System.in);
+       int num = 0;
+       boolean validNumber = false;
+       while(!validNumber)
+       {
+           validNumber = true;
+           try
+           {
+              System.out.print("Enter decimal number-->");  
+              num = keyboard.nextInt();
+           }
+           catch(NumberFormatException e)
+           {
+              System.out.println("Invalid number! Try again.");
+              System.out.println();
+              validNumber = false;
+           }
+        }
+       
+       return num;
+    }
+
+    <font color="#006600">// Precondition:  argument is a valid integer.
+    // Postcondition: returns a Stack that contains the binary representation
+    //                (base 2) of the given integer. Each node in the Stack
+    //                contains a single binary digit(1 or 0).</font>
+    public Stack&lt;Integer&gt; decimalToBinary(int dividend)
+    {
+
+
+       
+    }
+
+    <font color="#006600">// Postcondition: prints the stack</font>
+    public void printBinary(Stack&lt;Integer&gt; stack)
+    {<font color="#006600">
+     </font>
+       
+
+    }
+
+}</font></pre></td>
+        </tr>
+      </table>
+      <h3><strong>Hint</strong></h3>
+      <p>Use the following technique to convert from a decimal number to binary 
+        number:</p>
+      <ol>
+        <li>Divide the decimal value by 2.</li>
+        <li>Then continually divide the quotient of the previous division by 2 
+          until the quotient equals 0.</li>
+        <li>The remainders will be the new binary number.</li>
+      </ol>
+      <p><strong>Example:</strong> Suppose I want to convert the decimal number 
+        <strong>39</strong> to binary. Here is what it might look like. The answer 
+        reading from top to bottom is <strong>100111</strong>.</p>
+      <p><img src="http://bwagner/menu/uil/Lessons/Linear%20Collections/img/decTobin.gif" width="175" height="221"></p>
+<h2>Sample Run</h2>
+      <table width="88%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"> <pre><font color="#FFFFFF">Enter decimal number-->109
+
+Binary number = 1101101
+
+Press any key to continue...</font>
+Press any key to continue...</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td class="main" colspan="2">&nbsp;</td>
+  </tr>
+</table>

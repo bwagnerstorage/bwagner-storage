@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 6.1 Linear Collection: Stack</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"><strong>Linear Collection: </strong>Stack <p><strong>Interfaces: 
+        </strong>List
+      <p><strong>Implementing Classes: </strong>Stack</p>
+      <hr> <h2>Stack</h2>
+      <p>Stacks are linear collections in which access is completely restricted 
+        to just one end, called the <strong>top</strong>. The classical example 
+        is the stack of clean trays found in every cafeteria. Whenever a tray 
+        is needed, it is removed from the top of the stack, and whenever clean 
+        ones come back from the scullery, they are again placed on the top. No 
+        one ever takes some particular fine tray from the middle of the stack, 
+        and it is even possible that trays near the bottom are never used. Stacks 
+        are said to adhere to a last-in, first-out protocol <strong>(LIFO)</strong>. 
+        The last tray brought back from the scullery is the first one taken by 
+        a customer.</p>
+      <h2>JCF - Java Collections Framework</h2>
+      <p>The java.util package includes a <em>Stack</em> class. The methods used 
+        to manipulate a stack are shown below. The operations for putting items 
+        on and removing items from a stack are called <strong>push</strong> and 
+        <strong>pop</strong>, respectively.</p>
+      <h3>class java.util.Stack&lt;E&gt; (AP subset)</h3>
+      <table width="80%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">E 
+            <strong>push</strong>(E item)</font></td>
+          <td width="69%"><font color="#000000">pushes item onto the top of the 
+            stack; returns item</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>pop</strong>()</font></td>
+          <td><font color="#000000">removes and returns the element at the top 
+            of the stack</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the element at the top of the stack</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">throws an exception if the stack is empty</font></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p>* Note: The Stack class provided by the JCF is a subclass of another 
+        class called Vector (similar to an ArrayList). An unfortunate side effect 
+        of this implementation is that clients can treat stacks as vectors by 
+        inserting, replacing, or removing an element at <strong>any</strong> position, 
+        thus violating the spirit of a stack which only allows manipulation from 
+        the <strong>top</strong>. Therefore the AP CS development committee offers 
+        this warning</p>
+      <blockquote> 
+        <p><em>The java.util.Stack class inherits methods that access elements 
+          in a way that violates its abstract data structure definition. Solutions 
+          that use objects of type Stack should use only the methods listed in 
+          the AP CS Appendix for accessing and modifying those objects. The use 
+          of other methods in free-response solutions may not receive full credit.<br>
+          </em></p>
+      </blockquote>
+      <h2>Using a Stack</h2>
+      <h3><strong>Creating a Linked List Object</strong></h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>Stack&lt;Integer&gt; myStack = new Stack&lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <p>or</p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>List&lt;Integer&gt; myStack = new Stack&lt;Integer&gt; ();</pre></td>
+        </tr>
+      </table>
+      <h3>Adding an Object to a Stack</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>myStack.push(57);</pre></td>
+        </tr>
+      </table>
+      <h3>Removing an Object from a Stack</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int num = myStack.pop();</pre></td>
+        </tr>
+      </table>
+      <h3>Viewing the Top of a Stack</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>int num = myStack.peek();  <font color="#009900">// does not remove the item</font></pre></td>
+        </tr>
+      </table>
+      <h3>Traversing a Stack</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>while(!myStack.isEmpty())
+{
+   System.out.println(myStack.pop());
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h2>Applications of Stacks</h2>
+      <p>Applications of stacks in computer science are numerous. Following are 
+        just a few examples:</p>
+      <ul>
+        <li>Parsing expressions in context-free programming languages - a problem 
+          in compiler design</li>
+        <li>Translating infix expressions to postfix form and evaluating postfix 
+          expressions</li>
+        <li>Backtracking algorithms</li>
+        <li>Managing computer memory in support of method calls</li>
+        <li>Supporting the &quot;undo&quot; feature in text editors, word processors, 
+          spreadsheet programs, etc.</li>
+        <li>Maintaining a history of the links visited by a Web browswer</li>
+      </ul>
+      <p>&nbsp;</p>
+      <h2>Analyzing the Performance of Stack Implementations</h2>
+      <p>The run-time performance of a stack implementation depends on the run-time 
+        performance of the operations on the data structure contained in it. Stacks 
+        are linear collections, so the natural choices for implementation are 
+        based on arrays (ArrayLists) and linked structures (LinkedList).</p>
+      <p>A stack that uses an array list or an array can push or pop elements 
+        in constant time O(1), with one exception. When the underlying array runs 
+        out of room, it must be resized, and this operation takes linear time.</p>
+      <p>On the other hand, elements can always be added to the end or the beginning 
+        of a linked structure in constant time. A linked structure requires three 
+        times the memory to represent the links and references to the data but 
+        no extra memory to represent the data themselves. Thus, where time is 
+        of the essence, a linked implementation is usually preferable.</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>

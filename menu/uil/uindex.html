@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<BASE href="http://bwagner.org/menu/uil/">
+<script language="JavaScript">
+top.window.moveTo(0,0);
+if (document.all) {
+   top.window.resizeTo(screen.availWidth,screen.availHeight);
+}
+else if (document.layers||document.getElementById) 
+{
+   if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+       top.window.outerHeight = screen.availHeight;
+       top.window.outerWidth = screen.availWidth;
+}
+}
+//-->
+</script>
+<title>UIL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<frameset  rows="100,*" cols="1024" framespacing="0">
+  <frame src="/uil/header.html"  name="topFrame" scrolling="NO" noresize>
+    <frameset cols="275,*" frameborder="YES" border="0" framespacing="0">
+      <frame src="/uil/tree.html" name="leftFrame" scrolling="YES">
+      <frame src="/uil/main.html" name="frameset" frameborder="0" scrolling="YES" id="frameset">
+    </frameset>
+</frameset>
+<noframes><body>
+
+</body></noframes>
+</html>

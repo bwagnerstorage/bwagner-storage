@@ -1,0 +1,257 @@
+What is output by the code to the 
+right when given this input?
+
+value1 is 10
+value2 is 12
+
+$
+Scanner sc = new Scanner(System.in);
+System.out.print( sc.next() );
+System.out.print( sc.next() );
+$
+value1is
+$
+value1 is 10value2 is 12
+$
+value1 is 10
+value2 is 12
+$
+10 12
+$
+value1 is
+$
+A
+$
+What is output by the code to the right when
+given this input?
+
+2 2.1 3
+
+$
+Scanner sc = new Scanner(System.in);
+int sum = 0;
+while( sc.hasNextInt() )
+  sum += sc.nextInt();
+System.out.print( sum );
+$
+2
+$
+4
+$
+5
+$
+7
+$
+8
+$
+A
+$
+What is output by the code to the 
+right when given this input?
+
+1.2 0.9 .3 -.4 ZZ
+
+$
+Scanner sc = new Scanner( System.in );
+int count = 0;
+while( sc.hasNextDouble() ){
+  count++;
+  sc.nextDouble();
+}
+System.out.print( count );
+$
+2
+$
+2.1
+$
+4
+$
+3
+$
+2.0
+$
+C
+$
+What replaces <*1> in the code to the 
+right to indicate method count will
+pass along any FileNotFoundExceptions
+it may generate instead of handling
+them locally?
+$
+public int count(String filename) <*1> {
+  Scanner sc;
+  // The next line of code can result in
+  // a FileNotFoundException.
+  sc = new Scanner( new File(filename) );
+ 
+  int count = 0;
+
+  // rest of method not shown
+  return count;
+}
+$
+throws FileNotFoundException
+$
+finally FileNotFoundException
+$
+throws new FileNotFoundException()
+$
+throw new FileNotFoundException
+$
+catch FileNotFoundException
+$
+A
+$
+What is output by the code to the 
+right if the value 4 is entered
+at the call to key.nextInt()?
+$
+int[] temps = {7, 13, 16, 12};
+Scanner key = new Scanner( System.in );
+int d = key.nextInt();
+
+if( d > 0 || d < temps.length )
+System.out.print( temps[d] );
+$
+4
+$
+12
+$
+The code successfully completes
+execution with no output.
+$
+There is no output due to a 
+syntax error.
+$
+There is no output due to an
+ArrayIndexOutOfBoundsException.
+$
+E
+$
+What is output by the code to the right?
+$
+String nums = "-3 9 ST -5 2 32a";
+int sum = 0;
+Scanner s = new Scanner(nums);
+while( s.hasNext() ){
+  if( s.hasNextInt() )
+    sum += s.nextInt();
+  else
+    s.next();
+}
+System.out.print( sum );
+$
+35
+$
+8
+$
+3
+$
+There is no output due to a 
+syntax error in the code.
+$
+There is no output due 
+to a runtime error.
+$
+C
+$
+What is output by the code to the right?
+$
+String nums = "-0.5 0.3 A 1A -.5 2";
+double sum = 0;
+Scanner s = new Scanner(nums);
+while( s.hasNext() ){
+  if( s.hasNextDouble() )
+    sum += s.nextDouble();
+  else
+    s.next();
+}
+System.out.print( sum );
+$
+2.3
+$
+1.8
+$
+1.3
+$
+-0.7
+$
+37.3
+$
+C
+$
+What is the value of sum after
+executing the code to the right
+on the input below?
+
+12 3 4 10 0 3 -2 14
+
+$
+Scanner input = new Scanner(System.in);
+int x = 1, sum = 0;
+while (x >= 0) {
+  x = input.nextInt();
+  sum = sum + x;
+}
+$
+12
+$
+32
+$
+30
+$
+29
+$
+44
+$
+C
+$
+Suppose i is initialized to refer to 
+a file with integer values separated
+by colons. What replaces <*1> in the
+code to the right so that the code
+sums up all the numbers in i?
+$
+InputStream i;
+//code to initialize i not shown
+Scanner s = new Scanner(i);
+<*1>;
+int sum = 0;
+while (s.hasNextInt())
+  sum += s.nextInt();
+$
+s.read(":")
+$
+s.split(":")
+$
+s.separate(":")
+$
+s.isWhiteSpace(":")
+$
+s.useDelimiter(":")
+$
+E
+$
+Which of these input strings would 
+cause the code to the right to set
+x to 10, y to 0.5, and s to " 16"?
+$
+Scanner input = new Scanner(System.in);
+
+int x = input.nextInt();
+
+double y = input.nextDouble();
+
+String s = input.nextLine();
+$
+100.516
+$
+10 0.5 16
+$
+10.5 16
+$
+10.516
+$
+Both B and C
+$
+B

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> Set Samples</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h3>interface java.util.Set&lt;E&gt; (AP subset)</h3>
+      <table class="notes" width="60%" border="1">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">int 
+            <strong>size</strong>()</font></td>
+          <td width="60%">returns number of items in set</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>contains</strong>(Object obj)</font></td>
+          <td><p>returns true if obj is in the set;<br>
+              otherwise, returns false</p></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(Object obj)</font></td>
+          <td><font color="#000000">if obj is not present in this set, adds obj 
+            and returns true;</font><br>
+            otherwise, returns false</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>remove</strong>(Object obj)</font></td>
+          <td><font color="#000000">if obj is present in this set, removes obj 
+            and returns true;</font><br>
+            otherwise, returns false</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">Iterator 
+            &lt;E&gt; <strong>iterator</strong>()</font></td>
+          <td>returns an iterator on the set</td>
+        </tr>
+      </table>
+      <br>
+      <hr>
+      <h2><strong>HashSet Examples</strong></h2>
+      <p><strong>constructor</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>HashSet&lt;String&gt; set = new HashSet&lt;String&gt;();<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>add Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>set.add(&quot;dog&quot;);
+set.add(&quot;cat&quot;);
+set.add(&quot;bird&quot;);<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>remove Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>set.remove(&quot;bird&quot;);<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>contains Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre> if(set.contains(&quot;cat&quot;))<br> {<br>	 System.out.println(&quot;Set contains: Cat&quot;);<br> }<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>size Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>System.out.println(&quot;Size = &quot; + set.size());<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>Traverse - iterator</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>Iterator it = set.iterator();<br>while(it.hasNext())<br>{<br>   System.out.println(it.next());<br>}<br></pre></td>
+        </tr>
+      </table>
+      <br> <table width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#CCCCCC"> 
+            <p><font color="#000000" face="Courier New, Courier, mono">dog <br>
+              cat<br>
+              bird </font></p></td>
+        </tr>
+      </table>
+      * no particular order 
+      <p><strong>Traverse - enhanced for</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(String str : set)<br>{<br>   System.out.println(str);
+}<br></pre></td>
+        </tr>
+      </table>
+      <br> <table width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#CCCCCC"> 
+            <p><font color="#000000" face="Courier New, Courier, mono">dog<br>
+              cat</font><font color="#000000"><br>
+              <font face="Courier New, Courier, mono">bird</font></font><font color="#FFFFFF" face="Courier New, Courier, mono"> 
+              </font></p></td>
+        </tr>
+      </table>
+      * no particular order
+<h2>&nbsp;</h2>
+      <h2><strong>TreeSet Examples</strong></h2>
+      <p><strong>constructor</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>TreeSet&lt;String&gt; set = new TreeSet&lt;String&gt;();<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>add Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>set.add(&quot;dog&quot;);
+set.add(&quot;cat&quot;);
+set.add(&quot;bird&quot;);<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>remove Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>set.remove(&quot;bird&quot;);<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>contains Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre> if(set.contains(&quot;cat&quot;))<br> {<br>	 System.out.println(&quot;Set contains: Cat&quot;);<br> }<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>size Method</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>System.out.println(&quot;Size = &quot; + set.size());<br></pre></td>
+        </tr>
+      </table>
+      <p><strong>Traverse - iterator</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>Iterator it = set.iterator();<br>while(it.hasNext())<br>{<br>   System.out.println(it.next());<br>}<br></pre></td>
+        </tr>
+      </table>
+      <br> <table width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#CCCCCC"> 
+            <p><font color="#000000" face="Courier New, Courier, mono">bird<br>
+              cat<br>
+              dog </font></p></td>
+        </tr>
+      </table>
+      *ascending order 
+      <p><strong>Traverse - enhanced for</strong></p>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>for(String str : set)<br>{<br>   System.out.println(str);
+}<br></pre></td>
+        </tr>
+      </table>
+      <br> <table width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#CCCCCC"> 
+            <p><font color="#000000" face="Courier New, Courier, mono">bird<br>
+              cat<br>
+              dog </font></p></td>
+        </tr>
+      </table>
+      * ascending order 
+      <h2>&nbsp;</h2>
+      <p>&nbsp;</p>
+      <h3>&nbsp;</h3>
+      </td>
+  </tr>
+</table>

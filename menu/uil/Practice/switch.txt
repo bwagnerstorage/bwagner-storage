@@ -1,0 +1,251 @@
+What is output by the client code to the right?
+$
+public int off(int month){
+  int result = -4;
+  switch( month ){
+    case 1: result = -3; break;
+    case 3: case 5: case 8: case 10:
+      result = -1; break;
+    default: result = 0;
+  }
+  return result;
+}
+
+// client code
+System.out.print( off(1) + off(7) );
+$
+-3
+$
+-8
+$
+-6
+$
+0
+$
+-7
+$
+A
+$
+What is output by the code to the right?
+$
+String vals = "abac";
+int total = 0;
+char ch;
+for( int i = 0; i < vals.length(); i++){
+  ch = vals.charAt(i);
+  switch ( ch ) {
+    case 'a' : total++; break;
+    case 'b' : total *= 2; break;
+    default : total--;
+  }
+}
+
+System.out.print( total );
+$
+4
+$
+3
+$
+0
+$
+1
+$
+2
+$
+E
+$
+What is output by the code to the right?
+$
+String d3 = "acbbeab";
+int t = 0;
+for(int i = 0; i < d3.length(); i++){
+  switch( d3.charAt(i) ){
+    case 'a' :
+      t++;
+      break;
+    case 'b' :
+      t += 2;
+      break;
+    case 'c' :
+      t *= 3;
+  }
+}
+
+System.out.print(t);
+$
+10
+$
+9
+$
+13
+$
+0
+$
+2436
+$
+A
+$
+What is returned by the method call utpb(15138) ?
+$
+public String utpb(int val){
+  String res = "";
+  while( val > 0 ){
+    int d = val % 10;
+    val = val / 10;
+    switch (d) {
+      case 1: res += "A"; break;
+      case 3: res += "BA"; break;
+      case 5: res += "AA"; break;
+      default:
+        res += "C";
+        val = val * 10 + 1;
+    }
+  }
+  return res;
+}
+$
+CABAAAAA
+$
+AAAABAC
+$
+AAAAABAC
+$
+CBAAAAA
+$
+AAAAABC
+$
+A
+$
+What argument to method utpb will cause the method to
+return the String "AACBA" ?
+$
+public String utpb(int val){
+  String res = "";
+  while( val > 0 ){
+    int d = val % 10;
+    val = val / 10;
+    switch (d) {
+      case 1: res += "A"; break;
+      case 3: res += "BA"; break;
+      case 5: res += "AA"; break;
+      default:
+        res += "C";
+        val = val * 10 + 1;
+    }
+  }
+  return res;
+}
+$
+523
+$
+1123
+$
+2225
+$
+Either A or B
+$
+None of these.
+$
+E
+$
+What is output by the code to the right?
+$
+int x = 4;
+switch {
+  case (x==0): System.out.print("Zero");
+               break;
+  case (x<0): System.out.print("Negative");
+              break;
+  case (x>0): System.out.print("Positive");
+              break;
+  default: System.out.print("Error");
+}
+$
+Zero
+$
+Negative
+$
+Positive
+$
+Error
+$
+The code does not compile
+$
+E
+$
+What is returned by the static method
+call makeString("001230")?
+$
+public static String makeString(String s) {
+  String out = "";
+  for (int i=0; i<s.length(); ++i)
+  switch(s.charAt(i)) {
+    case '0': out = "A" + out;
+              break;
+    case '1': out = "B" + out + "B";
+              break;
+    case '2': out = out + "C";
+              break;
+  }
+  return out;
+}
+$
+"AABBCA"
+$
+"AABACB"
+$
+"AAABBC"
+$
+"ABAABC"
+$
+A run-time error occurs when i is 4
+$
+D
+$
+What is the value of total after 
+executing the code to the right?
+$
+int x = 42, total = 0;
+while (x != 0) {
+  switch(x%3) {
+    case 0: total = total + 1; break;
+    case 2: total = total - 1; break;
+  }
+  x = x/3;
+}
+$
+-2
+$
+-1
+$
+0
+$
+1
+$
+2
+$
+C
+$
+What is returned by f("abacab")?
+$
+public static int f(String s) {
+  int answer = 0;
+  for (int i=0; i<s.length(); ++i)
+    switch((s.charAt(i)-'a')%2) {
+      case 0 : ++answer; break;
+      case 1 : answer *= 2; break;
+    }
+  return answer;
+}
+$
+10
+$
+12
+$
+14
+$
+16
+$
+18
+$
+A

@@ -1,0 +1,510 @@
+Methods search and helper attempt to 
+implement the binary search algorithm,
+but there is a logic error in method
+helper that causes the method to 
+return an incorrect value in some 
+situations. Which of the following 
+best describes how to correct the
+logic error?
+$
+// pre: the elements of data
+// are sorted in ascending order
+// post: return an index in data that
+// contains tgt. return -1 if tgt is
+// not present
+public int search(int[] data, int tgt) (
+  int e = data. length - 1;
+  return helper(data, tgt, 0, e);
+}
+ 
+private int helper(int[] data, int t,
+                   int s, int e) {
+  if( s <= e ){
+    int m = (s + e) / 2;
+    if( data[m] == t )
+      return m;
+    else if( data[m] > t )
+      return helper(data, t, 0, m - 1);
+    else
+      return helper(data, t, m + 1, e);
+  }
+  else
+    return -1;
+}
+$
+Replace the line
+  if ( s <= e ) {
+with the following
+   if(s<e){
+$
+Replace the line
+  int m = (s + e) / 2;
+with the following
+  int m = (s + e) * 2;
+$
+Replace the line
+  else if( data[m] > t )
+with the following
+  else if( data[m] >= t )
+$
+Replace the line
+  return helper(data, t, 0, m - 1);
+with the following
+  return
+    helper(data, t, s, m - 1);
+$
+Replace the line
+  return helper(data, t, m + 1, e);
+with the following
+  return helper(data, m + 1, t, e);
+$
+D
+$
+What replaces <*1> in the code to
+the right so that the body of the
+while loop is skipped if char c
+has been found in String s?
+$
+public int findChar(String s,
+                    char c,
+                    int start){
+  int result = -1;
+  int index = start;
+  while( <*1> && index < s.length() ){
+    if( s.charAt(index) == c )
+       result = index;
+    index++;
+  }
+  return result;
+}
+$
+result
+$
+!result
+$
+result == -1
+$
+result != -1
+$
+continue
+$
+C
+$
+Which searching algorithm does
+method findChar use?
+$
+public int findChar(String s,
+                    char c,
+                    int start){
+  int result = -1;
+  int index = start;
+  while( <*1> && index < s.length() ){
+    if( s.charAt(index) == c )
+       result = index;
+    index++;
+  }
+  return result;
+}
+$
+hash
+$
+binary
+$
+tree
+$
+heap
+$
+sequential
+$
+E
+$
+Method search to the right implements
+the binary search algorithm. If 
+list.length is 256 what is the
+largest possible value the method
+will print out at the line of code
+marked // line 1?
+$
+// pre: list != null and
+// elements in list are sorted in
+// ascending order.
+public int search(int[] list, int tgt){
+  int res = -1;
+  int low = 0;
+  int hi = list.length - 1;
+  int count = 0;
+  while( res == -1 && low <= hi ){
+    count++;
+    int mid = (low + hi) / 2;
+    if( list[mid] == tgt )
+      res = mid;
+    else if( list[mid] < tgt )
+      low = mid + 1;
+    else
+      hi = mid -1;
+  }
+  System.out.println( count ); // line 1
+  return res;
+}
+$
+1
+$
+6
+$
+9
+$
+25
+$
+257
+$
+C
+$
+What is output by the code to 
+the right when method search 
+is called?
+$
+// pre: list != null and
+// elements in list are sorted in
+// ascending order.
+public int search(List<Integer> d,
+                            int tgt){
+  Integer t = new Integer(tgt);
+  int res = -1;
+  int low = 0;
+  int hi = d.size() - 1;
+  int count = 0;
+  while( res == -1 && low <= hi ){
+    count++;
+    int mid = (low + hi) / 2;
+    int diff = t.compareTo( d.get(mid) );
+    if( diff == 0 )
+      res = mid;
+    else if( diff > 0 )
+      low = mid + 1;
+    else
+      hi = mid -1;
+  }
+  return res;
+}
+//////////////////////////////////////////
+// client code
+ArrayList<Integer> t;
+t = new ArrayList<Integer>();
+for(int i = 0; i < 1000; i++)
+  t.add( 0 );
+System.out.print( search(t, 0) );
+$
+0
+$
+1000
+$
+499
+$
+999
+$
+500
+$
+C
+$
+What is output by the code to 
+the right when method first is
+called?
+$
+/* pre: data != null, elements of data are
+sorted in ascending order.
+*/
+public static int find(int tgt, int[] data){
+  int en = data.length - 1;
+  return help(0, en, tgt, data);
+}
+
+private static int help(int st, int en,
+                  int tgt, int[] data){
+  int result = -1;
+  int md, val;
+  if( st <= en ){
+    md = (st + en) / 2;
+    val = data[ md ];
+    if( val == tgt )
+      result = md;
+    else if( tgt < val )
+      result = help(st, md - 1, tgt, data);
+    else
+      result = help(md + 1, en, tgt, data);
+  }
+  return result;
+}
+public static void first(){
+  int[] data = {0, 5, 19, 100};
+  System.out.print( find(5, data) );
+}
+$
+1
+$
+0
+$
+2
+$
+5
+$
+There is no output due
+to a runtime error
+$
+A
+$
+What searching algorithm is
+implemented by methods
+find and help?
+$
+/* pre: data != null, elements of data are
+sorted in ascending order.
+*/
+public static int find(int tgt, int[] data){
+  int en = data.length - 1;
+  return help(0, en, tgt, data);
+}
+
+private static int help(int st, int en,
+                  int tgt, int[] data){
+  int result = -1;
+  int md, val;
+  if( st <= en ){
+    md = (st + en) / 2;
+    val = data[ md ];
+    if( val == tgt )
+      result = md;
+    else if( tgt < val )
+      result = help(st, md - 1, tgt, data);
+    else
+      result = help(md + 1, en, tgt, data);
+  }
+  return result;
+}
+public static void first(){
+  int[] data = {0, 5, 19, 100};
+  System.out.print( find(5, data) );
+}
+$
+linear search
+$
+interpolation search
+$
+random search
+$
+comb search
+$
+binary search
+$
+E
+$
+What is output by the code to
+the right when method test
+is called?
+$
+public static int find(int[] data,
+                       int tgt){
+  int loc = -1;
+  int i = 0;
+  while( loc == -1 && i < data.length ){
+    if( data[i] == tgt )
+      loc = i;
+    i++;
+  }
+  return loc;
+}
+
+public static void test(){
+  int[] data = {3, 1, 5};
+  System.out.print( find(data, 7) );
+}
+$
+0
+$
+-1
+$
+1
+$
+5
+$
+3
+$
+B
+$
+Which searching algorithm 
+does method find implement?
+$
+public static int find(int[] data,
+                       int tgt){
+  int loc = -1;
+  int i = 0;
+  while( loc == -1 && i < data.length ){
+    if( data[i] == tgt )
+      loc = i;
+    i++;
+  }
+  return loc;
+}
+
+public static void test(){
+  int[] data = {3, 1, 5};
+  System.out.print( find(data, 7) );
+}
+$
+Binary search
+$
+Stack search
+$
+Interpolation search
+$
+Gnome search
+$
+Sequential search
+$
+E
+$
+Which searching algorithm does
+method search implement?
+$
+/* pre: ?
+   post: return an index in data
+     that contains tgt.
+     If tgt is not present return -1.
+*/
+public static int search(int tgt,
+                         int[] data){
+  int high = data.length - 1;
+  int low = 0;
+  int mid = (low + high) / 2;
+  while( data[mid] != tgt && low <= high){
+    if( data[mid] > tgt )
+      low = mid + 1;
+    else
+      high = mid - 1;
+    mid = (low + high) / 2;
+  }
+
+  if( data[mid] == tgt )
+    return mid;
+  else
+    return -1;
+}
+$
+sequential search
+$
+insertion search
+$
+binary search
+$
+merge search
+$
+fibonacci search
+$
+C
+$
+What must the pre-condition for
+method search be so that it always
+fulfills its post-condition?
+$
+/* pre: see question 30
+   post: return an index in data
+     that contains tgt.
+     If tgt is not present return -1.
+*/
+public static int search(int tgt,
+                         int[] data){
+  int high = data.length - 1;
+  int low = 0;
+  int mid = (low + high) / 2;
+  while( data[mid] != tgt && low <= high){
+    if( data[mid] > tgt )
+      low = mid + 1;
+    else
+      high = mid - 1;
+    mid = (low + high) / 2;
+  }
+
+  if( data[mid] == tgt )
+    return mid;
+  else
+    return -1;
+}
+$
+The elements of data must be
+in ascending order.
+$
+The elements of data must be
+in descending order.
+$
+The elements of data must be
+distinct. There can't
+be any duplicated values.
+$
+The length of data must be even.
+$
+More than one of these.
+$
+B
+$
+Which searching algorithm does
+method search implement?
+$
+// pre: nums != null
+// post: see question 28
+public static int search(int[] nums,
+                         int tgt){
+  int result = -1;
+  for(int i = 0; i < nums.length; i++){
+    if( nums[i] == tgt ){
+      result = i;
+    }
+  }
+  return result;
+}
+$
+Greedy
+$
+Sequential
+$
+Heap
+$
+Binary
+$
+Interpolation
+$
+B
+$
+Which of the following best
+describes method search's
+post condition ?
+$
+// pre: nums != null
+// post: see question 28
+public static int search(int[] nums,
+                         int tgt){
+  int result = -1;
+  for(int i = 0; i < nums.length; i++){
+    if( nums[i] == tgt ){
+      result = i;
+    }
+  }
+  return result;
+}
+$
+Returns the index of the first
+occurrence of tgt in nums.
+$
+Returns the index of the first
+occurrence of tgt in nums or -1
+if tgt is not present.
+$
+Returns the number of times tgt
+appears in nums.
+$
+Returns the number of elements
+in nums that are less than tgt.
+$
+Returns the index of the last 
+occurrence of tgt in nums or -1
+if tgt is not present.
+$
+E

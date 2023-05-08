@@ -1,0 +1,189 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csHeader">printf</div>
+	<div id="obj">
+		<table>
+			<tr><th>What You Will Learn</th></tr>
+			<tr>
+			    <td>
+					<ul>		
+          				<li>How to use the printf statement to format output</li>
+						<li>What is a formatting string</li>		
+					</ul>
+				</td>
+			</tr>		
+		</table>
+</div>	
+<div id="csContent"> 	
+		
+  <h1>printf</h1>
+  <p>When writing data to a console window you have used both the print and println statements. Java offers another option
+     for printing to the console window call <strong>printf</strong> (short for print formatting). This method provides alot more
+	 flexibility in how information is displayed on the screen. In this unit you will learn how to use the printf method to 
+	 display information on the console window.</p>
+<h3>printf Form</h3>
+<p>The way that a printf statement is constructed is different from the way you would do a print and println. Here is the
+   form of the printf statement:</p>
+<div align="center"><img src="images/printf1.png"></div>
+<p>A printf statement has two parts: the <strong>formatting string</strong> and the <strong>data to be printed</strong>. The formatting string uses special commands
+   to describe how the data will appear on the screen. The number of data items that a printf statement can print is virtually limitless.
+   To distinguish between each data item the printf uses commas. </p>
+<div align="center"><img src="images/printf2.png"></div>
+<h3>Formatting String</h3>
+<p>The formatting string uses special commands to describe how the data will appear on the screen. A command is made up of several parts. Look at the illustration 
+   below. 
+<div align="center"><img src="images/printf3.png"></div>
+ <div id="csList">
+ <ul>
+ <li><strong>% sign</strong> - the percent sign must precede all formatting commands.</li>
+ <li><strong>Format Flags</strong> - used to apply special formatting to the data. We will limit our dicussion to only one flag, the hyphen (-). The
+     hyphen flag is used to cause the data to left align, instead of right align, which is the default. </li>
+ <li><strong>Column Width</strong> - specifies how many columns on the screen the data will occupy.</li>
+ <li><strong>Format Type</strong> - specifies what type of data the command refers (int, float, string, etc.). There are many format types. We will
+     limit our discussion to only four:
+	<table id="csTable">
+	  <tr>
+	    <th align="center">Format Type</th>
+		<th align="center">Description</th>
+	  </tr> 
+	  <tr>
+	    <td align="center">d</td>
+		<td align="center">integer (decimal)</td>
+	  </tr> 
+	  <tr>
+	    <td align="center">f</td>
+		<td align="center">floating-point</td>
+	  </tr> 
+	  <tr>
+	    <td align="center">s</td>
+		<td align="center">string</td>
+	  </tr> 
+	  <tr>
+	    <td align="center">n</td>
+		<td align="center">newline</td>
+	  </tr> 	 
+	  </table></div>
+  </li>
+ </ul>
+ 
+ <h3>Examples</h3>
+ <p>The following illustration demonstrates how printf can be used to format output.</p>
+
+  <div class = "slider" id="slider1">
+       <ul class="bjqs">
+          <li><img src="images/Printf1/Slide1.PNG"></li>
+          <li><img src="images/Printf1/Slide2.PNG"></li>
+          <li><img src="images/Printf1/Slide3.PNG"></li>
+		  <li><img src="images/Printf1/Slide4.PNG"></li>
+		  <li><img src="images/Printf1/Slide5.PNG"></li>
+		  <li><img src="images/Printf1/Slide6.PNG"></li>
+		  <li><img src="images/Printf1/Slide7.PNG"></li>
+		  <li><img src="images/Printf1/Slide8.PNG"></li>
+		  <li><img src="images/Printf1/Slide9.PNG"></li>
+		  <li><img src="images/Printf1/Slide10.PNG"></li>
+		  <li><img src="images/Printf1/Slide11.PNG"></li>
+		  <li><img src="images/Printf1/Slide12.PNG"></li>
+		  <li><img src="images/Printf1/Slide13.PNG"></li>
+		  <li><img src="images/Printf1/Slide14.PNG"></li>
+		  <li><img src="images/Printf1/Slide15.PNG"></li>
+		  <li><img src="images/Printf1/Slide16.PNG"></li>
+		  <li><img src="images/Printf1/Slide17.PNG"></li>
+		  <li><img src="images/Printf1/Slide18.PNG"></li>
+		  <li><img src="images/Printf1/Slide19.PNG"></li>
+		  <li><img src="images/Printf1/Slide20.PNG"></li>
+		  <li><img src="images/Printf1/Slide21.PNG"></li>
+        </ul>
+    </div>
+	
+	<!--img tag needed to activate javascript after ajax call (enables slider code)-->
+	<img src="images/empty.gif" onload="doSlider(); this.parentNode.removeChild(this);" />
+	
+	
+  <div id="csNote"><strong>Programming Note:</strong> if the data being printed will occupy more space than specified 
+    by the column width specifier (%<font color="#FF0000">8</font>d), the column width specifier will be
+	ignored and the data will occupy as many spaces as necessary.</div>
+  <h3>Format Type - n</h3>
+  <p>The <strong>n</strong> format type is used to embed newline commands within the formatting string.</p>
+  <p>The following example</p>
+  <div id="csCode">
+  <pre>
+  System.out.printf("%5d", 100);
+  System.out.printf("%5d", 200);</pre>
+  </div>
+  <p>produces this output</p>
+  <div id="csOutput">
+  <pre>
+     100     200</pre>
+  </div>
+<p>To make the two numbers appear on separate lines you have to add a %n command</p>
+  <div id="csCode">
+  <pre>
+  System.out.printf("%5d<div id="csHighlight"><pre>%n</pre></div>", 100);
+  System.out.printf("%5d", 200);</pre>
+  </div>
+  <p>which produces this output</p>
+  <div id="csOutput">
+  <pre>
+     100
+     200</pre>
+  </div>
+  <p>or</p>
+  <div id="csCode">
+  <pre>
+  System.out.printf("%5d<div id="csHighlight"><pre>%n%n</pre></div>", 100);
+  System.out.printf("%5d", 200);</pre>
+  </div>
+  <p>which produces this output</p>
+  <div id="csOutput">
+  <pre>
+     100
+	 
+     200</pre>
+  </div>
+<h3>Labeling Data</h3>
+<p>Suppose you want to print a name and grade entered from the keyboard using the following format</p>
+  <div id="csOutput">
+  <pre>
+Name =    John Wayne
+Grade =          100</pre>
+</div>
+<p>where the person's name and grade are lined up on the right in a columnar format (right justified).</p>
+<p>Since the name and grade can be varying lengths you know it is not possible to do this using only print and println. So you write 
+   the following code using printf</p>
+  </div>
+  <div id="csCode">
+  <pre>
+String name = keyboard.nextLine();
+int grade = keyboard.nextInt();
+System.out.printf("Name = %12s%n", name);
+System.out.printf("Grade = %5d%n", grade);</pre>
+  </div>
+  <p>which produces the following output (Assuming you entered "John Wayne" for the name and
+     100 for the grade)</p>
+<div id="csOutput">
+  <pre>
+Name =   John Wayne
+Grade =      100</pre>
+  </div>
+  <p>Since the length of the name and grade are not known until entered by the user you
+     realize that the column width specifiers 12 and 5 won't work for any name and number.
+	 So you go back to the drawing board and write the following code</p>
+	   <div id="csCode">
+  <pre>
+String name = keyboard.nextLine();
+int grade = keyboard.nextInt();
+System.out.printf("%-8s%12s%n", "Name = ", name);
+System.out.printf("%-8s%12d%n", "Grade = ", grade);</pre>
+  </div>
+  <p>which produces the following output</p>
+<div id="csOutput">
+  <pre>
+Name =    John Wayne
+Grade =          100</pre>
+  </div>
+<p>After several tests you come to the conclusion that this code will work as long as the 
+   name or grade entered by user is not larger than 12 characters. You can now sleep 
+   peacefully knowing your job is done.</p>
+	<br>
+</div>	
+

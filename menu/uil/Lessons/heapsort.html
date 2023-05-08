@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<h1>Heap Sort</h1>
+<p>The heap sort algorithm is really composed of two parts...</p>
+<ul>
+  <li>Build a heap from the array to be sorted. </li>
+  <li>Sort the newly built heap.</li>
+</ul>
+<p>A heap is simply a tree-like structure with nodes and connections between them. 
+  A node may have 0, 1, or 2 child nodes that connect from beneath, and exactly 
+  1 parent node connected above, unless the node is the topmost or root node. 
+  A heap may be represented easily by an array if for every node at index i, it's 
+  child nodes are located at indices <strong>2i+1</strong> and <strong>2i+2</strong> 
+  (assuming the array is zero indexed). Then the value of the array at index i 
+  is the value for that node.<br>
+  To have a valid heap, two properties must be met...</p>
+<ul>
+  <li>The root node must have the highest value of the heap. </li>
+  <li>All child nodes must have equal or less value than their parents.</li>
+</ul>
+<p><br>
+  <strong>Building the heap</strong></p>
+<p>The first stage involves converting an arbitrary array into a valid heap. This 
+  is performed through the use of a utility method called <em>Sift</em> (also 
+  know as heapify downward). What this method does is, given a node and a position 
+  in the array, cause that node to &quot;trickle&quot; down from a high starting 
+  position to its final appropriate position within the array. It's easy to see 
+  that this procedure greatly eases the task of building and maintain a heap. 
+  All one need do is call <em>Sift</em> for every array element and the array 
+  becomes a heap.</p>
+<p><strong>The Sift method</strong></p>
+<p> The Sift method performs two basic functions within a loop... </p>
+<ul>
+  <li>Test to see if either child to the current node is larger. </li>
+  <li>Swap the current node with the larger child. </li>
+</ul>
+<p>The loop exits when either the node has reached the bottom of the array (there 
+  are no more children beneath it) or no child of the node has a greater value.</p>
+<p><strong>Sorting the heap</strong></p>
+<p>Once an array has been transformed into a heap, sorting the array actually 
+  becomes trivial and requires only two simple steps...</p>
+<ul>
+  <li> Swap the last node with the root, thereby placing the largest value node 
+    at the bottom of the array. </li>
+  <li>Use the <em>Sift</em> method to move the new root node down to its proper 
+    place.</li>
+</ul>
+<p>These steps are repeated for smaller and smaller upper portions of the array 
+  until the array is fully sorted. The visualization applet below helps to demonstrate 
+  how each of the two steps, building the heap, and sorting the heap, takes a 
+  time on the order of <strong>O(nlogn)</strong>. Consequently, since only two 
+  stages are involved, the entire process also takes a time proportional to <strong>O(nlogn)</strong> 
+  for an arbitrary array of n elements.</p>
+<table class="code" width="500" border="1">
+  <tr> 
+    <td class="code"> <pre>public void buildHeap(int[] heap, int heapSize)
+{
+    for(int i = heapSize - 1; i >= 0; i--)
+    {
+        sift(heap, heapSize, i);
+    }     
+}
+
+public void heapSort(int[] heap, int heapSize)
+{
+    for(int i = heapSize - 1; i > 0; i--)
+    {
+        <font color="#006600">// swap </font> 
+        int temp = heap[0];
+        heap[0] = heap[i];
+        heap[i] = temp;
+        
+        sift(heap, i, 0);
+    }
+}
+
+public void sift(int[] heap, int heapSize, int currentNode)
+{
+    int i,j;
+    j = currentNode;
+    do
+    {
+        i = j;
+        if((2*i+1 < heapSize && heap[2*i+1] > heap[j]))
+           j = 2*i+1;
+        if((2*i+2 < heapSize && heap[2*i+2] > heap[j]))
+           j = 2*i+2;
+         
+        <font color="#009900">// swap</font>
+        int temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;     
+    }
+    while(i != j);
+}
+</pre></td>
+  </tr>
+</table>
+<p><strong>HeapSort Demo</strong><br>
+</p>
+<p> 
+  <applet code=HSApplet.class id=HSApplet codebase="http://bwagner.org/menu/uil/Lessons/" width=720 height=400>
+  </applet>
+</p>
+<p>&nbsp;</p>
+<h1 align="left">&nbsp; </h1>

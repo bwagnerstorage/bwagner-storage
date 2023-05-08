@@ -1,0 +1,221 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center">PairMatcher</div>
+
+<h1>NetBeans Workspace: <a href="apFreeResponse/PairMatcher.zip" style="color:#00F; font-size:1.0em; font-weight:600;" >PairMatcher</a></h1>
+
+<div id="csContent">
+      <p>Consider a system for choosing pairs of people to be lab partners based 
+        on a compatibility score. A <em>Person</em> class (whose implementation 
+        is not shown) is used by the <em>Pair</em> class and the <em>PairMatcher</em> 
+        class. The <em>Person</em> class implements appropriate <em>hashCode</em> 
+        and <em>equals</em> methods.</p>
+      <p>The declaration for the <em>Pair</em> class is shown below. A <em>Pair</em> 
+        object is constructed with two <em>Person</em> objects and has a method 
+        that calculates and compares the compatibility scores of two <em>Pair</em> 
+        objects.</p>
+      <div id="apCode"><pre>public class Pair implements Comparable
+{
+    /** @param p1 the first Person of the Pair
+     *  @param p2 the second Person of the Pair
+     */
+    <font color="#0000FF">public Pair(Person p1, Person p2)</font>
+    {  /* implementation not shown */  }
+    
+    /** @return first Person of this Pair
+     */
+    <font color="#0000FF">public Person getPerson1()</font>
+    {  /* implementation not shown  */ }
+    
+    /** @return second Person of this Pair
+     */
+    <font color="#0000FF">public Person getPerson2()</font>
+    {  /* implementation not shown  */ }
+    
+    
+    /** @param other the object to be compared to this Pair
+     *         Precondition: other is a Pair object
+     *  @ return the result of the comparison of the compatibility scores of 
+     *         this Pair and other
+     */
+    <font color="#0000FF">public int compareTo(Object other)</font>
+    {   /* implementation not shown  */  }
+    
+    
+    // There may be fields, constructors, and methods that are not shown.
+}</pre></div>
+<p>The <em>PairMatcher</em> class declared below will be used to maintain compatibility 
+        information about a group of people. A <em>PairMatcher</em> object is 
+        constructed with a list of <em>Person</em> objects. The constructor creates 
+        a mapping between each Person in the list and a <strong>priority queue</strong> 
+        of pairings between that <em>Person</em> and every other <em>Person</em> 
+        in the list.</p>
+      <p>&nbsp;</p>
+      <div id="apCode"><pre>public class PairMatcher
+{
+    private Map&lt;Person, PriorityQueuePair&gt;&gt; personMap;
+    
+    /** Initializes and fills personMap so that each Person in 
+     *  personList is a key, and the value associated with each
+     *  key k is a PriorityQueue of Pair objects
+     *  pairing k with all other Persons in personList
+     *  @param personList a nonempty list of Person objects
+     */
+    <font color="#0000FF">public PairMatcher(List<Person> personList)
+</font>    {  /* to be implemented in part(a)  */  }
+    
+    
+    /** @param p the Person to be matched
+     *  @param num the number of Person objects to remove
+     *      Precondition: if p is in personMap, then num is > 0 and less
+     *           than or equal to the number of pairs in the priority
+     *           queue associated with p
+     *  @return an array of the num removed Person objects;
+     *          null if p is not in personMap
+     */
+   <font color="#0000FF"> public Person[] removeNumMatches(Person p, int num)</font>
+    {  /*  to be implemented in part(b)  */ }
+    
+    
+    
+    // There may be fields, constructors, and methods not are not shown.
+}</pre></div>
+      <ol id="csList">
+        <li type="a"> Write the <em>PairMatcher</em> constructor. The constructor 
+          builds personmap such that each <em>Person</em> object in personList 
+          is a key in the <em>Map</em>. The value associated with each key k is 
+          a <em>PriorityQueue</em> of <em>Pair</em> objects such that for all 
+          p in personList, if p is not equal to k, there is a <em>Pair</em> in 
+          which k is the first <em>Person</em> and p is the second <em>Person</em>.<br>
+          <br>
+          For example, the following shows a list of <em>Person</em> objects and 
+          the map that would be created as a result of constructing a <em>PairMatcher</em> 
+          object with that list. The <em>Pair</em> objects in the map show the 
+          first <em>Person</em>, the second <em>Person</em>, and the compatibility 
+          score (lower scores mean better compatibility).<br>
+          <br>
+          <strong>personList</strong><br>
+          &nbsp;&nbsp;&nbsp; 
+          <table id="apTable">
+            <tr> 
+              <td>Jamie</td>
+              <td>Chris</td>
+              <td>Pat</td>
+              <td>Terry</td>
+            </tr>
+          </table>
+          <br>
+          <strong>personMap</strong><br>
+          <br>
+          <table id="apTable">
+            <tr> 
+              <td bgcolor="#CCCCCC">Jamie</td>
+              <td><p>Jamie<br>
+                  Pat<br>
+                  (10) </p></td>
+              <td>Jamie<br>
+                Chris<br>
+                (11) </td>
+              <td>Jamie<br>
+                Terry<br>
+                (22) </td>
+            </tr>
+            <tr> 
+              <td bgcolor="#CCCCCC">Chris</td>
+              <td><p>Chris<br>
+                  Jamie<br>
+                  (11) </p></td>
+              <td>Chris<br>
+                Terry<br>
+                (11) </td>
+              <td>Chris<br>
+                Pat<br>
+                (21) </td>
+            </tr>
+            <tr> 
+              <td bgcolor="#CCCCCC">Pat</td>
+              <td>Pat<br>
+                Jamie<br>
+                (10)</td>
+              <td>Pat<br>
+                Chris<br>
+                (21) </td>
+              <td>Pat<br>
+                Terry<br>
+                (32) </td>
+            </tr>
+            <tr> 
+              <td bgcolor="#CCCCCC">Terry</td>
+              <td>Terry<br>
+                Chris<br>
+                (11) </td>
+              <td>Terry<br>
+                Jamie<br>
+                (22) </td>
+              <td>Terry<br>
+                Pat<br>
+                (32)</td>
+            </tr>
+          </table>
+          <br>
+          Complete the <em>PairMatcher</em> constructor below.<br>
+          <div id="apCode"><pre>/** Initializes and fills personMap so that each Person in 
+ *  personList is a key, and the value associated with each key k is 
+ *  a PriorityQueue of Pair objects pairing k with all other Persons
+ *  in personList
+ *  @param personList a nonempty list of Person objects
+ */
+public PairMatcher(List&lt;Person&gt; personList)
+{ 
+
+
+
+
+}</pre></div>
+        </li>
+        <li type="a">Write the <em>PairMatcher</em> method <em>removeNumMatches</em>. 
+          Method <em>removeNumMatches</em> removes the first num <em>Pair</em> 
+          objects from the priority queue associated with <em>p</em> in <em>personMap</em> 
+          and returns an array containing the second <em>Person</em> of each <em>Pair</em> 
+          that was removed. The <em>Person</em> objects in the returned array 
+          should be ordered by their compatibility with <em>Person</em> <em>p</em>. 
+          If <em>Person</em> <em>p</em> is not in the map, <em>null</em> is returned.<br>
+          <br>
+          Complete method <em>removeNumMatches</em> below.<br>
+          <div id="apCode"><pre>/** @param p the Person to be matched
+ *  @param num the number of Person objects to remove
+ *    Precondition: if p is in personMap, then num is > 0 and less than
+ *          or equal to the number of pairs in the priority queue
+ *          associated with p
+ *  @return an array of the num removed Person objects;
+ *          null if p is not in personMap
+ */
+ public Person[] removeNumMatches(Person p, int num)
+ {  
+
+
+
+
+ }</pre></div>
+        </li>
+      </ol>
+
+      <br>
+      <p></p>
+      <h2>Sample Run</h2>
+      <div id="csSampleRun"><pre>Test PairMatcher Constructor
+----------------------------
+Terry       [Terry,Chris,11]    [Terry,Jamie,22]      [Terry,Pat,32]
+Pat           [Pat,Jamie,10]      [Pat,Chris,21]      [Pat,Terry,32]
+Jamie         [Jamie,Pat,10]    [Jamie,Chris,11]    [Jamie,Terry,22]
+Chris       [Chris,Jamie,11]      [Chris,Pat,21]    [Chris,Terry,11]
+
+
+Test removeNumMatches Method
+----------------------------
+matcher1.removeNumMatches(new Person("Terry"), 2) = Chris Jamie
+matcher1.removeNumMatches(new Person("Chris"), 1) = Jamie
+matcher1.removeNumMatches(new Person("Pat"), 3) = Jamie Chris Terry
+</pre>
+</div>
+<br>

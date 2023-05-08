@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/menu.css">
+<link rel="stylesheet" href="http://bwagner.org/menu/uil/css/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <th width="99%" class="main"> 6.2 LinkedList 2</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h2>Description</h2>
+      <p>Write a program that creates a linked list from an unknown number of 
+        strings, then creates a second list containing a copy of the first list, 
+        but in reverse order. Output should consist of the original list and the 
+        reversed list. The input of strings should continue until the sentinel 
+        value -1 is entered by the user.<br>
+      </p>
+      <h2>Interfaces and Implementing Classes</h2>
+      <h3>interface java.util.List&lt;E&gt;</h3>
+      <table class="notes" width="60%" border="1">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td width="40%"><font color="#000000" face="Courier New, Courier, mono">int 
+            <strong>size</strong>()</font></td>
+          <td width="60%">&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">appends obj to end of list; returns true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">void <strong>add</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">inserts obj at position index and higher to 
+            the right (adds 1 tgo their indices) and adjusts size</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>get</strong>(int 
+            index)</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>set</strong>(int 
+            index, E obj)</font></td>
+          <td><font color="#000000">replaces the element at position index with 
+            obj; returns the element formerly at the specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>(int 
+            index)</font></td>
+          <td><font color="#000000">removes element from position index, moving 
+            elements at position index + 1 and higher to the left (subtracts from 
+            their indices) and adjusts size; returns the element formerly at the 
+            specified position</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">Iterator 
+            &lt;E&gt; <strong>iterator</strong>()</font></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">ListIterator 
+            &lt;E&gt; <strong>listIterator</strong>()</font></td>
+          <td bgcolor="#FFFFE8">&nbsp;</td>
+        </tr>
+      </table>
+      <h3>interface java.util.Queue&lt;E&gt;</h3>
+      <table width="60%" border="1" class="notes">
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>add</strong>(E obj)</font></td>
+          <td><font color="#000000">enqueues obj at the end of the queue; returns 
+            true</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>remove</strong>()</font></td>
+          <td><font color="#000000">dequeues and returns the element at the front 
+            of the queue</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">E <strong>peek</strong>()</font></td>
+          <td><font color="#000000">returns the element at the front of the queue; 
+            null if the queue is empty</font></td>
+        </tr>
+        <tr bgcolor="#FFFFE8" class="notes"> 
+          <td><font color="#000000" face="Courier New, Courier, mono">boolean 
+            <strong>isEmpty</strong>()</font></td>
+          <td><font color="#000000">&nbsp;</font></td>
+        </tr>
+      </table>
+      <h3>class java.util.LinkedList &lt;E&gt; implements java.util.List&lt;E&gt;, 
+        java.util.Queue&lt;E&gt; </h3>
+      <table width="40%" border="1" class="notes">
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">void <strong>addFirst</strong>( 
+            E obj)</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td height="25" bgcolor="#FFFFE8"><font color="#000000">void <strong>addLast</strong>(E 
+            obj)</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>getFirst</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>getLast</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>removeFirst</strong>()</font></td>
+        </tr>
+        <tr class="notes"> 
+          <td bgcolor="#FFFFE8"><font color="#000000">E <strong>removeLast</strong>()</font></td>
+        </tr>
+      </table>
+      <p></p>
+      <h2>Sample Run</h2>
+      <table width="88%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#000000">
+            <pre><font color="#FFFFFF">Enter Strings
+--&gt; apples
+--&gt; oranges
+--&gt; grapes
+--&gt; pears
+--&gt; bananas
+--&gt; -1
+
+apples oranges grapes pears bananas
+
+bananas pears grapes oranges apples
+
+Press any key to continue...</font></pre> </td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>

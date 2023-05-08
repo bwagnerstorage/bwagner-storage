@@ -1,0 +1,75 @@
+<img src="images/empty.gif" onload="doScrollTop(); this.parentNode.removeChild(this);" />
+
+<div id="csAssignmentTitle" align="center"></div>
+
+<div id="csContent"> 
+<h1>Directions</h1>
+<p>The Fibonacci sequence is a sequence of numbers in which each number equals the sum of the two preceding numbers.</p>
+<div id="csList">
+<p><strong style="font-size:1.2em; font-family: consolas">1   1   2   3   5   8   13   21   34   55   89   144   233 ...</strong></p>
+</div>
+<br>
+<p>This sequence can be best described recursively as follows: </p>
+<div id="csOutput" style="width:600px"><pre>
+fibonacci (1) = 1
+fibonacci (2) = 1
+fibonacci (n) = fibonacci(n - 1) + fibonacci(n - 2)     if n > 2
+</pre></div>
+
+
+
+  <p>Copy the following code into a file named <strong>FibonacciApp.java</strong>.</p>
+  
+ <div id="csCode">
+  <pre> 
+import java.util.*;
+
+public class FibonacciApp
+{
+    public static void main(String[] args)
+    {
+        FibonacciTester f = new FibonacciTester();
+        Scanner keyboard = new Scanner(System.in);
+           
+        System.out.print("Enter number -->");
+        int n = keyboard.nextInt();
+        int result = f.fibonacci(n);
+        System.out.println("Fibonacci("+n+") = " + result);
+    }
+}
+
+class FibonacciTester
+{
+    public int fibonacci(int n)
+    {
+        
+    }
+}
+
+</pre></div>
+<P>Implement the <strong>fibonacci</strong> method declared above using recursion. Remember that a recursive method
+   can have one or more base cases and one or more recursive cases.</P>
+
+
+
+
+ 
+<h1>Source File</h1>
+<p>FibonacciApp.java</p>
+<h1>Sample Run 1</h1>
+<div id="csSampleRun">
+<pre>
+Enter number -->8
+Fibonacci(8) = 21
+</pre></div>
+<h1>Sample Run 2</h1>
+<div id="csSampleRun">
+<pre>
+Enter number -->10
+Fibonacci(10) = 55
+</pre>
+
+</div>
+	<br>
+</div>	
+

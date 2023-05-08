@@ -1,0 +1,504 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Computer Science</title>
+<BASE href="http://bwagner.dentonisd.org">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="scripts/menu.js"></script>
+<script language="JavaScript" src="scripts/menu_items.js"></script>
+<script language="JavaScript" src="scripts/menu_tpl.js"></script>
+<link rel="stylesheet" href="stylesheets/menu.css">
+<link rel="stylesheet" href="stylesheets/computerscience.css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table border="0" align="left" cellpadding="10" cellspacing ="0">
+  <tr>
+    <td width="800" height="24" bgcolor="#000000" >
+        <script language="JavaScript">
+	          new menu (MENU_ITEMS, MENU_TPL);
+        </script>
+    </td>
+  </tr>
+  <tr>
+    <th width="99%" class="main"> 11.2 GenericSortedSet</th>
+  </tr>
+  <tr> 
+    <td class="main" colspan="2"> <h3>Source Code: <a href="/cs_apab/unit11_Generics/labExercises/GenericSortedSet.zip">GenericSortedSet</a></h3>
+      <hr> <h2>Description</h2>
+      <p>Below is a set of classes that implement a <em>SortedSet</em> ADT. Modify 
+        the code so that the ADT uses generics and only allows objects that implement 
+        the <em>Comparable</em> interface to used in the class. (Refer to the 
+        section of notes on Bounded Types).</p>
+      <p>The following classes and interfaces need to be modified:</p>
+      <ul>
+        <li>GenericTreeSet class</li>
+        <li>GenericSortedSet interface</li>
+        <li>BinaryTree class</li>
+        <li>TreeNode class</li>
+      </ul>
+      <h3>GenericTreeSet</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>import java.util.*;
+
+public class GenericTreeSet extends BinaryTree implements GenericSortedSet
+{
+    public GenericTreeSet()
+    {
+        setRoot(null);
+    }
+    public GenericTreeSet(TreeNode node)
+    {
+        setRoot(node);
+    }
+
+    <font color="#006600">// returns the number of items in set</font>
+    public int size()
+    {
+       return size(getRoot());  
+    }
+    
+    private int size(TreeNode root)
+    {
+        if(root == null)
+            return 0;
+        return 1 + size(root.getLeft()) + size(root.getRight());
+    }
+    
+    public TreeNode contains(Comparable obj)
+    {
+        return contains(getRoot(), obj);
+    }
+    
+    private TreeNode contains(TreeNode root, Comparable obj)
+    {
+      if(root == null)
+         return null;
+      else
+      {
+         if(obj.compareTo(root.getValue()) == 0)
+            return root;
+         else if(obj.compareTo(root.getValue()) < 0)
+            return contains(root.getLeft(), obj);
+         else
+            return contains(root.getRight(), obj);
+      }
+    }
+    
+   public void add(Comparable item)
+   {
+      setRoot(add(getRoot(), item));
+   }
+   
+   private TreeNode add(TreeNode root, Comparable item)
+   {
+      if(root == null)
+      {
+         return new TreeNode(item, null, null);
+      }
+     
+      if(item.compareTo(root.getValue()) < 0)
+         root.setLeft(add(root.getLeft(), item));
+      if(item.compareTo(root.getValue()) > 0) 
+         root.setRight(add(root.getRight(), item));
+         
+      return root;
+    }
+    
+   public TreeNode remove(Comparable key)
+   {
+      return remove(key, getRoot());
+   }
+   
+   private TreeNode remove(Comparable key, TreeNode tree) 
+   {
+        if (tree == null) 
+             return null; // empty tree so nothing to remove
+        else if(key.compareTo(tree.getValue()) < 0) 
+        {           
+           <font color="#006600">// search for key in left sub-tree. Set left-sub tree to 
+           // result of recursive call to delete from left-subtree</font>
+           tree.setLeft(remove(key, tree.getLeft()));
+        } 
+        else if (key.compareTo(tree.getValue()) > 0) 
+        { 
+           <font color="#006600">// search for key in right sub-tree. Set right-sub tree to
+           // result of recursive call to delete from right-subtree</font>
+           tree.setRight(remove(key, tree.getRight()));
+        } 
+        else if (tree.getLeft() != null && tree.getRight() != null) 
+        {
+           <font color="#006600">// tree refers to node to be deleted and it has no null children
+           // find the in-order successor, disconnect it and return its
+           // data value, setting this as the new data element of tree</font>
+           tree.setValue(disconnectSucc(tree));
+        } 
+        else if (tree.getLeft() == null) 
+        {
+           // tree refers to node to be deleted and its left child is 
+           // null so set tree to refer to right child
+           tree = tree.getRight();
+        } 
+        else 
+        {
+          <font color="#006600">// tree refers to node to be deleted and its left child 
+          // is not null so set tree to refer to left child</font>
+          tree = tree.getLeft();
+        }
+        return tree;
+  }
+  
+ <font color="#006600"> // helper for remove method</font>
+  private Comparable disconnectSucc(TreeNode node) 
+  {
+     TreeNode succParent = node;
+     TreeNode succ = node;
+     TreeNode curr = node.getRight();
+     
+<font color="#006600">     // locate successor
+     // The successor is leftmost node in the deleted nodes
+     // right sub-tree</font>
+     while (curr != null) 
+     {
+       succParent = succ;
+       succ = curr;
+       curr = curr.getLeft();
+     }
+     
+    <font color="#006600"> // test if successor is right child of its parent node</font>
+     if (succ == succParent.getRight()) 
+     {
+       <font color="#006600">// set right child of parent to right child of successor</font>
+       succParent.setRight(succ.getRight());
+     } 
+     else 
+     {
+       <font color="#006600">// set left child of parent to right child of successor</font>
+       succParent.setLeft(succ.getRight());
+     }
+     return (Comparable)succ.getValue();
+   }
+    
+    <font color="#006600">// returns the first (lowest) element currently in this sorted set.</font>
+    public Object first()
+    {
+       TreeNode current = getRoot();
+       TreeNode prev = current;
+       while(current != null)
+       {
+          prev = current;
+          current = current.getLeft();
+       }
+       return prev.getValue();  
+    }
+    
+    <font color="#006600">// returns the last (highest) element currently in this sorted set</font>
+    public Object last()
+    {
+       TreeNode current = getRoot();
+       TreeNode prev = current;
+       while(current != null)
+       {
+          prev = current;
+          current = current.getRight();
+       }
+       return prev.getValue();  
+    }
+    
+    public GenericTreeSet subSet(Comparable fromElement, Comparable toElement)
+    {
+        return subSet(contains((Comparable)fromElement), toElement);
+    }
+    
+    private GenericTreeSet subSet(TreeNode root, Comparable toElement)
+    {
+        GenericTreeSet newSet = new GenericTreeSet(new TreeNode(root.getValue(), null, null));
+        TreeNode newRoot = newSet.getRoot();
+        TreeNode current = newRoot;
+        
+        while(root != null && toElement.compareTo(root.getValue()) != 0)
+        {   
+           if(toElement.compareTo(root.getValue()) < 0)
+           {
+              if(root.getLeft() != null)
+                  current.setLeft(new TreeNode(root.getLeft().getValue(), null, null));
+              else
+                  current.setLeft(null);
+              
+              current = current.getLeft();    
+              root = root.getLeft();
+           }
+           if(toElement.compareTo(root.getValue()) > 0)
+           {
+              if(root.getRight() != null)
+                 current.setRight(new TreeNode(root.getRight().getValue(), null, null));
+              else
+                 current.setRight(null);
+                 
+              current = current.getRight();
+              root = root.getRight();
+           }              
+        }
+        return newSet;
+    }   
+    
+<font color="#006600">   /******************************************/
+   /*             Iterator Methods           */
+   /******************************************/</font>
+    
+    public Iterator iterator()
+    {
+        return new MyIterator();
+    }
+    
+    <font color="#006600">// private inner class </font>
+    private class MyIterator implements Iterator
+    {
+        <font color="#006600">// instance variables</font>
+        private TreeNode root;
+        private TreeNode current;
+        private Stack<TreeNode> stack;
+        
+        public MyIterator()
+        {
+           root = getRoot();
+           stack = new Stack<TreeNode>();
+           pushLeft(root);
+        }
+        
+  <font color="#006600">      // Iterator methods
+        
+        // returns true if the iteration has more elements.</font> 
+        public boolean hasNext()
+        {
+           return !stack.isEmpty();
+        }
+        
+        <font color="#006600">// returns the next element in the iteration</font>
+        public Object next()
+        {
+            TreeNode current = stack.pop();
+            pushLeft(current.getRight());
+            return current.getValue();
+        }
+        
+        private void pushLeft(TreeNode node)
+        {
+            while (node != null) 
+            {
+                stack.push(node);
+                node = node.getLeft();
+            }
+        }
+        
+        <font color="#006600">// not implemented</font>
+        public void remove()
+        {
+            throw new UnsupportedOperationException();
+        }
+    }
+    
+    
+<font color="#006600">   /***********************************/
+   /*            toString             */
+   /***********************************/ </font>
+   
+<font color="#006600">   // prints tree vertically so that tree structure
+   // can be easily identified - uses reverse inorder
+   // traversal: right-root-left</font>
+   public String toString()
+   {
+      return toString(getRoot(), 0);
+   }  
+   
+   private String toString(TreeNode tree, int level)
+   {
+      String str = "";
+      if(tree != null)
+      {
+        str += toString(tree.getRight(), level + 1);
+        for(int i = 1; i <= level; i++)
+        {
+            str = str + "    ";
+        }
+        str += tree.getValue().toString() + "\n";
+        str += toString(tree.getLeft(), level + 1);
+      }
+      
+      return str;
+   }  
+}</pre></td>
+        </tr>
+      </table>
+      <h3>GenericSortedSet</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>import java.util.*;
+
+public interface GenericSortedSet
+{
+    <font color="#006600">// returns the number of items in set</font>
+    int size();
+    
+    <font color="#006600">// returns the first (lowest) element currently in this sorted set.</font>
+    Object first();
+    
+    <font color="#006600">// returns the last (highest) element currently in this sorted set</font>
+    Object last();
+    
+<font color="#006600">    // returns a portion of this sorted set whose elements 
+    // range from fromElement, inclusive, to toElement, inclusive.</font>
+    GenericSortedSet subSet(Comparable fromElement, Comparable toElement);
+    
+    <font color="#006600">// returns an iterator on the set</font>
+    Iterator iterator();
+}</pre></td>
+        </tr>
+      </table>
+      <h3>BinaryTree</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>public abstract class BinaryTree
+{
+   private TreeNode root;
+   
+   public BinaryTree()
+   {
+      root = null;
+   }
+
+   public TreeNode getRoot()
+   {
+      return root;
+   }
+
+   public void setRoot(TreeNode theNewNode)
+   {
+      root = theNewNode;
+   }
+ 
+   public boolean isEmpty()
+   {
+      return root == null;
+   }
+
+   public abstract void add(Comparable item);
+   public abstract TreeNode contains(Comparable key);
+   public abstract TreeNode remove(Comparable key);
+}</pre></td>
+        </tr>
+      </table>
+      <h3>TreeNode</h3>
+      <table class="code"width="67%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="code"><pre>public class TreeNode
+{
+    <font color="#006600">// Instance Variables</font>
+    private Object value;
+    private TreeNode left;
+    private TreeNode right;
+    
+    <font color="#006600">// Constructors</font>
+    public TreeNode(Object initValue)
+    { 
+        value = initValue; 
+        left = null; 
+        right = null; 
+    }
+    
+    public TreeNode(Object initValue, TreeNode initLeft, TreeNode initRight)
+    { 
+        value = initValue;
+        left = initLeft;
+        right = initRight;
+    }
+    
+    <font color="#006600">// Accessor Methods</font>
+    public Object getValue()
+    {
+        return value;
+    }
+    public TreeNode getLeft() 
+    { 
+        return left; 
+    }
+    public TreeNode getRight()
+    { 
+         return right; 
+    }
+    
+    <font color="#006600">// Mutator Methods</font>
+    public void setValue(Object theNewValue)
+    { 
+         value = theNewValue; 
+    }
+    public void setLeft(TreeNode theNewLeft)
+    { 
+         left = theNewLeft;
+    }
+    public void setRight(TreeNode theNewRight)
+    { 
+         right = theNewRight;
+    }
+}</pre></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h2>Sample Run</h2>
+      <table width="68%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#000000"><font color="#FFFFFF"> 
+            <pre>
+================
+   String Set
+================
+
+
+   Tree Structure
+--------------------
+                Z
+            Y
+                X
+        U
+            T
+    R
+        Q
+M
+            H
+        F
+    D
+        B
+
+
+Test - iterator
+---------------
+B D F H M Q R T U X Y Z
+
+
+================
+   Integer Set
+================
+
+
+   Tree Structure
+--------------------
+    10
+8
+        7
+    4
+        2
+            1
+
+
+Test - iterator
+---------------
+1 2 4 7 8 10
+
+
+Press any key to continue...</pre>
+            </font></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>
