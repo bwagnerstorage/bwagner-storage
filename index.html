@@ -520,6 +520,11 @@
                 collapsed: true
             });
         });
+	$(function() {
+            $("#Github").treeview({
+                collapsed: true
+            });
+        });
     </script>
 
     <script language="JavaScript">
@@ -606,7 +611,11 @@
         elem.addEventListener('click', function(url, elem) {
             displayAssignment('menu/assignments/ibhl2.html', 'content')
         });
-
+	elem = document.getElementById('github');
+        elem.addEventListener('click', function(url, elem) {
+            displayAssignment('menu/assignments/github.html', 'content')
+        });
+	    
         function displayAssignment(url, elem) {
             sendRequest(url, elem);
         }
