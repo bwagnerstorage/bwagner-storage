@@ -4,8 +4,8 @@
 	    <unitName>Intro to Github</unitName>
 		<category> 
 		    <categoryName>Account</categoryName>
-			    <description>Create an account</description><url>csregular/unit01_binary/notes/01_binary.html</url>
-			    <description>Navigating</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
+			    <description>Welcome to Github</description><url>github/account/createAccount.html</url>
+			    <description>Repositories</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
 			    <description>Important other</description><url>csregular/unit01_binary/notes/03_dataRepresentation.html</url>
 		</category>
   </unit>
