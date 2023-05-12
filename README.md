@@ -7,12 +7,12 @@ This was made so our teacher, BWagner, did not have to pay for the domain name a
 This would not be possible without the collaborators of:
 
 * Jackson Sacharko
-    * Ported over most files 
+    * Ported over files 
     * debug work
 * Timothy Stuart
-    * Ported over mostly a whole lot of images
+    * Ported over images
     * debug work
-    * discovered commit message hashtags can be easily removed with google sheets
+    * fixed a 4,000 commit message
 
 And special thanks to Mr. Wagner for being such a great teacher.
 
