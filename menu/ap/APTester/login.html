@@ -5,25 +5,7 @@
     <title>Login</title>
 </head>
 
-<script>
-    const file = FileReader.readAsText("menu/ap/APTester/loginCheck.txt")
-const [p1, p2, p3, p4, p5] = file.split('~');
-
-function testResults(form) {
-      var iv1 = form.inputbox1.value;
-      var iv2 = form.inputbox2.value;
-      var iv3 = form.inputbox3.value;
-      var iv4 = form.inputbox4.value;
-      var iv5 = form.inputbox5.value;
-      
-      if(iv1 == p1 && iv2 == p2 && iv3 == p3 && iv4 == p4 && iv5 == p5) {
-        window.location.href = "menu/ap/APTester/mainAP.html";
-      }
-      else {
-        alert ("You are wrong");
-      }
-  }
-</script>
+<script type="text/javascript" src="test.js"></script>
 
 <body style="left:25vw; top:25vh; box-sizing: border-box; width: 50vw; height: 50vh; text-align: center;">
 
