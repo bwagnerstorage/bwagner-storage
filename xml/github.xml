@@ -5,17 +5,17 @@
 		<category> 
 		    <categoryName>Account</categoryName>
 			    <description>Welcome to Github</description><url>github/account/createAccount.html</url>
-			    <description>Repositories</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
-			    <description>Important other</description><url>csregular/unit01_binary/notes/03_dataRepresentation.html</url>
+			    <description>Repositories</description><url>xml/woah.html</url>
+			    <description>Important other</description><url>xml/woah.html</url>
 		</category>
   </unit>
 	<unit>
 	    <unitName>Vs Codespaces</unitName>
 		<category> 
 		    <categoryName>Account</categoryName>
-			    <description>Create an account</description><url>csregular/unit01_binary/notes/01_binary.html</url>
-			    <description>Navigating</description><url>csregular/unit01_binary/notes/02_numberConversion.html</url>
-			    <description>Important other</description><url>csregular/unit01_binary/notes/03_dataRepresentation.html</url>
+			    <description>Create an account</description><url>xml/woah.html</url>
+			    <description>Navigating</description><url>xml/woah.html</url>
+			    <description>Important other</description><url>xml/woah.html</url>
 		</category>
   </unit>
 </course>
