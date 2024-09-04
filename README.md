@@ -18,7 +18,7 @@ This would not be possible without the collaborators of:
 * Timothy Stuart
     * Ported over images
     * debug work
-    * fixed a 4,000 commit message
+    * fixed a 4,000 line commit message
 
 And special thanks to Mr. Wagner for being such a great teacher.
 
